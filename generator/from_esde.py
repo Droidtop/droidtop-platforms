@@ -10,8 +10,13 @@ Usage: from_esde.py <es-de-checkout> [existing-db.json]
 Only standalone-emulator commands are converted (RetroArch entries are
 excluded: droidtop generates those from es_systems' own core mapping
 separately). Commands using tokens droidtop's am-start template can't
-express ({file.uri}/{file.path} are the only placeholders) are SKIPPED
-and reported, never guessed at.
+express are SKIPPED and reported, never guessed at.
+
+Supported placeholders: {file.path}, {file.uri}, {file.dir},
+{file.basename}, {system.folder}. Double-quoted spans (the 78 real
+MAME4droid commands: a multi-word cli_params string extra) pass through
+verbatim -- droidtop's converter tokenizes quote-aware since 2026-08-31,
+which is what made un-skipping them correct rather than hopeful.
 """
 import json
 import re
@@ -37,15 +42,53 @@ for emulator in ET.parse(es_root / "resources/systems/android/es_find_rules.xml"
 players = []
 skipped = []
 
-def map_value(value):
-    """Map an ES-DE command value onto droidtop template placeholders; None = unsupported."""
-    if value in ("%ROM%", "%ROMRAW%"):
-        return "{file.path}"
-    if value in ("%ROMSAF%", "%ROMPROVIDER%"):
-        return "{file.uri}"
+def map_placeholders(value):
+    """Rewrite ES-DE %TOKENS% inside a string onto droidtop placeholders;
+    None = something unsupported remains."""
+    value = value.replace("%ROMRAW%", "{file.path}").replace("%ROM%", "{file.path}")
+    value = value.replace("%GAMEDIRRAW%", "{file.dir}").replace("%GAMEDIR%", "{file.dir}")
+    # ES-DE writes the system's rom folder as <roms-root>/<system-name>;
+    # droidtop's {system.folder} IS that folder, so the pair collapses.
+    value = re.sub(r"%ROMPATHRAW?%/[A-Za-z0-9_-]+", "{system.folder}", value)
+    value = value.replace("%BASENAME%", "{file.basename}")
     if "%" in value:
         return None
     return value
+
+def map_value(value):
+    """Map one ES-DE command value; None = unsupported."""
+    if value in ("%ROMSAF%", "%ROMPROVIDER%"):
+        return "{file.uri}"
+    return map_placeholders(value)
+
+def split_quoted(text):
+    """Space-split honoring double quotes, mirroring droidtop's own
+    converter: a "..." span stays one token WITH its quotes (the emitted
+    template needs them so the converter regroups it), and a \" inside a
+    span passes through untouched."""
+    tokens, current, in_quotes = [], [], False
+    i = 0
+    while i < len(text):
+        c = text[i]
+        if in_quotes and c == "\\" and i + 1 < len(text) and text[i + 1] == '"':
+            current.append('\\"')
+            i += 2
+            continue
+        if c == '"':
+            in_quotes = not in_quotes
+            current.append('"')
+        elif c.isspace() and not in_quotes:
+            if current:
+                tokens.append("".join(current))
+                current = []
+        else:
+            current.append(c)
+        i += 1
+    if in_quotes:
+        raise ValueError("unterminated quote: " + text)
+    if current:
+        tokens.append("".join(current))
+    return tokens
 
 for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").getroot():
     system_id = system.findtext("name")
@@ -66,12 +109,12 @@ for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").get
 
         parts = [f"-n {pkg}/{activity}"]
         unsupported = None
-        # tokenize on spaces EXCEPT inside quotes; quoted args are
-        # unsupported by droidtop's converter -> skip the whole command
-        if '"' in rest:
-            skipped.append((system_id, label, "quoted argument"))
+        try:
+            rest_tokens = split_quoted(rest)
+        except ValueError:
+            skipped.append((system_id, label, "unterminated quote"))
             continue
-        for token in rest.split():
+        for token in rest_tokens:
             if token == "%ACTIVITY_CLEAR_TASK%":
                 parts.append("--activity-clear-task")
             elif token == "%ACTIVITY_CLEAR_TOP%":
@@ -92,14 +135,23 @@ for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").get
                     unsupported = token
                     break
                 parts.append(f"--ei {key} {value}")
-            elif token.startswith("%EXTRABOOLEAN_"):
-                key, _, value = token[len("%EXTRABOOLEAN_"):].partition("%=")
+            elif token.startswith("%EXTRABOOLEAN_") or token.startswith("%EXTRABOOL_"):
+                # ES-DE writes both spellings; DuckStation and GameHub's
+                # own real commands use the short one.
+                prefix = "%EXTRABOOLEAN_" if token.startswith("%EXTRABOOLEAN_") else "%EXTRABOOL_"
+                key, _, value = token[len(prefix):].partition("%=")
                 if "%" in value:
                     unsupported = token
                     break
                 parts.append(f"--ez {key} {value}")
+            elif token.startswith("%CATEGORY%="):
+                # Dolphin/PPSSPP/ScummVM commands carry an intent
+                # category; droidtop's converter already speaks -c.
+                parts.append("-c " + token.split("=", 1)[1])
             elif token.startswith("%EXTRA_"):
                 key, _, value = token[len("%EXTRA_"):].partition("%=")
+                # A quoted value (MAME cli_params) keeps its quotes in
+                # the emitted template; placeholders map inside it.
                 mapped = map_value(value)
                 if mapped is None:
                     unsupported = token
