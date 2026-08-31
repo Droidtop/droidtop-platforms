@@ -1,7 +1,7 @@
 # droidtop-platforms
 
 The separately-updatable player/platform database for
-[droidtop](https://github.com/bi0shacker001/droidtop) — standalone-emulator
+[droidtop](https://github.com/droidtop/droidtop) — standalone-emulator
 launch definitions (`players-database.json`), consumed by droidtop's
 `KnownPlayers`/`PlayersDatabaseUpdater` (bundled seed + user-driven refresh
 from this repository's raw URL).
