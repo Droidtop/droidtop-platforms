@@ -45,6 +45,19 @@ skipped = []
 def map_placeholders(value):
     """Rewrite ES-DE %TOKENS% inside a string onto droidtop placeholders;
     None = something unsupported remains."""
+    # %INJECT%=<spec> substitutes the CONTENT of <spec> (resolved against
+    # the game's directory) -- droidtop's converter speaks it as
+    # {file.inject:...}. The spec runs to the end of the value in every
+    # real command, and may itself contain %BASENAME%/%ROM%.
+    if "%INJECT%=" in value:
+        head, _, spec = value.partition("%INJECT%=")
+        spec = map_placeholders(spec)
+        if spec is None:
+            return None
+        inner = map_placeholders(head)
+        if inner is None:
+            return None
+        return inner + "{file.inject:" + spec + "}"
     value = value.replace("%ROMRAW%", "{file.path}").replace("%ROM%", "{file.path}")
     value = value.replace("%GAMEDIRRAW%", "{file.dir}").replace("%GAMEDIR%", "{file.dir}")
     # ES-DE writes the system's rom folder as <roms-root>/<system-name>;
@@ -131,10 +144,14 @@ for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").get
                 parts.append("-d " + value)
             elif token.startswith("%EXTRAINTEGER_"):
                 key, _, value = token[len("%EXTRAINTEGER_"):].partition("%=")
-                if "%" in value:
+                # An inject is fine here: droidtop decodes the integer
+                # AFTER expansion, and GameNative's own presets pass the
+                # app id as the content of the launched stub file.
+                mapped = map_value(value)
+                if mapped is None:
                     unsupported = token
                     break
-                parts.append(f"--ei {key} {value}")
+                parts.append(f"--ei {key} {mapped}")
             elif token.startswith("%EXTRABOOLEAN_") or token.startswith("%EXTRABOOL_"):
                 # ES-DE writes both spellings; DuckStation and GameHub's
                 # own real commands use the short one.
@@ -144,6 +161,15 @@ for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").get
                     unsupported = token
                     break
                 parts.append(f"--ez {key} {value}")
+            elif token.startswith("%EXTRAARRAY_"):
+                # A comma-separated string-array extra -- Vita3K's own
+                # AppStartParameters. Converter side: --esa.
+                key, _, value = token[len("%EXTRAARRAY_"):].partition("%=")
+                mapped = map_value(value)
+                if mapped is None:
+                    unsupported = token
+                    break
+                parts.append(f"--esa {key} {mapped}")
             elif token.startswith("%CATEGORY%="):
                 # Dolphin/PPSSPP/ScummVM commands carry an intent
                 # category; droidtop's converter already speaks -c.
