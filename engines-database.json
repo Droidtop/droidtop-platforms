@@ -928,6 +928,507 @@
    "notes": "WillPlus/AdvHD: Rio.arc is the engine's game archive and .ws2 its compiled scripts (https://github.com/DarthFly/advhd_ws2_tools, https://github.com/arcusmaximus/VNTranslationTools). GARbro's 'Will' rows cover the same .arc/.wip/.pna family (https://morkt.github.io/GARbro/supported.html)."
   },
   {
+   "id": "shiinario",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "war"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "ShiinaRio: .war archives (WARC 1.1-1.7) with .s25 images (https://morkt.github.io/GARbro/supported.html). Note the one overlap in GARbro's own table: Studio Ryokucha also uses a .war extension with a different magic, which JSON conditions cannot check without a fixed file name -- both are Windows VNs and both land on Wine, so the launch outcome is the same either way."
+  },
+  {
+   "id": "qlie",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "pack"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "QLIE: .pack archives (FilePackVer1.0/2.0/3.0/3.1) are QLIE-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). The FilePackVer signature sits in the archive FOOTER, not the head, so fileHeadRegex cannot be used here."
+  },
+  {
+   "id": "malie",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mgf"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "dzi"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "data.lib"
+       ]
+      },
+      {
+       "type": "fileHeadRegex",
+       "path": "data.lib",
+       "regex": "\\ALIB"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Malie: .mgf (MalieGF) images, .dzi, and .lib archives whose head magic is LIB/LIBP/LIBU (https://morkt.github.io/GARbro/supported.html). The .lib rule pairs the conventional data.lib name with that head magic, because a bare .lib extension would collide with ordinary native libraries."
+  },
+  {
+   "id": "ai5win",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "ai5win.exe"
+       ]
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "arc"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "gcc"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "AI5WIN (elf/Silky's lineage): AI5WIN.exe is the engine's FIXED runtime executable name -- hook tables key on exactly that process name (https://github.com/HIllya51/LunaTranslator/blob/main/src/NativeImpl/LunaHook/LunaHook/engine32/Elf.cpp) -- paired with the engine's .arc archives, per the brief's rule that an .exe name is never evidence on its own. .gcc images (G24n/G24m/R24n/R24m) are AI5WIN-only in GARbro (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "ai6win",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "ai6win.exe"
+       ]
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "arc"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "akb"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "AI6WIN: AI6WIN.exe is the fixed runtime executable name (same LunaHook Elf table as AI5WIN), paired with the engine's .arc archives; .akb images (AKB/AKB+) are AI6WIN-only in GARbro (https://morkt.github.io/GARbro/supported.html). Scripts are .mes/.map (https://github.com/arcusmaximus/VNTranslationTools)."
+  },
+  {
+   "id": "systemnnn",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "gpk"
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "gtb"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "nnn"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "System-NNN: the engine ships .gpk+.gtb and .vpk+.vtb archive/index PAIRS (https://morkt.github.io/GARbro/supported.html), and its scripts are .nnn/.spt (https://github.com/arcusmaximus/VNTranslationTools). The paired extensions are required together, which is what makes the rule specific."
+  },
+  {
+   "id": "propeller",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mpk"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mgr"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Propeller / Stuff Script Engine: .mpk archives and .mgr graphics are propeller-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); scripts are .msc (https://github.com/arcusmaximus/VNTranslationTools)."
+  },
+  {
+   "id": "artemis",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "pfs"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mja"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Artemis Engine: .pfs archives (magic pf2/pf6/pf8, normally root.pfs) and .mja audio (MJA0) (https://morkt.github.io/GARbro/supported.html); scripts are .asb/.ast (https://github.com/arcusmaximus/VNTranslationTools)."
+  },
+  {
+   "id": "rugp",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "rio"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "rha"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "rUGP (age): .rio objects, .rha archives and .rip/.s5i images are rUGP-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "wolfrpg",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtensionDeep",
+       "value": "wolf",
+       "maxDepth": 1
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "dirExists",
+       "path": "Data/BasicData"
+      },
+      {
+       "type": "dirExists",
+       "path": "Data/MapData"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "WOLF RPG Editor: encrypted game archives are Data/*.wolf -- BasicData.wolf, MapData.wolf, Picture.wolf, System.wolf (https://github.com/Sinflower/WolfDec, https://github.com/Sinflower/UberWolf) -- hence the depth-1 search; unencrypted games keep the same layout as loose Data/BasicData + Data/MapData directories. Wine per the brief until a runtime exists."
+  },
+  {
+   "id": "lightvn",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "vndat"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mcdat"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Light.vn: .vndat and .mcdat are the engine's packed/encrypted resource files (https://github.com/kiraio-moe/Light.vnTools). The brief asks for a format census before any runtime work; this row only classifies."
+  },
+  {
+   "id": "kaguya",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "ari"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "message.dat"
+       ]
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "arc"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "KaGuYa: .arc archives come PAIRED with .ari indexes (magic WFL1), and the family also uses LIN2/LINK3/LINK5/LINK6/UF01 .arc variants (https://morkt.github.io/GARbro/supported.html); message.dat is its script file (https://github.com/arcusmaximus/VNTranslationTools). .ari is KaGuYa-only in GARbro's table, .arc alone is not, hence the pairing."
+  },
+  {
+   "id": "shsystem",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "hxp"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "SHSystem/ShSystem: .hxp archives (magic Him4/Him5/SHS6/SHS7) are SH System-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); scripts are .hst (https://github.com/arcusmaximus/VNTranslationTools)."
+  },
+  {
+   "id": "eushully",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "sys4ini.bin",
+        "sys3ini.bin"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "alf"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Eushully: sys4ini.bin / sys3ini.bin (magic S4IC/S3IC/S3IN) are the engine's fixed initialisation files, next to .alf archives and .agf images (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "fc-advwin32",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "mrg"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "F&C ADVWin32 lineage: .mrg archives (magic MRG), with .mcg images and .acd scripts, are F&C-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "entisgls",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "noa"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "eri"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "EntisGLS / ERISA: .noa archives and .eri/.mio media all carry the 'Entis\\x1a' magic and are Entis-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "exhibit",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "gyu"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "ExHIBIT: .gyu images (magic GYU\\x1a) are ExHIBIT-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). Its .grp archives (AiFS) share the extension with NeXAS's .grp, so only .gyu is used here."
+  },
+  {
+   "id": "favorite",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "hzc"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "FAVORITE's proprietary engine: .hzc media (magic hzc1) are Favorite-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). Its .bin archives have no magic and are far too generic to key on."
+  },
+  {
+   "id": "musica",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "paz"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Musica: .paz archives are Musica-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); scripts are .sc (https://github.com/arcusmaximus/VNTranslationTools)."
+  },
+  {
+   "id": "nexton",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "tgf"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "NEXTON (LikeC lineage): .tgf is NEXTON-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). The Nexton/Tactics .arc variant (magic TACTICS_ARC_FILE) is deliberately NOT used: .arc is shared by nineteen brands in that same table and the magic needs a fixed file name this row does not have."
+  },
+  {
    "id": "nitroplus",
    "detect": [
     {
@@ -978,6 +1479,37 @@
    ],
    "enginehost": null,
    "notes": "RAGS (Rapid Adventure Game System): a game IS a single .rag file, in either of the two documented container formats -- NRBF for early versions, the SDF database format for later ones (https://github.com/Kassy2048/rags2html). The same extension covers 2.x and 3.x, so this row does not split them."
+  },
+  {
+   "id": "gamemaker",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "data.win"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "game.unx",
+        "game.ios"
+       ]
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "GameMaker / GameMaker Studio: the runner's data file is data.win on Windows, game.unx on Linux and game.ios on macOS (https://tcrf.net/Help:Contents/Finding_Content/Game_Engines/GameMaker:_Studio). Brief section 11 puts this family on Wine/native by default -- there is no portable drop-in runner to prefer."
   },
   {
    "id": "tyranoscript",
