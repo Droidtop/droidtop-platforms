@@ -1,0 +1,8 @@
+{
+ "id": "j2me-ru-woesss-j2meloader-jl-mod",
+ "systemId": "j2me",
+ "label": "jl-mod",
+ "pkg": "ru.woesss.j2meloader",
+ "argumentsTemplate": "-n ru.woesss.j2meloader/ru.playsoftware.j2meloader.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

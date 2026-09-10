@@ -1,0 +1,10 @@
+{
+ "id": "androidgames",
+ "name": "Android Games",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "androidgames"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-symbian-eka2l1",
+ "systemId": "symbian",
+ "label": "EKA2L1 (Standalone)",
+ "pkg": "com.github.eka2l1",
+ "argumentsTemplate": "-n com.github.eka2l1/com.github.eka2l1.emu.EmulatorActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

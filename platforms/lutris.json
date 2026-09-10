@@ -1,0 +1,10 @@
+{
+ "id": "lutris",
+ "name": "Lutris Open Gaming Platform",
+ "extensions": [
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "lutris"
+}

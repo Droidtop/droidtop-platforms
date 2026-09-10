@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-tgcd-com-pceemu",
+ "systemId": "tgcd",
+ "label": "tgcd - com.PceEmu",
+ "pkg": "com.PceEmu",
+ "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

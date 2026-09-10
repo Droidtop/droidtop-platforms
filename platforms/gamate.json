@@ -1,0 +1,11 @@
+{
+ "id": "gamate",
+ "name": "Bit Corporation Gamate",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "gamate"
+}

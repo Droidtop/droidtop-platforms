@@ -1,0 +1,8 @@
+{
+ "id": "windows-com-micewine-emu-micewin",
+ "systemId": "windows",
+ "label": "MiceWin",
+ "pkg": "com.micewine.emu",
+ "argumentsTemplate": "-n com.micewine.emu/com.micewine.emu.activities.MainActivity -e exePath {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": true
+}

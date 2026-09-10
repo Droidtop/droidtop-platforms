@@ -1,0 +1,12 @@
+{
+ "id": "supervision",
+ "name": "Watara Supervision",
+ "extensions": [
+  "7z",
+  "bin",
+  "sv",
+  "zip"
+ ],
+ "retroArchCore": "potator",
+ "theme": "supervision"
+}

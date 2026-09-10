@@ -1,0 +1,8 @@
+{
+ "id": "esde-consolearcade-dolphin",
+ "systemId": "consolearcade",
+ "label": "Dolphin (Standalone)",
+ "pkg": "org.dolphinemu.dolphinemu",
+ "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

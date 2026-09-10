@@ -1,0 +1,12 @@
+{
+ "id": "scv",
+ "name": "Epoch Super Cassette Vision",
+ "extensions": [
+  "0",
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "scv"
+}

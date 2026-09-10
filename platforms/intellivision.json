@@ -1,0 +1,13 @@
+{
+ "id": "intellivision",
+ "name": "Mattel Electronics Intellivision",
+ "extensions": [
+  "7z",
+  "bin",
+  "int",
+  "rom",
+  "zip"
+ ],
+ "retroArchCore": "freeintv",
+ "theme": "intellivision"
+}

@@ -1,0 +1,13 @@
+{
+ "systemId": "laser310",
+ "name": "VTech Laser 310",
+ "files": [
+  {
+   "file": "bios/laser310.zip",
+   "md5": [
+    "42c8f9e6c2133ae0e953b89ccbbdb7e2",
+    "f7e5d9a3eb2b57bf5f4e2a4565318a8f"
+   ]
+  }
+ ]
+}

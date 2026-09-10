@@ -1,0 +1,8 @@
+{
+ "id": "psx-com-emulator-fpse64-fpse64",
+ "systemId": "psx",
+ "label": "FPse64",
+ "pkg": "com.emulator.fpse64",
+ "argumentsTemplate": "-n com.emulator.fpse64/.Main -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

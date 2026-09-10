@@ -1,0 +1,30 @@
+{
+ "systemId": "atari800",
+ "name": "Atari 800",
+ "files": [
+  {
+   "file": "bios/ATARIOSA.ROM",
+   "md5": [
+    "eb1f32f5d9f382db1bbfb8d7f9cb343a"
+   ]
+  },
+  {
+   "file": "bios/ATARIOSB.ROM",
+   "md5": [
+    "4177f386a3bac989a981d3fe3388cb6c"
+   ]
+  },
+  {
+   "file": "bios/ATARIXL.ROM",
+   "md5": [
+    "06daac977823773a3eea3422fd26a703"
+   ]
+  },
+  {
+   "file": "bios/ATARIBAS.ROM",
+   "md5": [
+    "0bac0c6a50104045d902df4503a4c30b"
+   ]
+  }
+ ]
+}

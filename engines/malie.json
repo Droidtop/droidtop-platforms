@@ -1,0 +1,41 @@
+{
+ "id": "malie",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "mgf"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "dzi"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "data.lib"
+     ]
+    },
+    {
+     "type": "fileHeadRegex",
+     "path": "data.lib",
+     "regex": "\\ALIB"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Malie: .mgf (MalieGF) images, .dzi, and .lib archives whose head magic is LIB/LIBP/LIBU (https://morkt.github.io/GARbro/supported.html). The .lib rule pairs the conventional data.lib name with that head magic, because a bare .lib extension would collide with ordinary native libraries."
+}

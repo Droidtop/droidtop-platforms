@@ -1,0 +1,13 @@
+{
+ "systemId": "tutor",
+ "name": "Tomy Tutor",
+ "files": [
+  {
+   "file": "bios/tutor.zip",
+   "md5": [
+    "196ba41dd1184fe754390534cc273116",
+    "5770834c10946ac2c3617504ba530884"
+   ]
+  }
+ ]
+}

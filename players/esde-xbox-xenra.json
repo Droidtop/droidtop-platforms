@@ -1,0 +1,8 @@
+{
+ "id": "esde-xbox-xenra",
+ "systemId": "xbox",
+ "label": "Xenra (Standalone)",
+ "pkg": "Ali.Xanite.green",
+ "argumentsTemplate": "-n Ali.Xanite.green/Ali.Xanite.LauncherActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

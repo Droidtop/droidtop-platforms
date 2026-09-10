@@ -1,0 +1,12 @@
+{
+ "systemId": "astrocade",
+ "name": "Bally Astrocade",
+ "files": [
+  {
+   "file": "bios/astrocde.zip",
+   "md5": [
+    "7d25a26e5c4841b364cfe6b1735eaf03"
+   ]
+  }
+ ]
+}

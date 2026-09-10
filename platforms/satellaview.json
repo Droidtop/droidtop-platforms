@@ -1,0 +1,17 @@
+{
+ "id": "satellaview",
+ "name": "Nintendo Satellaview",
+ "extensions": [
+  "7z",
+  "bml",
+  "bs",
+  "fig",
+  "sfc",
+  "smc",
+  "st",
+  "swc",
+  "zip"
+ ],
+ "retroArchCore": "snes9x",
+ "theme": "satellaview"
+}

@@ -1,0 +1,29 @@
+{
+ "id": "psx",
+ "name": "Sony PlayStation",
+ "extensions": [
+  "7z",
+  "bin",
+  "cbn",
+  "ccd",
+  "chd",
+  "cue",
+  "ecm",
+  "exe",
+  "img",
+  "iso",
+  "m3u",
+  "mdf",
+  "mds",
+  "minipsf",
+  "pbp",
+  "psexe",
+  "psf",
+  "toc",
+  "z",
+  "zip",
+  "znx"
+ ],
+ "retroArchCore": "mednafen_psx",
+ "theme": "psx"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "chailove",
+ "name": "ChaiLove Game Engine",
+ "extensions": [
+  "7z",
+  "chai",
+  "chailove",
+  "zip"
+ ],
+ "retroArchCore": "chailove",
+ "theme": "chailove"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "pico8-me-dt2dev-infinity-infinity-p8-player",
+ "systemId": "pico8",
+ "label": "Infinity P8 Player",
+ "pkg": "me.dt2dev.infinity",
+ "argumentsTemplate": "-n me.dt2dev.infinity/me.dt2dev.infinity.SchemeActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": true
+}

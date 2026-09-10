@@ -1,0 +1,12 @@
+{
+ "systemId": "supergrafx",
+ "name": "Supergrafx",
+ "files": [
+  {
+   "file": "bios/syscard3.pce",
+   "md5": [
+    "38179df8f4ac870017db21ebcbf53114"
+   ]
+  }
+ ]
+}

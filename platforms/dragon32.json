@@ -1,0 +1,14 @@
+{
+ "id": "dragon32",
+ "name": "Dragon Data Dragon 32",
+ "extensions": [
+  "7z",
+  "cas",
+  "ccc",
+  "dsk",
+  "rom",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "dragon32"
+}

@@ -1,0 +1,33 @@
+{
+ "id": "renpy-fallback",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "rpa",
+     "maxDepth": 2
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "rpyc",
+     "maxDepth": 2
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "renpy",
+  "context": "standard"
+ },
+ "notes": "Compiled Ren'Py game files (.rpa archives / .rpyc scripts, normally under game/, hence the depth-2 search) for distributions shipping without the renpy/ runtime dir - enginehost's existing fallback. A separate LATE row rather than part of the renpy row so the cheap runtime-dir check stays first and every more specific engine above outranks this looser evidence."
+}

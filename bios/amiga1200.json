@@ -1,0 +1,54 @@
+{
+ "systemId": "amiga1200",
+ "name": "Amiga 1200",
+ "files": [
+  {
+   "file": "bios/amiga/kick39106.A1200",
+   "md5": [
+    "b7cc148386aa631136f510cd29e42fc3"
+   ]
+  },
+  {
+   "file": "bios/amiga/kick40068.A1200",
+   "md5": [
+    "646773759326fbac3b2311fd8c8793ee"
+   ]
+  },
+  {
+   "file": "bios/amiga/kick40068.A4000",
+   "md5": [
+    "9bdedde6a4f33555b4a270c8ca53297d"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-300-a1200.rom",
+   "md5": [
+    "b7cc148386aa631136f510cd29e42fc3"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-310-a1200.rom",
+   "md5": [
+    "646773759326fbac3b2311fd8c8793ee"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-310-a3000.rom",
+   "md5": [
+    "413590e50098a056cfec418d3df0212d"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-310-a4000.rom",
+   "md5": [
+    "9bdedde6a4f33555b4a270c8ca53297d"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-310.rom",
+   "md5": [
+    "730888fb1bd9a3606d51f772ed136528"
+   ]
+  }
+ ]
+}

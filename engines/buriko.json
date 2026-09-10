@@ -1,0 +1,40 @@
+{
+ "id": "buriko",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "BGI.gdb"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "BGI.hvl"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "data01000.arc"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "buriko",
+  "context": "compiled-script-v1"
+ },
+ "notes": "BGI.gdb/BGI.hvl, or the data01000.arc archive-set head enginehost already keyed on."
+}

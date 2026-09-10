@@ -1,0 +1,14 @@
+{
+ "id": "xbox360",
+ "name": "Microsoft Xbox 360",
+ "extensions": [
+  "",
+  "desktop",
+  "iso",
+  "sh",
+  "xex",
+  "zar"
+ ],
+ "retroArchCore": null,
+ "theme": "xbox360"
+}

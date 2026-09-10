@@ -1,0 +1,30 @@
+{
+ "systemId": "mc10",
+ "name": "Tandy MC-10",
+ "files": [
+  {
+   "file": "bios/mc10.zip",
+   "md5": [
+    "f29e94ff36577ffb6a787959e45bfe85"
+   ]
+  },
+  {
+   "file": "bios/alice.zip",
+   "md5": [
+    "78af465c2f31cf4e05dec1efda77da01"
+   ]
+  },
+  {
+   "file": "bios/xroar/mc10.rom",
+   "md5": [
+    "f29e94ff36577ffb6a787959e45bfe85"
+   ]
+  },
+  {
+   "file": "bios/xroar/alice.rom",
+   "md5": [
+    "78af465c2f31cf4e05dec1efda77da01"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "systemId": "naomi",
+ "name": "Naomi",
+ "files": [
+  {
+   "file": "bios/dc/naomi.zip",
+   "md5": [
+    "eb4099aeb42ef089cfe94f8fe95e51f6"
+   ]
+  }
+ ]
+}

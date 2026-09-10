@@ -1,0 +1,8 @@
+{
+ "id": "esde-saturn-yabasanshiro-2",
+ "systemId": "saturn",
+ "label": "Yaba Sanshiro 2 (Standalone)",
+ "pkg": "org.devmiyax.yabasanshioro2.pro",
+ "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
+ "killPackageProcesses": false
+}

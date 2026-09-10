@@ -1,0 +1,8 @@
+{
+ "id": "dreamcast-io-recompiled-redream-io-recompiled-redream",
+ "systemId": "dreamcast",
+ "label": "io.recompiled.redream",
+ "pkg": "io.recompiled.redream",
+ "argumentsTemplate": "-n io.recompiled.redream/.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

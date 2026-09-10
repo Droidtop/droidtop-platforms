@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-pspminis-org-ppsspp-ppsspp",
+ "systemId": "pspminis",
+ "label": "pspminis - PPSSPP",
+ "pkg": "org.ppsspp.ppsspp",
+ "argumentsTemplate": "-n org.ppsspp.ppsspp/.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri} -t application/octet-stream --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": false
+}

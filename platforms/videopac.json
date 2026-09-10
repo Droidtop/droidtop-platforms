@@ -1,0 +1,11 @@
+{
+ "id": "videopac",
+ "name": "Philips Videopac G7000",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "o2em",
+ "theme": "videopac"
+}

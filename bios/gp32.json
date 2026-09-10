@@ -1,0 +1,23 @@
+{
+ "systemId": "gp32",
+ "name": "GamePark GP32",
+ "files": [
+  {
+   "file": "bios/gp32.zip",
+   "md5": [
+    "e64ad881b5e1d86547f2edc3034946d9",
+    "f78092f15f6ffe15975901ee4e92c680",
+    "19021cc891119c0872d46e87fc0ffe35",
+    "1e4d3216719acea231b81dfcf6069aef",
+    "cac4b56c0db80922cae75403faef40af",
+    "d4af2bc352bdaf4972ea40902feda114"
+   ]
+  },
+  {
+   "file": "bios/gp32166m.bin",
+   "md5": [
+    "f78092f15f6ffe15975901ee4e92c680"
+   ]
+  }
+ ]
+}

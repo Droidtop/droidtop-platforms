@@ -1,0 +1,23 @@
+{
+ "systemId": "ti99",
+ "name": "Texas Instruments TI-99",
+ "files": [
+  {
+   "file": "bios/ti99_4a.zip",
+   "md5": [
+    "9bb51dfab49b9a7cf832cc1fb6f203e6",
+    "7f1864c3dac31c86e2ae6ce43ccead07",
+    "a1f77a07243a334e13509a89bff944f2",
+    "6f495eef767b3f2821a2ec32d0047891",
+    "0dcb961cf84c69b2171a565427c7c6c7"
+   ]
+  },
+  {
+   "file": "bios/ti99_speech.zip",
+   "md5": [
+    "491c1195f6345cb6b725096b69d81ec9",
+    "206daf498ac5d0141de1d47d38afd899"
+   ]
+  }
+ ]
+}

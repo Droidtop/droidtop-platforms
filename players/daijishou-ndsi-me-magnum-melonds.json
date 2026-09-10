@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ndsi-me-magnum-melonds",
+ "systemId": "ndsi",
+ "label": "ndsi - MelonDS",
+ "pkg": "me.magnum.melonds",
+ "argumentsTemplate": "-a me.magnum.melonds.LAUNCH_ROM -n me.magnum.melonds/.ui.emulator.EmulatorActivity -e uri {file.uri}",
+ "killPackageProcesses": false
+}

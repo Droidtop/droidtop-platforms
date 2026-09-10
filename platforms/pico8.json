@@ -1,0 +1,10 @@
+{
+ "id": "pico8",
+ "name": "PICO-8 Fantasy Console",
+ "extensions": [
+  "p8",
+  "png"
+ ],
+ "retroArchCore": "retro8",
+ "theme": "pico8"
+}

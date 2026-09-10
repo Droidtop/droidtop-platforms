@@ -1,0 +1,18 @@
+{
+ "id": "mame",
+ "name": "Multiple Arcade Machine Emulator",
+ "extensions": [
+  "7z",
+  "acgame",
+  "arcadedef",
+  "cmd",
+  "desktop",
+  "gam",
+  "lindbergh",
+  "neo",
+  "sh",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "mame"
+}

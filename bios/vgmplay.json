@@ -1,0 +1,24 @@
+{
+ "systemId": "vgmplay",
+ "name": "Video Game Music Player",
+ "files": [
+  {
+   "file": "bios/qsound.zip",
+   "md5": [
+    "108b113a596e800a02fece73f784eeb0"
+   ]
+  },
+  {
+   "file": "bios/ym2413.zip",
+   "md5": [
+    "96c11a92992bdff7f7e9d98a52621e1f"
+   ]
+  },
+  {
+   "file": "bios/ym2608.zip",
+   "md5": [
+    "8740932cda05e518a9955f1d08d6786f"
+   ]
+  }
+ ]
+}

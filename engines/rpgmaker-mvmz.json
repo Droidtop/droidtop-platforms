@@ -1,0 +1,39 @@
+{
+ "id": "rpgmaker-mvmz",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "js/main.js"
+    },
+    {
+     "type": "fileExists",
+     "path": "index.html"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "www/js/main.js"
+    },
+    {
+     "type": "fileExists",
+     "path": "www/index.html"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX",
+  "LINUX_CONTAINER"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": null
+ },
+ "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it). An MV/MZ web runtime whose core script is missing or renamed: the family is proven, the generation is not - context null routes to enginehost's CONFIGURE screen where the user picks mv or mz."
+}

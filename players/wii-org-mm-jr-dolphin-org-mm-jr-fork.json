@@ -1,0 +1,8 @@
+{
+ "id": "wii-org-mm-jr-dolphin-org-mm-jr-fork",
+ "systemId": "wii",
+ "label": "Dolphin org.mm.jr fork",
+ "pkg": "org.mm.jr",
+ "argumentsTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
+ "killPackageProcesses": false
+}

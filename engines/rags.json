@@ -1,0 +1,26 @@
+{
+ "id": "rags",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "rag"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ragx"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "RAGS (Rapid Adventure Game System): a game IS a single .rag file, in either of the two documented container formats -- NRBF for early versions, the SDF database format for later ones (https://github.com/Kassy2048/rags2html). The same extension covers 2.x and 3.x, so this row does not split them."
+}

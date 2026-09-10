@@ -1,0 +1,8 @@
+{
+ "id": "esde-supervision-mame4droid-current",
+ "systemId": "supervision",
+ "label": "MAME4droid Current (Standalone)",
+ "pkg": "com.seleuco.mame4d2024",
+ "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d svision",
+ "killPackageProcesses": false
+}

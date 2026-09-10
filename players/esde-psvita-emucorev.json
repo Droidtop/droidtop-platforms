@@ -1,0 +1,8 @@
+{
+ "id": "esde-psvita-emucorev",
+ "systemId": "psvita",
+ "label": "EmuCoreV (Standalone)",
+ "pkg": "com.sbro.emucorev",
+ "argumentsTemplate": "-n com.sbro.emucorev/com.sbro.emucorev.core.vita.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
+ "killPackageProcesses": false
+}

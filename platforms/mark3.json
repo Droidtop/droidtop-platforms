@@ -1,0 +1,27 @@
+{
+ "id": "mark3",
+ "name": "Sega Mark III",
+ "extensions": [
+  "68k",
+  "7z",
+  "bin",
+  "bms",
+  "chd",
+  "col",
+  "cue",
+  "gen",
+  "gg",
+  "iso",
+  "m3u",
+  "md",
+  "mdx",
+  "rom",
+  "sg",
+  "sgd",
+  "smd",
+  "sms",
+  "zip"
+ ],
+ "retroArchCore": "genesis_plus_gx",
+ "theme": "mark3"
+}

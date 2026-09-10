@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ndsi-com-dsemu-drastic",
+ "systemId": "ndsi",
+ "label": "ndsi - Drastic",
+ "pkg": "com.dsemu.drastic",
+ "argumentsTemplate": "-n com.dsemu.drastic/.DraSticActivity -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

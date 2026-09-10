@@ -1,0 +1,42 @@
+{
+ "id": "nwjs-electron",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "resources/app.asar"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "resources/app/package.json"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "package.nw"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "package.nw"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Generic NW.js / Electron-packaged HTML payload, the brief's section 7 FALLBACK: Electron ships the app as resources/app.asar (or an unpacked resources/app/) (https://www.electronjs.org/docs/latest/tutorial/asar-archives), NW.js as a package.nw folder or zip beside nw.exe (https://nwjs.readthedocs.io/en/latest/For%20Users/Package%20and%20Distribute/). Deliberately LAST of the web rows: every known child engine above -- RPG Maker MV/MZ, Tyrano, Visual Novel Maker, Construct -- must be classified by its own payload first, and nw.exe/electron.exe is never treated as the engine."
+}

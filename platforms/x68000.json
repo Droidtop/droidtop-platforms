@@ -1,0 +1,21 @@
+{
+ "id": "x68000",
+ "name": "Sharp X68000",
+ "extensions": [
+  "2hd",
+  "7z",
+  "88d",
+  "cmd",
+  "d88",
+  "dim",
+  "dup",
+  "hdf",
+  "hdm",
+  "img",
+  "m3u",
+  "xdf",
+  "zip"
+ ],
+ "retroArchCore": "px68k",
+ "theme": "x68000"
+}

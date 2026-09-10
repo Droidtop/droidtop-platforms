@@ -1,0 +1,29 @@
+{
+ "id": "eushully",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "sys4ini.bin",
+      "sys3ini.bin"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "alf"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Eushully: sys4ini.bin / sys3ini.bin (magic S4IC/S3IC/S3IN) are the engine's fixed initialisation files, next to .alf archives and .agf images (https://morkt.github.io/GARbro/supported.html)."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "ps4",
+ "name": "Sony PlayStation 4",
+ "extensions": [
+  "bin",
+  "desktop",
+  "ps4"
+ ],
+ "retroArchCore": null,
+ "theme": "ps4"
+}

@@ -1,0 +1,40 @@
+{
+ "id": "majiro",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "majiro.env"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "update.arc",
+      "fastdata.arc",
+      "scenario.arc"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "mjo"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Majiro: the engine boots by searching update*.arc/fastdata*.arc for majiro.env, and its archives use the fixed names update/fastdata/scenario/data/slowdata/stream/voice.arc; .mjo are the compiled scripts (https://github.com/AtomCrafty/MajiroTools). Archive magic is MajiroArcV1.000-V3.000 (https://morkt.github.io/GARbro/supported.html) but the archive file name is not fixed enough for a head-regex path, so name/extension evidence is used."
+}

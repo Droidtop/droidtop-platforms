@@ -1,0 +1,32 @@
+{
+ "id": "ai5win",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "ai5win.exe"
+     ]
+    },
+    {
+     "type": "anyFileExtension",
+     "value": "arc"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "gcc"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "AI5WIN (elf/Silky's lineage): AI5WIN.exe is the engine's FIXED runtime executable name -- hook tables key on exactly that process name (https://github.com/HIllya51/LunaTranslator/blob/main/src/NativeImpl/LunaHook/LunaHook/engine32/Elf.cpp) -- paired with the engine's .arc archives, per the brief's rule that an .exe name is never evidence on its own. .gcc images (G24n/G24m/R24n/R24m) are AI5WIN-only in GARbro (https://morkt.github.io/GARbro/supported.html)."
+}

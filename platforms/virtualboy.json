@@ -1,0 +1,13 @@
+{
+ "id": "virtualboy",
+ "name": "Nintendo Virtual Boy",
+ "extensions": [
+  "7z",
+  "bin",
+  "vb",
+  "vboy",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_vb",
+ "theme": "virtualboy"
+}

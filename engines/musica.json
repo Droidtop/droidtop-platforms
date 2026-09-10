@@ -1,0 +1,18 @@
+{
+ "id": "musica",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "paz"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Musica: .paz archives are Musica-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); scripts are .sc (https://github.com/arcusmaximus/VNTranslationTools)."
+}

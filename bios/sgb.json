@@ -1,0 +1,30 @@
+{
+ "systemId": "sgb",
+ "name": "Super Game Boy",
+ "files": [
+  {
+   "file": "bios/sgb_boot.bin",
+   "md5": [
+    "d574d4f9c12f305074798f54c091a8b4"
+   ]
+  },
+  {
+   "file": "bios/sgb2_boot.bin",
+   "md5": [
+    "e0430bca9925fb9882148fd2dc2418c1"
+   ]
+  },
+  {
+   "file": "bios/SGB1.sfc",
+   "md5": [
+    "b15ddb15721c657d82c5bab6db982ee9"
+   ]
+  },
+  {
+   "file": "bios/SGB2.sfc",
+   "md5": [
+    "8ecd73eb4edf7ed7e81aef1be80031d5"
+   ]
+  }
+ ]
+}

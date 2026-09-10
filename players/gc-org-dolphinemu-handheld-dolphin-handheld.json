@@ -1,0 +1,8 @@
+{
+ "id": "gc-org-dolphinemu-handheld-dolphin-handheld",
+ "systemId": "gc",
+ "label": "Dolphin handheld",
+ "pkg": "org.dolphinemu.handheld",
+ "argumentsTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

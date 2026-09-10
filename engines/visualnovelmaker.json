@@ -1,0 +1,34 @@
+{
+ "id": "visualnovelmaker",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "index.html"
+    },
+    {
+     "type": "fileExists",
+     "path": "package.json"
+    },
+    {
+     "type": "fileExists",
+     "path": "signature"
+    },
+    {
+     "type": "dirExists",
+     "path": "resources"
+    },
+    {
+     "type": "dirExists",
+     "path": "data"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Visual Novel Maker: an exported package is Game.exe + index.html + package.json + icon.png + a 'signature' file + data/ and resources/ (http://asset.visualnovelmaker.com/help/Create_Game_Package.htm). All five markers are required together because the shell itself is plain NW.js/Electron; the payload is what identifies the engine, hence this row sits before the generic web-shell row."
+}

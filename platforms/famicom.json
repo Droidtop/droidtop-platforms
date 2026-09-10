@@ -1,0 +1,15 @@
+{
+ "id": "famicom",
+ "name": "Nintendo Family Computer",
+ "extensions": [
+  "3dsen",
+  "7z",
+  "fds",
+  "nes",
+  "unf",
+  "unif",
+  "zip"
+ ],
+ "retroArchCore": "mesen",
+ "theme": "famicom"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-ngpc-ngp-emu",
+ "systemId": "ngpc",
+ "label": "NGP.emu (Standalone)",
+ "pkg": "com.explusalpha.NgpEmu",
+ "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-pspminis-org-ppsspp-ppsspplegacy",
+ "systemId": "pspminis",
+ "label": "pspminis - PPSSPP Legacy",
+ "pkg": "org.ppsspp.ppsspplegacy",
+ "argumentsTemplate": "-n org.ppsspp.ppsspplegacy/org.ppsspp.ppsspp.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri} -t application/octet-stream --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": false
+}

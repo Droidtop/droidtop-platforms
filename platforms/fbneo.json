@@ -1,0 +1,10 @@
+{
+ "id": "fbneo",
+ "name": "FinalBurn Neo",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "fbneo",
+ "theme": "fbneo"
+}

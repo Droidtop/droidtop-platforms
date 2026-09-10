@@ -1,0 +1,12 @@
+{
+ "systemId": "gsplus",
+ "name": "Apple 2 GS",
+ "files": [
+  {
+   "file": "bios/ROM1",
+   "md5": [
+    "20a0334c447cb069a040ae5be1d938df"
+   ]
+  }
+ ]
+}

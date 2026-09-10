@@ -1,0 +1,8 @@
+{
+ "id": "ngpc-com-explusalpha-ngpemu-ngp-emu",
+ "systemId": "ngpc",
+ "label": "NGP.EMU",
+ "pkg": "com.explusalpha.NgpEmu",
+ "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.path}",
+ "killPackageProcesses": false
+}

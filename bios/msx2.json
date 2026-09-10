@@ -1,0 +1,18 @@
+{
+ "systemId": "msx2",
+ "name": "MSX2",
+ "files": [
+  {
+   "file": "bios/MSX2.ROM",
+   "md5": [
+    "ec3a01c91f24fbddcbcab0ad301bc9ef"
+   ]
+  },
+  {
+   "file": "bios/MSX2EXT.ROM",
+   "md5": [
+    "2183c2aff17cf4297bdb496de78c2e8a"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "mame-com-seleuco-mame4d2024-com-seleuco-mame4droid-2024",
+ "systemId": "mame",
+ "label": "com.seleuco.mame4droid 2024",
+ "pkg": "com.seleuco.mame4d2024",
+ "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ndsi-me-magnum-melonds-nightly",
+ "systemId": "ndsi",
+ "label": "ndsi - MelonDS Nightly",
+ "pkg": "me.magnum.melonds.nightly",
+ "argumentsTemplate": "-a me.magnum.melonds.nightly.LAUNCH_ROM -n me.magnum.melonds.nightly/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
+ "killPackageProcesses": true
+}

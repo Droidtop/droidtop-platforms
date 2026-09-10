@@ -1,0 +1,8 @@
+{
+ "id": "atomiswave-com-reicast-emulator-com-reicast-emulator",
+ "systemId": "atomiswave",
+ "label": "com.reicast.emulator",
+ "pkg": "com.reicast.emulator",
+ "argumentsTemplate": "-n com.reicast.emulator/.MainActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,12 @@
+{
+ "systemId": "gamepock",
+ "name": "Epoch Game Pocket Computer",
+ "files": [
+  {
+   "file": "bios/gamepock.zip",
+   "md5": [
+    "a0dd595eafb407a6a4b4ed800005a394"
+   ]
+  }
+ ]
+}

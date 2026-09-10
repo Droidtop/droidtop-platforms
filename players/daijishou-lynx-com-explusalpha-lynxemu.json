@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-lynx-com-explusalpha-lynxemu",
+ "systemId": "lynx",
+ "label": "lynx - com.explusalpha.LynxEmu",
+ "pkg": "com.explusalpha.LynxEmu",
+ "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

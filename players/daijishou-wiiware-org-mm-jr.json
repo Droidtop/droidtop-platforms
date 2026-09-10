@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-wiiware-org-mm-jr",
+ "systemId": "wiiware",
+ "label": "wiiware - Dolphin Dolphin (MMJR)",
+ "pkg": "org.mm.jr",
+ "argumentsTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
+ "killPackageProcesses": false
+}

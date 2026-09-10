@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-videos-com-mxtech-videoplayer-pro",
+ "systemId": "videos",
+ "label": "videos - MXPlayer Pro",
+ "pkg": "com.mxtech.videoplayer.pro",
+ "argumentsTemplate": "-n com.mxtech.videoplayer.pro/.ActivityScreen -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

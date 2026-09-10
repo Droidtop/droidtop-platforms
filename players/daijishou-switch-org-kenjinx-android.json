@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-switch-org-kenjinx-android",
+ "systemId": "switch",
+ "label": "switch - Kenji-NX",
+ "pkg": "org.kenjinx.android",
+ "argumentsTemplate": "-n org.kenjinx.android/.MainActivity -a org.kenjinx.android.LAUNCH_GAME -e bootPath {file.uri}",
+ "killPackageProcesses": false
+}

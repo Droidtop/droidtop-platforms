@@ -1,0 +1,8 @@
+{
+ "id": "gba-it-dbtecno-pizzaboygbapro-pizza-boy-gba-pro",
+ "systemId": "gba",
+ "label": "Pizza Boy GBA Pro",
+ "pkg": "it.dbtecno.pizzaboygbapro",
+ "argumentsTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,12 @@
+{
+ "systemId": "neogeo",
+ "name": "NeoGeo",
+ "files": [
+  {
+   "file": "bios/neogeo.zip",
+   "md5": [
+    "dffb72f116d36d025068b23970a4f6df"
+   ]
+  }
+ ]
+}

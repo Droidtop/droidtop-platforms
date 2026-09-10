@@ -1,0 +1,34 @@
+{
+ "id": "tyranoscript",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "tyrano"
+    },
+    {
+     "type": "fileExists",
+     "path": "data/system/Config.tjs"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "tyrano"
+    },
+    {
+     "type": "dirExists",
+     "path": "data/scenario"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "TyranoScript/TyranoBuilder: a game is index.html + the tyrano/ engine folder + data/ holding system/Config.tjs and scenario/*.ks (https://tyranoscript.com/usage/tutorial/ready_v5, https://github.com/ShikemokuMK/tyranoscript). Both conditions required so a KiriKiri Config.tjs cannot match. Ordered before the generic NW.js/Electron and html rows."
+}

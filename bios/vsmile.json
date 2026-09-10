@@ -1,0 +1,14 @@
+{
+ "systemId": "vsmile",
+ "name": "VTech V.Smile",
+ "files": [
+  {
+   "file": "bios/vsmile.zip",
+   "md5": [
+    "851ff77a89ec3f4f2793eb4aede30e5f",
+    "f41fcc19ebe1e90fa359cd0df6293fab",
+    "11e59253c578c8f16ea2375ec398e4e9"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "megacdjp",
+ "name": "Sega Mega-CD",
+ "extensions": [
+  "68k",
+  "7z",
+  "bin",
+  "bms",
+  "chd",
+  "cue",
+  "gen",
+  "gg",
+  "iso",
+  "m3u",
+  "md",
+  "mdx",
+  "sg",
+  "sgd",
+  "smd",
+  "sms",
+  "zip"
+ ],
+ "retroArchCore": "genesis_plus_gx",
+ "theme": "megacdjp"
+}

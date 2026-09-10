@@ -1,0 +1,8 @@
+{
+ "id": "switch-org-sudachi-sudachi-emu-ea-sudachi",
+ "systemId": "switch",
+ "label": "Sudachi",
+ "pkg": "org.sudachi.sudachi_emu.ea",
+ "argumentsTemplate": "-n org.sudachi.sudachi_emu.ea/org.sudachi.sudachi_emu.activities.EmulationActivity -a android.nfc.action.TECH_DISCOVERED -d {file.uri}",
+ "killPackageProcesses": false
+}

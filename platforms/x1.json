@@ -1,0 +1,21 @@
+{
+ "id": "x1",
+ "name": "Sharp X1",
+ "extensions": [
+  "2d",
+  "2hd",
+  "7z",
+  "88d",
+  "cmd",
+  "d88",
+  "dup",
+  "dx1",
+  "hdm",
+  "tap",
+  "tfd",
+  "xdf",
+  "zip"
+ ],
+ "retroArchCore": "x1",
+ "theme": "x1"
+}

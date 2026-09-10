@@ -1,0 +1,19 @@
+{
+ "id": "pcenginecd",
+ "name": "NEC PC Engine CD",
+ "extensions": [
+  "7z",
+  "ccd",
+  "chd",
+  "cue",
+  "img",
+  "iso",
+  "m3u",
+  "pce",
+  "sgx",
+  "toc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_pce",
+ "theme": "pcenginecd"
+}

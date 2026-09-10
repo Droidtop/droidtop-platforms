@@ -1,0 +1,8 @@
+{
+ "id": "esde-psvita-vita3k",
+ "systemId": "psvita",
+ "label": "Vita3K (Standalone)",
+ "pkg": "org.vita3k.emulator",
+ "argumentsTemplate": "-n org.vita3k.emulator/org.vita3k.emulator.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "ps2-xyz-aethersx2-custom-aethersx2-turnip",
+ "systemId": "ps2",
+ "label": "Aethersx2 Turnip",
+ "pkg": "xyz.aethersx2.custom",
+ "argumentsTemplate": "-n xyz.aethersx2.custom/.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

@@ -1,0 +1,18 @@
+{
+ "systemId": "supracan",
+ "name": "Supr'A'can",
+ "files": [
+  {
+   "file": "bios/supracan.zip",
+   "md5": [
+    "53c4343e062bb3b337370bbb58e64d16"
+   ]
+  },
+  {
+   "file": "bios/umc6650.zip",
+   "md5": [
+    "da6cebe6b22a91a34a67074adbbec3a3"
+   ]
+  }
+ ]
+}

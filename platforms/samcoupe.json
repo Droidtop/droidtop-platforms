@@ -1,0 +1,14 @@
+{
+ "id": "samcoupe",
+ "name": "MGT SAM Coupé",
+ "extensions": [
+  "7z",
+  "dsk",
+  "mgt",
+  "sad",
+  "sbt",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "samcoupe"
+}

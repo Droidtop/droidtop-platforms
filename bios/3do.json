@@ -1,0 +1,24 @@
+{
+ "systemId": "3do",
+ "name": "3DO",
+ "files": [
+  {
+   "file": "bios/panafz1.bin",
+   "md5": [
+    "f47264dd47fe30f73ab3c010015c155b"
+   ]
+  },
+  {
+   "file": "bios/panafz10.bin",
+   "md5": [
+    "51f2f43ae2f3508a14d9f56597e2d3ce"
+   ]
+  },
+  {
+   "file": "bios/goldstar.bin",
+   "md5": [
+    "8639fd5e549bd6238cfee79e3e749114"
+   ]
+  }
+ ]
+}

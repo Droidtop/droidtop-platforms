@@ -1,0 +1,8 @@
+{
+ "id": "esde-vpinball-visual-pinball",
+ "systemId": "vpinball",
+ "label": "Visual Pinball (Standalone)",
+ "pkg": "org.vpinball.vpinball_bgfx",
+ "argumentsTemplate": "-n org.vpinball.vpinball_bgfx/org.vpinball.app.VPinballActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

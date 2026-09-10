@@ -1,0 +1,8 @@
+{
+ "id": "esde-ports-starboard",
+ "systemId": "ports",
+ "label": "Starboard (Standalone)",
+ "pkg": "org.force9.starboard",
+ "argumentsTemplate": "-n org.force9.starboard/org.force9.starboard.ui.game.GameActivity -e port_file {file.path}",
+ "killPackageProcesses": false
+}

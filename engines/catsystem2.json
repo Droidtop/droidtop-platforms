@@ -1,0 +1,30 @@
+{
+ "id": "catsystem2",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "cs2conf.dll"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "cst"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "catsystem2",
+  "context": "cst"
+ },
+ "notes": "cs2conf.dll, or a loose .cst scene script (enginehost's marker)."
+}

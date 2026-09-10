@@ -1,0 +1,8 @@
+{
+ "id": "j2me-ru-playsoftware-j2meloader-ru-playsoftware-j2meloader",
+ "systemId": "j2me",
+ "label": "ru.playsoftware.j2meloader",
+ "pkg": "ru.playsoftware.j2meloader",
+ "argumentsTemplate": "-n ru.playsoftware.j2meloader/ru.playsoftware.j2meloader.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

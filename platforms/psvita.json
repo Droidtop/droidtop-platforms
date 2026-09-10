@@ -1,0 +1,9 @@
+{
+ "id": "psvita",
+ "name": "Sony PlayStation Vita",
+ "extensions": [
+  "psvita"
+ ],
+ "retroArchCore": null,
+ "theme": "psvita"
+}

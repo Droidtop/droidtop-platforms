@@ -1,0 +1,19 @@
+{
+ "id": "flash-swf",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "builtin",
+     "name": "swf"
+    }
+   ]
+  }
+ ],
+ "strategies": [],
+ "enginehost": {
+  "family": "flash_air",
+  "context": "swf"
+ },
+ "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it - plain .swf is deliberately droidtop's players-database path). The builtin probe checks root .swf files for a real FWS/CWS/ZWS header. Last on purpose: a stray .swf asset inside any richer game tree must never outrank the real engine."
+}

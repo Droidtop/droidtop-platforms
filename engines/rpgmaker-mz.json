@@ -1,0 +1,30 @@
+{
+ "id": "rpgmaker-mz",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "js/rmmz_core.js"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "www/js/rmmz_core.js"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX",
+  "LINUX_CONTAINER"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": "mz"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-openbor-openbor",
+ "systemId": "openbor",
+ "label": "OpenBOR (Standalone)",
+ "pkg": "org.openbor.engine",
+ "argumentsTemplate": "-n org.openbor.engine/org.openbor.engine.GameActivity -a android.intent.action.MAIN",
+ "killPackageProcesses": false
+}

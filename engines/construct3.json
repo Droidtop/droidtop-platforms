@@ -1,0 +1,26 @@
+{
+ "id": "construct3",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "scripts/c3runtime.js"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "c3runtime.js"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Construct 3: c3runtime.js is the fixed exported-runtime file name, normally under scripts/ (https://www.construct.net/en/make-games/manuals/construct-3/overview/publishing-projects). Ordered before the generic web rows."
+}

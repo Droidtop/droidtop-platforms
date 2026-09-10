@@ -1,0 +1,39 @@
+{
+ "id": "rpgmaker-xp",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameContains",
+     "value": ".rgssad"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "Game.rxproj"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileHeadRegex",
+     "path": "Game.ini",
+     "regex": "Library\\s*=\\s*.*RGSS1\\d\\d"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": "xp"
+ },
+ "notes": "RGSS1 line: .rgssad archive, Game.rxproj project marker, or Game.ini Library=RGSS1xx."
+}

@@ -1,0 +1,18 @@
+{
+ "systemId": "x68000",
+ "name": "Sharp x68000",
+ "files": [
+  {
+   "file": "bios/keropi/iplrom.dat",
+   "md5": [
+    "7fd4caabac1d9169e289f0f7bbf71d8e"
+   ]
+  },
+  {
+   "file": "bios/keropi/cgrom.dat",
+   "md5": [
+    "cb0a5cfcf7247a7eab74bb2716260269"
+   ]
+  }
+ ]
+}

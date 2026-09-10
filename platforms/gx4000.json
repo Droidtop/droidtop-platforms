@@ -1,0 +1,20 @@
+{
+ "id": "gx4000",
+ "name": "Amstrad GX4000",
+ "extensions": [
+  "7z",
+  "bin",
+  "cdt",
+  "cpr",
+  "dsk",
+  "kcr",
+  "m3u",
+  "sna",
+  "tap",
+  "tar",
+  "voc",
+  "zip"
+ ],
+ "retroArchCore": "cap32",
+ "theme": "gx4000"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-j2me-jl-mod",
+ "systemId": "j2me",
+ "label": "JL-Mod (Standalone)",
+ "pkg": "ru.woesss.j2meloader",
+ "argumentsTemplate": "-n ru.woesss.j2meloader/ru.playsoftware.j2meloader.MainActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

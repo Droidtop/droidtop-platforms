@@ -1,0 +1,10 @@
+{
+ "systemId": "pv2000",
+ "name": "Casio PV-2000",
+ "files": [
+  {
+   "file": "bios/pv2000.zip",
+   "md5": []
+  }
+ ]
+}

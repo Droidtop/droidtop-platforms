@@ -1,0 +1,10 @@
+{
+ "id": "vpinball",
+ "name": "Visual Pinball",
+ "extensions": [
+  "vpt",
+  "vpx"
+ ],
+ "retroArchCore": null,
+ "theme": "vpinball"
+}

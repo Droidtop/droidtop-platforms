@@ -1,0 +1,8 @@
+{
+ "id": "flash-rs-ruffle",
+ "systemId": "flash-air",
+ "label": "Ruffle",
+ "pkg": "rs.ruffle",
+ "argumentsTemplate": "-n rs.ruffle/.PlayerActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

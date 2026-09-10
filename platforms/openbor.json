@@ -1,0 +1,9 @@
+{
+ "id": "openbor",
+ "name": "OpenBOR Game Engine",
+ "extensions": [
+  "appimage"
+ ],
+ "retroArchCore": null,
+ "theme": "openbor"
+}

@@ -1,0 +1,32 @@
+{
+ "id": "ai6win",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "ai6win.exe"
+     ]
+    },
+    {
+     "type": "anyFileExtension",
+     "value": "arc"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "akb"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "AI6WIN: AI6WIN.exe is the fixed runtime executable name (same LunaHook Elf table as AI5WIN), paired with the engine's .arc archives; .akb images (AKB/AKB+) are AI6WIN-only in GARbro (https://morkt.github.io/GARbro/supported.html). Scripts are .mes/.map (https://github.com/arcusmaximus/VNTranslationTools)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "type-x",
+ "name": "Taito Type X",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "exe",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "type-x"
+}

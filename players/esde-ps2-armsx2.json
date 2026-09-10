@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps2-armsx2",
+ "systemId": "ps2",
+ "label": "ARMSX2 (Standalone)",
+ "pkg": "com.armsx2",
+ "argumentsTemplate": "-n com.armsx2/com.armsx2.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

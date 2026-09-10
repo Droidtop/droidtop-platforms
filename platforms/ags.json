@@ -1,0 +1,10 @@
+{
+ "id": "ags",
+ "name": "Adventure Game Studio Game Engine",
+ "extensions": [
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "ags"
+}

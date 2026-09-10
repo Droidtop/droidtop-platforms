@@ -1,0 +1,15 @@
+{
+ "id": "nds",
+ "name": "Nintendo DS",
+ "extensions": [
+  "7z",
+  "app",
+  "bin",
+  "dsi",
+  "ids",
+  "nds",
+  "zip"
+ ],
+ "retroArchCore": "melondsds",
+ "theme": "nds"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "oric",
+ "name": "Tangerine Computer Systems Oric",
+ "extensions": [
+  "dsk",
+  "ort",
+  "tap",
+  "wav"
+ ],
+ "retroArchCore": null,
+ "theme": "oric"
+}

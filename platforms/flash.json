@@ -1,0 +1,10 @@
+{
+ "id": "flash",
+ "name": "Adobe Flash",
+ "extensions": [
+  "ruf",
+  "swf"
+ ],
+ "retroArchCore": null,
+ "theme": "flash"
+}

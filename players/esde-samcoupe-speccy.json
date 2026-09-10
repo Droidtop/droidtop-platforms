@@ -1,0 +1,8 @@
+{
+ "id": "esde-samcoupe-speccy",
+ "systemId": "samcoupe",
+ "label": "Speccy (Standalone)",
+ "pkg": "com.fms.speccy.deluxe",
+ "argumentsTemplate": "-n com.fms.speccy.deluxe/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

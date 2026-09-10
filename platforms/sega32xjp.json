@@ -1,0 +1,21 @@
+{
+ "id": "sega32xjp",
+ "name": "Sega Super 32X",
+ "extensions": [
+  "32x",
+  "68k",
+  "7z",
+  "bin",
+  "chd",
+  "cue",
+  "gen",
+  "iso",
+  "m3u",
+  "md",
+  "smd",
+  "sms",
+  "zip"
+ ],
+ "retroArchCore": "picodrive",
+ "theme": "sega32xjp"
+}

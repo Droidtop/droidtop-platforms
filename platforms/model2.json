@@ -1,0 +1,10 @@
+{
+ "id": "model2",
+ "name": "Sega Model 2",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "model2"
+}

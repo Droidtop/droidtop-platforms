@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-moonlight-com-limelight-noir",
+ "systemId": "moonlight",
+ "label": "artemis",
+ "pkg": "com.limelight.noir",
+ "argumentsTemplate": "-n com.limelight.noir/com.limelight.ShortcutTrampoline -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": true
+}

@@ -1,0 +1,30 @@
+{
+ "systemId": "amigacd32",
+ "name": "Amiga CD32",
+ "files": [
+  {
+   "file": "bios/amiga/kick40060.CD32",
+   "md5": [
+    "5f8924d013dd57a89cf349f4cdedc6b1"
+   ]
+  },
+  {
+   "file": "bios/amiga/kick40060.CD32.ext",
+   "md5": [
+    "bb72565701b1b6faece07d68ea5da639"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-os-310-cd32.rom",
+   "md5": [
+    "5f8924d013dd57a89cf349f4cdedc6b1"
+   ]
+  },
+  {
+   "file": "bios/amiga/amiga-ext-310-cd32.rom",
+   "md5": [
+    "bb72565701b1b6faece07d68ea5da639"
+   ]
+  }
+ ]
+}

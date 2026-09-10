@@ -1,0 +1,8 @@
+{
+ "id": "esde-fds-ines",
+ "systemId": "fds",
+ "label": "iNES (Standalone)",
+ "pkg": "com.fms.ines.free",
+ "argumentsTemplate": "-n com.fms.ines.free/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,14 @@
+{
+ "id": "pc88",
+ "name": "NEC PC-8800 Series",
+ "extensions": [
+  "88d",
+  "cmt",
+  "d88",
+  "m3u",
+  "t88",
+  "u88"
+ ],
+ "retroArchCore": "quasi88",
+ "theme": "pc88"
+}

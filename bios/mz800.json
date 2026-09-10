@@ -1,0 +1,12 @@
+{
+ "systemId": "mz800",
+ "name": "Sharp MZ-800",
+ "files": [
+  {
+   "file": "bios/mz800.zip",
+   "md5": [
+    "7d3909267b3f3e6ce7aa999de0ded226"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "id": "xbox",
+ "name": "Microsoft Xbox",
+ "extensions": [
+  "iso",
+  "xiso"
+ ],
+ "retroArchCore": null,
+ "theme": "xbox"
+}

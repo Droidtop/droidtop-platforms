@@ -1,0 +1,8 @@
+{
+ "id": "esde-psx-duckstation",
+ "systemId": "psx",
+ "label": "DuckStation (Standalone)",
+ "pkg": "com.github.stenzek.duckstation",
+ "argumentsTemplate": "-n com.github.stenzek.duckstation/com.github.stenzek.duckstation.EmulationActivity --activity-clear-task --activity-clear-top --ez resumeState false -e bootPath {file.uri}",
+ "killPackageProcesses": false
+}

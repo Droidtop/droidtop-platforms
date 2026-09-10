@@ -1,0 +1,11 @@
+{
+ "id": "pv1000",
+ "name": "Casio PV-1000",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "pv1000"
+}

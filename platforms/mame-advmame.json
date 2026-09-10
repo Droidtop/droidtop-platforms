@@ -1,0 +1,10 @@
+{
+ "id": "mame-advmame",
+ "name": "AdvanceMAME",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "mame-advmame"
+}

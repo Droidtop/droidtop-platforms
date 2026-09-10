@@ -1,0 +1,8 @@
+{
+ "id": "esde-windows-gamenative-5",
+ "systemId": "windows",
+ "label": "GameNative Custom Game (Standalone)",
+ "pkg": "app.gamenative",
+ "argumentsTemplate": "-n app.gamenative/app.gamenative.MainActivity -a app.gamenative.LAUNCH_GAME -e game_source CUSTOM_GAME --ei app_id {file.inject:{file.path}}",
+ "killPackageProcesses": false
+}

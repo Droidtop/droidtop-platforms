@@ -1,0 +1,26 @@
+{
+ "id": "flash-air",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "META-INF"
+    },
+    {
+     "type": "fileExists",
+     "path": "mimetype"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "flash_air",
+  "context": "air"
+ },
+ "notes": "Detection is specifically the AIR package shape, so the air context is the real answer, not a coin flip. Plain .swf: droidtop routes it through the flash player entries in players-database.json (Ruffle etc.), enginehost detects it via the flash-swf row at the end of this file."
+}

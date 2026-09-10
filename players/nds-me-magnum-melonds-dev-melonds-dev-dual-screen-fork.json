@@ -1,0 +1,8 @@
+{
+ "id": "nds-me-magnum-melonds-dev-melonds-dev-dual-screen-fork",
+ "systemId": "nds",
+ "label": "MelonDS Dev (Dual Screen Fork)",
+ "pkg": "me.magnum.melonds.dev",
+ "argumentsTemplate": "-a me.magnum.melonds.dev.LAUNCH_ROM -n me.magnum.melonds.dev/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
+ "killPackageProcesses": false
+}

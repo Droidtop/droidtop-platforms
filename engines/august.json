@@ -1,0 +1,23 @@
+{
+ "id": "august",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirNamePrefixCount",
+     "prefix": "aug",
+     "min": 2
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "buriko",
+  "context": "august-compiled-script-v1"
+ },
+ "notes": "August is not a separate enginehost family: buriko with the August context, per the contract."
+}

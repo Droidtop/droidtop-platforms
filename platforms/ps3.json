@@ -1,0 +1,12 @@
+{
+ "id": "ps3",
+ "name": "Sony PlayStation 3",
+ "extensions": [
+  "desktop",
+  "iso",
+  "ps3",
+  "ps3dir"
+ ],
+ "retroArchCore": null,
+ "theme": "ps3"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "n64-org-mupen64plusae-v3-alpha-org-mupen64plusae-v3-alpha",
+ "systemId": "n64",
+ "label": "org.mupen64plusae.v3.alpha",
+ "pkg": "org.mupen64plusae.v3.alpha",
+ "argumentsTemplate": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "psx-com-github-stenzek-duckstation-duckstation",
+ "systemId": "psx",
+ "label": "Duckstation",
+ "pkg": "com.github.stenzek.duckstation",
+ "argumentsTemplate": "-n com.github.stenzek.duckstation/.EmulationActivity -e bootPath {file.uri} --ez resumeState 0 --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

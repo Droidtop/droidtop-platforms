@@ -1,0 +1,8 @@
+{
+ "id": "esde-psx-armsx1",
+ "systemId": "psx",
+ "label": "ARMSX1 (Standalone)",
+ "pkg": "com.nanodata.armsx",
+ "argumentsTemplate": "-n com.nanodata.armsx/com.armsx2.Main -d {file.uri}",
+ "killPackageProcesses": false
+}

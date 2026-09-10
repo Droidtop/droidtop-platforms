@@ -1,0 +1,8 @@
+{
+ "id": "neogeo-com-explusalpha-neoemu-neo-emu",
+ "systemId": "neogeo",
+ "label": "NEO.EMU",
+ "pkg": "com.explusalpha.NeoEmu",
+ "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path} -t application/zip",
+ "killPackageProcesses": false
+}

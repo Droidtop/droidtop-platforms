@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-famicom-com-androidemu-nes",
+ "systemId": "famicom",
+ "label": "famicom - com.androidemu.nes",
+ "pkg": "com.androidemu.nes",
+ "argumentsTemplate": "-n com.androidemu.nes/.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

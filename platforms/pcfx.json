@@ -1,0 +1,15 @@
+{
+ "id": "pcfx",
+ "name": "NEC PC-FX",
+ "extensions": [
+  "7z",
+  "ccd",
+  "chd",
+  "cue",
+  "m3u",
+  "toc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_pcfx",
+ "theme": "pcfx"
+}

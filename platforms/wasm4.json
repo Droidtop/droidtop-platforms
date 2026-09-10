@@ -1,0 +1,11 @@
+{
+ "id": "wasm4",
+ "name": "WASM-4 Fantasy Console",
+ "extensions": [
+  "7z",
+  "wasm",
+  "zip"
+ ],
+ "retroArchCore": "wasm4",
+ "theme": "wasm4"
+}

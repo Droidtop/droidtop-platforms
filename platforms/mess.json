@@ -1,0 +1,11 @@
+{
+ "id": "mess",
+ "name": "Multi Emulator Super System",
+ "extensions": [
+  "7z",
+  "chd",
+  "zip"
+ ],
+ "retroArchCore": "mess2015",
+ "theme": "mess"
+}

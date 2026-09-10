@@ -1,0 +1,11 @@
+{
+ "id": "gamecom",
+ "name": "Tiger Electronics Game.com",
+ "extensions": [
+  "7z",
+  "tgc",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "gamecom"
+}

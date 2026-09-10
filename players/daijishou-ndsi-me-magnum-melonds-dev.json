@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ndsi-me-magnum-melonds-dev",
+ "systemId": "ndsi",
+ "label": "ndsi - MelonDS Dev (Dual Screen Fork)",
+ "pkg": "me.magnum.melonds.dev",
+ "argumentsTemplate": "-a me.magnum.melonds.dev.LAUNCH_ROM -n me.magnum.melonds.dev/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
+ "killPackageProcesses": true
+}

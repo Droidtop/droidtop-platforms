@@ -1,0 +1,18 @@
+name: Generated files match the tree
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # index.json and the composed databases are what the apps fetch. If they
+      # do not match the tree, an app updates to something nobody reviewed.
+      - name: generator/build.py --check
+        run: python3 generator/build.py --check

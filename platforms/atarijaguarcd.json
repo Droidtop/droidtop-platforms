@@ -1,0 +1,18 @@
+{
+ "id": "atarijaguarcd",
+ "name": "Atari Jaguar CD",
+ "extensions": [
+  "abs",
+  "bigpimg",
+  "bin",
+  "cdi",
+  "cof",
+  "cue",
+  "j64",
+  "jag",
+  "prg",
+  "rom"
+ ],
+ "retroArchCore": "virtualjaguar",
+ "theme": "atarijaguarcd"
+}

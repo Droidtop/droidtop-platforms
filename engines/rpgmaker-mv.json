@@ -1,0 +1,31 @@
+{
+ "id": "rpgmaker-mv",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "js/rpg_core.js"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "www/js/rpg_core.js"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX",
+  "LINUX_CONTAINER"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": "mv"
+ },
+ "notes": "MV/MZ are nw.js exports; Linux only when the export includes it."
+}

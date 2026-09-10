@@ -1,0 +1,8 @@
+{
+ "id": "esde-msx-msx-emu",
+ "systemId": "msx",
+ "label": "MSX.emu (Standalone)",
+ "pkg": "com.explusalpha.MsxEmu",
+ "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

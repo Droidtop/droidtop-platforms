@@ -1,0 +1,24 @@
+{
+ "id": "ps2",
+ "name": "Sony PlayStation 2",
+ "extensions": [
+  "bin",
+  "chd",
+  "ciso",
+  "cso",
+  "desktop",
+  "dump",
+  "elf",
+  "gz",
+  "img",
+  "iso",
+  "isz",
+  "m3u",
+  "mdf",
+  "ngr",
+  "nrg",
+  "zso"
+ ],
+ "retroArchCore": "pcee2",
+ "theme": "ps2"
+}

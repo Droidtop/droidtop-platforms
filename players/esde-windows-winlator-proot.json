@@ -1,0 +1,8 @@
+{
+ "id": "esde-windows-winlator-proot",
+ "systemId": "windows",
+ "label": "Winlator Cmod PRoot (Standalone)",
+ "pkg": "com.cmodded.winlator",
+ "argumentsTemplate": "-n com.cmodded.winlator/com.winlator.XServerDisplayActivity --activity-clear-task --activity-clear-top -e shortcut_path {file.path}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,23 @@
+{
+ "id": "colecovision",
+ "name": "Coleco ColecoVision",
+ "extensions": [
+  "7z",
+  "bin",
+  "cas",
+  "col",
+  "cv",
+  "dsk",
+  "m3u",
+  "mx1",
+  "mx2",
+  "myv",
+  "ri",
+  "rom",
+  "sc",
+  "sg",
+  "zip"
+ ],
+ "retroArchCore": "bluemsx",
+ "theme": "colecovision"
+}

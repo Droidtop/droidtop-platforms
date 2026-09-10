@@ -1,0 +1,26 @@
+{
+ "id": "yuka",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ykc"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ykg"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Yuka System: .ykc archives (YKC001/YKC002) and .ykg images (YKG000) are Yuka-only in GARbro's table (https://morkt.github.io/GARbro/supported.html, https://github.com/AtomCrafty/yukatool)."
+}

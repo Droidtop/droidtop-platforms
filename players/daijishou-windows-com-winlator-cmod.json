@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-windows-com-winlator-cmod",
+ "systemId": "windows",
+ "label": "windows - Winlator CMod",
+ "pkg": "com.winlator.cmod",
+ "argumentsTemplate": "-n com.winlator.cmod/.XServerDisplayActivity -e shortcut_path {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": true
+}

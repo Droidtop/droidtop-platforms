@@ -1,0 +1,8 @@
+{
+ "id": "saturn-org-uoyabause-android-yabasanshiro",
+ "systemId": "saturn",
+ "label": "YabaSanshiro",
+ "pkg": "org.uoyabause.android",
+ "argumentsTemplate": "-n org.uoyabause.android/org.uoyabause.android.Yabause -a android.intent.action.VIEW -e org.uoyabause.android.FileNameEx {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,99 @@
+{
+ "systemId": "bbc",
+ "name": "BBC Micro",
+ "files": [
+  {
+   "file": "bios/bbcb.zip",
+   "md5": [
+    "521a197d3623682825f1042c1350feb4",
+    "2cc67be4624df4dc66617742571a8e3d",
+    "0cad3d0cf0d111aca2b158b9b605913f",
+    "46f920a170e88bab7faa96cf80b84324",
+    "0199bac73f1dbca291582834a3e61122",
+    "0a59a5ba15fe8557b5f7fee32bbd393a",
+    "35e9ab10bcf016bd24b4c716add009b9"
+   ]
+  },
+  {
+   "file": "bios/bbc_acorn8271.zip",
+   "md5": [
+    "803530149c274994fabc6d28cbe03679",
+    "5a3ddfae96178e025f27bf1f69bfa629",
+    "d636ffb7a80fc29b133d32e4250fbab6",
+    "5daed103918277e2065dd7e8d23e57a5",
+    "79b31feacab0b1ccddf358be5dfb6241",
+    "24458ace9566a01d255bca16b46a960d",
+    "6e9356d0a5e7fbabb386824ec370d6f3",
+    "990b8a9755af25452c85f23ceb344be4",
+    "1d250b0242e447e9106e8bfd1f27ea84"
+   ]
+  },
+  {
+   "file": "bios/saa5050.zip",
+   "md5": [
+    "8b3c10a2317808ed94d6c6073b5b3327"
+   ]
+  },
+  {
+   "file": "bios/bbc_tube_80186.zip",
+   "md5": [
+    "33d097349f12526584fcac21eccf3012",
+    "e6e84221c29b5d31d07055039583c8e7"
+   ]
+  },
+  {
+   "file": "bios/bbcm.zip",
+   "md5": [
+    "b159012f9f301bab33316fd3bf55db79",
+    "fed079c5e2c595b354529a8ea703b5fb",
+    "ca0527f13f83bc95ef4b6833ee440afa",
+    "ee9fc46252b7d7fe341b9c7f92575099",
+    "3f3dd4614db30f6e383794731272076a"
+   ]
+  },
+  {
+   "file": "bios/bbcmc.zip",
+   "md5": [
+    "55586a88477505d8fd28edfae646e2e3",
+    "956bf71da840943050836ade2474ef7b"
+   ]
+  },
+  {
+   "file": "bios/bbc_bitstik1.zip",
+   "md5": [
+    "baf5cb5564ff6e6b4400243e7612f323"
+   ]
+  },
+  {
+   "file": "bios/bbc_bitstik2.zip",
+   "md5": [
+    "c196c145b3de630f85f625ca762e5504"
+   ]
+  },
+  {
+   "file": "bios/mame/samples/bbc.zip",
+   "md5": [
+    "9240120e32a59caabc6f5d462f87d683",
+    "9d63bdc91cef4eda5e1a110e75c848fb"
+   ]
+  },
+  {
+   "file": "bios/Acorn/basic2.rom",
+   "md5": [
+    "2cc67be4624df4dc66617742571a8e3d"
+   ]
+  },
+  {
+   "file": "bios/BBCMicro/os12.rom",
+   "md5": [
+    "0a59a5ba15fe8557b5f7fee32bbd393a"
+   ]
+  },
+  {
+   "file": "bios/BBCMicro/dfs-2.26.rom",
+   "md5": [
+    "f083f49d6fe66344c650d7e74249cb96"
+   ]
+  }
+ ]
+}

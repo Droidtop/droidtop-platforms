@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps4-bachatas4",
+ "systemId": "ps4",
+ "label": "BachataS4 (Standalone)",
+ "pkg": "com.bachatas4.android",
+ "argumentsTemplate": "-n com.bachatas4.android/com.bachatas4.android.DirectLaunchActivity -e game_id {file.inject:{file.basename}.ps4}",
+ "killPackageProcesses": false
+}

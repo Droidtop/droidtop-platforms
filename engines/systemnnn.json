@@ -1,0 +1,30 @@
+{
+ "id": "systemnnn",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "gpk"
+    },
+    {
+     "type": "anyFileExtension",
+     "value": "gtb"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "nnn"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "System-NNN: the engine ships .gpk+.gtb and .vpk+.vtb archive/index PAIRS (https://morkt.github.io/GARbro/supported.html), and its scripts are .nnn/.spt (https://github.com/arcusmaximus/VNTranslationTools). The paired extensions are required together, which is what makes the rule specific."
+}

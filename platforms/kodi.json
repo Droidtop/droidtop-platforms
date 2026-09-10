@@ -1,0 +1,10 @@
+{
+ "id": "kodi",
+ "name": "Kodi Home Theatre Software",
+ "extensions": [
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "kodi"
+}

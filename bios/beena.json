@@ -1,0 +1,10 @@
+{
+ "systemId": "beena",
+ "name": "Advanced Pico Beena",
+ "files": [
+  {
+   "file": "bios/beena.zip",
+   "md5": []
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-epic-winnative",
+ "systemId": "epic",
+ "label": "WinNative (Standalone)",
+ "pkg": "com.winnative.cmod",
+ "argumentsTemplate": "-n com.winnative.cmod/com.winlator.cmod.runtime.display.XServerDisplayActivity --activity-clear-task --activity-clear-top -e shortcut_path {file.path}",
+ "killPackageProcesses": false
+}

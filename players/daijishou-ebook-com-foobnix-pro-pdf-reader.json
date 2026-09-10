@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ebook-com-foobnix-pro-pdf-reader",
+ "systemId": "ebook",
+ "label": "ebook - Librera Reader Pro",
+ "pkg": "com.foobnix.pro.pdf.reader",
+ "argumentsTemplate": "-n com.foobnix.pro.pdf.reader/com.foobnix.OpenerActivity -d {file.path}",
+ "killPackageProcesses": true
+}

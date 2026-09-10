@@ -1,0 +1,14 @@
+{
+ "id": "ngpc",
+ "name": "SNK Neo Geo Pocket Color",
+ "extensions": [
+  "7z",
+  "ngc",
+  "ngp",
+  "ngpc",
+  "npc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_ngp",
+ "theme": "ngpc"
+}

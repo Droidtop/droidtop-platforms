@@ -1,0 +1,8 @@
+{
+ "id": "esde-nds-drastic",
+ "systemId": "nds",
+ "label": "DraStic (Standalone)",
+ "pkg": "com.dsemu.drastic",
+ "argumentsTemplate": "-n com.dsemu.drastic/com.dsemu.drastic.DraSticActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

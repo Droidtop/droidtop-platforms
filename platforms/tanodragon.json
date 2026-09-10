@@ -1,0 +1,14 @@
+{
+ "id": "tanodragon",
+ "name": "Tano Dragon",
+ "extensions": [
+  "7z",
+  "cas",
+  "ccc",
+  "dsk",
+  "rom",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "tanodragon"
+}

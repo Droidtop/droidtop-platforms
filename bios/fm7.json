@@ -1,0 +1,26 @@
+{
+ "systemId": "fm7",
+ "name": "Fujitsu FM-7",
+ "files": [
+  {
+   "file": "bios/fm7.zip",
+   "md5": [
+    "9f9b7d5615ecdbde2cd26e9306ffef13",
+    "18a461ccaf7ef4e8ecad58cecd3a24b3",
+    "6a5da0404b7ee338df9002cdcabc3068",
+    "a330817f8f7ced752a7bcc8dfba8fd2e",
+    "d19ed5923aaae2ec43dffe7a0daa80cb"
+   ]
+  },
+  {
+   "file": "bios/fm77av.zip",
+   "md5": [
+    "71c96a45b78e88a39cb94c1aabd23d8a",
+    "e0f4c0ebee60aee83e863826e59ae1de",
+    "ae945a6dfb642b0a5d0529737e8ee5cd",
+    "fb83a1a9725c8432acef0c3ce89492e3",
+    "7db27dede3e358017d518101850bccfa"
+   ]
+  }
+ ]
+}

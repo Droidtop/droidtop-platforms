@@ -1,0 +1,10 @@
+{
+ "id": "cps3",
+ "name": "Capcom Play System III",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "cps3"
+}

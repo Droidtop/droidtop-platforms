@@ -1,0 +1,12 @@
+{
+ "systemId": "rx78",
+ "name": "Bandai RX-78",
+ "files": [
+  {
+   "file": "bios/rx78.zip",
+   "md5": [
+    "f613b15c4b965013e4827d2ad79c7080"
+   ]
+  }
+ ]
+}

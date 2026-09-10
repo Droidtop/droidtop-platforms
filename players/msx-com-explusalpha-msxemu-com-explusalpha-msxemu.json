@@ -1,0 +1,8 @@
+{
+ "id": "msx-com-explusalpha-msxemu-com-explusalpha-msxemu",
+ "systemId": "msx",
+ "label": "com.explusalpha.MsxEmu",
+ "pkg": "com.explusalpha.MsxEmu",
+ "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
+ "killPackageProcesses": false
+}

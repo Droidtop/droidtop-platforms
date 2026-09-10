@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-gba-com-pixelrespawn-linkboy",
+ "systemId": "gba",
+ "label": "gba - Linkboy",
+ "pkg": "com.pixelrespawn.linkboy",
+ "argumentsTemplate": "-n com.pixelrespawn.linkboy/.EmulatorActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

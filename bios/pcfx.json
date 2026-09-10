@@ -1,0 +1,12 @@
+{
+ "systemId": "pcfx",
+ "name": "PC-FX",
+ "files": [
+  {
+   "file": "bios/pcfx.rom",
+   "md5": [
+    "08e36edbea28a017f79f8d4f7ff9b6d7"
+   ]
+  }
+ ]
+}

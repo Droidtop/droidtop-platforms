@@ -1,0 +1,17 @@
+{
+ "systemId": "mz2500",
+ "name": "Sharp MZ-2500",
+ "files": [
+  {
+   "file": "bios/mz2500.zip",
+   "md5": [
+    "714ddaf418ccf0018e4cc7e31694b3d8",
+    "96f2fdff0deba58611ed4d67705b539d",
+    "88cd64f7bdd23ca6ea57b173254ead82",
+    "3d5d1f6ba9d1f04378891c35663bd3a8",
+    "eea42ca607369a225dbd9d11ab48bfd0",
+    "04843d14a8e2f69a7fcaff394a8cc012"
+   ]
+  }
+ ]
+}

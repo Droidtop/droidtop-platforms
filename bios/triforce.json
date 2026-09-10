@@ -1,0 +1,12 @@
+{
+ "systemId": "triforce",
+ "name": "Triforce",
+ "files": [
+  {
+   "file": "saves/dolphin-emu/Triforce/segaboot.gcm",
+   "md5": [
+    "2ef01c0e93f7ee3a0a4b139aa14728b9"
+   ]
+  }
+ ]
+}

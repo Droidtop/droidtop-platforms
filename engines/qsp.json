@@ -1,0 +1,26 @@
+{
+ "id": "qsp",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "qsp"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "aqsp"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "QSP / Quest Soft Player: .qsp (compiled) and .aqsp are the player's own game-file extensions (https://github.com/QSPFoundation/qspider/blob/main/apps/player-desktop/src/app/utils.ts). .qsps (plain source) and .gam are deliberately left out: too generic for a folder-level rule."
+}

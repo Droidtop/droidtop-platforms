@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps2-emucorex",
+ "systemId": "ps2",
+ "label": "EmuCoreX (Standalone)",
+ "pkg": "com.sbro.emucorex",
+ "argumentsTemplate": "-n com.sbro.emucorex/com.sbro.emucorex.MainActivity --activity-clear-task -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

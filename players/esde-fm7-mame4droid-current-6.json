@@ -1,0 +1,8 @@
+{
+ "id": "esde-fm7-mame4droid-current-6",
+ "systemId": "fm7",
+ "label": "MAME4droid Current [FM77AV Software list] (Standalone)",
+ "pkg": "com.seleuco.mame4d2024",
+ "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' {file.basename}\" -d fm77av",
+ "killPackageProcesses": false
+}

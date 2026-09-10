@@ -1,0 +1,41 @@
+{
+ "systemId": "dragon64",
+ "name": "Dragon 64",
+ "files": [
+  {
+   "file": "bios/dragon64.zip",
+   "md5": [
+    "5f0bee59710e55f5880e74890912ed78",
+    "fd91edce7be5e7c2d88e46b76956a8aa"
+   ]
+  },
+  {
+   "file": "bios/dragon32.zip",
+   "md5": []
+  },
+  {
+   "file": "bios/xroar/d32.rom",
+   "md5": [
+    "3420b96031078a4ef408cad7bf21a33f"
+   ]
+  },
+  {
+   "file": "bios/xroar/d64_1.rom",
+   "md5": [
+    "5f0bee59710e55f5880e74890912ed78"
+   ]
+  },
+  {
+   "file": "bios/xroar/d64_2.rom",
+   "md5": [
+    "fd91edce7be5e7c2d88e46b76956a8aa"
+   ]
+  },
+  {
+   "file": "bios/xroar/ddos10.rom",
+   "md5": [
+    "1c965da49b6c5459b8353630aa1482e7"
+   ]
+  }
+ ]
+}

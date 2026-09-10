@@ -1,0 +1,8 @@
+{
+ "id": "switch-dev-suyu-suyu-emu-relwithdebinfo-suyu",
+ "systemId": "switch",
+ "label": "Suyu",
+ "pkg": "dev.suyu.suyu_emu.relWithDebInfo",
+ "argumentsTemplate": "-n dev.suyu.suyu_emu.relWithDebInfo/dev.suyu.suyu_emu.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

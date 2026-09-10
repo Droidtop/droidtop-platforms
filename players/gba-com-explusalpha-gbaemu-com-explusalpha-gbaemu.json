@@ -1,0 +1,8 @@
+{
+ "id": "gba-com-explusalpha-gbaemu-com-explusalpha-gbaemu",
+ "systemId": "gba",
+ "label": "com.explusalpha.GbaEmu",
+ "pkg": "com.explusalpha.GbaEmu",
+ "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

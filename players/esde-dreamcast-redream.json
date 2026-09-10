@@ -1,0 +1,8 @@
+{
+ "id": "esde-dreamcast-redream",
+ "systemId": "dreamcast",
+ "label": "Redream (Standalone)",
+ "pkg": "io.recompiled.redream",
+ "argumentsTemplate": "-n io.recompiled.redream/io.recompiled.redream.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "tg16-com-pceemu-com-pceemu",
+ "systemId": "tg16",
+ "label": "com.PceEmu",
+ "pkg": "com.PceEmu",
+ "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

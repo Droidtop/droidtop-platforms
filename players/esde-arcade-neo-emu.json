@@ -1,0 +1,8 @@
+{
+ "id": "esde-arcade-neo-emu",
+ "systemId": "arcade",
+ "label": "NEO.emu (Standalone)",
+ "pkg": "com.explusalpha.NeoEmu",
+ "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

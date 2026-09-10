@@ -1,0 +1,36 @@
+{
+ "systemId": "msxturbor",
+ "name": "MSX-Turbo",
+ "files": [
+  {
+   "file": "bios/openmsx/fs-a1gt_firmware.rom",
+   "md5": [
+    "af17a344bcc177b97a4888c4c559f3ae"
+   ]
+  },
+  {
+   "file": "bios/openmsx/fs-a1gt_kanjifont.rom",
+   "md5": [
+    "acf53887c2d2783dc059a9b442c86b90"
+   ]
+  },
+  {
+   "file": "bios/openmsx/ide250.zip",
+   "md5": [
+    "afa4b5f2944334f84971af814a24bd5a"
+   ]
+  },
+  {
+   "file": "bios/openmsx/phc-70fd2_basickun.rom",
+   "md5": [
+    "2ce20986da024e9a0e271961c6bc9f01"
+   ]
+  },
+  {
+   "file": "bios/openmsx/yrw801.rom",
+   "md5": [
+    "42af93619160ef2116416f74a6cb12f2"
+   ]
+  }
+ ]
+}

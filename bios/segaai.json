@@ -1,0 +1,10 @@
+{
+ "systemId": "segaai",
+ "name": "Sega AI Computer",
+ "files": [
+  {
+   "file": "bios/segaai.zip",
+   "md5": []
+  }
+ ]
+}

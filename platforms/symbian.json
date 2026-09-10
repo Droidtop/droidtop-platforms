@@ -1,0 +1,11 @@
+{
+ "id": "symbian",
+ "name": "Symbian",
+ "extensions": [
+  "sis",
+  "sisx",
+  "symbian"
+ ],
+ "retroArchCore": null,
+ "theme": "symbian"
+}

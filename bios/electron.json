@@ -1,0 +1,35 @@
+{
+ "systemId": "electron",
+ "name": "Acorn Electron",
+ "files": [
+  {
+   "file": "bios/electron.zip",
+   "md5": [
+    "4688a93aa298b9431c1788c9b90378c8"
+   ]
+  },
+  {
+   "file": "bios/electron64.zip",
+   "md5": [
+    "2cc67be4624df4dc66617742571a8e3d",
+    "df01cfe5894276de96bbd1c45b7e834c"
+   ]
+  },
+  {
+   "file": "bios/electron_plus1.zip",
+   "md5": [
+    "f3a39227b401a2ce8cdc7e4b7a860aaf"
+   ]
+  },
+  {
+   "file": "bios/electron_plus3.zip",
+   "md5": [
+    "9aa334b4e8f6d7565e6323e0f77110de",
+    "83e15ca501899b0d5b2ce3f5ef696069",
+    "b60ee811f4b805638478acd5297b16e0",
+    "62f5e1d3dae3a68d8fe4406a6f603dc3",
+    "5c39baa89fe8a40a5167a53cc5ae7791"
+   ]
+  }
+ ]
+}

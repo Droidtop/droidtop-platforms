@@ -1,0 +1,13 @@
+{
+ "systemId": "gamecom",
+ "name": "Tiger Game.com",
+ "files": [
+  {
+   "file": "bios/gamecom.zip",
+   "md5": [
+    "813364d4863b1d7b7b8fd6a97a416bcf",
+    "f7bcefb6daf923c8e5ea2eb69f619efe"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-3ds-io-github-lime3ds-android-2",
+ "systemId": "3ds",
+ "label": "3ds - Lime 3DS",
+ "pkg": "io.github.lime3ds.android",
+ "argumentsTemplate": "-n io.github.lime3ds.android/.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

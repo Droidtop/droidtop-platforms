@@ -1,0 +1,16 @@
+{
+ "id": "sufami",
+ "name": "Bandai SuFami Turbo",
+ "extensions": [
+  "7z",
+  "bml",
+  "bs",
+  "fig",
+  "sfc",
+  "smc",
+  "st",
+  "zip"
+ ],
+ "retroArchCore": "snes9x",
+ "theme": "sufami"
+}

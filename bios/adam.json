@@ -1,0 +1,49 @@
+{
+ "systemId": "adam",
+ "name": "Coleco Adam",
+ "files": [
+  {
+   "file": "bios/adam.zip",
+   "md5": [
+    "01bba3bcd46d8a586dd6ec555accc133",
+    "feabe33e8f2dab88da1458b4d27f3faa",
+    "a720bc872a772ed471fac14e36ec8bcb",
+    "cf10b154f2e006a9740d7653cfc47cab",
+    "7916bb9635d502366326ec39aea5fc89",
+    "2c66f5911e5b42b8ebe113403548eee7",
+    "4fe4f6800076ea3d897d4285653447bd"
+   ]
+  },
+  {
+   "file": "bios/adam_ddp.zip",
+   "md5": [
+    "0423e9e9bf5036aa1e9d656b6a1f842c"
+   ]
+  },
+  {
+   "file": "bios/adam_fdc.zip",
+   "md5": [
+    "ae12d0b83832b059cb6cb43029bbfdb3",
+    "4c38a7df1e645c8d9f417bf7165c46d0",
+    "afea14c826f3cfbc89b76725a4a41951",
+    "976d2a7d85319d9104bc9ec176fbfa9c",
+    "29569dc029e95e48907b3c81d636987f",
+    "a121855c20a638429bbfcf0448349515",
+    "e05ababa16e2d5cb92b678cb6e6e2004",
+    "a1a2a353dea4b8769a2da733822abfdc"
+   ]
+  },
+  {
+   "file": "bios/adam_kb.zip",
+   "md5": [
+    "d81e0b2bb6b98999541c5f40b489e88f"
+   ]
+  },
+  {
+   "file": "bios/adam_prn.zip",
+   "md5": [
+    "3cdf2fe48ac4224b56f26c03f6c68982"
+   ]
+  }
+ ]
+}

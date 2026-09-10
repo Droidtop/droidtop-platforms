@@ -1,0 +1,22 @@
+{
+ "id": "html",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "builtin",
+     "name": "html"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "html",
+  "context": "compiled-html"
+ },
+ "notes": "An HTML game: a page at the folder's root, Twine stories included. Last in the file on purpose: Godot and Unity web exports also ship an index.html and must be classified first. The builtin probe accepts any root .html file."
+}

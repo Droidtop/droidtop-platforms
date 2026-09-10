@@ -1,0 +1,12 @@
+{
+ "systemId": "scv",
+ "name": "Super Cassette Vision",
+ "files": [
+  {
+   "file": "bios/upd7801g.s01",
+   "md5": [
+    "635a978fd40db9a18ee44eff449fc126"
+   ]
+  }
+ ]
+}

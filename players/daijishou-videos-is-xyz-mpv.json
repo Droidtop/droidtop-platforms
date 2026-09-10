@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-videos-is-xyz-mpv",
+ "systemId": "videos",
+ "label": "videos - mpv-android",
+ "pkg": "is.xyz.mpv",
+ "argumentsTemplate": "-n is.xyz.mpv/is.xyz.mpv.MPVActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

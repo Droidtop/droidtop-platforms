@@ -1,0 +1,32 @@
+{
+ "id": "kaguya",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ari"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "message.dat"
+     ]
+    },
+    {
+     "type": "anyFileExtension",
+     "value": "arc"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "KaGuYa: .arc archives come PAIRED with .ari indexes (magic WFL1), and the family also uses LIN2/LINK3/LINK5/LINK6/UF01 .arc variants (https://morkt.github.io/GARbro/supported.html); message.dat is its script file (https://github.com/arcusmaximus/VNTranslationTools). .ari is KaGuYa-only in GARbro's table, .arc alone is not, hence the pairing."
+}

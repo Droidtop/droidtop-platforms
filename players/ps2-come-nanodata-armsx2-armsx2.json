@@ -1,0 +1,8 @@
+{
+ "id": "ps2-come-nanodata-armsx2-armsx2",
+ "systemId": "ps2",
+ "label": "ARMSX2",
+ "pkg": "come.nanodata.armsx2",
+ "argumentsTemplate": "-n come.nanodata.armsx2/kr.co.iefriends.pcsx2.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-tg-cd-pce-emu",
+ "systemId": "tg-cd",
+ "label": "PCE.emu (Standalone)",
+ "pkg": "com.PceEmu",
+ "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

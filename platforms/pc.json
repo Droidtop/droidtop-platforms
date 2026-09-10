@@ -1,0 +1,18 @@
+{
+ "id": "pc",
+ "name": "PC",
+ "extensions": [
+  "7z",
+  "bat",
+  "com",
+  "conf",
+  "cue",
+  "dosz",
+  "exe",
+  "img",
+  "iso",
+  "zip"
+ ],
+ "retroArchCore": "dosbox_pure",
+ "theme": "pc"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-psx-fpse",
+ "systemId": "psx",
+ "label": "FPse (Standalone)",
+ "pkg": "com.emulator.fpse",
+ "argumentsTemplate": "-n com.emulator.fpse/com.emulator.fpse.Main -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-snesmsu1-com-explusalpha-snes9xplus",
+ "systemId": "snesmsu1",
+ "label": "snesmsu1 - com.explusalpha.Snes9xPlus",
+ "pkg": "com.explusalpha.Snes9xPlus",
+ "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

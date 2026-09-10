@@ -1,0 +1,11 @@
+{
+ "id": "macintosh",
+ "name": "Apple Macintosh",
+ "extensions": [
+  "dsk",
+  "game",
+  "img"
+ ],
+ "retroArchCore": "minivmac",
+ "theme": "macintosh"
+}

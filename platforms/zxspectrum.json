@@ -1,0 +1,24 @@
+{
+ "id": "zxspectrum",
+ "name": "Sinclair ZX Spectrum",
+ "extensions": [
+  "7z",
+  "dsk",
+  "gz",
+  "img",
+  "mgt",
+  "rzx",
+  "scl",
+  "sh",
+  "sna",
+  "szx",
+  "tap",
+  "trd",
+  "tzx",
+  "udi",
+  "z80",
+  "zip"
+ ],
+ "retroArchCore": "fuse",
+ "theme": "zxspectrum"
+}

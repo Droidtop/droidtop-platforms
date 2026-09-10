@@ -1,0 +1,20 @@
+{
+ "id": "n64",
+ "name": "Nintendo 64",
+ "extensions": [
+  "7z",
+  "appimage",
+  "bin",
+  "d64",
+  "desktop",
+  "n64",
+  "ndd",
+  "sh",
+  "u1",
+  "v64",
+  "z64",
+  "zip"
+ ],
+ "retroArchCore": "mupen64plus_next",
+ "theme": "n64"
+}

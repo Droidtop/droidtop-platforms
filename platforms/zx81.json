@@ -1,0 +1,12 @@
+{
+ "id": "zx81",
+ "name": "Sinclair ZX81",
+ "extensions": [
+  "7z",
+  "p",
+  "tzx",
+  "zip"
+ ],
+ "retroArchCore": "81",
+ "theme": "zx81"
+}

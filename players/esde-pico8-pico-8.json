@@ -1,0 +1,8 @@
+{
+ "id": "esde-pico8-pico-8",
+ "systemId": "pico8",
+ "label": "PICO-8 (Standalone)",
+ "pkg": "io.wip.pico8",
+ "argumentsTemplate": "-n io.wip.pico8/com.godot.game.GodotAppLauncher -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,5 @@
+#!/bin/sh
+# index.json and the composed databases are what the apps actually fetch;
+# a commit whose tree and generated files disagree publishes something
+# nobody reviewed. Install with generator/install-hooks.sh.
+exec python3 "$(git rev-parse --show-toplevel)/generator/build.py" --check

@@ -1,0 +1,8 @@
+{
+ "id": "psx-com-epsxe-epsxe-epsxe",
+ "systemId": "psx",
+ "label": "ePSXe",
+ "pkg": "com.epsxe.ePSXe",
+ "argumentsTemplate": "-n com.epsxe.ePSXe/.ePSXe -a android.intent.action.MAIN -e com.epsxe.ePSXe.isoName {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,14 @@
+{
+ "id": "vectrex",
+ "name": "GCE Vectrex",
+ "extensions": [
+  "7z",
+  "bin",
+  "gam",
+  "vc",
+  "vec",
+  "zip"
+ ],
+ "retroArchCore": "vecx",
+ "theme": "vectrex"
+}

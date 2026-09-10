@@ -1,0 +1,23 @@
+{
+ "id": "snes",
+ "name": "Nintendo SNES (Super Nintendo)",
+ "extensions": [
+  "7z",
+  "bin",
+  "bml",
+  "bs",
+  "bsx",
+  "dx2",
+  "fig",
+  "gd3",
+  "gd7",
+  "mgd",
+  "sfc",
+  "smc",
+  "st",
+  "swc",
+  "zip"
+ ],
+ "retroArchCore": "snes9x",
+ "theme": "snes"
+}

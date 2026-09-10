@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-3ds-org-citra-citra-emu-2",
+ "systemId": "3ds",
+ "label": "3ds - org.citra.citra_emu",
+ "pkg": "org.citra.citra_emu",
+ "argumentsTemplate": "-n org.citra.citra_emu/org.citra.citra_emu.ui.EmulationActivity -a android.intent.action.VIEW -e GamePath {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

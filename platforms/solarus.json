@@ -1,0 +1,9 @@
+{
+ "id": "solarus",
+ "name": "Solarus Game Engine",
+ "extensions": [
+  "solarus"
+ ],
+ "retroArchCore": null,
+ "theme": "solarus"
+}

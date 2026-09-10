@@ -1,0 +1,12 @@
+{
+ "id": "atari2600",
+ "name": "Atari 2600",
+ "extensions": [
+  "7z",
+  "a26",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "stella",
+ "theme": "atari2600"
+}

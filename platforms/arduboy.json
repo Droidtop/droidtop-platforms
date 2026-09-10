@@ -1,0 +1,12 @@
+{
+ "id": "arduboy",
+ "name": "Arduboy Miniature Game System",
+ "extensions": [
+  "7z",
+  "arduboy",
+  "hex",
+  "zip"
+ ],
+ "retroArchCore": "arduous",
+ "theme": "arduboy"
+}

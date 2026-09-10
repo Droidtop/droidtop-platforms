@@ -1,0 +1,13 @@
+{
+ "systemId": "vis",
+ "name": "Tandy Video Information System",
+ "files": [
+  {
+   "file": "bios/vis.zip",
+   "md5": [
+    "ebf432d3b09f694db1c62018eb2ab471",
+    "758f8fec271fbf526bb22b36e88f154b"
+   ]
+  }
+ ]
+}

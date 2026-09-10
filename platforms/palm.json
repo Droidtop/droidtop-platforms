@@ -1,0 +1,13 @@
+{
+ "id": "palm",
+ "name": "Palm OS",
+ "extensions": [
+  "7z",
+  "img",
+  "pqa",
+  "prc",
+  "zip"
+ ],
+ "retroArchCore": "mu",
+ "theme": "palm"
+}

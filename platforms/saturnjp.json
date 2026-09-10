@@ -1,0 +1,18 @@
+{
+ "id": "saturnjp",
+ "name": "Sega Saturn",
+ "extensions": [
+  "7z",
+  "bin",
+  "ccd",
+  "chd",
+  "cue",
+  "iso",
+  "m3u",
+  "mds",
+  "toc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_saturn",
+ "theme": "saturnjp"
+}

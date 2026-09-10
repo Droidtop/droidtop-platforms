@@ -1,0 +1,20 @@
+{
+ "id": "atarijaguar",
+ "name": "Atari Jaguar",
+ "extensions": [
+  "7z",
+  "abs",
+  "bigpimg",
+  "bin",
+  "cdi",
+  "cof",
+  "cue",
+  "j64",
+  "jag",
+  "prg",
+  "rom",
+  "zip"
+ ],
+ "retroArchCore": "virtualjaguar",
+ "theme": "atarijaguar"
+}

@@ -1,0 +1,14 @@
+{
+ "id": "apple2",
+ "name": "Apple II",
+ "extensions": [
+  "7z",
+  "do",
+  "dsk",
+  "nib",
+  "po",
+  "zip"
+ ],
+ "retroArchCore": "applewin",
+ "theme": "apple2"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "ti99",
+ "name": "Texas Instruments TI-99",
+ "extensions": [
+  "7z",
+  "rpk",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "ti99"
+}

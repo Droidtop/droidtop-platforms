@@ -1,0 +1,8 @@
+{
+ "id": "saturn-org-devmiyax-yabasanshioro2-pro-yabasanshiro-2-pro",
+ "systemId": "saturn",
+ "label": "YabaSanshiro 2 Pro",
+ "pkg": "org.devmiyax.yabasanshioro2.pro",
+ "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.uri} --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": false
+}

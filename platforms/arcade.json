@@ -1,0 +1,18 @@
+{
+ "id": "arcade",
+ "name": "Arcade",
+ "extensions": [
+  "7z",
+  "acgame",
+  "arcadedef",
+  "cmd",
+  "desktop",
+  "gam",
+  "lindbergh",
+  "neo",
+  "sh",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "arcade"
+}

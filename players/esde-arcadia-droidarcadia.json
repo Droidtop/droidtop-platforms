@@ -1,0 +1,8 @@
+{
+ "id": "esde-arcadia-droidarcadia",
+ "systemId": "arcadia",
+ "label": "DroidArcadia",
+ "pkg": "com.amigan.droidarcadia",
+ "argumentsTemplate": "-n com.amigan.droidarcadia/com.amigan.droidarcadia.MainActivity -t application/zip -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-psp-ppsspp",
+ "systemId": "psp",
+ "label": "PPSSPP (Standalone)",
+ "pkg": "org.ppsspp.ppssppgold",
+ "argumentsTemplate": "-n org.ppsspp.ppssppgold/org.ppsspp.ppsspp.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri}",
+ "killPackageProcesses": false
+}

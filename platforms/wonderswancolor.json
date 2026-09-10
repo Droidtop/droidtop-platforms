@@ -1,0 +1,13 @@
+{
+ "id": "wonderswancolor",
+ "name": "Bandai WonderSwan Color",
+ "extensions": [
+  "7z",
+  "pc2",
+  "ws",
+  "wsc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_wswan",
+ "theme": "wonderswancolor"
+}

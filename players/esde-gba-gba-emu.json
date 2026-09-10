@@ -1,0 +1,8 @@
+{
+ "id": "esde-gba-gba-emu",
+ "systemId": "gba",
+ "label": "GBA.emu (Standalone)",
+ "pkg": "com.explusalpha.GbaEmu",
+ "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

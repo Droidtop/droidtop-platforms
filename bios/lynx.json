@@ -1,0 +1,12 @@
+{
+ "systemId": "lynx",
+ "name": "Lynx",
+ "files": [
+  {
+   "file": "bios/lynxboot.img",
+   "md5": [
+    "fcd403db69f54290b51035d82f835e7b"
+   ]
+  }
+ ]
+}

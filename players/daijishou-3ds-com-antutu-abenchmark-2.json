@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-3ds-com-antutu-abenchmark-2",
+ "systemId": "3ds",
+ "label": "3ds - org.citra.emu - storage access antutu",
+ "pkg": "com.antutu.ABenchMark",
+ "argumentsTemplate": "-n com.antutu.ABenchMark/org.citra.emu.ui.EmulationActivity -a android.intent.action.VIEW -e GamePath {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

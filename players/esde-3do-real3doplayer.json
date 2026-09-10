@@ -1,0 +1,8 @@
+{
+ "id": "esde-3do-real3doplayer",
+ "systemId": "3do",
+ "label": "Real3DOPlayer (Standalone)",
+ "pkg": "ru.vastness.altmer.real3doplayer",
+ "argumentsTemplate": "-n ru.vastness.altmer.real3doplayer/ru.vastness.altmer.real3doplayer.EmulatorActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

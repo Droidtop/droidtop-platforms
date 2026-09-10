@@ -1,0 +1,19 @@
+{
+ "id": "tg-cd",
+ "name": "NEC TurboGrafx-CD",
+ "extensions": [
+  "7z",
+  "ccd",
+  "chd",
+  "cue",
+  "img",
+  "iso",
+  "m3u",
+  "pce",
+  "sgx",
+  "toc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_pce",
+ "theme": "tg-cd"
+}

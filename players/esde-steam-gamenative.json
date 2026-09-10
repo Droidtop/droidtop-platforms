@@ -1,0 +1,8 @@
+{
+ "id": "esde-steam-gamenative",
+ "systemId": "steam",
+ "label": "GameNative (Standalone)",
+ "pkg": "app.gamenative",
+ "argumentsTemplate": "-n app.gamenative/app.gamenative.MainActivity -a app.gamenative.LAUNCH_GAME -e game_source STEAM --ei app_id {file.inject:{file.path}}",
+ "killPackageProcesses": false
+}

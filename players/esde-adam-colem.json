@@ -1,0 +1,8 @@
+{
+ "id": "esde-adam-colem",
+ "systemId": "adam",
+ "label": "ColEm (Standalone)",
+ "pkg": "com.fms.colem.deluxe",
+ "argumentsTemplate": "-n com.fms.colem.deluxe/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

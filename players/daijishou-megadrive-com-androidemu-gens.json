@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-megadrive-com-androidemu-gens",
+ "systemId": "megadrive",
+ "label": "megadrive - com.androidemu.gens",
+ "pkg": "com.androidemu.gens",
+ "argumentsTemplate": "-n com.androidemu.gens/.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

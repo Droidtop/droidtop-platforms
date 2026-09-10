@@ -1,0 +1,28 @@
+{
+ "id": "pc98",
+ "name": "NEC PC-9800 Series",
+ "extensions": [
+  "2hd",
+  "7z",
+  "88d",
+  "98d",
+  "cmd",
+  "d88",
+  "d98",
+  "dup",
+  "fdd",
+  "fdi",
+  "hdd",
+  "hdi",
+  "hdm",
+  "hdn",
+  "m3u",
+  "nhd",
+  "tfd",
+  "thd",
+  "xdf",
+  "zip"
+ ],
+ "retroArchCore": "np2kai",
+ "theme": "pc98"
+}

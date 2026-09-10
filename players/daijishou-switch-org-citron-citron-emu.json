@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-switch-org-citron-citron-emu",
+ "systemId": "switch",
+ "label": "switch - Citron",
+ "pkg": "org.citron.citron_emu",
+ "argumentsTemplate": "-n org.citron.citron_emu/org.citron.citron_emu.activities.EmulationActivity -a android.nfc.action.TECH_DISCOVERED -d {file.uri}",
+ "killPackageProcesses": false
+}

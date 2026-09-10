@@ -1,0 +1,11 @@
+{
+ "id": "desktop",
+ "name": "Desktop Applications",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "desktop"
+}

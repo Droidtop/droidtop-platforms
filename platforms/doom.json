@@ -1,0 +1,16 @@
+{
+ "id": "doom",
+ "name": "Doom",
+ "extensions": [
+  "desktop",
+  "ipk3",
+  "iwad",
+  "pk3",
+  "pk4",
+  "pwad",
+  "sh",
+  "wad"
+ ],
+ "retroArchCore": "prboom",
+ "theme": "doom"
+}

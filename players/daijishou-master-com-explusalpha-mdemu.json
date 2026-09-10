@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-master-com-explusalpha-mdemu",
+ "systemId": "master",
+ "label": "master - com.explusalpha.MdEmu",
+ "pkg": "com.explusalpha.MdEmu",
+ "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

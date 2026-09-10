@@ -1,0 +1,8 @@
+{
+ "id": "wii-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu",
+ "systemId": "wii",
+ "label": "org.dolphinemu.dolphinemu",
+ "pkg": "org.dolphinemu.dolphinemu",
+ "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

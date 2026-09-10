@@ -1,0 +1,8 @@
+{
+ "id": "kirikiri-org-github-krkr2",
+ "systemId": "kirikiri",
+ "label": "Kirikiroid2",
+ "pkg": "org.github.krkr2",
+ "argumentsTemplate": "-n org.github.krkr2/org.tvp.kirikiri2.KR2Activity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

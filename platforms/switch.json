@@ -1,0 +1,13 @@
+{
+ "id": "switch",
+ "name": "Nintendo Switch",
+ "extensions": [
+  "nca",
+  "nro",
+  "nso",
+  "nsp",
+  "xci"
+ ],
+ "retroArchCore": null,
+ "theme": "switch"
+}

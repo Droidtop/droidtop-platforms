@@ -1,0 +1,18 @@
+{
+ "id": "construct2",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "c2runtime.js"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Construct 2: c2runtime.js is the fixed name of the exported HTML5 runtime that every C2 export ships beside index.html (https://www.construct.net/en/make-games/manuals/construct-3/overview/publishing-projects). Ordered before the generic web rows."
+}

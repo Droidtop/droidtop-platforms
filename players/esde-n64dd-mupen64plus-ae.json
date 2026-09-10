@@ -1,0 +1,8 @@
+{
+ "id": "esde-n64dd-mupen64plus-ae",
+ "systemId": "n64dd",
+ "label": "Mupen64Plus AE (Standalone)",
+ "pkg": "org.mupen64plusae.v3.alpha",
+ "argumentsTemplate": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

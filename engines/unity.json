@@ -1,0 +1,18 @@
+{
+ "id": "unity",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "builtin",
+     "name": "unity"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "notes": "Not an enginehost family. The builtin probe searches UnityPlayer.dll/.so/.dylib up to 3 folders deep (real Linux-export fix)."
+}

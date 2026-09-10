@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-xbox360-aenu-ax360e-free",
+ "systemId": "xbox360",
+ "label": "xbox360 - ax360e (Free)",
+ "pkg": "aenu.ax360e.free",
+ "argumentsTemplate": "-n aenu.ax360e.free/aenu.ax360e.EmulatorActivity -a aenu.intent.action.AX360E -e game_uri {file.uri}",
+ "killPackageProcesses": false
+}

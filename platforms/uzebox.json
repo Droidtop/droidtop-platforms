@@ -1,0 +1,11 @@
+{
+ "id": "uzebox",
+ "name": "Uzebox Open Source Console",
+ "extensions": [
+  "7z",
+  "uze",
+  "zip"
+ ],
+ "retroArchCore": "uzem",
+ "theme": "uzebox"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "odyssey2",
+ "name": "Magnavox Odyssey 2",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "o2em",
+ "theme": "odyssey2"
+}

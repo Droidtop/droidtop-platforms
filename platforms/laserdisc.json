@@ -1,0 +1,15 @@
+{
+ "id": "laserdisc",
+ "name": "LaserDisc Games",
+ "extensions": [
+  "7z",
+  "daphne",
+  "dirksimple",
+  "mmi",
+  "ogv",
+  "singe",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "laserdisc"
+}

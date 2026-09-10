@@ -1,0 +1,27 @@
+{
+ "id": "adam",
+ "name": "Coleco Adam",
+ "extensions": [
+  "1dd",
+  "7z",
+  "bin",
+  "col",
+  "cqi",
+  "cqm",
+  "d77",
+  "d88",
+  "ddp",
+  "dfi",
+  "dsk",
+  "hfe",
+  "imd",
+  "mfi",
+  "mfm",
+  "rom",
+  "td0",
+  "wav",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "adam"
+}

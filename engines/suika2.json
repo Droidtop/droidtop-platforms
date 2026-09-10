@@ -1,0 +1,22 @@
+{
+ "id": "suika2",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "conf/config.txt"
+    },
+    {
+     "type": "dirExists",
+     "path": "txt"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Suika2: a game folder is conf/config.txt plus the fixed asset dirs (txt/, cg/, bg/, bgm/, cv/, se/, ch/) -- see the engine's own shipped game tree, https://github.com/denisoa/suika2/tree/master/suika2 . Two conditions so a stray conf/config.txt cannot match."
+}

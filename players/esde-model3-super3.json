@@ -1,0 +1,8 @@
+{
+ "id": "esde-model3-super3",
+ "systemId": "model3",
+ "label": "SUPER3 (Standalone)",
+ "pkg": "com.izzy2lost.super3",
+ "argumentsTemplate": "-n com.izzy2lost.super3/com.izzy2lost.super3.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

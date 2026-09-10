@@ -1,0 +1,10 @@
+{
+ "systemId": "cgenie",
+ "name": "Colour Genie",
+ "files": [
+  {
+   "file": "bios/cgenie.zip",
+   "md5": []
+  }
+ ]
+}

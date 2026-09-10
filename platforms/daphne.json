@@ -1,0 +1,15 @@
+{
+ "id": "daphne",
+ "name": "Daphne Arcade LaserDisc Emulator",
+ "extensions": [
+  "7z",
+  "daphne",
+  "dirksimple",
+  "mmi",
+  "ogv",
+  "singe",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "daphne"
+}

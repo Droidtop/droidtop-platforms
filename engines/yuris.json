@@ -1,0 +1,26 @@
+{
+ "id": "yuris",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ypf"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ybn"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "YU-RIS: .ypf archives (magic YPF) and .ycg images are YU-RIS-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); .ybn is its script container (https://github.com/arcusmaximus/VNTranslationTools, https://github.com/fengberd/YuRISTools)."
+}

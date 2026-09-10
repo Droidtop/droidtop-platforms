@@ -1,0 +1,8 @@
+{
+ "id": "gc-org-mm-j-dolphin-org-mm-j-fork",
+ "systemId": "gc",
+ "label": "Dolphin org.mm.j fork",
+ "pkg": "org.mm.j",
+ "argumentsTemplate": "-n org.mm.j/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
+ "killPackageProcesses": false
+}

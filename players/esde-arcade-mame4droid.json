@@ -1,0 +1,8 @@
+{
+ "id": "esde-arcade-mame4droid",
+ "systemId": "arcade",
+ "label": "MAME4droid (Standalone)",
+ "pkg": "com.seleuco.mame4droid",
+ "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

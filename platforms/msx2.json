@@ -1,0 +1,28 @@
+{
+ "id": "msx2",
+ "name": "MSX2",
+ "extensions": [
+  "7z",
+  "cas",
+  "col",
+  "di1",
+  "di2",
+  "dmk",
+  "dsk",
+  "fd1",
+  "fd2",
+  "m3u",
+  "mx1",
+  "mx2",
+  "ogv",
+  "ri",
+  "rom",
+  "sc",
+  "sg",
+  "wav",
+  "xsa",
+  "zip"
+ ],
+ "retroArchCore": "bluemsx",
+ "theme": "msx2"
+}

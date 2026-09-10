@@ -1,0 +1,8 @@
+{
+ "id": "virtualboy-com-simongellis-vvb-vvs",
+ "systemId": "virtualboy",
+ "label": "vvs",
+ "pkg": "com.simongellis.vvb",
+ "argumentsTemplate": "-n com.simongellis.vvb/com.simongellis.vvb.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

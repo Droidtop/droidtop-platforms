@@ -1,0 +1,8 @@
+{
+ "id": "esde-n3ds-lime3ds",
+ "systemId": "n3ds",
+ "label": "Lime3DS (Standalone)",
+ "pkg": "io.github.lime3ds.android",
+ "argumentsTemplate": "-n io.github.lime3ds.android/io.github.lime3ds.android.activities.EmulationActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

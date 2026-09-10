@@ -1,0 +1,12 @@
+{
+ "systemId": "ps3",
+ "name": "PS3",
+ "files": [
+  {
+   "file": "bios/PS3UPDAT.PUP",
+   "md5": [
+    "05fe32f5dc8c78acbcd84d36ee7fdc5b"
+   ]
+  }
+ ]
+}

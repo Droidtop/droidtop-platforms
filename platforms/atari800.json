@@ -1,0 +1,21 @@
+{
+ "id": "atari800",
+ "name": "Atari 800",
+ "extensions": [
+  "7z",
+  "a52",
+  "atr",
+  "atx",
+  "bin",
+  "car",
+  "cas",
+  "cdm",
+  "com",
+  "rom",
+  "xex",
+  "xfd",
+  "zip"
+ ],
+ "retroArchCore": "atari800",
+ "theme": "atari800"
+}

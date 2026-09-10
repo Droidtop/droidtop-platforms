@@ -1,0 +1,8 @@
+{
+ "id": "esde-flash-swf-player",
+ "systemId": "flash",
+ "label": "SWF Player (Standalone)",
+ "pkg": "com.issess.flashplayerpro",
+ "argumentsTemplate": "-n com.issess.flashplayerpro/com.issess.flashplayer.player.FlashPlayerActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

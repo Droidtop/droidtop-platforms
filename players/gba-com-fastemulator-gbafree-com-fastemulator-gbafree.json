@@ -1,0 +1,8 @@
+{
+ "id": "gba-com-fastemulator-gbafree-com-fastemulator-gbafree",
+ "systemId": "gba",
+ "label": "com.fastemulator.gbafree",
+ "pkg": "com.fastemulator.gbafree",
+ "argumentsTemplate": "-n com.fastemulator.gbafree/com.fastemulator.gba.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

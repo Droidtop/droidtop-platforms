@@ -1,0 +1,18 @@
+{
+ "id": "unreal",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "Engine/Binaries"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "notes": "Not an enginehost family; PC runtime strategies only."
+}

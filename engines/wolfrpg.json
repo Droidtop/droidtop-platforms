@@ -1,0 +1,31 @@
+{
+ "id": "wolfrpg",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "wolf",
+     "maxDepth": 1
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "Data/BasicData"
+    },
+    {
+     "type": "dirExists",
+     "path": "Data/MapData"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "WOLF RPG Editor: encrypted game archives are Data/*.wolf -- BasicData.wolf, MapData.wolf, Picture.wolf, System.wolf (https://github.com/Sinflower/WolfDec, https://github.com/Sinflower/UberWolf) -- hence the depth-1 search; unencrypted games keep the same layout as loose Data/BasicData + Data/MapData directories. Wine per the brief until a runtime exists."
+}

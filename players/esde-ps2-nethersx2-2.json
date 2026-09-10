@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps2-nethersx2-2",
+ "systemId": "ps2",
+ "label": "AetherSX2 (Standalone)",
+ "pkg": "xyz.aethersx2.android",
+ "argumentsTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+ "killPackageProcesses": false
+}

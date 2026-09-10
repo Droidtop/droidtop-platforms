@@ -1,0 +1,33 @@
+{
+ "id": "livemaker",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "game.dat"
+     ]
+    },
+    {
+     "type": "fileHeadRegex",
+     "path": "game.dat",
+     "regex": "\\Avff"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "lsb"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "LiveMaker: game.dat carries the 'vff' archive magic at offset 0 (https://morkt.github.io/GARbro/supported.html), and .lsb are the engine's script binaries (https://github.com/pmrowla/pylivemaker). The head-regex is paired with the file-name condition so a differently-cased game.dat simply fails the rule instead of matching on the name alone."
+}

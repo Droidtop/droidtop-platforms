@@ -1,0 +1,8 @@
+{
+ "id": "esde-gamegear-mastergear",
+ "systemId": "gamegear",
+ "label": "MasterGear (Standalone)",
+ "pkg": "com.fms.mg",
+ "argumentsTemplate": "-n com.fms.mg/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

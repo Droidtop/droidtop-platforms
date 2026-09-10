@@ -1,0 +1,26 @@
+{
+ "id": "lightvn",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "vndat"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "mcdat"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Light.vn: .vndat and .mcdat are the engine's packed/encrypted resource files (https://github.com/kiraio-moe/Light.vnTools). The brief asks for a format census before any runtime work; this row only classifies."
+}

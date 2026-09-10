@@ -1,0 +1,8 @@
+{
+ "id": "esde-gba-my-boy",
+ "systemId": "gba",
+ "label": "My Boy! (Standalone)",
+ "pkg": "com.fastemulator.gba",
+ "argumentsTemplate": "-n com.fastemulator.gba/com.fastemulator.gba.EmulatorActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

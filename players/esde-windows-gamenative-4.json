@@ -1,0 +1,8 @@
+{
+ "id": "esde-windows-gamenative-4",
+ "systemId": "windows",
+ "label": "GameNative Amazon (Standalone)",
+ "pkg": "app.gamenative",
+ "argumentsTemplate": "-n app.gamenative/app.gamenative.MainActivity -a app.gamenative.LAUNCH_GAME -e game_source AMAZON --ei app_id {file.inject:{file.path}}",
+ "killPackageProcesses": false
+}

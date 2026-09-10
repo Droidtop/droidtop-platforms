@@ -1,0 +1,18 @@
+{
+ "systemId": "x1",
+ "name": "Sharp X1",
+ "files": [
+  {
+   "file": "bios/xmil/IPLROM.X1",
+   "md5": [
+    "eeeea1cd29c6e0e8b094790ae969bfa7"
+   ]
+  },
+  {
+   "file": "bios/xmil/iplrom.x1t",
+   "md5": [
+    "56c28adcf1f3a2f87cf3d57c378013f5"
+   ]
+  }
+ ]
+}

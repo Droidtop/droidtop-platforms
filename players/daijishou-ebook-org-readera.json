@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ebook-org-readera",
+ "systemId": "ebook",
+ "label": "ebook - ReadEra",
+ "pkg": "org.readera",
+ "argumentsTemplate": "-n org.readera/org.readera.read.ReadActivity -d {file.uri}",
+ "killPackageProcesses": true
+}

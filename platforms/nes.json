@@ -1,0 +1,15 @@
+{
+ "id": "nes",
+ "name": "Nintendo Entertainment System",
+ "extensions": [
+  "3dsen",
+  "7z",
+  "fds",
+  "nes",
+  "unf",
+  "unif",
+  "zip"
+ ],
+ "retroArchCore": "mesen",
+ "theme": "nes"
+}

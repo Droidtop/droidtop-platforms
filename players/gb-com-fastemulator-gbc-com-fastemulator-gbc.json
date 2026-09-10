@@ -1,0 +1,8 @@
+{
+ "id": "gb-com-fastemulator-gbc-com-fastemulator-gbc",
+ "systemId": "gb",
+ "label": "com.fastemulator.gbc",
+ "pkg": "com.fastemulator.gbc",
+ "argumentsTemplate": "-n com.fastemulator.gbc/.EmulatorActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

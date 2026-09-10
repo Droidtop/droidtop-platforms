@@ -1,0 +1,147 @@
+{
+ "systemId": "macintosh",
+ "name": "Apple Macintosh",
+ "files": [
+  {
+   "file": "bios/MacII.ROM",
+   "md5": [
+    "66223be1497460f1e60885eeb35e03cc"
+   ]
+  },
+  {
+   "file": "bios/MacIIx.ROM",
+   "md5": [
+    "2a8a4c7f2a38e0ab0771f59a9a0f1ee4"
+   ]
+  },
+  {
+   "file": "bios/mac128k.zip",
+   "md5": [
+    "bc04a4252ee96826c1f41f927c145225",
+    "409d8b9a04db15b7bfbbd5fcb931bf2e"
+   ]
+  },
+  {
+   "file": "bios/mackbd_m0110.zip",
+   "md5": [
+    "9d09a9a51c9ef3ea5719e19db22e7901"
+   ]
+  },
+  {
+   "file": "bios/mackbd_m0120.zip",
+   "md5": [
+    "9d09a9a51c9ef3ea5719e19db22e7901"
+   ]
+  },
+  {
+   "file": "bios/mac512k.zip",
+   "md5": [
+    "b4118b89fa68a913a225f0cf9a751fae",
+    "ab4e461833e98ef7106f24455a07769d"
+   ]
+  },
+  {
+   "file": "bios/macplus.zip",
+   "md5": [
+    "1467a42dee57ac265d063b3f351189fc",
+    "25b1bf85b3b072d957499cef4d7e313f",
+    "cf7c3259844245a8967556fa40d81243",
+    "d5584762b43a9b1cb24a981f9b9b4198",
+    "f83069fd7ff1fb011958f819cbff4c88",
+    "875919e2544644cd628f44b5c11db036",
+    "efcefe8f11c10541a503d48a07878201",
+    "f4b06da98500df0747a764dfbf1862b9"
+   ]
+  },
+  {
+   "file": "bios/macse.zip",
+   "md5": [
+    "9fb38bdcc0d53d9d380897ee53dc1322"
+   ]
+  },
+  {
+   "file": "bios/macclasc.zip",
+   "md5": [
+    "c229bb677cb41b84b780c9e38a09173e"
+   ]
+  },
+  {
+   "file": "bios/mac2fdhd.zip",
+   "md5": [
+    "2a8a4c7f2a38e0ab0771f59a9a0f1ee4"
+   ]
+  },
+  {
+   "file": "bios/nb_mdc824.zip",
+   "md5": [
+    "7500a6a958247ee6e092f08715f2fff8"
+   ]
+  },
+  {
+   "file": "bios/maciix.zip",
+   "md5": [
+    "2a8a4c7f2a38e0ab0771f59a9a0f1ee4"
+   ]
+  },
+  {
+   "file": "bios/maclc3.zip",
+   "md5": [
+    "fa16d49527c4e6e9c0d9e46904133d39"
+   ]
+  },
+  {
+   "file": "bios/mackbd_m0110a.zip",
+   "md5": [
+    "9e8ea1552153c5e0f895e247e7d3ec1c"
+   ]
+  },
+  {
+   "file": "bios/nb_image.zip",
+   "md5": [
+    "93155ac7bad0fec36837252bb1e408f2"
+   ]
+  },
+  {
+   "file": "bios/egret.zip",
+   "md5": [
+    "96665499f5cf2bb5b4aae6fdaf0a9fb5",
+    "b955ecbdf6d2f979f3683dd1d6884643",
+    "5035d321c5d5fa1eab5ce6bf986676e4"
+   ]
+  },
+  {
+   "file": "bios/adbmodem.zip",
+   "md5": [
+    "862b8598cecdbc934658c4cb599a8142"
+   ]
+  },
+  {
+   "file": "bios/macos3.img",
+   "md5": []
+  },
+  {
+   "file": "bios/macos608.img",
+   "md5": []
+  },
+  {
+   "file": "bios/macos701.img",
+   "md5": []
+  },
+  {
+   "file": "bios/macos75.img",
+   "md5": []
+  },
+  {
+   "file": "bios/mac608.chd",
+   "md5": []
+  },
+  {
+   "file": "bios/mac701.chd",
+   "md5": []
+  },
+  {
+   "file": "bios/mac755.chd",
+   "md5": []
+  }
+ ]
+}

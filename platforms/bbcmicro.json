@@ -1,0 +1,13 @@
+{
+ "id": "bbcmicro",
+ "name": "Acorn Computers BBC Micro",
+ "extensions": [
+  "7z",
+  "dsd",
+  "img",
+  "ssd",
+  "zip"
+ ],
+ "retroArchCore": "b2",
+ "theme": "bbcmicro"
+}

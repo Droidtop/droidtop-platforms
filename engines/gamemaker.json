@@ -1,0 +1,31 @@
+{
+ "id": "gamemaker",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "data.win"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "game.unx",
+      "game.ios"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "GameMaker / GameMaker Studio: the runner's data file is data.win on Windows, game.unx on Linux and game.ios on macOS (https://tcrf.net/Help:Contents/Finding_Content/Game_Engines/GameMaker:_Studio). Brief section 11 puts this family on Wine/native by default -- there is no portable drop-in runner to prefer."
+}

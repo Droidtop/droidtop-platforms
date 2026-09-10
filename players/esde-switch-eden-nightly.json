@@ -1,0 +1,8 @@
+{
+ "id": "esde-switch-eden-nightly",
+ "systemId": "switch",
+ "label": "Eden Nightly (Standalone)",
+ "pkg": "dev.eden.eden_emulator.nightly",
+ "argumentsTemplate": "-n dev.eden.eden_emulator.nightly/org.yuzu.yuzu_emu.activities.EmulationActivity -a android.nfc.action.TECH_DISCOVERED -d {file.uri}",
+ "killPackageProcesses": false
+}

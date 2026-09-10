@@ -1,0 +1,8 @@
+{
+ "id": "esde-n64-m64plus-fz",
+ "systemId": "n64",
+ "label": "M64Plus FZ (Standalone)",
+ "pkg": "org.mupen64plusae.v3.fzurita.amazon",
+ "argumentsTemplate": "-n org.mupen64plusae.v3.fzurita.amazon/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

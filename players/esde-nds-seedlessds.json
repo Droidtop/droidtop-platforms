@@ -1,0 +1,8 @@
+{
+ "id": "esde-nds-seedlessds",
+ "systemId": "nds",
+ "label": "SeedlessDS (Standalone)",
+ "pkg": "com.seedlessds.app",
+ "argumentsTemplate": "-n com.seedlessds.app/com.seedlessds.app.LaunchGame -e rom_path {file.path}",
+ "killPackageProcesses": false
+}

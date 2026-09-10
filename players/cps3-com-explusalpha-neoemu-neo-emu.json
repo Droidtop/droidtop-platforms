@@ -1,0 +1,8 @@
+{
+ "id": "cps3-com-explusalpha-neoemu-neo-emu",
+ "systemId": "cps3",
+ "label": "NEO.EMU",
+ "pkg": "com.explusalpha.neoemu",
+ "argumentsTemplate": "-n com.explusalpha.neoemu/com.imagine.BaseActivity -d {file.path}",
+ "killPackageProcesses": false
+}

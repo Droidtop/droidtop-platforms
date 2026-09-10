@@ -1,0 +1,8 @@
+{
+ "id": "naomi-com-flycast-emulator-com-flycast-emulator",
+ "systemId": "naomi",
+ "label": "com.flycast.emulator",
+ "pkg": "com.flycast.emulator",
+ "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

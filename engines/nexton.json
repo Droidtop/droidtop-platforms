@@ -1,0 +1,18 @@
+{
+ "id": "nexton",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "tgf"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "NEXTON (LikeC lineage): .tgf is NEXTON-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). The Nexton/Tactics .arc variant (magic TACTICS_ARC_FILE) is deliberately NOT used: .arc is shared by nineteen brands in that same table and the magic needs a fixed file name this row does not have."
+}

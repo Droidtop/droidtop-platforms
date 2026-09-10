@@ -1,0 +1,8 @@
+{
+ "id": "esde-wonderswancolor-swan-emu",
+ "systemId": "wonderswancolor",
+ "label": "Swan.emu (Standalone)",
+ "pkg": "com.explusalpha.SwanEmu",
+ "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,14 @@
+{
+ "id": "fds",
+ "name": "Nintendo Famicom Disk System",
+ "extensions": [
+  "7z",
+  "fds",
+  "nes",
+  "unf",
+  "unif",
+  "zip"
+ ],
+ "retroArchCore": "mesen",
+ "theme": "fds"
+}

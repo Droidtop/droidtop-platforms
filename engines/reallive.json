@@ -1,0 +1,26 @@
+{
+ "id": "reallive",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "gameexe.ini"
+     ]
+    },
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "seen.txt"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "VisualArt's RealLive/AVG32 lineage: Gameexe.ini is the data-driven config every VA interpreter reads and SEEN.TXT the compiled scenario container (https://github.com/eglaysher/rlvm, https://github.com/Ruin0x11/adieu). AVG32 uses the SAME two files, so this row is the lineage, not the exact VM -- see the not-yet-detectable list in /root/coordination/research/engine-signatures/README.md."
+}

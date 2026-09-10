@@ -1,0 +1,20 @@
+{
+ "id": "spectravideo",
+ "name": "Spectravideo",
+ "extensions": [
+  "7z",
+  "cas",
+  "col",
+  "dsk",
+  "m3u",
+  "mx1",
+  "mx2",
+  "ri",
+  "rom",
+  "sc",
+  "sg",
+  "zip"
+ ],
+ "retroArchCore": "bluemsx",
+ "theme": "spectravideo"
+}

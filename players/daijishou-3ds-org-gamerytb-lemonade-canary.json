@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-3ds-org-gamerytb-lemonade-canary",
+ "systemId": "3ds",
+ "label": "3ds - Lemonade Alpha",
+ "pkg": "org.gamerytb.lemonade.canary",
+ "argumentsTemplate": "-n org.gamerytb.lemonade.canary/org.citra.citra_emu.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

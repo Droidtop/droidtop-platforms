@@ -1,0 +1,8 @@
+{
+ "id": "esde-n3ds-citra-canary",
+ "systemId": "n3ds",
+ "label": "Citra Canary (Standalone)",
+ "pkg": "org.citra.citra_emu.canary",
+ "argumentsTemplate": "-n org.citra.citra_emu.canary/org.citra.citra_emu.activities.EmulationActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

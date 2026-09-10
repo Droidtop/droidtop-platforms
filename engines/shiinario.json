@@ -1,0 +1,18 @@
+{
+ "id": "shiinario",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "war"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "ShiinaRio: .war archives (WARC 1.1-1.7) with .s25 images (https://morkt.github.io/GARbro/supported.html). Note the one overlap in GARbro's own table: Studio Ryokucha also uses a .war extension with a different magic, which JSON conditions cannot check without a fixed file name -- both are Windows VNs and both land on Wine, so the launch outcome is the same either way."
+}

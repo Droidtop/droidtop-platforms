@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-videos-org-videolan-vlc",
+ "systemId": "videos",
+ "label": "videos - VLC for Android",
+ "pkg": "org.videolan.vlc",
+ "argumentsTemplate": "-n org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

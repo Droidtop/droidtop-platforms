@@ -1,0 +1,12 @@
+{
+ "id": "quake",
+ "name": "Quake",
+ "extensions": [
+  "desktop",
+  "pak",
+  "pk3",
+  "sh"
+ ],
+ "retroArchCore": "tyrquake",
+ "theme": "quake"
+}

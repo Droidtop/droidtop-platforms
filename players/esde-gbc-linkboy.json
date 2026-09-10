@@ -1,0 +1,8 @@
+{
+ "id": "esde-gbc-linkboy",
+ "systemId": "gbc",
+ "label": "Linkboy (Standalone)",
+ "pkg": "com.pixelrespawn.linkboy",
+ "argumentsTemplate": "-n com.pixelrespawn.linkboy/com.pixelrespawn.linkboy.EmulatorActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

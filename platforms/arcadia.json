@@ -1,0 +1,12 @@
+{
+ "id": "arcadia",
+ "name": "Emerson Arcadia 2001",
+ "extensions": [
+  "7z",
+  "bin",
+  "tvc",
+  "zip"
+ ],
+ "retroArchCore": "amiarcadia",
+ "theme": "arcadia"
+}

@@ -1,0 +1,26 @@
+{
+ "id": "cmvs",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "cmvs32.exe",
+      "cmvs64.exe",
+      "cmvs.cfg"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "cmvs",
+  "context": null
+ },
+ "notes": "ps2 vs ps3 generation undetermined by the cmvs32/cmvs64/cmvs.cfg signature; CONFIGURE flow. Listed BEFORE the script-extension rows on purpose: droidtop resolves an engine's launch row as the FIRST row carrying that engine id, so the generic context-null row must be the canonical one - the script rows below only refine the context for folders where a script is visible and no cmvs runtime marker is."
+}

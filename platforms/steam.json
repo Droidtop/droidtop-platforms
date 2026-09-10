@@ -1,0 +1,10 @@
+{
+ "id": "steam",
+ "name": "Valve Steam",
+ "extensions": [
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "steam"
+}

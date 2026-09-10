@@ -1,0 +1,8 @@
+{
+ "id": "nds-com-hydra-noods-noods",
+ "systemId": "nds",
+ "label": "NooDS",
+ "pkg": "com.hydra.noods",
+ "argumentsTemplate": "-n com.hydra.noods/.FileBrowser -e LaunchPath {file.path}",
+ "killPackageProcesses": false
+}

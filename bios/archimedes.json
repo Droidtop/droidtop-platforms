@@ -1,0 +1,56 @@
+{
+ "systemId": "archimedes",
+ "name": "Acorn Archimedes",
+ "files": [
+  {
+   "file": "bios/aa310.zip",
+   "md5": [
+    "374e4bcaa04cb98aad3b64a1555c3930",
+    "b0b6a83029b6f85bb044bfc46bf3f0f6",
+    "bf35bb799aa0278b7ee7719dd32f26bc",
+    "e41af081535aae930d68ee4cbd672513",
+    "7ecdccd760557ab0711edb37773faeb6",
+    "c43bad04862ea03146ff5bf7441a1a24",
+    "454c1977ad70a206f4f3a0bdca294d85",
+    "6850da7a70b198eaf6fde5be503fa5cd",
+    "84d305e248dab48a3a110af161dfb005",
+    "64d7f085e6afb149ebc2e7f919429a19",
+    "f7d0a9a4d1dae8eee057aa626b87715f",
+    "763b015d85c7d9d17e06d5babc0a9d32",
+    "b8fcd63c6a28d0c7034af2e6c5aff9a8",
+    "6265551c5d6336f7ddd9f3fc78ceba93",
+    "ca4379aeab4f7c7640c8ad34b27a9db6",
+    "358d3c9d2685c076f6a141c26d45520c",
+    "4ae429fbf23f8aa64ce2002cfb14c527",
+    "83d0f0738468fdf9f23c13eef22dbeea",
+    "636e4072c392916d2bf00865fee40984",
+    "252b1993fdb66cac522a0edbeffc3407",
+    "591f3bdd0f20a0a3d03c8748f2f75754",
+    "f77f4a409c78c8495fc3876cd4e7d97c",
+    "57d3a349407916f55129d6c8c0f56395",
+    "ee4aa1ea0eebf88c5f6cae6315ed11a1",
+    "a057124502e533ccd8865dc970cf7017",
+    "3c40d2821595a7334a46ea3b46a5421d",
+    "d1d51b8f603bba476d1f63bc5980040e",
+    "7b096a93cc5ada80bcfb5249bca33768",
+    "744e80abe4c6a845412f63a0f0b14e48",
+    "9dac78cba6034c427d00f78fa94ab63d",
+    "4c0b2e1fb29c8acd84e94d25c953173c",
+    "f6bf5f8908a19a9aacf733633b1cd5cf",
+    "eec46f5bd4cdb456b760b3cddf16a33c",
+    "980e3be0c851a59d0f4602f4a94b2eef",
+    "971a49d5c2dbb3fc01c17d1d5615781a",
+    "9ce06a4d2a8331bc5b7fadb967d74f4f",
+    "c74763f720c98e16dc3c6c421db21485",
+    "6f564c8917f04594bda7385f6de61061",
+    "232a302efe19278d9df6ecbc8ea3dc6c"
+   ]
+  },
+  {
+   "file": "bios/archimedes_keyboard.zip",
+   "md5": [
+    "1a8617c1abe3e0729d20ce844e1e12a8"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-archimedes-mame4droid-current",
+ "systemId": "archimedes",
+ "label": "MAME4droid Current [Model A440/1] (Standalone)",
+ "pkg": "com.seleuco.mame4d2024",
+ "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d aa4401",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "gc-org-dolphinemu-mmjr3-dolphin-mmjr3",
+ "systemId": "gc",
+ "label": "Dolphin mmjr3",
+ "pkg": "org.dolphinemu.mmjr3",
+ "argumentsTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

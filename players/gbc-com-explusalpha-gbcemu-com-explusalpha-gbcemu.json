@@ -1,0 +1,8 @@
+{
+ "id": "gbc-com-explusalpha-gbcemu-com-explusalpha-gbcemu",
+ "systemId": "gbc",
+ "label": "com.explusalpha.GbcEmu",
+ "pkg": "com.explusalpha.GbcEmu",
+ "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

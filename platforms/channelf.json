@@ -1,0 +1,12 @@
+{
+ "id": "channelf",
+ "name": "Fairchild Channel F",
+ "extensions": [
+  "7z",
+  "bin",
+  "chf",
+  "zip"
+ ],
+ "retroArchCore": "freechaf",
+ "theme": "channelf"
+}

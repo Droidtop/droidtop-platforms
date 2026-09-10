@@ -1,0 +1,26 @@
+{
+ "id": "artemis",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "pfs"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "mja"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Artemis Engine: .pfs archives (magic pf2/pf6/pf8, normally root.pfs) and .mja audio (MJA0) (https://morkt.github.io/GARbro/supported.html); scripts are .asb/.ast (https://github.com/arcusmaximus/VNTranslationTools)."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-consolearcade-aps3e",
+ "systemId": "consolearcade",
+ "label": "aPS3e Directory (Standalone)",
+ "pkg": "aenu.aps3e.premium",
+ "argumentsTemplate": "-n aenu.aps3e.premium/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e game_dir {file.path}",
+ "killPackageProcesses": false
+}

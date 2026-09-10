@@ -1,0 +1,4216 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-09-10T20:43:47Z",
+ "collections": {
+  "engines": {
+   "key": "engines",
+   "form": "array",
+   "version": 5,
+   "meta": {
+    "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md."
+   },
+   "legacy": "engines-database.json"
+  },
+  "platforms": {
+   "key": "platforms",
+   "form": "array",
+   "version": 1,
+   "meta": {
+    "source": "ES-DE es_systems.xml (linux), MIT -- regenerate with generator/from_esde_systems.py"
+   },
+   "legacy": "platforms-database.json"
+  },
+  "players": {
+   "key": "players",
+   "form": "array",
+   "version": 2,
+   "meta": {},
+   "legacy": "players-database.json"
+  },
+  "bios": {
+   "key": "systems",
+   "form": "object",
+   "version": 1,
+   "meta": {
+    "source": "batocera-systems (batocera.linux, GPL) -- regenerate with generator/from_batocera.py"
+   },
+   "idField": "systemId",
+   "legacy": "bios-database.json"
+  },
+  "hardware": {
+   "key": "devices",
+   "form": "object",
+   "version": 1,
+   "meta": {
+    "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet."
+   },
+   "idField": "id"
+  },
+  "controllers": {
+   "key": "controllers",
+   "form": "object",
+   "version": 1,
+   "meta": {
+    "comment": "Controller profile seeds beyond SDL's gamecontrollerdb -- one file per vendor:product, for pads whose Android mapping is wrong and which the bundled database does not cover. Empty until a pad is actually measured on hardware; a profile invented from a datasheet is worse than none, because it silently overrides a mapping that was working."
+   },
+   "idField": "id"
+  }
+ },
+ "files": [
+  {
+   "path": "engines/renpy.json",
+   "collection": "engines",
+   "sha256": "253710ef979df924702722339063ef61cd7159c248e8486200a6818b23932f4b"
+  },
+  {
+   "path": "engines/rpgmaker-mv.json",
+   "collection": "engines",
+   "sha256": "3d496f5dac99529a9c3ff172d10b478afde04cd617195b094ed15ab18c761e15"
+  },
+  {
+   "path": "engines/rpgmaker-mz.json",
+   "collection": "engines",
+   "sha256": "13c94ae8d7c87b3d774a78ce34bcc8419d38a18e0db717bfab647c8dc36d742f"
+  },
+  {
+   "path": "engines/rpgmaker-mvmz.json",
+   "collection": "engines",
+   "sha256": "c2d2ee90d5047bed204c5c5f4d8f642279afefac078945058d627b644b1259e0"
+  },
+  {
+   "path": "engines/rpgmaker-vxace.json",
+   "collection": "engines",
+   "sha256": "9b9bbf62fafd7bc818595c7a3348a28eb7937e0499308241de8f528d846f774a"
+  },
+  {
+   "path": "engines/rpgmaker-vx.json",
+   "collection": "engines",
+   "sha256": "83e679f60be473b722d14b4d1065e7cd9c1303d1ba70fb4b30a7b9a15ced4177"
+  },
+  {
+   "path": "engines/rpgmaker-xp.json",
+   "collection": "engines",
+   "sha256": "08d7b48ae7de905254bebf149b95e444e67bda4d5e95fb693cdf0167b27c6069"
+  },
+  {
+   "path": "engines/rpgmaker-2000-2003.json",
+   "collection": "engines",
+   "sha256": "1a150047b91985b43570e5c10d666512669ec51015c13b9ec1181f70a2aec62f"
+  },
+  {
+   "path": "engines/kirikiri.json",
+   "collection": "engines",
+   "sha256": "c8794932b98f1cb53875d0350c31f557a9f4fe5f0a74eb713f3cd708f66a2314"
+  },
+  {
+   "path": "engines/august.json",
+   "collection": "engines",
+   "sha256": "26b6850c531b3f8b99b1d1a5a33f2c0a88dac9ef685bf023a0db9f77626fde7b"
+  },
+  {
+   "path": "engines/buriko.json",
+   "collection": "engines",
+   "sha256": "920d41c4b12306895de5ab7b20798b41eb2fe9f6e1c52aa93b87fe74a5703e66"
+  },
+  {
+   "path": "engines/catsystem2.json",
+   "collection": "engines",
+   "sha256": "46f55a505a99639c769e458a239237e9cb17c7f12dde91b44f31c12ce7d43386"
+  },
+  {
+   "path": "engines/cmvs.json",
+   "collection": "engines",
+   "sha256": "ec64d41bb59a4cd3fcfc658aa7c9b5f4168e0d8d4cb61082b2ec198b2be20018"
+  },
+  {
+   "path": "engines/cmvs-ps3.json",
+   "collection": "engines",
+   "sha256": "9b68457f1d748391be40e4f3c2b0f9a28ec7ab962137d1691bdfb28abe9eca4b"
+  },
+  {
+   "path": "engines/cmvs-ps2.json",
+   "collection": "engines",
+   "sha256": "a65ea121a35a03a83bc5316253aa2fa3670aac64faab5abbb4beb1a18fe32fdc"
+  },
+  {
+   "path": "engines/flash-air.json",
+   "collection": "engines",
+   "sha256": "568398f4d3aeacc7cb2cb1ceeb8a6503dc695ab3d4b9990b796032f60c0cafd8"
+  },
+  {
+   "path": "engines/godot.json",
+   "collection": "engines",
+   "sha256": "cd72d59f7a2bf9609447a16976308e113cc76fcb9178cc0c8b927f4a33672573"
+  },
+  {
+   "path": "engines/nscripter.json",
+   "collection": "engines",
+   "sha256": "5935a66dc07992e3e16107506a05a74179a4dd7da4bbf2637dd18c8a00b8d05e"
+  },
+  {
+   "path": "engines/ags.json",
+   "collection": "engines",
+   "sha256": "6bcf942377ed3bd3a4a89f8a96fbb6e4d2c4f02d70016f44e85f51a83ee5bdcf"
+  },
+  {
+   "path": "engines/alicesoft-system4.json",
+   "collection": "engines",
+   "sha256": "2462a95fa2440024c83522f5347b6ace5de9d6d4b3f1b9853bb213271d0e8f09"
+  },
+  {
+   "path": "engines/alicesoft-system3.json",
+   "collection": "engines",
+   "sha256": "7af360d47dda25b2c558554ac576fb5677cb28f3b1c2448abcb3f004f6ac97c7"
+  },
+  {
+   "path": "engines/reallive.json",
+   "collection": "engines",
+   "sha256": "4183963afbe3af129b4bd2f584859c933fc0db436123a80d53fafe7823ea9ccf"
+  },
+  {
+   "path": "engines/qsp.json",
+   "collection": "engines",
+   "sha256": "1404166235343821d2eeba27b6f04f0769d7333fd96457d9951cb0e537864567"
+  },
+  {
+   "path": "engines/suika2.json",
+   "collection": "engines",
+   "sha256": "0fcff289e964ca7ee45c9ef492edb95de5cdf4c38a2a1480473a0009704c7943"
+  },
+  {
+   "path": "engines/majiro.json",
+   "collection": "engines",
+   "sha256": "4fc62ddfe66f86c5ced073ce807d14986981a49e2866438a06c0d1eb6aa2d90f"
+  },
+  {
+   "path": "engines/yuris.json",
+   "collection": "engines",
+   "sha256": "030a048214fb7bb5912ff4e0b1f084021f59a068a968490cae77c824d52aa735"
+  },
+  {
+   "path": "engines/livemaker.json",
+   "collection": "engines",
+   "sha256": "85e89d4230570355cac3f50dbd6b6cfd704b29f9109d7dc8bb519db6c2afa964"
+  },
+  {
+   "path": "engines/yuka.json",
+   "collection": "engines",
+   "sha256": "a6c68ed691748ee27f08b79a39076659f0b560e6bbfc22fad32900f7927781fa"
+  },
+  {
+   "path": "engines/siglus.json",
+   "collection": "engines",
+   "sha256": "e62c1c7cf9c899cd5040e4fdef7db991de23d81e98410da7c5944332b5db0564"
+  },
+  {
+   "path": "engines/willplus-advhd.json",
+   "collection": "engines",
+   "sha256": "b1f970fa2ceff4dda82e09e18c76364346872fd0f5179c9ec4ed0884c9ec9e72"
+  },
+  {
+   "path": "engines/shiinario.json",
+   "collection": "engines",
+   "sha256": "8881e11ce1680e1f400bbd638866e2082674c878c7c488ac8db3c0637488c78a"
+  },
+  {
+   "path": "engines/qlie.json",
+   "collection": "engines",
+   "sha256": "599008aa096bbb5e1b44030201549cb14d8db688718f6b0a8481d0d411242f75"
+  },
+  {
+   "path": "engines/malie.json",
+   "collection": "engines",
+   "sha256": "79f7d242d5c78afb3191f28254417ebc30af9a24d8c6f8dbe39bf473ffb80657"
+  },
+  {
+   "path": "engines/ai5win.json",
+   "collection": "engines",
+   "sha256": "3208f02662ff584af28e7ad8106ecd27a43e7053044301ed7d3cf8f4a0d74d62"
+  },
+  {
+   "path": "engines/ai6win.json",
+   "collection": "engines",
+   "sha256": "06618c01d1cba936127d031727c7804b7551caff27ae41fcb51a52138e5d5e8f"
+  },
+  {
+   "path": "engines/systemnnn.json",
+   "collection": "engines",
+   "sha256": "da0a435492b576fc9a25983cbea40bf8815ec6eda88b6cc7ebb93d2481af6650"
+  },
+  {
+   "path": "engines/propeller.json",
+   "collection": "engines",
+   "sha256": "e1f6b27d77bfecdad6734f03d63803ad0b6604f3e2de73a88cc477a7b133e24f"
+  },
+  {
+   "path": "engines/artemis.json",
+   "collection": "engines",
+   "sha256": "67b23588e62dd4a0e9871e30f5b7e1976d4ac4b5741bea2a881ea8964805fc64"
+  },
+  {
+   "path": "engines/rugp.json",
+   "collection": "engines",
+   "sha256": "6958d0a891c161f9213a6c9c6d6db7599df270879c8e327cb0684745711b761b"
+  },
+  {
+   "path": "engines/wolfrpg.json",
+   "collection": "engines",
+   "sha256": "6a0c98d8fb43653425e5d1052633bb60807181bad47ed4a4f3154ed64151c63e"
+  },
+  {
+   "path": "engines/lightvn.json",
+   "collection": "engines",
+   "sha256": "0a98f9f5045b6ecc6fc518dc91951cccdfa6733903750e82cbd81a8eaf1213d9"
+  },
+  {
+   "path": "engines/kaguya.json",
+   "collection": "engines",
+   "sha256": "beeae194b291af80a2620ff9518480c242caa85a73fc1bf4c0298e45d5b6bc8b"
+  },
+  {
+   "path": "engines/shsystem.json",
+   "collection": "engines",
+   "sha256": "5aad9f6273c0256c3ba6cf6709be6dcdcec40f312f335af3d7d7b13d60bcf9ba"
+  },
+  {
+   "path": "engines/eushully.json",
+   "collection": "engines",
+   "sha256": "d395086472c443c958a42491127db7501726765f1cb1021052482dfe7fc681ba"
+  },
+  {
+   "path": "engines/fc-advwin32.json",
+   "collection": "engines",
+   "sha256": "05d0c799d5d6fea3b2cc0b5f40e11faf6b68f7af3129bc525886f770b8a7fd82"
+  },
+  {
+   "path": "engines/entisgls.json",
+   "collection": "engines",
+   "sha256": "8b7c501c1dce305634babcfa56074489867e45526449a3817236b3ca85bb2420"
+  },
+  {
+   "path": "engines/exhibit.json",
+   "collection": "engines",
+   "sha256": "e9dd9201c89c83a975aa098066b82dcf1ef4c766346054e350e5a2dc6559f6bc"
+  },
+  {
+   "path": "engines/favorite.json",
+   "collection": "engines",
+   "sha256": "bf18a9e4e8997dfc548526a07082d8a5a29439e06ab31fc1797c813d0ae199b7"
+  },
+  {
+   "path": "engines/musica.json",
+   "collection": "engines",
+   "sha256": "8abd05f29e295a1983b09348b51b766fa0ba59d2d4a32b18cf8d658c5fa529df"
+  },
+  {
+   "path": "engines/nexton.json",
+   "collection": "engines",
+   "sha256": "6c805a966294d3cd493e6e7ce6fd14840e91325888495f6ef602d3ef195065db"
+  },
+  {
+   "path": "engines/nitroplus.json",
+   "collection": "engines",
+   "sha256": "c7be33f44dbd4d5f434cb5ebd051fa403bf4182bab8d40e451ebe3df55baf52b"
+  },
+  {
+   "path": "engines/rags.json",
+   "collection": "engines",
+   "sha256": "f6bffeac706e1e4117e17e09df7d49d4a1d2eb88c788d3cf2c51d561bf7299d3"
+  },
+  {
+   "path": "engines/gamemaker.json",
+   "collection": "engines",
+   "sha256": "7199772f9e48d9dbff7d6c800f7afbd4f9596277f9608f88e7752b03ff82366c"
+  },
+  {
+   "path": "engines/tyranoscript.json",
+   "collection": "engines",
+   "sha256": "56d91aba5043c0da69f26a05b2ef8323ca8aad2a53ebcec2e25fb853902d1cb8"
+  },
+  {
+   "path": "engines/construct2.json",
+   "collection": "engines",
+   "sha256": "6317c82fa79de55b5c08a95288daac42a00b5a85faa8d541df8a37baaefd8480"
+  },
+  {
+   "path": "engines/construct3.json",
+   "collection": "engines",
+   "sha256": "d7cd99915396cd29d4107890752e7312606769f494b146e5df20db4478eec0ca"
+  },
+  {
+   "path": "engines/visualnovelmaker.json",
+   "collection": "engines",
+   "sha256": "529c29dcd0822e6d5dfc309b205375a6bcdb5a5c4e7f8e7b029534f1bbfeb931"
+  },
+  {
+   "path": "engines/renpy-fallback.json",
+   "collection": "engines",
+   "sha256": "db92f0b01f0b98f2d37696f6d16be516d13a57ede8aebe041b2b3fd3f9e37d81"
+  },
+  {
+   "path": "engines/unreal.json",
+   "collection": "engines",
+   "sha256": "11cd241df83ba2021c0740bcbdbe8c1d2c7780d66d63535a8ef342d7a0ea7ad5"
+  },
+  {
+   "path": "engines/unity.json",
+   "collection": "engines",
+   "sha256": "36ef95e5c6e376cfcf4b75fd6aa746d8c897fd7ac79563308790621dc6b6f2b0"
+  },
+  {
+   "path": "engines/nwjs-electron.json",
+   "collection": "engines",
+   "sha256": "6d7560a2fe636c13d884bb0671ca14a70f495d589e9003af232267ffdb767ccf"
+  },
+  {
+   "path": "engines/flash-swf.json",
+   "collection": "engines",
+   "sha256": "1f26054f08d1c81f0d228e9dfa39a94e5e6cd584261329004979df89c1675ad0"
+  },
+  {
+   "path": "engines/html.json",
+   "collection": "engines",
+   "sha256": "52e0b7c05441609d82a357ff30250ecb3cb672b76ab969f8a364328f1af46b2d"
+  },
+  {
+   "path": "platforms/3do.json",
+   "collection": "platforms",
+   "sha256": "eacf0e3ce2ee653f96a8f5a4e41e689b1d3d5585edbe95e9bad095f2100402b7"
+  },
+  {
+   "path": "platforms/adam.json",
+   "collection": "platforms",
+   "sha256": "b7a8cfe02e718ed0d92d80b2c899b2c8a785181a50c81fdc06092e7013bd2a29"
+  },
+  {
+   "path": "platforms/ags.json",
+   "collection": "platforms",
+   "sha256": "8457768c853b43160394a6cca8a22dc604c8ae217ab097ce2e0c98369f597096"
+  },
+  {
+   "path": "platforms/amiga.json",
+   "collection": "platforms",
+   "sha256": "2eb153b06a05dbfab26ac04c310eb83ad6f2f20f574e3b5e17a70edd685fd7f4"
+  },
+  {
+   "path": "platforms/amiga1200.json",
+   "collection": "platforms",
+   "sha256": "08fb83cd9edf484a5b937e1181219eb125f9d03db880a9861b825fd4f36d009b"
+  },
+  {
+   "path": "platforms/amiga600.json",
+   "collection": "platforms",
+   "sha256": "c86a33273db94a80f94040f0d81c10c03be4681e8888daa8e5b23ff755996522"
+  },
+  {
+   "path": "platforms/amigacd32.json",
+   "collection": "platforms",
+   "sha256": "21721d9c4e5484673596793f4d235a0d7c4cf2b8897bfdbda83a63cd164faa81"
+  },
+  {
+   "path": "platforms/amstradcpc.json",
+   "collection": "platforms",
+   "sha256": "a98da99bcc52026651ae791d28854765aedf9cf02136601fdbeb230789316c5f"
+  },
+  {
+   "path": "platforms/android.json",
+   "collection": "platforms",
+   "sha256": "e138037709e7fb5008d8f0b279cd1af8659fe2c717c633f7a3d9bcd772de8b1e"
+  },
+  {
+   "path": "platforms/androidapps.json",
+   "collection": "platforms",
+   "sha256": "6db746ab723a39d00584ce6aab1ae6ddc208d8ba4dd43099c7e78004aca635e8"
+  },
+  {
+   "path": "platforms/androidgames.json",
+   "collection": "platforms",
+   "sha256": "c7e9b5d86b9cbce2f49da05b72d25003ed47c8241260bab5e0f87f2afb6cffe2"
+  },
+  {
+   "path": "platforms/apple2.json",
+   "collection": "platforms",
+   "sha256": "8a1a77886a4e13dd653c5f1061f9d8977493a1eee6fd5ac98e77fd4dbd7211fc"
+  },
+  {
+   "path": "platforms/apple2gs.json",
+   "collection": "platforms",
+   "sha256": "31cd919f00f1d0553a67180fdd84460b39387daf91955c8f391e611371dc13ce"
+  },
+  {
+   "path": "platforms/arcade.json",
+   "collection": "platforms",
+   "sha256": "4b4a469cd1ebe67ce26b18f4131414f54177d2ac1088c62534cda1fc2cecf0a9"
+  },
+  {
+   "path": "platforms/arcadia.json",
+   "collection": "platforms",
+   "sha256": "df120d21f9a315d4792f73751b7c24e0859b49199f5844e0c75dfe5da48ded1f"
+  },
+  {
+   "path": "platforms/archimedes.json",
+   "collection": "platforms",
+   "sha256": "a548b550a42d07de097adb7b28e09c5e6ba34f4e002431e8f6b7471d4972f26e"
+  },
+  {
+   "path": "platforms/arduboy.json",
+   "collection": "platforms",
+   "sha256": "ab8e296911be779349095822f09dd4e7f54501225d60f97e1b489997d3a19ef4"
+  },
+  {
+   "path": "platforms/astrocde.json",
+   "collection": "platforms",
+   "sha256": "b71cd15223d4790d9968b38bfc51b6b5a85297d4e6c01aae4d603bdca04a029e"
+  },
+  {
+   "path": "platforms/atari2600.json",
+   "collection": "platforms",
+   "sha256": "3a9d294ad538fee1d671059332f24789a920efd6f1714303a0c11b7c9a942bb1"
+  },
+  {
+   "path": "platforms/atari5200.json",
+   "collection": "platforms",
+   "sha256": "e5529e6e8b580b206654134d2012e8d1c2b3a0f4a0c66f5c2d7b27b61fa76752"
+  },
+  {
+   "path": "platforms/atari7800.json",
+   "collection": "platforms",
+   "sha256": "7718cbb4c659f20787fb09f1b02cc15612888e048aef8e74e504e37f5a25d7e0"
+  },
+  {
+   "path": "platforms/atari800.json",
+   "collection": "platforms",
+   "sha256": "584dff6dc955e779708e09177dc4ae793b3dfc0f5b740df523432a10ed37feeb"
+  },
+  {
+   "path": "platforms/atarijaguar.json",
+   "collection": "platforms",
+   "sha256": "b1f502c7ecf1fd44a37504392ee27091d257b09512d9504ff2efe2c0a050d8d4"
+  },
+  {
+   "path": "platforms/atarijaguarcd.json",
+   "collection": "platforms",
+   "sha256": "26b77eb63d1d90559bf14b98fe832472ef15d3a5e05e428525e1f36726bf13e7"
+  },
+  {
+   "path": "platforms/atarilynx.json",
+   "collection": "platforms",
+   "sha256": "4a5d4ea1df068480febb0691ae44145700cecca4123b02fd34f5054ce4dc0430"
+  },
+  {
+   "path": "platforms/atarist.json",
+   "collection": "platforms",
+   "sha256": "feb7bf54c471b149c3d2d908b34bc1225371ab19c4be3f43dfa9620a90c8be9b"
+  },
+  {
+   "path": "platforms/atarixe.json",
+   "collection": "platforms",
+   "sha256": "6bd5c641d5154c412c31b7e80a4d0237aa2206b40af24c2bf388841376803ab3"
+  },
+  {
+   "path": "platforms/atomiswave.json",
+   "collection": "platforms",
+   "sha256": "d6441f124672ee271264f0a276a59ef99f2285c496f5274206078cc55db3018b"
+  },
+  {
+   "path": "platforms/bbcmicro.json",
+   "collection": "platforms",
+   "sha256": "8196d8467a38ed3577780a5d03ca9da319b6b9c85b32052f9fc584781f170005"
+  },
+  {
+   "path": "platforms/c64.json",
+   "collection": "platforms",
+   "sha256": "d0c7dbe7702893fc5036771169b3237468cd16aa1b9c7648963dd8043257bd32"
+  },
+  {
+   "path": "platforms/cdimono1.json",
+   "collection": "platforms",
+   "sha256": "a43e5ff3a9c17be4a1b15a6ef8894a6f124fdd4e27e930ce33da5303aacdcc52"
+  },
+  {
+   "path": "platforms/cdtv.json",
+   "collection": "platforms",
+   "sha256": "c83ea0065a63cf9e8f48255ebf79656c7b4bbab42f87476b5dc1bf6589a66241"
+  },
+  {
+   "path": "platforms/chailove.json",
+   "collection": "platforms",
+   "sha256": "8efb095abc1e625488380ee641390f9d135c6dc296d2a647414b905289a84458"
+  },
+  {
+   "path": "platforms/channelf.json",
+   "collection": "platforms",
+   "sha256": "876ea45c97219043992859e7e9bd9023222f239290dfb60a8daf8733497dbc1b"
+  },
+  {
+   "path": "platforms/coco.json",
+   "collection": "platforms",
+   "sha256": "4862513be47e91a92bd4e7bebf96effa881025ccadde183ebc8ee8b4069bfcc7"
+  },
+  {
+   "path": "platforms/colecovision.json",
+   "collection": "platforms",
+   "sha256": "9b73f58cecfbb1baade07338df6c9194c00ef129514c1cb8e7374019af1c8c5d"
+  },
+  {
+   "path": "platforms/consolearcade.json",
+   "collection": "platforms",
+   "sha256": "8fe128bafcdf35d7edcac552a0d6ffded3358ec4c3587c8dfdd7538900d50997"
+  },
+  {
+   "path": "platforms/cps.json",
+   "collection": "platforms",
+   "sha256": "21456d8bfe3e5c6e5209f8fc6c1c5fed71447f7ade063356c26d8383e991b8e0"
+  },
+  {
+   "path": "platforms/cps1.json",
+   "collection": "platforms",
+   "sha256": "5f34e48945315878c0e5b1300934c52c014592879d07b33482af00d0284bb68e"
+  },
+  {
+   "path": "platforms/cps2.json",
+   "collection": "platforms",
+   "sha256": "4f74f94f7c5f2ab948f9a84362ca0ebb3ddc807b899def7e690ff1c15c93dae6"
+  },
+  {
+   "path": "platforms/cps3.json",
+   "collection": "platforms",
+   "sha256": "262e93d4234b5e4e4ec7935998171c2bc900116d458a2c2a835a02b05ecc697e"
+  },
+  {
+   "path": "platforms/crvision.json",
+   "collection": "platforms",
+   "sha256": "debb5d1bdfe2978a48b734976792d8b0f2b9257fe3380cbfdc8c680f04abdbfc"
+  },
+  {
+   "path": "platforms/daphne.json",
+   "collection": "platforms",
+   "sha256": "f511ac093860996d5f93fc5d95dd1cd79ca7106f7b19b2125d74cc8ab86d5e9d"
+  },
+  {
+   "path": "platforms/desktop.json",
+   "collection": "platforms",
+   "sha256": "6cb2555f8dbfdbd78ea98c1ebc92b1b4533eb247e9379a824a148fc2d9d76b0f"
+  },
+  {
+   "path": "platforms/doom.json",
+   "collection": "platforms",
+   "sha256": "25f133d9ef9a869451928f2dc6ab0d7093c1882f9268557546cbf178605be027"
+  },
+  {
+   "path": "platforms/dos.json",
+   "collection": "platforms",
+   "sha256": "1a7ff9542d3e80dbdad38c7eba26b1db90d79b468692dc3b1762876dc0b156ae"
+  },
+  {
+   "path": "platforms/dragon32.json",
+   "collection": "platforms",
+   "sha256": "5069978b8899f44525eb1e414cb1bae1e492259fae2e601c15187ff973c2cde4"
+  },
+  {
+   "path": "platforms/dreamcast.json",
+   "collection": "platforms",
+   "sha256": "1dd5e730650767955ae3b69f0f0383d44944ccd2b76155e89906cb8ff8ae75e9"
+  },
+  {
+   "path": "platforms/easyrpg.json",
+   "collection": "platforms",
+   "sha256": "d5ba2009ced346b9795ed6c55ca95b8240e6e009ea29e326b30a86cc6d2c2a42"
+  },
+  {
+   "path": "platforms/electron.json",
+   "collection": "platforms",
+   "sha256": "00bda93424c4bb98183958869c6c32e24d1f442359cb8bb0f12812818274aeb4"
+  },
+  {
+   "path": "platforms/emulators.json",
+   "collection": "platforms",
+   "sha256": "2be55e8c0e85195cbe1b5a85fd6b0968c345d8deb964b5bf0c78a094367222df"
+  },
+  {
+   "path": "platforms/epic.json",
+   "collection": "platforms",
+   "sha256": "df0cf07df70f6a70267446f2cf7a434ba94604a0da847c4b4b20cf73376b56e3"
+  },
+  {
+   "path": "platforms/famicom.json",
+   "collection": "platforms",
+   "sha256": "3f77586474f4e3fdf19f167ba47d64d9a9a79952112091ae57995cfd9fd9f62e"
+  },
+  {
+   "path": "platforms/fba.json",
+   "collection": "platforms",
+   "sha256": "0e944b32e0725b3491d14f40c8ab3230aa1d49f9f4fc8e19a215a89457d682e6"
+  },
+  {
+   "path": "platforms/fbneo.json",
+   "collection": "platforms",
+   "sha256": "68563b905b0bb59aba5490f33836a05497ff9a867969adfed3de34e6852a17f8"
+  },
+  {
+   "path": "platforms/fds.json",
+   "collection": "platforms",
+   "sha256": "cf0e86c877c22a6d52835b23ca7125822044bbec0a6c82c04e4554627b11373c"
+  },
+  {
+   "path": "platforms/flash.json",
+   "collection": "platforms",
+   "sha256": "e133a3e379d829eab3b05a362d5ce9d046ca00f1d7f050a71acf7bc50e6dff24"
+  },
+  {
+   "path": "platforms/fm7.json",
+   "collection": "platforms",
+   "sha256": "76d652fa343590e6a2ef1df81296a264d2410a285f71f2adcf758137cf7cdaa2"
+  },
+  {
+   "path": "platforms/fmtowns.json",
+   "collection": "platforms",
+   "sha256": "ef4ad609f8596d967dd0f34391733dd15274d8f6e248e301f81efd3653818280"
+  },
+  {
+   "path": "platforms/fpinball.json",
+   "collection": "platforms",
+   "sha256": "6fc43aa0c8865192d2c6e90106b15f66fd3a7d8ccd00477e215b1480dc6c4b71"
+  },
+  {
+   "path": "platforms/gamate.json",
+   "collection": "platforms",
+   "sha256": "a743d6ac4a81a77b66d1d39c1a51e6d81bb67425ccf97bbe0b2bbf9d8560c1b8"
+  },
+  {
+   "path": "platforms/gameandwatch.json",
+   "collection": "platforms",
+   "sha256": "507270b8e99b39f69146056aa92976761441d3d823e3abc10787312cb77e23ad"
+  },
+  {
+   "path": "platforms/gamecom.json",
+   "collection": "platforms",
+   "sha256": "b9a6bd6ce52880d167300992ddfc5570945fe987d77e363f3b03ca301ea341fd"
+  },
+  {
+   "path": "platforms/gamegear.json",
+   "collection": "platforms",
+   "sha256": "22d370d52c730e84709191593943ce444b7809870011bcfed41e11f965d1c7e6"
+  },
+  {
+   "path": "platforms/gb.json",
+   "collection": "platforms",
+   "sha256": "1f9d2c34456fbf49165e87b6727e9bb30131ed8ea172e3ad9fe0b98f43bf4372"
+  },
+  {
+   "path": "platforms/gba.json",
+   "collection": "platforms",
+   "sha256": "a476dbafba90ab5f778175d7b3df2ca9288d0f759cad6c40a7a70c3d2a47c211"
+  },
+  {
+   "path": "platforms/gbc.json",
+   "collection": "platforms",
+   "sha256": "1100c41fe35ded123f22f2308ecdeb9a6dc5dc12e60c265de33b3600bc24d0a5"
+  },
+  {
+   "path": "platforms/gc.json",
+   "collection": "platforms",
+   "sha256": "ca5f954c35b3c068acab8f6d1b69f30fde5219b5f84438793dcb21ac9fb0ce93"
+  },
+  {
+   "path": "platforms/genesis.json",
+   "collection": "platforms",
+   "sha256": "c72e0c99e9d6d1fe9035657b20e89f657625c2d956da9bf69007608326d022d8"
+  },
+  {
+   "path": "platforms/gmaster.json",
+   "collection": "platforms",
+   "sha256": "f4495bb6f0e40309d560008353928bf01e8fa59dc4a499d75c74bf6729f7853f"
+  },
+  {
+   "path": "platforms/gx4000.json",
+   "collection": "platforms",
+   "sha256": "2e84fb21d4eb10d5bbd06510e4460f4ecf8d1d87e5368cd3b545d9131cd9416e"
+  },
+  {
+   "path": "platforms/intellivision.json",
+   "collection": "platforms",
+   "sha256": "db41da27a2021f9233767f418598a0f307bd15d7793fc31e99c51044aa5498ce"
+  },
+  {
+   "path": "platforms/j2me.json",
+   "collection": "platforms",
+   "sha256": "2d12c78271e6c96655ba3b052eb0b8f8dbbeb9432a1c718e52b4694ba8209aad"
+  },
+  {
+   "path": "platforms/kodi.json",
+   "collection": "platforms",
+   "sha256": "dbb8a82d3b39b29a665d12ac9384872521d754c9801f7f6fe704177fb2fad145"
+  },
+  {
+   "path": "platforms/laserdisc.json",
+   "collection": "platforms",
+   "sha256": "bc18a5a6c9e8b5506fea96cffb5f2fff92055f1d18c61a1833ddb23633ef7a7a"
+  },
+  {
+   "path": "platforms/lcdgames.json",
+   "collection": "platforms",
+   "sha256": "0fdacc4639de204c581d2a7ef5ca42129148076e4c0868a7a21776a32624b2bf"
+  },
+  {
+   "path": "platforms/lowresnx.json",
+   "collection": "platforms",
+   "sha256": "1703bfb91d3fab17018f5763c868b838b5bddf0942bff2656198696ea1b811fe"
+  },
+  {
+   "path": "platforms/lutris.json",
+   "collection": "platforms",
+   "sha256": "23305e92bfe171d948f0e6a4e4e2cfe37d8f3b26cc633dc73e89be44d7ee3271"
+  },
+  {
+   "path": "platforms/lutro.json",
+   "collection": "platforms",
+   "sha256": "36cc8f8ad99287b8f57f378fd7d6e98fba16765f43e450e772cdc7756ec477d1"
+  },
+  {
+   "path": "platforms/macintosh.json",
+   "collection": "platforms",
+   "sha256": "ee4bc6ec9ace4ad49dcbfd3b37d074dc86d12075ee8e7f2c0436d65e2518a251"
+  },
+  {
+   "path": "platforms/mame.json",
+   "collection": "platforms",
+   "sha256": "927f1155d2c4f33e02770f6ff6378e5a33a7a435a32ab41588627eaf078235b3"
+  },
+  {
+   "path": "platforms/mame-advmame.json",
+   "collection": "platforms",
+   "sha256": "32b86b30dcd2f9e6cd22e2ca0ff773c164d7b490052803e56364c4fc87c1e411"
+  },
+  {
+   "path": "platforms/mark3.json",
+   "collection": "platforms",
+   "sha256": "ca42ce740ea166915f13bae97736e33e1d4fdcc0194cf192deed86c508cbfa58"
+  },
+  {
+   "path": "platforms/mastersystem.json",
+   "collection": "platforms",
+   "sha256": "91253918966c739e5e30d01b3ab96f9f94990b5b39904f4213f486ef6a333b0a"
+  },
+  {
+   "path": "platforms/megacd.json",
+   "collection": "platforms",
+   "sha256": "522634afb0f4bf0ba3bff3536ddac6166f43121a951ab327d8e5fdd3c965cec2"
+  },
+  {
+   "path": "platforms/megacdjp.json",
+   "collection": "platforms",
+   "sha256": "c2d9b03bb36c477f711a028dc7e4882a8c6f7b24cb705ed3d69b123ef1c1cee6"
+  },
+  {
+   "path": "platforms/megadrive.json",
+   "collection": "platforms",
+   "sha256": "79a17bac71f688fab47578df451a85e4f7390cfdd1cb8c44219922325893ca9d"
+  },
+  {
+   "path": "platforms/megadrivejp.json",
+   "collection": "platforms",
+   "sha256": "9464f897ac6699fd9b9ba1b6fd688ffe1b7f67b17539f939de8481e0e3ff0dd7"
+  },
+  {
+   "path": "platforms/megaduck.json",
+   "collection": "platforms",
+   "sha256": "e38547edef5fd21f7fd8c78c717709c6796a029f46f50037ab47e26d367489fd"
+  },
+  {
+   "path": "platforms/mess.json",
+   "collection": "platforms",
+   "sha256": "f7f77455bc4effd6bba8618215d508d4d1585a1752dd2f30cb51021635483cd7"
+  },
+  {
+   "path": "platforms/model2.json",
+   "collection": "platforms",
+   "sha256": "0aced5612a32d24834a34b5309d021c6981548405d8151bf8c29dda75d6969cf"
+  },
+  {
+   "path": "platforms/model3.json",
+   "collection": "platforms",
+   "sha256": "72e94f0144a1f8241ecc14a384daf751277f9fa2aa2f4ac7e9c068ed4ad1ac1a"
+  },
+  {
+   "path": "platforms/moto.json",
+   "collection": "platforms",
+   "sha256": "caf7280e2c22628df6dccad109541fc8f1707a775e364e85a3ccf83f917ae2ce"
+  },
+  {
+   "path": "platforms/msx.json",
+   "collection": "platforms",
+   "sha256": "d35a3e0449e0d1d1516d7c73c4d54eb823f12a61509e01da1209a356657c2d1b"
+  },
+  {
+   "path": "platforms/msx1.json",
+   "collection": "platforms",
+   "sha256": "6035ad5d3a1fce50473bcdbeb2a52fdcbc75cdbf1706ed7df356d8e82bf9c1fa"
+  },
+  {
+   "path": "platforms/msx2.json",
+   "collection": "platforms",
+   "sha256": "6d6aa29ef77282c1c5222887cb9af16907f0e06e20eb30ed517e5ac1a23fc3a9"
+  },
+  {
+   "path": "platforms/msxturbor.json",
+   "collection": "platforms",
+   "sha256": "5cfbb7638884fa78373343d34028a2eb532c60e77722785a4d0ef5be2d810e79"
+  },
+  {
+   "path": "platforms/mugen.json",
+   "collection": "platforms",
+   "sha256": "b9c9ef4728dcf7e3e6c16f3fdf8d68350cd9fac51eba84f3312048c18ddcb7da"
+  },
+  {
+   "path": "platforms/multivision.json",
+   "collection": "platforms",
+   "sha256": "9f90846482f43bc3ffd5a79b0af620c55b696ce71385596bc187593e14765461"
+  },
+  {
+   "path": "platforms/n3ds.json",
+   "collection": "platforms",
+   "sha256": "7a5f1061cceae62bdbce36c488b0d888abd9c79cdd4065b2d937459d4f8e3c39"
+  },
+  {
+   "path": "platforms/n64.json",
+   "collection": "platforms",
+   "sha256": "95bf93e7bedea3eb17381e3dfc28ddbbe37f7d9ff8aecf03dbae053b18cc4b62"
+  },
+  {
+   "path": "platforms/n64dd.json",
+   "collection": "platforms",
+   "sha256": "427e371222e1bc4f54c2e83ae1ad8060de65ee411efdef47344086429ff1e02a"
+  },
+  {
+   "path": "platforms/naomi.json",
+   "collection": "platforms",
+   "sha256": "458fb04d54aae45076390842739180ec9b4a6505c70f61f4d639ea526f2d3bc9"
+  },
+  {
+   "path": "platforms/naomi2.json",
+   "collection": "platforms",
+   "sha256": "987df2cc03b61b45707f014822afeb7d48b21b4f3b30266947b9c4b4ba6e5039"
+  },
+  {
+   "path": "platforms/naomigd.json",
+   "collection": "platforms",
+   "sha256": "4c42e10f9c551342b5dfa4362c7e5c92cabc03527a327425c4192d6c177f74a7"
+  },
+  {
+   "path": "platforms/nds.json",
+   "collection": "platforms",
+   "sha256": "d4f8af6de678ecff549b5c64928ada16e211eb7a6f99a4e040dccd4fc6a99121"
+  },
+  {
+   "path": "platforms/neogeo.json",
+   "collection": "platforms",
+   "sha256": "1cefaa3e300f43439d12b0cd05a905142da748fcbfb7bbfa2b7410315d512a9b"
+  },
+  {
+   "path": "platforms/neogeocd.json",
+   "collection": "platforms",
+   "sha256": "ad0e679fa991516ba642c1a97a464e2a837f46471d7826df5d996b3de3b28a16"
+  },
+  {
+   "path": "platforms/neogeocdjp.json",
+   "collection": "platforms",
+   "sha256": "cd9e6d8d62bb5b39bc5ea9694d35363cbecee9c50d51fe3a208da93b4311683c"
+  },
+  {
+   "path": "platforms/nes.json",
+   "collection": "platforms",
+   "sha256": "e1d1635e62de23185d43bb2f5cacc98800ab7e95442504efd5e367eb3a3b25ed"
+  },
+  {
+   "path": "platforms/ngage.json",
+   "collection": "platforms",
+   "sha256": "2ab14e0f3e9eed8ceb70da09eadfae4f1c36ba35d1d6fcc6022c9b91f7d27804"
+  },
+  {
+   "path": "platforms/ngp.json",
+   "collection": "platforms",
+   "sha256": "e20d72755e28ce4b0a8e919f2252fd8354f8b5a4a099223208cfa65c3f8bfe1a"
+  },
+  {
+   "path": "platforms/ngpc.json",
+   "collection": "platforms",
+   "sha256": "c04987c579c3ec1c70637369719453a1cdef540bbab4d85c5945d506eda00737"
+  },
+  {
+   "path": "platforms/odyssey2.json",
+   "collection": "platforms",
+   "sha256": "9f53f0a27fefb9d5d0de866f701d4f4a86d372dc1b72be48576bf9b71817c042"
+  },
+  {
+   "path": "platforms/openbor.json",
+   "collection": "platforms",
+   "sha256": "3a609acd2710f37b22d9458dbb3f560d133c651fa1f558ba26844d57a699dc87"
+  },
+  {
+   "path": "platforms/oric.json",
+   "collection": "platforms",
+   "sha256": "e57c26112f2558142b5a5d493d231d3c32f8020e7be1295c0e4b5f0fe3adba1c"
+  },
+  {
+   "path": "platforms/palm.json",
+   "collection": "platforms",
+   "sha256": "aacae936eef6c7e7a098e6bbb62c118a0f59c9842b229c8065e52233c712d6b9"
+  },
+  {
+   "path": "platforms/pc.json",
+   "collection": "platforms",
+   "sha256": "8c8345db8f1d3b02317c865c38710c4a7d315a282c7c143de0090c2aaacc8d77"
+  },
+  {
+   "path": "platforms/pc88.json",
+   "collection": "platforms",
+   "sha256": "8b8de24b5f4ad880c2ffb8f29cc10ecca4bce9d1b4a10442258c34606ccee10f"
+  },
+  {
+   "path": "platforms/pc98.json",
+   "collection": "platforms",
+   "sha256": "459961ee8011dbed4d153e9d525203f7e7fb368a3da1b3e9f83bb038f7cc3bb1"
+  },
+  {
+   "path": "platforms/pcarcade.json",
+   "collection": "platforms",
+   "sha256": "75c30933c1a5595fb3dd3bfebc1c605d95c219cfb718094caca15983aa299811"
+  },
+  {
+   "path": "platforms/pcengine.json",
+   "collection": "platforms",
+   "sha256": "2db8124bead03a9b4b2cb38f8a5fafe1aa6838f230d5422918b73c9c5c505bf6"
+  },
+  {
+   "path": "platforms/pcenginecd.json",
+   "collection": "platforms",
+   "sha256": "69ba25fd13720749db319978cc3d7a23aeb6f05d9e7910810eb8f2737e03c3c6"
+  },
+  {
+   "path": "platforms/pcfx.json",
+   "collection": "platforms",
+   "sha256": "ef008c16274c168b92df94fc41ee07d5b3d02da85bdf8d785a87ae9277288184"
+  },
+  {
+   "path": "platforms/pico8.json",
+   "collection": "platforms",
+   "sha256": "5c4f0701aa08500b833652c4fa526adf6effbed992e81f3083d922a5d63dad2a"
+  },
+  {
+   "path": "platforms/plus4.json",
+   "collection": "platforms",
+   "sha256": "253f0de40052a6c532d9568cba15bd8aa66acfc6350e21f8a2101dba95a6c67c"
+  },
+  {
+   "path": "platforms/pokemini.json",
+   "collection": "platforms",
+   "sha256": "5a37839f53c2868bbe8b8c5a33560b32318d9291fa8880ac912cecbf1f0e5d4d"
+  },
+  {
+   "path": "platforms/ports.json",
+   "collection": "platforms",
+   "sha256": "1a74c95675aff850cbdad42862fc4bbe1880521cbc09afa93c26813bacaf45c0"
+  },
+  {
+   "path": "platforms/ps2.json",
+   "collection": "platforms",
+   "sha256": "29714d39924ff6e2487047da711449f1a2557e89f132e9d06370a25165e4a37e"
+  },
+  {
+   "path": "platforms/ps3.json",
+   "collection": "platforms",
+   "sha256": "98aac37eebc6e47eb811b482f9bf6a4b9a8fcc2f829dc760a6e124d091eb154c"
+  },
+  {
+   "path": "platforms/ps4.json",
+   "collection": "platforms",
+   "sha256": "609735278e7ca7e3a315c3bef74bc54f1751c4694841b374699870af7bd0b270"
+  },
+  {
+   "path": "platforms/psp.json",
+   "collection": "platforms",
+   "sha256": "5ba2470e0b822c9dc33e3c1a9f42475279c9208b2cfced2d887b9d71388fe788"
+  },
+  {
+   "path": "platforms/psvita.json",
+   "collection": "platforms",
+   "sha256": "f30e4c70f4542342cf2a3315d3567e6e483b35e2af522103b2613b370270ba44"
+  },
+  {
+   "path": "platforms/psx.json",
+   "collection": "platforms",
+   "sha256": "f9c7fb662514ac85817bc67fdbe85418e70cf3f1068c095ecc634edef8fc17e0"
+  },
+  {
+   "path": "platforms/pv1000.json",
+   "collection": "platforms",
+   "sha256": "9c9823fd5bce5e1bb04013312502334ef3ebd2f2df421a82262e301d1b9a4fc4"
+  },
+  {
+   "path": "platforms/quake.json",
+   "collection": "platforms",
+   "sha256": "4c5ebab46b27afba9703c3f49d7032920675fa534935a79b8726377253d1ea26"
+  },
+  {
+   "path": "platforms/samcoupe.json",
+   "collection": "platforms",
+   "sha256": "ca5a37ec23a6cd381df7e93512f77f2e7f031568a397570eceb2b90b167f1d18"
+  },
+  {
+   "path": "platforms/satellaview.json",
+   "collection": "platforms",
+   "sha256": "b1754ef826a29a05e60182443bc7b0b93a4528ec43a807edacd532883dd50548"
+  },
+  {
+   "path": "platforms/saturn.json",
+   "collection": "platforms",
+   "sha256": "7874f2cc5e857ea5fab0ce109655debc7945eb3d3c07b65595e323200a4ca5f4"
+  },
+  {
+   "path": "platforms/saturnjp.json",
+   "collection": "platforms",
+   "sha256": "9ffe2b87178932890f69aad85acd51ef0be12d91fdffd9db7e51be1297dd1028"
+  },
+  {
+   "path": "platforms/scummvm.json",
+   "collection": "platforms",
+   "sha256": "f8f039246e17fc10b7ad679b1f07f97a89d3db8064845fee3217883a672c75ac"
+  },
+  {
+   "path": "platforms/scv.json",
+   "collection": "platforms",
+   "sha256": "da98ed86f8439a2146e9dfe1f72aca30bfeac00b6cff4c866527e68a30679f74"
+  },
+  {
+   "path": "platforms/sega32x.json",
+   "collection": "platforms",
+   "sha256": "7260e253cf831fa6e8a3c469916fe01908ae091f00c876013796619ead718909"
+  },
+  {
+   "path": "platforms/sega32xjp.json",
+   "collection": "platforms",
+   "sha256": "7df4ca2bb1501283df7dd1f1314e61649f69aa70bcb125e61bbb21cd543e5a22"
+  },
+  {
+   "path": "platforms/sega32xna.json",
+   "collection": "platforms",
+   "sha256": "0672268ff2f849097b1110062304b8831ea29f3c0b17e1d3fbfdb29892ff6b5a"
+  },
+  {
+   "path": "platforms/segacd.json",
+   "collection": "platforms",
+   "sha256": "f89482664812bc78810a98e9f50ff7a0b4241b9f66742d029208c4413b0afaf5"
+  },
+  {
+   "path": "platforms/sfc.json",
+   "collection": "platforms",
+   "sha256": "c0c58eb0b11fbc9dd7a3b7214f34ab5e76e8f729ea78337a5574510fd016edbf"
+  },
+  {
+   "path": "platforms/sg-1000.json",
+   "collection": "platforms",
+   "sha256": "5491b44ec0cf5ba41d159f59281a65ad7df7793f70193fbc764f2e76b7928f5d"
+  },
+  {
+   "path": "platforms/sgb.json",
+   "collection": "platforms",
+   "sha256": "20bd721c655dd1b7a7bd30ecb3c8f219f33162d5054910015b58d1288ac69eb3"
+  },
+  {
+   "path": "platforms/snes.json",
+   "collection": "platforms",
+   "sha256": "4c6f844020b49ef19a7cb21464bbcb0b936a0b6f32d9c9f8945371710ed72fb4"
+  },
+  {
+   "path": "platforms/snesna.json",
+   "collection": "platforms",
+   "sha256": "a0b012baac831aa49a853d6703e9c302c0a24ae532b85c277df35a296218aebe"
+  },
+  {
+   "path": "platforms/solarus.json",
+   "collection": "platforms",
+   "sha256": "9c568cf4e229d80db6c7b5e98e4796fd34f49d7ada2870840deb3b773ce8401a"
+  },
+  {
+   "path": "platforms/spectravideo.json",
+   "collection": "platforms",
+   "sha256": "722476572ff8353f332a1d64efeb068deb040a2acc649c0823562e4f709f4d5d"
+  },
+  {
+   "path": "platforms/steam.json",
+   "collection": "platforms",
+   "sha256": "991f161b041e6b8d253d99633324aaf364a05b449b9616135107e0a0edb499dc"
+  },
+  {
+   "path": "platforms/stv.json",
+   "collection": "platforms",
+   "sha256": "2ee3b8083fda839025fc405a2317c481390e10306a3aa9a4bf73e58c10abad0c"
+  },
+  {
+   "path": "platforms/sufami.json",
+   "collection": "platforms",
+   "sha256": "3a14f7571ef011fee69c151aac00ae07fe18026d567d307ff500920e16195cd3"
+  },
+  {
+   "path": "platforms/supergrafx.json",
+   "collection": "platforms",
+   "sha256": "00af4f4203ae71fb73164a4f89a9a3d0575c946a92ad361fa24eb8400039b82f"
+  },
+  {
+   "path": "platforms/supervision.json",
+   "collection": "platforms",
+   "sha256": "061c9f40b81cca50767a703a88a374d3aaa05fc15bcc6ecc408ce823ccbfda76"
+  },
+  {
+   "path": "platforms/supracan.json",
+   "collection": "platforms",
+   "sha256": "41a8b00a906bede4be119902b789c173079e49c88a9ab159dd61dc83c0812f67"
+  },
+  {
+   "path": "platforms/switch.json",
+   "collection": "platforms",
+   "sha256": "cd5f5d23ce6a60df20a162e6e508a710c2792c5d28a1e9806dbb3a8e7bb03580"
+  },
+  {
+   "path": "platforms/symbian.json",
+   "collection": "platforms",
+   "sha256": "f50633f676b17bb6773dfccf9dcf458746451bd42549bc07b752602017cf3f8f"
+  },
+  {
+   "path": "platforms/tanodragon.json",
+   "collection": "platforms",
+   "sha256": "1b01e47fdc120a9b21ba95d86503cf7e24fea27b556efa532f795f9d5bfb76b8"
+  },
+  {
+   "path": "platforms/tg16.json",
+   "collection": "platforms",
+   "sha256": "0abe808965a94ef42e1a78c6a15744ca4a3ef7ad22968468da946fb6ea9b3244"
+  },
+  {
+   "path": "platforms/tg-cd.json",
+   "collection": "platforms",
+   "sha256": "6b65708183d8eb23d7b60ffe27c44baa1a1fd0cf978c737132a99289a11ba8be"
+  },
+  {
+   "path": "platforms/ti99.json",
+   "collection": "platforms",
+   "sha256": "aa68dc08552de8838ef32d57880c6088adf7c38998f50a8578b582d0081fbafc"
+  },
+  {
+   "path": "platforms/tic80.json",
+   "collection": "platforms",
+   "sha256": "836db68aed0df137dea171535a7d174ddf2f2001102a079e43b73fd15624bcd4"
+  },
+  {
+   "path": "platforms/to8.json",
+   "collection": "platforms",
+   "sha256": "bd34923bf0ce2cfd7db720f4a951cb1ad87981bba698ee758a7686cb15eace1f"
+  },
+  {
+   "path": "platforms/triforce.json",
+   "collection": "platforms",
+   "sha256": "7ae75f37604cd267153c64b609aeea07d4c5a7ccd18308a7fc6d74416591fb48"
+  },
+  {
+   "path": "platforms/trs-80.json",
+   "collection": "platforms",
+   "sha256": "01b61def08320ddb837c6ae9a4c613433e316f39e1f944fb5b15e5475e1f2533"
+  },
+  {
+   "path": "platforms/type-x.json",
+   "collection": "platforms",
+   "sha256": "c15644951fba1d1716809bcb7c6953ab2a297082ecfbe1281a52fe0801494072"
+  },
+  {
+   "path": "platforms/uzebox.json",
+   "collection": "platforms",
+   "sha256": "98e30b7fd76b97bfcb8320dded6d16d4ffe4c02cb16c73edcb6517c7b43fdb43"
+  },
+  {
+   "path": "platforms/vectrex.json",
+   "collection": "platforms",
+   "sha256": "767cd4db917e6338ab6f931bb2ca92089a9ed0f70e3302ae63635fbf471b138a"
+  },
+  {
+   "path": "platforms/vic20.json",
+   "collection": "platforms",
+   "sha256": "35e1571f48a28cdc6dcf6aa250784fca1f6de0771e722ea93a56bcbaa6c3dbe1"
+  },
+  {
+   "path": "platforms/videopac.json",
+   "collection": "platforms",
+   "sha256": "10c06a8c887e920f71e910a804fe76058a6c20f5bcc8ba3a6af043d256f742cd"
+  },
+  {
+   "path": "platforms/vircon32.json",
+   "collection": "platforms",
+   "sha256": "a18859c53edf246fb485d0dff7894bc9187911129b1e14da3331b72b119ae524"
+  },
+  {
+   "path": "platforms/virtualboy.json",
+   "collection": "platforms",
+   "sha256": "b0fd567ae626e0e54c083bdd5aa7467e6940d716293601913a7c12c96bc81c54"
+  },
+  {
+   "path": "platforms/vpinball.json",
+   "collection": "platforms",
+   "sha256": "984e92fea37e935f552d56b31f6c8c03d1c8f6ef4f5fcc91110e8ddc75818cba"
+  },
+  {
+   "path": "platforms/vsmile.json",
+   "collection": "platforms",
+   "sha256": "602248bfd9467725d2f983958319fa87a80233d90f5e1a69247b8c8f21db2846"
+  },
+  {
+   "path": "platforms/wasm4.json",
+   "collection": "platforms",
+   "sha256": "1858fbf32a404f2165add40437edc5f36e6d7008a2d319fff41a6706405a49b2"
+  },
+  {
+   "path": "platforms/wii.json",
+   "collection": "platforms",
+   "sha256": "157f98f16b478f3a693ae60ffa8d4d52bad69ad060674ff3457a60d17783187e"
+  },
+  {
+   "path": "platforms/wiiu.json",
+   "collection": "platforms",
+   "sha256": "483622a294717dfe30d2ad2ee6d4c1518f97b8571645b8ddcd3599e30dbaa2bd"
+  },
+  {
+   "path": "platforms/windows.json",
+   "collection": "platforms",
+   "sha256": "ac5fc84b3c8639fcbe93835b153164e931e38ff52eb06da000ef8324e8c47c8a"
+  },
+  {
+   "path": "platforms/windows3x.json",
+   "collection": "platforms",
+   "sha256": "b7746c1aa71ad14045f2a80dfe01b5ee231cb8c9e4cf5fd38faa72e9a3844189"
+  },
+  {
+   "path": "platforms/windows9x.json",
+   "collection": "platforms",
+   "sha256": "268a1d3db99e19bcd24992004f1d8b83d7133ee89846bf2d647cc4a6f7ed724c"
+  },
+  {
+   "path": "platforms/wonderswan.json",
+   "collection": "platforms",
+   "sha256": "c035498feb30b2dcd3371cd43d378ed210a9624ae9ab0ad26d7187090c2e2d89"
+  },
+  {
+   "path": "platforms/wonderswancolor.json",
+   "collection": "platforms",
+   "sha256": "0a799ee3c06de453bbf44b0045342237d001755b075e98a2f488f7184ba7be96"
+  },
+  {
+   "path": "platforms/x1.json",
+   "collection": "platforms",
+   "sha256": "a76e4b2a0bfd9ac8beddcb040e55dc4ec56c8898127be3db8b55781464a9a150"
+  },
+  {
+   "path": "platforms/x68000.json",
+   "collection": "platforms",
+   "sha256": "0db1a7162c6909219d26c5e569fe34c6b4ff9014aa5048d2d54973d543a503c4"
+  },
+  {
+   "path": "platforms/xbox.json",
+   "collection": "platforms",
+   "sha256": "55301b8f9c451821e553e3d6af813a84078bac20cdc5530aad86a26438355bd0"
+  },
+  {
+   "path": "platforms/xbox360.json",
+   "collection": "platforms",
+   "sha256": "e4bf13be85bf90729f9330f072bd63e5685b3992dec2e33836880c6a020336eb"
+  },
+  {
+   "path": "platforms/xboxone.json",
+   "collection": "platforms",
+   "sha256": "821a3cc0a02327bacd4c5146eb0c218bdf018b135d75be6816a9337af28a3219"
+  },
+  {
+   "path": "platforms/zmachine.json",
+   "collection": "platforms",
+   "sha256": "96b35e44a368d6188e061f8572bb8f253201428169b24044566e967c5ef81ef4"
+  },
+  {
+   "path": "platforms/zx81.json",
+   "collection": "platforms",
+   "sha256": "0aff6edf55d3b6b404b567466eb6fc8033f69f615b790ef6b5f529701699a0b5"
+  },
+  {
+   "path": "platforms/zxnext.json",
+   "collection": "platforms",
+   "sha256": "de023b1152e8c32e17c7fd108679ae9b57362c61a1b449dd83f93420ed7f157e"
+  },
+  {
+   "path": "platforms/zxspectrum.json",
+   "collection": "platforms",
+   "sha256": "2a82192f58a57235417fec8e69f6fb29a0b232ac6330ca2f97f06bf8097b718f"
+  },
+  {
+   "path": "players/arcadia-com-amigan-droidarcadia-droidarcadia.json",
+   "collection": "players",
+   "sha256": "cc3c696da45ee6d591fc7d69155026d3030150b7767a931a62f77bdfa8a8cb28"
+  },
+  {
+   "path": "players/atari2600-com-explusalpha-a2600emu-com-explusalpha-a2600emu.json",
+   "collection": "players",
+   "sha256": "e9737b97f90aed4ef4ecf4090452b2c40b4d17a0942292bad755be54950a48d6"
+  },
+  {
+   "path": "players/atari2600-com-androidemu-atari-com-androidemu-atari.json",
+   "collection": "players",
+   "sha256": "fbaa084586b7c7dcafd53b9ef3df6cad1514b985485da0860cc4af805b838e66"
+  },
+  {
+   "path": "players/atomiswave-io-recompiled-redream-io-recompiled-redream.json",
+   "collection": "players",
+   "sha256": "4cbeda9147597966a8cfe0025b2d5f6357d59210b95efbde3788fa2a5b499fa1"
+  },
+  {
+   "path": "players/atomiswave-com-reicast-emulator-com-reicast-emulator.json",
+   "collection": "players",
+   "sha256": "3dffa989d21ce28d17bd0715c6b2ea50263af1006ca4924f1a8557c7db84d2a3"
+  },
+  {
+   "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator.json",
+   "collection": "players",
+   "sha256": "87896ea20384c900d1cc865f3e5ce21818a22968d3f28958e7561aa7be780b6d"
+  },
+  {
+   "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator-dev-build.json",
+   "collection": "players",
+   "sha256": "eb0c3e4ccb84bbd675457d60507d11ef1ff008557c10b87fbb448ec8ce0e7200"
+  },
+  {
+   "path": "players/c64-com-explusalpha-c64emu-com-explusalpha-c64emu.json",
+   "collection": "players",
+   "sha256": "914da178c0b9b31022b7d5204236d29118c7238deb0678f7fb97af30090ae154"
+  },
+  {
+   "path": "players/cps1-com-explusalpha-neoemu-neo-emu.json",
+   "collection": "players",
+   "sha256": "ad11b5376e0e54b767b36525478a62b80125de7c000ca73fbe5cbea39b471329"
+  },
+  {
+   "path": "players/cps2-com-explusalpha-neoemu-neo-emu.json",
+   "collection": "players",
+   "sha256": "3b468ef021ec2bbd9dc6cb57c052c0e3157142f89bce8217a86e48ed924457cc"
+  },
+  {
+   "path": "players/cps3-com-explusalpha-neoemu-neo-emu.json",
+   "collection": "players",
+   "sha256": "61366518d293a345a6ea9b6b405c040f0ce36ea068beccd52b3cc50ca6aee993"
+  },
+  {
+   "path": "players/dreamcast-io-recompiled-redream-io-recompiled-redream.json",
+   "collection": "players",
+   "sha256": "800508f44ee0c7d8413cee2a43c8e5866fe1303d21e0d30bc2862e31bb5c2324"
+  },
+  {
+   "path": "players/dreamcast-com-reicast-emulator-com-reicast-emulator.json",
+   "collection": "players",
+   "sha256": "8fd4bc184148c8e6fdc9abf0ddbc0a9966255403500959b16825c254156eb63f"
+  },
+  {
+   "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator.json",
+   "collection": "players",
+   "sha256": "637f78f8352fe33bc70b332e8ea7d6e8b8954486a85249c447704471a8221b9a"
+  },
+  {
+   "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator-dev-build.json",
+   "collection": "players",
+   "sha256": "e6ed8ca6eb3f6fe2f35d6035ef2d55a59264a9d5c36fc498c1226c30f9ffae1a"
+  },
+  {
+   "path": "players/fds-com-explusalpha-nesemu-com-explusalpha-nesemu.json",
+   "collection": "players",
+   "sha256": "b032be501a52314897c3c90d2d2bcb6b807137e43c8fe5302efd3c8de568060d"
+  },
+  {
+   "path": "players/fds-com-androidemu-nes-com-androidemu-nes.json",
+   "collection": "players",
+   "sha256": "ec210771c95f00cbcade69411fefd0f28e21272f60d8db79ec0559b7e3888d5b"
+  },
+  {
+   "path": "players/gamegear-com-androidemu-gg-com-androidemu-gg.json",
+   "collection": "players",
+   "sha256": "dce8bea669fd32dc77dac78e0d16ba7d4e1009463071133d7515bf06230b7275"
+  },
+  {
+   "path": "players/gamegear-com-fms-mg-mastergear.json",
+   "collection": "players",
+   "sha256": "da0981950102169a98d973556b1712002ca23699293a07d098f2b92fdb69a9b6"
+  },
+  {
+   "path": "players/gb-it-dbtecno-pizzaboy-pizza-boy-basic.json",
+   "collection": "players",
+   "sha256": "62f71c8fa70f469e06739f3b88e6f7d3c1137a4df238f3ba8d1520ce798e9330"
+  },
+  {
+   "path": "players/gb-it-dbtecno-pizzaboypro-pizza-boy-pro.json",
+   "collection": "players",
+   "sha256": "66ee99463f86589a6fa65a14b2151fdb33cb57c882feeeb7bf0fb96c28aed3c4"
+  },
+  {
+   "path": "players/gb-com-sky-skyemu-skyemu.json",
+   "collection": "players",
+   "sha256": "fe8dd4247c8c6ff1802faabb2428efefd34040000f42c42fd28c3eed6105561e"
+  },
+  {
+   "path": "players/gb-com-explusalpha-gbcemu-com-explusalpha-gbcemu.json",
+   "collection": "players",
+   "sha256": "e47f0079042f2b54ffb63b2650d3480d0d6c325acea2414c4416d95d0be2dda7"
+  },
+  {
+   "path": "players/gb-com-fastemulator-gbcfree-com-fastemulator-gbcfree.json",
+   "collection": "players",
+   "sha256": "462b5f9e128c1b161a96756ba2bfebc4c61d8eac60ef1defba550693acc754cb"
+  },
+  {
+   "path": "players/gb-com-fastemulator-gbc-com-fastemulator-gbc.json",
+   "collection": "players",
+   "sha256": "de93577a5411b028f4d64adf603801984e9dd6f190ef25b9cdf3673587f05bf5"
+  },
+  {
+   "path": "players/gba-it-dbtecno-pizzaboygba-pizza-boy-gba-basic.json",
+   "collection": "players",
+   "sha256": "171c759386c1979afecb584886226499407e67ceb7c76250af75184b06916f96"
+  },
+  {
+   "path": "players/gba-it-dbtecno-pizzaboygbapro-pizza-boy-gba-pro.json",
+   "collection": "players",
+   "sha256": "45d07e7f321ce2baf3e3337d95be41af6a51b42450159d24e3cb6d9c5c1f15d0"
+  },
+  {
+   "path": "players/gba-com-sky-skyemu-skyemu.json",
+   "collection": "players",
+   "sha256": "752686f5ac368e2ce408e8a6153168b7a4a7f8f9d7e645c931bc6bed120c28a5"
+  },
+  {
+   "path": "players/gba-com-explusalpha-gbaemu-com-explusalpha-gbaemu.json",
+   "collection": "players",
+   "sha256": "643ff05893714362f5c2ceb47b2f13e9896d2ecadda4424f49ed8e6fa200946f"
+  },
+  {
+   "path": "players/gba-com-fastemulator-gbafree-com-fastemulator-gbafree.json",
+   "collection": "players",
+   "sha256": "800531a26110ee1d89691af25b0b81be2582c76190bf70b7b5914bdcfa3d01fd"
+  },
+  {
+   "path": "players/gba-com-fastemulator-gba-com-fastemulator-gba.json",
+   "collection": "players",
+   "sha256": "26d0a23567220adaf4e4f639da0651d4e0f72fe9346ef84e13e4beb7c4a1b5c2"
+  },
+  {
+   "path": "players/gbc-it-dbtecno-pizzaboy-pizza-boy-basic.json",
+   "collection": "players",
+   "sha256": "fdec8ecc3739d2521ec446a64aeee6493c6c4c7d82ec9fe659b3e8aa432617e6"
+  },
+  {
+   "path": "players/gbc-it-dbtecno-pizzaboypro-pizza-boy-pro.json",
+   "collection": "players",
+   "sha256": "2dde9cb9cf2baa9be2e019317108f290ecf809378852c40eb84a7fc7392abab3"
+  },
+  {
+   "path": "players/gbc-com-sky-skyemu-skyemu.json",
+   "collection": "players",
+   "sha256": "252ece86f4bdb7a34303efd9d1d49703dd7ab5276c152c29893ca9cd3c268469"
+  },
+  {
+   "path": "players/gbc-com-explusalpha-gbcemu-com-explusalpha-gbcemu.json",
+   "collection": "players",
+   "sha256": "45ce42402fdc63dd5e177ed34c857c0f0ef50d0996e75a388a4df10f1f93d7df"
+  },
+  {
+   "path": "players/gc-org-dolphinemu-handheld-dolphin-handheld.json",
+   "collection": "players",
+   "sha256": "a94d80b51b8120a3bef79507ac00f7960717ee6607641a6144acb155856511af"
+  },
+  {
+   "path": "players/gc-org-mm-jr-dolphin-org-mm-jr-fork.json",
+   "collection": "players",
+   "sha256": "5c35a3c57da2fb38b2acfe5ce9adaa343d97f36b831467ee6c8732c5a85446bb"
+  },
+  {
+   "path": "players/gc-org-mm-j-dolphin-org-mm-j-fork.json",
+   "collection": "players",
+   "sha256": "ca1b2d24f37390ec1c51986cf2121d000581475e5899a164b339bbf5751e5817"
+  },
+  {
+   "path": "players/gc-org-dolphinemu-mmjr-dolphin-mmjr.json",
+   "collection": "players",
+   "sha256": "ad7529b33ba8936602914835c55fd7cf21796ff8cc7b066eb1b9fe85f09115f4"
+  },
+  {
+   "path": "players/gc-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
+   "collection": "players",
+   "sha256": "458395da013f0ceef12c43615916a1dfda6e0740709fd8c739e9eac4c3e7c69b"
+  },
+  {
+   "path": "players/gc-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
+   "collection": "players",
+   "sha256": "046f2187d3ed0f16b657dee45b6d97aa922fa3ce919c96c946c7f836ae4c8766"
+  },
+  {
+   "path": "players/gc-org-dolphin-ishiirukadark-dolphin-ishiiruka.json",
+   "collection": "players",
+   "sha256": "831b885e31cb1be8e14d78df08dcb00baca5ac4a28f8fe1b51942af3d263e75d"
+  },
+  {
+   "path": "players/genesis-com-explusalpha-mdemu-com-explusalpha-mdemu.json",
+   "collection": "players",
+   "sha256": "0bb78fdf17fc5cddd5c42f6e8141ee1d544374d69324b4c665b4e2f7d8e092e5"
+  },
+  {
+   "path": "players/genesis-com-androidemu-gens-com-androidemu-gens.json",
+   "collection": "players",
+   "sha256": "34c82014a5707d0fe8fee2818eaa0c8e94cf24c21894e5f590ad1d697e2bdb78"
+  },
+  {
+   "path": "players/j2me-ru-playsoftware-j2meloader-ru-playsoftware-j2meloader.json",
+   "collection": "players",
+   "sha256": "10ea10732de07352ef783a0b6340d9c5040c08e62cb4371bdf46a4e9abc1c801"
+  },
+  {
+   "path": "players/j2me-ru-woesss-j2meloader-jl-mod.json",
+   "collection": "players",
+   "sha256": "656937ba6068c3169bb06347eb545bacbad88e780276a305f2492c0d945bb1b7"
+  },
+  {
+   "path": "players/mame-com-seleuco-mame4droid-com-seleuco-mame4droid.json",
+   "collection": "players",
+   "sha256": "e20b1316c002da0559cd06a827edcf41cf6834dcdd9400e412d57710375372b5"
+  },
+  {
+   "path": "players/mame-com-seleuco-mame4d2024-com-seleuco-mame4droid-2024.json",
+   "collection": "players",
+   "sha256": "c44c60ff0623de3f7115dc7725e163aad434322130ab149e9c9030c608b8c137"
+  },
+  {
+   "path": "players/msx-com-explusalpha-msxemu-com-explusalpha-msxemu.json",
+   "collection": "players",
+   "sha256": "ef64c2ca4e7a2e4a3e605463c223e869d8de9ba497ee685d06318cd45f132155"
+  },
+  {
+   "path": "players/n64-org-mupen64plusae-v3-fzurita-org-mupen64plusae-v3-fzurita.json",
+   "collection": "players",
+   "sha256": "6bf3267fd3abed2361f682e889aa932c9ccbd61f944ea652ccb4317c1e6e4cd5"
+  },
+  {
+   "path": "players/n64-org-mupen64plusae-v3-alpha-org-mupen64plusae-v3-alpha.json",
+   "collection": "players",
+   "sha256": "fafbfe08db97a4da27f74d7a3943dc246021aa3ee9c4eb9d4ad0d470690acf58"
+  },
+  {
+   "path": "players/n64-org-mupen64plusae-v3-fzurita-pro-org-mupen64plusae-v3-fzurita-pro.json",
+   "collection": "players",
+   "sha256": "f5bc3705367c776b7e407497700bb46f82676ad014428557e6ab51830d3eaed0"
+  },
+  {
+   "path": "players/n64-paulscode-android-mupen64plusae-paulscode-android-mupen64plusae.json",
+   "collection": "players",
+   "sha256": "ed3636d75300f71b12ce1764b708aa4a1b30f5c3ab50aadaa5250cf318e32e5b"
+  },
+  {
+   "path": "players/naomi-com-flycast-emulator-com-flycast-emulator.json",
+   "collection": "players",
+   "sha256": "ac9cc0715491d7a07bf97866eb9d761b28bdc62e2b11bd1c2c770ee8250785b9"
+  },
+  {
+   "path": "players/naomi-com-flycast-emulator-com-flycast-emulator-dev-build.json",
+   "collection": "players",
+   "sha256": "69e9b817347f031aa40cee8e8e7e927597548ec60ad82c47b5f4a4894c5bef3d"
+  },
+  {
+   "path": "players/nds-com-dsemu-drastic-drastic.json",
+   "collection": "players",
+   "sha256": "054dad4944e781ce0d0d046ae28e5f4996a6bd892f74ccbf6ca581c6bb8e703a"
+  },
+  {
+   "path": "players/nds-me-magnum-melonds-melonds.json",
+   "collection": "players",
+   "sha256": "a9e625f2f585da4235bb57f460b1d81a3778163b0a6c16a9d0c78e8a6c51dd2f"
+  },
+  {
+   "path": "players/nds-me-magnum-melonds-nightly-melonds-nightly.json",
+   "collection": "players",
+   "sha256": "5cbc5707e93e0873c98d91499d8fdf364471bd18f3976ef84c12d1ba94310685"
+  },
+  {
+   "path": "players/nds-me-magnum-melonds-dev-melonds-dev-dual-screen-fork.json",
+   "collection": "players",
+   "sha256": "0ff15547bebb2ce0351efea423e18f8bd3d33a349700fd6c4f45b9040d8eb8c5"
+  },
+  {
+   "path": "players/nds-com-hydra-noods-noods.json",
+   "collection": "players",
+   "sha256": "14d7b455cbd57562983bfed1ae82a4b056b32c4693e44024811cd331a61a84f9"
+  },
+  {
+   "path": "players/neogeo-com-explusalpha-neoemu-neo-emu.json",
+   "collection": "players",
+   "sha256": "d8b18674ed56a0abdd060e119bf082b97f755883c0c550b404bd0e7d8c21176f"
+  },
+  {
+   "path": "players/nes-com-explusalpha-nesemu-com-explusalpha-nesemu.json",
+   "collection": "players",
+   "sha256": "c70c0f54b20fb77593ebec4ac45af7950e034cf6b8044714de725dded817e3b1"
+  },
+  {
+   "path": "players/nes-com-androidemu-nes-com-androidemu-nes.json",
+   "collection": "players",
+   "sha256": "cf3238dcbe139b4dfa6b9b3e735fae6903b1aed7aa60c7093042165233b722ff"
+  },
+  {
+   "path": "players/ngage-com-github-eka2l1-eka2l1.json",
+   "collection": "players",
+   "sha256": "58f4dd16ed53017287ca3b65d94e3506423e04a83bcf89b7ce79d5d96b2ef674"
+  },
+  {
+   "path": "players/ngp-com-explusalpha-ngpemu-ngp-emu.json",
+   "collection": "players",
+   "sha256": "12ccb2c5e41a462505ab70df9847530085d8ed8e3bf611e6ed66eeba4fcf1628"
+  },
+  {
+   "path": "players/ngpc-com-explusalpha-ngpemu-ngp-emu.json",
+   "collection": "players",
+   "sha256": "ed8ab800b08af24fcc38aa275b71a9bd9910fe01e02bce3f062dcde3fde35c48"
+  },
+  {
+   "path": "players/pico8-me-dt2dev-infinity-infinity-p8-player.json",
+   "collection": "players",
+   "sha256": "adb880e06a245c9101d4d54765a42f0804475846acb63cdb549aece065e271ae"
+  },
+  {
+   "path": "players/ps2-xyz-aethersx2-android-aethersx2.json",
+   "collection": "players",
+   "sha256": "27c0f08fb07c63158f21b4118747cddaf85b95334fe6ba55a42ef42901dbe4ce"
+  },
+  {
+   "path": "players/ps2-xyz-aethersx2-custom-aethersx2-turnip.json",
+   "collection": "players",
+   "sha256": "8ca0e0580448721fcfed4aa515d8de1ca7605ad9ded1ac79d390f962c347586e"
+  },
+  {
+   "path": "players/ps2-xyz-aethersx2-tturnip-nethersx2-turnip.json",
+   "collection": "players",
+   "sha256": "fefb293093327a1b475398e5885378bdd068020e47fac60633224ffbfe12719a"
+  },
+  {
+   "path": "players/ps2-xyz-aethersx2-cturnip-nethersx2-turnip-classic.json",
+   "collection": "players",
+   "sha256": "da25ad008a862fe5116fec149dd61ce686b78b34368ecb2405dddd7fab5f44f5"
+  },
+  {
+   "path": "players/ps2-come-nanodata-armsx2-armsx2.json",
+   "collection": "players",
+   "sha256": "8602e9f918f3441a5981c8428eb58bdb82294e53417db704dfa09068e2a094ea"
+  },
+  {
+   "path": "players/ps2-come-nanodata-armsx2-debug-armsx2-nightly.json",
+   "collection": "players",
+   "sha256": "d834a2bac4fb188ae65f8b20f0f551753e4846d6e608136a6297502e1e9251f1"
+  },
+  {
+   "path": "players/ps2-com-sbro-emucorex-emucorex.json",
+   "collection": "players",
+   "sha256": "6e023cf421be1fcf2e738545848a3a197c426617e83d42205b4950e9c615332d"
+  },
+  {
+   "path": "players/psp-org-ppsspp-ppsspp-ppsspp.json",
+   "collection": "players",
+   "sha256": "53c6f8ffbe8e4dcceeb0c22d865d0bbefc3ea224725dd6eb59965f769412ee99"
+  },
+  {
+   "path": "players/psp-org-ppsspp-ppssppgold-ppsspp-gold.json",
+   "collection": "players",
+   "sha256": "aba98e489d7a6ed6712682954c0b8d6eda19595c265e12e08724d1e4fb2987e5"
+  },
+  {
+   "path": "players/psp-org-ppsspp-ppsspplegacy-ppsspp-legacy.json",
+   "collection": "players",
+   "sha256": "839e86887d7bda808424a2cb8a4a5bbc302d108a9013295981883a33acba6a17"
+  },
+  {
+   "path": "players/psx-com-github-stenzek-duckstation-duckstation.json",
+   "collection": "players",
+   "sha256": "8161fae1ae165510f754e474fd673815184633a72f0416095dfb168f1dc37349"
+  },
+  {
+   "path": "players/psx-com-github-stenzek-duckstation-duckstation-legacy.json",
+   "collection": "players",
+   "sha256": "43a80bb3d97b6aef5a1ecc1dc47c0be2433e7ca3414e60665b97a57a49d8f39f"
+  },
+  {
+   "path": "players/psx-com-emulator-fpse-fpse.json",
+   "collection": "players",
+   "sha256": "3cc89253b1c9df3ee5f23949ca8e5dbe4b26ac6631232d7e14e5c6f7f6265263"
+  },
+  {
+   "path": "players/psx-com-emulator-fpse64-fpse64.json",
+   "collection": "players",
+   "sha256": "879f4510a1b09437822a506fd6883dacbd65fed18eada9d189f6e6832ec00cbf"
+  },
+  {
+   "path": "players/psx-com-epsxe-epsxe-epsxe.json",
+   "collection": "players",
+   "sha256": "afaadcc1ee1281e455d44378d87645eccf9d94c72b5c55eb6a802cdc37b7592f"
+  },
+  {
+   "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx-hw.json",
+   "collection": "players",
+   "sha256": "9610ebd4f27c01c0700d6014c3b91590d30ac45dd4d0bad90f73a63e9d6815a8"
+  },
+  {
+   "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx.json",
+   "collection": "players",
+   "sha256": "81fdada51180cef8e16215f75a564b422e27d38f45607fcb8fbace3fbdd944e3"
+  },
+  {
+   "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx-hw.json",
+   "collection": "players",
+   "sha256": "2364e34a9d46d4fe0f437183cc6092fe744fc6d80af039a1e7f4906e325f26c6"
+  },
+  {
+   "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx.json",
+   "collection": "players",
+   "sha256": "45b92507df851f005e5f3ef15fb5beeec2aa40e33ad3c16549a55dfbd5ff5678"
+  },
+  {
+   "path": "players/psx-com-retroarch-retroarch-beetle-psx-hw.json",
+   "collection": "players",
+   "sha256": "e7d40f2909ea6edd042ce91ea475396e6afe947616594d678dbf5b7c72a16418"
+  },
+  {
+   "path": "players/psx-com-retroarch-retroarch-beetle-psx.json",
+   "collection": "players",
+   "sha256": "eec9cf97fe01b8c291feb77d95981208a38ee6cf59022679ebf04eea5760ea7a"
+  },
+  {
+   "path": "players/satellaview-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",
+   "collection": "players",
+   "sha256": "9aeb7b9f76a7cdb3d1336a49cc34a48681a644eed48518c0e9abad9dff8eba6c"
+  },
+  {
+   "path": "players/saturn-org-devmiyax-yabasanshioro2-pro-yabasanshiro-2-pro.json",
+   "collection": "players",
+   "sha256": "99b96161287e02c254727937c1cc4b2d5ddc00ec0572afa926a457ddab977e11"
+  },
+  {
+   "path": "players/saturn-org-devmiyax-yabasanshioro2-yabasanshiro-2.json",
+   "collection": "players",
+   "sha256": "5bf4b23da7a8d3104635fbaf47f48eb236701caea3e68b58a8249e4fd8a31718"
+  },
+  {
+   "path": "players/saturn-org-uoyabause-android-pro-yabasanshiro-pro.json",
+   "collection": "players",
+   "sha256": "4fe26b6d1ec829571a89797e50ac5f9e5a0f0e5afaff54f5d230919792cb5dca"
+  },
+  {
+   "path": "players/saturn-org-uoyabause-android-yabasanshiro.json",
+   "collection": "players",
+   "sha256": "78bb3d1cf19a91f56c9d22be17141788bbe5217a835e55f7e93bef30073753f8"
+  },
+  {
+   "path": "players/saturn-com-explusalpha-saturnemu-saturn-emu.json",
+   "collection": "players",
+   "sha256": "224740fc8bcdd05b7839c233e91a440d14093a1307cddc82943acaff58f49a6b"
+  },
+  {
+   "path": "players/segacd-com-explusalpha-mdemu-com-explusalpha-mdemu.json",
+   "collection": "players",
+   "sha256": "0bded54ee09d8f6a305ba9463c5b35694ba2e6709b1151b7513b83ecce6ea14a"
+  },
+  {
+   "path": "players/snes-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",
+   "collection": "players",
+   "sha256": "571cfc09f37ef8a2db30e9bf6d756f7ed323d64f13c3b3af304157da592b66bb"
+  },
+  {
+   "path": "players/supergrafx-com-pceemu-com-pceemu.json",
+   "collection": "players",
+   "sha256": "c06e5f5034a0ed2bdf955f482f36f7165690d2d1d5d8a41bbc8ee0311335ba6a"
+  },
+  {
+   "path": "players/switch-dev-eden-eden-emulator-eden.json",
+   "collection": "players",
+   "sha256": "fe9ddcd423d7d94fefbee6567c1de8f7790b6677201343fa931da88d200e1ec1"
+  },
+  {
+   "path": "players/switch-skyline-emu-skyline.json",
+   "collection": "players",
+   "sha256": "b4c8e0b4859396d30958b7d04656cc972f8443939b64cee31713cb6521bf1f66"
+  },
+  {
+   "path": "players/switch-org-stratoemu-strato-strato-official.json",
+   "collection": "players",
+   "sha256": "5c61d15ed6855072f3ff6330770f2e0e041df2b1c4e72eb1559a886e0ad5badc"
+  },
+  {
+   "path": "players/switch-org-yuzu-yuzu-emu-yuzu.json",
+   "collection": "players",
+   "sha256": "85cd0738cd55a4cf16eb3d838bcbe21d571a7529b782372ccdaa7f9afd606736"
+  },
+  {
+   "path": "players/switch-org-yuzu-yuzu-emu-ea-yuzu-early-access.json",
+   "collection": "players",
+   "sha256": "55d6be8d188c7c4a262e1cbe9a84622c6772975efd8828f29cd7f93db24f6868"
+  },
+  {
+   "path": "players/switch-dev-suyu-suyu-emu-relwithdebinfo-suyu.json",
+   "collection": "players",
+   "sha256": "3a497ea8ab884ee10fd01f0d3bbdbb832b77adbc2e3b3b051934a42ede9a9ef4"
+  },
+  {
+   "path": "players/switch-org-sudachi-sudachi-emu-ea-sudachi.json",
+   "collection": "players",
+   "sha256": "c956db1c3ae2f4814167dac1203205089ad810033dfa9ad35f08e62a45617fc2"
+  },
+  {
+   "path": "players/tg16-com-pceemu-com-pceemu.json",
+   "collection": "players",
+   "sha256": "48e13a7b5806f2b5237c7d431245501f5282916f51d627790caa6d390443990c"
+  },
+  {
+   "path": "players/triforce-org-dolphinemu-dolphinemu-dolphin.json",
+   "collection": "players",
+   "sha256": "5b9c98ca79a708a9f58d5bc3eda7e109e44f17cc2128b494aab9126e77a1716f"
+  },
+  {
+   "path": "players/virtualboy-com-simongellis-vvb-vvs.json",
+   "collection": "players",
+   "sha256": "8a1622fd28449e006e08095e68ab96212b3714c8cdd9c6f1b8c15debcd1cd2c0"
+  },
+  {
+   "path": "players/wii-org-mm-jr-dolphin-org-mm-jr-fork.json",
+   "collection": "players",
+   "sha256": "13e00d841cfa0d0b10f6227d24a559b29043580f3a1cbca6c918ff88ca091058"
+  },
+  {
+   "path": "players/wii-org-mm-j-dolphin-org-mm-j-fork.json",
+   "collection": "players",
+   "sha256": "d6f55d50ab062896fe7dbc48ada0c8b330313109311a1fbfd9321e822029b191"
+  },
+  {
+   "path": "players/wii-org-dolphinemu-mmjr-dolphin-mmjr.json",
+   "collection": "players",
+   "sha256": "d651a572b1413e63a1eeaba3399faa2164d7d085d729cd26e1cfba6fec52f09b"
+  },
+  {
+   "path": "players/wii-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
+   "collection": "players",
+   "sha256": "e08019132b4a02806092b01c91bde097dcbd46bb39d2f3df65d4d2968cf10fa7"
+  },
+  {
+   "path": "players/wii-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
+   "collection": "players",
+   "sha256": "c5471af4defaa6908011a047abe32ac0a2a23e344ec3fdd51bcfdbc948facc6b"
+  },
+  {
+   "path": "players/wii-org-dolphin-ishiirukadark-dolphin-ishiiruka.json",
+   "collection": "players",
+   "sha256": "5438d307df292f8e964cf4f9a535cb95451b539925b424f63a004fe8dd7a3b71"
+  },
+  {
+   "path": "players/wiiu-info-cemu-cemu-cemu.json",
+   "collection": "players",
+   "sha256": "da6a9e098161f709f906e30984ef2e821360b8000cd05c7681e68194e9c12408"
+  },
+  {
+   "path": "players/windows-com-winlator-winlator-cmod.json",
+   "collection": "players",
+   "sha256": "fa3859683c62a1e36bfb1282094ff9b556670a754e41955784a60fdb4c692f56"
+  },
+  {
+   "path": "players/windows-com-cmodded-winlator-winlator-cmod-proot.json",
+   "collection": "players",
+   "sha256": "a56797ba8b68f5b0358942dc9a65a9e79a7a0c8dce7d30b63a3f876331120359"
+  },
+  {
+   "path": "players/windows-com-micewine-emu-micewin.json",
+   "collection": "players",
+   "sha256": "ea25c5c261c9ecdae0232dbc3663481c673a1517f7252fb17ff91c86f244f4e2"
+  },
+  {
+   "path": "players/esde-3do-real3doplayer.json",
+   "collection": "players",
+   "sha256": "bca0eed389ef09b21bdeeaa550ff09f854c8afc268359bf6c07e7f6830f31fa5"
+  },
+  {
+   "path": "players/esde-adam-colem.json",
+   "collection": "players",
+   "sha256": "80b8801e5e86e22795c7546d4faf6431f699ccae373e83f1f3097a11a88d625f"
+  },
+  {
+   "path": "players/esde-arcade-mame4droid.json",
+   "collection": "players",
+   "sha256": "d76fc1699e4b3f9699ae50887e8b5752008acdfda2d6252a4c9854fe7c500ef8"
+  },
+  {
+   "path": "players/esde-arcade-neo-emu.json",
+   "collection": "players",
+   "sha256": "5ff2fc24c2dec16ad15116a18baebaffae810d975c28a11c42101c9273b2d8fe"
+  },
+  {
+   "path": "players/esde-arcade-flycast.json",
+   "collection": "players",
+   "sha256": "c364315c1181c512f9a7f5929445623fda6038072649f71d15636070abae934f"
+  },
+  {
+   "path": "players/esde-atari2600-2600-emu.json",
+   "collection": "players",
+   "sha256": "675968140e4b5511d17a74990cb98f81572c20ecc4f3e5ec5cbb2b1a62216889"
+  },
+  {
+   "path": "players/esde-atarijaguar-iratajaguar.json",
+   "collection": "players",
+   "sha256": "995082504294f9f635e5c8f226ff4bf16bb3e3fce067c11309fbf6dd42921904"
+  },
+  {
+   "path": "players/esde-atarilynx-lynx-emu.json",
+   "collection": "players",
+   "sha256": "f4a2fbc0bf7ded16797e5e4ab6ebb3f8d2b327b997f225025fc845a4371b8812"
+  },
+  {
+   "path": "players/esde-c64-c64-emu.json",
+   "collection": "players",
+   "sha256": "dbd1c6a75d1c5252eeb7e129d4344ac95237d759d549d7b3930a0cb9793966ef"
+  },
+  {
+   "path": "players/esde-colecovision-msx-emu.json",
+   "collection": "players",
+   "sha256": "3c8ed6e729ff83eaa3014d2449ec5752acca80cec7f3d6b56367875c6e871bc7"
+  },
+  {
+   "path": "players/esde-colecovision-colem.json",
+   "collection": "players",
+   "sha256": "0707f4d42b0920ce46886907bdd8d3af50cb22f734997f2d96db5a27a2b8c3ab"
+  },
+  {
+   "path": "players/esde-consolearcade-flycast.json",
+   "collection": "players",
+   "sha256": "7887e27532c7b9b41b703a638433b7270224c660f1562414acad0c94f01bb43d"
+  },
+  {
+   "path": "players/esde-consolearcade-aps3e.json",
+   "collection": "players",
+   "sha256": "5a0c2562daa68c2f5f794d1b82db6f78e02b0321f09f69a667de6d3aafcfa94e"
+  },
+  {
+   "path": "players/esde-consolearcade-aps3e-2.json",
+   "collection": "players",
+   "sha256": "17f0f43da96aec66a0e2a58259f139c722d9e3652759e48458b30a9c17292a45"
+  },
+  {
+   "path": "players/esde-cps-mame4droid.json",
+   "collection": "players",
+   "sha256": "2747612099c2fcd71479dbc6574925d2e81289e17cfe0c732de0e65f580bc31a"
+  },
+  {
+   "path": "players/esde-cps1-mame4droid.json",
+   "collection": "players",
+   "sha256": "b15767ba3af9770625795272191a9d79bad509cc4326996706cdd213ebd11d15"
+  },
+  {
+   "path": "players/esde-cps2-mame4droid.json",
+   "collection": "players",
+   "sha256": "ad63ac76d1d6cb002183bf9f9ff47ff2f509b2c352daf581344f7a0715af8554"
+  },
+  {
+   "path": "players/esde-cps3-mame4droid.json",
+   "collection": "players",
+   "sha256": "adff162aa706ea196bdc29239afc115e35a5e09cb4390e62c7a7e45aa43f8d8a"
+  },
+  {
+   "path": "players/esde-dreamcast-redream.json",
+   "collection": "players",
+   "sha256": "fd823d7a925cf1de70b3c169073d1b690cbf2256c5a5d98f543e6b0fd92d5cd1"
+  },
+  {
+   "path": "players/esde-famicom-nes-emu.json",
+   "collection": "players",
+   "sha256": "92a313ed835c9e1a19ed19a999083bf1c70682dc41f9325de45993f55359a464"
+  },
+  {
+   "path": "players/esde-famicom-ines.json",
+   "collection": "players",
+   "sha256": "22852d7aa3f4080c954c506a652702f54aab153501c97bf6e344c14531b1e030"
+  },
+  {
+   "path": "players/esde-famicom-nesoid.json",
+   "collection": "players",
+   "sha256": "45f5899d402517fac6506e7ebda79c3595c8f57151783a987e06ca5bcc9eb9a4"
+  },
+  {
+   "path": "players/esde-fds-nes-emu.json",
+   "collection": "players",
+   "sha256": "2046260c9acf14dbaec58d02a905969a19f001a5a60aee294a4baf442c4f83d2"
+  },
+  {
+   "path": "players/esde-fds-ines.json",
+   "collection": "players",
+   "sha256": "49f7fc5f5a18754db04803170b371708547629c1208386824e023a87718f1b7f"
+  },
+  {
+   "path": "players/esde-fds-nesoid.json",
+   "collection": "players",
+   "sha256": "5114946a9760cf0106f5cd5280f9d3891612146e352c7776f837b4234dbd6ec0"
+  },
+  {
+   "path": "players/esde-flash-ruffle.json",
+   "collection": "players",
+   "sha256": "6472e6473769d2356a08c82d4f92470002199cb00d1989a81cbbe795ddc3b05a"
+  },
+  {
+   "path": "players/esde-flash-swf-player.json",
+   "collection": "players",
+   "sha256": "e76290f329fa8e9e221947b905eb1d613c1a31ac5749da9c7ed51b7e5b21b783"
+  },
+  {
+   "path": "players/esde-gameandwatch-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "2af5c1e532c29d0b926b550992def984649a785965665e7af33b21e18b8b03c1"
+  },
+  {
+   "path": "players/esde-gamegear-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "8c2ec9fc47addb14f5a7075317a448d82afdddc071801b94c1a92b5a6347dc0a"
+  },
+  {
+   "path": "players/esde-gamegear-mastergear.json",
+   "collection": "players",
+   "sha256": "6e5f82f3ba1bfda64aac9d5cd3de2f6cf69cb62a20b117f5f6ff57cf7bbd3976"
+  },
+  {
+   "path": "players/esde-gb-skyemu.json",
+   "collection": "players",
+   "sha256": "f40d0352f694bf7f2f03866c756d09f11443e1b28958c00c0066b0770e0d6f68"
+  },
+  {
+   "path": "players/esde-gb-gbc-emu.json",
+   "collection": "players",
+   "sha256": "016275d0db7bc334c219490a6aa52585d19b882c1a8af7798ae37007813d5f23"
+  },
+  {
+   "path": "players/esde-gb-my-oldboy.json",
+   "collection": "players",
+   "sha256": "a28d225aa05198184a61ebe449462008e958f54f0eb533b424af00084e9f323b"
+  },
+  {
+   "path": "players/esde-gb-linkboy.json",
+   "collection": "players",
+   "sha256": "0e5dada5c7f20701a1c1c6a9e83112c332a3d81b85e8bda6a06b8260596dfe6f"
+  },
+  {
+   "path": "players/esde-gb-pizza-boy-gbc.json",
+   "collection": "players",
+   "sha256": "654f8a205e66f84d38db5617608c94e51fa2b706ec70bf6cafe43108e2888178"
+  },
+  {
+   "path": "players/esde-gba-noods.json",
+   "collection": "players",
+   "sha256": "b41fa84b04ec56cfe452a2280ba8837e856910f0329a7bc12acdd0baddcc02d5"
+  },
+  {
+   "path": "players/esde-gba-skyemu.json",
+   "collection": "players",
+   "sha256": "afcaafbd71dda80f3c8273c975fe94de204466ac2eb974addc0e6991083eb63f"
+  },
+  {
+   "path": "players/esde-gba-gba-emu.json",
+   "collection": "players",
+   "sha256": "2ae562e80dd7967bd052ad10e294fbcb164a3801abf564daa2893d6441688edb"
+  },
+  {
+   "path": "players/esde-gba-my-boy.json",
+   "collection": "players",
+   "sha256": "f0a17c5f81a324a8d281848d247c32429ccd0050ab0c9e41281b787623e9e91e"
+  },
+  {
+   "path": "players/esde-gba-linkboy.json",
+   "collection": "players",
+   "sha256": "2b248712469ac70af974ad6f8f3b6b51cd1729373c3d54822b583dfa8e0dec18"
+  },
+  {
+   "path": "players/esde-gba-pizza-boy-gba.json",
+   "collection": "players",
+   "sha256": "398d0e7e957338da2c004abef66d4977baad110cec3db26a1b1923e2c2dc77ed"
+  },
+  {
+   "path": "players/esde-gbc-skyemu.json",
+   "collection": "players",
+   "sha256": "8bd59207cdb0b52b6b429e33b599f99cf4814f725cb0bef1dadd1e761d4650ef"
+  },
+  {
+   "path": "players/esde-gbc-gbc-emu.json",
+   "collection": "players",
+   "sha256": "3effef6032d46072a566506e355fd4c71e800a8be4b662f88ce8d2b56b90e382"
+  },
+  {
+   "path": "players/esde-gbc-my-oldboy.json",
+   "collection": "players",
+   "sha256": "0653a951e1c6f9a3fa3a2c13a9edfe869cbc0adc3ef1cd5fede25a042fe2bdc2"
+  },
+  {
+   "path": "players/esde-gbc-linkboy.json",
+   "collection": "players",
+   "sha256": "2b2f33443afa4f7c5e285ec60a0e4ed6ab1ad426bf1f4607ef845c2a21d2b6ef"
+  },
+  {
+   "path": "players/esde-gbc-pizza-boy-gbc.json",
+   "collection": "players",
+   "sha256": "e62836be315d19b95a60744a365a31d35214af160c2176a036d7d7c1af2d4edc"
+  },
+  {
+   "path": "players/esde-gc-dolphin-mmjr.json",
+   "collection": "players",
+   "sha256": "94c1f45c138181c71f21202eb5e88b258747889ef25a2dd7db4ac4f1598d3134"
+  },
+  {
+   "path": "players/esde-genesis-md-emu.json",
+   "collection": "players",
+   "sha256": "9bccda1f08521352c76c976df6d43bdb6b64788fdfafe06d28f27d58d3751e9b"
+  },
+  {
+   "path": "players/esde-genesis-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "b070079ed81f6fb37423cdd67bc15fa0a3ecfa34cb134d1381d0cb031c2fbe27"
+  },
+  {
+   "path": "players/esde-j2me-j2me-loader.json",
+   "collection": "players",
+   "sha256": "7708130ba111c51efb72e02422435dccf839427a6579931472e7e63979326c72"
+  },
+  {
+   "path": "players/esde-j2me-jl-mod.json",
+   "collection": "players",
+   "sha256": "17d053b9f4479f3098e36a5a12db02abfbd2009588f6e98966dad7418e6fd737"
+  },
+  {
+   "path": "players/esde-lcdgames-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "d37cb229ae6c02ef15b40831be33475cd5538515be392fd34e5254178e21217f"
+  },
+  {
+   "path": "players/esde-mame-mame4droid.json",
+   "collection": "players",
+   "sha256": "2f2c0ae282302d89e3a59ac295fd021d2180ca49c01d5df491550c10cd9b193b"
+  },
+  {
+   "path": "players/esde-mame-neo-emu.json",
+   "collection": "players",
+   "sha256": "b11a96e1fa6fb3886da3ae2acdcfd0c04be6a2f019b3aed84f809c4b324856df"
+  },
+  {
+   "path": "players/esde-mame-flycast.json",
+   "collection": "players",
+   "sha256": "b91429efbc9c0ce19d1e39ae2303003d15d59ed907833dc5f474a228fea84c82"
+  },
+  {
+   "path": "players/esde-mark3-md-emu.json",
+   "collection": "players",
+   "sha256": "469b87d1c82b17af484c10323d523bf84b0c10780a41ed4787cf24a39c0875d9"
+  },
+  {
+   "path": "players/esde-mark3-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "695324e3c670e784f71fa6677ffed40cdaa7271fb8ce8160ce8230bdd0325ffa"
+  },
+  {
+   "path": "players/esde-mark3-mastergear.json",
+   "collection": "players",
+   "sha256": "c95720c0c6c4c7faff35da07e12ceac3048eeb5a01cfbace356f77d270ddea20"
+  },
+  {
+   "path": "players/esde-mastersystem-md-emu.json",
+   "collection": "players",
+   "sha256": "9dca8732586482db5d254d01873eb88a1311575e3f963a1d1ef9b5f0dba8b100"
+  },
+  {
+   "path": "players/esde-mastersystem-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "876bdbe5b6f00e4114d4eb564104c9f144aec15c6f6efe6f6b09a96b893cd1df"
+  },
+  {
+   "path": "players/esde-mastersystem-mastergear.json",
+   "collection": "players",
+   "sha256": "404074d58c8b3dc0cbde8811a000bb0830489ddeb4b876298367292a658c3b8e"
+  },
+  {
+   "path": "players/esde-megacd-md-emu.json",
+   "collection": "players",
+   "sha256": "18c34ccb07ca66c521dca53f1ba18333c8528126322c7f1de70f3978aacbecd0"
+  },
+  {
+   "path": "players/esde-megacd-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "4ba44d81213355ff3f57d6a21895d6700ecbeea39d7c8d65f2599286938da312"
+  },
+  {
+   "path": "players/esde-megacdjp-md-emu.json",
+   "collection": "players",
+   "sha256": "8419b40a9cb48f8aa1fe524802b34e78bd27a7f49819937e682bac1c4534b58b"
+  },
+  {
+   "path": "players/esde-megacdjp-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "fec820f9c91f123e88a33f24a6f6eac17d45e2fbae2e67ce11ad08dbd35b26fb"
+  },
+  {
+   "path": "players/esde-megadrive-md-emu.json",
+   "collection": "players",
+   "sha256": "915fce115d6c79f9736f96f1399467935e15b316b1df1684a34b534b4bd417f4"
+  },
+  {
+   "path": "players/esde-megadrive-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "5c7e2eab880370c44926bc479c634812efd38c2011d9579c4cb2a450d49ffc09"
+  },
+  {
+   "path": "players/esde-megadrivejp-md-emu.json",
+   "collection": "players",
+   "sha256": "2ab529f42013b6425c118b271cbf99effae4b988c0c8092c1a402663feed723e"
+  },
+  {
+   "path": "players/esde-megadrivejp-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "c6f3d0cde971a13a6022c5992d9f63cd0aac93b0e4a321c8a35952ab3f39ee05"
+  },
+  {
+   "path": "players/esde-model3-super3.json",
+   "collection": "players",
+   "sha256": "461cce69fd529ae0cf50a654520d6a69d8ae7490459fee169afbdd96a19747d9"
+  },
+  {
+   "path": "players/esde-msx-fmsx.json",
+   "collection": "players",
+   "sha256": "1cb03621607f4d8c13de248c9cf1fafadd92ba57dc6f68b294db081cadaee214"
+  },
+  {
+   "path": "players/esde-msx-msx-emu.json",
+   "collection": "players",
+   "sha256": "d0308a2ff238c29f92aa24c114741a47a7960ccd788f41c7b05c4c824c104c08"
+  },
+  {
+   "path": "players/esde-msx1-fmsx.json",
+   "collection": "players",
+   "sha256": "f8570daad5c468462840086f4421b83192563c585eede6aae3d0b3f5a8679333"
+  },
+  {
+   "path": "players/esde-msx1-msx-emu.json",
+   "collection": "players",
+   "sha256": "889e1c562a91026df1d5cf9c5d601c10051300101b04c0cc631fea290cd56909"
+  },
+  {
+   "path": "players/esde-msx2-fmsx.json",
+   "collection": "players",
+   "sha256": "294ecc56fe186ab51aeabb18fb370c7cedc4efaa2682d6926b8aca4ec7ec6fd3"
+  },
+  {
+   "path": "players/esde-msx2-msx-emu.json",
+   "collection": "players",
+   "sha256": "3e00511418888c01b9bb1c0a8522be05d2c453e8f1ab4c6c2a48b8d28d104334"
+  },
+  {
+   "path": "players/esde-msxturbor-msx-emu.json",
+   "collection": "players",
+   "sha256": "378d5f0d1f177ecdf31ebe6eee8a894995450dd935c4869dd7387a512372fd2d"
+  },
+  {
+   "path": "players/esde-multivision-mastergear.json",
+   "collection": "players",
+   "sha256": "8a4caad72f3c0a0d301a6b67119b88f0c276f3730d6f888f27061b1dcb69b957"
+  },
+  {
+   "path": "players/esde-n3ds-azahar.json",
+   "collection": "players",
+   "sha256": "54057efb87e36d97b300a416abb49e2f7e9c95f223df93751aca45b3a243d6c4"
+  },
+  {
+   "path": "players/esde-n3ds-azaharplus.json",
+   "collection": "players",
+   "sha256": "0363b4c881e8bbf4093f9231abee92a8eaa2c98899aba123b15c13fc7c7cb74e"
+  },
+  {
+   "path": "players/esde-n3ds-citra.json",
+   "collection": "players",
+   "sha256": "8c05b774c40bd838af7368ccf02a2fa9dccf0724cb270b7327f0b20968fbfa97"
+  },
+  {
+   "path": "players/esde-n3ds-citra-canary.json",
+   "collection": "players",
+   "sha256": "b437ef8fa54bf58bf9a14886438108a1edf23d2fabaed6d7cd626ee70f00ba3a"
+  },
+  {
+   "path": "players/esde-n3ds-citra-mmj.json",
+   "collection": "players",
+   "sha256": "424ae8e3677976653d14fe6f18817007a26297f6a64d8626728d4a2f9124dd28"
+  },
+  {
+   "path": "players/esde-n3ds-mandarine.json",
+   "collection": "players",
+   "sha256": "8c49d0bb171340a2b820236c041b41826d8804a5bf6b71aaca37da7c40af391a"
+  },
+  {
+   "path": "players/esde-n3ds-lime3ds.json",
+   "collection": "players",
+   "sha256": "6ef601c3f06d8df3e7ad2b3f5011b54aeb8ced10ea8a2e5ea087bcde6a2eeb94"
+  },
+  {
+   "path": "players/esde-n3ds-panda3ds.json",
+   "collection": "players",
+   "sha256": "4ecc797370c1b6aaa81098567515f84e76b9e5f8b8181b7523a1aea2ef2f3668"
+  },
+  {
+   "path": "players/esde-n64-m64plus-fz.json",
+   "collection": "players",
+   "sha256": "44107f6e38a621433d553ce1f9e9a13529544efa7f319f7ac56dabadd95bbc1e"
+  },
+  {
+   "path": "players/esde-n64dd-m64plus-fz.json",
+   "collection": "players",
+   "sha256": "39bccff8075fac8bce37578d02cb64d2337d26273531f216c6b9c13a24cba144"
+  },
+  {
+   "path": "players/esde-n64dd-mupen64plus-ae.json",
+   "collection": "players",
+   "sha256": "bb7b1f9eef7a2228fb832da360b952ea1b14f02f2398a88dada767cbce493ab7"
+  },
+  {
+   "path": "players/esde-naomi2-flycast.json",
+   "collection": "players",
+   "sha256": "a29da1dce43266aecc19cdcdd271c5b71c911802b550668818818f9dede071e6"
+  },
+  {
+   "path": "players/esde-naomigd-flycast.json",
+   "collection": "players",
+   "sha256": "3e1ec1c7d4d6a43380f60e620325721da56e6356c8edcfeba4224f18ab3277be"
+  },
+  {
+   "path": "players/esde-nds-melonds.json",
+   "collection": "players",
+   "sha256": "d9e3b033337374e4a1890fbfa2a82805f100c7451d136bd1795c9989e8b3bde1"
+  },
+  {
+   "path": "players/esde-nds-melonds-nightly.json",
+   "collection": "players",
+   "sha256": "11d2a11ffb5d8435339cb83df66be726b443edd2dc9480c935b691b218b42e00"
+  },
+  {
+   "path": "players/esde-nds-watermelonds.json",
+   "collection": "players",
+   "sha256": "2a319a8fda1f6d3774c778f67ae4e6210d6ee9026c5637f5ff16bd79ecab11d2"
+  },
+  {
+   "path": "players/esde-nds-seedlessds.json",
+   "collection": "players",
+   "sha256": "56931d8fac1e4186e86f6a52f1b761cf3e99c181f1da2f0897fcdddd9e0b5220"
+  },
+  {
+   "path": "players/esde-nds-noods.json",
+   "collection": "players",
+   "sha256": "bc1437cfa28c19af4e6f7c2ef55c02b986693145511cc7d6824e53c0eb9590fa"
+  },
+  {
+   "path": "players/esde-nds-drastic.json",
+   "collection": "players",
+   "sha256": "34df60e4222052844599155142956a914ac4155df93b2556147e1f9f2071fdad"
+  },
+  {
+   "path": "players/esde-nds-skyemu.json",
+   "collection": "players",
+   "sha256": "aedda1e1a4b88a161186282ad09e9f5269772d45b1ff354eee39c7952fea5a0f"
+  },
+  {
+   "path": "players/esde-neogeo-neo-emu.json",
+   "collection": "players",
+   "sha256": "865293730b500021d15f000b3a4ce707483154da05e8b85ea19785ac675368f2"
+  },
+  {
+   "path": "players/esde-neogeo-mame4droid.json",
+   "collection": "players",
+   "sha256": "a07e888a8fc4b289fa7178b3ccb71d50815153e5f96dbc0130d36e24881f3945"
+  },
+  {
+   "path": "players/esde-nes-nes-emu.json",
+   "collection": "players",
+   "sha256": "ec02cf3808a387e9a38f8336e8f3d8b1b7e12cda8367406074fcd8f1a9074b5a"
+  },
+  {
+   "path": "players/esde-nes-ines.json",
+   "collection": "players",
+   "sha256": "bb1da16bd23f80da94fe04c75909367512942065104c3c6ed5a3ff90069365d4"
+  },
+  {
+   "path": "players/esde-nes-nesoid.json",
+   "collection": "players",
+   "sha256": "095ae2fd32ff0d64865028e0694364f5af6f0331e01245f054a09cc1a60f6e6b"
+  },
+  {
+   "path": "players/esde-ngage-eka2l1.json",
+   "collection": "players",
+   "sha256": "b3e404308dbb3c9fd98921af661bde6ee525310bad402c5a6648c703e098a520"
+  },
+  {
+   "path": "players/esde-ngp-ngp-emu.json",
+   "collection": "players",
+   "sha256": "447aa98309fd63cefe9bbad4ce564edd325970910d8b205923c621363c0065e0"
+  },
+  {
+   "path": "players/esde-ngpc-ngp-emu.json",
+   "collection": "players",
+   "sha256": "af9865bea81c6fb478800d70fd75e6c4ce0925fc62c57218892328b5330dee91"
+  },
+  {
+   "path": "players/esde-openbor-openbor.json",
+   "collection": "players",
+   "sha256": "62ed23795017527e5fda6bb7cf18ed1587109567733b4ab7a676ef0031670f4e"
+  },
+  {
+   "path": "players/esde-pcarcade-winlator-cmod.json",
+   "collection": "players",
+   "sha256": "24c4ba9539f27563dbe615a646e8105dd08443644c1b6bcc1ae5bb89b17c263a"
+  },
+  {
+   "path": "players/esde-pcarcade-winlator-glibc.json",
+   "collection": "players",
+   "sha256": "0e8b37a22a2847c2314d98de470462a5b0d55b04c7c50799fbaabd5c09782c9e"
+  },
+  {
+   "path": "players/esde-pcarcade-winlator-proot.json",
+   "collection": "players",
+   "sha256": "a814b44e47bd1fab1c0320d49db0c7b2731c3562512571f506b1c67dfa1a4dbe"
+  },
+  {
+   "path": "players/esde-pcengine-pce-emu.json",
+   "collection": "players",
+   "sha256": "282025415d9f1f6efa7a9f12a13972ec8efce5223a63fc49732a09f1a21e9ce5"
+  },
+  {
+   "path": "players/esde-pcenginecd-pce-emu.json",
+   "collection": "players",
+   "sha256": "c7f5f478a70dacda55e066829378fab59af15161d292f29534d6e72031e72f26"
+  },
+  {
+   "path": "players/esde-pico8-pico-8.json",
+   "collection": "players",
+   "sha256": "228378c3082353b1d61c4582e96b6b28f0f3a47daa457b3d908ad9d104d3cdcf"
+  },
+  {
+   "path": "players/esde-ports-starboard.json",
+   "collection": "players",
+   "sha256": "646f87ae99b767fcf867f9801fa26aef3cf1348c297217d2b2ac45bc771127b7"
+  },
+  {
+   "path": "players/esde-ps2-nethersx2.json",
+   "collection": "players",
+   "sha256": "cf36276b9236e1c693e0f8e9271ebfc720b3695da1fb4af06add14ccdcdefd77"
+  },
+  {
+   "path": "players/esde-ps2-nethersx2-turnip.json",
+   "collection": "players",
+   "sha256": "c5c6d10ff970acaddf9f4509dc89d02ab758f8a359fa893a538cfc218100366a"
+  },
+  {
+   "path": "players/esde-ps2-nethersx2-turnip-classic.json",
+   "collection": "players",
+   "sha256": "171106c38afbedca9c575afd06df87a09eb8943617be712b0c04145600c4cdac"
+  },
+  {
+   "path": "players/esde-ps2-nethersx2-2.json",
+   "collection": "players",
+   "sha256": "3fcde004a1e9fef55513f0fa8ce5e5e643eb030fe5f9fae3ce61caf950c841ef"
+  },
+  {
+   "path": "players/esde-ps2-armsx2.json",
+   "collection": "players",
+   "sha256": "978669b7c45ce8cc0297514cca73ad6f6ba78911267080baa74dd65073ff4111"
+  },
+  {
+   "path": "players/esde-ps2-emucorex.json",
+   "collection": "players",
+   "sha256": "6274f4f967991e23bc0572eda35e57d87be54f21d98442970c00b723d9b5c4b1"
+  },
+  {
+   "path": "players/esde-ps3-aps3e.json",
+   "collection": "players",
+   "sha256": "1d6a2b0b4403eb0d0fbacb22c1b41f3ce662e9221443db6071d9497eaf4a68b9"
+  },
+  {
+   "path": "players/esde-ps3-aps3e-2.json",
+   "collection": "players",
+   "sha256": "501ecc021441b4bb38e2936be8ed49332d94aca54dc01b10d4277e9e16c73904"
+  },
+  {
+   "path": "players/esde-ps3-armsx3.json",
+   "collection": "players",
+   "sha256": "ae61f42013a8482409cf32b95c07aef5ddc5d9774953761e9e6de578ddcaade4"
+  },
+  {
+   "path": "players/esde-ps3-emucorec.json",
+   "collection": "players",
+   "sha256": "72c55543efbaa2c59632b29a99be4d740f2fa4a120e47a8d7ff34d9d2f01532d"
+  },
+  {
+   "path": "players/esde-psx-armsx1.json",
+   "collection": "players",
+   "sha256": "2663a6d40c766f4cfd5b4673c0d47bebfe3d164b742b8e8802156cbe1c018a42"
+  },
+  {
+   "path": "players/esde-psx-epsxe.json",
+   "collection": "players",
+   "sha256": "d1fb0c0544420b378c1d3072eccf6a2ae1824fdef5ecb41b64851abda5fecb6c"
+  },
+  {
+   "path": "players/esde-psx-fpse-ng.json",
+   "collection": "players",
+   "sha256": "0ea3dde9a6f0ef2aa531f7674a7230cc8ce280c1c99904b65485dd967354ecaa"
+  },
+  {
+   "path": "players/esde-psx-fpse.json",
+   "collection": "players",
+   "sha256": "3c985d082a6d4c020a0be68aa0a4812ad4aa5464d752108755ff3d96d7081236"
+  },
+  {
+   "path": "players/esde-samcoupe-speccy.json",
+   "collection": "players",
+   "sha256": "89c3258c8b69f7caa8948597860c43c1f9807abab7d62097aec05c6a7f1df8f5"
+  },
+  {
+   "path": "players/esde-satellaview-snes9x-explus.json",
+   "collection": "players",
+   "sha256": "eca9f48e50fcde41319bcc9f0c8d7a28134fcf74708071f63b5826522697b444"
+  },
+  {
+   "path": "players/esde-saturn-yabasanshiro-2.json",
+   "collection": "players",
+   "sha256": "25b512bc408b8d6c6e29cd0e27d2f2774d97d1efee599dae7e1ba65c8a487b2c"
+  },
+  {
+   "path": "players/esde-saturn-saturn-emu.json",
+   "collection": "players",
+   "sha256": "cbc8087576776d44e2bc75f510134765e9172d0235aa4ccab87d9624f0998b67"
+  },
+  {
+   "path": "players/esde-saturnjp-yabasanshiro-2.json",
+   "collection": "players",
+   "sha256": "9767b02514e18444857041aca110704b3f5b406f67eec0517a6b230a4a3e61b0"
+  },
+  {
+   "path": "players/esde-saturnjp-saturn-emu.json",
+   "collection": "players",
+   "sha256": "3a8b6d0a0ea8d92ce6a821fa02d182949946e94dd226d36aba54d9b94bcbf6fe"
+  },
+  {
+   "path": "players/esde-segacd-md-emu.json",
+   "collection": "players",
+   "sha256": "7056f578ac14aa73421728ee1c7ac7aa2eb5c535d3e9dd44f2edc476dbaea647"
+  },
+  {
+   "path": "players/esde-segacd-pizza-boy-sc.json",
+   "collection": "players",
+   "sha256": "be93c2e9b2033838a83ef13af2b12ffa029f494423f155538920184c23d65e05"
+  },
+  {
+   "path": "players/esde-sfc-snes9x-explus.json",
+   "collection": "players",
+   "sha256": "6637981dc6ecf9d68e0260b64d7abc00471ae466fdf945009cb2ade658cfba7a"
+  },
+  {
+   "path": "players/esde-sg-1000-mastergear.json",
+   "collection": "players",
+   "sha256": "0876ee6a8e026ed12fe5335c09fc2a828b21a6168339a8e298efb175f7ce870d"
+  },
+  {
+   "path": "players/esde-snes-snes9x-explus.json",
+   "collection": "players",
+   "sha256": "3f5a9b218232b326696f886e743213b759ed9234913767a2d55d0bf838a884a0"
+  },
+  {
+   "path": "players/esde-snesna-snes9x-explus.json",
+   "collection": "players",
+   "sha256": "f8f2e9ae3e15889c3d56f6bc19f60705ebe55d237b36151f56eafe1fb528d432"
+  },
+  {
+   "path": "players/esde-stv-mame4droid.json",
+   "collection": "players",
+   "sha256": "f907cab1de3bc460a35c19fca5de529775817828c5662bed48261ec098fae038"
+  },
+  {
+   "path": "players/esde-sufami-snes9x-explus.json",
+   "collection": "players",
+   "sha256": "371b1c4480fb2e90cf206224f6bdcc80d00475cd9bfdc86ab2c8fdbb61790f13"
+  },
+  {
+   "path": "players/esde-supergrafx-pce-emu.json",
+   "collection": "players",
+   "sha256": "d9fa292380ecc99faba3bfd9d33b5da982860a7fa91fb5c67c20fdd3d895bb2e"
+  },
+  {
+   "path": "players/esde-switch-eden-nightly.json",
+   "collection": "players",
+   "sha256": "92f67dd929d737c95156e581877c50ea3dc3f17733a9e21b2874452121a207c3"
+  },
+  {
+   "path": "players/esde-switch-kenji-nx.json",
+   "collection": "players",
+   "sha256": "0e468370f16332623ad253f9557e2fd2af4fac8693cc3688e4a2afa6f415302e"
+  },
+  {
+   "path": "players/esde-symbian-eka2l1.json",
+   "collection": "players",
+   "sha256": "a883644143b06bc9f8d462f7ba9af7ebb7147061d1800197e1e76cbf8622fafc"
+  },
+  {
+   "path": "players/esde-tg16-pce-emu.json",
+   "collection": "players",
+   "sha256": "ef89dce0bd36d8a42a00e7d017e7cf82e40a850eec51e66478c6d044f63f1138"
+  },
+  {
+   "path": "players/esde-tg-cd-pce-emu.json",
+   "collection": "players",
+   "sha256": "8b7103e7c27dd4cd0cc4891a0c3e3f4aece001fc58781c00ba172b9cf4985784"
+  },
+  {
+   "path": "players/esde-type-x-winlator-cmod.json",
+   "collection": "players",
+   "sha256": "eb040f1089dc6bbff60753e8fc65d6e53e1ad73f499fa937319636394d64276e"
+  },
+  {
+   "path": "players/esde-type-x-winlator-glibc.json",
+   "collection": "players",
+   "sha256": "83ab254a078c4ad5fd0362e93a187f717d90831918d90f5e8bae1c72f4273b50"
+  },
+  {
+   "path": "players/esde-type-x-winlator-proot.json",
+   "collection": "players",
+   "sha256": "dfea65630090b04669c71921ab6f5bc715f4cc4be8e1ee203f1aace408672770"
+  },
+  {
+   "path": "players/esde-virtualboy-virtual-virtual-boy.json",
+   "collection": "players",
+   "sha256": "31e69b3d8fe3a6553819d3c9a7adafce7627f95d01d7ead29582d142425a2c92"
+  },
+  {
+   "path": "players/esde-vpinball-visual-pinball.json",
+   "collection": "players",
+   "sha256": "45d5d056dc8fe6dc1bd270836d3c508c18911042141f5907ae80a25d8b124051"
+  },
+  {
+   "path": "players/esde-vsmile-dsmile.json",
+   "collection": "players",
+   "sha256": "0f28fd9f12418ad742ddca2a3f8d69ce7f1dd0e56b2f2031f9fe85c31a937a86"
+  },
+  {
+   "path": "players/esde-wii-dolphin-mmjr.json",
+   "collection": "players",
+   "sha256": "6f994c060442f4f6ec72e7ccdc336a5f51723019140b21cd2e69e8febdc83c19"
+  },
+  {
+   "path": "players/esde-wiiu-cemu.json",
+   "collection": "players",
+   "sha256": "fa78ad2fb281a1a03805abb74e8b5e6fe310b6f71311d19175c918ec088a2903"
+  },
+  {
+   "path": "players/esde-windows-winlator-cmod.json",
+   "collection": "players",
+   "sha256": "7e713336376168a276bfc2b423d2309724c55014457ed5282a7ad7f17518786e"
+  },
+  {
+   "path": "players/esde-windows-winlator-glibc.json",
+   "collection": "players",
+   "sha256": "372fc7c3a93546c06171f83d93b2f724cbbc89ed797932e51be49cf63c36784e"
+  },
+  {
+   "path": "players/esde-windows-winlator-proot.json",
+   "collection": "players",
+   "sha256": "b38d180f4e2b29890299da6a29dcfecc5773cc0f8310627a7840c36a080f18d6"
+  },
+  {
+   "path": "players/esde-wonderswan-swan-emu.json",
+   "collection": "players",
+   "sha256": "cd0248dde4db85f063e0e26edbcb13f8bea5826e60c7deaf3b5a0df0902f93a9"
+  },
+  {
+   "path": "players/esde-wonderswancolor-swan-emu.json",
+   "collection": "players",
+   "sha256": "70666e3a5066ebe1cbe26ba705c3a155a1dab4f82d6b2c62024b69cbe6e78dfb"
+  },
+  {
+   "path": "players/esde-xbox-x1-box.json",
+   "collection": "players",
+   "sha256": "b35be413c68c458360daa72c2e967a28188f8aab6c9bf96b8c5f460f90a93a0a"
+  },
+  {
+   "path": "players/esde-xbox-hakux.json",
+   "collection": "players",
+   "sha256": "3067a799048f676fc5ea4ff0b2e1179d32c4f935c19a16f054e4aabe8ccff2dd"
+  },
+  {
+   "path": "players/esde-xbox-xenra.json",
+   "collection": "players",
+   "sha256": "582e65f66c8232ce931e51b2c3ece1a827ecf63eeaec8a2edcebcc5eddffb955"
+  },
+  {
+   "path": "players/esde-xbox360-ax360e.json",
+   "collection": "players",
+   "sha256": "84290e60569b080ad545bc1a48a87b07f4465295378d8f8781c1305f979077af"
+  },
+  {
+   "path": "players/esde-xbox360-xendroid.json",
+   "collection": "players",
+   "sha256": "a35a5892c094d2a063ab20daa27299c06f97c9c954475f1302b02391cc927268"
+  },
+  {
+   "path": "players/esde-xbox360-xenra.json",
+   "collection": "players",
+   "sha256": "9cae77c0909bc1cf065ad605efc1cda9b33657219e1f54d555b07190050c6c95"
+  },
+  {
+   "path": "players/esde-zxspectrum-speccy.json",
+   "collection": "players",
+   "sha256": "cb39ba9a3031c617ad82d260225a1361ecc58516f8000fa776c092b1fa516e12"
+  },
+  {
+   "path": "players/easyrpg-org-easyrpg-player.json",
+   "collection": "players",
+   "sha256": "75c59ef00f1abf8b6ddacb3348db345df4ac7538e3bf7c84594ad0924b3b7b89"
+  },
+  {
+   "path": "players/kirikiri-org-github-krkr2.json",
+   "collection": "players",
+   "sha256": "1ee1337b63260db2b44e0f1115f56466317488b749fd41384e1f314f7b807dda"
+  },
+  {
+   "path": "players/flash-rs-ruffle.json",
+   "collection": "players",
+   "sha256": "a9ed740122524990854b489f1f93cbb1cf7f87aebbf5d661e1d247b73c5ebe85"
+  },
+  {
+   "path": "players/esde-arcadia-droidarcadia.json",
+   "collection": "players",
+   "sha256": "f80c502d5683ec767f944849eb293aa0e71001c99f9d78275a836fad31420734"
+  },
+  {
+   "path": "players/daijishou-jaguar-ru-vastness-altmer-iratajaguar.json",
+   "collection": "players",
+   "sha256": "726815b4e4a73acc8f92c57536eadc744e2823b5c1b66eecf2149c0e32a8f746"
+  },
+  {
+   "path": "players/daijishou-jaguarcd-ru-vastness-altmer-iratajaguar.json",
+   "collection": "players",
+   "sha256": "4a930b4f942eb822bee36597d0b2ee43fe6e7b259193640c288ae248e59c3616"
+  },
+  {
+   "path": "players/daijishou-lynx-com-explusalpha-lynxemu.json",
+   "collection": "players",
+   "sha256": "0ad95f12b4245d99de1f0e7145f5a54d4c7e88c2315d73711156ba7f13bfa68c"
+  },
+  {
+   "path": "players/daijishou-ebook-com-foobnix-pdf-reader.json",
+   "collection": "players",
+   "sha256": "a21a80a0b68da4ac764531b4b4dfb46e0471606e690b97e2669c43da3cafd54e"
+  },
+  {
+   "path": "players/daijishou-ebook-com-foobnix-pro-pdf-reader.json",
+   "collection": "players",
+   "sha256": "c2e87f959b886d66f4a760e5e1ed10fb43ef1855fb11ab9119f3230e70d6195e"
+  },
+  {
+   "path": "players/daijishou-ebook-org-readera.json",
+   "collection": "players",
+   "sha256": "7a379e901d15b18865be04bb86b12d389f822e20f53718e3b95e8c3dd0437aa8"
+  },
+  {
+   "path": "players/daijishou-vc4000-com-amigan-droidarcadia.json",
+   "collection": "players",
+   "sha256": "9d19c241bd2b768745c92d4af82b510853ef13ebcaa891072494d5d32b5c762a"
+  },
+  {
+   "path": "players/daijishou-xbox360-aenu-ax360e-free.json",
+   "collection": "players",
+   "sha256": "387e01801fefe779bd721fb4f2aa22bbbfca8427f18b46b7ebae51db42b57993"
+  },
+  {
+   "path": "players/daijishou-moonlight-com-limelight-noir.json",
+   "collection": "players",
+   "sha256": "050768a62b035519488c0fc94a2f5bf504b1dd928dca8e72fde23b7593c07093"
+  },
+  {
+   "path": "players/daijishou-tgcd-com-pceemu.json",
+   "collection": "players",
+   "sha256": "cf627f448b91974a6b5d7b34ea97cde70565c66728795bb5239b81b6d47343d2"
+  },
+  {
+   "path": "players/daijishou-3ds-io-github-lime3ds-android.json",
+   "collection": "players",
+   "sha256": "75ac65715ed863de3a57fc93f75974d088020a54f15de250bb5cd2ed662b1ad4"
+  },
+  {
+   "path": "players/daijishou-3ds-io-github-borked3ds-android.json",
+   "collection": "players",
+   "sha256": "90214996ed36e1a1c1f902d840ac062d87d036e6f860a27a3bd1e2fae2c47218"
+  },
+  {
+   "path": "players/daijishou-3ds-org-citra-citra-emu.json",
+   "collection": "players",
+   "sha256": "d153008336e39d39549318c632a4876241da7fb92fd3fb2cb7c0aec2656642d9"
+  },
+  {
+   "path": "players/daijishou-3ds-org-citra-citra-emu-canary.json",
+   "collection": "players",
+   "sha256": "6ed7b31596d536f2bb8dda8e2910f6f4f6d3d724fe4c92454299aec503c8e38f"
+  },
+  {
+   "path": "players/daijishou-3ds-org-gamerytb-lemonade-canary.json",
+   "collection": "players",
+   "sha256": "131ad3b07f325e832c63e1698928a77efa969410ee995372951ef457fb51dd6e"
+  },
+  {
+   "path": "players/daijishou-3ds-io-github-lime3ds-android-2.json",
+   "collection": "players",
+   "sha256": "3adb79f2e631308ebad01ecc4cce201cd2dd2781e70ccace1df979648f9310a5"
+  },
+  {
+   "path": "players/daijishou-3ds-io-github-mandarine3ds-mandarine.json",
+   "collection": "players",
+   "sha256": "a7d9df50fe4f3eb14692a9aad71accd6ed0271d6d96bd9cdd989cbdcc68aae2f"
+  },
+  {
+   "path": "players/daijishou-3ds-com-antutu-abenchmark.json",
+   "collection": "players",
+   "sha256": "5eac259b4a973da0610a119a813339d0b98545bbc1e7cb7765eda612b84601fd"
+  },
+  {
+   "path": "players/daijishou-3ds-com-antutu-abenchmark-2.json",
+   "collection": "players",
+   "sha256": "c0e5cb52be9a0b8dcd118342570a9c993af1e14a5e3c3fa5d07303b4911a5e47"
+  },
+  {
+   "path": "players/daijishou-3ds-org-citra-emu.json",
+   "collection": "players",
+   "sha256": "357d1858c87c788450e7f3d2ec60c016985266eec17c0f62d2d6edd515045189"
+  },
+  {
+   "path": "players/daijishou-3ds-org-citra-citra-emu-2.json",
+   "collection": "players",
+   "sha256": "1800f7ff41fa285e0e8379bbe55b06d3f006f19d5117ef005353c5c90c956a18"
+  },
+  {
+   "path": "players/daijishou-ndsi-me-magnum-melonds.json",
+   "collection": "players",
+   "sha256": "aeab5d5658f2a71e64b128022b7a09cb7d95e94617a45a54ca2b26f437a3e3d3"
+  },
+  {
+   "path": "players/daijishou-ndsi-com-dsemu-drastic.json",
+   "collection": "players",
+   "sha256": "c316ecc558d0a39ae60aa0e3a5521d8b05e8d029e702c38cbb60b775b15ab212"
+  },
+  {
+   "path": "players/daijishou-ndsi-me-magnum-melonds-nightly.json",
+   "collection": "players",
+   "sha256": "fae43dd1d165b7f7d38fedeb28d7ef95c63bb2b80af1b67dcd9f99d73a0c2ebe"
+  },
+  {
+   "path": "players/daijishou-ndsi-me-magnum-melonds-dev.json",
+   "collection": "players",
+   "sha256": "d5c03f30a16f5a6785dc987650a10a4d45b591e8bf142cc21fa335d2b6903581"
+  },
+  {
+   "path": "players/daijishou-ndsi-com-hydra-noods.json",
+   "collection": "players",
+   "sha256": "f7a9de9846b90e3b3348044a5a3257ded08e74e490051ef81bbf3bfa3b0f30a4"
+  },
+  {
+   "path": "players/daijishou-famicom-com-explusalpha-nesemu.json",
+   "collection": "players",
+   "sha256": "1cb5a449bb991d6bd52db08efb9a083d1ff6dbae65003c5551e1813b096a62e9"
+  },
+  {
+   "path": "players/daijishou-famicom-com-androidemu-nes.json",
+   "collection": "players",
+   "sha256": "2461e4df35ae8afaa35ef073c0d1933f304064368b4de8650c506013cd6cffbf"
+  },
+  {
+   "path": "players/daijishou-gb-com-pixelrespawn-linkboy.json",
+   "collection": "players",
+   "sha256": "e9ce0318a545173d5a1b6cb960c31c261b51c3074676ab4012f6e1f628594016"
+  },
+  {
+   "path": "players/daijishou-gba-it-dbtecno-pizzaboygbapro.json",
+   "collection": "players",
+   "sha256": "17f39c4873797e84b364095f38bda27c8b38a1871732ce9272fa8157a97f4596"
+  },
+  {
+   "path": "players/daijishou-gba-com-pixelrespawn-linkboy.json",
+   "collection": "players",
+   "sha256": "17da0d365b6c44073ff23bce6bd04c9e7e7adbd10d1fae4a44f690196fc334a8"
+  },
+  {
+   "path": "players/daijishou-gbc-com-pixelrespawn-linkboy.json",
+   "collection": "players",
+   "sha256": "fcffa51e3c71044c5912060adeecbf4a74d313b52ab1080ff6f847a7774353a8"
+  },
+  {
+   "path": "players/daijishou-gbc-com-fastemulator-gbcfree.json",
+   "collection": "players",
+   "sha256": "fb3e7aee1016b623bca7df68f36f8e29e191d2e3477a0e41f2eb15887571cf1a"
+  },
+  {
+   "path": "players/daijishou-gbc-com-fastemulator-gbc.json",
+   "collection": "players",
+   "sha256": "8afce6cf4f3cc83ca8c6bd504086c57db2d7f47079d155e4f7f7373d64026557"
+  },
+  {
+   "path": "players/daijishou-gbc-com-pixelrespawn-linkboy-2.json",
+   "collection": "players",
+   "sha256": "1d96395da41ccc9649f2251bf5009edb3821c114ce2202aa8f6399677cd76680"
+  },
+  {
+   "path": "players/daijishou-gc-org-dolphinemu-dolphinemu-debug.json",
+   "collection": "players",
+   "sha256": "9dec79c59a57dd0ebe06f22e22152f133942a6361bbbf072e0fba3f5b9e7e9c4"
+  },
+  {
+   "path": "players/daijishou-sfc-com-explusalpha-snes9xplus.json",
+   "collection": "players",
+   "sha256": "bcbdd42c0396e03a688dc3e1a83a72852c487a88e86666e9d71787f17e42ecb9"
+  },
+  {
+   "path": "players/daijishou-snesmsu1-com-explusalpha-snes9xplus.json",
+   "collection": "players",
+   "sha256": "3a6d0572a675f465294210df99232214e538199c2fa395634f7dbceca992fb24"
+  },
+  {
+   "path": "players/daijishou-switch-org-sudachi-sudachi-emu.json",
+   "collection": "players",
+   "sha256": "3952a0541cf53f2e2d70c1d4c01f1a6d8fc7cd45ec443c53ab6fb0015a85fbce"
+  },
+  {
+   "path": "players/daijishou-switch-org-citron-citron-emu.json",
+   "collection": "players",
+   "sha256": "4168f568e580939d5632d4269219e23b3038b2101a8b06d64ffe3604471335c3"
+  },
+  {
+   "path": "players/daijishou-switch-org-kenjinx-android.json",
+   "collection": "players",
+   "sha256": "e198a588abc9b40453658212247b2889f269b94b5d0cb6b65fbe7283fec546e7"
+  },
+  {
+   "path": "players/daijishou-switch-org-benjisc-android.json",
+   "collection": "players",
+   "sha256": "a76f37268c67a9a7214cc819d48b09caeca00772fa85cb6c9131c1effc42572c"
+  },
+  {
+   "path": "players/daijishou-wii-org-dolphinemu-dolphinemu-debug.json",
+   "collection": "players",
+   "sha256": "2a6b2a6807a8c84d0834d1d63ef120c661a53ed9976ba86a4479b5279683d332"
+  },
+  {
+   "path": "players/daijishou-wii-org-dolphinemu-handheld.json",
+   "collection": "players",
+   "sha256": "ca6cf40b01498045b2865bc14663880a20ff3dc5ff50094d676bbad109a17d21"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu.json",
+   "collection": "players",
+   "sha256": "4bb912f1dc86c14d4afe65ef269f87bbb6f3a1420476c734ccbcd593ebed2097"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu-debug.json",
+   "collection": "players",
+   "sha256": "5d84e3a338da6dee57a37d87be39d430400cd7822e89af9f1784913ca2a0ac2d"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphinemu-handheld.json",
+   "collection": "players",
+   "sha256": "a92f3f0e23e9352f8e52f2d45417956e0dc4d1a85a2bc8f2df797a88baf4774b"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-mm-jr.json",
+   "collection": "players",
+   "sha256": "4adfe81e649f26d8fca6c6b6dcb6f9515c7354ba0bfc2070c66828dbeaff8c6b"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-mm-j.json",
+   "collection": "players",
+   "sha256": "627f64a69fdefe95a0615ed799e2fe53b488801053ef0bfb99d42a8b81aa4981"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphinemu-mmjr.json",
+   "collection": "players",
+   "sha256": "614303e0b1e86cb69c784ac43ec494a74590a2ff75ff6f90c3007d30c4978417"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphinemu-mmjr3.json",
+   "collection": "players",
+   "sha256": "310c82d2e28436290ef4be36588233fdc3991dbb4aa531420e404cd2d2458602"
+  },
+  {
+   "path": "players/daijishou-wiiware-org-dolphin-ishiirukadark.json",
+   "collection": "players",
+   "sha256": "7fa961a7b081def1ed70767eaf66f4cef636db17cc9b9ea40af60c7a26114a16"
+  },
+  {
+   "path": "players/daijishou-gamegear-it-dbtecno-pizzaboyscpro.json",
+   "collection": "players",
+   "sha256": "f0007397a3f068ec3a8928fd31ab82ba9217b42e39cea1c96ebb85b141af401b"
+  },
+  {
+   "path": "players/daijishou-genesis-it-dbtecno-pizzaboyscpro.json",
+   "collection": "players",
+   "sha256": "b52bb619c4216388847593784ebfa6d0d278ca61ecf839314e298fd92c09f3e4"
+  },
+  {
+   "path": "players/daijishou-master-com-explusalpha-mdemu.json",
+   "collection": "players",
+   "sha256": "3475af5f83dd1426f4826ebda54115aebd96b27dae101cfb8fb0010bfe29f6c2"
+  },
+  {
+   "path": "players/daijishou-master-it-dbtecno-pizzaboyscpro.json",
+   "collection": "players",
+   "sha256": "54be9e22f491cb37d12470666bfd6aea59b027b801cf72be25392512d5aa5848"
+  },
+  {
+   "path": "players/daijishou-megadrive-com-explusalpha-mdemu.json",
+   "collection": "players",
+   "sha256": "73a013e7482f630b7324f402e029d5eb935005542c30e87d8b8af93a69affd4c"
+  },
+  {
+   "path": "players/daijishou-megadrive-com-androidemu-gens.json",
+   "collection": "players",
+   "sha256": "ce3fa19ac25885923655bb0b31d47600d05dca40f77fbc046c734c62791adfbd"
+  },
+  {
+   "path": "players/daijishou-megadrive-it-dbtecno-pizzaboyscpro.json",
+   "collection": "players",
+   "sha256": "49d3a7d9901d91f9fbc72369b9a55bcdce906d19c690c2c746378fdea48d0ee5"
+  },
+  {
+   "path": "players/daijishou-saturn-org-devmiyax-yabasanshioro2.json",
+   "collection": "players",
+   "sha256": "f3236403267ff6b1ccfed5149bee8260eeeac33edcf9f50c8f1b68968a0ed0e4"
+  },
+  {
+   "path": "players/daijishou-ps3-aenu-aps3e.json",
+   "collection": "players",
+   "sha256": "5bd22bd4729b6e3062c21016c72464640011af0498d50e8ed9433519ebb7ff9f"
+  },
+  {
+   "path": "players/daijishou-pspminis-org-ppsspp-ppsspp.json",
+   "collection": "players",
+   "sha256": "55126bf7109bf5a20591753f3c1fc716b86bbdcc7da961708c093f575e4e74c1"
+  },
+  {
+   "path": "players/daijishou-pspminis-org-ppsspp-ppssppgold.json",
+   "collection": "players",
+   "sha256": "1bfecf6f69debcf8050956cb34d2a315ca203c3326be5f49588a43e0571cd913"
+  },
+  {
+   "path": "players/daijishou-pspminis-org-ppsspp-ppsspplegacy.json",
+   "collection": "players",
+   "sha256": "1aa149a88e63b578ef46b13a2f20f5e34cef48516a1e954e9812d8ed82348c93"
+  },
+  {
+   "path": "players/daijishou-videos-org-videolan-vlc.json",
+   "collection": "players",
+   "sha256": "8653f7919555f58a2ec36522f464376f74d45372d5c4c8e62d7a5447bd50842e"
+  },
+  {
+   "path": "players/daijishou-videos-is-xyz-mpv.json",
+   "collection": "players",
+   "sha256": "2bec7130fa813c4dd6d2590b3f9bade34cf26d0f44e4cee50087852b11f7fbff"
+  },
+  {
+   "path": "players/daijishou-videos-com-mxtech-videoplayer-ad.json",
+   "collection": "players",
+   "sha256": "7aeba8a817033e5450020a3418f15642a33c37772b1780a937a63aff108b2e54"
+  },
+  {
+   "path": "players/daijishou-videos-com-mxtech-videoplayer-pro.json",
+   "collection": "players",
+   "sha256": "c71e5614135b0f0190b65d76d0d371232107d289a0279e7c34cb0bbcebfe2a47"
+  },
+  {
+   "path": "players/daijishou-windows-com-winlator-cmod.json",
+   "collection": "players",
+   "sha256": "1caf52fc8ed15f03520358f024122d791ec33d81a43484483f4a694b94f0e885"
+  },
+  {
+   "path": "players/daijishou-ws-com-explusalpha-swanemu.json",
+   "collection": "players",
+   "sha256": "c8d757088a6c0a56afc1703110992359a07334e780b68e5f4f63c1fe3e0ab24c"
+  },
+  {
+   "path": "players/daijishou-wsc-com-explusalpha-swanemu.json",
+   "collection": "players",
+   "sha256": "6973a82906a56a97fc903c444b5cf3135e590bbd128e0e8433a8bcd791d0619c"
+  },
+  {
+   "path": "players/esde-adam-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "f1d700496c9a721656982515facc0de8452b63a078b90e94315113182b4973f9"
+  },
+  {
+   "path": "players/esde-adam-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "08c41f024a411ee029d1e9b4a51ffd31438a3edbf68fad2bd9c2153df920a87d"
+  },
+  {
+   "path": "players/esde-adam-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "4f43f922a1e8ad40bc80aefb8e27443af108291fb8879dad84780a968ff433ef"
+  },
+  {
+   "path": "players/esde-adam-mame4droid-current-4.json",
+   "collection": "players",
+   "sha256": "f0b92a2c07d77dc627532323a46a7478d216d6b98b4d09aefe21b6108e64bf72"
+  },
+  {
+   "path": "players/esde-amstradcpc-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "6f9b139d73529cb97b65ddd3d524a40a3938932add381f54763d105458e23c2e"
+  },
+  {
+   "path": "players/esde-apple2-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "5b6156663515d325233055cea0633fd78a0dcfd953ceab3245c01108bf614f4d"
+  },
+  {
+   "path": "players/esde-apple2gs-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "f667fc2b5d20b8bcda61c794aeeb44c27ba82427d3ca6bc61339f18799115644"
+  },
+  {
+   "path": "players/esde-apple2gs-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "3d4c17f9d20726dd7ea391bc6541199c5c669a04d975da205655fbc76c501f0e"
+  },
+  {
+   "path": "players/esde-arcade-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "400a6e9883622d07a3823c8e255282ec261804afded8658e4733588fa9b55039"
+  },
+  {
+   "path": "players/esde-arcadia-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "14024d977480325db18e42d6714823caf1e10c8d11f615e7015ef9d992140b74"
+  },
+  {
+   "path": "players/esde-archimedes-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "0f8c34b9124d47b37ee72abf9e8bbbbe122b9575f649bef57653e2c8bd9c9eb0"
+  },
+  {
+   "path": "players/esde-archimedes-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "32e4e8e5422560fd9fc7c02298fbd9cfcca48abe766f57259995473d35ef107d"
+  },
+  {
+   "path": "players/esde-archimedes-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "38264c90141d7e3ff9e395dc6052c0090bbdc8b80480c46257364107ddafefad"
+  },
+  {
+   "path": "players/esde-archimedes-mame4droid-current-4.json",
+   "collection": "players",
+   "sha256": "cf20f7c6a9726b20bc2b851760ec48ce3a3f298c5773b4eb46d439ddbcc676b1"
+  },
+  {
+   "path": "players/esde-astrocde-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "f2e8348ec90d0684fed8c1ca73966081592eecad377cc16f220257cb01bbdb84"
+  },
+  {
+   "path": "players/esde-atari7800-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "457c8b49563fe70c520d78a352ef3544331d20acd20a77778041c1659e4c1264"
+  },
+  {
+   "path": "players/esde-atarijaguar-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "91492d3e4349f46a4d24b2749992ea9b9fa2580fd7f645cf320be84ee74b0ea9"
+  },
+  {
+   "path": "players/esde-bbcmicro-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "1eb09154dff054eeaa5b706c79447b78b5e034ac509c687c5dc6c6e18b79631c"
+  },
+  {
+   "path": "players/esde-cdimono1-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "c000a256ed94924ba79c9239fc001356cafd74e0ba7e00e8e4ea134bbf498b3c"
+  },
+  {
+   "path": "players/esde-channelf-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "557116e0a8e9b43b67ea8ba28125696dfc944c9906d3819c34e0cc7774ba06ba"
+  },
+  {
+   "path": "players/esde-coco-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "783f36ac7aef0ecb2e1494f95fa54828f660632b2524c1048cf29bffa2a0b774"
+  },
+  {
+   "path": "players/esde-coco-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "2ba77b4f67538f740f0f0bcc0c934d900fdd7a91faf52fe6196fd6863e542f9e"
+  },
+  {
+   "path": "players/esde-consolearcade-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "2f0c59670f8d40455be12d9a988590bf0d055a1c30da2847849026a64520ed37"
+  },
+  {
+   "path": "players/esde-consolearcade-dolphin.json",
+   "collection": "players",
+   "sha256": "725450fa11c0e030e42cda4725aa1bdcc83ff605cc6ed15bfc895f80334965a6"
+  },
+  {
+   "path": "players/esde-cps-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "2cc6571a3c9b617c1959164bc08d5a6176a76b68d46090f72cdf1e1e58cdd5f9"
+  },
+  {
+   "path": "players/esde-cps1-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "cdd7665e3a6616c1893341549a2797985acdf4e99c735f1a1e525a2ab9ff7693"
+  },
+  {
+   "path": "players/esde-cps2-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "8a70822d9b2431e2eb71f02c1601c7adfc0407572ae754db2e88da09bd9d5d1b"
+  },
+  {
+   "path": "players/esde-cps3-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "93cea4090e5057ea59d94a9a41f06661df5a22f5122c1e42f88c1aeff2e69486"
+  },
+  {
+   "path": "players/esde-crvision-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "efdd484f13f88037fb40178ca4ae2d2be05ec719d198ac0372332b0793af3127"
+  },
+  {
+   "path": "players/esde-daphne-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "3dcbe88ffacb4004b7aff1ed73ee29d463d18674a08a6356136dbeafe64395ec"
+  },
+  {
+   "path": "players/esde-dragon32-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "e635bf512360489db8c034607e450a2c52d22825771c9ba4bd3a7806b783c9e7"
+  },
+  {
+   "path": "players/esde-dragon32-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "373595aef22caa116b5d18b1335374b80977ef1e5e48ce42a60c68d26736219b"
+  },
+  {
+   "path": "players/esde-dragon32-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "c5f30329a468764231381d3ada1d528ba80c129d89a8d0a1352f964f82c4f8db"
+  },
+  {
+   "path": "players/esde-dragon32-mame4droid-current-4.json",
+   "collection": "players",
+   "sha256": "c34a5e65a4aee59239ebc45ad7d238c7d92f0dfaa0009bc741bf5d2c7dfa235e"
+  },
+  {
+   "path": "players/esde-electron-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "c584d767cf27038e91b716040c0f8ca6633d0957ffad5090e84edf379f795c12"
+  },
+  {
+   "path": "players/esde-electron-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "76363cf034cbf00c348c113efe80f42f6e53f628b85761ad3d5d212b1127a81f"
+  },
+  {
+   "path": "players/esde-electron-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "475a6042c557886114256a87a35c44846973f9a804b2c9c125c423dc794ee127"
+  },
+  {
+   "path": "players/esde-epic-winnative.json",
+   "collection": "players",
+   "sha256": "22257b011f7d7f6a5e66afcbd81cda957178e2d8ab318f95f5932f02822d8607"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "ca53e77fd0ce1b4c085313e62f7cb129716e9afcb137d9893818d3552b2a6b7b"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "401a0a675ac4785c6f306b7b8c5a83b8b23f3cd697a73ec0a046f10ce738c3e1"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "7c4e26af41ab10f7b5af9628508ecfae5ef3c8cf2bf4df5cc74ea940651eaa34"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current-4.json",
+   "collection": "players",
+   "sha256": "b75a506286369b10bdc1476913f2e6ca1d1cf90d60927fb762a739d2ea277a55"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current-5.json",
+   "collection": "players",
+   "sha256": "08aed5d110dad168021f77db059b57ccd9759166f159a58bcb73dd67f7fbd47f"
+  },
+  {
+   "path": "players/esde-fm7-mame4droid-current-6.json",
+   "collection": "players",
+   "sha256": "67493db467f8e0f756294650b50a58e7b2c102f6aef13fd0b60afa0eaabdda18"
+  },
+  {
+   "path": "players/esde-fmtowns-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "4513fecaf4ab47cad1da21e48e7a539116d4253dd04ce35d00fc4d273b8cdfd1"
+  },
+  {
+   "path": "players/esde-gamate-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "3a8d54c55e1be074cdda1bdfed711563f8617d8b60cc4e643460f341a8d58a15"
+  },
+  {
+   "path": "players/esde-gamecom-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "50c02a1c4c188c04fcdef52f86f5b4db0c05d2490c815d3748cc836663d3e63c"
+  },
+  {
+   "path": "players/esde-gc-dolphin.json",
+   "collection": "players",
+   "sha256": "a33c74da52bd4529e16d67393b97713b60328d0db987ed574edfa0bf1bd584f4"
+  },
+  {
+   "path": "players/esde-gmaster-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "d11599986f5bc13e2f34b7cad86a441a62281ae985e436c4aab0ad725f477e97"
+  },
+  {
+   "path": "players/esde-gx4000-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "869009692fd1bc65abd7b48d60cf591d78048c7296747a1d6fd8fd8d34b0cdcb"
+  },
+  {
+   "path": "players/esde-intellivision-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "1d50ec0a8a8049ee8b8d28b2507c9985a571797f43a10d1d19d9bf937b9fd78d"
+  },
+  {
+   "path": "players/esde-laserdisc-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "82668e30adba06fe130b7e29620ad5ab0b5b845e8a41eb7a1067e2106d1a4629"
+  },
+  {
+   "path": "players/esde-macintosh-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "4fb7edd332d33c6a056acd89c808c6e41ac4ff4bd9022cdf79144e4e9b102e3b"
+  },
+  {
+   "path": "players/esde-macintosh-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "edd02e51e1718f0dc09e680bb2ba0a1953c15b2821840ab0bb85c6cc8463abd1"
+  },
+  {
+   "path": "players/esde-macintosh-mame4droid-current-3.json",
+   "collection": "players",
+   "sha256": "1a383ef4e482ddef0f22e15ab5e58b8c0a1f2c4725498e7d963676b76d4bc6ba"
+  },
+  {
+   "path": "players/esde-macintosh-mame4droid-current-4.json",
+   "collection": "players",
+   "sha256": "79a6aabbe4ed2e76055b96840fb300ca6359fd831a240b6d912e7bc3ba71737d"
+  },
+  {
+   "path": "players/esde-mame-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "75956804813168b1052a03e5bfa3b2e15d8f6882b9b56661b3938e3ebdf180b8"
+  },
+  {
+   "path": "players/esde-megaduck-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "89e6ed0f073663ffeca915b300ad173bef6a68d4116f24e92c1d9186abcfa795"
+  },
+  {
+   "path": "players/esde-model2-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "04fdf4954ba1c7e2301b8f9f514f6ffbcce2228f355200739c1d24f34ce15a54"
+  },
+  {
+   "path": "players/esde-model3-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "4e7436726c0ed070f6e70d33e830f91483056e002e3fbfdbe249b525e44e676b"
+  },
+  {
+   "path": "players/esde-neogeo-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "94f619ca307182ebf092024d0773a75e4d36de72bd501fa054c32f0549aa7e5f"
+  },
+  {
+   "path": "players/esde-neogeocd-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "9416c38ee09dd69742b6fc53fcd23a31a53751c3538fd09775a1632ac7a84fcb"
+  },
+  {
+   "path": "players/esde-neogeocdjp-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "2824a5fc3bbaf39cb68f93150757111fbdd6c35286208c8085f20e8c4bea442c"
+  },
+  {
+   "path": "players/esde-odyssey2-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "244147818197d574043d78a0de96612303e74554bc2bde018376bfd6313bfa77"
+  },
+  {
+   "path": "players/esde-oric-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "d4a4c57f6c2930a20849fbbfc93b6858b41c4e040abf532e0db36ef24509a778"
+  },
+  {
+   "path": "players/esde-pcarcade-winnative.json",
+   "collection": "players",
+   "sha256": "ac3c3d77a8b2c4a38fca6aa22e5c65ea49c5ed5d0e9049f8e2fe0705c4a80ea9"
+  },
+  {
+   "path": "players/esde-psp-ppsspp.json",
+   "collection": "players",
+   "sha256": "4b99c6a723cd9b7407d5733d20fff2e1218623db7b6e00218a420511b3f51cfd"
+  },
+  {
+   "path": "players/esde-psx-duckstation.json",
+   "collection": "players",
+   "sha256": "d411069419b503083a1f6669c0d54b265e86278d2941a3fc09d2bbb05058e26d"
+  },
+  {
+   "path": "players/esde-pv1000-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "927d4da4b96faccfa5b84bc18257d1c6f9e1f77b8d1aaa61f6db83a1e1733f5e"
+  },
+  {
+   "path": "players/esde-scv-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "aa4a7167580a54a6903f7b4a0abad13b3aebaa5f96c111ae0cd9acee1027c1f3"
+  },
+  {
+   "path": "players/esde-steam-winnative.json",
+   "collection": "players",
+   "sha256": "720e8399e7b55a1ae1d54614b95945ca3eb3ba5fa40b3ac04d34205a220431df"
+  },
+  {
+   "path": "players/esde-stv-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "0dcb011b57f6acd1239a6e587674af7727645cb0a7739e6b8471c1b0315b0736"
+  },
+  {
+   "path": "players/esde-supervision-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "1d5abd8becd5def5f2cab8ee2b68efe60c10d679bec14bac6df22d47de88053a"
+  },
+  {
+   "path": "players/esde-supracan-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "c3fce71a8abefcf5fa65a5001d393d2886e797df851358afba4b11f22f9208f8"
+  },
+  {
+   "path": "players/esde-tanodragon-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "0becd419c1800590920e72844ff7c64da544d105c5ed9d171f223ed7a5f9cc54"
+  },
+  {
+   "path": "players/esde-tanodragon-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "6d2ee5f2eccab129b023858839efa11055ee0d7a8cd9762441c1c65b021bef21"
+  },
+  {
+   "path": "players/esde-ti99-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "cdd3138ffabe39795b7cf150ea2738adae3de857f6fea0dcb380c27c0a0c2669"
+  },
+  {
+   "path": "players/esde-triforce-dolphin.json",
+   "collection": "players",
+   "sha256": "d44df8b853e21e7c1e1de5bf71b77e2f4fe17e46d5bece05b457537e2c893cfe"
+  },
+  {
+   "path": "players/esde-type-x-winnative.json",
+   "collection": "players",
+   "sha256": "26da83fdcd3cfc568e1c2a59eb57d6a5bef0c3d371f92b93b8bfb3bf74e49202"
+  },
+  {
+   "path": "players/esde-vectrex-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "f4f34a5b1a39ce95d6c04dde4ac793a7124b894a3383e11ca13a7416c670cf1e"
+  },
+  {
+   "path": "players/esde-videopac-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "e71bf44fb31a9db5612b7231ce419cd8de3c8ae574c6f6adcca56b0f239c2da5"
+  },
+  {
+   "path": "players/esde-vsmile-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "077a92dc0cbd32902d34a9eed4469b233ea9b425f455f7083e2949bde0a7a0ce"
+  },
+  {
+   "path": "players/esde-wii-dolphin.json",
+   "collection": "players",
+   "sha256": "82f11f1aafb87eb9e3c872fd527188fd610d81481b7a5d1ed1f54cfa97345eb6"
+  },
+  {
+   "path": "players/esde-windows-winnative.json",
+   "collection": "players",
+   "sha256": "842ba3792f639064e2c2c8188ab668b7168bd2506c74cd46c768c3337859b8cb"
+  },
+  {
+   "path": "players/esde-x1-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "1d92242d45be2fb2a2b24b97acaedbb6f206e1968dc3637b9d61a610fc363e63"
+  },
+  {
+   "path": "players/esde-x1-mame4droid-current-2.json",
+   "collection": "players",
+   "sha256": "b85114ce71f5ae8626241713fc7f199d1e2a8c0186f83ca122c76cfc2efcec20"
+  },
+  {
+   "path": "players/esde-x68000-mame4droid-current.json",
+   "collection": "players",
+   "sha256": "36de09e8868dad88d2ac82b1b276469269211d46dc63b275695386d810cde690"
+  },
+  {
+   "path": "players/esde-epic-gamenative.json",
+   "collection": "players",
+   "sha256": "898f92efcc7cbbe1d38106b9de3acd6921f689eec0444e668bdfbf207e2b7c4c"
+  },
+  {
+   "path": "players/esde-ps4-bachatas4.json",
+   "collection": "players",
+   "sha256": "47c0bb9c861aa984f4213d2cb5d3731ee3430418f5059e6629fe4f6f368e6b7c"
+  },
+  {
+   "path": "players/esde-psvita-vita3k.json",
+   "collection": "players",
+   "sha256": "aa0dd1dd5f4cd675e5ee14b77e26d076e1820e9e1803d66a03421a83b3ddd17f"
+  },
+  {
+   "path": "players/esde-psvita-emucorev.json",
+   "collection": "players",
+   "sha256": "ccaf3e2381ba5c44104ea4860c278d00eed5295cc0239a814d181f4e8365f2b2"
+  },
+  {
+   "path": "players/esde-scummvm-scummvm.json",
+   "collection": "players",
+   "sha256": "f949e49acef832104b0f6a39d36fce707c3d9b958f267bd12257d34868d1b342"
+  },
+  {
+   "path": "players/esde-steam-gamenative.json",
+   "collection": "players",
+   "sha256": "e370fb02f882bb6894a5a7eb3bac24a60bbf2cabc9c2208449cc16425cc4fa40"
+  },
+  {
+   "path": "players/esde-steam-gamehub-lite.json",
+   "collection": "players",
+   "sha256": "19ab7c317d844d19020ecc6bc1955531ebb1b37ac6283d6ebbc8cfe09070277b"
+  },
+  {
+   "path": "players/esde-steam-gamehub-lite-2.json",
+   "collection": "players",
+   "sha256": "fc24987bea0b95f001cca37a8837d4bdd6ee70e49c10f9879110448b90fa36f4"
+  },
+  {
+   "path": "players/esde-windows-gamenative.json",
+   "collection": "players",
+   "sha256": "47dbb5ccd099f2f61e81ad3f69cf9d3cdfc10d17b81f741cb3eff5d87431c0ec"
+  },
+  {
+   "path": "players/esde-windows-gamenative-2.json",
+   "collection": "players",
+   "sha256": "292145e924a7268f759ea4e91bff0f06ec669fb7327750f672889ec320eb4193"
+  },
+  {
+   "path": "players/esde-windows-gamenative-3.json",
+   "collection": "players",
+   "sha256": "7c013c223d51bff15a2d8b9d6a064ad472693d2876509bd509c785eb819fbea9"
+  },
+  {
+   "path": "players/esde-windows-gamenative-4.json",
+   "collection": "players",
+   "sha256": "db3388bf0b8985724ceccfadbb92c19744eba2a6e7fcafaabcc0f8bff19799be"
+  },
+  {
+   "path": "players/esde-windows-gamenative-5.json",
+   "collection": "players",
+   "sha256": "061e9d8dd7e703257ed0c6d36f96cb4b8f6ae3b7e7aa1aa20487817fa803930a"
+  },
+  {
+   "path": "players/esde-windows-gamehub-lite.json",
+   "collection": "players",
+   "sha256": "b939c7a7bab0c7360bc3e403e884ab5121e6c8033f19960c653bb873924713e1"
+  },
+  {
+   "path": "players/esde-windows-gamehub-lite-2.json",
+   "collection": "players",
+   "sha256": "288124498e0ae911be977bdc2565d90e0ab65e85787be857f56ee08f037d7d12"
+  },
+  {
+   "path": "players/switch-dev-legacy-eden-emulator.json",
+   "collection": "players",
+   "sha256": "75d14526c1462ce99d5cbc1765721bfbedda74dc509c7894449f1c852d8fce25"
+  },
+  {
+   "path": "bios/3do.json",
+   "collection": "bios",
+   "sha256": "c265c3ae600ceb1e0e057019654525090a91cf35cb8730a7ca6ccb2740bddbc6"
+  },
+  {
+   "path": "bios/adam.json",
+   "collection": "bios",
+   "sha256": "766ee2c32c57bf70ec7ca558d1a69b9e9d94310588be2145297248a3d507d704"
+  },
+  {
+   "path": "bios/advision.json",
+   "collection": "bios",
+   "sha256": "5ca333e90ff06f360ed5557d78715b22c0b7a97f7afde81c3d46dcf1f28a4751"
+  },
+  {
+   "path": "bios/amiga1200.json",
+   "collection": "bios",
+   "sha256": "cf2c955c2de54318d637cee6e711fcd408f7c72148baf18cff1468a842694339"
+  },
+  {
+   "path": "bios/amiga500.json",
+   "collection": "bios",
+   "sha256": "56b914d809d466a837bc3eea2e0e25cf5f3895a21baf3f5402cea219a177e487"
+  },
+  {
+   "path": "bios/amigacd32.json",
+   "collection": "bios",
+   "sha256": "1b7117314c8061ed92b5c543c9e5b0fb7e6d86f020f0acb552ca968ac19214b4"
+  },
+  {
+   "path": "bios/amigacdtv.json",
+   "collection": "bios",
+   "sha256": "a38977e57ee1b16a35a8597a6e7813948efc2b8c9e85b35523d611ed2a4723d5"
+  },
+  {
+   "path": "bios/apfm1000.json",
+   "collection": "bios",
+   "sha256": "05cf3fba8fee4541ef8889b20e26167f8bdb810d27016073c5747a6522a6df28"
+  },
+  {
+   "path": "bios/apple2.json",
+   "collection": "bios",
+   "sha256": "f10bdd7546629d7444cd2ae6efb4429426ca7860cfbbbe3cf9c4bb214f907cf8"
+  },
+  {
+   "path": "bios/apple2gs.json",
+   "collection": "bios",
+   "sha256": "5c8c376c1914c80b5b7b3301d941d97014bc3affd3694f40eef6f86ce5d19ab7"
+  },
+  {
+   "path": "bios/archimedes.json",
+   "collection": "bios",
+   "sha256": "65b9de27d871f620e5b2ee506b81cede31b58251efb8af78f37c3fe9b678b3d4"
+  },
+  {
+   "path": "bios/astrocade.json",
+   "collection": "bios",
+   "sha256": "506abaa47ed74110782e1bf79545beb8d721f26d5386fa4818a11173aedbb0a2"
+  },
+  {
+   "path": "bios/atari5200.json",
+   "collection": "bios",
+   "sha256": "b9666eb5e266dc9f1cb20941c1d20fbb6f2f90c98e65a6c41e2d2ad2f6e90c1f"
+  },
+  {
+   "path": "bios/atari800.json",
+   "collection": "bios",
+   "sha256": "1ef92b0a15c321bf66bbca45417e0c82a790a3bcc4e512c86a2a8a3ea7b8ec02"
+  },
+  {
+   "path": "bios/atarist.json",
+   "collection": "bios",
+   "sha256": "238782eaebe5d8f07dccb1e78051df0da56c50c628df5cd373aebcb2e4f40948"
+  },
+  {
+   "path": "bios/atom.json",
+   "collection": "bios",
+   "sha256": "ad9d1f20a8e190fc1dec35f16aa8cc784260ef776a4976d91c1d3287a9c5e34d"
+  },
+  {
+   "path": "bios/atomiswave.json",
+   "collection": "bios",
+   "sha256": "053cf91cddd5f40f481cf9ed5e284e543dd5aa346ad72b7486e59b4e6f175d8e"
+  },
+  {
+   "path": "bios/bbc.json",
+   "collection": "bios",
+   "sha256": "8dd69d721d75cf3b7085376b2114097825f2102c60ffe3f4ea84aadb2eecf247"
+  },
+  {
+   "path": "bios/beena.json",
+   "collection": "bios",
+   "sha256": "da8bff9473c58c9ff99a4318152d755489d15482e5e551d44fc59653d2abe0c7"
+  },
+  {
+   "path": "bios/bk.json",
+   "collection": "bios",
+   "sha256": "30f2a3cadd8b8d2369397fb4d2f78fdc1b12ffb12f488352783db8291f13bf33"
+  },
+  {
+   "path": "bios/camplynx.json",
+   "collection": "bios",
+   "sha256": "badec7dd7ec3c9ec0a2f346cf1860f3e0be5ce4c8f54a8c585b281f65e01d048"
+  },
+  {
+   "path": "bios/cdi.json",
+   "collection": "bios",
+   "sha256": "4809d3b4d2d1e8242a781d4f4e7870d73bbdc4f2557f5f8eb75e08d28807c586"
+  },
+  {
+   "path": "bios/cgenie.json",
+   "collection": "bios",
+   "sha256": "0cafb987b284dc4b0d87feae7199bd70547fe9058294842cc6f05368e9064616"
+  },
+  {
+   "path": "bios/channelf.json",
+   "collection": "bios",
+   "sha256": "bc462bc76e0adc03d9edb94c80791983761010191d7cb89f0e53918eb1ba963f"
+  },
+  {
+   "path": "bios/chihiro.json",
+   "collection": "bios",
+   "sha256": "ca95485826dd8c5df29942524ab18b34e7081a12adf4ad516704073e0f3f36e1"
+  },
+  {
+   "path": "bios/coco.json",
+   "collection": "bios",
+   "sha256": "bbf67c0903c44b044de2c3e320efd26e56431099a36cd0ffbdb7aecb6d498036"
+  },
+  {
+   "path": "bios/colecovision.json",
+   "collection": "bios",
+   "sha256": "295d29736458e47422ce8c9b358507f8df8fd68d1a51f9b2bd2480b0fee26c78"
+  },
+  {
+   "path": "bios/crvision.json",
+   "collection": "bios",
+   "sha256": "86e420f265c5278aaf8decea629b2064c4cf6d436501cf4a820081ef675201c0"
+  },
+  {
+   "path": "bios/dragon64.json",
+   "collection": "bios",
+   "sha256": "25d7240cc8f8a9cee9c0a572012619c83f62630f3215d38abacdb53ac0fba8f1"
+  },
+  {
+   "path": "bios/dreamcast.json",
+   "collection": "bios",
+   "sha256": "d0b5e4fca37d2cc61e3726939e3e99aeb4e0544c63d5e137e0e75780d5ef2802"
+  },
+  {
+   "path": "bios/electron.json",
+   "collection": "bios",
+   "sha256": "a1bc87d3b5e6b6bd6a6549e801a8153a229cef6aafb23b4a46b75aea99b78993"
+  },
+  {
+   "path": "bios/enterprise.json",
+   "collection": "bios",
+   "sha256": "2c9977d430494e01d77d841cca389d1a736780635e6e74e238700d35aa4fea21"
+  },
+  {
+   "path": "bios/fds.json",
+   "collection": "bios",
+   "sha256": "de6d58fdfb1f516765e9ea0875d09770dbb2e9357a2530911b569054ac25896e"
+  },
+  {
+   "path": "bios/fm7.json",
+   "collection": "bios",
+   "sha256": "e7153efd3e0f742f6ca1f24adc98f703f322429dbe93e24c3ed6bdda233800e9"
+  },
+  {
+   "path": "bios/fmtowns.json",
+   "collection": "bios",
+   "sha256": "2580863fe5b22069153da8f8fb1ea237c4fe427059d05bcc6d878a42c2fd0038"
+  },
+  {
+   "path": "bios/gamate.json",
+   "collection": "bios",
+   "sha256": "c7d875027168877fe8f38ba9b54ec693788f1ef06358b102e164677dfbfe906a"
+  },
+  {
+   "path": "bios/gamecom.json",
+   "collection": "bios",
+   "sha256": "84373a6de82c090f914ca221b54d4f407b7d1c6fe9f95ac5141cf078620f9551"
+  },
+  {
+   "path": "bios/gamecube.json",
+   "collection": "bios",
+   "sha256": "f16a17051cd962c5524980f75c46904e6ac0823bb7095cd5fef489a65d751cc3"
+  },
+  {
+   "path": "bios/gamepock.json",
+   "collection": "bios",
+   "sha256": "d89f4f82635eb64e5d79ba913f61fa80afb8646108afcef66bcec7aa2acce70a"
+  },
+  {
+   "path": "bios/gba.json",
+   "collection": "bios",
+   "sha256": "c52dc5e9a7860012346ef60916e0a0f135a5a8e32e24d3f2be5fd91096f49fc7"
+  },
+  {
+   "path": "bios/gmaster.json",
+   "collection": "bios",
+   "sha256": "e1b1bdcaa8ccb1d72603785f5ea7d3555d65c9453e228ef45662049c24cf4e95"
+  },
+  {
+   "path": "bios/gp32.json",
+   "collection": "bios",
+   "sha256": "26462e7874bdbdd935bb16d4c6c5925efd1513522ed04065727f4a93734c6fea"
+  },
+  {
+   "path": "bios/gsplus.json",
+   "collection": "bios",
+   "sha256": "d63245327cd8c8529e54a58b18452c093128ed6263c28889ac771561a93ccc5f"
+  },
+  {
+   "path": "bios/hikaru.json",
+   "collection": "bios",
+   "sha256": "bf654d38f2dd520d2a3a8bebef9a15edcc08f271a640e6fa24c89337886dd9df"
+  },
+  {
+   "path": "bios/intellivision.json",
+   "collection": "bios",
+   "sha256": "e41ec712a99399b43e42ce4310b1b819e525fab19ba886deaeea1b45b8fe9ba6"
+  },
+  {
+   "path": "bios/laser310.json",
+   "collection": "bios",
+   "sha256": "52d5e645c73cd5119fb0d0af0a3b8e433ccf327d0e1c0141d3a2840f853b96c5"
+  },
+  {
+   "path": "bios/loopy.json",
+   "collection": "bios",
+   "sha256": "07f8772051857e294822e17bffe39507db12800486ff3a63356ba7d94870e115"
+  },
+  {
+   "path": "bios/lynx.json",
+   "collection": "bios",
+   "sha256": "74a52c6c8ca2e48298b70c5fb03236b1ba49b679bf091bc70edfea7ce3f77d75"
+  },
+  {
+   "path": "bios/macintosh.json",
+   "collection": "bios",
+   "sha256": "98d167ae36e05ba411aeef63ab8d210485b8a313885bf030e61c91a6b4c87231"
+  },
+  {
+   "path": "bios/mc10.json",
+   "collection": "bios",
+   "sha256": "70626c5985b9e346e89a81ec64808f20cf9bc6e547b76536399bb871e128e449"
+  },
+  {
+   "path": "bios/megadrive-msu.json",
+   "collection": "bios",
+   "sha256": "365fac83a22f91775066614b7482a49eaa1943184d276d7a09225678f44077ee"
+  },
+  {
+   "path": "bios/msx.json",
+   "collection": "bios",
+   "sha256": "4800f39e14fa9ecb65813b8c75f792de981ba0e8186e574918d297f4f1852ecf"
+  },
+  {
+   "path": "bios/msx1.json",
+   "collection": "bios",
+   "sha256": "4c8af5cf456fae26c85a260ae7356ac4ebe74401e7b5fa142c506c0e86a78f0f"
+  },
+  {
+   "path": "bios/msx2.json",
+   "collection": "bios",
+   "sha256": "bb1e15e07d8e6179aefb8a52315f43342850114b4123bd26ad4a130d7bccf1a9"
+  },
+  {
+   "path": "bios/msx2+.json",
+   "collection": "bios",
+   "sha256": "81c5b6074860e0218747baacb48b164a2415434c7a959e529960da1a65428222"
+  },
+  {
+   "path": "bios/msxturbor.json",
+   "collection": "bios",
+   "sha256": "c9bb80d376724ddc4c848f4809ab8f4f63d7b7c696ad167f852ba8e1e62b8cc7"
+  },
+  {
+   "path": "bios/mz2000.json",
+   "collection": "bios",
+   "sha256": "49ff64b927e51654ad36ef254314343211b57c12e44a1bc48cdf3f71cf4f44dc"
+  },
+  {
+   "path": "bios/mz2500.json",
+   "collection": "bios",
+   "sha256": "d510ed5169d1ed5d1ef7faf6201641f53a929ecdd45f4a0b07a99a7af3964e5f"
+  },
+  {
+   "path": "bios/mz700.json",
+   "collection": "bios",
+   "sha256": "7dc47e669a54ad48d63fcf3b71cb40530033a7769381775edd43b19c1a2e1919"
+  },
+  {
+   "path": "bios/mz800.json",
+   "collection": "bios",
+   "sha256": "7479f69c61fb93795767e050a2486d97a48f98f91556ea0f8c23212f810d0a84"
+  },
+  {
+   "path": "bios/mz80k.json",
+   "collection": "bios",
+   "sha256": "dedc94e3e719cdc2f57b4bb0568b4de8960e4565a60b0ae9f7d51a194797350a"
+  },
+  {
+   "path": "bios/n64dd.json",
+   "collection": "bios",
+   "sha256": "c963d4219088b66a71769e4c8bf5a5a21db827a8caf95bd58b8320b2d211c479"
+  },
+  {
+   "path": "bios/namco2x6.json",
+   "collection": "bios",
+   "sha256": "e9efd293d75c5c53516549230fa018134d94bcdd3b73824effd7755730cbf0c7"
+  },
+  {
+   "path": "bios/naomi.json",
+   "collection": "bios",
+   "sha256": "162d17eeca6f07eaa39495ae6ccb69f52314da452f8e97b246c5a9a3a6672352"
+  },
+  {
+   "path": "bios/naomi2.json",
+   "collection": "bios",
+   "sha256": "1c9243467408ea02f64184e080e00f8aa961dff924cbf8ee67bd4a8f8c518bea"
+  },
+  {
+   "path": "bios/nds.json",
+   "collection": "bios",
+   "sha256": "e53cefc96014c6a1a2c44d97d8128f2fe6ccd71f8f2385174cd8c23f3111ece9"
+  },
+  {
+   "path": "bios/neogeo.json",
+   "collection": "bios",
+   "sha256": "42a2663c626bf836d73b5ddf63b27c59b79e372a63a2a6b5f0f7d77602b8dee1"
+  },
+  {
+   "path": "bios/neogeocd.json",
+   "collection": "bios",
+   "sha256": "0dfa108857c8acf54c34cb1d1d805c9ac981cef148283806850d47a658ecca0a"
+  },
+  {
+   "path": "bios/oricatmos.json",
+   "collection": "bios",
+   "sha256": "8fa80ad4e78fa2c2cac3ba38c54ff0ac569ac2c0c03dfedf943f8cd8b8f63977"
+  },
+  {
+   "path": "bios/pc60.json",
+   "collection": "bios",
+   "sha256": "59bc384d69d7a1a06fa44249baba93c6b066c8bf1b837061d0009cef8ee9128b"
+  },
+  {
+   "path": "bios/pc80.json",
+   "collection": "bios",
+   "sha256": "14a2a67fc7e3ea2f1744b24f46607fd2821f0dc82505ab98377fc55985333f04"
+  },
+  {
+   "path": "bios/pc88.json",
+   "collection": "bios",
+   "sha256": "a8f3e6f6c677dc56364aeb7b7ed46ac6b3f94c4f615285ab74cc10fec8962d61"
+  },
+  {
+   "path": "bios/pc98.json",
+   "collection": "bios",
+   "sha256": "6dec465aa1dc4499ee6e60fc343e8d61e86c2cfac675ac78d1fa7ac16a8f09a2"
+  },
+  {
+   "path": "bios/pcengine.json",
+   "collection": "bios",
+   "sha256": "cb2f0376d36bd7a3dc55ca3790d63aea3f3db9a4f46bacdfc53432430ff41a0f"
+  },
+  {
+   "path": "bios/pcfx.json",
+   "collection": "bios",
+   "sha256": "4dbc178a83325b9f8a67904624201a7667e3e4e39cc14fb3973e1a65164534d0"
+  },
+  {
+   "path": "bios/pcw.json",
+   "collection": "bios",
+   "sha256": "ff2a650ab2335f3bd6e9132880f3581596f427742d16b7beb9c4f11f2ddc095a"
+  },
+  {
+   "path": "bios/ps2.json",
+   "collection": "bios",
+   "sha256": "f09a7849704259d04d4412c5db0fe6f64b308126793dffbef031bdbcb1d2edec"
+  },
+  {
+   "path": "bios/ps3.json",
+   "collection": "bios",
+   "sha256": "bd743447ea7be52bca0ac9e5a259aadecf43470ebb7ff4dfb00b3ff2d3bf6eef"
+  },
+  {
+   "path": "bios/psvita.json",
+   "collection": "bios",
+   "sha256": "510e6912829bc79849aef6eb305ab03f971d87355ba86a029f83fd40eee17213"
+  },
+  {
+   "path": "bios/psx.json",
+   "collection": "bios",
+   "sha256": "45959a06016a8cb133357979cb0483443c5aee2c9fd63a1fe0704e2636da1db5"
+  },
+  {
+   "path": "bios/pv2000.json",
+   "collection": "bios",
+   "sha256": "eb154cf2123c5d5bb2a03267219da5adb04bbe1d5612876ad562dd01efc4f867"
+  },
+  {
+   "path": "bios/rx78.json",
+   "collection": "bios",
+   "sha256": "159c2747df99d5f316cfafcc0f41b84e3ef9d1f1e05b4cc10bd5f4f09900721f"
+  },
+  {
+   "path": "bios/satellaview.json",
+   "collection": "bios",
+   "sha256": "ec0ef52661e01ea90e1bf056619fb46aca7b7afd34c23b0711097abe76007b29"
+  },
+  {
+   "path": "bios/saturn.json",
+   "collection": "bios",
+   "sha256": "e6eb1256fded139ec4096814202ee9a46fbff3878d2af3fb854218983204a324"
+  },
+  {
+   "path": "bios/scummvm.json",
+   "collection": "bios",
+   "sha256": "e1b4df9950e7f22a320c044ac7f9b4d83404bb8a0a205a447e02d2d8dcbf9197"
+  },
+  {
+   "path": "bios/scv.json",
+   "collection": "bios",
+   "sha256": "9e2b8d30f8920892196ba1c7c7b4cd7b9d3880540e3ca57e9d37495da1743309"
+  },
+  {
+   "path": "bios/segaai.json",
+   "collection": "bios",
+   "sha256": "c0f8787e8b9d90799db0b36383b12f123a0f835ccf3832f42e0d90f0a4650ac0"
+  },
+  {
+   "path": "bios/segacd.json",
+   "collection": "bios",
+   "sha256": "74bf58bc80559dff6c008de3942375b34a112bce19a77cbf612d33892cfd23c5"
+  },
+  {
+   "path": "bios/sgb.json",
+   "collection": "bios",
+   "sha256": "10a98d39c932f63f3005a64ae35fcce4ca11a0ef9dbe5c780c0960624f9a33f3"
+  },
+  {
+   "path": "bios/socrates.json",
+   "collection": "bios",
+   "sha256": "47a4944fd7e1eab5037db697e997714c233c0d7b9b22f7745fd4beec84fd8541"
+  },
+  {
+   "path": "bios/sufami.json",
+   "collection": "bios",
+   "sha256": "18785ce978cc1962424b4b1ec2a870b44e015c2065a173b21c848b4ce58d6ba2"
+  },
+  {
+   "path": "bios/supergrafx.json",
+   "collection": "bios",
+   "sha256": "5f8784a8077bf733e5bd4315b0ef326c13862b2c49fade9d402ef746196cde12"
+  },
+  {
+   "path": "bios/supracan.json",
+   "collection": "bios",
+   "sha256": "cd9f16e3487b9c38da010adde9fbaa734373d880b6ea7fb125e501db564402b4"
+  },
+  {
+   "path": "bios/ti99.json",
+   "collection": "bios",
+   "sha256": "1d3ed127cadf563e23d42bd0ba944803517b1973a90343df1a0ab5583f8def01"
+  },
+  {
+   "path": "bios/triforce.json",
+   "collection": "bios",
+   "sha256": "03652693d49fb8cdfd2e8d02bf9f0bdb02e2511726abfe2a1565c94e47670db1"
+  },
+  {
+   "path": "bios/trs80.json",
+   "collection": "bios",
+   "sha256": "1e13b0c387f579932521499b267832ac210f5b263b98cd1553359bf36272f035"
+  },
+  {
+   "path": "bios/tutor.json",
+   "collection": "bios",
+   "sha256": "651a583e3cd1e86a195d64bc73a846b057a008b8bf0135fbfdb28b2d83c6abc2"
+  },
+  {
+   "path": "bios/tvc.json",
+   "collection": "bios",
+   "sha256": "eda178515d6e80491448d51015f6be893d6da8ab613b0909ac3d625ac9f9363d"
+  },
+  {
+   "path": "bios/vectrex.json",
+   "collection": "bios",
+   "sha256": "9b1c3dd4eb9518d64fd71cb59971f44c2cfbafd6adcf617541b88e9bba270440"
+  },
+  {
+   "path": "bios/vgmplay.json",
+   "collection": "bios",
+   "sha256": "bcc200b343cea2af0e51cbc523c49ca988c921e2e3ce8b1aaf4bd82d47893905"
+  },
+  {
+   "path": "bios/videopac.json",
+   "collection": "bios",
+   "sha256": "9578adf3fb177880767ae2ca31c9c79ac4986214595f8e867f9bca376581dd56"
+  },
+  {
+   "path": "bios/videopacplus.json",
+   "collection": "bios",
+   "sha256": "e4749162c845ad7edba51e7746809bf3805a2b2da848673d268c9640235679c5"
+  },
+  {
+   "path": "bios/vis.json",
+   "collection": "bios",
+   "sha256": "e7be531477bce542ac0443a7405948a3d9998cce20ec1ec0ee13596dd911ade1"
+  },
+  {
+   "path": "bios/vsmile.json",
+   "collection": "bios",
+   "sha256": "0c89d3e499e926649c8095c0db4987750abcbbb2292b97796519349565685be7"
+  },
+  {
+   "path": "bios/x1.json",
+   "collection": "bios",
+   "sha256": "dd849162c4f6a37267fa32a4c71b488682fd88518313ff24bea303b8d06bdaa9"
+  },
+  {
+   "path": "bios/x68000.json",
+   "collection": "bios",
+   "sha256": "80de128548fb0ec230d230881025f074a4188012ec40f72439255990c8295fba"
+  },
+  {
+   "path": "bios/xbox.json",
+   "collection": "bios",
+   "sha256": "a739633e47891ac2b8308bd66165d74366f872856e1d09554731dad82eb9176d"
+  },
+  {
+   "path": "bios/xegs.json",
+   "collection": "bios",
+   "sha256": "522dc4da33548022a5f7fe3b40dd21dbfbabeb0a065e03d0b736490bc9c5657b"
+  },
+  {
+   "path": "bios/zc210.json",
+   "collection": "bios",
+   "sha256": "5a9324de710eb69ffc1f5b08d13dac644f4b051766d7b9430c7ed5782f9b1a73"
+  },
+  {
+   "path": "hardware/retroid-pocket-5.json",
+   "collection": "hardware",
+   "sha256": "14b5f8b918c8fdbb89dc66b44c65a323293aa2aeedf04dc38321fd72ad08d2c0"
+  }
+ ]
+}

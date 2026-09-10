@@ -1,0 +1,19 @@
+{
+ "systemId": "pcw",
+ "name": "Amstrad PCW",
+ "files": [
+  {
+   "file": "bios/pcw8256.zip",
+   "md5": [
+    "a846b928562ca8281bc279f41b475a06",
+    "cefe4b0b7c701c1a80130e3390b007f5"
+   ]
+  },
+  {
+   "file": "bios/pcw9512.zip",
+   "md5": [
+    "b664af93987d575b0248832832c61505"
+   ]
+  }
+ ]
+}

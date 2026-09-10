@@ -1,0 +1,8 @@
+{
+ "id": "genesis-com-androidemu-gens-com-androidemu-gens",
+ "systemId": "genesis",
+ "label": "com.androidemu.gens",
+ "pkg": "com.androidemu.gens",
+ "argumentsTemplate": "-n com.androidemu.gens/.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

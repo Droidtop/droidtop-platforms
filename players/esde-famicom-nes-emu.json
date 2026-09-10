@@ -1,0 +1,8 @@
+{
+ "id": "esde-famicom-nes-emu",
+ "systemId": "famicom",
+ "label": "NES.emu (Standalone)",
+ "pkg": "com.explusalpha.NesEmu",
+ "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

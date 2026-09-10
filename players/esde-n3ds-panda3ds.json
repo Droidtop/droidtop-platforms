@@ -1,0 +1,8 @@
+{
+ "id": "esde-n3ds-panda3ds",
+ "systemId": "n3ds",
+ "label": "Panda3DS (Standalone)",
+ "pkg": "com.panda3ds.pandroid",
+ "argumentsTemplate": "-n com.panda3ds.pandroid/com.panda3ds.pandroid.app.MainActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

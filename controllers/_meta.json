@@ -1,0 +1,4 @@
+{
+ "version": 1,
+ "comment": "Controller profile seeds beyond SDL's gamecontrollerdb -- one file per vendor:product, for pads whose Android mapping is wrong and which the bundled database does not cover. Empty until a pad is actually measured on hardware; a profile invented from a datasheet is worse than none, because it silently overrides a mapping that was working."
+}

@@ -1,0 +1,34 @@
+{
+ "id": "rpgmaker-vxace",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameContains",
+     "value": ".rgss3a"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileHeadRegex",
+     "path": "Game.ini",
+     "regex": "Library\\s*=\\s*.*RGSS3\\d\\d"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": "vxace",
+  "extras": {
+   "ruby": "1.9.2"
+  }
+ },
+ "notes": "RGSS runtimes are Windows-only. Ruby 1.9.2 is a PREFILL, not a pin: mkxp-z deliberately declares vxace against both 1.9.2 and 3.1.3, and the config editor keeps runtimeRequirements user-editable so either branch stays selectable. The Game.ini Library line is the engine declaring its own RGSS build; the .rgss3a check tolerates renamed archives (real install: Game.rgss3a.old)."
+}

@@ -1,0 +1,14 @@
+{
+ "id": "naomi2",
+ "name": "Sega NAOMI 2",
+ "extensions": [
+  "7z",
+  "bin",
+  "dat",
+  "elf",
+  "lst",
+  "zip"
+ ],
+ "retroArchCore": "flycast",
+ "theme": "naomi2"
+}

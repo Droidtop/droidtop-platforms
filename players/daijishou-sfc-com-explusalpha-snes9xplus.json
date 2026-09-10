@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-sfc-com-explusalpha-snes9xplus",
+ "systemId": "sfc",
+ "label": "sfc - com.explusalpha.Snes9xPlus",
+ "pkg": "com.explusalpha.Snes9xPlus",
+ "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

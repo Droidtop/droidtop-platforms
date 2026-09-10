@@ -1,0 +1,18 @@
+{
+ "systemId": "chihiro",
+ "name": "Sega Chihiro",
+ "files": [
+  {
+   "file": "bios/mcpx_1.0.bin",
+   "md5": [
+    "d49c52a4102f6df7bcf8d0617ac475ed"
+   ]
+  },
+  {
+   "file": "bios/cerbios.bin",
+   "md5": [
+    "f23d7e00ae8fbf88908ed1f9165f35eb"
+   ]
+  }
+ ]
+}

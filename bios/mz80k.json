@@ -1,0 +1,20 @@
+{
+ "systemId": "mz80k",
+ "name": "Sharp MZ-80K",
+ "files": [
+  {
+   "file": "bios/mz80k.zip",
+   "md5": [
+    "5db7707d120c835751899b0d1df5ad39",
+    "3380dff179941e96851cfee7156e31de"
+   ]
+  },
+  {
+   "file": "bios/mz80kj.zip",
+   "md5": [
+    "e5413f1a0d94726156dcae7d63f8f35f",
+    "4138784bdd2e2cbacd6c55eff195b2ac"
+   ]
+  }
+ ]
+}

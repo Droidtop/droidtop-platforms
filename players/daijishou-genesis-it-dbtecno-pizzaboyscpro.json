@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-genesis-it-dbtecno-pizzaboyscpro",
+ "systemId": "genesis",
+ "label": "genesis - Pizza Boy SC Pro",
+ "pkg": "it.dbtecno.pizzaboyscpro",
+ "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

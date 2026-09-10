@@ -1,0 +1,8 @@
+{
+ "id": "esde-mastersystem-md-emu",
+ "systemId": "mastersystem",
+ "label": "MD.emu (Standalone)",
+ "pkg": "com.explusalpha.MdEmu",
+ "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

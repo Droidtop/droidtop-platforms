@@ -1,0 +1,13 @@
+{
+ "systemId": "mz700",
+ "name": "Sharp MZ-700",
+ "files": [
+  {
+   "file": "bios/mz700.zip",
+   "md5": [
+    "27990ced7cb97dd80356f517aa705010",
+    "e9045d57e8574f3eb3f775c02369fbfe"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "id": "lutro",
+ "name": "Lutro Game Engine",
+ "extensions": [
+  "7z",
+  "lua",
+  "lutro",
+  "zip"
+ ],
+ "retroArchCore": "lutro",
+ "theme": "lutro"
+}

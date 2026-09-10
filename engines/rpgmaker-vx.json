@@ -1,0 +1,39 @@
+{
+ "id": "rpgmaker-vx",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameContains",
+     "value": ".rgss2a"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "Game.rvproj"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileHeadRegex",
+     "path": "Game.ini",
+     "regex": "Library\\s*=\\s*.*RGSS2\\d\\d"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": "vx"
+ },
+ "notes": "RGSS2 line: .rgss2a archive, Game.rvproj project marker, or the Game.ini Library=RGSS2xx declaration. Listed after vxace so the more specific RGSS3 evidence wins first."
+}

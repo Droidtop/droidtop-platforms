@@ -1,0 +1,27 @@
+{
+ "id": "amiga1200",
+ "name": "Commodore Amiga 1200",
+ "extensions": [
+  "7z",
+  "adf",
+  "adz",
+  "ccd",
+  "chd",
+  "cue",
+  "dms",
+  "fdi",
+  "hdf",
+  "hdz",
+  "ipf",
+  "iso",
+  "lha",
+  "m3u",
+  "mds",
+  "nrg",
+  "rp9",
+  "uae",
+  "zip"
+ ],
+ "retroArchCore": "puae",
+ "theme": "amiga1200"
+}

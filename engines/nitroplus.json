@@ -1,0 +1,26 @@
+{
+ "id": "nitroplus",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "npa"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "npk"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Nitroplus (N2System and the older Nitro+ runtimes): .npa (magic NPA) and .npk (NPK2) archives are Nitro+-only in GARbro's table (https://morkt.github.io/GARbro/supported.html); NitroSharp is the N2System reimplementation the brief points at (https://github.com/CommitteeOfZero/nitrosharp). One row for the brand: the archive alone does not say which of the two VMs a game uses."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-gbc-com-fastemulator-gbcfree",
+ "systemId": "gbc",
+ "label": "gbc - com.fastemulator.gbcfree",
+ "pkg": "com.fastemulator.gbcfree",
+ "argumentsTemplate": "-n com.fastemulator.gbcfree/.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

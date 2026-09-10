@@ -1,0 +1,85 @@
+{
+ "systemId": "coco",
+ "name": "Tandy Color Computer",
+ "files": [
+  {
+   "file": "bios/coco.zip",
+   "md5": [
+    "a74f3d95b395dad7cdca19d560eeea74"
+   ]
+  },
+  {
+   "file": "bios/coco2.zip",
+   "md5": [
+    "c933316c7d939532a13648850c1c2aa6",
+    "21070aa0496142b886c562bf76d7c113"
+   ]
+  },
+  {
+   "file": "bios/coco2b.zip",
+   "md5": [
+    "c2fc43556eb6b7b25bdf5955bd9df825"
+   ]
+  },
+  {
+   "file": "bios/coco3.zip",
+   "md5": [
+    "7233c6c429f3ce1c7392f28a933e0b6f"
+   ]
+  },
+  {
+   "file": "bios/coco3p.zip",
+   "md5": [
+    "4ae57e5a8e7494e5485446fefedb580b"
+   ]
+  },
+  {
+   "file": "bios/coco_fdc_v11.zip",
+   "md5": [
+    "8cab28f4b7311b8df63c07bb3b59bfd5"
+   ]
+  },
+  {
+   "file": "bios/xroar/bas10.rom",
+   "md5": [
+    "a74f3d95b395dad7cdca19d560eeea74"
+   ]
+  },
+  {
+   "file": "bios/xroar/bas12.rom",
+   "md5": [
+    "c933316c7d939532a13648850c1c2aa6"
+   ]
+  },
+  {
+   "file": "bios/xroar/bas13.rom",
+   "md5": [
+    "c2fc43556eb6b7b25bdf5955bd9df825"
+   ]
+  },
+  {
+   "file": "bios/xroar/extbas11.rom",
+   "md5": [
+    "21070aa0496142b886c562bf76d7c113"
+   ]
+  },
+  {
+   "file": "bios/xroar/coco3.rom",
+   "md5": [
+    "7233c6c429f3ce1c7392f28a933e0b6f"
+   ]
+  },
+  {
+   "file": "bios/xroar/coco3p.rom",
+   "md5": [
+    "4ae57e5a8e7494e5485446fefedb580b"
+   ]
+  },
+  {
+   "file": "bios/xroar/disk11.rom",
+   "md5": [
+    "8cab28f4b7311b8df63c07bb3b59bfd5"
+   ]
+  }
+ ]
+}

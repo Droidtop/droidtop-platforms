@@ -1,0 +1,8 @@
+{
+ "id": "esde-gbc-gbc-emu",
+ "systemId": "gbc",
+ "label": "GBC.emu (Standalone)",
+ "pkg": "com.explusalpha.GbcEmu",
+ "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "wii-org-dolphinemu-mmjr-dolphin-mmjr",
+ "systemId": "wii",
+ "label": "Dolphin mmjr",
+ "pkg": "org.dolphinemu.mmjr",
+ "argumentsTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

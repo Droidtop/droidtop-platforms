@@ -1,0 +1,16 @@
+{
+ "systemId": "apple2gs",
+ "name": "Apple IIgs",
+ "files": [
+  {
+   "file": "bios/apple2gs.zip",
+   "md5": [
+    "b956c537e7b6b85ffa5c3493b1490d8a",
+    "b9f94f5d1be27dafcb8fe619ca3f4d15",
+    "e8e632aa592a61ef373b38af10ed54e1",
+    "c9e0e059faec0393fc429131a3af4ee9",
+    "68ff96a624237d233e8d4c701f660dd1"
+   ]
+  }
+ ]
+}

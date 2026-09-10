@@ -1,0 +1,8 @@
+{
+ "id": "snes-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus",
+ "systemId": "snes",
+ "label": "com.explusalpha.Snes9xPlus",
+ "pkg": "com.explusalpha.Snes9xPlus",
+ "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

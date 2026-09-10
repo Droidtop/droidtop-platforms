@@ -1,0 +1,9 @@
+{
+ "id": "lowresnx",
+ "name": "LowRes NX Fantasy Console",
+ "extensions": [
+  "nx"
+ ],
+ "retroArchCore": "lowresnx",
+ "theme": "lowresnx"
+}

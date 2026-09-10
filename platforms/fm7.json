@@ -1,0 +1,24 @@
+{
+ "id": "fm7",
+ "name": "Fujitsu FM-7",
+ "extensions": [
+  "1dd",
+  "7z",
+  "cqi",
+  "cqm",
+  "d77",
+  "d88",
+  "dfi",
+  "dsk",
+  "hfe",
+  "imd",
+  "mfi",
+  "mfm",
+  "t77",
+  "td0",
+  "wav",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "fm7"
+}

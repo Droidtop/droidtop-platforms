@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-3ds-io-github-mandarine3ds-mandarine",
+ "systemId": "3ds",
+ "label": "3ds - Mandarine",
+ "pkg": "io.github.mandarine3ds.mandarine",
+ "argumentsTemplate": "-n io.github.mandarine3ds.mandarine/.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

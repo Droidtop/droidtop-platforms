@@ -1,0 +1,18 @@
+{
+ "systemId": "xbox",
+ "name": "Xbox",
+ "files": [
+  {
+   "file": "bios/mcpx_1.0.bin",
+   "md5": [
+    "d49c52a4102f6df7bcf8d0617ac475ed"
+   ]
+  },
+  {
+   "file": "bios/Complex_4627.bin",
+   "md5": [
+    "39cee882148a87f93cb440b99dde3ceb"
+   ]
+  }
+ ]
+}

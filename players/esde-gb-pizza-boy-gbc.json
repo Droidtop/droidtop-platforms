@@ -1,0 +1,8 @@
+{
+ "id": "esde-gb-pizza-boy-gbc",
+ "systemId": "gb",
+ "label": "Pizza Boy GBC (Standalone)",
+ "pkg": "it.dbtecno.pizzaboypro",
+ "argumentsTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+ "killPackageProcesses": false
+}

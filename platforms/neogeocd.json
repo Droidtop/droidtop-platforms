@@ -1,0 +1,10 @@
+{
+ "id": "neogeocd",
+ "name": "SNK Neo Geo CD",
+ "extensions": [
+  "chd",
+  "cue"
+ ],
+ "retroArchCore": "neocd",
+ "theme": "neogeocd"
+}

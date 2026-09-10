@@ -1,0 +1,14 @@
+{
+ "systemId": "apfm1000",
+ "name": "APF M-1000",
+ "files": [
+  {
+   "file": "bios/apfm1000.zip",
+   "md5": [
+    "1f4a976350202ee1e32c2b0477c3fc1b",
+    "b325543b36d37edf3fc20761f00c7a37",
+    "89a7cfa5469ce24773721d65b28f8544"
+   ]
+  }
+ ]
+}

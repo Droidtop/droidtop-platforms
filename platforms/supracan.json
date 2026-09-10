@@ -1,0 +1,11 @@
+{
+ "id": "supracan",
+ "name": "Funtech Super A'Can",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "supracan"
+}

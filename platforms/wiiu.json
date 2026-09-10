@@ -1,0 +1,15 @@
+{
+ "id": "wiiu",
+ "name": "Nintendo Wii U",
+ "extensions": [
+  "elf",
+  "rpx",
+  "tmd",
+  "wua",
+  "wud",
+  "wuhb",
+  "wux"
+ ],
+ "retroArchCore": null,
+ "theme": "wiiu"
+}

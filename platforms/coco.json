@@ -1,0 +1,12 @@
+{
+ "id": "coco",
+ "name": "Tandy Color Computer",
+ "extensions": [
+  "cas",
+  "ccc",
+  "dsk",
+  "rom"
+ ],
+ "retroArchCore": null,
+ "theme": "coco"
+}

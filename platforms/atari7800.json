@@ -1,0 +1,12 @@
+{
+ "id": "atari7800",
+ "name": "Atari 7800 ProSystem",
+ "extensions": [
+  "7z",
+  "a78",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "prosystem",
+ "theme": "atari7800"
+}

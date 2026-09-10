@@ -1,0 +1,13 @@
+{
+ "systemId": "gamate",
+ "name": "Bitcorp Gamate",
+ "files": [
+  {
+   "file": "bios/gamate.zip",
+   "md5": [
+    "b411167df6dd563111729296f4c547f6",
+    "ef67993a94503c4b7798b5901c7dda52"
+   ]
+  }
+ ]
+}

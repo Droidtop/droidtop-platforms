@@ -1,0 +1,26 @@
+{
+ "id": "rugp",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "rio"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "rha"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "rUGP (age): .rio objects, .rha archives and .rip/.s5i images are rUGP-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+}

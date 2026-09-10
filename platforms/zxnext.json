@@ -1,0 +1,10 @@
+{
+ "id": "zxnext",
+ "name": "Sinclair ZX Spectrum Next",
+ "extensions": [
+  "nex",
+  "sna"
+ ],
+ "retroArchCore": null,
+ "theme": "zxnext"
+}

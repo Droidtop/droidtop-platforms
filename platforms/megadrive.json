@@ -1,0 +1,26 @@
+{
+ "id": "megadrive",
+ "name": "Sega Mega Drive",
+ "extensions": [
+  "32x",
+  "68k",
+  "7z",
+  "bin",
+  "bms",
+  "chd",
+  "cue",
+  "gen",
+  "gg",
+  "iso",
+  "m3u",
+  "md",
+  "mdx",
+  "sg",
+  "sgd",
+  "smd",
+  "sms",
+  "zip"
+ ],
+ "retroArchCore": "genesis_plus_gx",
+ "theme": "megadrive"
+}

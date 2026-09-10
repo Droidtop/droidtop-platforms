@@ -1,0 +1,18 @@
+{
+ "systemId": "psvita",
+ "name": "PS Vita",
+ "files": [
+  {
+   "file": "bios/psvita/PSP2UPDAT.PUP",
+   "md5": [
+    "59dcf059d3328fb67be7e51f8aa33418"
+   ]
+  },
+  {
+   "file": "bios/psvita/PSVUPDAT.PUP",
+   "md5": [
+    "f2c7b12fe85496ec88a0391b514d6e3b"
+   ]
+  }
+ ]
+}

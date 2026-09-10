@@ -1,0 +1,12 @@
+{
+ "systemId": "crvision",
+ "name": "VTech CreatiVision",
+ "files": [
+  {
+   "file": "bios/crvision.zip",
+   "md5": [
+    "3b1ef759d8e3fb4071582efd33dd05f9"
+   ]
+  }
+ ]
+}

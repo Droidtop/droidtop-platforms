@@ -1,0 +1,18 @@
+{
+ "id": "fc-advwin32",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "mrg"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "F&C ADVWin32 lineage: .mrg archives (magic MRG), with .mcg images and .acd scripts, are F&C-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+}

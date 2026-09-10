@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps3-armsx3",
+ "systemId": "ps3",
+ "label": "ARMSX3 (Standalone)",
+ "pkg": "com.armsx3",
+ "argumentsTemplate": "-n com.armsx3/com.armsx2.Main -e path {file.path}",
+ "killPackageProcesses": false
+}

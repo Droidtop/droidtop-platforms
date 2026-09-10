@@ -1,0 +1,8 @@
+{
+ "id": "wii-org-dolphin-ishiirukadark-dolphin-ishiiruka",
+ "systemId": "wii",
+ "label": "Dolphin Ishiiruka",
+ "pkg": "org.dolphin.ishiirukadark",
+ "argumentsTemplate": "-n org.dolphin.ishiirukadark/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
+ "killPackageProcesses": false
+}

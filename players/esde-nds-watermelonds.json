@@ -1,0 +1,8 @@
+{
+ "id": "esde-nds-watermelonds",
+ "systemId": "nds",
+ "label": "WatermelonDS (Standalone)",
+ "pkg": "me.magnum.melondualds",
+ "argumentsTemplate": "-n me.magnum.melondualds/me.magnum.melonds.ui.emulator.EmulatorActivity -a me.magnum.melonds.LAUNCH_ROM -e uri {file.uri}",
+ "killPackageProcesses": false
+}

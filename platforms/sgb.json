@@ -1,0 +1,13 @@
+{
+ "id": "sgb",
+ "name": "Nintendo Super Game Boy",
+ "extensions": [
+  "7z",
+  "gb",
+  "gbc",
+  "sgb",
+  "zip"
+ ],
+ "retroArchCore": "sameboy",
+ "theme": "sgb"
+}

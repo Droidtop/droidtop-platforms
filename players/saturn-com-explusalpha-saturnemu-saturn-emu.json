@@ -1,0 +1,8 @@
+{
+ "id": "saturn-com-explusalpha-saturnemu-saturn-emu",
+ "systemId": "saturn",
+ "label": "Saturn.EMU",
+ "pkg": "com.explusalpha.SaturnEmu",
+ "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
+ "killPackageProcesses": false
+}

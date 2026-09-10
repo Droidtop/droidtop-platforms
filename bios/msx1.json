@@ -1,0 +1,18 @@
+{
+ "systemId": "msx1",
+ "name": "MSX LaserDisc",
+ "files": [
+  {
+   "file": "bios/openmsx/px-7_pbasic.rom",
+   "md5": [
+    "281809cafe63437fc4bffb3033fbd0db"
+   ]
+  },
+  {
+   "file": "bios/openmsx/px-7_basic-bios1.rom",
+   "md5": [
+    "9218f6dd89f7ba01e3090d44721b4260"
+   ]
+  }
+ ]
+}

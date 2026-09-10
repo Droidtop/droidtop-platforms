@@ -1,0 +1,10 @@
+{
+ "id": "android",
+ "name": "Google Android",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "android"
+}

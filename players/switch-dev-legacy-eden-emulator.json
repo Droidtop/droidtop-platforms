@@ -1,0 +1,8 @@
+{
+ "id": "switch-dev-legacy-eden-emulator",
+ "systemId": "switch",
+ "label": "eden (Legacy/Optimized)",
+ "pkg": "dev.legacy.eden_emulator",
+ "argumentsTemplate": "-n dev.legacy.eden_emulator/org.yuzu.yuzu_emu.activities.EmulationActivity -a android.nfc.action.TECH_DISCOVERED -d {file.uri}",
+ "killPackageProcesses": false
+}

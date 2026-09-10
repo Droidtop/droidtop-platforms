@@ -1,0 +1,4 @@
+{
+ "version": 1,
+ "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet."
+}

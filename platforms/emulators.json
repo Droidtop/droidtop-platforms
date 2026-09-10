@@ -1,0 +1,11 @@
+{
+ "id": "emulators",
+ "name": "Emulators",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "emulators"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-n3ds-azahar",
+ "systemId": "n3ds",
+ "label": "Azahar (Standalone)",
+ "pkg": "org.azahar_emu.azahar",
+ "argumentsTemplate": "-n org.azahar_emu.azahar/org.citra.citra_emu.activities.EmulationActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

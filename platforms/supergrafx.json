@@ -1,0 +1,16 @@
+{
+ "id": "supergrafx",
+ "name": "NEC SuperGrafx",
+ "extensions": [
+  "7z",
+  "ccd",
+  "chd",
+  "cue",
+  "pce",
+  "rom",
+  "sgx",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_supergrafx",
+ "theme": "supergrafx"
+}

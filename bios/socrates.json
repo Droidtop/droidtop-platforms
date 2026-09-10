@@ -1,0 +1,16 @@
+{
+ "systemId": "socrates",
+ "name": "VTech Socrates",
+ "files": [
+  {
+   "file": "bios/socrates.zip",
+   "md5": [
+    "0efac0c2cc168c0d495e1c4e04ea9f5a",
+    "99af124aa300ecd44f5dc9d5a2599778",
+    "7046c2b27f51c9a5d33b4d6103f29acf",
+    "6878302c362321eeee7e40d285cf7d30",
+    "31c29c57e3d3e6788ba5817eaaa8b17a"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "windows-com-cmodded-winlator-winlator-cmod-proot",
+ "systemId": "windows",
+ "label": "Winlator CMod Proot",
+ "pkg": "com.cmodded.winlator",
+ "argumentsTemplate": "-n com.cmodded.winlator/com.winlator.XServerDisplayActivity -e shortcut_path {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": true
+}

@@ -1,0 +1,19 @@
+{
+ "id": "gb",
+ "name": "Nintendo Game Boy",
+ "extensions": [
+  "7z",
+  "bs",
+  "cgb",
+  "dmg",
+  "gb",
+  "gbc",
+  "gbx",
+  "sfc",
+  "sgb",
+  "smc",
+  "zip"
+ ],
+ "retroArchCore": "gambatte",
+ "theme": "gb"
+}

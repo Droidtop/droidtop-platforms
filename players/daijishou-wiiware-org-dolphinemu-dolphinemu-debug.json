@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-wiiware-org-dolphinemu-dolphinemu-debug",
+ "systemId": "wiiware",
+ "label": "wiiware - Dolphin (Debug)",
+ "pkg": "org.dolphinemu.dolphinemu.debug",
+ "argumentsTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

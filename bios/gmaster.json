@@ -1,0 +1,12 @@
+{
+ "systemId": "gmaster",
+ "name": "Hartung Game Master",
+ "files": [
+  {
+   "file": "bios/gmaster.zip",
+   "md5": [
+    "6bff08b5e5f96de405cd56d5f04a08f8"
+   ]
+  }
+ ]
+}

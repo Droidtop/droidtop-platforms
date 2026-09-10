@@ -1,0 +1,27 @@
+{
+ "id": "renpy",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "renpy"
+    },
+    {
+     "type": "dirExists",
+     "path": "game"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "renpy",
+  "context": "standard"
+ },
+ "notes": "Ren'Py ships py/sh/exe launchers together; Linux path preferred over Wine when both exist. Compiled-only distributions without the renpy/ runtime dir are caught by the renpy-fallback row further down."
+}

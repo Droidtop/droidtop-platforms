@@ -1,0 +1,25 @@
+{
+ "systemId": "pc80",
+ "name": "NEC PC-8001",
+ "files": [
+  {
+   "file": "bios/pc8001.zip",
+   "md5": [
+    "f374db2869f7f44356ede51e94b4c5b6",
+    "f1f6109541a89b626d4faf3f92ce5d75",
+    "36a73378118eb9a610d50a8b5098c404",
+    "cd428f9ee8ff9f84c60beb7a8a0ef628"
+   ]
+  },
+  {
+   "file": "bios/pc8001mk2sr.zip",
+   "md5": [
+    "f0f4a4c18bc76134e1fa85ddb91d04ed",
+    "aced63c7fece13a1b075ea2cde93929b",
+    "a1ff399365f5e3aa0607b6f34e313a51",
+    "018073063b1ae83a2e8a3ca127df78e5",
+    "d81c6d5d7ad1a4bbbd6ae22a01257603"
+   ]
+  }
+ ]
+}

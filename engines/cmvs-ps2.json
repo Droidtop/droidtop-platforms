@@ -1,0 +1,21 @@
+{
+ "id": "cmvs-ps2",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ps2"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "cmvs",
+  "context": "ps2"
+ }
+}

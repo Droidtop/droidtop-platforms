@@ -1,0 +1,17 @@
+{
+ "id": "n64dd",
+ "name": "Nintendo 64DD",
+ "extensions": [
+  "7z",
+  "bin",
+  "d64",
+  "n64",
+  "ndd",
+  "u1",
+  "v64",
+  "z64",
+  "zip"
+ ],
+ "retroArchCore": "parallel_n64",
+ "theme": "n64dd"
+}

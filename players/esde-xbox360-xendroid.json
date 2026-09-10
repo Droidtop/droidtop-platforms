@@ -1,0 +1,8 @@
+{
+ "id": "esde-xbox360-xendroid",
+ "systemId": "xbox360",
+ "label": "XenDroid (Standalone)",
+ "pkg": "xendroid.compose",
+ "argumentsTemplate": "-n xendroid.compose/xendroid.compose.EmulatorHostActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

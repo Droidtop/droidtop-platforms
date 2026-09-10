@@ -1,0 +1,8 @@
+{
+ "id": "esde-xbox-x1-box",
+ "systemId": "xbox",
+ "label": "X1 BOX (Standalone)",
+ "pkg": "com.izzy2lost.x1box",
+ "argumentsTemplate": "-n com.izzy2lost.x1box/com.izzy2lost.x1box.LauncherActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

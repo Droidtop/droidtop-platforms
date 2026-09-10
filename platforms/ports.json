@@ -1,0 +1,15 @@
+{
+ "id": "ports",
+ "name": "Ports",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "exe",
+  "game",
+  "phd",
+  "psx",
+  "sh"
+ ],
+ "retroArchCore": "ecwolf",
+ "theme": "ports"
+}

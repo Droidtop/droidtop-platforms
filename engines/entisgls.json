@@ -1,0 +1,26 @@
+{
+ "id": "entisgls",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "noa"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "eri"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "EntisGLS / ERISA: .noa archives and .eri/.mio media all carry the 'Entis\\x1a' magic and are Entis-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+}

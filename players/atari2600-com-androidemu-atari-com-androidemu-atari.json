@@ -1,0 +1,8 @@
+{
+ "id": "atari2600-com-androidemu-atari-com-androidemu-atari",
+ "systemId": "atari2600",
+ "label": "com.androidemu.atari",
+ "pkg": "com.androidemu.atari",
+ "argumentsTemplate": "-n com.androidemu.atari/.EmulatorActivity -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

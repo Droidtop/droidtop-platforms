@@ -1,0 +1,13 @@
+{
+ "id": "pcarcade",
+ "name": "PC Arcade Systems",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "exe",
+  "lindbergh",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "pcarcade"
+}

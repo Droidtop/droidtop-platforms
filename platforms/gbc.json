@@ -1,0 +1,19 @@
+{
+ "id": "gbc",
+ "name": "Nintendo Game Boy Color",
+ "extensions": [
+  "7z",
+  "bs",
+  "cgb",
+  "dmg",
+  "gb",
+  "gbc",
+  "gbx",
+  "sfc",
+  "sgb",
+  "smc",
+  "zip"
+ ],
+ "retroArchCore": "gambatte",
+ "theme": "gbc"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-atarilynx-lynx-emu",
+ "systemId": "atarilynx",
+ "label": "Lynx.emu (Standalone)",
+ "pkg": "com.explusalpha.LynxEmu",
+ "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

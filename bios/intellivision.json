@@ -1,0 +1,18 @@
+{
+ "systemId": "intellivision",
+ "name": "Mattel Intellivision",
+ "files": [
+  {
+   "file": "bios/exec.bin",
+   "md5": [
+    "62e761035cb657903761800f4437b8af"
+   ]
+  },
+  {
+   "file": "bios/grom.bin",
+   "md5": [
+    "0cd5946c6473e42e8e4c2137785e427f"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "id": "windows",
+ "name": "Microsoft Windows",
+ "extensions": [
+  "appimage",
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "windows"
+}

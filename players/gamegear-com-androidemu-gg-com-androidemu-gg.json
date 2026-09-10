@@ -1,0 +1,8 @@
+{
+ "id": "gamegear-com-androidemu-gg-com-androidemu-gg",
+ "systemId": "gamegear",
+ "label": "com.androidemu.gg",
+ "pkg": "com.androidemu.gg",
+ "argumentsTemplate": "-n com.androidemu.gg/.EmulatorActivity -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

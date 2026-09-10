@@ -1,0 +1,8 @@
+{
+ "id": "esde-virtualboy-virtual-virtual-boy",
+ "systemId": "virtualboy",
+ "label": "Virtual Virtual Boy (Standalone)",
+ "pkg": "com.simongellis.vvb",
+ "argumentsTemplate": "-n com.simongellis.vvb/com.simongellis.vvb.MainActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

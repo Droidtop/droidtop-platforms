@@ -1,0 +1,16 @@
+{
+ "systemId": "cdi",
+ "name": "Phillips CD-i",
+ "files": [
+  {
+   "file": "bios/cdimono1.zip",
+   "md5": [
+    "2969341396aa61e0143dc2351aaa6ef6",
+    "ac80a92c988ce07fbd6a8f21ded34cf1",
+    "ac0d468be366779c9df633be98da250a",
+    "3e59b8a9a423d3ecd612a32fe4e2d748",
+    "3d20cf7550f1b723158b42a1fd5bac62"
+   ]
+  }
+ ]
+}

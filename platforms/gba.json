@@ -1,0 +1,19 @@
+{
+ "id": "gba",
+ "name": "Nintendo Game Boy Advance",
+ "extensions": [
+  "7z",
+  "agb",
+  "bin",
+  "cgb",
+  "dmg",
+  "gb",
+  "gba",
+  "gbc",
+  "gbx",
+  "sgb",
+  "zip"
+ ],
+ "retroArchCore": "mgba",
+ "theme": "gba"
+}

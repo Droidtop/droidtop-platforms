@@ -1,0 +1,8 @@
+{
+ "id": "esde-windows-gamehub-lite-2",
+ "systemId": "windows",
+ "label": "GameHub Lite Local (Standalone)",
+ "pkg": "emuready.gamehub.lite",
+ "argumentsTemplate": "-n emuready.gamehub.lite/com.xj.landscape.launcher.ui.gamedetail.GameDetailActivity -a gamehub.lite.LAUNCH_GAME --ez autoStartGame true -e localGameId {file.inject:{file.path}}",
+ "killPackageProcesses": false
+}

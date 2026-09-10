@@ -1,0 +1,28 @@
+{
+ "id": "ags",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "acsetup.cfg"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ags"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet."
+}

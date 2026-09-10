@@ -1,0 +1,8 @@
+{
+ "id": "esde-gbc-skyemu",
+ "systemId": "gbc",
+ "label": "SkyEmu (Standalone)",
+ "pkg": "com.sky.SkyEmu",
+ "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

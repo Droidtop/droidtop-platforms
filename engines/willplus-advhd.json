@@ -1,0 +1,28 @@
+{
+ "id": "willplus-advhd",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "rio.arc"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ws2"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "WillPlus/AdvHD: Rio.arc is the engine's game archive and .ws2 its compiled scripts (https://github.com/DarthFly/advhd_ws2_tools, https://github.com/arcusmaximus/VNTranslationTools). GARbro's 'Will' rows cover the same .arc/.wip/.pna family (https://morkt.github.io/GARbro/supported.html)."
+}

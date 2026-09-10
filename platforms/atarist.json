@@ -1,0 +1,16 @@
+{
+ "id": "atarist",
+ "name": "Atari ST",
+ "extensions": [
+  "7z",
+  "dim",
+  "ipf",
+  "m3u",
+  "msa",
+  "st",
+  "stx",
+  "zip"
+ ],
+ "retroArchCore": "hatari",
+ "theme": "atarist"
+}

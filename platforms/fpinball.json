@@ -1,0 +1,9 @@
+{
+ "id": "fpinball",
+ "name": "Future Pinball",
+ "extensions": [
+  "fpt"
+ ],
+ "retroArchCore": null,
+ "theme": "fpinball"
+}

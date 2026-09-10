@@ -1,0 +1,8 @@
+{
+ "id": "easyrpg-org-easyrpg-player",
+ "systemId": "rpgmaker-2000-2003",
+ "label": "EasyRPG Player",
+ "pkg": "org.easyrpg.player",
+ "argumentsTemplate": "-n org.easyrpg.player/.player.EasyRpgPlayerActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

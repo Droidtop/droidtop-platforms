@@ -1,0 +1,11 @@
+{
+ "id": "lcdgames",
+ "name": "LCD Handheld Games",
+ "extensions": [
+  "7z",
+  "mgw",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "lcdgames"
+}

@@ -1,0 +1,32 @@
+{
+ "id": "alicesoft-system4",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "system40.ini"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ain"
+    },
+    {
+     "type": "anyFileExtension",
+     "value": "afa"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "AliceSoft System 4.x: System40.ini is the runtime's ini, next to the <game>.ain bytecode (https://github.com/nunuhara/xsystem4); .afa (AFAH) is the System4-era AliceSoft archive (https://morkt.github.io/GARbro/supported.html). Ordered before the System 3.x row: System 3.9's .ain is the fixed name System39.ain and ships with .ald, never .afa."
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-wsc-com-explusalpha-swanemu",
+ "systemId": "wsc",
+ "label": "wsc - com.explusalpha.SwanEmu",
+ "pkg": "com.explusalpha.SwanEmu",
+ "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

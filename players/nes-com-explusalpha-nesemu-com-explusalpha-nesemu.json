@@ -1,0 +1,8 @@
+{
+ "id": "nes-com-explusalpha-nesemu-com-explusalpha-nesemu",
+ "systemId": "nes",
+ "label": "com.explusalpha.NesEmu",
+ "pkg": "com.explusalpha.NesEmu",
+ "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "killPackageProcesses": false
+}

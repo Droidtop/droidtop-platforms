@@ -1,0 +1,15 @@
+{
+ "id": "multivision",
+ "name": "Othello Multivision",
+ "extensions": [
+  "7z",
+  "bin",
+  "gg",
+  "rom",
+  "sg",
+  "sms",
+  "zip"
+ ],
+ "retroArchCore": "gearsystem",
+ "theme": "multivision"
+}

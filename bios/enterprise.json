@@ -1,0 +1,96 @@
+{
+ "systemId": "enterprise",
+ "name": "Enterprise",
+ "files": [
+  {
+   "file": "bios/ep128emu/roms/exos21.rom",
+   "md5": [
+    "f36f24cbb87745fbd2714e4df881db09"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/basic21.rom",
+   "md5": [
+    "e972fe42b398c9ff1d93ff014786aec6"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/exdos13.rom",
+   "md5": [
+    "ddff70c014d1958dc75378b6c9aab6f8"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/epfileio.rom",
+   "md5": [
+    "a68ebcbc73a4d2178d755b7755bf18fe"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/exos20.rom",
+   "md5": [
+    "5ad3baaad3b5156d6b60b34229a676fb"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/basic20.rom",
+   "md5": [
+    "8e18edce4a7acb2c33cc0ab18f988482"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/exos24uk.rom",
+   "md5": [
+    "55af78f877a21ca45eb2df68a74fcc60"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/hun.rom",
+   "md5": [
+    "22167938f142c222f40992839aa21a06"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/epd19hft.rom",
+   "md5": [
+    "12cfc9c7e48c8a16c2e09edbd926d467"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/zt19hfnt.rom",
+   "md5": [
+    "653daaf7b9b29c2c4e577f489580f247"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/brd.rom",
+   "md5": [
+    "6af0402906944fd134004b85097c8524"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/zt19uk.rom",
+   "md5": [
+    "228540b6be83ae2acd7569c8ff0f91d0"
+   ]
+  },
+  {
+   "file": "bios/ep64.zip",
+   "md5": [
+    "5ad3baaad3b5156d6b60b34229a676fb"
+   ]
+  },
+  {
+   "file": "bios/ep128.zip",
+   "md5": [
+    "f36f24cbb87745fbd2714e4df881db09"
+   ]
+  },
+  {
+   "file": "bios/ep64_exdos.zip",
+   "md5": [
+    "47258d03aec37bc24df5dbc5d50fc9f8"
+   ]
+  }
+ ]
+}

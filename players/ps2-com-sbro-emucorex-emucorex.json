@@ -1,0 +1,8 @@
+{
+ "id": "ps2-com-sbro-emucorex-emucorex",
+ "systemId": "ps2",
+ "label": "EmuCoreX",
+ "pkg": "com.sbro.emucorex",
+ "argumentsTemplate": "-n com.sbro.emucorex/.MainActivity -a com.sbro.emucorex.action.LAUNCH_GAME --es com.sbro.emucorex.extra.GAME_PATH {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

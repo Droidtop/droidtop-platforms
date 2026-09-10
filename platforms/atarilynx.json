@@ -1,0 +1,13 @@
+{
+ "id": "atarilynx",
+ "name": "Atari Lynx",
+ "extensions": [
+  "7z",
+  "lnx",
+  "lyx",
+  "o",
+  "zip"
+ ],
+ "retroArchCore": "handy",
+ "theme": "atarilynx"
+}

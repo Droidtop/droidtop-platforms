@@ -1,0 +1,14 @@
+{
+ "id": "naomigd",
+ "name": "Sega NAOMI GD-ROM",
+ "extensions": [
+  "7z",
+  "bin",
+  "dat",
+  "elf",
+  "lst",
+  "zip"
+ ],
+ "retroArchCore": "flycast",
+ "theme": "naomigd"
+}

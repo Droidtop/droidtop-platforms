@@ -1,0 +1,38 @@
+{
+ "id": "rpgmaker-2000-2003",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "RPG_RT.ldb"
+    },
+    {
+     "type": "fileExists",
+     "path": "RPG_RT.exe"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "RPG_RT.ldb"
+    },
+    {
+     "type": "fileExists",
+     "path": "RPG_RT.lmt"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "rpgmaker",
+  "context": null
+ },
+ "notes": "The .ldb database plus either the runtime exe or the .lmt map tree - the corroborated pairing enginehost verified. A stray RPG_RT.exe without its database, or a lone .ldb with neither companion, is not a launchable game and no longer detects. Context null on purpose: this proves the 2000/2003 FAMILY but not which generation; launch opens enginehost's CONFIGURE screen prefilled. The easyrpg PLAYER entries in players-database.json remain the alternate path (engines are systems)."
+}

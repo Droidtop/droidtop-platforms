@@ -1,0 +1,8 @@
+{
+ "id": "esde-gba-noods",
+ "systemId": "gba",
+ "label": "NooDS (Standalone)",
+ "pkg": "com.hydra.noods",
+ "argumentsTemplate": "-n com.hydra.noods/com.hydra.noods.FileBrowser --activity-clear-task --activity-clear-top -e LaunchPath {file.path}",
+ "killPackageProcesses": false
+}

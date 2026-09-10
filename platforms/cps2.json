@@ -1,0 +1,10 @@
+{
+ "id": "cps2",
+ "name": "Capcom Play System II",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "cps2"
+}

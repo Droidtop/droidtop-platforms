@@ -1,0 +1,22 @@
+{
+ "systemId": "trs80",
+ "name": "TRS-80",
+ "files": [
+  {
+   "file": "bios/trs80.zip",
+   "md5": []
+  },
+  {
+   "file": "bios/trs80m3.zip",
+   "md5": []
+  },
+  {
+   "file": "bios/trs80m4.zip",
+   "md5": []
+  },
+  {
+   "file": "bios/trs80m4p.zip",
+   "md5": []
+  }
+ ]
+}

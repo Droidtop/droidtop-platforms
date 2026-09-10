@@ -1,0 +1,8 @@
+{
+ "id": "esde-ps3-emucorec",
+ "systemId": "ps3",
+ "label": "EmuCoreC (Standalone)",
+ "pkg": "com.sbro.emucorec",
+ "argumentsTemplate": "-n com.sbro.emucorec/com.sbro.emucorec.core.ps3.Emulator -e gamePath {file.path}",
+ "killPackageProcesses": false
+}

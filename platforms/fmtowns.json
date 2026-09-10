@@ -1,0 +1,13 @@
+{
+ "id": "fmtowns",
+ "name": "Fujitsu FM Towns",
+ "extensions": [
+  "cdr",
+  "chd",
+  "cue",
+  "gdi",
+  "iso"
+ ],
+ "retroArchCore": "mame",
+ "theme": "fmtowns"
+}

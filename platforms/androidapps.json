@@ -1,0 +1,10 @@
+{
+ "id": "androidapps",
+ "name": "Android Apps",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "androidapps"
+}

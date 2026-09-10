@@ -1,0 +1,19 @@
+{
+ "id": "dreamcast",
+ "name": "Sega Dreamcast",
+ "extensions": [
+  "7z",
+  "cdi",
+  "chd",
+  "cue",
+  "dat",
+  "elf",
+  "gdi",
+  "iso",
+  "lst",
+  "m3u",
+  "zip"
+ ],
+ "retroArchCore": "flycast",
+ "theme": "dreamcast"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "fba",
+ "name": "FinalBurn Alpha",
+ "extensions": [
+  "7z",
+  "iso",
+  "zip"
+ ],
+ "retroArchCore": "fbalpha2012",
+ "theme": "fba"
+}

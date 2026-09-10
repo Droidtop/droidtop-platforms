@@ -1,0 +1,18 @@
+{
+ "systemId": "scummvm",
+ "name": "ScummVM",
+ "files": [
+  {
+   "file": "bios/scummvm/extra/MT32_PCM.ROM",
+   "md5": [
+    "89e42e386e82e0cacb4a2704a03706ca"
+   ]
+  },
+  {
+   "file": "bios/scummvm/extra/MT32_CONTROL.ROM",
+   "md5": [
+    "5626206284b22c2734f3e9efefcd2675"
+   ]
+  }
+ ]
+}

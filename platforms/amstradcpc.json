@@ -1,0 +1,19 @@
+{
+ "id": "amstradcpc",
+ "name": "Amstrad CPC",
+ "extensions": [
+  "7z",
+  "cdt",
+  "cpr",
+  "dsk",
+  "kcr",
+  "m3u",
+  "sna",
+  "tap",
+  "tar",
+  "voc",
+  "zip"
+ ],
+ "retroArchCore": "cap32",
+ "theme": "amstradcpc"
+}

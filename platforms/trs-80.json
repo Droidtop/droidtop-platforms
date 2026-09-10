@@ -1,0 +1,10 @@
+{
+ "id": "trs-80",
+ "name": "Tandy TRS-80",
+ "extensions": [
+  "cmd",
+  "dsk"
+ ],
+ "retroArchCore": null,
+ "theme": "trs-80"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-wiiware-org-dolphinemu-dolphinemu",
+ "systemId": "wiiware",
+ "label": "wiiware - Dolphin (Official)",
+ "pkg": "org.dolphinemu.dolphinemu",
+ "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+ "killPackageProcesses": false
+}

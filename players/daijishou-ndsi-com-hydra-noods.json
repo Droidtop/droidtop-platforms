@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ndsi-com-hydra-noods",
+ "systemId": "ndsi",
+ "label": "ndsi - NooDS",
+ "pkg": "com.hydra.noods",
+ "argumentsTemplate": "-n com.hydra.noods/.FileBrowser -e LaunchPath {file.path}",
+ "killPackageProcesses": false
+}

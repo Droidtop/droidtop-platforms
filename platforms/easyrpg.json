@@ -1,0 +1,10 @@
+{
+ "id": "easyrpg",
+ "name": "EasyRPG Game Engine",
+ "extensions": [
+  "easyrpg",
+  "zip"
+ ],
+ "retroArchCore": "easyrpg",
+ "theme": "easyrpg"
+}

@@ -1,0 +1,12 @@
+{
+ "systemId": "atomiswave",
+ "name": "Atomiswave",
+ "files": [
+  {
+   "file": "bios/dc/awbios.zip",
+   "md5": [
+    "85254fbe320ca82a768ec2c26bb08def"
+   ]
+  }
+ ]
+}

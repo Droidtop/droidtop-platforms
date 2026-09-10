@@ -1,0 +1,12 @@
+{
+ "id": "crvision",
+ "name": "VTech CreatiVision",
+ "extensions": [
+  "7z",
+  "bin",
+  "rom",
+  "zip"
+ ],
+ "retroArchCore": "jollycv",
+ "theme": "crvision"
+}

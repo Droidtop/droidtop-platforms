@@ -1,0 +1,20 @@
+{
+ "id": "tg16",
+ "name": "NEC TurboGrafx-16",
+ "extensions": [
+  "7z",
+  "ccd",
+  "chd",
+  "cue",
+  "img",
+  "iso",
+  "m3u",
+  "pce",
+  "rom",
+  "sgx",
+  "toc",
+  "zip"
+ ],
+ "retroArchCore": "mednafen_pce",
+ "theme": "tg16"
+}

@@ -1,0 +1,17 @@
+{
+ "id": "consolearcade",
+ "name": "Console Arcade Systems",
+ "extensions": [
+  "7z",
+  "acgame",
+  "arcadedef",
+  "desktop",
+  "iso",
+  "ps3",
+  "sh",
+  "xbe",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "consolearcade"
+}

@@ -1,0 +1,18 @@
+{
+ "id": "favorite",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "hzc"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "FAVORITE's proprietary engine: .hzc media (magic hzc1) are Favorite-only in GARbro's table (https://morkt.github.io/GARbro/supported.html). Its .bin archives have no magic and are far too generic to key on."
+}

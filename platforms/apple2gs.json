@@ -1,0 +1,11 @@
+{
+ "id": "apple2gs",
+ "name": "Apple IIGS",
+ "extensions": [
+  "2mg",
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "apple2gs"
+}

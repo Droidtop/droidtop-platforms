@@ -1,0 +1,8 @@
+{
+ "id": "esde-saturnjp-saturn-emu",
+ "systemId": "saturnjp",
+ "label": "Saturn.emu (Standalone)",
+ "pkg": "com.explusalpha.SaturnEmu",
+ "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

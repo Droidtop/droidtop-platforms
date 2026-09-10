@@ -1,0 +1,11 @@
+{
+ "id": "vircon32",
+ "name": "Vircon32 Virtual Console",
+ "extensions": [
+  "7z",
+  "v32",
+  "zip"
+ ],
+ "retroArchCore": "vircon32",
+ "theme": "vircon32"
+}

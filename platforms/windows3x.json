@@ -1,0 +1,15 @@
+{
+ "id": "windows3x",
+ "name": "Microsoft Windows 3.x",
+ "extensions": [
+  "7z",
+  "appimage",
+  "bat",
+  "desktop",
+  "dosz",
+  "sh",
+  "zip"
+ ],
+ "retroArchCore": "dosbox_pure",
+ "theme": "windows3x"
+}

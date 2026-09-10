@@ -1,0 +1,11 @@
+{
+ "id": "pokemini",
+ "name": "Nintendo Pokémon Mini",
+ "extensions": [
+  "7z",
+  "min",
+  "zip"
+ ],
+ "retroArchCore": "pokemini",
+ "theme": "pokemini"
+}

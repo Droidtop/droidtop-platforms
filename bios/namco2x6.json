@@ -1,0 +1,18 @@
+{
+ "systemId": "namco2x6",
+ "name": "Namco2x6",
+ "files": [
+  {
+   "file": "bios/namco2x6/r27v1602f.7d",
+   "md5": [
+    "52cca0058626569c7a9699838baab2d8"
+   ]
+  },
+  {
+   "file": "bios/namco2x6/r27v1602f.8g",
+   "md5": [
+    "a58676c6bd79229bda967d07b4ec2e16"
+   ]
+  }
+ ]
+}

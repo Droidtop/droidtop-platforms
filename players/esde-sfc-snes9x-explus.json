@@ -1,0 +1,8 @@
+{
+ "id": "esde-sfc-snes9x-explus",
+ "systemId": "sfc",
+ "label": "Snes9x EX+ (Standalone)",
+ "pkg": "com.explusalpha.Snes9xPlus",
+ "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

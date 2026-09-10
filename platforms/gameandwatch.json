@@ -1,0 +1,11 @@
+{
+ "id": "gameandwatch",
+ "name": "Nintendo Game and Watch",
+ "extensions": [
+  "7z",
+  "mgw",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "gameandwatch"
+}

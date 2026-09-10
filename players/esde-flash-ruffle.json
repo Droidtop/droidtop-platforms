@@ -1,0 +1,8 @@
+{
+ "id": "esde-flash-ruffle",
+ "systemId": "flash",
+ "label": "Ruffle (Standalone)",
+ "pkg": "rs.ruffle",
+ "argumentsTemplate": "-n rs.ruffle/rs.ruffle.PlayerActivity -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

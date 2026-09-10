@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-jaguar-ru-vastness-altmer-iratajaguar",
+ "systemId": "jaguar",
+ "label": "jaguar - IrataJaguar",
+ "pkg": "ru.vastness.altmer.iratajaguar",
+ "argumentsTemplate": "-n ru.vastness.altmer.iratajaguar/ru.vastness.altmer.iratajaguar.MainActivity -e rom {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

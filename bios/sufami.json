@@ -1,0 +1,12 @@
+{
+ "systemId": "sufami",
+ "name": "Sufami",
+ "files": [
+  {
+   "file": "bios/STBIOS.bin",
+   "md5": [
+    "d3a44ba7d42a74d3ac58cb9c14c6a5ca"
+   ]
+  }
+ ]
+}

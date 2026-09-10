@@ -1,0 +1,12 @@
+{
+ "systemId": "dreamcast",
+ "name": "Dreamcast",
+ "files": [
+  {
+   "file": "bios/dc/dc_boot.bin",
+   "md5": [
+    "e10c53c2f8b90bab96ead2d368858623"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-j2me-j2me-loader",
+ "systemId": "j2me",
+ "label": "J2ME Loader (Standalone)",
+ "pkg": "ru.playsoftware.j2meloader",
+ "argumentsTemplate": "-n ru.playsoftware.j2meloader/ru.playsoftware.j2meloader.MainActivity --activity-clear-task --activity-clear-top -d {file.uri}",
+ "killPackageProcesses": false
+}

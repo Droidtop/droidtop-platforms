@@ -1,0 +1,16 @@
+{
+ "id": "moto",
+ "name": "Thomson MO/TO Series",
+ "extensions": [
+  "7z",
+  "fd",
+  "k7",
+  "m5",
+  "m7",
+  "rom",
+  "sap",
+  "zip"
+ ],
+ "retroArchCore": "theodore",
+ "theme": "moto"
+}

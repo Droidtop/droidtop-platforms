@@ -1,0 +1,42 @@
+{
+ "systemId": "nds",
+ "name": "Nintendo DS",
+ "files": [
+  {
+   "file": "bios/firmware.bin",
+   "md5": []
+  },
+  {
+   "file": "bios/bios7.bin",
+   "md5": [
+    "df692a80a5b1bc90728bc3dfc76cd948"
+   ]
+  },
+  {
+   "file": "bios/bios9.bin",
+   "md5": [
+    "a392174eb3e572fed6447e956bde4b25"
+   ]
+  },
+  {
+   "file": "bios/dsi_bios7.bin",
+   "md5": [
+    "559dae4ea78eb9d67702c56c1d791e81"
+   ]
+  },
+  {
+   "file": "bios/dsi_bios9.bin",
+   "md5": [
+    "87b665fce118f76251271c3732532777"
+   ]
+  },
+  {
+   "file": "bios/dsi_firmware.bin",
+   "md5": []
+  },
+  {
+   "file": "bios/dsi_nand.bin",
+   "md5": []
+  }
+ ]
+}

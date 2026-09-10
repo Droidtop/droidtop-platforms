@@ -1,0 +1,11 @@
+{
+ "id": "megaduck",
+ "name": "Creatronic Mega Duck",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "sameduck",
+ "theme": "megaduck"
+}

@@ -1,0 +1,10 @@
+{
+ "id": "scummvm",
+ "name": "ScummVM Game Engine",
+ "extensions": [
+  "scummvm",
+  "svm"
+ ],
+ "retroArchCore": "scummvm",
+ "theme": "scummvm"
+}

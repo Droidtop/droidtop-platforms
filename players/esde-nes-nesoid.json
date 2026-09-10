@@ -1,0 +1,8 @@
+{
+ "id": "esde-nes-nesoid",
+ "systemId": "nes",
+ "label": "Nesoid (Standalone)",
+ "pkg": "com.androidemu.nes",
+ "argumentsTemplate": "-n com.androidemu.nes/com.androidemu.nes.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
+ "killPackageProcesses": false
+}

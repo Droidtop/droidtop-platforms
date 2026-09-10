@@ -1,0 +1,38 @@
+{
+ "id": "alicesoft-system3",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "system39.ain"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "xsystem35.gr"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "ald"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "AliceSoft System 3.x-3.9: the runtime reads the game's *.ALD files from the game directory, or a game-resource file xsystem35.gr (https://github.com/kichikuou/xsystem35-sdl2/blob/master/doc/xsystem35.6.adoc); System39.ain is System 3.9's bytecode file (https://github.com/kichikuou/xsys35c). .ald is AliceSoft-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+}

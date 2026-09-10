@@ -1,0 +1,14 @@
+{
+ "systemId": "loopy",
+ "name": "Casio Loopy",
+ "files": [
+  {
+   "file": "bios/casloopy.zip",
+   "md5": [
+    "0e1d8dc0110ecf8201c0cef11ef4a858",
+    "d527e3ed1bf9bd0661154c202a65c5bd",
+    "c0f1c899c9ca098663d046d60779711d"
+   ]
+  }
+ ]
+}

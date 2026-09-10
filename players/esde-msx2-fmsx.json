@@ -1,0 +1,8 @@
+{
+ "id": "esde-msx2-fmsx",
+ "systemId": "msx2",
+ "label": "fMSX (Standalone)",
+ "pkg": "com.fms.fmsx.deluxe",
+ "argumentsTemplate": "-n com.fms.fmsx.deluxe/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
+ "killPackageProcesses": false
+}

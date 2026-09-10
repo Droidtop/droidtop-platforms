@@ -1,0 +1,35 @@
+{
+ "systemId": "camplynx",
+ "name": "Camputers Lynx",
+ "files": [
+  {
+   "file": "bios/lynx48k.zip",
+   "md5": [
+    "b0ad5bf3070aea27b637e1998c81fa8c",
+    "b665e10211bbdbfaf2defb32d5580892",
+    "bc0760d8bf61c9683270266d259cd2ae",
+    "dde90a794e5324002a9fd7f79cec3172"
+   ]
+  },
+  {
+   "file": "bios/lynx96k.zip",
+   "md5": [
+    "a0a8f136f69b5891d33993627a185697",
+    "fcb706b3ba2ba61f6f7af1c28f420f94",
+    "815afa653b61cbe70936b01aff700912",
+    "3ccdb9dfe6018892383fcbb1a9167d76",
+    "01a9770efdab17f089bbbbe53f5d69fa",
+    "89ba52f683cd79638646874e965476b6"
+   ]
+  },
+  {
+   "file": "bios/lynx128k.zip",
+   "md5": [
+    "fcb706b3ba2ba61f6f7af1c28f420f94",
+    "5017fe3a2ea47038ae61e2aeb4f43d65",
+    "bf69d9538192f65571dbed43dc4a99bb",
+    "f9f54913cdedb22bb8f0c549ad121379"
+   ]
+  }
+ ]
+}

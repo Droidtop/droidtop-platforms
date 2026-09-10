@@ -1,0 +1,11 @@
+{
+ "id": "gmaster",
+ "name": "Hartung Game Master",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "gmaster"
+}

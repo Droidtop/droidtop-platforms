@@ -1,0 +1,10 @@
+{
+ "id": "xboxone",
+ "name": "Microsoft Xbox One",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "xboxone"
+}

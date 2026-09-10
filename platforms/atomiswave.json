@@ -1,0 +1,14 @@
+{
+ "id": "atomiswave",
+ "name": "Sammy Corporation Atomiswave",
+ "extensions": [
+  "7z",
+  "bin",
+  "dat",
+  "elf",
+  "lst",
+  "zip"
+ ],
+ "retroArchCore": "flycast",
+ "theme": "atomiswave"
+}

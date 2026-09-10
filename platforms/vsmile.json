@@ -1,0 +1,11 @@
+{
+ "id": "vsmile",
+ "name": "VTech V.Smile",
+ "extensions": [
+  "7z",
+  "bin",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "vsmile"
+}

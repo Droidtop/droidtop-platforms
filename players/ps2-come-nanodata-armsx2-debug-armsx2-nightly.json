@@ -1,0 +1,8 @@
+{
+ "id": "ps2-come-nanodata-armsx2-debug-armsx2-nightly",
+ "systemId": "ps2",
+ "label": "ARMSX2 (Nightly)",
+ "pkg": "come.nanodata.armsx2.debug",
+ "argumentsTemplate": "-n come.nanodata.armsx2.debug/kr.co.iefriends.pcsx2.activities.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": true
+}

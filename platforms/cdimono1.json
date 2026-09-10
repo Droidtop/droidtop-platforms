@@ -1,0 +1,11 @@
+{
+ "id": "cdimono1",
+ "name": "Philips CD-i",
+ "extensions": [
+  "chd",
+  "cue",
+  "iso"
+ ],
+ "retroArchCore": "same_cdi",
+ "theme": "cdimono1"
+}

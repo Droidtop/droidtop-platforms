@@ -1,0 +1,18 @@
+{
+ "systemId": "videopacplus",
+ "name": "Videopac+ G7400",
+ "files": [
+  {
+   "file": "bios/g7400.bin",
+   "md5": [
+    "c500ff71236068e0dc0d0603d265ae76"
+   ]
+  },
+  {
+   "file": "bios/jopac.bin",
+   "md5": [
+    "279008e4a0db2dc5f1c048853b033828"
+   ]
+  }
+ ]
+}

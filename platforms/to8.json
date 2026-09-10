@@ -1,0 +1,16 @@
+{
+ "id": "to8",
+ "name": "Thomson TO8",
+ "extensions": [
+  "7z",
+  "fd",
+  "k7",
+  "m5",
+  "m7",
+  "rom",
+  "sap",
+  "zip"
+ ],
+ "retroArchCore": "theodore",
+ "theme": "to8"
+}

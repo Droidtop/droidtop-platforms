@@ -1,0 +1,11 @@
+{
+ "id": "neogeo",
+ "name": "SNK Neo Geo",
+ "extensions": [
+  "7z",
+  "neo",
+  "zip"
+ ],
+ "retroArchCore": "fbneo",
+ "theme": "neogeo"
+}

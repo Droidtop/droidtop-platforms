@@ -1,0 +1,26 @@
+{
+ "id": "siglus",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "scene.pck"
+     ]
+    },
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "gameexe.dat"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "SiglusEngine: Scene.pck (the scenario pack, which must carry exactly that name) beside Gameexe.dat (https://github.com/xmoezzz/SiglusExtract). Both required, so this cannot collide with the RealLive row's Gameexe.ini/SEEN.TXT."
+}

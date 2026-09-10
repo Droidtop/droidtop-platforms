@@ -1,0 +1,10 @@
+{
+ "id": "tic80",
+ "name": "TIC-80 Fantasy Computer",
+ "extensions": [
+  "png",
+  "tic"
+ ],
+ "retroArchCore": "tic80",
+ "theme": "tic80"
+}

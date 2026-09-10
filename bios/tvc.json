@@ -1,0 +1,41 @@
+{
+ "systemId": "tvc",
+ "name": "Videoton TVC",
+ "files": [
+  {
+   "file": "bios/ep128emu/roms/tvc22_sys.rom",
+   "md5": [
+    "8c54285f541930cde766069942bad0f2"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/tvc22_ext.rom",
+   "md5": [
+    "5ce95a26ceed5bec73995d83568da9cf"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/tvcfileio.rom",
+   "md5": [
+    "a2cf86ba8e7fc58b242137fe59036832"
+   ]
+  },
+  {
+   "file": "bios/ep128emu/roms/tvc_dos12d.rom",
+   "md5": [
+    "88dc7876d584f90e4106f91444ab23b7"
+   ]
+  },
+  {
+   "file": "bios/tvc64.zip",
+   "md5": [
+    "bed323c85b629e7ccdd318ef8a21904b",
+    "be6a66ccdd3bf87992678138f3971090",
+    "c451c518138f855257ac05673532e162",
+    "d3ea34ee3ed3d0c7ae3001bd0d9a4ae9",
+    "198182b80de1f1c54904870ae0639471",
+    "5ce95a26ceed5bec73995d83568da9cf"
+   ]
+  }
+ ]
+}

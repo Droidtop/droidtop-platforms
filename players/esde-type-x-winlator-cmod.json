@@ -1,0 +1,8 @@
+{
+ "id": "esde-type-x-winlator-cmod",
+ "systemId": "type-x",
+ "label": "Winlator Cmod (Standalone)",
+ "pkg": "com.winlator.cmod",
+ "argumentsTemplate": "-n com.winlator.cmod/com.winlator.cmod.XServerDisplayActivity --activity-clear-task --activity-clear-top -e shortcut_path {file.path}",
+ "killPackageProcesses": false
+}

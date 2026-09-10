@@ -1,0 +1,9 @@
+{
+ "id": "mugen",
+ "name": "M.U.G.E.N Game Engine",
+ "extensions": [
+  "mugen"
+ ],
+ "retroArchCore": null,
+ "theme": "mugen"
+}

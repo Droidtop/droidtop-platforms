@@ -1,0 +1,8 @@
+{
+ "id": "gbc-it-dbtecno-pizzaboypro-pizza-boy-pro",
+ "systemId": "gbc",
+ "label": "Pizza Boy Pro",
+ "pkg": "it.dbtecno.pizzaboypro",
+ "argumentsTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,8 @@
+{
+ "id": "esde-wonderswan-swan-emu",
+ "systemId": "wonderswan",
+ "label": "Swan.emu (Standalone)",
+ "pkg": "com.explusalpha.SwanEmu",
+ "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.uri}",
+ "killPackageProcesses": false
+}

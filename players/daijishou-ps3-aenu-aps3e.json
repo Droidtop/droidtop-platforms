@@ -1,0 +1,8 @@
+{
+ "id": "daijishou-ps3-aenu-aps3e",
+ "systemId": "ps3",
+ "label": "ps3 - aPS3e",
+ "pkg": "aenu.aps3e",
+ "argumentsTemplate": "-n aenu.aps3e/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e iso_uri {file.uri}",
+ "killPackageProcesses": true
+}

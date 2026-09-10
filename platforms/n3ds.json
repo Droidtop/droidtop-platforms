@@ -1,0 +1,21 @@
+{
+ "id": "n3ds",
+ "name": "Nintendo 3DS",
+ "extensions": [
+  "3ds",
+  "3dsx",
+  "7z",
+  "app",
+  "axf",
+  "cci",
+  "cxi",
+  "desktop",
+  "elf",
+  "z3dsx",
+  "zcci",
+  "zcxi",
+  "zip"
+ ],
+ "retroArchCore": "azahar",
+ "theme": "n3ds"
+}

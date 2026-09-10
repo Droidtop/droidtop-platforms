@@ -1,0 +1,10 @@
+{
+ "id": "astrocde",
+ "name": "Bally Astrocade",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "mame",
+ "theme": "astrocade"
+}

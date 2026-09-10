@@ -1,0 +1,8 @@
+{
+ "id": "esde-megadrivejp-pizza-boy-sc",
+ "systemId": "megadrivejp",
+ "label": "Pizza Boy SC (Standalone)",
+ "pkg": "it.dbtecno.pizzaboyscpro",
+ "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+ "killPackageProcesses": false
+}

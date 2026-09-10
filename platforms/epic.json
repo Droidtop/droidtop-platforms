@@ -1,0 +1,10 @@
+{
+ "id": "epic",
+ "name": "Epic Games Store",
+ "extensions": [
+  "desktop",
+  "sh"
+ ],
+ "retroArchCore": null,
+ "theme": "epic"
+}

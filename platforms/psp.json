@@ -1,0 +1,16 @@
+{
+ "id": "psp",
+ "name": "Sony PlayStation Portable",
+ "extensions": [
+  "7z",
+  "chd",
+  "cso",
+  "elf",
+  "iso",
+  "pbp",
+  "prx",
+  "zip"
+ ],
+ "retroArchCore": "ppsspp",
+ "theme": "psp"
+}

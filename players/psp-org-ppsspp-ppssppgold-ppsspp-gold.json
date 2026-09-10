@@ -1,0 +1,8 @@
+{
+ "id": "psp-org-ppsspp-ppssppgold-ppsspp-gold",
+ "systemId": "psp",
+ "label": "PPSSPP Gold",
+ "pkg": "org.ppsspp.ppssppgold",
+ "argumentsTemplate": "-n org.ppsspp.ppssppgold/org.ppsspp.ppsspp.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri} -t application/octet-stream --activity-clear-task --activity-clear-top --activity-no-history",
+ "killPackageProcesses": false
+}

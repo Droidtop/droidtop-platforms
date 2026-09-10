@@ -1,0 +1,27 @@
+{
+ "id": "amiga",
+ "name": "Commodore Amiga",
+ "extensions": [
+  "7z",
+  "adf",
+  "adz",
+  "ccd",
+  "chd",
+  "cue",
+  "dms",
+  "fdi",
+  "hdf",
+  "hdz",
+  "ipf",
+  "iso",
+  "lha",
+  "m3u",
+  "mds",
+  "nrg",
+  "rp9",
+  "uae",
+  "zip"
+ ],
+ "retroArchCore": "puae",
+ "theme": "amiga"
+}

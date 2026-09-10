@@ -1,0 +1,31 @@
+{
+ "id": "godot",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "project.godot"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "builtin",
+     "name": "godot"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "ENGINEHOST",
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "enginehost": {
+  "family": "godot",
+  "context": "standard"
+ },
+ "notes": "project.godot (an unexported project tree - enginehost's marker), or the builtin probe covering both the loose .pck shape and the embedded-pack GDPC trailer that JSON conditions cannot express."
+}

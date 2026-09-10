@@ -1,0 +1,10 @@
+{
+ "id": "stv",
+ "name": "Sega Titan Video Game System",
+ "extensions": [
+  "7z",
+  "zip"
+ ],
+ "retroArchCore": "kronos",
+ "theme": "stv"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "wiiu-info-cemu-cemu-cemu",
+ "systemId": "wiiu",
+ "label": "cemu",
+ "pkg": "info.cemu.cemu",
+ "argumentsTemplate": "-n info.cemu.cemu/.emulation.EmulationActivity -d {file.uri} --activity-clear-task --activity-clear-top",
+ "killPackageProcesses": false
+}

@@ -1,0 +1,14 @@
+{
+ "systemId": "atom",
+ "name": "Acorn Atom",
+ "files": [
+  {
+   "file": "bios/atom.zip",
+   "md5": [
+    "b7b7f8a608339fa39d44a3bcfa2cc3f0",
+    "baa26f458acf5745388177ffc7368124",
+    "9627dfb5f8302db8dd5702dbf7c09f72"
+   ]
+  }
+ ]
+}

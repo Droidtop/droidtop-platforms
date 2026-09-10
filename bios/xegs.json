@@ -1,0 +1,12 @@
+{
+ "systemId": "xegs",
+ "name": "Atari XE Game System",
+ "files": [
+  {
+   "file": "bios/xegs.zip",
+   "md5": [
+    "42cbd989802c17d0ac3731d33270d835"
+   ]
+  }
+ ]
+}

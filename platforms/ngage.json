@@ -1,0 +1,10 @@
+{
+ "id": "ngage",
+ "name": "Nokia N-Gage",
+ "extensions": [
+  "ngage",
+  "zip"
+ ],
+ "retroArchCore": null,
+ "theme": "ngage"
+}
