@@ -1,6 +1,6 @@
 {
  "version": 5,
- "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface.",
+ "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md.",
  "engines": [
   {
    "id": "renpy",
@@ -529,6 +529,224 @@
     "context": "standard"
    },
    "notes": "project.godot (an unexported project tree - enginehost's marker), or the builtin probe covering both the loose .pck shape and the embedded-pack GDPC trailer that JSON conditions cannot express."
+  },
+  {
+   "id": "nscripter",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "nscript.dat"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "0.txt"
+       ]
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "nsa"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "nsa"
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "sar"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "NScripter/ONScripter: nscript.dat is the engine's own (obfuscated) script file and 0.txt its plain-text form -- ONScripter's script loader looks for exactly those names (https://github.com/Galladite27/ONScripter-EN/blob/master/ScriptHandler.cpp); .nsa/.sar are its resource archives (https://github.com/matthewn4444/onscripter-engine-android, https://morkt.github.io/GARbro/supported.html). No enginehost plugin yet, so Windows builds go to Wine."
+  },
+  {
+   "id": "ags",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "acsetup.cfg"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "ags"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet."
+  },
+  {
+   "id": "alicesoft-system4",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "system40.ini"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "ain"
+      },
+      {
+       "type": "anyFileExtension",
+       "value": "afa"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "AliceSoft System 4.x: System40.ini is the runtime's ini, next to the <game>.ain bytecode (https://github.com/nunuhara/xsystem4); .afa (AFAH) is the System4-era AliceSoft archive (https://morkt.github.io/GARbro/supported.html). Ordered before the System 3.x row: System 3.9's .ain is the fixed name System39.ain and ships with .ald, never .afa."
+  },
+  {
+   "id": "alicesoft-system3",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "system39.ain"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "xsystem35.gr"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "ald"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "AliceSoft System 3.x-3.9: the runtime reads the game's *.ALD files from the game directory, or a game-resource file xsystem35.gr (https://github.com/kichikuou/xsystem35-sdl2/blob/master/doc/xsystem35.6.adoc); System39.ain is System 3.9's bytecode file (https://github.com/kichikuou/xsys35c). .ald is AliceSoft-only in GARbro's table (https://morkt.github.io/GARbro/supported.html)."
+  },
+  {
+   "id": "reallive",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "gameexe.ini"
+       ]
+      },
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "seen.txt"
+       ]
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "VisualArt's RealLive/AVG32 lineage: Gameexe.ini is the data-driven config every VA interpreter reads and SEEN.TXT the compiled scenario container (https://github.com/eglaysher/rlvm, https://github.com/Ruin0x11/adieu). AVG32 uses the SAME two files, so this row is the lineage, not the exact VM -- see the not-yet-detectable list in /root/coordination/research/engine-signatures/README.md."
+  },
+  {
+   "id": "qsp",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "qsp"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "aqsp"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "QSP / Quest Soft Player: .qsp (compiled) and .aqsp are the player's own game-file extensions (https://github.com/QSPFoundation/qspider/blob/main/apps/player-desktop/src/app/utils.ts). .qsps (plain source) and .gam are deliberately left out: too generic for a folder-level rule."
+  },
+  {
+   "id": "suika2",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "conf/config.txt"
+      },
+      {
+       "type": "dirExists",
+       "path": "txt"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Suika2: a game folder is conf/config.txt plus the fixed asset dirs (txt/, cg/, bg/, bgm/, cv/, se/, ch/) -- see the engine's own shipped game tree, https://github.com/denisoa/suika2/tree/master/suika2 . Two conditions so a stray conf/config.txt cannot match."
   },
   {
    "id": "renpy-fallback",
