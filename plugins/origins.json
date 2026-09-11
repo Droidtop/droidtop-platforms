@@ -1,0 +1,16 @@
+{
+ "comment": "The plugin repositories the index covers. This list IS enginehost's PluginOriginStore.DEFAULT_ORIGINS; a repository added there is added here, and a custom origin a person adds on their own device is never here and takes the GitHub API path instead.",
+ "origins": [
+  {"repo": "Droidtop/enginehost-renpy-plugin"},
+  {"repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"},
+  {"repo": "Droidtop/enginehost-rpgmaker-easyrpg-plugin"},
+  {"repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"},
+  {"repo": "Droidtop/enginehost-kirikiri-plugin"},
+  {"repo": "Droidtop/enginehost-buriko-plugin"},
+  {"repo": "Droidtop/enginehost-catsystem2-plugin"},
+  {"repo": "Droidtop/enginehost-cmvs-plugin"},
+  {"repo": "Droidtop/enginehost-flash-air-plugin"},
+  {"repo": "Droidtop/enginehost-html-plugin"},
+  {"repo": "Droidtop/enginehost-godot-plugin"}
+ ]
+}

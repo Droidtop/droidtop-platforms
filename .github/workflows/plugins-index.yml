@@ -1,0 +1,69 @@
+name: Plugins index
+
+# What every enginehost plugin repository has published, in one file that
+# devices read from raw.githubusercontent.com. GitHub's API allows an
+# unauthenticated address 60 requests an hour; enginehost listing eleven
+# repositories itself spent that in a few refreshes and showed an empty
+# catalog. This job does the listing once, with a token.
+on:
+  schedule:
+    # Four times a day, so a release published without a dispatch is in the
+    # index within hours and `generatedAt` stays inside the window enginehost
+    # trusts.
+    - cron: "23 */6 * * *"
+  # Each plugin repository sends this after publishing a release; see
+  # plugins/README.md for the step they add.
+  repository_dispatch:
+    types: [plugin-published]
+  workflow_dispatch:
+  push:
+    paths:
+      - "plugins/**"
+      - ".github/workflows/plugins-index.yml"
+      - "generator/plugins_index.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plugins-index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # A push that only touched these files says nothing about the plugin
+      # repositories, so it checks the committed index instead of rebuilding
+      # it: no API calls on an ordinary commit.
+      - name: Check the committed index
+        if: github.event_name == 'push'
+        run: python3 generator/plugins_index.py --check
+
+      - name: Rebuild the index from the plugin repositories
+        if: github.event_name != 'push'
+        env:
+          # The default token reads public repositories. Set the
+          # PLUGINS_INDEX_TOKEN secret if any plugin repository becomes
+          # private.
+          GH_TOKEN: ${{ secrets.PLUGINS_INDEX_TOKEN || github.token }}
+        run: python3 generator/plugins_index.py
+
+      - name: Commit it when it changed
+        if: github.event_name != 'push'
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- plugins/index.json; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git config user.name "droidtop-platforms"
+          git config user.email "platforms@droidtop.invalid"
+          git add plugins/index.json
+          git commit -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:main
