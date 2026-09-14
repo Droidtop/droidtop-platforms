@@ -870,6 +870,7 @@
     "sh"
    ],
    "retroArchCore": null,
+   "ownedBy": "store",
    "theme": "epic"
   },
   {
@@ -2550,6 +2551,7 @@
     "sh"
    ],
    "retroArchCore": null,
+   "ownedBy": "store",
    "theme": "steam"
   },
   {

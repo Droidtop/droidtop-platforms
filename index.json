@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-10T20:43:47Z",
+ "generatedAt": "2026-09-14T22:21:16Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -630,7 +630,7 @@
   {
    "path": "platforms/epic.json",
    "collection": "platforms",
-   "sha256": "df0cf07df70f6a70267446f2cf7a434ba94604a0da847c4b4b20cf73376b56e3"
+   "sha256": "bfe7cdd957b6b2c3d1a5600a33efc6634e752be5a0b9035f0596e9f1bc64aa71"
   },
   {
    "path": "platforms/famicom.json",
@@ -1140,7 +1140,7 @@
   {
    "path": "platforms/steam.json",
    "collection": "platforms",
-   "sha256": "991f161b041e6b8d253d99633324aaf364a05b449b9616135107e0a0edb499dc"
+   "sha256": "001b59fdd410cc1d681436f9a1c2df3680b8b3ff72112bdb656b03e78067b20b"
   },
   {
    "path": "platforms/stv.json",
