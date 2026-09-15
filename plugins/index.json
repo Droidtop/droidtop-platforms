@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-14T13:02:53Z",
+ "generatedAt": "2026-09-15T05:03:23Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -684,13 +684,13 @@
      "tag": "kirikiri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-11T12:58:29Z",
+     "published_at": "2026-09-15T01:22:55Z",
      "assets": [
       {
        "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 79767232,
-       "sha256": "2be44c2830c90ac631ac92ba003dde303a776c8a91f9fb3531ab08a6722ebba0"
+       "size": 110803436,
+       "sha256": "e33d200adced4f9504f907256e92a8dacfea8e04112e08c2fb8fb5c1d453b798"
       },
       {
        "name": "enginehost-public-key.json",
@@ -701,8 +701,8 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-release.json",
-       "size": 4925,
-       "sha256": "0ce054e8b09fa785ba59fcfe600ea3c4abaadffe7ad39487fa30ec01cc69f137"
+       "size": 5449,
+       "sha256": "9209716956d0b78c02f263dde10013b0b59c2b089d71c92ec081271b54b5a085"
       }
      ]
     },
