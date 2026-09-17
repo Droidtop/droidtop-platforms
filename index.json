@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-14T22:21:16Z",
+ "generatedAt": "2026-09-17T17:06:07Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -145,7 +145,7 @@
   {
    "path": "engines/nscripter.json",
    "collection": "engines",
-   "sha256": "5935a66dc07992e3e16107506a05a74179a4dd7da4bbf2637dd18c8a00b8d05e"
+   "sha256": "90d64f02a907c0bb80e042bdf6afb784e675bc963962e6010a1fdd265a2d0b13"
   },
   {
    "path": "engines/ags.json",
