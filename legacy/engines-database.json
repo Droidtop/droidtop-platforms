@@ -571,10 +571,14 @@
     }
    ],
    "strategies": [
+    "ENGINEHOST",
     "WINE_PREFIX"
    ],
-   "enginehost": null,
-   "notes": "NScripter/ONScripter: nscript.dat is the engine's own (obfuscated) script file and 0.txt its plain-text form -- ONScripter's script loader looks for exactly those names (https://github.com/Galladite27/ONScripter-EN/blob/master/ScriptHandler.cpp); .nsa/.sar are its resource archives (https://github.com/matthewn4444/onscripter-engine-android, https://morkt.github.io/GARbro/supported.html). No enginehost plugin yet, so Windows builds go to Wine."
+   "enginehost": {
+    "family": "nscripter",
+    "context": "nscripter"
+   },
+   "notes": "NScripter/ONScripter: nscript.dat is the engine's own (obfuscated) script file and 0.txt its plain-text form -- ONScripter's script loader looks for exactly those names (https://github.com/Galladite27/ONScripter-EN/blob/master/ScriptHandler.cpp); .nsa/.sar are its resource archives (https://github.com/YuriSizuku/OnscripterYuri, https://morkt.github.io/GARbro/supported.html). Context nscripter, not onscripter: what these markers prove is that the game was authored for NScripter, and ONScripter is the engine that reads it. The plugin serves both contexts from one runtime because the script, the archives and the save format are identical either way; nothing a folder contains distinguishes them, so nothing here claims to."
   },
   {
    "id": "ags",
