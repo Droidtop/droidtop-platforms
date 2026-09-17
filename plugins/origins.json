@@ -11,6 +11,7 @@
   {"repo": "Droidtop/enginehost-cmvs-plugin"},
   {"repo": "Droidtop/enginehost-flash-air-plugin"},
   {"repo": "Droidtop/enginehost-html-plugin"},
-  {"repo": "Droidtop/enginehost-godot-plugin"}
+  {"repo": "Droidtop/enginehost-godot-plugin"},
+  {"repo": "Droidtop/enginehost-nscripter-plugin"}
  ]
 }
