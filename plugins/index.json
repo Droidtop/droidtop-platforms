@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-16T21:26:34Z",
+ "generatedAt": "2026-09-17T05:01:33Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -626,13 +626,13 @@
      "tag": "rpgmaker-mv-mz-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-10T15:50:00Z",
+     "published_at": "2026-09-16T21:55:34Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
-       "size": 11892,
-       "sha256": "297153e7a40b5032198ccf1dba75b0d6ca4701a89c0a03083448e573494ad2d9"
+       "size": 11884,
+       "sha256": "fb60c3a6a10b6fd2bdf300f148fb54b6f394fa3168bb4e58f09fba9676e6c9e3"
       },
       {
        "name": "enginehost-public-key.json",
@@ -644,7 +644,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/enginehost-release.json",
        "size": 3365,
-       "sha256": "85e8d9f65c599365d9a1b647db1cb04e64ee0cd52b81a2342c6f40e60f1ad80d"
+       "sha256": "8cee067048cb70af4880dc19eea16f545ba7df215b1f740fb6dbc0b6d6eed2ff"
       }
      ]
     },
@@ -742,13 +742,13 @@
      "tag": "buriko-openbgi-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-11T02:28:09Z",
+     "published_at": "2026-09-16T21:57:17Z",
      "assets": [
       {
        "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
-       "size": 4391052,
-       "sha256": "72ae49b581be25703f712d5261fd8fdb1ececce1f754119f22e73efdb8435b8b"
+       "size": 4391784,
+       "sha256": "b80aab79644c7537fc2f4935bbb0e597cca8f7c1b5fe6cd1034a7fd7b7700b34"
       },
       {
        "name": "enginehost-public-key.json",
@@ -760,7 +760,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-release.json",
        "size": 3837,
-       "sha256": "ef994713c44ad6c155a72ee199c270a6ed77b40e0d597077049dcf3dc5f5329d"
+       "sha256": "cbc3956b15461a7074b5eb3250c7d2cbac9afda12f723e50fa8cc4d74e1ba5a6"
       }
      ]
     }
@@ -774,13 +774,13 @@
      "tag": "catsystem2-cst-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-11T02:27:05Z",
+     "published_at": "2026-09-16T21:56:44Z",
      "assets": [
       {
        "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
-       "size": 232772,
-       "sha256": "1fe5dbbe73d9935c12074bfe334cdf1e92a54a1cd51633945f824bfb3a50647c"
+       "size": 233108,
+       "sha256": "c749ca018cf0b0722b0266f75f44c6b9dc16a204c4bfbddfd564accdef5380f6"
       },
       {
        "name": "enginehost-public-key.json",
@@ -792,7 +792,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/enginehost-release.json",
        "size": 2409,
-       "sha256": "dc64fffc71f865e4c4c0f4c24ed91098d9a888abda60f99d376bd2fb9625b758"
+       "sha256": "2da7d0e0b2483be3166041d97ea49bd39a3802b78339910fa290b24c03a9048a"
       }
      ]
     },
@@ -832,13 +832,13 @@
      "tag": "cmvs-ps2-ps3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-16T21:03:44Z",
+     "published_at": "2026-09-17T02:50:47Z",
      "assets": [
       {
        "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
-       "size": 212904,
-       "sha256": "e69876376c2ef67758869338a8174212ac9180639b6b6c74dc933ffd9e935759"
+       "size": 219544,
+       "sha256": "80b4c2a1625083fd15dc3545aa7cdcca4e06f58d4c10f74332a2a5b778453931"
       },
       {
        "name": "enginehost-public-key.json",
@@ -850,7 +850,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-release.json",
        "size": 2705,
-       "sha256": "7747e512c1a7c64ed38cde9786cf7cad0cc4fbb75ae4d81a649a294d03e29d9a"
+       "sha256": "da5be614ef78e94c175de1a04d9a246fadf885e5eadd78feb002f2750af70472"
       }
      ]
     },
@@ -890,13 +890,13 @@
      "tag": "flashair-ruffle041-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-10T15:53:49Z",
+     "published_at": "2026-09-16T21:57:31Z",
      "assets": [
       {
        "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
-       "size": 3339432,
-       "sha256": "054fb73344eafdd12a88241348f6b557e9c1365d674218112080295e6b1cd292"
+       "size": 3338588,
+       "sha256": "6b006fcb9987a79d6e48dee4c4fde927d229706131befb3d5aa543c0a1d12717"
       },
       {
        "name": "enginehost-public-key.json",
@@ -908,7 +908,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/enginehost-release.json",
        "size": 4293,
-       "sha256": "0bd776bb01e8ac1126ee8cf051f65f929e301fe4e5b6e72ae51d2b674bc8688b"
+       "sha256": "4a367b272db2b13f2827c0afa20bc839dc9ce4a242331ebb3b8e8d3c0d216dff"
       }
      ]
     },
@@ -948,13 +948,13 @@
      "tag": "html-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-10T15:50:58Z",
+     "published_at": "2026-09-16T21:56:19Z",
      "assets": [
       {
        "name": "dev.enginehost.html.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/dev.enginehost.html.v1.enginehost.tar.xz",
-       "size": 11544,
-       "sha256": "cbce632c9deff9293ef1e373d20d63893eefaac8128509f12ab88b8323ca2669"
+       "size": 11556,
+       "sha256": "cb9d3c51ccb228361cbe6af8ecbac7a7f1f9009cf43148b168bc4259de45cfcd"
       },
       {
        "name": "enginehost-public-key.json",
@@ -966,7 +966,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/enginehost-release.json",
        "size": 3233,
-       "sha256": "54d209e65839750efac34b310e7d8bf69fc4f77cf37e743d4852d5c09ddf9065"
+       "sha256": "a124b1bd71f0bbf8d24ec1a7140018a178fed3c99467046390f9285e6af0864d"
       }
      ]
     },
@@ -1058,13 +1058,13 @@
      "tag": "godot-v45-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-11T02:58:01Z",
+     "published_at": "2026-09-16T22:00:44Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v45.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v1-unstable/dev.enginehost.godot.v45.v1.enginehost.tar.xz",
-       "size": 185241764,
-       "sha256": "eafc3150524d357b39fc3a3b4cc47c93a64a6d589c53c7ee7f2d69312a9c94e7"
+       "size": 185244604,
+       "sha256": "35c3c1d4c68b3fef2cac8846cdfe68146365c1677a1b36f8b230ac6a1bbec8e6"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1076,7 +1076,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v1-unstable/enginehost-release.json",
        "size": 4053,
-       "sha256": "ab2b6aaeb22e32b3eec527758b60bfafa7c53d337d4fd5bea5cc14814fd0412f"
+       "sha256": "2a89c7d0e039aceb7a430766cb1b9c1749ee00ae502becb00ccee827d599e7b3"
       }
      ]
     },
