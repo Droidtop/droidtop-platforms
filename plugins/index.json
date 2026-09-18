@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-18T04:54:18Z",
+ "generatedAt": "2026-09-18T16:33:50Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1110,13 +1110,13 @@
      "tag": "godot-v44-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-18T03:31:18Z",
+     "published_at": "2026-09-18T14:07:19Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
-       "size": 179793256,
-       "sha256": "06a596687b921602504882abdb37233f35f9845491484250da7f3c5d52bd7b1b"
+       "size": 182824576,
+       "sha256": "3b8115c60faec45c6bb0293046240cb0a619496f620394eb6a681f9c3f90bd16"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1128,7 +1128,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/enginehost-release.json",
        "size": 4053,
-       "sha256": "d376f3b1e69aef85c9926d38a4e9ca6fc49d40bc48a6f9d514eda8b2d42da977"
+       "sha256": "79a26dcf74f7c5176083430553f519bbf791054a076488f1a84ffdfb7f4fa60f"
       }
      ]
     },
@@ -1136,13 +1136,13 @@
      "tag": "godot-v43-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-18T03:34:31Z",
+     "published_at": "2026-09-18T14:07:13Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v43.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-unstable/dev.enginehost.godot.v43.v1.enginehost.tar.xz",
-       "size": 169591112,
-       "sha256": "a1c5653f4ced50705a05243ead8d25a34199d6dcf05c47970bf81eb120225609"
+       "size": 160999996,
+       "sha256": "9db071a64536e24292a6212d199425a8523fa16fbf5e852e730a9393136040ab"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1154,7 +1154,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-unstable/enginehost-release.json",
        "size": 4049,
-       "sha256": "d2b3fbd879cf8b816873062a7d5f8b7c7d3f01560329ce5e14a6363aed8ef660"
+       "sha256": "3c8d4a4007155ed18140a4d344b1a119eab475334455f5ee7613ab22a11838dc"
       }
      ]
     },
@@ -1162,13 +1162,13 @@
      "tag": "godot-v42-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-18T03:31:02Z",
+     "published_at": "2026-09-18T14:20:09Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v42.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v42-v1-unstable/dev.enginehost.godot.v42.v1.enginehost.tar.xz",
-       "size": 166379164,
-       "sha256": "b8e4e14af9b0f612e4527c670c8ff74ba413b4f20a1b7a0b2cc496fdbb3fa3bd"
+       "size": 147160308,
+       "sha256": "4413698a4f7f9cc9deb9ca2b2b8b1de475c41920c3a5e7aed726c06d28b16957"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1180,7 +1180,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v42-v1-unstable/enginehost-release.json",
        "size": 4053,
-       "sha256": "4ef401f3d116ea593b3d815a8994df9a34880a10a3f21130a38ff26030c5aa95"
+       "sha256": "28bfa5d8d8931bdadda7c99530b3c56e18386d0a77cbe11091ade1b7114df60b"
       }
      ]
     },
