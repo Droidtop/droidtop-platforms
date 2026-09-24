@@ -22,8 +22,10 @@ on:
       - ".github/workflows/plugins-index.yml"
       - "generator/plugins_index.py"
 
+# Read-only by default; the index job pushes plugins/index.json, so it alone
+# gets write (Droidtop/enginehost docs/security/2026-09-24-ci-supply-chain.md).
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: plugins-index
@@ -32,9 +34,12 @@ concurrency:
 jobs:
   index:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # Keeps its credentials: the last step pushes the regenerated index.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
 
