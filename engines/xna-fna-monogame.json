@@ -1,0 +1,54 @@
+{
+ "id": "xna-fna-monogame",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "fna.dll"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "monogame.framework.dll"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "microsoft.xna.framework.dll",
+      "microsoft.xna.framework.game.dll"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "Content"
+    },
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "xnb",
+     "maxDepth": 2
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "XNA 4.0 games and their open reimplementations: FNA ships as FNA.dll beside the game (https://fna-xna.github.io/docs/1%3A-Setting-Up-FNA/), MonoGame as MonoGame.Framework.dll (https://docs.monogame.net/articles/getting_started/packaging_games.html), and an XNA build references Microsoft.Xna.Framework*.dll. A game built against XNA itself often ships no framework DLL (the redistributable installs it), so the compiled content tree is the fallback tell: .xnb is the XNA content pipeline's output format, loaded from Content/ (https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/). No enginehost plugin yet."
+}

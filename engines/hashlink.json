@@ -1,0 +1,31 @@
+{
+ "id": "hashlink",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "hlboot.dat"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "libhl.dll",
+      "libhl.so"
+     ]
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Heaps / HashLink: the HashLink VM boots the bytecode file hlboot.dat found beside its executable when it is given none (https://github.com/HaxeFoundation/hashlink/blob/master/src/main.c), and the runtime library is libhl.dll / libhl.so. No enginehost plugin yet."
+}

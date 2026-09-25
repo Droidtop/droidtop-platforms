@@ -1,0 +1,35 @@
+{
+ "id": "torque",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "main.cs.dso"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "main.cs"
+     ]
+    },
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "dso",
+     "maxDepth": 3
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Torque (TGE/TGEA/Torque3D): the engine starts by executing main.cs at the game root, and ships its TorqueScript compiled to .cs.dso files beside or instead of the sources (https://github.com/TorqueGameEngines/Torque3D/blob/development/Templates/BaseGame/game/main.cs.in, https://docs.torque3d.org/for-programmers/torquescript). main.cs alone is not enough (a C# source file can carry the name), so it needs compiled scripts beside it. No enginehost plugin yet."
+}

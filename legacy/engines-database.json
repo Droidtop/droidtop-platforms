@@ -1,6 +1,6 @@
 {
  "version": 5,
- "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md.",
+ "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md. Census additions 2026-09-25 (the engine census of the owner's library): detection-only rows for LOVE (love2d), XNA/FNA/MonoGame, HashLink, Torque, GoldSrc, Source/Source 2, the Tomb Raider I-III engine and X-COM's original data. ScummVM gets no row: its engines are identified per game by its own detector tables, which conditions here cannot express.",
  "engines": [
   {
    "id": "renpy",
@@ -607,6 +607,48 @@
    ],
    "enginehost": null,
    "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet."
+  },
+  {
+   "id": "love2d",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtension",
+       "value": "love"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "love.dll"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "main.lua"
+      },
+      {
+       "type": "fileHeadRegex",
+       "path": "conf.lua",
+       "regex": "function\\s+love\\.conf\\s*\\("
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "LINUX_CONTAINER",
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "LOVE (love2d): a game is a .love zip, or on Windows a fused game.exe (love.exe with the .love appended) shipped beside love.dll, lua51.dll and SDL2.dll (https://love2d.org/wiki/Game_Distribution); an unpacked game is a folder whose main.lua runs and whose conf.lua defines love.conf (https://love2d.org/wiki/Config_Files). main.lua alone is not enough: other Lua runtimes use the same name, so the loose shape also needs love.conf. The LOVE version the game was written for is enrichment: love.dll's own version resource when the game ships the Windows runtime, else conf.lua's t.version. No enginehost plugin published yet."
   },
   {
    "id": "alicesoft-system4",
@@ -1628,6 +1670,237 @@
    "notes": "Visual Novel Maker: an exported package is Game.exe + index.html + package.json + icon.png + a 'signature' file + data/ and resources/ (http://asset.visualnovelmaker.com/help/Create_Game_Package.htm). All five markers are required together because the shell itself is plain NW.js/Electron; the payload is what identifies the engine, hence this row sits before the generic web-shell row."
   },
   {
+   "id": "xna-fna-monogame",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "fna.dll"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "monogame.framework.dll"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "microsoft.xna.framework.dll",
+        "microsoft.xna.framework.game.dll"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "dirExists",
+       "path": "Content"
+      },
+      {
+       "type": "anyFileExtensionDeep",
+       "value": "xnb",
+       "maxDepth": 2
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "XNA 4.0 games and their open reimplementations: FNA ships as FNA.dll beside the game (https://fna-xna.github.io/docs/1%3A-Setting-Up-FNA/), MonoGame as MonoGame.Framework.dll (https://docs.monogame.net/articles/getting_started/packaging_games.html), and an XNA build references Microsoft.Xna.Framework*.dll. A game built against XNA itself often ships no framework DLL (the redistributable installs it), so the compiled content tree is the fallback tell: .xnb is the XNA content pipeline's output format, loaded from Content/ (https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/). No enginehost plugin yet."
+  },
+  {
+   "id": "hashlink",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "hlboot.dat"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "libhl.dll",
+        "libhl.so"
+       ]
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Heaps / HashLink: the HashLink VM boots the bytecode file hlboot.dat found beside its executable when it is given none (https://github.com/HaxeFoundation/hashlink/blob/master/src/main.c), and the runtime library is libhl.dll / libhl.so. No enginehost plugin yet."
+  },
+  {
+   "id": "torque",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "main.cs.dso"
+       ]
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileNameIn",
+       "values": [
+        "main.cs"
+       ]
+      },
+      {
+       "type": "anyFileExtensionDeep",
+       "value": "dso",
+       "maxDepth": 3
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Torque (TGE/TGEA/Torque3D): the engine starts by executing main.cs at the game root, and ships its TorqueScript compiled to .cs.dso files beside or instead of the sources (https://github.com/TorqueGameEngines/Torque3D/blob/development/Templates/BaseGame/game/main.cs.in, https://docs.torque3d.org/for-programmers/torquescript). main.cs alone is not enough (a C# source file can carry the name), so it needs compiled scripts beside it. No enginehost plugin yet."
+  },
+  {
+   "id": "goldsrc",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "valve/liblist.gam"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "GoldSrc (Half-Life 1 engine): the game directory valve/ holds liblist.gam, the mod description the engine reads (https://developer.valvesoftware.com/wiki/Liblist.gam); Xash3D FWGS runs the same tree (https://github.com/FWGS/xash3d-fwgs, 'copy valve folder'). A standalone mod folder without valve/ is not matched on purpose: liblist.gam alone names a mod, not an installed engine. No enginehost plugin yet."
+  },
+  {
+   "id": "source",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "bin/engine.dll"
+      },
+      {
+       "type": "dirExists",
+       "path": "platform"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "bin/engine.so"
+      },
+      {
+       "type": "dirExists",
+       "path": "platform"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "fileExists",
+       "path": "game/bin/win64/engine2.dll"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "LINUX_CONTAINER",
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Source and Source 2: a Source install keeps its engine in bin/engine.dll (bin/engine.so on Linux) beside the shared platform/ folder (https://developer.valvesoftware.com/wiki/Source_SDK_Base, https://developer.valvesoftware.com/wiki/Gameinfo.txt); Source 2 moved it to game/bin/win64/engine2.dll (https://developer.valvesoftware.com/wiki/Source_2). Both halves are required for Source 1 so a stray Engine.dll from an unrelated runtime is not read as Valve's. Native PC path only; not an enginehost family."
+  },
+  {
+   "id": "tomb-raider-classic",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "anyFileExtensionDeep",
+       "value": "phd",
+       "maxDepth": 1
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "type": "anyFileExtensionDeep",
+       "value": "tr2",
+       "maxDepth": 1
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "Tomb Raider I-III (Core Design's engine): level files are DATA/*.PHD for Tomb Raider I and data/*.TR2 for II and III, the formats TRX reads from the original data folder (https://github.com/LostArtefacts/TRX, https://opentomb.github.io/TRosettaStone3/trosettastone.html). One row: the three games share one engine lineage and TRX is one runtime for all of them. No enginehost plugin yet."
+  },
+  {
+   "id": "xcom-ufo",
+   "detect": [
+    {
+     "all": [
+      {
+       "type": "dirExists",
+       "path": "GEODATA"
+      },
+      {
+       "type": "dirExists",
+       "path": "UFOGRAPH"
+      }
+     ]
+    }
+   ],
+   "strategies": [
+    "WINE_PREFIX"
+   ],
+   "enginehost": null,
+   "notes": "X-COM: UFO Defense / Terror from the Deep original data, which OpenXcom runs: it asks for the GEODATA, GEOGRAPH, MAPS, ROUTES, SOUND, TERRAIN, UFOGRAPH, UFOINTRO and UNITS folders copied from the original (https://www.ufopaedia.org/index.php/Installing_(OpenXcom)). The original ships them upper-case and the exact-path conditions are case-sensitive, so a re-cased copy is not matched. No enginehost plugin yet."
+  },
+  {
    "id": "renpy-fallback",
    "detect": [
     {
@@ -1694,7 +1967,7 @@
     "LINUX_CONTAINER",
     "WINE_PREFIX"
    ],
-   "notes": "Not an enginehost family. The builtin probe searches UnityPlayer.dll/.so/.dylib up to 3 folders deep (real Linux-export fix)."
+   "notes": "Not an enginehost family: no open Unity player exists to run either scripting backend on Android. The builtin probe searches UnityPlayer.dll/.so/.dylib up to 3 folders deep (real Linux-export fix). Enginehost's enrichment then says why it cannot run the game rather than failing generically: IL2CPP (GameAssembly.dll, <name>_Data/il2cpp_data) or Mono (<name>_Data/Managed), the player's machine architecture from its PE/ELF header, and the Unity version from the head of globalgamemanagers / data.unity3d / mainData."
   },
   {
    "id": "nwjs-electron",

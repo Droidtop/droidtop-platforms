@@ -1,0 +1,43 @@
+{
+ "id": "source",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "bin/engine.dll"
+    },
+    {
+     "type": "dirExists",
+     "path": "platform"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "bin/engine.so"
+    },
+    {
+     "type": "dirExists",
+     "path": "platform"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "game/bin/win64/engine2.dll"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Source and Source 2: a Source install keeps its engine in bin/engine.dll (bin/engine.so on Linux) beside the shared platform/ folder (https://developer.valvesoftware.com/wiki/Source_SDK_Base, https://developer.valvesoftware.com/wiki/Gameinfo.txt); Source 2 moved it to game/bin/win64/engine2.dll (https://developer.valvesoftware.com/wiki/Source_2). Both halves are required for Source 1 so a stray Engine.dll from an unrelated runtime is not read as Valve's. Native PC path only; not an enginehost family."
+}

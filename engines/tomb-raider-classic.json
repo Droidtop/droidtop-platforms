@@ -1,0 +1,28 @@
+{
+ "id": "tomb-raider-classic",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "phd",
+     "maxDepth": 1
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileExtensionDeep",
+     "value": "tr2",
+     "maxDepth": 1
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "Tomb Raider I-III (Core Design's engine): level files are DATA/*.PHD for Tomb Raider I and data/*.TR2 for II and III, the formats TRX reads from the original data folder (https://github.com/LostArtefacts/TRX, https://opentomb.github.io/TRosettaStone3/trosettastone.html). One row: the three games share one engine lineage and TRX is one runtime for all of them. No enginehost plugin yet."
+}

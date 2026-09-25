@@ -14,5 +14,5 @@
   "LINUX_CONTAINER",
   "WINE_PREFIX"
  ],
- "notes": "Not an enginehost family. The builtin probe searches UnityPlayer.dll/.so/.dylib up to 3 folders deep (real Linux-export fix)."
+ "notes": "Not an enginehost family: no open Unity player exists to run either scripting backend on Android. The builtin probe searches UnityPlayer.dll/.so/.dylib up to 3 folders deep (real Linux-export fix). Enginehost's enrichment then says why it cannot run the game rather than failing generically: IL2CPP (GameAssembly.dll, <name>_Data/il2cpp_data) or Mono (<name>_Data/Managed), the player's machine architecture from its PE/ELF header, and the Unity version from the head of globalgamemanagers / data.unity3d / mainData."
 }

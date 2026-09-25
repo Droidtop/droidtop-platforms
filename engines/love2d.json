@@ -1,0 +1,42 @@
+{
+ "id": "love2d",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "anyFileExtension",
+     "value": "love"
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "anyFileNameIn",
+     "values": [
+      "love.dll"
+     ]
+    }
+   ]
+  },
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "main.lua"
+    },
+    {
+     "type": "fileHeadRegex",
+     "path": "conf.lua",
+     "regex": "function\\s+love\\.conf\\s*\\("
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "LINUX_CONTAINER",
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "LOVE (love2d): a game is a .love zip, or on Windows a fused game.exe (love.exe with the .love appended) shipped beside love.dll, lua51.dll and SDL2.dll (https://love2d.org/wiki/Game_Distribution); an unpacked game is a folder whose main.lua runs and whose conf.lua defines love.conf (https://love2d.org/wiki/Config_Files). main.lua alone is not enough: other Lua runtimes use the same name, so the loose shape also needs love.conf. The LOVE version the game was written for is enrichment: love.dll's own version resource when the game ships the Windows runtime, else conf.lua's t.version. No enginehost plugin published yet."
+}

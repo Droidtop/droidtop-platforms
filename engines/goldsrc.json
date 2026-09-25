@@ -1,0 +1,18 @@
+{
+ "id": "goldsrc",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "fileExists",
+     "path": "valve/liblist.gam"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "GoldSrc (Half-Life 1 engine): the game directory valve/ holds liblist.gam, the mod description the engine reads (https://developer.valvesoftware.com/wiki/Liblist.gam); Xash3D FWGS runs the same tree (https://github.com/FWGS/xash3d-fwgs, 'copy valve folder'). A standalone mod folder without valve/ is not matched on purpose: liblist.gam alone names a mod, not an installed engine. No enginehost plugin yet."
+}

@@ -1,0 +1,22 @@
+{
+ "id": "xcom-ufo",
+ "detect": [
+  {
+   "all": [
+    {
+     "type": "dirExists",
+     "path": "GEODATA"
+    },
+    {
+     "type": "dirExists",
+     "path": "UFOGRAPH"
+    }
+   ]
+  }
+ ],
+ "strategies": [
+  "WINE_PREFIX"
+ ],
+ "enginehost": null,
+ "notes": "X-COM: UFO Defense / Terror from the Deep original data, which OpenXcom runs: it asks for the GEODATA, GEOGRAPH, MAPS, ROUTES, SOUND, TERRAIN, UFOGRAPH, UFOINTRO and UNITS folders copied from the original (https://www.ufopaedia.org/index.php/Installing_(OpenXcom)). The original ships them upper-case and the exact-path conditions are case-sensitive, so a re-cased copy is not matched. No enginehost plugin yet."
+}

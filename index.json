@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-17T17:06:07Z",
+ "generatedAt": "2026-09-25T17:05:36Z",
  "collections": {
   "engines": {
    "key": "engines",
    "form": "array",
    "version": 5,
    "meta": {
-    "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md."
+    "comment": "The full engine REGISTRY, droidtop-authored (no upstream frontend maintains these). v4 (direction 2026-08-31): detection, launch routing, and enginehost vocabulary all live HERE so new engines/contexts ship as a database update, not an app rebuild. v5 (unified detection, 2026-09-02): this file is the ONE classification authority for BOTH droidtop (scan time) and enginehost (launch/config time) - enginehost bundles this same file and refreshes it from the same droidtop-platforms URL, so the two apps can never classify one folder differently. Per engine: 'detect' is an ordered list of rules (rules OR, conditions within a rule AND; first matching engine in file order wins; condition types: dirExists, fileExists, anyFileNameContains, anyFileExtension, anyFileNameIn, dirNamePrefixCount, fileHeadRegex (case-insensitive, first 4KB), anyFileExtensionDeep (anyFileExtension searching subdirectories to maxDepth), builtin (named code probe for byte-magic checks JSON cannot express)); 'strategies' is launch priority (names match droidtop's GameLaunchStrategy enum; availability stays code - the database only decides which available strategy WINS); 'enginehost' is the family/context vocabulary from enginehost-contract.md's own table (context null = the rules cannot determine it, launch opens enginehost's CONFIGURE screen prefilled). A row whose id an app does not map is skipped by that app: rpgmaker-mvmz and flash-swf are enginehost-only by design (droidtop has no MV-or-MZ engine, and plain .swf is deliberately droidtop's players-database path - Ruffle etc., systemId flash - so flash-air's droidtop detection stays the AIR package shape). Version/execFile extraction for enginehost's config prefill is ENRICHMENT code keyed on the family this file classified; it can never change the classification. Engine EMULATORS (EasyRPG, Kirikiroid2, Ruffle, ...) are NOT declared here: engines are systems, and apps that emulate engines live in players-database.json exactly like apps that emulate consoles. JoiPlay is deliberately absent everywhere: it exposes no consumable launch surface. Data expansion 2026-09-10: 41 detection-only rows added for the engine families the engine-expansion brief names that had no row (NScripter/ONScripter, AGS, AliceSoft System 3.x and 4.x, RealLive, QSP, Suika2, Majiro, YU-RIS, LiveMaker, Yuka, SiglusEngine, WillPlus/AdvHD, ShiinaRio, QLIE, Malie, AI5WIN/AI6WIN, SystemNNN, Propeller, Artemis, rUGP, WOLF RPG Editor, Light.vn, KaGuYa, SHSystem, Eushully, F&C, EntisGLS, ExHIBIT, FAVORITE, Musica, NEXTON, Nitroplus, RAGS, GameMaker, TyranoScript, Construct 2/3, Visual Novel Maker, generic NW.js/Electron). No schema change and no new condition types, so the file stays version 5 and every existing droidtop/enginehost parser keeps loading it. Each new row's signatures come from cited public format documentation (GARbro's supported-formats table, VNTranslationTools, the engines' own tooling repos and manuals) recorded in its notes; all of them carry strategies [\"WINE_PREFIX\"] and enginehost null because no plugin exists for these families yet, and droidtop skips a row whose id it does not map, so they classify nothing until an engine id is added on the app side. Families whose signatures no citable source pins down (NeXAS, SoftPal, ArcGameEngine, Mware, Cyberworks C/System, and AVG32 as distinct from RealLive) got NO row on purpose; they are listed in /root/coordination/research/engine-signatures/README.md. Census additions 2026-09-25 (the engine census of the owner's library): detection-only rows for LOVE (love2d), XNA/FNA/MonoGame, HashLink, Torque, GoldSrc, Source/Source 2, the Tomb Raider I-III engine and X-COM's original data. ScummVM gets no row: its engines are identified per game by its own detector tables, which conditions here cannot express."
    },
    "legacy": "engines-database.json"
   },
@@ -151,6 +151,11 @@
    "path": "engines/ags.json",
    "collection": "engines",
    "sha256": "6bcf942377ed3bd3a4a89f8a96fbb6e4d2c4f02d70016f44e85f51a83ee5bdcf"
+  },
+  {
+   "path": "engines/love2d.json",
+   "collection": "engines",
+   "sha256": "69538080a4f49371366fcf68e119999c41ca23c82c136a5d05f402b39ab34285"
   },
   {
    "path": "engines/alicesoft-system4.json",
@@ -343,6 +348,41 @@
    "sha256": "529c29dcd0822e6d5dfc309b205375a6bcdb5a5c4e7f8e7b029534f1bbfeb931"
   },
   {
+   "path": "engines/xna-fna-monogame.json",
+   "collection": "engines",
+   "sha256": "7db3373bc19089376d5a531441bed54a446b4d5b69948ee03694b12ab3504770"
+  },
+  {
+   "path": "engines/hashlink.json",
+   "collection": "engines",
+   "sha256": "202c8abdc6b224bac5e0581789ff8d6d2545cc3278c7050a54ec5bdc6bc9f6d9"
+  },
+  {
+   "path": "engines/torque.json",
+   "collection": "engines",
+   "sha256": "b8174a2e423ef9ae4e9713e1b6d1260ce5623274202774f283a51ad9a3afc175"
+  },
+  {
+   "path": "engines/goldsrc.json",
+   "collection": "engines",
+   "sha256": "d6d5bdd7ca4f9949d8580c1816eacb3ec7283f6229ce6bfa9d48b7082d7ce4a0"
+  },
+  {
+   "path": "engines/source.json",
+   "collection": "engines",
+   "sha256": "ae88393381bedd7ffacc61d7cd4d719bb3ca640ba26b8e736b90e6ed8855e764"
+  },
+  {
+   "path": "engines/tomb-raider-classic.json",
+   "collection": "engines",
+   "sha256": "335b6bf95314fc6ed199055d30f9efb13a5db9f36234823c12b30728707031a0"
+  },
+  {
+   "path": "engines/xcom-ufo.json",
+   "collection": "engines",
+   "sha256": "72626d609f48ede4c4aa8b934c5b0c13aa2e7304793f2e1f555906e8d4d919eb"
+  },
+  {
    "path": "engines/renpy-fallback.json",
    "collection": "engines",
    "sha256": "db92f0b01f0b98f2d37696f6d16be516d13a57ede8aebe041b2b3fd3f9e37d81"
@@ -355,7 +395,7 @@
   {
    "path": "engines/unity.json",
    "collection": "engines",
-   "sha256": "36ef95e5c6e376cfcf4b75fd6aa746d8c897fd7ac79563308790621dc6b6f2b0"
+   "sha256": "a86dce15c1e01d0b705035d0882ab826558a4239f1b39aa0015015b38342e8fc"
   },
   {
    "path": "engines/nwjs-electron.json",
