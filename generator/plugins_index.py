@@ -57,12 +57,22 @@ INDEX_PATH = PLUGINS_DIR / "index.json"
 ORIGINS_PATH = PLUGINS_DIR / "origins.json"
 THIRD_PARTY_PATH = PLUGINS_DIR / "third-party.json"
 ROOT_KEY_PATH = PLUGINS_DIR / "official-root-key.json"
+HISTORY_PATH = PLUGINS_DIR / "key-history.json"
+HISTORY_COMMENT = (
+    "Every signing key the index has accepted for a repository, in order: its first registration and each "
+    "rotation, with the key document (for an official repository, with the root's certificate and serial). "
+    "Written by generator/plugins_index.py and never edited by hand; --check re-verifies every certificate "
+    "and that serials only rise."
+)
 SCHEMA_VERSION = 1
 RELEASE_ENVELOPE = "enginehost-release.json"
 KEY_DOCUMENT = "enginehost-public-key.json"
 REGISTRATION = "enginehost-registration.json"
 REGISTRATION_STATEMENT = "enginehost-registration-v1"
 ALGORITHM = "SHA256withECDSA"
+# What a replacement key's certificate signs before its identity (enginehost
+# scripts/certify-repository-key.py; a first key's certificate has no prefix).
+CERTIFICATE_V2 = "enginehost-origin-key-v2"
 
 # The organisation whose repositories are official.  Official is never a
 # claim: it is a key the Enginehost root certified for that exact origin.
@@ -101,6 +111,10 @@ RETRY_PAUSE_SECONDS = 10
 
 class Rejected(Exception):
     """A repository or release that does not validate; the message says why."""
+
+
+class KeptRegistration(Rejected):
+    """Not indexed this run, but the registration and its pin stand."""
 
 
 def log(message):
@@ -288,27 +302,37 @@ def official_root():
     return document, Key(document.get("publicKeySpki"), document.get("keySha256"), "official root key")
 
 
-def certified(document, root):
-    """Whether the Enginehost root signed this key for this origin (PluginOriginKeyStore.verifyOfficialIssuer)."""
+def certificate_serial(document, root):
+    """The serial the Enginehost root certified this key for this origin with, or None.
+
+    The same check as enginehost's OriginKeyDocuments.parseCertified: serial 0
+    is the original certificate format; a replacement key's certificate signs
+    its serial too (`enginehost-origin-key-v2`), so only the root can raise it.
+    """
     root_document, root_key = root
     issuer = document.get("issuer")
     if not isinstance(issuer, dict):
-        return False
+        return None
     if issuer.get("id") != root_document.get("id") or issuer.get("algorithm") != ALGORITHM:
-        return False
+        return None
     if str(issuer.get("keySha256", "")).upper() != root_key.sha256:
-        return False
+        return None
+    serial = issuer.get("serial", 0)
+    if not isinstance(serial, int) or isinstance(serial, bool) or serial < 0:
+        return None
     identity = (
         normalize_origin(document["origin"]) + "\n"
         + document["algorithm"] + "\n"
         + document["publicKeySpki"] + "\n"
         + document["keySha256"].upper() + "\n"
-    ).encode("utf-8")
+    )
+    if serial:
+        identity = CERTIFICATE_V2 + "\n" + identity + str(serial) + "\n"
     try:
         signature = b64(issuer.get("signature", ""), "issuer signature")
     except Rejected:
-        return False
-    return verifies(identity, signature, root_key.der)
+        return None
+    return serial if verifies(identity.encode("utf-8"), signature, root_key.der) else None
 
 
 # --- the third-party list ------------------------------------------------------
@@ -457,22 +481,62 @@ def check_envelope(body, origin, key, assets, third_party, admitted_before):
     return envelope
 
 
-def index_for(repo, trust, pinned, maintainer, previous):
+def official_key(repo, document, key, pin):
+    """Which key an official repository is indexed under, and whether that is a change.
+
+    [document]/[key] is what the repository publishes now; [pin] is what
+    origins.json registered ({keySha256, keySerial, key: the certified
+    document from key-history.json}) or None.  Answers (document, key,
+    serial, change), change being "registered", "rotated" or None.  A key
+    the repository publishes is taken only with the root's certificate for
+    this origin, and in place of a registered key only with a higher serial
+    (T7, T10 of the threat model); otherwise the registered key stays and
+    releases signed by the other key are left out.
+    """
+    serial = certificate_serial(document, OFFICIAL_ROOT)
+    if pin is None:
+        if serial is None:
+            raise Rejected(repo + ": its key is not certified by the Enginehost root for " + origin_of(repo))
+        return document, key, serial, "registered"
+    pinned = pin["keySha256"].upper()
+    pinned_serial = pin.get("keySerial", 0)
+    if key.sha256 == pinned:
+        if serial is None:
+            raise Rejected(repo + ": its registered key no longer carries a valid root certificate")
+        return document, key, serial, None
+    if serial is not None and serial > pinned_serial:
+        return document, key, serial, "rotated"
+    warn(
+        repo + " publishes key " + key.sha256 + " (serial " + str(serial) + ") in place of " + pinned
+        + " (serial " + str(pinned_serial) + "): not a certified rotation; keeping the registered key"
+    )
+    if pin.get("key") is None:
+        raise Rejected(repo + ": publishes an unaccepted key and its registered key's document is not on record")
+    kept, kept_key = key_document(json.dumps(pin["key"]).encode(), origin_of(repo), repo + " registered key")
+    if kept_key.sha256 != pinned or certificate_serial(kept, OFFICIAL_ROOT) is None:
+        raise Rejected(repo + ": the key history's document for " + pinned + " does not verify")
+    return kept, kept_key, pinned_serial, None
+
+
+def index_for(repo, trust, pin, maintainer, previous):
     """One repository's entry: its verified releases, its key, and what was left out.
 
-    [pinned] is the fingerprint registered for the repository, or None when it
-    has not been pinned yet (then the first acceptable key is).  [previous]
-    maps tag -> envelope sha256 from the committed index: a release already
-    admitted with the same envelope is not held to the ABI rule again, so the
-    rule governs what is published from now on and builds devices already
-    run do not vanish.
+    [pin] is what origins.json registered for the repository (see
+    official_key), or None when it is not registered yet.  For a third party
+    it is the key its registration names, which the caller has already held
+    to the list.  [previous] maps tag -> envelope sha256 from the committed
+    index: a release already admitted with the same envelope is not held to
+    the ABI rule again, so the rule governs what is published from now on and
+    builds devices already run do not vanish.
+
+    Answers (entry, record for origins.json, change or None, refused releases).
     """
     origin = origin_of(repo)
     third_party = trust == "third-party"
     listed = list(releases(repo))
 
-    # The key: the repository's key document, from its releases (the build
-    # attaches it to every release) or its tree.
+    # The key: the repository's key document, from its newest release that
+    # carries one (the build attaches it to every release) or its tree.
     documents = []
     for release in listed:
         asset = next((a for a in release.get("assets") or [] if a["name"] == KEY_DOCUMENT), None)
@@ -486,10 +550,12 @@ def index_for(repo, trust, pinned, maintainer, previous):
     if not documents:
         raise Rejected(repo + " publishes no " + KEY_DOCUMENT)
     document, key = key_document(documents[0], origin, repo + " " + KEY_DOCUMENT)
-    if pinned is not None and key.sha256 != pinned.upper():
-        raise Rejected(repo + " publishes key " + key.sha256 + " but " + str(pinned) + " is registered for it")
-    if not third_party and not certified(document, OFFICIAL_ROOT):
-        raise Rejected(repo + ": its key is not certified by the Enginehost root for " + origin)
+    if third_party:
+        if key.sha256 != pin["keySha256"].upper():
+            raise Rejected(repo + " publishes key " + key.sha256 + " but registered " + pin["keySha256"])
+        serial, change = 0, None
+    else:
+        document, key, serial, change = official_key(repo, document, key, pin)
 
     entry = {"repo": repo, "origin": origin, "trust": trust}
     if third_party:
@@ -542,7 +608,10 @@ def index_for(repo, trust, pinned, maintainer, previous):
                 "assets": listed_assets,
             }
         )
-    return entry, key.sha256, refused
+    record = {"repo": repo, "keySha256": key.sha256}
+    if not third_party:
+        record["keySerial"] = serial
+    return entry, record, change, refused
 
 
 def previous_envelopes(existing_text):
@@ -647,6 +716,8 @@ def generate(existing_text, announced=None):
             report.append(announced + " is neither Droidtop's nor listed as third party; ignored.")
 
     pins = {entry["repo"].lower(): entry for entry in registered}
+    history_document = load_history()
+    history = history_document["keys"]
     entries = []
     kept = []
     for repo in candidates:
@@ -654,20 +725,36 @@ def generate(existing_text, announced=None):
         listed = third_party.get(repo.lower())
         try:
             if owner_of(repo) == OFFICIAL_OWNER:
-                entry, fingerprint, refused = index_for(
-                    repo, "official", (was or {}).get("keySha256"), None, previous.get(repo.lower(), {})
+                pin = None
+                if was is not None:
+                    pin = dict(was)
+                    pin["key"] = recorded_key(history, repo, was["keySha256"])
+                entry, record, change, refused = index_for(
+                    repo, "official", pin, None, previous.get(repo.lower(), {})
                 )
-                record = {"repo": repo, "keySha256": fingerprint}
             elif listed is not None:
                 maintainer, keys, _ = listed
                 # The registration is re-read on every run: withdrawing it, or
                 # the list dropping the key it was signed with, takes the
                 # repository out of the index.
                 key = registration_of(repo, maintainer, keys)
-                entry, fingerprint, refused = index_for(
-                    repo, "third-party", key.sha256, maintainer, previous.get(repo.lower(), {})
+                pinned = (was or {}).get("keySha256")
+                if pinned and pinned.upper() != key.sha256 and pinned.upper() in keys:
+                    # A third party's key changes only by an edit to
+                    # third-party.json: while the registered key is still
+                    # listed, a registration naming another key is refused.
+                    raise KeptRegistration(
+                        repo + " registered with key " + key.sha256 + " while its registered key " + pinned
+                        + " is still listed; a third party's key changes only when third-party.json drops the old one"
+                    )
+                entry, record, change, refused = index_for(
+                    repo, "third-party", {"keySha256": key.sha256}, maintainer, previous.get(repo.lower(), {})
                 )
-                record = {"repo": repo, "keySha256": fingerprint, "maintainer": maintainer["id"]}
+                record["maintainer"] = maintainer["id"]
+                if pinned is None:
+                    change = "registered"
+                elif pinned.upper() != key.sha256:
+                    change = "rotated"
             else:
                 # Registered once as third party, since delisted.
                 report.append(repo + " is no longer in plugins/third-party.json; deregistered.")
@@ -677,7 +764,7 @@ def generate(existing_text, announced=None):
                 if repo.lower() == (announced or "").lower() or owner_of(repo) == OFFICIAL_OWNER:
                     report.append("Not registered: " + str(reason))
                 continue
-            if listed is not None:
+            if listed is not None and not isinstance(reason, KeptRegistration):
                 # A third party that withdrew its registration, or whose list
                 # entry no longer names the key it signed with, is out.
                 report.append("Deregistered: " + str(reason))
@@ -695,8 +782,25 @@ def generate(existing_text, announced=None):
         if not entry["releases"] and was is None:
             report.append("Not registered: " + repo + " has no release that validates.")
             continue
-        if was is None:
-            report.append("Registered " + repo + " (" + entry["trust"] + ", key " + fingerprint + ").")
+        # Every key a repository is indexed under is on record, with the
+        # certified document for an official one; a repository registered
+        # before the history existed gets its first line the same way.
+        if change is None and recorded_key(history, repo, record["keySha256"]) is None:
+            change = "registered"
+        if change is not None:
+            history.append({
+                "repo": repo,
+                "trust": entry["trust"],
+                "keySha256": record["keySha256"],
+                "serial": record.get("keySerial", 0),
+                "replaces": (was or {}).get("keySha256") if change == "rotated" else None,
+                "acceptedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "key": entry["key"],
+            })
+            report.append(
+                ("Registered " if change == "registered" else "Rotated ") + repo + " (" + entry["trust"]
+                + ", key " + record["keySha256"] + ", serial " + str(record.get("keySerial", 0)) + ")."
+            )
         kept.append(record)
         entries.append(entry)
 
@@ -707,7 +811,63 @@ def generate(existing_text, announced=None):
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "origins": entries,
     }
-    return index, registrations_document, report
+    return index, registrations_document, report, history_document
+
+
+def load_history():
+    if not HISTORY_PATH.is_file():
+        return {"comment": HISTORY_COMMENT, "keys": []}
+    document = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+    if not isinstance(document.get("keys"), list):
+        raise Rejected("plugins/key-history.json: `keys` must be a list")
+    return document
+
+
+def recorded_key(history, repo, fingerprint):
+    """The key document key-history.json holds for this repository's [fingerprint], or None."""
+    for line in reversed(history):
+        if line.get("repo", "").lower() == repo.lower() and str(line.get("keySha256", "")).upper() == fingerprint.upper():
+            return line.get("key")
+    return None
+
+
+def check_history(registered):
+    """What makes the key history an audit trail rather than a note.
+
+    Checked offline on every push: each official line's certificate verifies
+    with the serial it records, serials only rise per repository, each line
+    names the key it replaced, and every registration is pinned to the last
+    key the history holds for it.
+    """
+    history = load_history()["keys"]
+    last = {}
+    for number, line in enumerate(history, 1):
+        repo = line.get("repo", "")
+        what = "plugins/key-history.json line " + str(number) + " (" + repo + ")"
+        document = line.get("key")
+        if not isinstance(document, dict):
+            sys.exit(what + ": no key document")
+        try:
+            _, key = key_document(json.dumps(document).encode(), origin_of(repo), what)
+        except Rejected as reason:
+            sys.exit(str(reason))
+        if key.sha256 != str(line.get("keySha256", "")).upper():
+            sys.exit(what + ": keySha256 is not the document's key")
+        previous = last.get(repo.lower())
+        if line.get("trust") == "official":
+            serial = certificate_serial(document, OFFICIAL_ROOT)
+            if serial is None or serial != line.get("serial"):
+                sys.exit(what + ": the root's certificate does not verify with serial " + str(line.get("serial")))
+            if previous is not None and serial <= previous.get("serial", 0):
+                sys.exit(what + ": serial " + str(serial) + " does not rise above " + str(previous.get("serial")))
+        expected = previous.get("keySha256") if previous is not None else None
+        if line.get("replaces") != expected:
+            sys.exit(what + ": replaces " + str(line.get("replaces")) + ", not the key before it (" + str(expected) + ")")
+        last[repo.lower()] = line
+    for entry in registered:
+        line = last.get(entry["repo"].lower())
+        if line is not None and line["keySha256"].upper() != entry["keySha256"].upper():
+            sys.exit("plugins/origins.json: " + entry["repo"] + " is pinned to a key the history does not end with")
 
 
 def dump(document):
@@ -743,8 +903,10 @@ def check(existing):
     """What a push can check without spending API calls: the files agree and parse."""
     if existing is None:
         sys.exit("plugins/index.json is missing; run generator/plugins_index.py")
-    official_root()
+    global OFFICIAL_ROOT
+    OFFICIAL_ROOT = official_root()
     third_party, _ = load_third_party()
+    check_history(json.loads(ORIGINS_PATH.read_text(encoding="utf-8"))["origins"])
     document = json.loads(existing)
     if document.get("schemaVersion") != SCHEMA_VERSION:
         sys.exit("plugins/index.json: unexpected schemaVersion")
@@ -799,7 +961,7 @@ def main():
             if args.report:
                 args.report.write_text(answer + "\n", encoding="utf-8")
             return
-        index, registrations, report = generate(existing, announced)
+        index, registrations, report, history = generate(existing, announced)
     except Rejected as reason:
         sys.exit(str(reason))
     except urllib.error.HTTPError as error:
@@ -811,6 +973,10 @@ def main():
             ("\n".join("- " + line for line in report) if report else "- Nothing new to register.") + "\n",
             encoding="utf-8",
         )
+    history_text = dump(history)
+    if not HISTORY_PATH.is_file() or history_text != HISTORY_PATH.read_text(encoding="utf-8"):
+        HISTORY_PATH.write_text(history_text, encoding="utf-8")
+        log("plugins/key-history.json written: " + str(len(history["keys"])) + " keys on record")
     registrations_text = dump(registrations)
     if registrations_text != ORIGINS_PATH.read_text(encoding="utf-8"):
         ORIGINS_PATH.write_text(registrations_text, encoding="utf-8")

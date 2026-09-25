@@ -78,13 +78,13 @@ jobs:
         if: github.event_name != 'push'
         run: |
           set -euo pipefail
-          if git diff --quiet -- plugins/index.json plugins/origins.json; then
+          if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json)" ]; then
             echo "Nothing to commit."
             exit 0
           fi
           git config user.name "droidtop-platforms"
           git config user.email "platforms@droidtop.invalid"
-          git add plugins/index.json plugins/origins.json
+          git add plugins/index.json plugins/origins.json plugins/key-history.json
           git commit -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:main
 

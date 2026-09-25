@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-25T15:10:47Z",
+ "generatedAt": "2026-09-25T17:08:35Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -760,13 +760,13 @@
      "tag": "rpgmaker-mv-mz-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-25T06:38:27Z",
+     "published_at": "2026-09-25T15:27:59Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
-       "size": 12268,
-       "sha256": "7491bf79ed6c8a52b3e85e816cfd5849f707a4d995babe9fa6128243be50bb57"
+       "size": 12260,
+       "sha256": "37ee8223f908a47f6f895a796d0378212c792ce0984cf6dbeeed8eb454575cd7"
       },
       {
        "name": "enginehost-public-key.json",
@@ -778,7 +778,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/enginehost-release.json",
        "size": 3365,
-       "sha256": "ced4a3c45849a675a16f98cddb184b19e5616d5ea10bd80a7f61d778306d7d5e"
+       "sha256": "904685c6043f648f271b1005b2acccb094cf9d6cc3c270d7edfc58dc14cdcbf8"
       }
      ]
     },
@@ -1192,13 +1192,13 @@
      "tag": "html-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-25T06:21:40Z",
+     "published_at": "2026-09-25T15:28:36Z",
      "assets": [
       {
        "name": "dev.enginehost.html.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/dev.enginehost.html.v1.enginehost.tar.xz",
-       "size": 11988,
-       "sha256": "2ef533651775112bcca42e4cef2b3658fe61b37f3740818b43e584261b2124ee"
+       "size": 12000,
+       "sha256": "ee2d19db85a41b89dfb02699d34d5a6260f40405349a1b52eb6121c171bcb4f4"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1210,7 +1210,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/enginehost-release.json",
        "size": 3233,
-       "sha256": "9356c72afcc5e63925cbb6de1b5317732c6c574eee2742476d81077d96d02d81"
+       "sha256": "8ad1b1ae7a39aa8814db4ecdaf382756c0755222e3faad87456c25e55a694793"
       }
      ]
     },
