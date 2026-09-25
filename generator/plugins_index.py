@@ -28,6 +28,7 @@ import json
 import os
 import pathlib
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -50,8 +51,35 @@ HASH_IF_SMALLER_THAN = 2 * 1024 * 1024
 # stale index) without a commit per scheduled run.
 REFRESH_AFTER = timedelta(hours=20)
 
+# Server errors are retried this many times in all, with a growing pause.
+RETRIES = 4
+RETRY_PAUSE_SECONDS = 10
+
+
+def with_retries(fetch):
+    """Runs fetch(), again after a pause when GitHub answers with a server error.
+
+    A single HTTP 500 while listing one repository failed the whole scheduled
+    run of 2026-09-25 05:06, so the index stayed six hours behind the builds
+    published that morning and Enginehost's catalog did not offer them.
+    """
+    for attempt in range(RETRIES):
+        try:
+            return fetch()
+        except urllib.error.HTTPError as error:
+            if error.code < 500 or attempt == RETRIES - 1:
+                raise
+        except urllib.error.URLError:
+            if attempt == RETRIES - 1:
+                raise
+        time.sleep(RETRY_PAUSE_SECONDS * (attempt + 1))
+
 
 def api(url):
+    return with_retries(lambda: api_once(url))
+
+
+def api_once(url):
     request = urllib.request.Request(url)
     request.add_header("Accept", "application/vnd.github+json")
     request.add_header("X-GitHub-Api-Version", "2022-11-28")
@@ -84,6 +112,10 @@ def releases(repo):
 
 
 def download(url):
+    return with_retries(lambda: download_once(url))
+
+
+def download_once(url):
     request = urllib.request.Request(url)
     request.add_header("User-Agent", "droidtop-platforms-plugins-index")
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
