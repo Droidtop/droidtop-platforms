@@ -1,0 +1,20 @@
+name: Register a third-party plugin repository
+description: Ask for your listed Enginehost plugin repository to be (re)indexed now rather than on the six-hourly schedule.
+title: "Register a third-party plugin repository"
+labels: [plugin-registration]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only for maintainers already listed in `plugins/third-party.json`, and only acted on when you open it
+        from the GitHub account that entry names. The repository must publish an `enginehost-registration.json`
+        signed with one of your listed keys; `plugins/README.md` says how. The workflow answers here and closes
+        the issue.
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: owner/name of the plugin repository, as listed.
+      placeholder: owner/enginehost-example-plugin
+    validations:
+      required: true

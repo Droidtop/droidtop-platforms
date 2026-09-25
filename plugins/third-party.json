@@ -1,0 +1,4 @@
+{
+ "comment": "Third-party maintainers allowed to register their own plugin repositories in the index. Each entry: id (lowercase, unique), name, github (the maintainer's GitHub login, the only account whose registration issue is acted on), keys (the P-256 public keys their bundles and registrations are signed with) and repos (owner/name). Added by a reviewed pull request only; see README.md. Listing is identity, not review: Enginehost shows these as Third party, never Official.",
+ "maintainers": []
+}

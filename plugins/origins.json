@@ -1,17 +1,53 @@
 {
- "comment": "The plugin repositories the index covers. This list IS enginehost's PluginOriginStore.DEFAULT_ORIGINS; a repository added there is added here, and a custom origin a person adds on their own device is never here and takes the GitHub API path instead.",
+ "comment": "The registered plugin repositories and the signing-key fingerprint each is pinned to. Written by generator/plugins_index.py: a Droidtop repository is registered when its root-certified key and its releases validate, a third-party one when its signed registration and its releases validate against a key plugins/third-party.json lists for it. Not hand-maintained; see README.md.",
  "origins": [
-  {"repo": "Droidtop/enginehost-renpy-plugin"},
-  {"repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"},
-  {"repo": "Droidtop/enginehost-rpgmaker-easyrpg-plugin"},
-  {"repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"},
-  {"repo": "Droidtop/enginehost-kirikiri-plugin"},
-  {"repo": "Droidtop/enginehost-buriko-plugin"},
-  {"repo": "Droidtop/enginehost-catsystem2-plugin"},
-  {"repo": "Droidtop/enginehost-cmvs-plugin"},
-  {"repo": "Droidtop/enginehost-flash-air-plugin"},
-  {"repo": "Droidtop/enginehost-html-plugin"},
-  {"repo": "Droidtop/enginehost-godot-plugin"},
-  {"repo": "Droidtop/enginehost-nscripter-plugin"}
+  {
+   "repo": "Droidtop/enginehost-renpy-plugin",
+   "keySha256": "550BFFFAE00F407331D0E900DF34D4CBA85823753B885ED0A0D737741163BCCA"
+  },
+  {
+   "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin",
+   "keySha256": "5FFA6BC66A7D0F1F96B11FC7D703D216384B8D6841E13CAE58461E533035247C"
+  },
+  {
+   "repo": "Droidtop/enginehost-rpgmaker-easyrpg-plugin",
+   "keySha256": "AFD5DF69D1A8EBCE42E7D1311B4515BA2ED5782BD3E8FB4B5CC7FD2311A968B7"
+  },
+  {
+   "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin",
+   "keySha256": "A397FD4C5113D1DC9218753EC7C225E2B00B04FFE34F8EE2E1CEB28357246F27"
+  },
+  {
+   "repo": "Droidtop/enginehost-kirikiri-plugin",
+   "keySha256": "78362228F1E82FEC8A84AD4216504345794C640536EECB2954188068731456E1"
+  },
+  {
+   "repo": "Droidtop/enginehost-buriko-plugin",
+   "keySha256": "E71FEBDADAF9C8EF09405BF4F6855B8706EAB065F7FF587E6C8D8BCC849C6D95"
+  },
+  {
+   "repo": "Droidtop/enginehost-catsystem2-plugin",
+   "keySha256": "86FBB6B8B9CCB8CC7E706BCD36D229DEC7C6B4EB018B673C23F96C6B3F82D59D"
+  },
+  {
+   "repo": "Droidtop/enginehost-cmvs-plugin",
+   "keySha256": "8E3DD9E68918D56BDD5B6D164DE43B7DB528D4BB8ABBB72D7B1EB05DD5C2DDC5"
+  },
+  {
+   "repo": "Droidtop/enginehost-flash-air-plugin",
+   "keySha256": "5F3D646BCE4F597D6E6FCD824B4B8C0AE7C19DFBD5ECA8A2413A63E9AC3C2244"
+  },
+  {
+   "repo": "Droidtop/enginehost-html-plugin",
+   "keySha256": "27A6D3CBB1FA59BF4558344D187858BF9036A01471BCBAA47DE290E4784245A5"
+  },
+  {
+   "repo": "Droidtop/enginehost-godot-plugin",
+   "keySha256": "0A5223A430DC73C2E502D0BB6D66756BCFF3062C16E7B08FA5690106AFA5A946"
+  },
+  {
+   "repo": "Droidtop/enginehost-nscripter-plugin",
+   "keySha256": "B578D18E4F510324A874F5E92A3621035AEEDD6DDDD99C47D02E79609E43FD10"
+  }
  ]
 }
