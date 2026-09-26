@@ -60,6 +60,11 @@
    "repo": "Droidtop/enginehost-nscripter-plugin",
    "keySha256": "B578D18E4F510324A874F5E92A3621035AEEDD6DDDD99C47D02E79609E43FD10",
    "keySerial": 0
+  },
+  {
+   "repo": "Droidtop/enginehost-love2d-plugin",
+   "keySha256": "8791EB87742F50F75933763970F9C926B9541539B14C89413A3DD407CA679854",
+   "keySerial": 0
   }
  ]
 }

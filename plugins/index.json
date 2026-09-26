@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-26T09:34:55Z",
+ "generatedAt": "2026-09-26T10:40:34Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1589,6 +1589,52 @@
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
        "size": 11381,
        "sha256": "5548096c8da7dc859806ebba07650aa392bd81608e894f987a49bd8ac37f6973"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "repo": "Droidtop/enginehost-love2d-plugin",
+   "origin": "https://github.com/droidtop/enginehost-love2d-plugin",
+   "trust": "official",
+   "key": {
+    "algorithm": "SHA256withECDSA",
+    "formatVersion": 1,
+    "issuer": {
+     "algorithm": "SHA256withECDSA",
+     "id": "enginehost-official-v1",
+     "keySha256": "D5191180B94C64B0F95106DB440E17501253B506752BBC178C94A70C3D4A5FDD",
+     "signature": "MEQCIFe5vxE9/glWbX+0N4nnxGd0AKRa8FCMPBNy9LaEvQfqAiB5DbZ+/0wYzQAknerTBxT8eO90cWU6hNvnOXx7RTWWpw=="
+    },
+    "keySha256": "8791EB87742F50F75933763970F9C926B9541539B14C89413A3DD407CA679854",
+    "origin": "https://github.com/droidtop/enginehost-love2d-plugin",
+    "publicKeySpki": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE//hEAaz7vWXhNM4pPoZuz0aWUcD5bG2d1xOY/mQk+zmJG6qwoSEgljG0vtuxu053RHW6S/iNLWrHRzclm3dW5g=="
+   },
+   "releases": [
+    {
+     "tag": "love2d-11-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-09-26T10:39:53Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.love2d.11.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/dev.enginehost.love2d.11.v1.enginehost.tar.xz",
+       "size": 17369416,
+       "sha256": "c7ff3cdec19ccf4f2ca894c720ce67ddfe259bab37299960e0ffec0f19296dee"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/enginehost-public-key.json",
+       "size": 649,
+       "sha256": "abedb0516067188c9391c3ca90fce2e57840825bb713b049635170395ac4f23c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/enginehost-release.json",
+       "size": 4509,
+       "sha256": "be761eb10e8c316f7b26e19e70ee5168b23aeddecfc531311aceee0f7ca64685"
       }
      ]
     }
