@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-26T03:26:17Z",
+ "generatedAt": "2026-09-26T03:38:35Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -950,13 +950,13 @@
      "tag": "catsystem2-cst-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-26T03:25:42Z",
+     "published_at": "2026-09-26T03:37:57Z",
      "assets": [
       {
        "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
-       "size": 241496,
-       "sha256": "1ed8e9b30e9ee39cc8a97b94c68388ff4d92f7539e8ade8e506c9045883277cf"
+       "size": 241884,
+       "sha256": "f9d07437f8f715a2cbb1b56c80cce677fd590b180e4ba0a88a5e29fe9ae023c0"
       },
       {
        "name": "enginehost-public-key.json",
@@ -968,7 +968,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/enginehost-release.json",
        "size": 2437,
-       "sha256": "2cfe0d0380db59958a3bef3987a11df9b867fa3dc8a7fc6d469b4d8b1d92029f"
+       "sha256": "7a1a41dc99dedf2be208770d804fb52a7d0b1eb63087e8fe405ba1c8369eb9cb"
       }
      ]
     },
