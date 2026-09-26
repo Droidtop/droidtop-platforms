@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-26T10:40:34Z",
+ "generatedAt": "2026-09-26T10:58:39Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1022,13 +1022,13 @@
      "tag": "cmvs-ps2-ps3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-25T06:37:40Z",
+     "published_at": "2026-09-26T10:58:17Z",
      "assets": [
       {
        "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
-       "size": 240968,
-       "sha256": "7b18f30da5d0932ae94e6568f629b61e4033ddf87121b7be4ec236c596bb4b25"
+       "size": 245632,
+       "sha256": "d63ce6cef6061c6d78a1a15beff3080a631658a49f6fb3ef81e618897a630955"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1039,8 +1039,8 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-release.json",
-       "size": 2705,
-       "sha256": "b307bcb4695e9fad7aff5e6ecbca123f94b4345965edb04a9d634949cc7db2fc"
+       "size": 2729,
+       "sha256": "b2a9064c283ebd4ff64269312e1c2da45e6a693444938c587a9c9b93f4cf1d98"
       }
      ]
     },
