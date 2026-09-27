@@ -644,11 +644,15 @@
     }
    ],
    "strategies": [
+    "ENGINEHOST",
     "LINUX_CONTAINER",
     "WINE_PREFIX"
    ],
-   "enginehost": null,
-   "notes": "LOVE (love2d): a game is a .love zip, or on Windows a fused game.exe (love.exe with the .love appended) shipped beside love.dll, lua51.dll and SDL2.dll (https://love2d.org/wiki/Game_Distribution); an unpacked game is a folder whose main.lua runs and whose conf.lua defines love.conf (https://love2d.org/wiki/Config_Files). main.lua alone is not enough: other Lua runtimes use the same name, so the loose shape also needs love.conf. The LOVE version the game was written for is enrichment: love.dll's own version resource when the game ships the Windows runtime, else conf.lua's t.version. No enginehost plugin published yet."
+   "enginehost": {
+    "family": "love2d",
+    "context": "standard"
+   },
+   "notes": "LOVE (love2d): a game is a .love zip, or on Windows a fused game.exe (love.exe with the .love appended) shipped beside love.dll, lua51.dll and SDL2.dll (https://love2d.org/wiki/Game_Distribution); an unpacked game is a folder whose main.lua runs and whose conf.lua defines love.conf (https://love2d.org/wiki/Config_Files). main.lua alone is not enough: other Lua runtimes use the same name, so the loose shape also needs love.conf. The LOVE version the game was written for is enrichment: love.dll's own version resource when the game ships the Windows runtime, else conf.lua's t.version. Enginehost plugin: dev.enginehost.love2d.11.v1 (LOVE 11.5)."
   },
   {
    "id": "alicesoft-system4",
