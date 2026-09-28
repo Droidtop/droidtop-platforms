@@ -3,14 +3,14 @@
 The separately-updatable platform database behind
 [droidtop](https://github.com/droidtop/droidtop) and
 [enginehost](https://github.com/droidtop/enginehost): what platforms exist,
-which emulator launches what, which game engine a folder is, what firmware a
-system needs, and what a given handheld's hardware actually reports.
+which emulator launches what, which game engine a folder is, what firmware
+a system needs, and what a given handheld's hardware actually reports.
 
-Both apps take their BUNDLED copy from a pinned checkout of this repository at
-build time (a submodule at `vendor/droidtop-platforms`, copied into generated
-assets, with the commit recorded in the app) and REFRESH it at runtime from
-`index.json`. So a build ships one identifiable state of this repository, and
-between builds the apps pull only the files that changed.
+Both apps take their bundled copy from a pinned checkout of this repository
+at build time (a submodule at `vendor/droidtop-platforms`, copied into
+generated assets, with the commit recorded in the app), and refresh it at
+runtime from `index.json`. So a build ships one identifiable state of this
+repository, and between builds the apps only pull the files that changed.
 
 ## The tree is the source; everything else is generated
 
