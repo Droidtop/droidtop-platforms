@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-29T00:37:36Z",
+ "generatedAt": "2026-09-29T00:38:35Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1023,6 +1023,32 @@
    },
    "releases": [
     {
+     "tag": "rpgmaker-easyrpg-v1",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-09-29T00:38:05Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "size": 37935652,
+       "sha256": "d2c051c03f1fd05a7213f2430103db06c67f25c163c01abc88066dcf6a02b281"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1/enginehost-public-key.json",
+       "size": 659,
+       "sha256": "6819e8eaa30888452a6364f38e82a5cd9f5359ef33fa00675f1093e40794978d"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1/enginehost-release.json",
+       "size": 14163,
+       "sha256": "a45af3b85a67d11de8f388feb0aded6681463fc0505c0db1307d1ba6bcc49c0a"
+      }
+     ]
+    },
+    {
      "tag": "rpgmaker-easyrpg-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -1891,6 +1917,58 @@
      ]
     },
     {
+     "tag": "twine-2_12-v1-testing",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-09-29T00:37:26Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.twine.2_12.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-testing/dev.enginehost.twine.2_12.v1.enginehost.tar.xz",
+       "size": 6156,
+       "sha256": "c8284fa4fba745b9ba544502313ec92780619e83de701d47ddb2a0ddb465dc2b"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-testing/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "a93bd20caf2388953fae2e25e0d76493b809a69c2958bd59982d149eb2cb009c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-testing/enginehost-release.json",
+       "size": 1828,
+       "sha256": "fcb9bba7a2be5d0ddd88bf8a6b7d5a876122dcfdfec94debe051dee796afe7e5"
+      }
+     ]
+    },
+    {
+     "tag": "twine-2_12-v1-build.51",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-09-29T00:37:29Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.twine.2_12.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-build.51/dev.enginehost.twine.2_12.v1.enginehost.tar.xz",
+       "size": 6156,
+       "sha256": "c8284fa4fba745b9ba544502313ec92780619e83de701d47ddb2a0ddb465dc2b"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-build.51/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "a93bd20caf2388953fae2e25e0d76493b809a69c2958bd59982d149eb2cb009c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/twine-2_12-v1-build.51/enginehost-release.json",
+       "size": 1828,
+       "sha256": "fcb9bba7a2be5d0ddd88bf8a6b7d5a876122dcfdfec94debe051dee796afe7e5"
+      }
+     ]
+    },
+    {
      "tag": "twine-2_12-v1-build.47",
      "stream": "unstable",
      "prerelease": true,
@@ -2089,6 +2167,32 @@
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1/enginehost-release.json",
        "size": 4627,
        "sha256": "cb7082f373ff9a1d8a84e132330162ef74b23efbfe34ce3fa9a6e1bd7142fd8c"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v47-v1-testing",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-09-29T00:38:12Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v47.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v47-v1-testing/dev.enginehost.godot.v47.v1.enginehost.tar.xz",
+       "size": 188395200,
+       "sha256": "461167093146b5fae158826ad846811c70d8e3fa3af12db11c69c75d938078ac"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v47-v1-testing/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v47-v1-testing/enginehost-release.json",
+       "size": 4164,
+       "sha256": "7191b8b45c655e59c0c3fdf3f9768cb4f7c853b73495c7719ae6e6ae27944211"
       }
      ]
     },
