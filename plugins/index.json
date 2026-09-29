@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-29T03:59:46Z",
+ "generatedAt": "2026-09-29T05:39:35Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -2766,13 +2766,13 @@
      "tag": "nscripter-onsyuri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-29T03:58:58Z",
+     "published_at": "2026-09-29T05:39:07Z",
      "assets": [
       {
        "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
-       "size": 8343284,
-       "sha256": "28fc631eab12e937e18585e79c61838113edd7042ddd1926a7c0974a226bd754"
+       "size": 8343256,
+       "sha256": "015cdc99c0d0c9086c10ca16b62f06c453236cc1ae262906579e4e18bf84a7ee"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2784,7 +2784,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
        "size": 11385,
-       "sha256": "33d111dd8933803585eeb17a07c8663e7ccb552d65fd0c1b207f1df1baa7b203"
+       "sha256": "4533603ca623f2b3d87a0b44b57228283d551c89fa47bab31fd7053be453161f"
       }
      ]
     },
