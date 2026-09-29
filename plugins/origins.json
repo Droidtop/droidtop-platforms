@@ -65,6 +65,11 @@
    "repo": "Droidtop/enginehost-love2d-plugin",
    "keySha256": "8791EB87742F50F75933763970F9C926B9541539B14C89413A3DD407CA679854",
    "keySerial": 0
+  },
+  {
+   "repo": "Droidtop/enginehost-ags-plugin",
+   "keySha256": "848464F7E497500F1ADD71DC63D3301E69C4406406B066678CC54EEB20E6D6F4",
+   "keySerial": 0
   }
  ]
 }
