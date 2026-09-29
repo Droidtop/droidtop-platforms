@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-29T00:38:35Z",
+ "generatedAt": "2026-09-29T00:40:50Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -2223,6 +2223,32 @@
      ]
     },
     {
+     "tag": "godot-v41-v1-testing",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-09-29T00:40:30Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v41.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v41-v1-testing/dev.enginehost.godot.v41.v1.enginehost.tar.xz",
+       "size": 140986840,
+       "sha256": "dbd2e91ad9ca98fa9014220ffa9c87a2d8097ca30c38d97fc957134e4410d33c"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v41-v1-testing/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v41-v1-testing/enginehost-release.json",
+       "size": 4160,
+       "sha256": "753216df1749733873702cef47e55cbbff9a81f06059d596aba8c6738438b0af"
+      }
+     ]
+    },
+    {
      "tag": "godot-v47-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -2532,13 +2558,13 @@
      "tag": "nscripter-onsyuri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-25T06:39:04Z",
+     "published_at": "2026-09-29T00:40:11Z",
      "assets": [
       {
        "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
-       "size": 8339460,
-       "sha256": "ce4677a8acaaed44a94c237d2f6971b240cc9836fa881abd872b8117e12cd810"
+       "size": 8343312,
+       "sha256": "d96304130999276e397459e427e1563b2628c2fa5bd2e16a6a2917c7cd2d1b68"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2550,7 +2576,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
        "size": 11381,
-       "sha256": "5548096c8da7dc859806ebba07650aa392bd81608e894f987a49bd8ac37f6973"
+       "sha256": "90497acacfa5580a0865841916862893eef22817bf83fd872711044e6bcaf6e5"
       }
      ]
     }
