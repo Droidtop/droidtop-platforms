@@ -543,6 +543,7 @@
    "label": "Aethersx2",
    "pkg": "xyz.aethersx2.android",
    "argumentsTemplate": "-n xyz.aethersx2.android/.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.uri} --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n xyz.aethersx2.android/.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.path} --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -551,6 +552,7 @@
    "label": "Aethersx2 Turnip",
    "pkg": "xyz.aethersx2.custom",
    "argumentsTemplate": "-n xyz.aethersx2.custom/.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.uri} --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n xyz.aethersx2.custom/.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.path} --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -559,6 +561,7 @@
    "label": "NetherSX2 Turnip",
    "pkg": "xyz.aethersx2.tturnip",
    "argumentsTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.uri} --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.path} --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -567,6 +570,7 @@
    "label": "NetherSX2 Turnip (Classic)",
    "pkg": "xyz.aethersx2.cturnip",
    "argumentsTemplate": "-n xyz.aethersx2.cturnip/xyz.aethersx2.android.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.uri} --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n xyz.aethersx2.cturnip/xyz.aethersx2.android.EmulationActivity -a android.intent.action.MAIN -e bootPath {file.path} --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -1855,6 +1859,7 @@
    "label": "NetherSX2 (Standalone)",
    "pkg": "xyz.aethersx2.android",
    "argumentsTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+   "storagePathTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1863,6 +1868,7 @@
    "label": "NetherSX2-Turnip (Standalone)",
    "pkg": "xyz.aethersx2.tturnip",
    "argumentsTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+   "storagePathTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1871,6 +1877,7 @@
    "label": "NetherSX2-Turnip Classic (Standalone)",
    "pkg": "xyz.aethersx2.cturnip",
    "argumentsTemplate": "-n xyz.aethersx2.cturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+   "storagePathTemplate": "-n xyz.aethersx2.cturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1879,6 +1886,7 @@
    "label": "AetherSX2 (Standalone)",
    "pkg": "xyz.aethersx2.android",
    "argumentsTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+   "storagePathTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
    "killPackageProcesses": false
   },
   {

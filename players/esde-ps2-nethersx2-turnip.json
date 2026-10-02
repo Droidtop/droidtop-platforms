@@ -4,5 +4,6 @@
  "label": "NetherSX2-Turnip (Standalone)",
  "pkg": "xyz.aethersx2.tturnip",
  "argumentsTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+ "storagePathTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
  "killPackageProcesses": false
 }

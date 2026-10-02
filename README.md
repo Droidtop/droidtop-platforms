@@ -93,6 +93,7 @@ error — the generator deliberately does not "validate" that away.
       "label": "Display name",
       "pkg": "android.package.name",
       "argumentsTemplate": "am-start arguments with {file.uri}/{file.path} placeholders",
+      "storagePathTemplate": "optional: the same launch with {file.path}, used only when the emulator holds all-files access",
       "killPackageProcesses": false
     }
   ]

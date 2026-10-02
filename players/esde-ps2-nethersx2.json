@@ -4,5 +4,6 @@
  "label": "NetherSX2 (Standalone)",
  "pkg": "xyz.aethersx2.android",
  "argumentsTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
+ "storagePathTemplate": "-n xyz.aethersx2.android/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
  "killPackageProcesses": false
 }
