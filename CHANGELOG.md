@@ -28,6 +28,7 @@ under Unreleased.
 
 ### Fixed
 
+- Platform RetroArch cores come from ES-DE's Android systems file, so droidtop's own RetroArch launch names a core RetroArch for Android actually has (Nintendo 64 is mupen64plus_next_gles3, arcade systems mamearcade); 31 platforms changed.
 - The Switch legacy emulator install is covered, and a player entry whose label and package pointed at different apps was removed.
 - LOVE games can launch through Enginehost; the row still said no runtime was published and blocked the launch before it started.
 - Player presets with quoted launch arguments are no longer skipped by the generator, and more ES-DE placeholders are understood, growing the catalog from 361 to 448 presets.

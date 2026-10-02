@@ -15,6 +15,6 @@
   "z64",
   "zip"
  ],
- "retroArchCore": "mupen64plus_next",
+ "retroArchCore": "mupen64plus_next_gles3",
  "theme": "n64"
 }

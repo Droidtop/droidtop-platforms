@@ -8,6 +8,6 @@
   "gdi",
   "iso"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": null,
  "theme": "fmtowns"
 }

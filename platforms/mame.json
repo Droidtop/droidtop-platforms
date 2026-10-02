@@ -13,6 +13,6 @@
   "sh",
   "zip"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": "mamearcade",
  "theme": "mame"
 }

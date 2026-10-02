@@ -232,7 +232,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "apple2gs"
   },
   {
@@ -250,7 +250,7 @@
     "sh",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "arcade"
   },
   {
@@ -323,7 +323,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "astrocade"
   },
   {
@@ -658,7 +658,7 @@
     "xbe",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "consolearcade"
   },
   {
@@ -668,7 +668,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "cps"
   },
   {
@@ -678,7 +678,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "cps1"
   },
   {
@@ -688,7 +688,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "cps2"
   },
   {
@@ -698,7 +698,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "cps3"
   },
   {
@@ -725,7 +725,7 @@
     "singe",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "dirksimple",
    "theme": "daphne"
   },
   {
@@ -967,7 +967,7 @@
     "gdi",
     "iso"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "fmtowns"
   },
   {
@@ -987,7 +987,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "gamate"
   },
   {
@@ -998,7 +998,7 @@
     "mgw",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamemess",
    "theme": "gameandwatch"
   },
   {
@@ -1009,7 +1009,7 @@
     "tgc",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "gamecom"
   },
   {
@@ -1154,7 +1154,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "gmaster"
   },
   {
@@ -1223,7 +1223,7 @@
     "singe",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "dirksimple",
    "theme": "laserdisc"
   },
   {
@@ -1234,7 +1234,7 @@
     "mgw",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamemess",
    "theme": "lcdgames"
   },
   {
@@ -1294,7 +1294,7 @@
     "sh",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "mame"
   },
   {
@@ -1482,7 +1482,7 @@
     "chd",
     "zip"
    ],
-   "retroArchCore": "mess2015",
+   "retroArchCore": "mamemess",
    "theme": "mess"
   },
   {
@@ -1492,7 +1492,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "mamearcade",
    "theme": "model2"
   },
   {
@@ -1502,7 +1502,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": "supermodel",
    "theme": "model3"
   },
   {
@@ -1675,7 +1675,7 @@
     "zcxi",
     "zip"
    ],
-   "retroArchCore": "azahar",
+   "retroArchCore": "citra",
    "theme": "n3ds"
   },
   {
@@ -1695,7 +1695,7 @@
     "z64",
     "zip"
    ],
-   "retroArchCore": "mupen64plus_next",
+   "retroArchCore": "mupen64plus_next_gles3",
    "theme": "n64"
   },
   {
@@ -1712,7 +1712,7 @@
     "z64",
     "zip"
    ],
-   "retroArchCore": "parallel_n64",
+   "retroArchCore": "mupen64plus_next_gles3",
    "theme": "n64dd"
   },
   {
@@ -2035,7 +2035,7 @@
     "p8",
     "png"
    ],
-   "retroArchCore": "retro8",
+   "retroArchCore": "fake08",
    "theme": "pico8"
   },
   {
@@ -2213,7 +2213,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "pv1000"
   },
   {
@@ -2314,7 +2314,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "scv"
   },
   {
@@ -2465,7 +2465,7 @@
     "sgb",
     "zip"
    ],
-   "retroArchCore": "sameboy",
+   "retroArchCore": "mesen2",
    "theme": "sgb"
   },
   {
@@ -2561,7 +2561,7 @@
     "7z",
     "zip"
    ],
-   "retroArchCore": "kronos",
+   "retroArchCore": "mamearcade",
    "theme": "stv"
   },
   {
@@ -2616,7 +2616,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "supracan"
   },
   {
@@ -2900,7 +2900,7 @@
     "bin",
     "zip"
    ],
-   "retroArchCore": "mame",
+   "retroArchCore": null,
    "theme": "vsmile"
   },
   {
@@ -2950,7 +2950,7 @@
     "wuhb",
     "wux"
    ],
-   "retroArchCore": null,
+   "retroArchCore": "cemu",
    "theme": "wiiu"
   },
   {

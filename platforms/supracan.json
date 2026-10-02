@@ -6,6 +6,6 @@
   "bin",
   "zip"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": null,
  "theme": "supracan"
 }

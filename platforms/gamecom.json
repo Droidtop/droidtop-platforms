@@ -6,6 +6,6 @@
   "tgc",
   "zip"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": null,
  "theme": "gamecom"
 }

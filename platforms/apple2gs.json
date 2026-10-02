@@ -6,6 +6,6 @@
   "7z",
   "zip"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": null,
  "theme": "apple2gs"
 }

@@ -10,6 +10,6 @@
   "wuhb",
   "wux"
  ],
- "retroArchCore": null,
+ "retroArchCore": "cemu",
  "theme": "wiiu"
 }

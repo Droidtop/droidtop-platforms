@@ -12,6 +12,6 @@
   "xbe",
   "zip"
  ],
- "retroArchCore": "mame",
+ "retroArchCore": "mamearcade",
  "theme": "consolearcade"
 }

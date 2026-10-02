@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T16:06:45Z",
+ "generatedAt": "2026-10-02T17:10:19Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -475,12 +475,12 @@
   {
    "path": "platforms/apple2gs.json",
    "collection": "platforms",
-   "sha256": "31cd919f00f1d0553a67180fdd84460b39387daf91955c8f391e611371dc13ce"
+   "sha256": "90d5016caeeb813760d766c008b770667689d370464ff451f533a8e56b95bad7"
   },
   {
    "path": "platforms/arcade.json",
    "collection": "platforms",
-   "sha256": "4b4a469cd1ebe67ce26b18f4131414f54177d2ac1088c62534cda1fc2cecf0a9"
+   "sha256": "3c477086319e0fb6ad18ea88942d140849079e1c596f6fdbfae9664d606f91ae"
   },
   {
    "path": "platforms/arcadia.json",
@@ -500,7 +500,7 @@
   {
    "path": "platforms/astrocde.json",
    "collection": "platforms",
-   "sha256": "b71cd15223d4790d9968b38bfc51b6b5a85297d4e6c01aae4d603bdca04a029e"
+   "sha256": "b1d5d547df4bd0c05897d2eb3e3a67285777c9f51523d34820a4442aedea5bbc"
   },
   {
    "path": "platforms/atari2600.json",
@@ -595,27 +595,27 @@
   {
    "path": "platforms/consolearcade.json",
    "collection": "platforms",
-   "sha256": "8fe128bafcdf35d7edcac552a0d6ffded3358ec4c3587c8dfdd7538900d50997"
+   "sha256": "d500af64a7e9e0abd00a298176e9256d083cc140df0755d95270a7b461132132"
   },
   {
    "path": "platforms/cps.json",
    "collection": "platforms",
-   "sha256": "21456d8bfe3e5c6e5209f8fc6c1c5fed71447f7ade063356c26d8383e991b8e0"
+   "sha256": "c86d56e543ec0ba3ada73004d2679777453122abb44955fe39609825a9f9e55a"
   },
   {
    "path": "platforms/cps1.json",
    "collection": "platforms",
-   "sha256": "5f34e48945315878c0e5b1300934c52c014592879d07b33482af00d0284bb68e"
+   "sha256": "a79e91924a99c558d387535c31089914e7ccd78441215f977bfc3e6d604cf92d"
   },
   {
    "path": "platforms/cps2.json",
    "collection": "platforms",
-   "sha256": "4f74f94f7c5f2ab948f9a84362ca0ebb3ddc807b899def7e690ff1c15c93dae6"
+   "sha256": "631cf6447d3ad07ac7b169fecdc1d44b08cc419c7d4292fa69d7479251328ea4"
   },
   {
    "path": "platforms/cps3.json",
    "collection": "platforms",
-   "sha256": "262e93d4234b5e4e4ec7935998171c2bc900116d458a2c2a835a02b05ecc697e"
+   "sha256": "ffe616d36f0ddf6b983f3c7464e88b71e9540140d3277f8d52a79ffbf79e1c48"
   },
   {
    "path": "platforms/crvision.json",
@@ -625,7 +625,7 @@
   {
    "path": "platforms/daphne.json",
    "collection": "platforms",
-   "sha256": "f511ac093860996d5f93fc5d95dd1cd79ca7106f7b19b2125d74cc8ab86d5e9d"
+   "sha256": "396855ffd44cd64cbf78ae52d3f0d32a4fde2ac5bfc24131419566a00026f583"
   },
   {
    "path": "platforms/desktop.json",
@@ -705,7 +705,7 @@
   {
    "path": "platforms/fmtowns.json",
    "collection": "platforms",
-   "sha256": "ef4ad609f8596d967dd0f34391733dd15274d8f6e248e301f81efd3653818280"
+   "sha256": "d33bf3ef756594e3c771b300e8a470eb7db85ccaf165fde8613c8a53605422af"
   },
   {
    "path": "platforms/fpinball.json",
@@ -715,17 +715,17 @@
   {
    "path": "platforms/gamate.json",
    "collection": "platforms",
-   "sha256": "a743d6ac4a81a77b66d1d39c1a51e6d81bb67425ccf97bbe0b2bbf9d8560c1b8"
+   "sha256": "d2ae0d4e7cfdfe3d4b38b6fb129ae4dde521d9d9afa59eecdd5642823ccce1fc"
   },
   {
    "path": "platforms/gameandwatch.json",
    "collection": "platforms",
-   "sha256": "507270b8e99b39f69146056aa92976761441d3d823e3abc10787312cb77e23ad"
+   "sha256": "2d74bf3d1b8cc19928e05c6a87b4de42f0718c07a98d5bbfce3c02ab77eaf2eb"
   },
   {
    "path": "platforms/gamecom.json",
    "collection": "platforms",
-   "sha256": "b9a6bd6ce52880d167300992ddfc5570945fe987d77e363f3b03ca301ea341fd"
+   "sha256": "ed226710ba7912dfcab7428e5e5b88bfad2a362ba79f6ee82c85c7c8059d7558"
   },
   {
    "path": "platforms/gamegear.json",
@@ -760,7 +760,7 @@
   {
    "path": "platforms/gmaster.json",
    "collection": "platforms",
-   "sha256": "f4495bb6f0e40309d560008353928bf01e8fa59dc4a499d75c74bf6729f7853f"
+   "sha256": "1ed926bbf19d3d4a4e8252e03d9674474f1c133f8c936174efa8a9021ed84a49"
   },
   {
    "path": "platforms/gx4000.json",
@@ -785,12 +785,12 @@
   {
    "path": "platforms/laserdisc.json",
    "collection": "platforms",
-   "sha256": "bc18a5a6c9e8b5506fea96cffb5f2fff92055f1d18c61a1833ddb23633ef7a7a"
+   "sha256": "9e36929b1d667914c8167928f0972c18b8e52736ec7a482d43d57a8682814c60"
   },
   {
    "path": "platforms/lcdgames.json",
    "collection": "platforms",
-   "sha256": "0fdacc4639de204c581d2a7ef5ca42129148076e4c0868a7a21776a32624b2bf"
+   "sha256": "29736c712ad388c7489c9399002073ee65dce447c89365383f7dbfe40c080178"
   },
   {
    "path": "platforms/lowresnx.json",
@@ -815,7 +815,7 @@
   {
    "path": "platforms/mame.json",
    "collection": "platforms",
-   "sha256": "927f1155d2c4f33e02770f6ff6378e5a33a7a435a32ab41588627eaf078235b3"
+   "sha256": "59f3b3617ee4303b6165bf4137daf0ec7fe2eced7bf3d5d06a64422a9a0b5cd1"
   },
   {
    "path": "platforms/mame-advmame.json",
@@ -860,17 +860,17 @@
   {
    "path": "platforms/mess.json",
    "collection": "platforms",
-   "sha256": "f7f77455bc4effd6bba8618215d508d4d1585a1752dd2f30cb51021635483cd7"
+   "sha256": "fc32be3dbb2da4516e9795ee06a1349798f2b2b505162e2fbfe6012c56890a81"
   },
   {
    "path": "platforms/model2.json",
    "collection": "platforms",
-   "sha256": "0aced5612a32d24834a34b5309d021c6981548405d8151bf8c29dda75d6969cf"
+   "sha256": "754a45d7ecf969305e5b8af33c01e9007247e66498b8750ef376ceca113b08a8"
   },
   {
    "path": "platforms/model3.json",
    "collection": "platforms",
-   "sha256": "72e94f0144a1f8241ecc14a384daf751277f9fa2aa2f4ac7e9c068ed4ad1ac1a"
+   "sha256": "d20d354614f6910ba257ce391e95276d2ebe04833fa50be95fa24048a9cbf90a"
   },
   {
    "path": "platforms/moto.json",
@@ -910,17 +910,17 @@
   {
    "path": "platforms/n3ds.json",
    "collection": "platforms",
-   "sha256": "7a5f1061cceae62bdbce36c488b0d888abd9c79cdd4065b2d937459d4f8e3c39"
+   "sha256": "f8d6151ecb59a625f0971ced31a1101923cb9c9a6f37c9100700e4c372c281b7"
   },
   {
    "path": "platforms/n64.json",
    "collection": "platforms",
-   "sha256": "95bf93e7bedea3eb17381e3dfc28ddbbe37f7d9ff8aecf03dbae053b18cc4b62"
+   "sha256": "362bd2113887d7679488c6954aa0ad268f9840ed791d3da48d216ddb64e9f78f"
   },
   {
    "path": "platforms/n64dd.json",
    "collection": "platforms",
-   "sha256": "427e371222e1bc4f54c2e83ae1ad8060de65ee411efdef47344086429ff1e02a"
+   "sha256": "616f7ad96ed9c0506b8a891c0f93680dfcc3a16ad5fb03092e2276b7e5677a9d"
   },
   {
    "path": "platforms/naomi.json",
@@ -1035,7 +1035,7 @@
   {
    "path": "platforms/pico8.json",
    "collection": "platforms",
-   "sha256": "5c4f0701aa08500b833652c4fa526adf6effbed992e81f3083d922a5d63dad2a"
+   "sha256": "5be86685c3a3167c2f79f5d49406d389124a402e1ceac839584f37e08af66734"
   },
   {
    "path": "platforms/plus4.json",
@@ -1085,7 +1085,7 @@
   {
    "path": "platforms/pv1000.json",
    "collection": "platforms",
-   "sha256": "9c9823fd5bce5e1bb04013312502334ef3ebd2f2df421a82262e301d1b9a4fc4"
+   "sha256": "7ab2cf03e3442728cf624ab5fc97bc9fac6ed7de38b9be0a4a7086529fe00980"
   },
   {
    "path": "platforms/quake.json",
@@ -1120,7 +1120,7 @@
   {
    "path": "platforms/scv.json",
    "collection": "platforms",
-   "sha256": "da98ed86f8439a2146e9dfe1f72aca30bfeac00b6cff4c866527e68a30679f74"
+   "sha256": "678ca9b782523836ab52e42aeeb1cbf6bef3a29b20cd786807b683a26c937126"
   },
   {
    "path": "platforms/sega32x.json",
@@ -1155,7 +1155,7 @@
   {
    "path": "platforms/sgb.json",
    "collection": "platforms",
-   "sha256": "20bd721c655dd1b7a7bd30ecb3c8f219f33162d5054910015b58d1288ac69eb3"
+   "sha256": "07afcce6942212ff19e1bb7d0a5b3e22c241ff0e0701d3a367e5b84b8ab1334d"
   },
   {
    "path": "platforms/snes.json",
@@ -1185,7 +1185,7 @@
   {
    "path": "platforms/stv.json",
    "collection": "platforms",
-   "sha256": "2ee3b8083fda839025fc405a2317c481390e10306a3aa9a4bf73e58c10abad0c"
+   "sha256": "524479aaa8453c40724636c58bf7d8863f657b9201ac1aa828eeec1b579cd1ff"
   },
   {
    "path": "platforms/sufami.json",
@@ -1205,7 +1205,7 @@
   {
    "path": "platforms/supracan.json",
    "collection": "platforms",
-   "sha256": "41a8b00a906bede4be119902b789c173079e49c88a9ab159dd61dc83c0812f67"
+   "sha256": "d1c9e89d5bd1be26815f768d1fd434c6f701bea8f63d908f1cb5a2984c955cb3"
   },
   {
    "path": "platforms/switch.json",
@@ -1300,7 +1300,7 @@
   {
    "path": "platforms/vsmile.json",
    "collection": "platforms",
-   "sha256": "602248bfd9467725d2f983958319fa87a80233d90f5e1a69247b8c8f21db2846"
+   "sha256": "237a15faf7c330dc7bf620ebb900dcfafa63ae3b7b090d400aa734992d9da0f5"
   },
   {
    "path": "platforms/wasm4.json",
@@ -1315,7 +1315,7 @@
   {
    "path": "platforms/wiiu.json",
    "collection": "platforms",
-   "sha256": "483622a294717dfe30d2ad2ee6d4c1518f97b8571645b8ddcd3599e30dbaa2bd"
+   "sha256": "2e2167e9246a3ea44eff505aca91750ff0eef17a80a0bd174766ac592a199e5b"
   },
   {
    "path": "platforms/windows.json",
