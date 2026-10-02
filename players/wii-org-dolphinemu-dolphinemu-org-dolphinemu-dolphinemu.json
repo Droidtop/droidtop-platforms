@@ -4,5 +4,6 @@
  "label": "org.dolphinemu.dolphinemu",
  "pkg": "org.dolphinemu.dolphinemu",
  "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+ "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
  "killPackageProcesses": false
 }

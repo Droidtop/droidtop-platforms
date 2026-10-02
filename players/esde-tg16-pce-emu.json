@@ -4,5 +4,6 @@
  "label": "PCE.emu (Standalone)",
  "pkg": "com.PceEmu",
  "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

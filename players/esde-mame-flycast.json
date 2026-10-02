@@ -4,5 +4,6 @@
  "label": "Flycast (Standalone)",
  "pkg": "com.flycast.emulator",
  "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+ "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
  "killPackageProcesses": false
 }

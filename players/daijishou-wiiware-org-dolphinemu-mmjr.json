@@ -4,5 +4,6 @@
  "label": "wiiware - Dolphin (MMJR2)",
  "pkg": "org.dolphinemu.mmjr",
  "argumentsTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+ "storagePathTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
  "killPackageProcesses": false
 }

@@ -4,5 +4,6 @@
  "label": "Yaba Sanshiro 2 (Standalone)",
  "pkg": "org.devmiyax.yabasanshioro2.pro",
  "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
+ "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
  "killPackageProcesses": false
 }

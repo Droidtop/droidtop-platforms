@@ -4,5 +4,6 @@
  "label": "Saturn.emu (Standalone)",
  "pkg": "com.explusalpha.SaturnEmu",
  "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

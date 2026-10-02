@@ -4,5 +4,6 @@
  "label": "com.explusalpha.GbaEmu",
  "pkg": "com.explusalpha.GbaEmu",
  "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
  "killPackageProcesses": false
 }

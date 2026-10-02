@@ -4,5 +4,6 @@
  "label": "Snes9x EX+ (Standalone)",
  "pkg": "com.explusalpha.Snes9xPlus",
  "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

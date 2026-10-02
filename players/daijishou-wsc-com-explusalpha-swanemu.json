@@ -4,5 +4,6 @@
  "label": "wsc - com.explusalpha.SwanEmu",
  "pkg": "com.explusalpha.SwanEmu",
  "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "storagePathTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
  "killPackageProcesses": false
 }

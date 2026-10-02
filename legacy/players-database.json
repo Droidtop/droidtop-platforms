@@ -47,6 +47,7 @@
    "label": "com.flycast.emulator",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -111,6 +112,7 @@
    "label": "com.flycast.emulator",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -127,6 +129,7 @@
    "label": "com.explusalpha.NesEmu",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -183,6 +186,7 @@
    "label": "com.explusalpha.GbcEmu",
    "pkg": "com.explusalpha.GbcEmu",
    "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -231,6 +235,7 @@
    "label": "com.explusalpha.GbaEmu",
    "pkg": "com.explusalpha.GbaEmu",
    "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -279,6 +284,7 @@
    "label": "com.explusalpha.GbcEmu",
    "pkg": "com.explusalpha.GbcEmu",
    "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -287,6 +293,7 @@
    "label": "Dolphin handheld",
    "pkg": "org.dolphinemu.handheld",
    "argumentsTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -311,6 +318,7 @@
    "label": "Dolphin mmjr",
    "pkg": "org.dolphinemu.mmjr",
    "argumentsTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -319,6 +327,7 @@
    "label": "org.dolphinemu.dolphinemu",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -327,6 +336,7 @@
    "label": "Dolphin mmjr3",
    "pkg": "org.dolphinemu.mmjr3",
    "argumentsTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -343,6 +353,7 @@
    "label": "com.explusalpha.MdEmu",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -431,6 +442,7 @@
    "label": "com.flycast.emulator",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -495,6 +507,7 @@
    "label": "com.explusalpha.NesEmu",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -627,6 +640,7 @@
    "label": "Duckstation",
    "pkg": "com.github.stenzek.duckstation",
    "argumentsTemplate": "-n com.github.stenzek.duckstation/.EmulationActivity -e bootPath {file.uri} --ez resumeState 0 --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n com.github.stenzek.duckstation/.EmulationActivity -e bootPath {file.path} --ez resumeState 0 --activity-clear-task --activity-clear-top",
    "killPackageProcesses": false
   },
   {
@@ -715,6 +729,7 @@
    "label": "com.explusalpha.Snes9xPlus",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -723,6 +738,7 @@
    "label": "YabaSanshiro 2 Pro",
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.uri} --activity-clear-task --activity-clear-top --activity-no-history",
+   "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
    "killPackageProcesses": false
   },
   {
@@ -731,6 +747,7 @@
    "label": "YabaSanshiro 2",
    "pkg": "org.devmiyax.yabasanshioro2",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.uri} --activity-clear-task --activity-clear-top --activity-no-history",
+   "storagePathTemplate": "-n org.devmiyax.yabasanshioro2/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
    "killPackageProcesses": false
   },
   {
@@ -763,6 +780,7 @@
    "label": "com.explusalpha.MdEmu",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -771,6 +789,7 @@
    "label": "com.explusalpha.Snes9xPlus",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -779,6 +798,7 @@
    "label": "com.PceEmu",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -843,6 +863,7 @@
    "label": "com.PceEmu",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -851,6 +872,7 @@
    "label": "Dolphin",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -883,6 +905,7 @@
    "label": "Dolphin mmjr",
    "pkg": "org.dolphinemu.mmjr",
    "argumentsTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -891,6 +914,7 @@
    "label": "org.dolphinemu.dolphinemu",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -899,6 +923,7 @@
    "label": "Dolphin mmjr3",
    "pkg": "org.dolphinemu.mmjr3",
    "argumentsTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -971,6 +996,7 @@
    "label": "NEO.emu (Standalone)",
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -979,6 +1005,7 @@
    "label": "Flycast (Standalone)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -987,6 +1014,7 @@
    "label": "2600.emu (Standalone)",
    "pkg": "com.explusalpha.A2600Emu",
    "argumentsTemplate": "-n com.explusalpha.A2600Emu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.A2600Emu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1003,6 +1031,7 @@
    "label": "Lynx.emu (Standalone)",
    "pkg": "com.explusalpha.LynxEmu",
    "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1011,6 +1040,7 @@
    "label": "C64.emu (Standalone)",
    "pkg": "com.explusalpha.C64Emu",
    "argumentsTemplate": "-n com.explusalpha.C64Emu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.C64Emu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1019,6 +1049,7 @@
    "label": "MSX.emu (Standalone)",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1035,6 +1066,7 @@
    "label": "Flycast (Standalone)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1099,6 +1131,7 @@
    "label": "NES.emu (Standalone)",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1123,6 +1156,7 @@
    "label": "NES.emu (Standalone)",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1171,6 +1205,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1195,6 +1230,7 @@
    "label": "GBC.emu (Standalone)",
    "pkg": "com.explusalpha.GbcEmu",
    "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1219,6 +1255,7 @@
    "label": "Pizza Boy GBC (Standalone)",
    "pkg": "it.dbtecno.pizzaboypro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1243,6 +1280,7 @@
    "label": "GBA.emu (Standalone)",
    "pkg": "com.explusalpha.GbaEmu",
    "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1267,6 +1305,7 @@
    "label": "Pizza Boy GBA (Standalone)",
    "pkg": "it.dbtecno.pizzaboygbapro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1283,6 +1322,7 @@
    "label": "GBC.emu (Standalone)",
    "pkg": "com.explusalpha.GbcEmu",
    "argumentsTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.GbcEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1307,6 +1347,7 @@
    "label": "Pizza Boy GBC (Standalone)",
    "pkg": "it.dbtecno.pizzaboypro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboypro/it.dbtecno.pizzaboypro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1315,6 +1356,7 @@
    "label": "Dolphin MMJR (Standalone)",
    "pkg": "org.mm.jr",
    "argumentsTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1323,6 +1365,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1331,6 +1374,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1371,6 +1415,7 @@
    "label": "NEO.emu (Standalone)",
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1379,6 +1424,7 @@
    "label": "Flycast (Standalone)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1387,6 +1433,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1395,6 +1442,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1411,6 +1459,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1419,6 +1468,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1435,6 +1485,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1443,6 +1494,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1451,6 +1503,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1459,6 +1512,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1467,6 +1521,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1475,6 +1530,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1483,6 +1539,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1491,6 +1548,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1515,6 +1573,7 @@
    "label": "MSX.emu (Standalone)",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1531,6 +1590,7 @@
    "label": "MSX.emu (Standalone)",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1547,6 +1607,7 @@
    "label": "MSX.emu (Standalone)",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1555,6 +1616,7 @@
    "label": "MSX.emu (Standalone)",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1659,6 +1721,7 @@
    "label": "Flycast (Standalone)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1667,6 +1730,7 @@
    "label": "Flycast (Standalone)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1731,6 +1795,7 @@
    "label": "NEO.emu (Standalone)",
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1747,6 +1812,7 @@
    "label": "NES.emu (Standalone)",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1779,6 +1845,7 @@
    "label": "NGP.emu (Standalone)",
    "pkg": "com.explusalpha.NgpEmu",
    "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1787,6 +1854,7 @@
    "label": "NGP.emu (Standalone)",
    "pkg": "com.explusalpha.NgpEmu",
    "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1827,6 +1895,7 @@
    "label": "PCE.emu (Standalone)",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1835,6 +1904,7 @@
    "label": "PCE.emu (Standalone)",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1959,6 +2029,7 @@
    "label": "FPseNG (Standalone)",
    "pkg": "com.emulator.fpse64",
    "argumentsTemplate": "-n com.emulator.fpse64/com.emulator.fpse64.Main -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.emulator.fpse64/com.emulator.fpse64.Main -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1967,6 +2038,7 @@
    "label": "FPse (Standalone)",
    "pkg": "com.emulator.fpse",
    "argumentsTemplate": "-n com.emulator.fpse/com.emulator.fpse.Main -a android.intent.action.VIEW -d {file.uri}",
+   "storagePathTemplate": "-n com.emulator.fpse/com.emulator.fpse.Main -a android.intent.action.VIEW -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1983,6 +2055,7 @@
    "label": "Snes9x EX+ (Standalone)",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1991,6 +2064,7 @@
    "label": "Yaba Sanshiro 2 (Standalone)",
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
+   "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -1999,6 +2073,7 @@
    "label": "Saturn.emu (Standalone)",
    "pkg": "com.explusalpha.SaturnEmu",
    "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2007,6 +2082,7 @@
    "label": "Yaba Sanshiro 2 (Standalone)",
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
+   "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2015,6 +2091,7 @@
    "label": "Saturn.emu (Standalone)",
    "pkg": "com.explusalpha.SaturnEmu",
    "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2023,6 +2100,7 @@
    "label": "MD.emu (Standalone)",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2031,6 +2109,7 @@
    "label": "Pizza Boy SC (Standalone)",
    "pkg": "it.dbtecno.pizzaboyscpro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.uri}",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboyscpro/it.dbtecno.pizzaboyscpro.MainActivity --activity-clear-task --activity-clear-top -e rom_uri {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2039,6 +2118,7 @@
    "label": "Snes9x EX+ (Standalone)",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2055,6 +2135,7 @@
    "label": "Snes9x EX+ (Standalone)",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2063,6 +2144,7 @@
    "label": "Snes9x EX+ (Standalone)",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2079,6 +2161,7 @@
    "label": "Snes9x EX+ (Standalone)",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2087,6 +2170,7 @@
    "label": "PCE.emu (Standalone)",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2119,6 +2203,7 @@
    "label": "PCE.emu (Standalone)",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2127,6 +2212,7 @@
    "label": "PCE.emu (Standalone)",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2183,6 +2269,7 @@
    "label": "Dolphin MMJR (Standalone)",
    "pkg": "org.mm.jr",
    "argumentsTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.mm.jr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2223,6 +2310,7 @@
    "label": "Swan.emu (Standalone)",
    "pkg": "com.explusalpha.SwanEmu",
    "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2231,6 +2319,7 @@
    "label": "Swan.emu (Standalone)",
    "pkg": "com.explusalpha.SwanEmu",
    "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.uri}",
+   "storagePathTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -d {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2343,6 +2432,7 @@
    "label": "lynx - com.explusalpha.LynxEmu",
    "pkg": "com.explusalpha.LynxEmu",
    "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2399,6 +2489,7 @@
    "label": "tgcd - com.PceEmu",
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2535,6 +2626,7 @@
    "label": "famicom - com.explusalpha.NesEmu",
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2559,6 +2651,7 @@
    "label": "gba - Pizza Boy A Pro",
    "pkg": "it.dbtecno.pizzaboygbapro",
    "argumentsTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity -e rom_uri {file.uri} --activity-clear-task --activity-clear-top",
+   "storagePathTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
    "killPackageProcesses": false
   },
   {
@@ -2607,6 +2700,7 @@
    "label": "gc - Dolphin (Debug)",
    "pkg": "org.dolphinemu.dolphinemu.debug",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2615,6 +2709,7 @@
    "label": "sfc - com.explusalpha.Snes9xPlus",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2623,6 +2718,7 @@
    "label": "snesmsu1 - com.explusalpha.Snes9xPlus",
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2663,6 +2759,7 @@
    "label": "wii - Dolphin (Debug)",
    "pkg": "org.dolphinemu.dolphinemu.debug",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2671,6 +2768,7 @@
    "label": "wii - Dolphin handheld",
    "pkg": "org.dolphinemu.handheld",
    "argumentsTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2679,6 +2777,7 @@
    "label": "wiiware - Dolphin (Official)",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2687,6 +2786,7 @@
    "label": "wiiware - Dolphin (Debug)",
    "pkg": "org.dolphinemu.dolphinemu.debug",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2695,6 +2795,7 @@
    "label": "wiiware - Dolphin handheld",
    "pkg": "org.dolphinemu.handheld",
    "argumentsTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.handheld/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2719,6 +2820,7 @@
    "label": "wiiware - Dolphin (MMJR2)",
    "pkg": "org.dolphinemu.mmjr",
    "argumentsTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2727,6 +2829,7 @@
    "label": "wiiware - Dolphin mmjr3",
    "pkg": "org.dolphinemu.mmjr3",
    "argumentsTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.mmjr3/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.VIEW -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -2759,6 +2862,7 @@
    "label": "master - com.explusalpha.MdEmu",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2775,6 +2879,7 @@
    "label": "megadrive - com.explusalpha.MdEmu",
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2879,6 +2984,7 @@
    "label": "ws - com.explusalpha.SwanEmu",
    "pkg": "com.explusalpha.SwanEmu",
    "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -2887,6 +2993,7 @@
    "label": "wsc - com.explusalpha.SwanEmu",
    "pkg": "com.explusalpha.SwanEmu",
    "argumentsTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+   "storagePathTemplate": "-n com.explusalpha.SwanEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
    "killPackageProcesses": false
   },
   {
@@ -3079,6 +3186,7 @@
    "label": "Dolphin (Standalone)",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -3271,6 +3379,7 @@
    "label": "Dolphin (Standalone)",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -3431,6 +3540,7 @@
    "label": "DuckStation (Standalone)",
    "pkg": "com.github.stenzek.duckstation",
    "argumentsTemplate": "-n com.github.stenzek.duckstation/com.github.stenzek.duckstation.EmulationActivity --activity-clear-task --activity-clear-top --ez resumeState false -e bootPath {file.uri}",
+   "storagePathTemplate": "-n com.github.stenzek.duckstation/com.github.stenzek.duckstation.EmulationActivity --activity-clear-task --activity-clear-top --ez resumeState false -e bootPath {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -3511,6 +3621,7 @@
    "label": "Dolphin (Standalone)",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {
@@ -3551,6 +3662,7 @@
    "label": "Dolphin (Standalone)",
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
+   "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
    "killPackageProcesses": false
   },
   {

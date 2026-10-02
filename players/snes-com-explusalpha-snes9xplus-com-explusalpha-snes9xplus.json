@@ -4,5 +4,6 @@
  "label": "com.explusalpha.Snes9xPlus",
  "pkg": "com.explusalpha.Snes9xPlus",
  "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
  "killPackageProcesses": false
 }

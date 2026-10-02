@@ -4,5 +4,6 @@
  "label": "MD.emu (Standalone)",
  "pkg": "com.explusalpha.MdEmu",
  "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

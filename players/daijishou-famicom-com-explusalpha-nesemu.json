@@ -4,5 +4,6 @@
  "label": "famicom - com.explusalpha.NesEmu",
  "pkg": "com.explusalpha.NesEmu",
  "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
  "killPackageProcesses": false
 }

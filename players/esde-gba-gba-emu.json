@@ -4,5 +4,6 @@
  "label": "GBA.emu (Standalone)",
  "pkg": "com.explusalpha.GbaEmu",
  "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

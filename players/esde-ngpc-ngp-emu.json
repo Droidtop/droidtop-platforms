@@ -4,5 +4,6 @@
  "label": "NGP.emu (Standalone)",
  "pkg": "com.explusalpha.NgpEmu",
  "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

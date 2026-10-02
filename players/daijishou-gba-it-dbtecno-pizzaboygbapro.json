@@ -4,5 +4,6 @@
  "label": "gba - Pizza Boy A Pro",
  "pkg": "it.dbtecno.pizzaboygbapro",
  "argumentsTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity -e rom_uri {file.uri} --activity-clear-task --activity-clear-top",
+ "storagePathTemplate": "-n it.dbtecno.pizzaboygbapro/it.dbtecno.pizzaboygbapro.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
  "killPackageProcesses": false
 }

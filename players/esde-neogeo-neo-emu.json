@@ -4,5 +4,6 @@
  "label": "NEO.emu (Standalone)",
  "pkg": "com.explusalpha.NeoEmu",
  "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

@@ -4,5 +4,6 @@
  "label": "2600.emu (Standalone)",
  "pkg": "com.explusalpha.A2600Emu",
  "argumentsTemplate": "-n com.explusalpha.A2600Emu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.A2600Emu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

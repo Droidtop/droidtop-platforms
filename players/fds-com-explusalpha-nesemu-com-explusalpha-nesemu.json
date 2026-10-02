@@ -4,5 +4,6 @@
  "label": "com.explusalpha.NesEmu",
  "pkg": "com.explusalpha.NesEmu",
  "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
  "killPackageProcesses": false
 }

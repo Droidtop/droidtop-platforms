@@ -4,5 +4,6 @@
  "label": "FPse (Standalone)",
  "pkg": "com.emulator.fpse",
  "argumentsTemplate": "-n com.emulator.fpse/com.emulator.fpse.Main -a android.intent.action.VIEW -d {file.uri}",
+ "storagePathTemplate": "-n com.emulator.fpse/com.emulator.fpse.Main -a android.intent.action.VIEW -d {file.path}",
  "killPackageProcesses": false
 }

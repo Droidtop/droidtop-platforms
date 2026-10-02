@@ -4,5 +4,6 @@
  "label": "C64.emu (Standalone)",
  "pkg": "com.explusalpha.C64Emu",
  "argumentsTemplate": "-n com.explusalpha.C64Emu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.C64Emu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

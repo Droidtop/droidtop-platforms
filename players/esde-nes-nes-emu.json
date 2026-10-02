@@ -4,5 +4,6 @@
  "label": "NES.emu (Standalone)",
  "pkg": "com.explusalpha.NesEmu",
  "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

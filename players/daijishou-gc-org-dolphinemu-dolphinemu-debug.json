@@ -4,5 +4,6 @@
  "label": "gc - Dolphin (Debug)",
  "pkg": "org.dolphinemu.dolphinemu.debug",
  "argumentsTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
+ "storagePathTemplate": "-n org.dolphinemu.dolphinemu.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
  "killPackageProcesses": false
 }

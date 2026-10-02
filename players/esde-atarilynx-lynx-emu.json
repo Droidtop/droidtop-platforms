@@ -4,5 +4,6 @@
  "label": "Lynx.emu (Standalone)",
  "pkg": "com.explusalpha.LynxEmu",
  "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.uri}",
+ "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.path}",
  "killPackageProcesses": false
 }

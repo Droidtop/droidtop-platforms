@@ -4,5 +4,6 @@
  "label": "com.PceEmu",
  "pkg": "com.PceEmu",
  "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
+ "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
  "killPackageProcesses": false
 }
