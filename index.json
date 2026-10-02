@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T17:10:19Z",
+ "generatedAt": "2026-10-02T17:38:09Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -1800,32 +1800,32 @@
   {
    "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "9610ebd4f27c01c0700d6014c3b91590d30ac45dd4d0bad90f73a63e9d6815a8"
+   "sha256": "c4b6cf82c8416c1efecf4f249cd0e46f6829ee1c65d0b4c1c4ba737bdca07bd3"
   },
   {
    "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx.json",
    "collection": "players",
-   "sha256": "81fdada51180cef8e16215f75a564b422e27d38f45607fcb8fbace3fbdd944e3"
+   "sha256": "8a8a1efaf73f978c36c272ea4b5d6c5bfb760bad1ad85562f62c0abdc35584c5"
   },
   {
    "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "2364e34a9d46d4fe0f437183cc6092fe744fc6d80af039a1e7f4906e325f26c6"
+   "sha256": "f42bac6f6bdf08a140688dcafb22ca58066c3439c68b2729b5b0b4860e952fbb"
   },
   {
    "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx.json",
    "collection": "players",
-   "sha256": "45b92507df851f005e5f3ef15fb5beeec2aa40e33ad3c16549a55dfbd5ff5678"
+   "sha256": "1a421d98dc5ec4c0f9707c52bf252f93995dda4a51e96ca899bfb3a23e969858"
   },
   {
    "path": "players/psx-com-retroarch-retroarch-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "e7d40f2909ea6edd042ce91ea475396e6afe947616594d678dbf5b7c72a16418"
+   "sha256": "155988d517c2d2be38c30e7091d4db3df586a1374cbea1bba71a85d451f0b446"
   },
   {
    "path": "players/psx-com-retroarch-retroarch-beetle-psx.json",
    "collection": "players",
-   "sha256": "eec9cf97fe01b8c291feb77d95981208a38ee6cf59022679ebf04eea5760ea7a"
+   "sha256": "5725c9a8b7f5c47377f422fd17666bc82d5dcac48a8d2e73fda57be4e3c3be42"
   },
   {
    "path": "players/satellaview-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",

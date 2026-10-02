@@ -680,7 +680,7 @@
    "systemId": "psx",
    "label": "Retroarch 64 - beetle psx hw",
    "pkg": "com.retroarch.aarch64",
-   "argumentsTemplate": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -688,7 +688,7 @@
    "systemId": "psx",
    "label": "Retroarch 64 - beetle psx",
    "pkg": "com.retroarch.aarch64",
-   "argumentsTemplate": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -696,7 +696,7 @@
    "systemId": "psx",
    "label": "Retroarch 32 - beetle psx hw",
    "pkg": "com.retroarch.ra32",
-   "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -704,7 +704,7 @@
    "systemId": "psx",
    "label": "Retroarch 32 - beetle psx",
    "pkg": "com.retroarch.ra32",
-   "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -712,7 +712,7 @@
    "systemId": "psx",
    "label": "Retroarch - beetle psx hw",
    "pkg": "com.retroarch",
-   "argumentsTemplate": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {
@@ -720,7 +720,7 @@
    "systemId": "psx",
    "label": "Retroarch - beetle psx",
    "pkg": "com.retroarch",
-   "argumentsTemplate": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+   "argumentsTemplate": "-n com.retroarch/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch/files/retroarch.cfg --activity-clear-task --activity-clear-top",
    "killPackageProcesses": true
   },
   {

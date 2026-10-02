@@ -3,6 +3,6 @@
  "systemId": "psx",
  "label": "Retroarch 32 - beetle psx",
  "pkg": "com.retroarch.ra32",
- "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg -e QUITFOCUS --activity-clear-task --activity-clear-top",
+ "argumentsTemplate": "-n com.retroarch.ra32/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.ra32/cores/mednafen_psx_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.ra32/files/retroarch.cfg --activity-clear-task --activity-clear-top",
  "killPackageProcesses": true
 }
