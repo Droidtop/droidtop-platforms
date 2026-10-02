@@ -49,7 +49,7 @@ a per-family file would need an ordering mechanism the format does not have.
   This is what a client fetches first; it then downloads only the files whose
   hash it does not already have.
 - **`legacy/*.json`** — the monolithic documents (`engines-database.json`,
-  `platforms-database.json`, `players-database.json`, `bios-database.json`)
+  `platforms-database.json`, `players-database.json`, `bios-database.json`, and `hardware-database.json`, which has no root copy)
   composed back out of the tree, byte for byte the schema the apps parse.
 - **the same four files at the repository root** — DEPRECATED. They exist
   only because released app builds already fetch those exact raw URLs and must

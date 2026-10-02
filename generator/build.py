@@ -73,7 +73,10 @@ COLLECTIONS = {
         "key": "devices",
         "form": "object",
         "idField": "id",
-        "legacy": None,
+        "legacy": "hardware-database.json",
+        # New since the index: no root-level copy, only legacy/ (the root
+        # copies are deprecated and take no new consumer).
+        "rootCopy": False,
     },
     "controllers": {
         "key": "controllers",
@@ -209,7 +212,8 @@ def generate():
         if spec["legacy"]:
             composed = dump(compose(name, meta, items))
             outputs["legacy/" + spec["legacy"]] = composed
-            outputs[spec["legacy"]] = composed
+            if spec.get("rootCopy", True):
+                outputs[spec["legacy"]] = composed
 
     outputs["index.json"] = dump(
         {

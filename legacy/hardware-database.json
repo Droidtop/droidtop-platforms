@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), and layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time. A value not listed is unknown, never guessed.",
+ "devices": {
+  "retroid-pocket-5": {
+   "name": "Retroid Pocket 5",
+   "match": {
+    "model": "Retroid Pocket 5"
+   },
+   "androidVersion": 13,
+   "displays": [
+    {
+     "role": "internal",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "gamepad": {
+    "name": "Retroid Pocket Controller",
+    "bus": "usb",
+    "vendorId": "0x2022",
+    "productId": "0x3001",
+    "glyphFamily": "xbox",
+    "version": "0x0000",
+    "keys": [
+     "BTN_GAMEPAD",
+     "BTN_EAST",
+     "BTN_C",
+     "BTN_NORTH",
+     "BTN_WEST",
+     "BTN_Z",
+     "BTN_TL",
+     "BTN_TR",
+     "BTN_TL2",
+     "BTN_TR2",
+     "BTN_SELECT",
+     "BTN_START",
+     "BTN_MODE",
+     "BTN_THUMBL",
+     "BTN_THUMBR",
+     "BTN_DPAD_UP",
+     "BTN_DPAD_DOWN",
+     "BTN_DPAD_LEFT",
+     "BTN_DPAD_RIGHT",
+     "KEY_HOME",
+     "KEY_BACK",
+     "KEY_VOLUMEUP",
+     "KEY_VOLUMEDOWN",
+     "KEY_APPSELECT"
+    ],
+    "axes": [
+     {
+      "axis": "ABS_X",
+      "min": -32767,
+      "max": 32767,
+      "flat": 15
+     },
+     {
+      "axis": "ABS_Y",
+      "min": -32767,
+      "max": 32767,
+      "flat": 15
+     },
+     {
+      "axis": "ABS_Z",
+      "min": -32767,
+      "max": 32767,
+      "flat": 15
+     },
+     {
+      "axis": "ABS_RZ",
+      "min": -32767,
+      "max": 32767,
+      "flat": 15
+     },
+     {
+      "axis": "ABS_GAS",
+      "min": 0,
+      "max": 32767
+     },
+     {
+      "axis": "ABS_BRAKE",
+      "min": 0,
+      "max": 32767
+     },
+     {
+      "axis": "ABS_HAT0X",
+      "min": -1,
+      "max": 1
+     },
+     {
+      "axis": "ABS_HAT0Y",
+      "min": -1,
+      "max": 1
+     }
+    ],
+    "notes": "The d-pad reports BOTH the hat axes and the BTN_DPAD_* keys, so a reader that consumes both sees every press twice."
+   },
+   "source": "Read from the console itself on 2026-09-10: /proc/bus/input/devices and `getevent -pl` for the pad, the running display mode for the panel.",
+   "layoutToggle": {
+    "property": "persist.sys.gamepad.type",
+    "values": {
+     "0": {
+      "keysSwapped": false,
+      "confirmOn": "bottom",
+      "verified": true,
+      "note": "Default. Xbox-style positions as printed on the pad."
+     },
+     "1": {
+      "keysSwapped": true,
+      "confirmOn": "right",
+      "verified": false,
+      "note": "The value the system button-layout toggle writes when the owner swapped it (2026-10-02). That it swaps the reported A/B and X/Y keycodes, so the right button reports BUTTON_A, is the expected meaning and still to be confirmed on the console."
+     }
+    },
+    "source": "Property name and the two values read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5)."
+   }
+  }
+ }
+}

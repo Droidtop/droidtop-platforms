@@ -1,6 +1,9 @@
 {
  "id": "retroid-pocket-5",
  "name": "Retroid Pocket 5",
+ "match": {
+  "model": "Retroid Pocket 5"
+ },
  "androidVersion": 13,
  "displays": [
   {
@@ -14,6 +17,7 @@
   "bus": "usb",
   "vendorId": "0x2022",
   "productId": "0x3001",
+  "glyphFamily": "xbox",
   "version": "0x0000",
   "keys": [
    "BTN_GAMEPAD",
@@ -89,5 +93,23 @@
   ],
   "notes": "The d-pad reports BOTH the hat axes and the BTN_DPAD_* keys, so a reader that consumes both sees every press twice."
  },
- "source": "Read from the console itself on 2026-09-10: /proc/bus/input/devices and `getevent -pl` for the pad, the running display mode for the panel."
+ "source": "Read from the console itself on 2026-09-10: /proc/bus/input/devices and `getevent -pl` for the pad, the running display mode for the panel.",
+ "layoutToggle": {
+  "property": "persist.sys.gamepad.type",
+  "values": {
+   "0": {
+    "keysSwapped": false,
+    "confirmOn": "bottom",
+    "verified": true,
+    "note": "Default. Xbox-style positions as printed on the pad."
+   },
+   "1": {
+    "keysSwapped": true,
+    "confirmOn": "right",
+    "verified": false,
+    "note": "The value the system button-layout toggle writes when the owner swapped it (2026-10-02). That it swaps the reported A/B and X/Y keycodes, so the right button reports BUTTON_A, is the expected meaning and still to be confirmed on the console."
+   }
+  },
+  "source": "Property name and the two values read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5)."
+ }
 }
