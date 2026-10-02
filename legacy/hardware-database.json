@@ -1,6 +1,6 @@
 {
  "version": 1,
- "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), and layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time. A value not listed is unknown, never guessed.",
+ "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time, and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed.",
  "devices": {
   "retroid-pocket-5": {
    "name": "Retroid Pocket 5",
@@ -12,7 +12,12 @@
     {
      "role": "internal",
      "width": 1080,
-     "height": 1920
+     "height": 1920,
+     "position": "bottom"
+    },
+    {
+     "role": "addon",
+     "position": "top"
     }
    ],
    "gamepad": {
@@ -114,7 +119,8 @@
      }
     },
     "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
-   }
+   },
+   "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02); its resolution is not recorded here."
   }
  }
 }

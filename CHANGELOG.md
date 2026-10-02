@@ -16,6 +16,7 @@ under Unreleased.
 - Detection rows for the engines a real library census found unrecognised: LOVE, XNA/FNA/MonoGame, HashLink, Torque, GoldSrc, Source and more.
 - A plugins index, so the plugin catalog no longer depends on GitHub's API allowance: devices read one file and fall back to the API only when it is stale.
 - A hardware collection recording what a real handheld reports (panel, pad identity, key and axis ranges), starting with the Retroid Pocket 5.
+- A display position on hardware rows (`displays[].position`, top or bottom): on the Retroid Pocket 5 the add-on display sits above the built-in one, so droidtop can name the screens "Top screen" and "Bottom screen".
 
 ### Changed
 

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T21:29:34Z",
+ "generatedAt": "2026-10-02T23:15:36Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -42,7 +42,7 @@
    "form": "object",
    "version": 1,
    "meta": {
-    "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), and layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time. A value not listed is unknown, never guessed."
+    "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time, and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed."
    },
    "idField": "id",
    "legacy": "hardware-database.json"
@@ -4251,7 +4251,7 @@
   {
    "path": "hardware/retroid-pocket-5.json",
    "collection": "hardware",
-   "sha256": "e2484b96022a44f2c5745631addaed90372d84dc40905d33d4deb21e1dd06775"
+   "sha256": "b932295fff7b782fd7589eb45b80108befcc40bc7a963ffdd5de6c8395ee6d31"
   }
  ]
 }
