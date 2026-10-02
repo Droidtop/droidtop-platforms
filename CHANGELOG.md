@@ -28,6 +28,7 @@ under Unreleased.
 
 ### Fixed
 
+- The Retroid Pocket 5's layout toggle had its two values the wrong way round: `persist.sys.gamepad.type` 1 is the system toggle's "xbox" position (confirmed by the owner on the console), 0 the other one.
 - RetroArch rows no longer pass QUITFOCUS, so a game keeps running when another screen or app takes focus.
 - Platform RetroArch cores come from ES-DE's Android systems file, so droidtop's own RetroArch launch names a core RetroArch for Android actually has (Nintendo 64 is mupen64plus_next_gles3, arcade systems mamearcade); 31 platforms changed.
 - The Switch legacy emulator install is covered, and a player entry whose label and package pointed at different apps was removed.

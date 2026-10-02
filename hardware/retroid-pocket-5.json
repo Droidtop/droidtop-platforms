@@ -98,18 +98,18 @@
   "property": "persist.sys.gamepad.type",
   "values": {
    "0": {
-    "keysSwapped": false,
-    "confirmOn": "bottom",
-    "verified": true,
-    "note": "Default. Xbox-style positions as printed on the pad."
-   },
-   "1": {
     "keysSwapped": true,
     "confirmOn": "right",
     "verified": false,
-    "note": "The value the system button-layout toggle writes when the owner swapped it (2026-10-02). That it swaps the reported A/B and X/Y keycodes, so the right button reports BUTTON_A, is the expected meaning and still to be confirmed on the console."
+    "note": "The other position of the system button-layout toggle (the one that is not \"xbox\"). Taken to be the opposite of 1: the reported A/B and X/Y keycodes swapped and confirm on the right button. Its exact meaning is still to be named by the owner on the console."
+   },
+   "1": {
+    "keysSwapped": false,
+    "confirmOn": "bottom",
+    "verified": true,
+    "note": "The system button-layout toggle set to \"xbox\" (owner, read on the console 2026-10-02). Xbox-style positions as printed on the pad. In this position the pad reports itself as \"Xbox Wireless Controller\" instead of the gamepad name above (NetherSX2's input log on the console, 2026-10-02)."
    }
   },
-  "source": "Property name and the two values read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5)."
+  "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
  }
 }
