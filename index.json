@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T23:15:36Z",
+ "generatedAt": "2026-10-03T01:23:12Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -4251,7 +4251,7 @@
   {
    "path": "hardware/retroid-pocket-5.json",
    "collection": "hardware",
-   "sha256": "b932295fff7b782fd7589eb45b80108befcc40bc7a963ffdd5de6c8395ee6d31"
+   "sha256": "73e2c3c80acd5289651ca070b407598bfacfe7232e28e7fbeeedf43e37b2d661"
   }
  ]
 }

@@ -108,8 +108,8 @@
      "0": {
       "keysSwapped": true,
       "confirmOn": "right",
-      "verified": false,
-      "note": "The other position of the system button-layout toggle (the one that is not \"xbox\"). Taken to be the opposite of 1: the reported A/B and X/Y keycodes swapped and confirm on the right button. Its exact meaning is still to be named by the owner on the console."
+      "verified": true,
+      "note": "The system button-layout toggle set to \"Retro\", a Nintendo layout (owner, read on the console 2026-10-02): A/B and X/Y swapped against xbox, confirm on the right button. The toggle has a third setting, \"Disabled\", whose value has not been observed and is not listed."
      },
      "1": {
       "keysSwapped": false,
@@ -118,7 +118,7 @@
       "note": "The system button-layout toggle set to \"xbox\" (owner, read on the console 2026-10-02). Xbox-style positions as printed on the pad. In this position the pad reports itself as \"Xbox Wireless Controller\" instead of the gamepad name above (NetherSX2's input log on the console, 2026-10-02)."
      }
     },
-    "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
+    "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position and value 0 its \"Retro\" (Nintendo) position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
    },
    "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02); its resolution is not recorded here."
   }
