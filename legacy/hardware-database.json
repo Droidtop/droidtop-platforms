@@ -1,6 +1,6 @@
 {
  "version": 1,
- "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is printed on the face buttons), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right}}} for a system setting that changes the layout at any time, and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed.",
+ "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is PRINTED on the face buttons, which no toggle changes), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right, keycodes{bottom, right, top, left: the Android key code each button reports, BUTTON_A/B/X/Y}}}} for a system setting that changes the layout at any time (keycodes, when present, is what droidtop reads; keysSwapped says the same for older readers: true when the right button reports BUTTON_A), and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed.",
  "devices": {
   "retroid-pocket-5": {
    "name": "Retroid Pocket 5",
@@ -25,7 +25,8 @@
     "bus": "usb",
     "vendorId": "0x2022",
     "productId": "0x3001",
-    "glyphFamily": "xbox",
+    "glyphFamily": "nintendo",
+    "glyphSource": "Printed on the face buttons: A right, B bottom, X top, Y left, whatever the layout toggle is set to (owner, read on the console 2026-10-08).",
     "version": "0x0000",
     "keys": [
      "BTN_GAMEPAD",
@@ -108,14 +109,26 @@
      "0": {
       "keysSwapped": true,
       "confirmOn": "right",
+      "keycodes": {
+       "bottom": "BUTTON_B",
+       "right": "BUTTON_A",
+       "top": "BUTTON_X",
+       "left": "BUTTON_Y"
+      },
       "verified": true,
-      "note": "The system button-layout toggle set to \"Retro\", a Nintendo layout (owner, read on the console 2026-10-02): A/B and X/Y swapped against xbox, confirm on the right button. The toggle has a third setting, \"Disabled\", whose value has not been observed and is not listed."
+      "note": "The system button-layout toggle set to \"Retro\", the Nintendo layout (owner, read on the console 2026-10-02): each button reports the key code of what is printed on it, so the right button (printed A) reports BUTTON_A, and confirm is on the right button. Against Android's positional key codes (A bottom, B right, X left, Y top) A/B and X/Y are swapped. The toggle has a third setting, \"Disabled\", whose value has not been observed and is not listed."
      },
      "1": {
       "keysSwapped": false,
       "confirmOn": "bottom",
+      "keycodes": {
+       "bottom": "BUTTON_A",
+       "right": "BUTTON_B",
+       "top": "BUTTON_Y",
+       "left": "BUTTON_X"
+      },
       "verified": true,
-      "note": "The system button-layout toggle set to \"xbox\" (owner, read on the console 2026-10-02). Xbox-style positions as printed on the pad. In this position the pad reports itself as \"Xbox Wireless Controller\" instead of the gamepad name above (NetherSX2's input log on the console, 2026-10-02)."
+      "note": "The system button-layout toggle set to \"xbox\" (owner, read on the console 2026-10-02): key codes by position, Xbox-style, so the bottom button (printed B) reports BUTTON_A, and confirm is on the bottom button. In this position the pad reports itself as \"Xbox Wireless Controller\" instead of the gamepad name above (NetherSX2's input log on the console, 2026-10-02)."
      }
     },
     "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position and value 0 its \"Retro\" (Nintendo) position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
