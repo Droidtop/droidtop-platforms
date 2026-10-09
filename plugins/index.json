@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T03:54:31Z",
+ "generatedAt": "2026-10-09T03:57:05Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1476,13 +1476,13 @@
      "tag": "buriko-openbgi-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-29T12:03:09Z",
+     "published_at": "2026-10-09T03:55:43Z",
      "assets": [
       {
        "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
-       "size": 5008644,
-       "sha256": "3c98e4f67868e5c498f59751743c6a14a62388b7667f7cd7c42768e71ababd61"
+       "size": 5008844,
+       "sha256": "f2465706a42c46ec1a985c1872a32761ff8feb46f82f5ad1de95cff238f3856e"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1494,7 +1494,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-release.json",
        "size": 4189,
-       "sha256": "e0153dbb7d30d2905a4b4f12404fe6b6594b537b108b8c4d0ac6d0fcdf57bc0b"
+       "sha256": "37412643318bcdaca9211a2b6341bb94cd92afe3d165251aa062987fec7b1a2e"
+      }
+     ]
+    },
+    {
+     "tag": "buriko-openbgi-v1-build.105",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-09T03:55:46Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.105/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "size": 5008844,
+       "sha256": "f2465706a42c46ec1a985c1872a32761ff8feb46f82f5ad1de95cff238f3856e"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.105/enginehost-public-key.json",
+       "size": 649,
+       "sha256": "26167bdbbd03757e501b240921620ee728ab0b2e138ab91d6706837d9bea49b0"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.105/enginehost-release.json",
+       "size": 4189,
+       "sha256": "37412643318bcdaca9211a2b6341bb94cd92afe3d165251aa062987fec7b1a2e"
       }
      ]
     },
@@ -2974,13 +3000,13 @@
      "tag": "nscripter-onsyuri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-09-29T05:39:07Z",
+     "published_at": "2026-10-09T03:56:43Z",
      "assets": [
       {
        "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
-       "size": 8343256,
-       "sha256": "015cdc99c0d0c9086c10ca16b62f06c453236cc1ae262906579e4e18bf84a7ee"
+       "size": 8341544,
+       "sha256": "2e410860124af66902052eb76651a44f63d2d2534e86ea31b9ed531b5f2bf05e"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2992,7 +3018,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
        "size": 11385,
-       "sha256": "4533603ca623f2b3d87a0b44b57228283d551c89fa47bab31fd7053be453161f"
+       "sha256": "4b9461ef5360d6ec33119c1a6cbdd5bc4a6096013896c77400ff8aee0534a6cd"
+      }
+     ]
+    },
+    {
+     "tag": "nscripter-onsyuri-v1-build.10",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-09T03:56:46Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.10/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "size": 8341544,
+       "sha256": "2e410860124af66902052eb76651a44f63d2d2534e86ea31b9ed531b5f2bf05e"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.10/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "98f98397b75eafc01266cbaaf3d722532d9458207013d4e3e5b311731ebf6f08"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.10/enginehost-release.json",
+       "size": 11385,
+       "sha256": "4b9461ef5360d6ec33119c1a6cbdd5bc4a6096013896c77400ff8aee0534a6cd"
       }
      ]
     },
