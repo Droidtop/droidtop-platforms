@@ -103,9 +103,41 @@ compatible with it and add no condition of their own beyond keeping their notice
       "pkg": "android.package.name",
       "argumentsTemplate": "am-start arguments with {file.uri}/{file.path} placeholders",
       "storagePathTemplate": "optional: the same launch with {file.path}, used only when the emulator holds all-files access",
-      "killPackageProcesses": false
+      "killPackageProcesses": false,
+      "setup": "optional: what the emulator needs beyond the launch, below"
     }
   ]
+}
+```
+
+`setup` is what droidtop's emulator setup helper reads for this emulator (droidtop
+docs/SPEC.md "Emulator setup helper"). droidtop takes the first row of a package
+that carries one, so put the same object on every row of that package. `{pkg}` in
+a path is the row's `pkg`. Every value must be cited from the emulator's source
+or seen on a device; a guessed folder or key would make droidtop write files the
+emulator never reads.
+
+```json
+"setup": {
+  "biosFolder": "absolute folder the emulator reads firmware from, or omit and use biosFolderKey",
+  "biosFolderKey": "a key of the config file below whose value is that folder",
+  "biosManual": "where the emulator's own menus show that folder, e.g. Settings > Directory > System/BIOS",
+  "config": {
+    "file": "absolute path of the emulator's config file",
+    "format": "ini | keyvalue",
+    "writesOnExit": false,
+    "settings": [
+      {
+        "id": "unique within the row",
+        "label": "what the person reads",
+        "about": "one sentence",
+        "section": "INI section, omitted for keyvalue",
+        "key": "the key in the file",
+        "options": [ { "value": "as written in the file", "label": "as shown" } ],
+        "manual": "where the same option is in the emulator's own menus"
+      }
+    ]
+  }
 }
 ```
 

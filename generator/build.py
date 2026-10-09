@@ -154,6 +154,35 @@ def compose(name, meta, items):
     return document
 
 
+def setup_problems(setup):
+    """What droidtop's EmulatorSetup.parse would refuse in a player's optional `setup` object."""
+    if setup is None:
+        return []
+    if not isinstance(setup, dict):
+        return ["must be an object"]
+    problems = []
+    for key in ("biosFolder", "biosFolderKey", "biosManual"):
+        if key in setup and not isinstance(setup[key], str):
+            problems.append(key + " must be a string")
+    if "biosFolder" in setup and not str(setup["biosFolder"]).startswith("/"):
+        problems.append("biosFolder must be an absolute path")
+    config = setup.get("config")
+    if config is None:
+        return problems
+    if not isinstance(config, dict) or not str(config.get("file", "")).startswith("/"):
+        return problems + ["config needs an absolute file"]
+    if config.get("format") not in ("ini", "keyvalue"):
+        problems.append("config format must be ini or keyvalue")
+    for setting in config.get("settings", []):
+        for key in ("id", "label", "key", "manual"):
+            if not setting.get(key):
+                problems.append("setting missing " + key)
+        options = setting.get("options")
+        if not options or not all(isinstance(o, dict) and "value" in o and o.get("label") for o in options):
+            problems.append("setting " + str(setting.get("id")) + " needs options with a value and a label")
+    return problems
+
+
 def validate(collections):
     """The rules a single file cannot check for itself.
 
@@ -177,6 +206,7 @@ def validate(collections):
         for field in ("systemId", "label", "pkg"):
             if not player.get(field):
                 problems.append(path + ": missing " + field)
+        problems.extend(path + ": setup " + p for p in setup_problems(player.get("setup")))
     for _, path, _, platform in collections["platforms"][1]:
         if not platform.get("name"):
             problems.append(path + ": missing name")
