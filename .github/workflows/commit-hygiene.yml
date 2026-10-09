@@ -1,0 +1,68 @@
+name: Commit hygiene
+
+# The one commit-hygiene rule for every Droidtop repository (the repo's own
+# .github/workflows/commit-hygiene.yml is a short caller of this file, pinned
+# by commit):
+#
+#   name: Commit hygiene
+#   on: [push, pull_request]
+#   permissions:
+#     contents: read
+#   jobs:
+#     hygiene:
+#       uses: Droidtop/droidtop-platforms/.github/workflows/commit-hygiene.yml@<sha>
+#
+# This repository's history carries no references to AI models or AI coding
+# tools: none in commit messages (co-author trailers, "Generated with" lines,
+# session links, tool or model names) and none in author or committer
+# identities. A push or pull request adding such a commit fails here. It reads
+# commit metadata only and needs no build.
+on:
+  workflow_call:
+    inputs:
+      first-parent:
+        description: >-
+          Check only the commits on the first-parent line of the pushed range:
+          the commits made in this repository and the merge commits that bring
+          other history in, not the history those merges carry. For repositories
+          that merge an upstream project (the engine and fork plugin repositories),
+          whose own authors and messages are not ours to police.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  no-model-references:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Reject commits that reference an AI model or tool
+        env:
+          BEFORE: ${{ github.event.before }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          FIRST_PARENT: ${{ inputs.first-parent }}
+        run: |
+          if [ -n "$BASE" ]; then range="$BASE..$HEAD"
+          elif [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] && git cat-file -e "$BEFORE" 2>/dev/null; then range="$BEFORE..$HEAD"
+          else range="$HEAD~1..$HEAD"; fi
+          walk=""
+          [ "$FIRST_PARENT" = true ] && walk="--first-parent"
+          # Vendors, models and coding tools, matched as whole words in the
+          # author, committer and full message of every commit in the push.
+          words='anthropic|claude|openai|chatgpt|gpt-?[0-9o]+|codex|copilot|gemini|bard|llama|mistral|mixtral|deepseek|qwen|kimi|moonshot|glm-?[0-9]|zhipu|nemotron|grok|xai|cohere|ollama|openrouter|opencode|windsurf|tabnine|llms?|large language model'
+          pattern="(^|[^a-z0-9])(${words})([^a-z0-9]|\$)|🤖|co-authored-by:.*(noreply|bot)@"
+          bad=$(git log $walk --format='%H%x09%an <%ae>%x09%s' "$range" | while IFS=$'\t' read -r sha who subj; do
+            if git log -1 --format='%an <%ae>%n%cn <%ce>%n%B' "$sha" | grep -Eiq "$pattern"; then echo "$sha $who: $subj"; fi
+          done)
+          if [ -n "$bad" ]; then
+            echo "These commits reference an AI model or tool, which this repository does not accept:"
+            echo "$bad"
+            exit 1
+          fi
+          echo "No AI model or tool references in $range."

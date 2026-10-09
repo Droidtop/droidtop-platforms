@@ -1,0 +1,14 @@
+name: Commit hygiene
+
+# The rule lives once, in commit-hygiene.yml of this repository; every other
+# Droidtop repository calls it from there, pinned by commit.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    uses: ./.github/workflows/commit-hygiene.yml
