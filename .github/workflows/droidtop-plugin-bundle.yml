@@ -1,0 +1,268 @@
+name: Droidtop plugin bundle
+
+# Builds, signs and releases a droidtop plugin (Droidtop/tracker#198). A plugin
+# repository's own workflow is a short caller, pinned by commit:
+#
+#   on:
+#     push:
+#       branches: [main]
+#       tags: ['plugin-v*']
+#     pull_request:
+#     workflow_dispatch:
+#   permissions:
+#     contents: read
+#   jobs:
+#     bundle:
+#       permissions:
+#         contents: write      # the release job attaches the bundle to a plugin-v* tag
+#       uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@<sha>
+#       with:
+#         plugin-dir: droidtop-plugin    # where build.sh, sign.sh and the sources are ("." by default)
+#         artifact-name: droidtop-plugin-example
+#       secrets:
+#         PLUGIN_SIGNING_KEY: ${{ secrets.PLUGIN_SIGNING_KEY }}
+#         PLUGIN_SIGNING_CERT: ${{ secrets.PLUGIN_SIGNING_CERT }}
+#
+# Three jobs. `build` compiles the payload (manifest.json and classes.jar) with
+# the plugin's build.sh against Droidtop/droidtop's :plugin-host and uploads it
+# unsigned; it runs Gradle, kotlinc and the plugin's own scripts and never sees
+# the signing key. `sign` runs only first-party actions pinned by commit and the
+# plugin repository's own sign.sh, with the key; the payload is data it signs,
+# never code it runs (the same split Droidtop/enginehost's
+# sign-engine-bundle.yml makes for engine bundles). It signs with the origin key
+# in PLUGIN_SIGNING_KEY and, when present, packages PLUGIN_SIGNING_CERT as
+# origin.cert; on a pull request or without the secret (a fork) it signs
+# nothing and the unsigned payload stays the only artifact. `release` attaches a
+# signed bundle to the release of a plugin-v* tag.
+#
+# What differs between plugins is a parameter, not a copy of this file:
+# plugin-dir, and an optional prepare-script for a plugin that compiles against
+# more than :plugin-host (it is run in the build job from plugin-dir, with
+# DROIDTOP_DIR set to the droidtop checkout, and may append to $GITHUB_ENV).
+on:
+  workflow_call:
+    inputs:
+      plugin-dir:
+        description: >-
+          Directory of the plugin in the calling repository: the one holding
+          build.sh and sign.sh. "." for a repository that is just the plugin.
+        type: string
+        default: "."
+      prepare-script:
+        description: >-
+          Optional script, relative to plugin-dir, run after kotlinc is installed
+          and before build.sh. For extra compile classpath a plugin needs beyond
+          :plugin-host (environment is passed on through $GITHUB_ENV).
+        type: string
+        default: ""
+      artifact-name:
+        description: Name of the signed bundle artifact; the unsigned payload is <name>-unsigned.
+        type: string
+        default: plugin-bundle
+    secrets:
+      PLUGIN_SIGNING_KEY:
+        description: This plugin's origin EC private key (PEM). Reaches the sign job only.
+        required: false
+      PLUGIN_SIGNING_CERT:
+        description: The certificate of that key from droidtop's plugin master key, packaged as origin.cert.
+        required: false
+
+permissions:
+  contents: read
+
+env:
+  NDK_VERSION: "27.0.12077973"
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      ANDROID_SDK_ROOT: ${{ github.workspace }}/.android-sdk
+    steps:
+      - name: Check out droidtop (for :plugin-host's own compiled API)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: Droidtop/droidtop
+          submodules: recursive
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Check out this plugin
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: plugin-repo
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # Deliberately not droidtop's .github/actions/android-setup: that action
+      # also builds droidtop's cross-compiled desktop-mode vendor dependencies,
+      # which :plugin-host does not need. This installs what
+      # :plugin-host:assembleDebug requires: a plain Android SDK and the NDK its
+      # native/ CMake build wants.
+      - name: Cache Android SDK/NDK
+        id: sdk-cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ${{ env.ANDROID_SDK_ROOT }}
+          key: droidtop-plugin-android-sdk-ndk${{ env.NDK_VERSION }}-v1
+
+      - name: Install Android SDK + NDK
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
+          curl -sL https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o /tmp/cmdline-tools.zip
+          unzip -q /tmp/cmdline-tools.zip -d "$ANDROID_SDK_ROOT/cmdline-tools"
+          mv "$ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools" "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+          rm /tmp/cmdline-tools.zip
+          SDKMANAGER="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          (yes || true) | "$SDKMANAGER" --sdk_root="$ANDROID_SDK_ROOT" --licenses > /dev/null
+          "$SDKMANAGER" --sdk_root="$ANDROID_SDK_ROOT" \
+            "platform-tools" "platforms;android-36" "build-tools;36.0.0" "ndk;${NDK_VERSION}"
+
+      - name: Validate Gradle wrappers
+        # droidtop's vendor/SDL2/android-project wrapper (SDL's sample Android
+        # project, which this build never runs) is not on Gradle's list of
+        # release checksums; droidtop's own android-setup allows exactly this
+        # one checksum for the same reason.
+        uses: gradle/actions/wrapper-validation@ed408507eac070d1f99cc633dbcf757c94c7933a # v4
+        with:
+          min-wrapper-count: 1
+          allow-checksums: 2c23278a62dc9f96ab11bee897d9f53e6479d6419135e4560ce822a6431df5e5
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4
+        with:
+          cache-cleanup: on-success
+          validate-wrappers: false
+
+      - name: Build droidtop's :plugin-host
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
+          ANDROID_NDK_HOME: ${{ env.ANDROID_SDK_ROOT }}/ndk/${{ env.NDK_VERSION }}
+        run: ./gradlew :plugin-host:assembleDebug --stacktrace --configure-on-demand
+
+      - name: Extract the :plugin-host classpath
+        run: |
+          mkdir -p "$RUNNER_TEMP/plugin-host-classes"
+          unzip -q -o plugin-host/build/outputs/aar/plugin-host-debug.aar classes.jar -d "$RUNNER_TEMP/plugin-host-classes"
+          echo "PLUGIN_HOST_CLASSPATH=$RUNNER_TEMP/plugin-host-classes/classes.jar" >> "$GITHUB_ENV"
+
+      - name: Install kotlinc
+        # Pinned to droidtop's own "kotlin" entry in gradle/libs.versions.toml,
+        # so the plugin compiles against the language version :plugin-host does.
+        run: |
+          KOTLIN_VERSION=$(grep '^kotlin = ' gradle/libs.versions.toml | cut -d '"' -f2)
+          echo "Using kotlinc $KOTLIN_VERSION"
+          curl -sL "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_VERSION}/kotlin-compiler-${KOTLIN_VERSION}.zip" -o "$RUNNER_TEMP/kotlinc.zip"
+          unzip -q "$RUNNER_TEMP/kotlinc.zip" -d "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/kotlinc/bin" >> "$GITHUB_PATH"
+
+      - name: Prepare the plugin's extra compile classpath
+        if: inputs.prepare-script != ''
+        working-directory: plugin-repo/${{ inputs.plugin-dir }}
+        env:
+          DROIDTOP_DIR: ${{ github.workspace }}
+          PREPARE_SCRIPT: ${{ inputs.prepare-script }}
+        run: bash "$PREPARE_SCRIPT"
+
+      - name: Build the plugin payload
+        working-directory: plugin-repo/${{ inputs.plugin-dir }}
+        env:
+          ANDROID_JAR: ${{ env.ANDROID_SDK_ROOT }}/platforms/android-36/android.jar
+        run: |
+          export PATH="$ANDROID_SDK_ROOT/build-tools/36.0.0:$PATH"
+          ./build.sh
+
+      - name: Upload the unsigned plugin payload
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ${{ inputs.artifact-name }}-unsigned
+          path: |
+            plugin-repo/${{ inputs.plugin-dir }}/build/classes.jar
+            plugin-repo/${{ inputs.plugin-dir }}/build/manifest.json
+          if-no-files-found: error
+
+  sign:
+    # The only job that holds the key. No Gradle, no kotlinc, no third-party
+    # action: GitHub's own checkout and artifact actions pinned by commit, and
+    # the repository's sign.sh over the downloaded payload.
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      signed: ${{ steps.sign.outputs.signed }}
+    steps:
+      - name: Check out this plugin (for sign.sh)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Download the unsigned payload
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ${{ inputs.artifact-name }}-unsigned
+          path: ${{ inputs.plugin-dir }}/build
+      - name: Sign the bundle
+        id: sign
+        working-directory: ${{ inputs.plugin-dir }}
+        env:
+          SIGNING_KEY_PEM: ${{ secrets.PLUGIN_SIGNING_KEY }}
+          SIGNING_CERT: ${{ secrets.PLUGIN_SIGNING_CERT }}
+        run: |
+          set -eu
+          if [ "$GITHUB_EVENT_NAME" = pull_request ] || [ -z "$SIGNING_KEY_PEM" ]; then
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+            echo "Unsigned bundle: signing is skipped on pull requests and whenever the PLUGIN_SIGNING_KEY secret is absent (forks). The payload stays an unsigned artifact." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          trap 'rm -f -- "${RUNNER_TEMP:?}/k.pem" "${RUNNER_TEMP:?}/origin.cert"' EXIT
+          umask 077
+          printf '%s' "$SIGNING_KEY_PEM" > "$RUNNER_TEMP/k.pem"
+          export PLUGIN_SIGNING_KEY="$RUNNER_TEMP/k.pem"
+          if [ -n "$SIGNING_CERT" ]; then
+            printf '%s' "$SIGNING_CERT" > "$RUNNER_TEMP/origin.cert"
+            export PLUGIN_SIGNING_CERT="$RUNNER_TEMP/origin.cert"
+          fi
+          ./sign.sh
+          echo "signed=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "Signed bundle: $(ls ./*.droidplugin.tar.xz)"
+            if [ -n "$SIGNING_CERT" ]; then echo "origin.cert included."; else echo "No PLUGIN_SIGNING_CERT secret: no origin.cert in the bundle."; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload the signed plugin bundle
+        if: steps.sign.outputs.signed == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: ${{ inputs.plugin-dir }}/*.droidplugin.tar.xz
+          if-no-files-found: error
+
+  release:
+    needs: sign
+    if: needs.sign.outputs.signed == 'true' && startsWith(github.ref, 'refs/tags/plugin-v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Download the signed bundle
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: bundle
+      - name: Attach it to the release for this tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -eu
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
+          gh release upload "$GITHUB_REF_NAME" bundle/*.droidplugin.tar.xz --clobber

@@ -1,0 +1,116 @@
+name: Sync upstream
+
+# Keeps a fork repository current with its upstream project (Droidtop/tracker#198).
+# The repository's own .github/workflows/sync-upstream.yml is a caller pinned by
+# commit that carries the schedule, because a schedule cannot live in a reusable
+# workflow:
+#
+#   name: Sync upstream
+#   on:
+#     schedule:
+#       - cron: '47 4 * * *'
+#     workflow_dispatch: {}
+#   permissions:
+#     contents: write
+#     issues: write
+#   jobs:
+#     sync:
+#       uses: Droidtop/droidtop-platforms/.github/workflows/sync-upstream.yml@<sha>
+#       with:
+#         upstream-url: https://github.com/<owner>/<project>.git
+#         upstream-branch: main
+#
+# The upstream's branch is fast-forwarded into the repository's mirror branch,
+# then merged into the working branch. A conflict is never forced: the merge is
+# aborted and an issue asks for a manual merge.
+on:
+  workflow_call:
+    inputs:
+      upstream-url:
+        description: Git URL of the upstream project.
+        type: string
+        required: true
+      upstream-branch:
+        description: The upstream branch to follow.
+        type: string
+        default: main
+      mirror-branch:
+        description: This repository's branch that only ever fast-forwards to the upstream branch.
+        type: string
+        default: upstream-main
+      target-branch:
+        description: This repository's branch the mirror branch is merged into.
+        type: string
+        default: main
+      git-user-name:
+        type: string
+        default: bi0shacker001
+      git-user-email:
+        type: string
+        default: bioshacker001@gmail.com
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        env:
+          GIT_USER_NAME: ${{ inputs.git-user-name }}
+          GIT_USER_EMAIL: ${{ inputs.git-user-email }}
+        run: |
+          git config user.name "$GIT_USER_NAME"
+          git config user.email "$GIT_USER_EMAIL"
+
+      - name: Add and fetch the upstream remote
+        env:
+          UPSTREAM_URL: ${{ inputs.upstream-url }}
+          UPSTREAM_BRANCH: ${{ inputs.upstream-branch }}
+        run: |
+          git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
+          git fetch upstream "$UPSTREAM_BRANCH"
+
+      - name: Fast-forward the mirror branch
+        env:
+          UPSTREAM_BRANCH: ${{ inputs.upstream-branch }}
+          MIRROR_BRANCH: ${{ inputs.mirror-branch }}
+        run: |
+          git checkout "$MIRROR_BRANCH"
+          git merge --ff-only "upstream/$UPSTREAM_BRANCH"
+          git push origin "$MIRROR_BRANCH"
+
+      - name: Try merging into the target branch
+        id: merge
+        env:
+          MIRROR_BRANCH: ${{ inputs.mirror-branch }}
+          TARGET_BRANCH: ${{ inputs.target-branch }}
+        run: |
+          git checkout "$TARGET_BRANCH"
+          if git merge --no-edit "$MIRROR_BRANCH"; then
+            git push origin "$TARGET_BRANCH"
+          else
+            git merge --abort
+            echo "conflict=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open an issue on conflict
+        if: steps.merge.outputs.conflict == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MIRROR_BRANCH: ${{ inputs.mirror-branch }}
+          TARGET_BRANCH: ${{ inputs.target-branch }}
+        run: |
+          gh issue create \
+            --title "Upstream sync conflict $(date -u +%Y-%m-%d)" \
+            --body "Fetching upstream and merging $MIRROR_BRANCH into $TARGET_BRANCH produced a conflict. Nothing was force-pushed. Resolve manually: git fetch origin && git checkout $TARGET_BRANCH && git merge $MIRROR_BRANCH, fix conflicts, commit, push."
