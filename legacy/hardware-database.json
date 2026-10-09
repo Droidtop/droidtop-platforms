@@ -1,6 +1,6 @@
 {
  "version": 1,
- "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is PRINTED on the face buttons, which no toggle changes), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right, keycodes{bottom, right, top, left: the Android key code each button reports, BUTTON_A/B/X/Y}}}} for a system setting that changes the layout at any time (keycodes, when present, is what droidtop reads; keysSwapped says the same for older readers: true when the right button reports BUTTON_A), and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed.",
+ "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is PRINTED on the face buttons, which no toggle changes), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right, keycodes{bottom, right, top, left: the Android key code each button reports, BUTTON_A/B/X/Y}}}} for a system setting that changes the layout at any time (keycodes, when present, is what droidtop reads; keysSwapped says the same for older readers: true when the right button reports BUTTON_A), and displays[] {role: internal|addon, width, height, position: top|bottom}: every built-in panel (a device may have several) and the device's own add-on display, with the panel's native mode and where it physically sits; droidtop names the matching screens \"Top screen\" / \"Bottom screen\", matching a built-in panel by its size in either orientation and an add-on by its exact size (an add-on without a size only when it is the one external screen connected). A value not listed is unknown, never guessed.",
  "devices": {
   "retroid-pocket-5": {
    "name": "Retroid Pocket 5",
@@ -17,6 +17,8 @@
     },
     {
      "role": "addon",
+     "width": 1080,
+     "height": 1920,
      "position": "top"
     }
    ],
@@ -133,7 +135,30 @@
     },
     "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position and value 0 its \"Retro\" (Nintendo) position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
    },
-   "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02); its resolution is not recorded here."
+   "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02). The add-on's native mode, 1080x1920 portrait, is from its own DRM mode list read on the console (droidtop DisplayModes, where it was seen falling back to 480x640); droidtop matches it by that exact size, so a landscape monitor on the same DisplayPort is not taken for the add-on."
+  },
+  "ayn-thor": {
+   "name": "AYN Thor",
+   "match": {
+    "manufacturer": "AYN",
+    "model": "Thor"
+   },
+   "displays": [
+    {
+     "role": "internal",
+     "width": 1920,
+     "height": 1080,
+     "position": "top"
+    },
+    {
+     "role": "internal",
+     "width": 1240,
+     "height": 1080,
+     "position": "bottom"
+    }
+   ],
+   "source": "NOT read off a device. match: PRODUCT_MANUFACTURER AYN and PRODUCT_MODEL Thor from LineageOS's device tree for it (github.com/LineageOS/android_device_ayn_odin2thor, lineage_odin2thor.mk), whose overrides follow the stock build; confirm with `getprop ro.product.model` on a Thor.",
+   "displaysSource": "NOT read off a device: two built-in AMOLED panels, the 6-inch 1920x1080 one in the lid above and the 3.92-inch 1240x1080 one below (published specifications, retrocatalog.com/retro-handhelds/thor). Added on the owner's instruction (2026-10-09, Droidtop/tracker#162) so the Thor's screens are named Top and Bottom; replace with the modes Android reports on a Thor."
   }
  }
 }

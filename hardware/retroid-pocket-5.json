@@ -14,6 +14,8 @@
   },
   {
    "role": "addon",
+   "width": 1080,
+   "height": 1920,
    "position": "top"
   }
  ],
@@ -130,5 +132,5 @@
   },
   "source": "Property name read on the console itself on 2026-10-02 (ro.product.model=Retroid Pocket 5); value 1 is the toggle's \"xbox\" position and value 0 its \"Retro\" (Nintendo) position (owner, 2026-10-02, corrected from the first reading, which had 0 and 1 the other way round)."
  },
- "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02); its resolution is not recorded here."
+ "displaysSource": "The internal panel's mode was read from the console on 2026-09-10. The add-on display sits physically above the built-in one (owner, 2026-10-02). The add-on's native mode, 1080x1920 portrait, is from its own DRM mode list read on the console (droidtop DisplayModes, where it was seen falling back to 480x640); droidtop matches it by that exact size, so a landscape monitor on the same DisplayPort is not taken for the add-on."
 }

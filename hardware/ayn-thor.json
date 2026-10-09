@@ -1,0 +1,24 @@
+{
+ "id": "ayn-thor",
+ "name": "AYN Thor",
+ "match": {
+  "manufacturer": "AYN",
+  "model": "Thor"
+ },
+ "displays": [
+  {
+   "role": "internal",
+   "width": 1920,
+   "height": 1080,
+   "position": "top"
+  },
+  {
+   "role": "internal",
+   "width": 1240,
+   "height": 1080,
+   "position": "bottom"
+  }
+ ],
+ "source": "NOT read off a device. match: PRODUCT_MANUFACTURER AYN and PRODUCT_MODEL Thor from LineageOS's device tree for it (github.com/LineageOS/android_device_ayn_odin2thor, lineage_odin2thor.mk), whose overrides follow the stock build; confirm with `getprop ro.product.model` on a Thor.",
+ "displaysSource": "NOT read off a device: two built-in AMOLED panels, the 6-inch 1920x1080 one in the lid above and the 3.92-inch 1240x1080 one below (published specifications, retrocatalog.com/retro-handhelds/thor). Added on the owner's instruction (2026-10-09, Droidtop/tracker#162) so the Thor's screens are named Top and Bottom; replace with the modes Android reports on a Thor."
+}

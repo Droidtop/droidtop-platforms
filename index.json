@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T21:08:59Z",
+ "generatedAt": "2026-10-09T17:39:42Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -42,7 +42,7 @@
    "form": "object",
    "version": 1,
    "meta": {
-    "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is PRINTED on the face buttons, which no toggle changes), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right, keycodes{bottom, right, top, left: the Android key code each button reports, BUTTON_A/B/X/Y}}}} for a system setting that changes the layout at any time (keycodes, when present, is what droidtop reads; keysSwapped says the same for older readers: true when the right button reports BUTTON_A), and displays[] {role: internal|addon, position: top|bottom} for where each panel physically sits when both are present (droidtop's launch chooser then says \"Top screen\" / \"Bottom screen\"). A value not listed is unknown, never guessed."
+    "comment": "Per-device facts droidtop cannot ask Android for: the pad's USB identity, how many panels the device really has, and quirks worth naming. Every field here is read off the device; nothing is inferred from a spec sheet. Fields droidtop's controller detection reads (docs/SPEC.md 7b): match.model (ro.product.model, case-insensitive; match.manufacturer optional), gamepad.name/vendorId/productId (the built-in pad's identity), gamepad.glyphFamily (xbox, playstation or nintendo: what is PRINTED on the face buttons, which no toggle changes), layoutToggle {property, values{<value>: {keysSwapped, confirmOn: bottom|right, keycodes{bottom, right, top, left: the Android key code each button reports, BUTTON_A/B/X/Y}}}} for a system setting that changes the layout at any time (keycodes, when present, is what droidtop reads; keysSwapped says the same for older readers: true when the right button reports BUTTON_A), and displays[] {role: internal|addon, width, height, position: top|bottom}: every built-in panel (a device may have several) and the device's own add-on display, with the panel's native mode and where it physically sits; droidtop names the matching screens \"Top screen\" / \"Bottom screen\", matching a built-in panel by its size in either orientation and an add-on by its exact size (an add-on without a size only when it is the one external screen connected). A value not listed is unknown, never guessed."
    },
    "idField": "id",
    "legacy": "hardware-database.json"
@@ -4251,7 +4251,12 @@
   {
    "path": "hardware/retroid-pocket-5.json",
    "collection": "hardware",
-   "sha256": "8e69362a805bfe4ebb7cdeb67ef84f99b4dd243b1dd3dc7f36d51bdce372cb40"
+   "sha256": "042898ced38031000e8413f58549dfd7fa82547f63e47450afbec2339fc37b38"
+  },
+  {
+   "path": "hardware/ayn-thor.json",
+   "collection": "hardware",
+   "sha256": "f380366374d845af04920b224515c4daad0e9e00396319f9bf94bf5ffcbf0dce"
   }
  ]
 }
