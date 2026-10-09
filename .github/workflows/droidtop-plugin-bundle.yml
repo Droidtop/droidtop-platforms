@@ -283,3 +283,49 @@ jobs:
           set -eu
           gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
           gh release upload "$GITHUB_REF_NAME" bundle/*.droidplugin.tar.xz --clobber
+
+  unstable:
+    # One release per working build (the owner's rule, Droidtop/tracker#122):
+    # every signed push to a branch is published as a pre-release, a rolling
+    # `plugin-unstable` pointer (the newest build) and a permanent
+    # `plugin-build.<run>` record that is never replaced. They are marked
+    # pre-release on purpose: droidtop's plugin updater ignores pre-releases
+    # unless the person opted in (PluginRepoUpdates.newestWithBundles), and its
+    # catalog offers the stable stream only (PluginCatalog.STREAM_STABLE), so
+    # a build record is never offered as an update. The plugin-v* releases
+    # above stay the stable stream.
+    needs: sign
+    if: needs.sign.outputs.signed == 'true' && github.event_name == 'push' && github.ref_type == 'branch'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Download the signed bundle
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: bundle
+      - name: Publish the pre-releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          set -euo pipefail
+          [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::SHA must be a full commit hash, got '$SHA'" >&2; exit 1; }
+          bundle="$(find bundle -name '*.droidplugin.tar.xz' -print -quit)"
+          test -n "$bundle"
+          id="$(basename "$bundle" .droidplugin.tar.xz)"
+          # The rolling pointer: the newest build is the whole release.
+          gh release delete plugin-unstable --yes --cleanup-tag 2>/dev/null || true
+          gh release create plugin-unstable "$bundle" --target "$SHA" --prerelease \
+            --title "$id (unstable)" \
+            --notes "Newest signed build of \`$id\`, from \`$REF_NAME\` at \`$SHA\` (build $RUN_NUMBER). A pre-release: droidtop installs it only if you opt in to pre-releases."
+          # The permanent record of this build; only a rerun of this exact run replaces it.
+          tag="plugin-build.$RUN_NUMBER"
+          if gh release view "$tag" >/dev/null 2>&1; then gh release delete "$tag" --yes --cleanup-tag; fi
+          gh release create "$tag" "$bundle" --target "$SHA" --prerelease \
+            --title "$id (build $RUN_NUMBER)" \
+            --notes "Signed build $RUN_NUMBER of \`$id\`, from \`$REF_NAME\` at \`$SHA\`. Permanent build history, never overwritten. A pre-release: not offered as an update."
