@@ -181,13 +181,23 @@ jobs:
           export PATH="$ANDROID_SDK_ROOT/build-tools/36.0.0:$PATH"
           ./build.sh
 
+      - name: Resolve the plugin directory
+        # upload-artifact refuses a path with a "." segment, and plugin-dir is
+        # "." for a repository that is just the plugin.
+        id: dir
+        env:
+          PLUGIN_DIR: ${{ inputs.plugin-dir }}
+        run: |
+          d=$(realpath -m --relative-to=. "plugin-repo/$PLUGIN_DIR")
+          echo "prefix=$d/" >> "$GITHUB_OUTPUT"
+
       - name: Upload the unsigned plugin payload
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: ${{ inputs.artifact-name }}-unsigned
           path: |
-            plugin-repo/${{ inputs.plugin-dir }}/build/classes.jar
-            plugin-repo/${{ inputs.plugin-dir }}/build/manifest.json
+            ${{ steps.dir.outputs.prefix }}build/classes.jar
+            ${{ steps.dir.outputs.prefix }}build/manifest.json
           if-no-files-found: error
 
   sign:
@@ -206,11 +216,18 @@ jobs:
         with:
           fetch-depth: 1
           persist-credentials: false
+      - name: Resolve the plugin directory
+        id: dir
+        env:
+          PLUGIN_DIR: ${{ inputs.plugin-dir }}
+        run: |
+          d=$(realpath -m --relative-to=. "$PLUGIN_DIR")
+          if [ "$d" = . ]; then echo "prefix=" >> "$GITHUB_OUTPUT"; else echo "prefix=$d/" >> "$GITHUB_OUTPUT"; fi
       - name: Download the unsigned payload
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: ${{ inputs.artifact-name }}-unsigned
-          path: ${{ inputs.plugin-dir }}/build
+          path: ${{ steps.dir.outputs.prefix }}build
       - name: Sign the bundle
         id: sign
         working-directory: ${{ inputs.plugin-dir }}
@@ -243,7 +260,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: ${{ inputs.artifact-name }}
-          path: ${{ inputs.plugin-dir }}/*.droidplugin.tar.xz
+          path: ${{ steps.dir.outputs.prefix }}*.droidplugin.tar.xz
           if-no-files-found: error
 
   release:
