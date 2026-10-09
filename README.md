@@ -81,6 +81,15 @@ The three sources keep their own system vocabularies, so a player or BIOS set
 naming an id no platform has (`3ds`, `wiiware`, `bbc`) is normal and not an
 error — the generator deliberately does not "validate" that away.
 
+## Licence
+
+GPL-3.0 (`LICENSE`). The BIOS registry (`bios/`, `bios-database.json`) is
+generated from Batocera's GPL-licensed `batocera-systems`, a verbatim copy of
+which is kept in `generator/sources/`, so the repository as a whole carries the
+GPL; the more permissive inputs (ES-DE's MIT-licensed system and find rules, the
+Daijishō wiki, and the engine and hardware rows droidtop authors itself) are
+compatible with it and add no condition of their own beyond keeping their notices.
+
 ## Format of a composed database
 
 ```json
