@@ -1,0 +1,55 @@
+name: Plugin lines
+
+# One table of every Enginehost engine plugin line: is it exactly its
+# upstream commit + plugin-core (enginehost/line.json), how far its pin is
+# below plugin-core's tip, and which lines are not composed yet
+# (Droidtop/tracker#324). Report only: the gate is plugin-line-check.yml,
+# which each line runs on its own pushes.
+on:
+  schedule:
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "tools/plugin_line.py"
+      - ".github/workflows/plugin-lines.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Every line of every engine plugin repository
+        run: |
+          set -uo pipefail
+          tool=$PWD/tools/plugin_line.py
+          repos=$(python3 -c 'import json; print("\n".join(sorted(o["repo"] for o in json.load(open("plugins/index.json"))["origins"] if o["repo"].split("/")[1].startswith("enginehost-"))))')
+          {
+            echo "## Plugin lines: upstream commit + plugin-core"
+            echo
+            echo "| repository | line | result |"
+            echo "| --- | --- | --- |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          for repo in $repos; do
+            dir=$RUNNER_TEMP/${repo#*/}
+            git init -q "$dir"
+            git -C "$dir" remote add origin "https://github.com/$repo"
+            if ! git -C "$dir" fetch -q --filter=blob:none origin "+refs/heads/plugin-core:refs/remotes/origin/plugin-core" 2>/dev/null; then
+              echo "| $repo | - | no plugin-core branch |" >> "$GITHUB_STEP_SUMMARY"
+              continue
+            fi
+            git -C "$dir" fetch -q --filter=blob:none --depth=1 origin "+refs/heads/plugin/*:refs/remotes/origin/plugin/*" || true
+            lines=$(git -C "$dir" for-each-ref --format='%(refname:short)' refs/remotes/origin/plugin/)
+            [ -n "$lines" ] || echo "| $repo | - | no plugin/* line branch |" >> "$GITHUB_STEP_SUMMARY"
+            for line in $lines; do
+              out=$(cd "$dir" && python3 "$tool" check --line "$line" --core origin/plugin-core --fetch origin 2>&1)
+              first=$(printf '%s' "$out" | head -1 | tr '|' '/')
+              echo "| $repo | ${line#origin/} | $first |" >> "$GITHUB_STEP_SUMMARY"
+              printf '== %s %s\n%s\n' "$repo" "$line" "$out"
+            done
+          done

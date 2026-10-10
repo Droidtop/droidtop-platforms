@@ -1,0 +1,70 @@
+name: Plugin line check
+
+# The owner's rule for Enginehost engine plugins, verbatim: "The highest
+# priority task, always, in plugin creation for enginehost, is making sure the
+# plugin wrapper is authoritative. If we were to magically lose a plugin
+# branch, we need to be able to plop that wrapper code into a new branch from
+# the same commit and have it working." (Droidtop/tracker#324)
+#
+# So a line branch plugin/<id> is exactly compose(upstream commit, plugin-core
+# commit), both recorded in its enginehost/line.json, and this check rebuilds
+# that composition and fails on any difference: a wrapper change made on a line
+# instead of on plugin-core, or an engine edit that is neither upstream nor a
+# plugin-core patch. On a push to plugin-core it composes every line
+# plugin-core declares at the new tip and reports each line's pin.
+#
+# Every plugin repository calls this from plugin-core's
+# .github/workflows/plugin-line.yml, pinned by commit, and passes the same
+# commit as tool-ref. tools/plugin_line.py is the one implementation.
+on:
+  workflow_call:
+    inputs:
+      tool-ref:
+        description: "The droidtop-platforms commit the caller pins (same as its uses: line)"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the tool
+        env:
+          TOOL_REF: ${{ inputs.tool-ref }}
+        run: |
+          set -euo pipefail
+          git init -q tool
+          git -C tool fetch -q --depth=1 https://github.com/Droidtop/droidtop-platforms "$TOOL_REF"
+          git -C tool show FETCH_HEAD:tools/plugin_line.py > plugin_line.py
+      - name: Fetch only the commits the composition needs
+        # Blob-less and shallow: Godot's and Ren'Py's full histories are not
+        # needed to compare three trees. Missing commits are fetched by the
+        # tool itself (--fetch origin).
+        env:
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git init -q plugin
+          cd plugin
+          git remote add origin "https://github.com/$REPO"
+          git fetch -q --filter=blob:none origin "+refs/heads/plugin-core:refs/remotes/origin/plugin-core"
+          git fetch -q --filter=blob:none --depth=1 origin "+refs/heads/plugin/*:refs/remotes/origin/plugin/*" "$SHA"
+      - name: Line = upstream commit + plugin-core
+        working-directory: plugin
+        env:
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          case "$REF" in
+            refs/heads/plugin-core)
+              python3 ../plugin_line.py status --core "$SHA" --fetch origin | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            refs/heads/plugin/*)
+              python3 ../plugin_line.py check --line "$SHA" --core origin/plugin-core --fetch origin | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            *)
+              echo "Not a line or plugin-core: nothing to check." ;;
+          esac
