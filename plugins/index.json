@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T18:29:17Z",
+ "generatedAt": "2026-10-10T18:31:19Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -3728,13 +3728,13 @@
      "tag": "nscripter-onsyuri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-09T03:56:43Z",
+     "published_at": "2026-10-10T18:30:21Z",
      "assets": [
       {
        "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
-       "size": 8341544,
-       "sha256": "2e410860124af66902052eb76651a44f63d2d2534e86ea31b9ed531b5f2bf05e"
+       "size": 6942900,
+       "sha256": "8f6c4ff565fbf509948e2355ef4788d4f0faa06126138f34a037a6f67aebc66c"
       },
       {
        "name": "enginehost-public-key.json",
@@ -3745,8 +3745,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
-       "size": 11385,
-       "sha256": "4b9461ef5360d6ec33119c1a6cbdd5bc4a6096013896c77400ff8aee0534a6cd"
+       "size": 8045,
+       "sha256": "7c6cbed0be8a0434d1fe132d9956ac255cb9c3fca0aacd314274d791c4cc3c76"
+      }
+     ]
+    },
+    {
+     "tag": "nscripter-onsyuri-v1-build.16",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-10T18:30:24Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.16/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "size": 6942900,
+       "sha256": "8f6c4ff565fbf509948e2355ef4788d4f0faa06126138f34a037a6f67aebc66c"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.16/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "98f98397b75eafc01266cbaaf3d722532d9458207013d4e3e5b311731ebf6f08"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.16/enginehost-release.json",
+       "size": 8045,
+       "sha256": "7c6cbed0be8a0434d1fe132d9956ac255cb9c3fca0aacd314274d791c4cc3c76"
       }
      ]
     },
