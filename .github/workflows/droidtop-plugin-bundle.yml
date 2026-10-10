@@ -181,6 +181,30 @@ jobs:
           export PATH="$ANDROID_SDK_ROOT/build-tools/36.0.0:$PATH"
           ./build.sh
 
+      - name: Check op names (warning only)
+        # The naming rule of droidtop docs/plugin-api.md 3 "Naming" (Droidtop/tracker#459), the same rule as droidtop's
+        # HostOpNames.check: an op is lower-case words joined by _, starting with a verb; no bare nouns, no past tenses.
+        # droidtop cannot hold a plugin to it, so this only warns; the build never fails on a name.
+        working-directory: plugin-repo/${{ inputs.plugin-dir }}
+        run: |
+          python3 - <<'PY'
+          import json, re
+          m = json.load(open("build/manifest.json"))
+          nouns = {"status", "state", "info", "keys", "usage", "path", "volumes", "systems", "available", "recording", "http"}
+          def check(op):
+              if not re.fullmatch(r"[a-z][a-z0-9]*(_[a-z0-9]+)*", op): return "is not lower-case words joined by _"
+              verb = op.split("_")[0]
+              if verb.endswith("ed") and verb != "seed": return "reads as an event; name what the call does"
+              if verb in nouns: return "is a noun; name what the call does (get_%s, list_%s)" % (op, op)
+              return None
+          ops = [("exports " + e.get("api", "?"), o.get("op", "")) for e in m.get("exports", []) for o in e.get("ops", [])]
+          ops += [("linkOps of " + p.get("point", "?"), o.get("op", "")) for p in m.get("provides", []) for o in p.get("linkOps", [])]
+          for where, op in ops:
+              why = check(op)
+              if why: print("::warning title=Op name::%s: '%s' %s (docs/plugin-api.md 3 Naming)" % (where, op, why))
+          print("checked %d op names" % len(ops))
+          PY
+
       - name: Resolve the plugin directory
         # upload-artifact refuses a path with a "." segment, and plugin-dir is
         # "." for a repository that is just the plugin.
