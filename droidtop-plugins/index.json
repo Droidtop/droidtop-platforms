@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T17:56:58Z",
+ "generatedAt": "2026-10-10T19:40:34Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -18,6 +18,30 @@
      "label": "F-Droid repositories",
      "description": "Browse, install and update Android apps from F-Droid repositories you add: by a repository link or QR code, by address and fingerprint, or from the repositories F-Droid itself lists. Each repository's index is checked against its signing key, and droidtop checks every app's package and signing key before Android installs it. No repository is added until you accept it.",
      "releases": [
+      {
+       "version": "0.1.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-10T19:40:24Z",
+       "manifestSha256": "26e3475abf1525293fc7f61f3a82e40b57816ace935588628c4ee81e25e2f022",
+       "bundle": {
+        "name": "droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-build.5/droidtop.fdroid.droidplugin.tar.xz",
+        "size": 100836,
+        "sha256": "f24db5d39411b0d9362247f9c372d4807fdcd8235a95ffa7618db51465fcfdf4"
+       }
+      },
+      {
+       "version": "0.1.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-10T19:40:22Z",
+       "manifestSha256": "26e3475abf1525293fc7f61f3a82e40b57816ace935588628c4ee81e25e2f022",
+       "bundle": {
+        "name": "droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-unstable/droidtop.fdroid.droidplugin.tar.xz",
+        "size": 100836,
+        "sha256": "f24db5d39411b0d9362247f9c372d4807fdcd8235a95ffa7618db51465fcfdf4"
+       }
+      },
       {
        "version": "0.1.0",
        "stream": "stable",
@@ -38,18 +62,6 @@
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
         "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-build.3/droidtop.fdroid.droidplugin.tar.xz",
-        "size": 95336,
-        "sha256": "3e9fd9478a8225a9f8f9cc6971e7a1a2e1c4b9d1d8cf7a9d6b66cf00312f7b16"
-       }
-      },
-      {
-       "version": "0.1.0",
-       "stream": "testing",
-       "publishedAt": "2026-10-10T17:47:25Z",
-       "manifestSha256": "e54ff248c308a656d78592d3d69b730905963cc616f5a6c3314f4c3d3d082eca",
-       "bundle": {
-        "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-unstable/droidtop.fdroid.droidplugin.tar.xz",
         "size": 95336,
         "sha256": "3e9fd9478a8225a9f8f9cc6971e7a1a2e1c4b9d1d8cf7a9d6b66cf00312f7b16"
        }
