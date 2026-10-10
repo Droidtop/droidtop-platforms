@@ -22,7 +22,20 @@ The `Plugins index` workflow runs the generator with the Enginehost one (every s
 A release is therefore in the catalog within hours of publishing. A push that touches these files runs
 `--check`, offline.
 
+## Open it in droidtop, or browse it on the web
+
+**[Open this catalog in droidtop](https://droidtop.github.io/add-catalog?address=https%3A%2F%2Fraw.githubusercontent.com%2Fdroidtop%2Fdroidtop-platforms%2Fmain%2Fdroidtop-plugins%2Findex.json)** on the device that has droidtop, or scan the code:
+
+[![QR code of the link above](add-catalog-qr.svg)](https://droidtop.github.io/add-catalog?address=https%3A%2F%2Fraw.githubusercontent.com%2Fdroidtop%2Fdroidtop-platforms%2Fmain%2Fdroidtop-plugins%2Findex.json)
+
+droidtop's own catalog is always in droidtop (Settings > Plugins > Add); the link opens it there.
+<https://droidtop.github.io/> shows the same catalog as a web page: every plugin with its description,
+versions and channels, permissions in plain language, signature facts and source repository, and an
+"Install in droidtop" button on each (`droidtop://install-plugin?catalog=...&id=...`). That page is built
+from this `index.json` by [Droidtop/droidtop.github.io](https://github.com/Droidtop/droidtop.github.io).
+
 | File | What it is |
 | --- | --- |
 | `index.json` | The catalog. Written by the workflow. |
+| `add-catalog-qr.svg` | The QR code of the add-catalog link above. |
 | `master-key.json` | The public half of droidtop's plugin master, the key the app pins as `MasterKey`. A reviewed change only. |
