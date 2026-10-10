@@ -9,7 +9,8 @@ only (a private index, no checkout):
   2. plugin-core's whole tree written over it;
   3. plugin-core's enginehost/lines/<id>/root/** written over the repository root
      (the files that legitimately differ per line, such as bundle-metadata.json);
-  4. plugin-core's patch series (enginehost/patches/series) for the line's upstream version;
+  4. plugin-core's patch series (enginehost/patches/series) for the line's upstream version,
+     then the line's own patches (enginehost/lines/<id>/patches/*.patch, in name order);
   5. enginehost/line.json, the pin: line id, upstream commit and version, plugin-core commit.
 
 Commands (run inside a clone of the plugin repository):
@@ -95,6 +96,7 @@ def compose_tree(pc, upstream, version, line_id):
         # update-index --index-info wants "<mode> <sha>\t<path>" (type is accepted too).
         git("update-index", "--index-info", env=env, input="\n".join(info) + "\n")
         applied = []
+        todo = []  # (label, path in plugin-core)
         series = show(pc, SERIES)
         if series:
             for raw in series.decode().splitlines():
@@ -102,18 +104,23 @@ def compose_tree(pc, upstream, version, line_id):
                 if not raw or raw.startswith("#"):
                     continue
                 spec, name = raw.split(None, 1)
-                if not in_range(version, spec):
-                    continue
-                body = show(pc, f"enginehost/patches/{name}", required=True)
-                with tempfile.NamedTemporaryFile(suffix=".patch", delete=False) as f:
-                    f.write(body)
-                p = subprocess.run(["git", "apply", "--cached", "--whitespace=nowarn", f.name],
-                                   capture_output=True, text=True, env=env)
-                os.unlink(f.name)
-                if p.returncode:
-                    sys.exit(f"patch {name} ({spec}) does not apply to {upstream[:10]} "
-                             f"(version {version}):\n{p.stderr.strip()}")
-                applied.append(name)
+                if in_range(version, spec):
+                    todo.append((f"{name} ({spec})", f"enginehost/patches/{name}"))
+        own = f"{LINES_DIR}/{line_id}/patches/"
+        for path in sorted(git("ls-tree", "-r", "--name-only", "--full-tree", pc, "--", own).split()):
+            if path.endswith(".patch"):
+                todo.append((path[len(LINES_DIR) + 1:], path))
+        for label, path in todo:
+            body = show(pc, path, required=True)
+            with tempfile.NamedTemporaryFile(suffix=".patch", delete=False) as f:
+                f.write(body)
+            p = subprocess.run(["git", "apply", "--cached", "--binary", "--whitespace=nowarn", f.name],
+                               capture_output=True, text=True, env=env)
+            os.unlink(f.name)
+            if p.returncode:
+                sys.exit(f"patch {label} does not apply to {upstream[:10]} "
+                         f"(version {version}):\n{p.stderr.strip()}")
+            applied.append(label)
         pin = json.dumps({"line": line_id, "upstream": upstream, "upstreamVersion": version,
                           "pluginCore": pc}, indent=2) + "\n"
         blob = git("hash-object", "-w", "--stdin", input=pin).strip()
@@ -182,6 +189,9 @@ def cmd_compose(a):
 def cmd_check(a):
     line = rev(a.line) or sys.exit(f"no line at {a.line}")
     raw = show(line, LINE_FILE)
+    if raw is None and show(line, "ARCHIVED.md") is not None:
+        print(f"ARCHIVED {a.line}: not a supported line (ARCHIVED.md), not checked")
+        return
     if raw is None:
         sys.exit(f"FAIL: {LINE_FILE} is missing, so nobody can rebuild this line from upstream + "
                  f"plugin-core. Compose it with plugin-line (droidtop-platforms tools/plugin-line).")
