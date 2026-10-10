@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T19:40:34Z",
+ "generatedAt": "2026-10-10T20:05:01Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -18,6 +18,18 @@
      "label": "F-Droid repositories",
      "description": "Browse, install and update Android apps from F-Droid repositories you add: by a repository link or QR code, by address and fingerprint, or from the repositories F-Droid itself lists. Each repository's index is checked against its signing key, and droidtop checks every app's package and signing key before Android installs it. No repository is added until you accept it.",
      "releases": [
+      {
+       "version": "0.1.1",
+       "stream": "stable",
+       "publishedAt": "2026-10-10T19:43:52Z",
+       "manifestSha256": "31217af6f3b4712e9fa9ef9e15b507566600e26ad78ee48357ce195114f83d9b",
+       "bundle": {
+        "name": "droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.1/droidtop.fdroid.droidplugin.tar.xz",
+        "size": 100840,
+        "sha256": "2bac892da57985474127f64b9e9fb1a03579ae6a0aa48455c452f5136f35baa7"
+       }
+      },
       {
        "version": "0.1.1",
        "stream": "testing",
@@ -73,6 +85,42 @@
      "label": "App releases (GitHub, GitLab, Codeberg)",
      "description": "Keep Android apps up to date straight from their developers' release pages on GitHub, GitLab, Codeberg or another Forgejo server, like Obtainium. Add a page by its address or a link, choose pre-releases and a file name pattern if you want, or import an Obtainium export. droidtop picks the APK that fits your device, checks that it is the app and the signing key you accepted, and installs it. No page is tracked until you accept its review.",
      "releases": [
+      {
+       "version": "0.1.1",
+       "stream": "stable",
+       "publishedAt": "2026-10-10T19:44:10Z",
+       "manifestSha256": "e63d7d1d3808560cfd31a9695e6fac3e7ba3b5c882458e4dac9c2e6ca8570329",
+       "bundle": {
+        "name": "droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.1/droidtop.github-apps.droidplugin.tar.xz",
+        "size": 46208,
+        "sha256": "29d9ab018ea6dfa1362dea7e462b95cf8b03499679e9d9b6d85ac9f50cbf2ca4"
+       }
+      },
+      {
+       "version": "0.1.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-10T19:40:53Z",
+       "manifestSha256": "38fcf3e0cfc28ef9a73a21c892c70d9b7c2d3d876777dc1cea731971a656b7ec",
+       "bundle": {
+        "name": "droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-build.6/droidtop.github-apps.droidplugin.tar.xz",
+        "size": 46208,
+        "sha256": "dcc3ef4d1534984c6a1223c1bc2a42913f5ed17ba27618e29ea402baf19f2512"
+       }
+      },
+      {
+       "version": "0.1.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-10T19:40:51Z",
+       "manifestSha256": "38fcf3e0cfc28ef9a73a21c892c70d9b7c2d3d876777dc1cea731971a656b7ec",
+       "bundle": {
+        "name": "droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-unstable/droidtop.github-apps.droidplugin.tar.xz",
+        "size": 46208,
+        "sha256": "dcc3ef4d1534984c6a1223c1bc2a42913f5ed17ba27618e29ea402baf19f2512"
+       }
+      },
       {
        "version": "0.1.0",
        "stream": "stable",
