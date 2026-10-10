@@ -26,7 +26,8 @@ jobs:
           persist-credentials: false
       - name: Every line of every engine plugin repository
         run: |
-          set -uo pipefail
+          # Report only: a failing line is a row in the table, not a stop.
+          set +e -uo pipefail
           tool=$PWD/tools/plugin_line.py
           repos=$(python3 -c 'import json; print("\n".join(sorted(o["repo"] for o in json.load(open("plugins/index.json"))["origins"] if o["repo"].split("/")[1].startswith("enginehost-"))))')
           {
