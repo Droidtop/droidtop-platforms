@@ -1,7 +1,9 @@
 name: Plugins index
 
 # What every enginehost plugin repository has published, in one file that
-# devices read from raw.githubusercontent.com. GitHub's API allows an
+# devices read from raw.githubusercontent.com. The same job also lists droidtop's
+# own plugin repositories into droidtop-plugins/index.json (generator/
+# droidtop_plugins_index.py), droidtop's official plugin catalog. GitHub's API allows an
 # unauthenticated address 60 requests an hour; enginehost listing eleven
 # repositories itself spent that in a few refreshes and showed an empty
 # catalog. This job does the listing once, with a token.
@@ -27,8 +29,10 @@ on:
   push:
     paths:
       - "plugins/**"
+      - "droidtop-plugins/**"
       - ".github/workflows/plugins-index.yml"
       - "generator/plugins_index.py"
+      - "generator/droidtop_plugins_index.py"
 
 # Read-only by default; the index job pushes plugins/index.json and
 # plugins/origins.json and answers registration issues, so it alone gets
@@ -61,7 +65,9 @@ jobs:
       # it: no API calls on an ordinary commit.
       - name: Check the committed index
         if: github.event_name == 'push'
-        run: python3 generator/plugins_index.py --check
+        run: |
+          python3 generator/plugins_index.py --check
+          python3 generator/droidtop_plugins_index.py --check
 
       - name: Rebuild the index from the plugin repositories
         if: github.event_name != 'push'
@@ -74,17 +80,25 @@ jobs:
         # nothing a sender wrote is interpolated into this script.
         run: python3 generator/plugins_index.py --event --report "$RUNNER_TEMP/registration.md"
 
+      # droidtop's own plugin repositories (Droidtop/droidtop-plugin-*), verified against
+      # droidtop's plugin master. A registration issue concerns Enginehost's index only.
+      - name: Rebuild droidtop's plugin index
+        if: ${{ github.event_name != 'push' && github.event_name != 'issues' }}
+        env:
+          GH_TOKEN: ${{ secrets.PLUGINS_INDEX_TOKEN || github.token }}
+        run: python3 generator/droidtop_plugins_index.py --build
+
       - name: Commit it when it changed
         if: github.event_name != 'push'
         run: |
           set -euo pipefail
-          if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json)" ]; then
+          if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json droidtop-plugins/index.json)" ]; then
             echo "Nothing to commit."
             exit 0
           fi
           git config user.name "droidtop-platforms"
           git config user.email "platforms@droidtop.invalid"
-          git add plugins/index.json plugins/origins.json plugins/key-history.json
+          git add plugins/index.json plugins/origins.json plugins/key-history.json droidtop-plugins/index.json
           git commit -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:main
 
