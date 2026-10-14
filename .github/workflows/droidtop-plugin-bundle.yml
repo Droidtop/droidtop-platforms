@@ -59,6 +59,14 @@ on:
         description: Name of the signed bundle artifact; the unsigned payload is <name>-unsigned.
         type: string
         default: plugin-bundle
+      payload:
+        description: >-
+          What build.sh leaves in build/ besides manifest.json that the sign job needs, as paths
+          relative to build/ separated by spaces: files or directories. The default is a native
+          bundle's classes.jar; a python plugin's is plugin.py, a plugin with native libraries adds
+          lib, a flutter_embed plugin's is payload.
+        type: string
+        default: classes.jar
       release-tag-suffix:
         description: >-
           Added to the pre-release tags (plugin-unstable<suffix>, plugin-build<suffix>.N), for a
@@ -222,13 +230,25 @@ jobs:
           d=$(realpath -m --relative-to=. "plugin-repo/$PLUGIN_DIR")
           echo "prefix=$d/" >> "$GITHUB_OUTPUT"
 
+      - name: List the payload to upload
+        id: payload
+        env:
+          PREFIX: ${{ steps.dir.outputs.prefix }}
+          PAYLOAD: ${{ inputs.payload }}
+        run: |
+          set -eu
+          {
+            echo "paths<<PAYLOAD_END"
+            echo "${PREFIX}build/manifest.json"
+            for p in $PAYLOAD; do echo "${PREFIX}build/$p"; done
+            echo "PAYLOAD_END"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Upload the unsigned plugin payload
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: ${{ inputs.artifact-name }}-unsigned
-          path: |
-            ${{ steps.dir.outputs.prefix }}build/classes.jar
-            ${{ steps.dir.outputs.prefix }}build/manifest.json
+          path: ${{ steps.payload.outputs.paths }}
           if-no-files-found: error
 
   sign:
