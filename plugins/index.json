@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T22:58:21Z",
+ "generatedAt": "2026-10-14T23:01:33Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -1760,13 +1760,13 @@
      "tag": "rpgmaker-rgss-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-10T20:40:23Z",
+     "published_at": "2026-10-14T23:00:49Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-unstable/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 91808616,
-       "sha256": "8b6d149af56c6fb9dea09d12506ceca93d7751f65cecfdd18d7ccdc496bdf815"
+       "size": 91805540,
+       "sha256": "9abbc9ce3bc5a8cf7c0a2c7cf782ab087a098f8270696530d6c3df1b6a345f14"
       },
       {
        "name": "enginehost-public-key.json",
@@ -1777,8 +1777,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-unstable/enginehost-release.json",
-       "size": 451541,
-       "sha256": "efc9472e391446a4bf1ed2029720f5e07a74b76ec7987018634d4b9cde0801fd"
+       "size": 451597,
+       "sha256": "7364b70d99a3931c973d356b38630bedb8d9894873e65c499d782b3453117866"
+      }
+     ]
+    },
+    {
+     "tag": "rpgmaker-rgss-v1-build.170",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T23:00:57Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.170/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "size": 91805540,
+       "sha256": "9abbc9ce3bc5a8cf7c0a2c7cf782ab087a098f8270696530d6c3df1b6a345f14"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.170/enginehost-public-key.json",
+       "size": 658,
+       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.170/enginehost-release.json",
+       "size": 451597,
+       "sha256": "7364b70d99a3931c973d356b38630bedb8d9894873e65c499d782b3453117866"
       }
      ]
     },
@@ -4020,13 +4046,13 @@
      "tag": "godot-v44-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-14T19:34:21Z",
+     "published_at": "2026-10-14T22:59:51Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
-       "size": 182829240,
-       "sha256": "9407b03bf82ab9b09ee18ea292b8d383d23683d681c793cc8ccdc25a5f002f38"
+       "size": 182824508,
+       "sha256": "8d24232e2d2a0c6ad475474bb0f3bb48db63c25b5159e27f20f96aa6e2d6f6da"
       },
       {
        "name": "enginehost-public-key.json",
@@ -4037,8 +4063,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/enginehost-release.json",
-       "size": 4629,
-       "sha256": "40b8fa340e08d55f12cb92ce4c3bc63e0d977cb90908eb43a5a5256bc7449bc9"
+       "size": 4733,
+       "sha256": "2763094c2e06d1e37f9c02d6100a370e3247919b77a93764ef4a3bbacd9d2621"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v44-v1-build.241",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T22:59:59Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.241/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "size": 182824508,
+       "sha256": "8d24232e2d2a0c6ad475474bb0f3bb48db63c25b5159e27f20f96aa6e2d6f6da"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.241/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.241/enginehost-release.json",
+       "size": 4733,
+       "sha256": "2763094c2e06d1e37f9c02d6100a370e3247919b77a93764ef4a3bbacd9d2621"
       }
      ]
     },
