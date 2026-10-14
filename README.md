@@ -1,147 +1,77 @@
-# droidtop-platforms
+<h1 align="center">droidtop-platforms</h1>
 
-The separately-updatable platform database behind
-[droidtop](https://github.com/droidtop/droidtop) and
-[enginehost](https://github.com/droidtop/enginehost): what platforms exist,
-which emulator launches what, which game engine a folder is, what firmware
-a system needs, and what a given handheld's hardware actually reports.
+<p align="center">
+  <b>The data behind droidtop and Enginehost.</b><br>
+  Which platforms exist, which emulator launches what, which engine a folder is, what firmware a system needs, and what a handheld's hardware really reports.
+</p>
 
-Both apps take their bundled copy from a pinned checkout of this repository
-at build time (a submodule at `vendor/droidtop-platforms`, copied into
-generated assets, with the commit recorded in the app), and refresh it at
-runtime from `index.json`. So a build ships one identifiable state of this
-repository, and between builds the apps only pull the files that changed.
+<p align="center">
+  <a href="https://github.com/Droidtop/droidtop-platforms/actions/workflows/generated-files.yml"><img alt="Generated files check" src="https://img.shields.io/github/actions/workflow/status/Droidtop/droidtop-platforms/generated-files.yml?branch=main&label=generated%20files&style=flat-square"></a>
+  <img alt="Data, not code" src="https://img.shields.io/badge/data-JSON-555555?style=flat-square">
+  <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/github/license/Droidtop/droidtop-platforms?style=flat-square"></a>
+</p>
 
-## The tree is the source; everything else is generated
+<p align="center">
+  <a href="#what-is-in-it">What is in it</a> ·
+  <a href="#how-the-apps-use-it">How the apps use it</a> ·
+  <a href="#where-the-data-comes-from">Sources</a> ·
+  <a href="#changing-it">Changing it</a> ·
+  <a href="#the-plugin-catalogs">Plugin catalogs</a> ·
+  <a href="#licence">Licence</a>
+</p>
 
-```
-engines/<id>.json        one registry row: detection rules, launch-strategy
-                         priority, and the enginehost family/context mapping
-platforms/<id>.json      one platform: name, extensions, RetroArch core, theme
-players/<id>.json        one standalone-emulator launch preset
-bios/<systemId>.json     one system's firmware requirements (file + md5)
-hardware/<device>.json   one device's real, measured facts: panels, pad identity
-controllers/<v>-<p>.json pad profiles beyond SDL's gamecontrollerdb (see its README)
-```
+This repository is the separately updatable database that [droidtop](https://github.com/Droidtop/droidtop) and [Enginehost](https://github.com/Droidtop/enginehost) read. It is mostly JSON, one small file per entry.
 
-Each collection directory also holds two files that are not data:
+## What is in it
 
-- `_meta.json` — the document-level fields of the composed database
-  (`version`, and the `comment`/`source` line that says where the data came
-  from).
-- `_order.json` — the ids, in order. This exists because for `engines` the
-  order IS detection precedence: rules OR, conditions AND, and the FIRST
-  matching row wins. It cannot be inferred from a directory listing, and it is
-  a real editorial decision — `renpy` is the first row and `renpy-fallback`
-  the second to last, deliberately — so it lives in one reviewable file rather
-  than being encoded in file names.
+| Folder | One file is | Used for |
+|---|---|---|
+| `platforms/` | A platform | Name, file extensions, RetroArch core and theme |
+| `players/` | A standalone-emulator launch preset | How to start a game in an installed emulator |
+| `engines/` | A game-engine detection row | Telling Ren'Py, RPG Maker, KiriKiri and others apart from a folder |
+| `bios/` | One system's firmware needs | Which files, with MD5 sums |
+| `hardware/` | One device's measured facts | Panels and pad identity, read off the device |
+| `controllers/` | A pad profile | Pads beyond SDL's gamecontrollerdb |
 
-One file per registry ROW, not per engine family, for the same reason: two
-rows of one family sit at opposite ends of the detection order on purpose, so
-a per-family file would need an ordering mechanism the format does not have.
+Hardware entries record what was read off the device itself, never a spec sheet.
 
-### Generated, never hand-edited
+## How the apps use it
 
-`generator/build.py` validates the tree and writes:
-
-- **`index.json`** — schema version, generation time, one entry per collection
-  (its composed document's shape) and one entry per file with its `sha256`.
-  This is what a client fetches first; it then downloads only the files whose
-  hash it does not already have.
-- **`legacy/*.json`** — the monolithic documents (`engines-database.json`,
-  `platforms-database.json`, `players-database.json`, `bios-database.json`, and `hardware-database.json`, which has no root copy)
-  composed back out of the tree, byte for byte the schema the apps parse.
-- **the same four files at the repository root** — DEPRECATED. They exist
-  only because released app builds already fetch those exact raw URLs and must
-  keep updating until they read the index. When no supported build fetches
-  them any more they are deleted and `legacy/` is the only copy. Do not add a
-  new consumer of the root files.
-
-Run `generator/build.py` after any change to the tree, and
-`generator/build.py --check` to verify (CI runs `--check`; so does the
-pre-commit hook in `generator/hooks/pre-commit`, which
-`generator/install-hooks.sh` links into `.git/hooks`).
+Both apps take a bundled copy from a pinned checkout of this repository at build time, with the commit recorded in the app. At runtime they refresh from `index.json`, which lists every file with its SHA-256, so between builds an app downloads only the files that changed.
 
 ## Where the data comes from
 
-Console entries are GENERATED from other frontends' own maintained databases,
-not hand-written (see `generator/`):
+Console data is generated from other frontends' own maintained databases:
 
-- ES-DE mobile's `es_systems.xml` + `es_find_rules.xml` (MIT) — platforms and
-  most players.
-- Batocera's `batocera-systems` (GPL) — the BIOS registry, the same md5/path
-  data Batocera's own missing-firmware checker runs on.
-- Daijishō's public Start-Arguments wiki — the original player seed.
+- ES-DE mobile's `es_systems.xml` and `es_find_rules.xml` (MIT): platforms and most players.
+- Batocera's `batocera-systems` (GPL): the BIOS registry, the same data Batocera's missing-firmware checker uses.
+- Daijisho's public Start-Arguments wiki: the original player seed.
 
-Engine rows, Windows/Linux entries and hardware facts are droidtop's own to
-author; no upstream frontend maintains those. Hardware entries record what was
-read off the device itself, never a spec sheet.
+Engine rows, Windows and Linux entries and hardware facts are droidtop's own. No upstream frontend maintains them.
 
-The three sources keep their own system vocabularies, so a player or BIOS set
-naming an id no platform has (`3ds`, `wiiware`, `bbc`) is normal and not an
-error — the generator deliberately does not "validate" that away.
+## Changing it
+
+The tree is the source. Everything else is generated, never hand-edited:
+
+- `index.json` is what apps fetch first.
+- `legacy/*.json` are the monolithic documents, composed back out of the tree in the schema the apps parse.
+- The same four files at the repository root are deprecated. Released app builds still fetch those URLs, so they stay until no supported build does. Do not add a new consumer.
+
+Run `generator/build.py` after any change to the tree, and `generator/build.py --check` to verify. CI runs `--check`, and so does the pre-commit hook that `generator/install-hooks.sh` links in.
+
+Each collection folder also holds `_meta.json` (document-level fields) and `_order.json` (the ids, in order). For `engines` the order is detection precedence: the first matching row wins, so it is a real editorial decision and lives in one reviewable file.
+
+The shape of the composed documents, and the `setup` block that droidtop's emulator setup helper reads, are in [docs/FORMAT.md](docs/FORMAT.md). A value in `setup` must be cited from the emulator's source or seen on a device. A guessed folder or key would make droidtop write files the emulator never reads.
+
+## The plugin catalogs
+
+This repository also publishes two generated indexes for the apps:
+
+- [`droidtop-plugins/`](droidtop-plugins/README.md): droidtop's official plugin catalog, with an add-catalog link and QR code.
+- [`plugins/`](plugins/README.md): what the Enginehost plugin repositories have published, so Enginehost does not spend GitHub's API allowance.
+
+[`template/`](template/README.md) starts a new droidtop plugin repository.
 
 ## Licence
 
-GPL-3.0 (`LICENSE`). The BIOS registry (`bios/`, `bios-database.json`) is
-generated from Batocera's GPL-licensed `batocera-systems`, a verbatim copy of
-which is kept in `generator/sources/`, so the repository as a whole carries the
-GPL; the more permissive inputs (ES-DE's MIT-licensed system and find rules, the
-Daijishō wiki, and the engine and hardware rows droidtop authors itself) are
-compatible with it and add no condition of their own beyond keeping their notices.
-
-## Format of a composed database
-
-```json
-{
-  "version": 2,
-  "players": [
-    {
-      "id": "unique-id",
-      "systemId": "es-de system id (e.g. psx, n64)",
-      "label": "Display name",
-      "pkg": "android.package.name",
-      "argumentsTemplate": "am-start arguments with {file.uri}/{file.path} placeholders",
-      "storagePathTemplate": "optional: the same launch with {file.path}, used only when the emulator holds all-files access",
-      "killPackageProcesses": false,
-      "setup": "optional: what the emulator needs beyond the launch, below"
-    }
-  ]
-}
-```
-
-`setup` is what droidtop's emulator setup helper reads for this emulator (droidtop
-docs/SPEC.md "Emulator setup helper"). droidtop takes the first row of a package
-that carries one, so put the same object on every row of that package. `{pkg}` in
-a path is the row's `pkg`. Every value must be cited from the emulator's source
-or seen on a device; a guessed folder or key would make droidtop write files the
-emulator never reads.
-
-```json
-"setup": {
-  "biosFolder": "absolute folder the emulator reads firmware from, or omit and use biosFolderKey",
-  "biosFolderKey": "a key of the config file below whose value is that folder",
-  "biosManual": "where the emulator's own menus show that folder, e.g. Settings > Directory > System/BIOS",
-  "config": {
-    "file": "absolute path of the emulator's config file",
-    "format": "ini | keyvalue",
-    "writesOnExit": false,
-    "settings": [
-      {
-        "id": "unique within the row",
-        "label": "what the person reads",
-        "about": "one sentence",
-        "section": "INI section, omitted for keyvalue",
-        "key": "the key in the file",
-        "options": [ { "value": "as written in the file", "label": "as shown" } ],
-        "manual": "where the same option is in the emulator's own menus"
-      }
-    ]
-  }
-}
-```
-
-Ids are unique within a collection — the file name IS the id. (The split into
-one-file-per-row surfaced 20 player ids that had been issued twice by the
-generators; the first row of each pair kept its id and the rest gained a `-2`,
-`-3` suffix.)
+GPL-3.0, see [LICENSE](LICENSE). The BIOS registry (`bios/`, `bios-database.json`) is generated from Batocera's GPL-licensed `batocera-systems`, a verbatim copy of which is kept in `generator/sources/`, so the repository as a whole carries the GPL. The more permissive inputs (ES-DE's MIT rules, the Daijisho wiki, and droidtop's own engine and hardware rows) are compatible and add no condition beyond keeping their notices.
