@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T22:58:26Z",
+ "generatedAt": "2026-10-14T23:08:09Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -208,6 +208,42 @@
      "description": "Gets RetroArch cores for your systems, opens RetroArch, and adds save, load and shader controls for the running game.",
      "releases": [
       {
+       "version": "1.5.1",
+       "stream": "stable",
+       "publishedAt": "2026-10-14T23:06:03Z",
+       "manifestSha256": "2b01fc1341139f0ac5843d541560fa03625dd07954121dc9f911526a51636205",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.1/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 35192,
+        "sha256": "ffbe2a55d8eab9b3d9ab1dd1cb20f4e0000041b938033c671c27a3209c03f354"
+       }
+      },
+      {
+       "version": "1.5.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-14T23:02:52Z",
+       "manifestSha256": "2405d2dd7b782359ee2d280117f59ef186939c10a35520acf541f343ec96bfe9",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.34/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 35188,
+        "sha256": "8070f31d31ddf96c1c80e46c49803bb6b2b886a14f543185bf822397920d4944"
+       }
+      },
+      {
+       "version": "1.5.1",
+       "stream": "testing",
+       "publishedAt": "2026-10-14T23:02:49Z",
+       "manifestSha256": "2405d2dd7b782359ee2d280117f59ef186939c10a35520acf541f343ec96bfe9",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 35188,
+        "sha256": "8070f31d31ddf96c1c80e46c49803bb6b2b886a14f543185bf822397920d4944"
+       }
+      },
+      {
        "version": "1.5.0",
        "stream": "testing",
        "publishedAt": "2026-10-14T22:22:17Z",
@@ -229,30 +265,6 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.0/droidtop.retroarch.droidplugin.tar.xz",
         "size": 35180,
         "sha256": "1d9ccf21e256791dc1866102da5245b6f1806f75e2c648b334a48929e1e11447"
-       }
-      },
-      {
-       "version": "1.5.0",
-       "stream": "testing",
-       "publishedAt": "2026-10-14T22:22:14Z",
-       "manifestSha256": "e3d30f17613271c75b6682ca5aab50df535514e8c41606cf0e3c2054c2d2eb6f",
-       "bundle": {
-        "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
-        "size": 35188,
-        "sha256": "70450ab3e1b39e2d3470f27a8bc88eed6a8bdcc30c399021037165f2da6db9ba"
-       }
-      },
-      {
-       "version": "1.4.0",
-       "stream": "testing",
-       "publishedAt": "2026-10-14T21:27:21Z",
-       "manifestSha256": "791badc3fd10d90a9eca30ad4fced360afba55a5341dffd490fb228c3aab1a43",
-       "bundle": {
-        "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.30/droidtop.retroarch.droidplugin.tar.xz",
-        "size": 35816,
-        "sha256": "f8ae80e7e4e0ea7e65c3783f31a5c99a34d41ad499db86907f01785a54e28abe"
        }
       },
       {
@@ -286,6 +298,18 @@
      "label": "Shizuku",
      "description": "Lets droidtop and the plugins you allow use Shizuku for system-level actions, such as closing another app's game.",
      "releases": [
+      {
+       "version": "1.4.2",
+       "stream": "stable",
+       "publishedAt": "2026-10-14T23:05:06Z",
+       "manifestSha256": "e42526550263941ba04f4166e9de48b44a614043d76f251691df390f3a4abb74",
+       "bundle": {
+        "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.4.2/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "size": 22876,
+        "sha256": "9181173aaaf2ac30d99dbe7410a152053ffc3ef00ce4b464d06335ddfd4e6ad0"
+       }
+      },
       {
        "version": "1.4.2",
        "stream": "testing",
