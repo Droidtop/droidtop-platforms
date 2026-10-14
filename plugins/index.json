@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T22:51:02Z",
+ "generatedAt": "2026-10-14T22:54:07Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -2086,13 +2086,13 @@
      "tag": "rpgmaker-mv-mz-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-09T03:51:38Z",
+     "published_at": "2026-10-14T22:51:20Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
-       "size": 12268,
-       "sha256": "6332363a488749e471371c762961fe3aaf8e382b51226b517956396c137c3e8a"
+       "size": 22872,
+       "sha256": "46926f29afe463e453e278930f4e19ef8164ccb2ba39628e466029a4699fd2af"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2103,8 +2103,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-unstable/enginehost-release.json",
-       "size": 3365,
-       "sha256": "4f1cb1eb818eeaefbf0621d0c5fde02e7c8ac400fa7cde8acd530e088f7ce6bc"
+       "size": 3409,
+       "sha256": "59fbb32077d3bb23f7b9dc5788247baa0683dc903f535a125d704cf4aa380685"
+      }
+     ]
+    },
+    {
+     "tag": "rpgmaker-mv-mz-v1-build.17",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T22:51:22Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-build.17/dev.enginehost.rpgmaker.mv-mz.v1.enginehost.tar.xz",
+       "size": 22872,
+       "sha256": "46926f29afe463e453e278930f4e19ef8164ccb2ba39628e466029a4699fd2af"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-build.17/enginehost-public-key.json",
+       "size": 657,
+       "sha256": "97e4d2e1faee0a5662a11e95f30bbcf0b0602cbdcc7fd6f717fcaa899f4f794a"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mv-mz-plugin/releases/download/rpgmaker-mv-mz-v1-build.17/enginehost-release.json",
+       "size": 3409,
+       "sha256": "59fbb32077d3bb23f7b9dc5788247baa0683dc903f535a125d704cf4aa380685"
       }
      ]
     },
@@ -2640,13 +2666,13 @@
      "tag": "catsystem2-cst-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-10T20:22:55Z",
+     "published_at": "2026-10-14T22:53:01Z",
      "assets": [
       {
        "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
-       "size": 241284,
-       "sha256": "d10991259adaaef0f61a80e4588e4ac29e5cb70a991c1c5f09e342feea8de13f"
+       "size": 252360,
+       "sha256": "adfaa0aede4debd69b0f1c041513b410f7daee907778afc90ca7e97247912dda"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2657,8 +2683,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/enginehost-release.json",
-       "size": 2437,
-       "sha256": "4e679cb33b57796c867581efdbd7e94dc1cb0675996d98b176bbdb5f05ff5be7"
+       "size": 2445,
+       "sha256": "82ee9ecd44be9ab976955212305f4d4d2c0d29934678aeef374d5f7248977749"
+      }
+     ]
+    },
+    {
+     "tag": "catsystem2-cst-v1-build.74",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T22:53:04Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.74/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
+       "size": 252360,
+       "sha256": "adfaa0aede4debd69b0f1c041513b410f7daee907778afc90ca7e97247912dda"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.74/enginehost-public-key.json",
+       "size": 653,
+       "sha256": "174d7a7af852440d1874ad658c68350b4f06f4e2652452a38a7a04ddc4a13fff"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.74/enginehost-release.json",
+       "size": 2445,
+       "sha256": "82ee9ecd44be9ab976955212305f4d4d2c0d29934678aeef374d5f7248977749"
       }
      ]
     },
@@ -2842,13 +2894,13 @@
      "tag": "cmvs-ps2-ps3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-10T20:20:08Z",
+     "published_at": "2026-10-14T22:51:35Z",
      "assets": [
       {
        "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
-       "size": 245080,
-       "sha256": "a870c1a1c5f366085280faefaebb2b8f2e12ceb1bf508a28c73749fb2ea66d7b"
+       "size": 255532,
+       "sha256": "042f692391a87c9a12456cbd8192734ffbe1d08c8019bf98af84d0dad18e0694"
       },
       {
        "name": "enginehost-public-key.json",
@@ -2859,8 +2911,34 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-release.json",
-       "size": 2729,
-       "sha256": "4821612b2472f0b274bbc0f3e5fb54286be5ecf8cfd586dc40d8bc07caa723e1"
+       "size": 2809,
+       "sha256": "7249afbd98c7acc91bda7f2c056654596ffb0551aece7b035c31e669f86c5bbf"
+      }
+     ]
+    },
+    {
+     "tag": "cmvs-ps2-ps3-v1-build.86",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T22:51:37Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.86/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "size": 255532,
+       "sha256": "042f692391a87c9a12456cbd8192734ffbe1d08c8019bf98af84d0dad18e0694"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.86/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "fb1bc2a903abda920995edafa71657b24e2b68fbcce780339cde824acc41f60c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.86/enginehost-release.json",
+       "size": 2809,
+       "sha256": "7249afbd98c7acc91bda7f2c056654596ffb0551aece7b035c31e669f86c5bbf"
       }
      ]
     },
