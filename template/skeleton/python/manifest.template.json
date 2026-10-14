@@ -1,0 +1,15 @@
+{
+  "id": "__ID__",
+  "origin": "__ORIGIN__",
+  "label": "__LABEL__",
+  "description": "What this plugin does, in one sentence a person understands.",
+  "version": "0.1.0",
+  "kind": "python",
+  "contractVersion": 2,
+  "provides": [
+    {"point": "ui.status_tile", "version": 1, "id": "state", "label": "__LABEL__", "surfaces": ["gaming.quick_menu"]}
+  ],
+  "permissions": [],
+  "requestsRoot": false,
+  "abis": []
+}
