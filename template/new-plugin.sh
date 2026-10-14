@@ -39,7 +39,9 @@ cp -r "$skeleton/." "$dir/droidtop-plugin/"
 grep -rl -e '__ID__' -e '__ORIGIN__' -e '__LABEL__' "$dir/droidtop-plugin" | xargs sed -i "s/__ID__/$id/g; s/__ORIGIN__/$origin/g; s/__LABEL__/$label/g"
 chmod +x "$dir/droidtop-plugin/build.sh" "$dir/droidtop-plugin/sign.sh"
 cp "$here/plugin-bundle.yml" "$dir/.github/workflows/plugin-bundle.yml"
-sed -i "s/__ARTIFACT__/$id/" "$dir/.github/workflows/plugin-bundle.yml"
+payload=classes.jar
+[ "$kind" = python ] && payload=plugin.py
+sed -i "s/__ARTIFACT__/$id/; s/__PAYLOAD__/$payload/" "$dir/.github/workflows/plugin-bundle.yml"
 
 cat > "$dir/README.md" <<R
 # $id

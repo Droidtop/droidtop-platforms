@@ -19,10 +19,11 @@ jobs:
   bundle:
     permissions:
       contents: write
-    uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@492ce7581aae3bd12433692fa5bb725e0692a515
+    uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@75a6330d7e5fd72b15f27ffb9bcb7ea5c2c20f61
     with:
       plugin-dir: droidtop-plugin
       artifact-name: __ARTIFACT__
+      payload: __PAYLOAD__
     secrets:
       PLUGIN_SIGNING_KEY: ${{ secrets.PLUGIN_SIGNING_KEY }}
       PLUGIN_SIGNING_CERT: ${{ secrets.PLUGIN_SIGNING_CERT }}
