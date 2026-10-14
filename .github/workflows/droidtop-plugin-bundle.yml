@@ -96,6 +96,12 @@ jobs:
     env:
       ANDROID_SDK_ROOT: ${{ github.workspace }}/.android-sdk
     steps:
+      - name: Free disk space
+        # Building :plugin-host downloads an NDK next to droidtop's submodules and Gradle caches, and a
+        # runner's free space is not always enough (flutter and gpu fixture builds died with "No space
+        # left on device" preparing the NDK). The preinstalled toolchains below are not used here.
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /opt/hostedtoolcache/CodeQL
+
       - name: Check out droidtop (for :plugin-host's own compiled API)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
