@@ -19,7 +19,7 @@ jobs:
   bundle:
     permissions:
       contents: write
-    uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@75a6330d7e5fd72b15f27ffb9bcb7ea5c2c20f61
+    uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@62433ef03368c7a8670b865fcfe125dc1a92443d
     with:
       plugin-dir: droidtop-plugin
       artifact-name: __ARTIFACT__
