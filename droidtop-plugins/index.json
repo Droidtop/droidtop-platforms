@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T22:23:33Z",
+ "generatedAt": "2026-10-14T22:58:26Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -287,6 +287,30 @@
      "description": "Lets droidtop and the plugins you allow use Shizuku for system-level actions, such as closing another app's game.",
      "releases": [
       {
+       "version": "1.4.2",
+       "stream": "testing",
+       "publishedAt": "2026-10-14T22:58:06Z",
+       "manifestSha256": "4c24ff043dd83c45f3f955164e8d7c323f88918a17f4adf2233e1780d530d691",
+       "bundle": {
+        "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-build.22/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "size": 22884,
+        "sha256": "5604383ab9b308fc852bfc0c0912b72cde704b2dd6857e3b6ef58079b412e294"
+       }
+      },
+      {
+       "version": "1.4.2",
+       "stream": "testing",
+       "publishedAt": "2026-10-14T22:58:03Z",
+       "manifestSha256": "4c24ff043dd83c45f3f955164e8d7c323f88918a17f4adf2233e1780d530d691",
+       "bundle": {
+        "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-unstable/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "size": 22884,
+        "sha256": "5604383ab9b308fc852bfc0c0912b72cde704b2dd6857e3b6ef58079b412e294"
+       }
+      },
+      {
        "version": "1.4.1",
        "stream": "stable",
        "publishedAt": "2026-10-14T22:21:37Z",
@@ -311,18 +335,6 @@
        }
       },
       {
-       "version": "1.4.1",
-       "stream": "testing",
-       "publishedAt": "2026-10-14T22:17:34Z",
-       "manifestSha256": "4e9e0de262ed890f190d7dd9104ed3bb28ba3d9070f53ad9b248a5f9775fd398",
-       "bundle": {
-        "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-unstable/droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "size": 22828,
-        "sha256": "d76ce802772feaa153ea82cb18c7eed7c487ac53b2fdb0a59897347cd09b1559"
-       }
-      },
-      {
        "version": "1.4.0",
        "stream": "stable",
        "publishedAt": "2026-10-09T20:33:28Z",
@@ -332,18 +344,6 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.4.0/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 22796,
         "sha256": "15155ba82f7548e395a20e5aab8b468c83147745a754a81bc1838ea3f9c46028"
-       }
-      },
-      {
-       "version": "1.4.0",
-       "stream": "testing",
-       "publishedAt": "2026-10-09T20:33:09Z",
-       "manifestSha256": "65dc22e734fde039acb9cc4827cb4233f21e6b8688475bf3a118a32603b5a21e",
-       "bundle": {
-        "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-build.17/droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "size": 22800,
-        "sha256": "773946b8ab4093e5169716454065dd482cc61a3c41b53390aba3a23a82bad475"
        }
       },
       {
