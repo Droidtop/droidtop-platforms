@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T18:45:27Z",
+ "generatedAt": "2026-10-15T18:50:58Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -3288,13 +3288,13 @@
      "tag": "rpgmaker-rgss-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T14:18:55Z",
+     "published_at": "2026-10-15T18:48:39Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-unstable/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 91815072,
-       "sha256": "df9463c17e59f48e9b94dd046992243e43b8f33260809ac8ab0cb3af5e77f26a"
+       "size": 91805724,
+       "sha256": "345d20fee99b4af303e7ee3e8efeb8dcac9dae9bf5e9c7c37a6b688e229063e8"
       },
       {
        "name": "enginehost-public-key.json",
@@ -3305,8 +3305,46 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-unstable/enginehost-release.json",
-       "size": 451597,
-       "sha256": "6dc66cde026f440ab512d6b15eabb62e655fc00db00a123a32637542036f86a1"
+       "size": 452761,
+       "sha256": "6b3e7cfd6e5151169777a80aa6352964bdcf0c955d66ec1dbbf64f353c99bb76"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 806,
+       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
+      }
+     ]
+    },
+    {
+     "tag": "rpgmaker-rgss-v1-build.173",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T18:48:47Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.173/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "size": 91805724,
+       "sha256": "345d20fee99b4af303e7ee3e8efeb8dcac9dae9bf5e9c7c37a6b688e229063e8"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.173/enginehost-public-key.json",
+       "size": 658,
+       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.173/enginehost-release.json",
+       "size": 452761,
+       "sha256": "6b3e7cfd6e5151169777a80aa6352964bdcf0c955d66ec1dbbf64f353c99bb76"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.173/enginehost-signing-certificate.pem",
+       "size": 806,
+       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
       }
      ]
     },
@@ -6307,13 +6345,13 @@
      "tag": "godot-v45-v2-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T14:48:22Z",
+     "published_at": "2026-10-15T18:48:41Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v45.v2.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-unstable/dev.enginehost.godot.v45.v2.enginehost.tar.xz",
-       "size": 184892728,
-       "sha256": "f82bfaead9c19c2f02931cf2be6e5296e5e8950cbe51f349a021631b86ba3c4d"
+       "size": 184899848,
+       "sha256": "9a994ec6d3d24020296bbcf21599d373e940b4294f9c44d015860e05342c74d3"
       },
       {
        "name": "enginehost-public-key.json",
@@ -6324,8 +6362,46 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-unstable/enginehost-release.json",
-       "size": 5777,
-       "sha256": "d6636a42f4225c7e4ce8cf12a065a3e0b97f65316ca5d0609c14b177aa390e5a"
+       "size": 6909,
+       "sha256": "07c3aeb3cdc2517aae21cb8328ddd60d57d9ca2b221f9dea111ae24dd717bebb"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v45-v2-build.278",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T18:48:48Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v45.v2.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-build.278/dev.enginehost.godot.v45.v2.enginehost.tar.xz",
+       "size": 184899848,
+       "sha256": "9a994ec6d3d24020296bbcf21599d373e940b4294f9c44d015860e05342c74d3"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-build.278/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-build.278/enginehost-release.json",
+       "size": 6909,
+       "sha256": "07c3aeb3cdc2517aae21cb8328ddd60d57d9ca2b221f9dea111ae24dd717bebb"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v2-build.278/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
       }
      ]
     },
