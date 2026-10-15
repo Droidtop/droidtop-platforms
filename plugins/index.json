@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T06:32:53Z",
+ "generatedAt": "2026-10-15T06:34:50Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -99,6 +99,84 @@
      ]
     },
     {
+     "tag": "renpy-8_2-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:33:22Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "size": 68214904,
+       "sha256": "70c3cdfa53a2aecef688622d25624794de748e9967c778de6ab742e13613d3f1"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-release.json",
+       "size": 2721,
+       "sha256": "4377712bb0ac3da146334ec755f2633aa681efa4ec41975ceaf339aaeec221a5"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_2-v1-build.424",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:33:26Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.424/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "size": 68214904,
+       "sha256": "70c3cdfa53a2aecef688622d25624794de748e9967c778de6ab742e13613d3f1"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.424/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.424/enginehost-release.json",
+       "size": 2721,
+       "sha256": "4377712bb0ac3da146334ec755f2633aa681efa4ec41975ceaf339aaeec221a5"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_0-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:33:27Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "size": 53612892,
+       "sha256": "0fa29a9a2932185d309990f8a951692da9549f046ce553a735df7038d921d01a"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-release.json",
+       "size": 2721,
+       "sha256": "a19b8a87257ced33b840e4410ae88105bf5790131557bee6ca3fb7e0fef971fa"
+      }
+     ]
+    },
+    {
      "tag": "renpy-7_8-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -154,13 +232,13 @@
      "tag": "renpy-7_7-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T06:02:32Z",
+     "published_at": "2026-10-15T06:32:43Z",
      "assets": [
       {
        "name": "dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
-       "size": 58813760,
-       "sha256": "49c7437ae47e3f6f6b4e96bf7ad1ae7c9ee348d7e6b86701566f67b3fa781862"
+       "size": 58812100,
+       "sha256": "e357f5e06371e180c142091453b411d14f9c6c0639d71119ebcf3d0fa8f3565b"
       },
       {
        "name": "enginehost-public-key.json",
@@ -172,7 +250,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-release.json",
        "size": 2721,
-       "sha256": "04e39ba35f786dfe2296809a24f8f44a5829848f45de7dc52dcd84346877ae3f"
+       "sha256": "a45522c07d22c09be233edc7f665864592dd6e5d59e8aef4a15ce3d561262847"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_7-v1-build.420",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:32:48Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.420/dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "size": 58812100,
+       "sha256": "e357f5e06371e180c142091453b411d14f9c6c0639d71119ebcf3d0fa8f3565b"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.420/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.420/enginehost-release.json",
+       "size": 2721,
+       "sha256": "a45522c07d22c09be233edc7f665864592dd6e5d59e8aef4a15ce3d561262847"
       }
      ]
     },
@@ -336,13 +440,13 @@
      "tag": "renpy-7_4-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T06:02:22Z",
+     "published_at": "2026-10-15T06:33:14Z",
      "assets": [
       {
        "name": "dev.enginehost.renpy.7_4.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-unstable/dev.enginehost.renpy.7_4.v1.enginehost.tar.xz",
-       "size": 47121620,
-       "sha256": "add2afda309c5f0ada428348787161af6888ca88a4ceb39b02040c25b99da0a5"
+       "size": 47122804,
+       "sha256": "d55ad055b7e5c03bdb71858ae9ab3943a268cbddd548886f484b26cf374ef556"
       },
       {
        "name": "enginehost-public-key.json",
@@ -354,7 +458,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-unstable/enginehost-release.json",
        "size": 2721,
-       "sha256": "7ec019dada323690efadb116e09101aef7da4e8ff32401515b5c0b2dc2e60094"
+       "sha256": "35d8eb0a3d3104858917dd00f8e0ed8a529478575b5aa92886bde4a5dbd1c7d8"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_4-v1-build.417",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:33:19Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_4.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-build.417/dev.enginehost.renpy.7_4.v1.enginehost.tar.xz",
+       "size": 47122804,
+       "sha256": "d55ad055b7e5c03bdb71858ae9ab3943a268cbddd548886f484b26cf374ef556"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-build.417/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-build.417/enginehost-release.json",
+       "size": 2721,
+       "sha256": "35d8eb0a3d3104858917dd00f8e0ed8a529478575b5aa92886bde4a5dbd1c7d8"
       }
      ]
     },
@@ -645,32 +775,6 @@
      ]
     },
     {
-     "tag": "renpy-8_2-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-15T01:01:34Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
-       "size": 68217392,
-       "sha256": "a112c58eb8fae2ee6c0df5b222188d8d85440d1a9f5b4dcdba03586dd7a941d3"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-release.json",
-       "size": 2721,
-       "sha256": "10bf4492c6e858db6ff3494120146276ae14e63c5d5984d47ebc32097cc00dd8"
-      }
-     ]
-    },
-    {
      "tag": "renpy-8_2-v1-build.400",
      "stream": "unstable",
      "prerelease": true,
@@ -771,32 +875,6 @@
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.399/enginehost-release.json",
        "size": 2721,
        "sha256": "70af0c555d94035ab5c222f040f51fd86cbbc7e5db03a12a1ca0b9871fda1138"
-      }
-     ]
-    },
-    {
-     "tag": "renpy-8_0-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-14T23:06:48Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
-       "size": 53615160,
-       "sha256": "e8b425fefd37f95265a127fe97603883dfdff0adac0fd394c5f694dcb2aee10d"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-release.json",
-       "size": 2721,
-       "sha256": "045ab72d6dbeedcef739c365e95f73d9cd193544d28cab0f6f2c580d87b22a72"
       }
      ]
     },
@@ -4615,16 +4693,42 @@
      ]
     },
     {
+     "tag": "godot-v45-v1-build.261",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:32:43Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v45.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v1-build.261/dev.enginehost.godot.v45.v1.enginehost.tar.xz",
+       "size": 185240020,
+       "sha256": "22012e460372e0656325fe9c0a7811e8e439adf01c1fdf3b2bd7f2af4b031cfb"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v1-build.261/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v45-v1-build.261/enginehost-release.json",
+       "size": 4729,
+       "sha256": "40c79dabecc01f5081bff571737c62c2112f757f6d1575e0a83b3cbe5d4ac9b6"
+      }
+     ]
+    },
+    {
      "tag": "godot-v44-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T06:04:48Z",
+     "published_at": "2026-10-15T06:32:58Z",
      "assets": [
       {
        "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
-       "size": 182829408,
-       "sha256": "bc966a961b7a25ee985828f83dcd006910a8ce97dbb0f06db20d0b039caf241b"
+       "size": 182836352,
+       "sha256": "6916985976ed83cda3a2084c6cccde4c88d9859ac79f62e69ca6159324ebb264"
       },
       {
        "name": "enginehost-public-key.json",
@@ -4636,7 +4740,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-unstable/enginehost-release.json",
        "size": 4733,
-       "sha256": "310aa9f59f78183f7631d8c140c09f52492728cc8de03d733474823180380b16"
+       "sha256": "c979ba1758471c1685ee0e6a499d6ba65d010d009ee566edda4dc4c25cefc0de"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v44-v1-build.259",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:33:09Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.259/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "size": 182836352,
+       "sha256": "6916985976ed83cda3a2084c6cccde4c88d9859ac79f62e69ca6159324ebb264"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.259/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.259/enginehost-release.json",
+       "size": 4733,
+       "sha256": "c979ba1758471c1685ee0e6a499d6ba65d010d009ee566edda4dc4c25cefc0de"
       }
      ]
     },
@@ -4663,6 +4793,58 @@
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.250/enginehost-release.json",
        "size": 4733,
        "sha256": "310aa9f59f78183f7631d8c140c09f52492728cc8de03d733474823180380b16"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v43-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:32:42Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v43.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-unstable/dev.enginehost.godot.v43.v1.enginehost.tar.xz",
+       "size": 161002596,
+       "sha256": "c177f785d6cb343bbf80f92e189ce7513658ee687bd1137757ad427c17a8a6a6"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-unstable/enginehost-release.json",
+       "size": 4725,
+       "sha256": "448ae7f9a15946bbab3a6edf73eb5e1cea0b5e7f7af3941b74a0c416126b377a"
+      }
+     ]
+    },
+    {
+     "tag": "godot-v43-v1-build.258",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:32:50Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v43.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-build.258/dev.enginehost.godot.v43.v1.enginehost.tar.xz",
+       "size": 161002596,
+       "sha256": "c177f785d6cb343bbf80f92e189ce7513658ee687bd1137757ad427c17a8a6a6"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-build.258/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v43-v1-build.258/enginehost-release.json",
+       "size": 4725,
+       "sha256": "448ae7f9a15946bbab3a6edf73eb5e1cea0b5e7f7af3941b74a0c416126b377a"
       }
      ]
     },
