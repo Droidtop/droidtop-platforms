@@ -26,15 +26,17 @@ with a registration signed by a key their list entry names.  The threat model
 is Droidtop/enginehost docs/security/2026-09-25-third-party-catalog.md.
 
 Signature format v1 (Droidtop/tracker#550): a release envelope entry may
-carry `jws`, a JWS whose certificate chain ends at the Droidtop Core
-public key Enginehost pins.  With ENGINEHOST_TOOLING pointing at a checkout
-of Droidtop/enginehost (its scripts/ and app/src/main/assets/trust/, pinned
-by the workflow), such an entry is verified to Core and needs no legacy
-signature, and a repository's enginehost-signing-certificate.pem is published
-in its entry as `certificates` once it verifies to Core for that origin.  The
-legacy key document stays required: registration and the key history are
-keyed on it until the legacy format is retired.  Without the tooling, or
-while Enginehost pins no Core, only the legacy signature is checked.
+carry `jws`, a JWS whose certificate chain ends at the Enginehost signing
+root's public key, which Enginehost pins (the owner derives that root from
+Droidtop Core; Core itself is pinned nowhere).  With ENGINEHOST_TOOLING
+pointing at a checkout of Droidtop/enginehost (its scripts/ and
+app/src/main/assets/trust/, pinned by the workflow), such an entry is verified
+to the root and needs no legacy signature, and a repository's
+enginehost-signing-certificate.pem is published in its entry as `certificates`
+once it verifies to the root for that origin.  The legacy key document stays
+required: registration and the key history are keyed on it until the legacy
+format is retired.  Without the tooling, or while Enginehost pins no root, only
+the legacy signature is checked.
 
 Run:
   plugins_index.py                 rebuild, write index.json/origins.json when changed
@@ -123,22 +125,23 @@ RETRY_PAUSE_SECONDS = 10
 
 
 def v1_tooling():
-    """(bundle_jws module, Droidtop Core's public key as SubjectPublicKeyInfo DER) from ENGINEHOST_TOOLING."""
+    """(bundle_jws module, the Enginehost signing root's public key as SubjectPublicKeyInfo DER) from ENGINEHOST_TOOLING."""
     tooling = os.environ.get("ENGINEHOST_TOOLING")
     if not tooling:
         return None, None
     tooling = pathlib.Path(tooling)
     sys.path.insert(0, str(tooling / "scripts"))
     import bundle_jws  # noqa: E402 -- Enginehost's own verifier, pinned by the workflow
-    core_path = tooling / "app/src/main/assets/trust/droidtop-core.pub"
-    if not core_path.is_file():
-        warn("Enginehost pins no Droidtop Core key yet; format v1 signatures are not checked")
+    root_path = tooling / "app/src/main/assets/trust/enginehost-root.pub"
+    if not root_path.is_file():
+        warn("Enginehost pins no signing root key yet; format v1 signatures are not checked")
         return bundle_jws, None
-    return bundle_jws, bundle_jws.pem_public_key(core_path.read_text(encoding="utf-8"))
+    return bundle_jws, bundle_jws.pem_public_key(root_path.read_text(encoding="utf-8"))
 
 
-# Enginehost's v1 verifier and Droidtop Core's public key, read once by main().
-JWS, CORE = None, None
+# Enginehost's v1 verifier and its signing root's public key, read once by main().
+# The root is derived from Droidtop Core, which nothing here pins (Droidtop/tracker#550).
+JWS, ROOT = None, None
 
 
 class Rejected(Exception):
@@ -494,14 +497,14 @@ def check_envelope(body, origin, key, assets, third_party, admitted_before):
         bundle_id = str(manifest.get("bundleId", "?"))
         if normalize_origin(str(manifest.get("origin", ""))) != origin:
             raise Rejected(bundle_id + " names another origin")
-        # Format v1, when this run can check it: the chain ends at Core and
-        # its certificate names this origin. Only official repositories are
-        # anchored at Core; a third party's v1 signature is the app's to check
+        # Format v1, when this run can check it: the chain ends at the signing
+        # root and its certificate names this origin. Only official repositories
+        # are anchored at the root; a third party's v1 signature is the app's to check
         # against the key a person pinned, and here its legacy one is required.
         v1_verified = False
-        if bundle.get("jws") and JWS is not None and CORE is not None and not third_party:
+        if bundle.get("jws") and JWS is not None and ROOT is not None and not third_party:
             try:
-                named = JWS.verify(bundle["jws"], "plugin", CORE, manifest_bytes)
+                named = JWS.verify(bundle["jws"], "plugin", ROOT, manifest_bytes)
             except JWS.Refused as reason:
                 raise Rejected(bundle_id + ": its v1 signature does not verify: " + str(reason))
             if JWS.origin_id(origin) not in named["origins"]:
@@ -667,10 +670,10 @@ def signing_certificates(repo, listed, origin):
     """
     The repository's format-v1 signing certificate chain (x5c style: standard
     base64 DER, leaf first), from its newest release carrying one or its tree,
-    when it verifies to Core for this origin; else []. Enginehost verifies it
-    again before it makes the origin official.
+    when it verifies to the signing root for this origin; else []. Enginehost
+    verifies it again before it makes the origin official.
     """
-    if JWS is None or CORE is None:
+    if JWS is None or ROOT is None:
         return []
     text = None
     for release in listed:
@@ -685,9 +688,9 @@ def signing_certificates(repo, listed, origin):
         return []
     try:
         chain = JWS.pem_certificates(text)
-        named = JWS.verify_chain(chain, "plugin", CORE)
+        named = JWS.verify_chain(chain, "plugin", ROOT)
     except JWS.Refused as reason:
-        warn(repo + ": " + SIGNING_CERTIFICATE + " does not verify to Droidtop Core: " + str(reason))
+        warn(repo + ": " + SIGNING_CERTIFICATE + " does not verify to the Enginehost signing root: " + str(reason))
         return []
     if JWS.origin_id(origin) not in named["origins"]:
         warn(repo + ": " + SIGNING_CERTIFICATE + " does not name " + origin)
@@ -696,20 +699,20 @@ def signing_certificates(repo, listed, origin):
 
 
 def check_revocations():
-    """plugins/revocations.jws, when committed: a revocation list for "enginehost" signed under Core."""
+    """plugins/revocations.jws, when committed: a revocation list for "enginehost" signed under the signing root."""
     if not REVOCATIONS_PATH.is_file():
         return
-    if JWS is None or CORE is None:
-        sys.exit("plugins/revocations.jws is committed but this run cannot verify it (no ENGINEHOST_TOOLING or no Core)")
+    if JWS is None or ROOT is None:
+        sys.exit("plugins/revocations.jws is committed but this run cannot verify it (no ENGINEHOST_TOOLING or no signing root)")
     try:
-        named = JWS.verify(REVOCATIONS_PATH.read_text(encoding="ascii"), "revocations", CORE, None)
+        named = JWS.verify(REVOCATIONS_PATH.read_text(encoding="ascii"), "revocations", ROOT, None)
     except JWS.Refused as reason:
         sys.exit("plugins/revocations.jws does not verify: " + str(reason))
     payload = json.loads(named["payload"])
     if "enginehost" not in named["catalogs"] or payload.get("catalog") != "enginehost" \
             or payload.get("type") != "droidtop-revocations" or payload.get("version") != 1:
         sys.exit("plugins/revocations.jws is not Enginehost's revocation list")
-    print("plugins/revocations.jws: sequence " + str(payload.get("sequence")) + ", verified to Droidtop Core")
+    print("plugins/revocations.jws: sequence " + str(payload.get("sequence")) + ", verified to the Enginehost signing root")
 
 
 def previous_envelopes(existing_text):
@@ -1041,8 +1044,8 @@ OFFICIAL_ROOT = None
 
 
 def main():
-    global OFFICIAL_ROOT, JWS, CORE
-    JWS, CORE = v1_tooling()
+    global OFFICIAL_ROOT, JWS, ROOT
+    JWS, ROOT = v1_tooling()
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--check", action="store_true", help="validate the committed files instead of writing")
     parser.add_argument("--event", action="store_true", help="also act on what the triggering GitHub event announces")

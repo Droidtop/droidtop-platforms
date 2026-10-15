@@ -61,14 +61,14 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
-      # Enginehost's format-v1 verifier and the Droidtop Core public key it
+      # Enginehost's format-v1 verifier and the signing root's public key it
       # pins (Droidtop/tracker#550), at a pinned commit: one implementation of
       # the check, the app's own tooling, and never a moving ref.
       - name: Check out Enginehost's signature tooling
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: Droidtop/enginehost
-          ref: 8b7b9b5230273642249b113934defc640121c70d
+          ref: 419594b25cc704175e71879120444423b231d6d6
           path: enginehost-tooling
           persist-credentials: false
           sparse-checkout: |
