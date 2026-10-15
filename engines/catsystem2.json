@@ -26,5 +26,12 @@
   "family": "catsystem2",
   "context": "cst"
  },
- "notes": "cs2conf.dll, or a loose .cst scene script (enginehost's marker)."
+ "notes": "cs2conf.dll, or a loose .cst scene script (enginehost's marker).",
+ "saves": {
+  "v": 1,
+  "hostUser": [
+   "{game_folder}/save*.dat"
+  ],
+  "source": "enginehost-catsystem2-plugin src/save.h:19-24 (save%04d.dat in the folder the host hands the engine) and src/main.c:382; the folder is named for the game by Enginehost (SaveFolders.NAMED_BY_THE_HOST). The Windows original is not covered"
+ }
 }

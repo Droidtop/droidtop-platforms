@@ -23,5 +23,26 @@
   "family": "renpy",
   "context": "standard"
  },
- "notes": "Ren'Py ships py/sh/exe launchers together; Linux path preferred over Wine when both exist. Compiled-only distributions without the renpy/ runtime dir are caught by the renpy-fallback row further down."
+ "notes": "Ren'Py ships py/sh/exe launchers together; Linux path preferred over Wine when both exist. Compiled-only distributions without the renpy/ runtime dir are caught by the renpy-fallback row further down.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "game/saves"
+  ],
+  "data": {
+   "windows": "<winAppData>/RenPy",
+   "linux": "<home>/.renpy",
+   "mac": "<home>/Library/RenPy"
+  },
+  "user": [
+   "{save_directory}"
+  ],
+  "hostUser": [
+   "{save_directory|game_folder}"
+  ],
+  "facts": {
+   "save_directory": "renpy.save_directory"
+  },
+  "source": "renpy.py path_to_saves (no config.save_directory: <game>/saves; else %APPDATA%/RenPy/<dir>, ~/.renpy/<dir>, ~/Library/RenPy/<dir>) and renpy/savelocation.py init (adds <game>/saves); under Enginehost the 8.3 line's renpy.py path_to_saves (ENGINEHOST_SAVE_PATH/<save_directory>, else the game folder's name); all in the enginehost-renpy-plugin repo"
+ }
 }

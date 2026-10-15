@@ -55,3 +55,74 @@ Ids are unique within a collection — the file name IS the id. (The split into
 one-file-per-row surfaced 20 player ids that had been issued twice by the
 generators; the first row of each pair kept its id and the rest gained a `-2`,
 `-3` suffix.)
+
+## Save rules: the optional `saves` object
+
+`saves` says where a game's saves are, so droidtop can find them and show them. It is on an engine row
+(`engines/<id>.json`) or, like `setup`, on a player row, and droidtop takes the first row of a package that
+carries one. It is versioned: `"v": 1`, and an app skips a `saves` whose `v` it does not know. An unknown field
+inside a known `v` is refused by the generator. It never changes where a game saves. It only says where. Every
+rule needs a `source`: the engine's or emulator's own code, or a shipped game, that it was read from
+(`generator/build.py` fails a `saves` without one, and one that uses a token or placeholder droidtop does not
+have).
+
+Templates use Ludusavi's vocabulary, as the agent core does: a root token, then a path that may hold `*` and `?`.
+The tokens are `<base>` (the game folder), `<home>`, `<winAppData>`, `<winLocalAppData>`,
+`<winLocalAppDataLow>`, `<winDocuments>`, `<winPublic>`, `<winProgramData>`, `<winDir>`, `<xdgData>` and
+`<xdgConfig>`.
+
+An engine row:
+
+```json
+"saves": {
+  "v": 1,
+  "beside": ["game/saves"],
+  "data": {"windows": "<winAppData>/RenPy", "linux": "<home>/.renpy", "mac": "<home>/Library/RenPy"},
+  "user": ["{save_directory}"],
+  "hostUser": ["{save_directory|game_folder}"],
+  "facts": {"save_directory": "renpy.save_directory"},
+  "source": "renpy.py path_to_saves; renpy/savelocation.py init"
+}
+```
+
+- `beside`: paths in the game folder, for an engine that saves beside the game. A trailing `/` means the whole
+  folder.
+- `data`: the engine's per-user system location on each OS. Under Enginehost this is the engine family's save root
+  (`<volume>/Enginehost/saves` unless the person moved it), the folder `ENGINEHOST_SAVE_PATH` and its kin point at.
+  Omit it for an engine with no such location.
+- `user`: the game's own paths below `data` (a template may use `{fact}`; an entry whose fact is unknown is
+  skipped, never guessed). `hostUser` replaces `user` under Enginehost, where it differs (a game folder name in
+  place of a name the engine would have read; a folder Enginehost names for the game).
+- `facts`: named readers droidtop has, which read one value from the game's own files:
+  `renpy.save_directory` (`config.save_directory` in `options.rpy`), `godot.name` and `godot.custom_dir`
+  (`project.godot`), `love.identity` (`t.identity` in `conf.lua`, in the folder or in a `.love` file). Built in:
+  `{game_folder}` is the game folder's name made safe as one folder name, the name Enginehost gives a game it names a
+  folder for. `{a|b}` is the first of the two that is known.
+
+A player row:
+
+```json
+"saves": {
+  "v": 1,
+  "folders": ["/storage/emulated/0/RetroArch/saves", "/storage/emulated/0/Android/data/{pkg}/files/saves"],
+  "folderKey": "savefile_directory",
+  "config": {"file": "/storage/emulated/0/Android/data/{pkg}/files/retroarch.cfg", "format": "keyvalue"},
+  "patterns": ["<emuSaves>/{rom_stem}.srm", "{rom_dir}/{rom_stem}.srm"],
+  "states": ["<emuStates>/{rom_stem}.state*"],
+  "statesFolders": ["/storage/emulated/0/RetroArch/states"],
+  "statesFolderKey": "savestate_directory",
+  "source": "RetroArch platform_unix.c, configuration.c, runloop.c"
+}
+```
+
+- `<emuSaves>` is every folder in `folders`, and the value of `folderKey` in `config` when the file sets one
+  (`default` or empty means the cited default). `<emuStates>` is the same for `statesFolders`. `{pkg}` is the row's
+  package. A pattern may also start with `{rom_dir}/`, the folder the game file is in.
+- `patterns`: the game's saves. Placeholders: `{rom_stem}` (file name without extension), `{rom_name}` (with it),
+  `{rom_dir}`.
+- `states`: save states. They are tied to one emulator version, so droidtop looks for them but does not count them
+  as the game's saves unless the person turns that on.
+- `cards`: memory cards shared by every game on the emulator. They are a set of their own, never part of a
+  game's `patterns`.
+- `systems`: `{"<systemId>": {"patterns": [...], "states": [...], "cards": [...]}}`, replacing the emulator-wide
+  lists for that system, for an emulator that saves by a different rule per system.

@@ -26,5 +26,15 @@
  "enginehost": {
   "family": "rpgmaker",
   "context": "mz"
+ },
+ "saves": {
+  "v": 1,
+  "beside": [
+   "save/*.rmmzsave"
+  ],
+  "hostUser": [
+   "{game_folder}/localStorage.json"
+  ],
+  "source": "A shipped MZ game's js/rmmz_managers.js StorageManager.fileDirectoryPath and filePath (lines 762-770: save/<name>.rmmzsave); under Enginehost the web runtime keeps localStorage.json in a folder named for the game (enginehost-rpgmaker-mv-mz-plugin README.md:12-15)"
  }
 }

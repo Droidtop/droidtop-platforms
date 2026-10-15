@@ -36,5 +36,13 @@
   "family": "buriko",
   "context": "compiled-script-v1"
  },
- "notes": "BGI.gdb/BGI.hvl, or the data01000.arc archive-set head enginehost already keyed on."
+ "notes": "BGI.gdb/BGI.hvl, or the data01000.arc archive-set head enginehost already keyed on.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "BGI????.cad",
+   "BGI.gdb"
+  ],
+  "source": "enginehost-buriko-plugin src/core/savefile.c:36-39 (SaveFileName: BGI%.4d.cad) and src/sysobj/database.c:34 (BGI.gdb); Enginehost keeps Buriko saves beside the game (SaveFolders.BESIDE_THE_GAME)"
+ }
 }

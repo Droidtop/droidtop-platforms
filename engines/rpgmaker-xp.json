@@ -35,5 +35,13 @@
   "family": "rpgmaker",
   "context": "xp"
  },
- "notes": "RGSS1 line: .rgssad archive, Game.rxproj project marker, or Game.ini Library=RGSS1xx."
+ "notes": "RGSS1 line: .rgssad archive, Game.rxproj project marker, or Game.ini Library=RGSS1xx.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "Save*.rxdata",
+   "Save/*.rxdata"
+  ],
+  "source": "The stock RGSS1 save scripts write Save<n>.rxdata beside Game.exe; mkxp-z runs a game's own scripts unchanged (binding/binding-mri.cpp:964), so a game may move them, e.g. into a Save folder (seen in a shipped RGSS3 game)"
+ }
 }

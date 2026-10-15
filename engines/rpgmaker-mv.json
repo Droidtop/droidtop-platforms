@@ -27,5 +27,16 @@
   "family": "rpgmaker",
   "context": "mv"
  },
- "notes": "MV/MZ are nw.js exports; Linux only when the export includes it."
+ "notes": "MV/MZ are nw.js exports; Linux only when the export includes it.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "save/*.rpgsave",
+   "www/save/*.rpgsave"
+  ],
+  "hostUser": [
+   "{game_folder}/localStorage.json"
+  ],
+  "source": "A shipped MV game's js/rpg_managers.js StorageManager.localFileDirectoryPath and localFilePath (lines 755-771: save/ beside the page that is the main module; file%1.rpgsave, global.rpgsave, config.rpgsave); under Enginehost the web runtime keeps localStorage.json in a folder named for the game (enginehost-rpgmaker-mv-mz-plugin README.md:12-15, enginehost SaveFolders.NAMED_BY_THE_HOST)"
+ }
 }

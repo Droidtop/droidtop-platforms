@@ -4,5 +4,33 @@
  "label": "Retroarch 64 - beetle psx hw",
  "pkg": "com.retroarch.aarch64",
  "argumentsTemplate": "-n com.retroarch.aarch64/com.retroarch.browser.retroactivity.RetroActivityFuture -e ROM {file.path} -e LIBRETRO /data/data/com.retroarch.aarch64/cores/mednafen_psx_hw_libretro_android.so -e CONFIGFILE /storage/emulated/0/Android/data/com.retroarch.aarch64/files/retroarch.cfg --activity-clear-task --activity-clear-top",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "saves": {
+  "v": 1,
+  "folders": [
+   "/storage/emulated/0/RetroArch/saves",
+   "/storage/emulated/0/Android/data/{pkg}/files/saves"
+  ],
+  "folderKey": "savefile_directory",
+  "statesFolders": [
+   "/storage/emulated/0/RetroArch/states",
+   "/storage/emulated/0/Android/data/{pkg}/files/states"
+  ],
+  "statesFolderKey": "savestate_directory",
+  "config": {
+   "file": "/storage/emulated/0/Android/data/{pkg}/files/retroarch.cfg",
+   "format": "keyvalue"
+  },
+  "patterns": [
+   "<emuSaves>/{rom_stem}.srm",
+   "<emuSaves>/*/{rom_stem}.srm",
+   "{rom_dir}/{rom_stem}.srm"
+  ],
+  "states": [
+   "<emuStates>/{rom_stem}.state*",
+   "<emuStates>/*/{rom_stem}.state*",
+   "{rom_dir}/{rom_stem}.state*"
+  ],
+  "source": "RetroArch 1.22.2: frontend/drivers/platform_unix.c:1670-1694 (Android default save and state folders: <internal storage>/RetroArch/saves and states, else Android/data/<pkg>/files), configuration.c:4418-4424 (savefile_directory; \"default\" means that folder), runloop.c:8205-8265 (with the folder unset the file sits in the content's folder; sort_savefiles_enable, on by default per config.def.h:917, adds a folder named for the core's library), runloop.c:4211 and :8148 (.srm)"
+ }
 }

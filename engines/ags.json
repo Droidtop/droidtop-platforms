@@ -24,5 +24,13 @@
   "WINE_PREFIX"
  ],
  "enginehost": null,
- "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet."
+ "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet.",
+ "saves": {
+  "v": 1,
+  "data": {
+   "windows": "<home>/Saved Games",
+   "linux": "<xdgData>/ags"
+  },
+  "source": "enginehost-ags-plugin Engine/platform/android/acpland.cpp:435-450 (ENGINEHOST_AGS_SAVE_ROOT is the save root; the game names its own subfolder, saveGameFolderName, in it) and ENGINEHOST.md:27-33. That name lives in the game's data file, which droidtop cannot read yet, so no per-game folder is named"
+ }
 }

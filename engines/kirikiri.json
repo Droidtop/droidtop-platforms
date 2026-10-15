@@ -28,5 +28,12 @@
   "context": "default",
   "versionSelectorFallback": "0"
  },
- "notes": "Any .xp3 archive, or startup.tjs (the engine's own boot script) for unpacked games with no archive - the marker enginehost already used. versionSelectorFallback 0 is a selector fall-through, not a version claim: by the engine's own semantics anything that maps to no implementation string selects the sole default. Device-confirmed 2026-08-31. KIRIKIROID2 strategy predates the unified player entry; both point at the same app."
+ "notes": "Any .xp3 archive, or startup.tjs (the engine's own boot script) for unpacked games with no archive - the marker enginehost already used. versionSelectorFallback 0 is a selector fall-through, not a version claim: by the engine's own semantics anything that maps to no implementation string selects the sole default. Device-confirmed 2026-08-31. KIRIKIROID2 strategy predates the unified player entry; both point at the same app.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "savedata/"
+  ],
+  "source": "enginehost-kirikiri-plugin src/core/environ/win32/ApplicationSpecialPath.h:58 (GetDataPathDirectory: <application path>/savedata/); Enginehost keeps KiriKiri saves beside the game (SaveFolders.BESIDE_THE_GAME)"
+ }
 }

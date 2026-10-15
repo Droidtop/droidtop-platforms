@@ -35,5 +35,17 @@
   "family": "rpgmaker",
   "context": null
  },
- "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it). An MV/MZ web runtime whose core script is missing or renamed: the family is proven, the generation is not - context null routes to enginehost's CONFIGURE screen where the user picks mv or mz."
+ "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it). An MV/MZ web runtime whose core script is missing or renamed: the family is proven, the generation is not - context null routes to enginehost's CONFIGURE screen where the user picks mv or mz.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "save/*.rpgsave",
+   "www/save/*.rpgsave",
+   "save/*.rmmzsave"
+  ],
+  "hostUser": [
+   "{game_folder}/localStorage.json"
+  ],
+  "source": "As rpgmaker-mv and rpgmaker-mz: save/*.rpgsave (MV, js/rpg_managers.js:755-771), save/*.rmmzsave (MZ, js/rmmz_managers.js:762-770), localStorage.json under Enginehost"
+ }
 }

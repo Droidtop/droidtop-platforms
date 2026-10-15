@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T17:39:42Z",
+ "generatedAt": "2026-10-15T02:14:55Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -61,47 +61,47 @@
   {
    "path": "engines/renpy.json",
    "collection": "engines",
-   "sha256": "253710ef979df924702722339063ef61cd7159c248e8486200a6818b23932f4b"
+   "sha256": "6c60c8142580bef2dc28e73a508de85e9de1d97887691f2ccccebd2c13fbb2f7"
   },
   {
    "path": "engines/rpgmaker-mv.json",
    "collection": "engines",
-   "sha256": "3d496f5dac99529a9c3ff172d10b478afde04cd617195b094ed15ab18c761e15"
+   "sha256": "e3e7444f0af6d2e5741b61e37b6afd1673725c0b042243fd514e08cc79eab94e"
   },
   {
    "path": "engines/rpgmaker-mz.json",
    "collection": "engines",
-   "sha256": "13c94ae8d7c87b3d774a78ce34bcc8419d38a18e0db717bfab647c8dc36d742f"
+   "sha256": "8679f6f5092c8f1f69af068bf51f0a11a5435a219b8e014068c664899b47fdb9"
   },
   {
    "path": "engines/rpgmaker-mvmz.json",
    "collection": "engines",
-   "sha256": "c2d2ee90d5047bed204c5c5f4d8f642279afefac078945058d627b644b1259e0"
+   "sha256": "cb3d170dd0359a6a96e75bb2645b66bae3db18ed5c1fb8c497fb85263bcbd6b2"
   },
   {
    "path": "engines/rpgmaker-vxace.json",
    "collection": "engines",
-   "sha256": "9b9bbf62fafd7bc818595c7a3348a28eb7937e0499308241de8f528d846f774a"
+   "sha256": "5994d83161981d5febac92d95a779317112de72a60deddac8d4820a444a226ea"
   },
   {
    "path": "engines/rpgmaker-vx.json",
    "collection": "engines",
-   "sha256": "83e679f60be473b722d14b4d1065e7cd9c1303d1ba70fb4b30a7b9a15ced4177"
+   "sha256": "ea854fc86745610721367fc92aaaf322ea9908b372eb2f5ca797160f62cb5b26"
   },
   {
    "path": "engines/rpgmaker-xp.json",
    "collection": "engines",
-   "sha256": "08d7b48ae7de905254bebf149b95e444e67bda4d5e95fb693cdf0167b27c6069"
+   "sha256": "81ca2bf1a306bda21f84af590f14dc26b53ad734fc0e8712d92266918664cc6f"
   },
   {
    "path": "engines/rpgmaker-2000-2003.json",
    "collection": "engines",
-   "sha256": "1a150047b91985b43570e5c10d666512669ec51015c13b9ec1181f70a2aec62f"
+   "sha256": "36f4fdfd6dbe9dd9b3057bb7b756e54fedbef741edc1e919fe768270e8428bcd"
   },
   {
    "path": "engines/kirikiri.json",
    "collection": "engines",
-   "sha256": "c8794932b98f1cb53875d0350c31f557a9f4fe5f0a74eb713f3cd708f66a2314"
+   "sha256": "a237418b9b2ac010b0f56116bb22e9d7400b40acb0eaa0d415cb98a23dbe68d1"
   },
   {
    "path": "engines/august.json",
@@ -111,27 +111,27 @@
   {
    "path": "engines/buriko.json",
    "collection": "engines",
-   "sha256": "920d41c4b12306895de5ab7b20798b41eb2fe9f6e1c52aa93b87fe74a5703e66"
+   "sha256": "acc69fffbadb42f00ecc1152de478a8d47c9d2467c921ae3cb3d7d05f21c64ce"
   },
   {
    "path": "engines/catsystem2.json",
    "collection": "engines",
-   "sha256": "46f55a505a99639c769e458a239237e9cb17c7f12dde91b44f31c12ce7d43386"
+   "sha256": "a514b78b2487bf761882c7deb6e2ff7c0a4ecd2e9dae2d30bbe22f6591a9ebb7"
   },
   {
    "path": "engines/cmvs.json",
    "collection": "engines",
-   "sha256": "ec64d41bb59a4cd3fcfc658aa7c9b5f4168e0d8d4cb61082b2ec198b2be20018"
+   "sha256": "30f23c9c8c2104963ea6e4e6386bdd78809bf11cf7c8c482ee0b1e5f90aade90"
   },
   {
    "path": "engines/cmvs-ps3.json",
    "collection": "engines",
-   "sha256": "9b68457f1d748391be40e4f3c2b0f9a28ec7ab962137d1691bdfb28abe9eca4b"
+   "sha256": "656381e3df0ded6ef78de8c8b745d173d9de335ed2b086842a1c8a4b62a9e9b8"
   },
   {
    "path": "engines/cmvs-ps2.json",
    "collection": "engines",
-   "sha256": "a65ea121a35a03a83bc5316253aa2fa3670aac64faab5abbb4beb1a18fe32fdc"
+   "sha256": "ca3f05917cc77028ddea672d215a4312f76bda8f8785013c1a6c3f9644a6e084"
   },
   {
    "path": "engines/flash-air.json",
@@ -141,22 +141,22 @@
   {
    "path": "engines/godot.json",
    "collection": "engines",
-   "sha256": "cd72d59f7a2bf9609447a16976308e113cc76fcb9178cc0c8b927f4a33672573"
+   "sha256": "6ed07a73e512e81c02b45f71ba8639b6b8e35fb748afc1ca5c69f6ac67cd60d6"
   },
   {
    "path": "engines/nscripter.json",
    "collection": "engines",
-   "sha256": "90d64f02a907c0bb80e042bdf6afb784e675bc963962e6010a1fdd265a2d0b13"
+   "sha256": "b831450f4f74f195f74e7aded351dd0d6058fa89c34effca9e5d8f2cefc85268"
   },
   {
    "path": "engines/ags.json",
    "collection": "engines",
-   "sha256": "6bcf942377ed3bd3a4a89f8a96fbb6e4d2c4f02d70016f44e85f51a83ee5bdcf"
+   "sha256": "2c6f2980fcdb0408bf0f57ba5d27f92a75b0fc8fdd0b3e21304095ea9fbdf373"
   },
   {
    "path": "engines/love2d.json",
    "collection": "engines",
-   "sha256": "2e9039f3916eae9a32ae4849b6b5948b23ef4bced359ab690f69e1f0b7d3e549"
+   "sha256": "079c59d26a6c561c2d50ad82705f505f8b184686a63e838518cb9437ecdde8d5"
   },
   {
    "path": "engines/alicesoft-system4.json",
@@ -386,7 +386,7 @@
   {
    "path": "engines/renpy-fallback.json",
    "collection": "engines",
-   "sha256": "db92f0b01f0b98f2d37696f6d16be516d13a57ede8aebe041b2b3fd3f9e37d81"
+   "sha256": "7e43b93f2002ae5b9283d5bc9a9e84d39795455e0be96ca736336a782263937f"
   },
   {
    "path": "engines/unreal.json",
@@ -1801,32 +1801,32 @@
   {
    "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "c4b6cf82c8416c1efecf4f249cd0e46f6829ee1c65d0b4c1c4ba737bdca07bd3"
+   "sha256": "5a1b6ee7106bf9af7d9bd11ae997082e107da6f55bb5441c80d786f357482539"
   },
   {
    "path": "players/psx-com-retroarch-aarch64-retroarch-64-beetle-psx.json",
    "collection": "players",
-   "sha256": "8a8a1efaf73f978c36c272ea4b5d6c5bfb760bad1ad85562f62c0abdc35584c5"
+   "sha256": "a4180501191a197c7db21a7fc11074fc14bc0beded484de96b5d7d4df1184971"
   },
   {
    "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "f42bac6f6bdf08a140688dcafb22ca58066c3439c68b2729b5b0b4860e952fbb"
+   "sha256": "e31190a270941c1d89a8e6c154346e7cf686cefdd587c2e6a278480c44bdaec9"
   },
   {
    "path": "players/psx-com-retroarch-ra32-retroarch-32-beetle-psx.json",
    "collection": "players",
-   "sha256": "1a421d98dc5ec4c0f9707c52bf252f93995dda4a51e96ca899bfb3a23e969858"
+   "sha256": "222d96390e41c55f26e51df823ffefa89d49c0980e1a7260063f1e79b9ad6e5d"
   },
   {
    "path": "players/psx-com-retroarch-retroarch-beetle-psx-hw.json",
    "collection": "players",
-   "sha256": "155988d517c2d2be38c30e7091d4db3df586a1374cbea1bba71a85d451f0b446"
+   "sha256": "fa4d54942b3d58eda0fc26854348639e548fe8d5ae4748fef35d0c74bfaaeec3"
   },
   {
    "path": "players/psx-com-retroarch-retroarch-beetle-psx.json",
    "collection": "players",
-   "sha256": "5725c9a8b7f5c47377f422fd17666bc82d5dcac48a8d2e73fda57be4e3c3be42"
+   "sha256": "b4951b071297b31e1cf3ca698b0343a3c0b8c1c0d8dce1c3d3279382b19e45ab"
   },
   {
    "path": "players/satellaview-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",

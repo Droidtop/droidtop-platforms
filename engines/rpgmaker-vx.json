@@ -35,5 +35,13 @@
   "family": "rpgmaker",
   "context": "vx"
  },
- "notes": "RGSS2 line: .rgss2a archive, Game.rvproj project marker, or the Game.ini Library=RGSS2xx declaration. Listed after vxace so the more specific RGSS3 evidence wins first."
+ "notes": "RGSS2 line: .rgss2a archive, Game.rvproj project marker, or the Game.ini Library=RGSS2xx declaration. Listed after vxace so the more specific RGSS3 evidence wins first.",
+ "saves": {
+  "v": 1,
+  "beside": [
+   "Save*.rvdata",
+   "Save/*.rvdata"
+  ],
+  "source": "The stock RGSS2 save scripts write Save<n>.rvdata beside Game.exe; mkxp-z src/config.cpp:456-459 names the .rvdata extension; games may move them into a Save folder (seen in a shipped RGSS3 game)"
+ }
 }

@@ -17,5 +17,12 @@
  "enginehost": {
   "family": "cmvs",
   "context": "ps2"
+ },
+ "saves": {
+  "v": 1,
+  "beside": [
+   "save/"
+  ],
+  "source": "enginehost-cmvs-plugin, branch engine/2.0-3.0, src/interp.c:3034-3040 (command 0x016: the game's script names the save folder, \"save\\\" in the ps3 script of the game that code was written against); Enginehost keeps CMVS saves beside the game (SaveFolders.BESIDE_THE_GAME). A game whose script names another folder is not found"
  }
 }

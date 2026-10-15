@@ -30,6 +30,7 @@ import argparse
 import hashlib
 import json
 import pathlib
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -183,6 +184,87 @@ def setup_problems(setup):
     return problems
 
 
+# The root tokens a save template may start with: the agent core's saves.rs TOKENS (the one vocabulary every
+# side resolves), plus the two an emulator's rule adds.
+SAVE_TOKENS = [
+    "<base>", "<home>", "<winAppData>", "<winLocalAppData>", "<winLocalAppDataLow>", "<winDocuments>",
+    "<winPublic>", "<winProgramData>", "<winDir>", "<xdgData>", "<xdgConfig>",
+]
+EMULATOR_TOKENS = ["<emuSaves>", "<emuStates>"]
+EMULATOR_PLACEHOLDERS = {"rom_stem", "rom_dir", "rom_name"}
+ENGINE_BUILTIN_FACTS = {"game_folder"}
+ENGINE_FACT_READERS = {"renpy.save_directory", "godot.name", "godot.custom_dir", "love.identity"}
+PLACEHOLDER = re.compile(r"\{([^{}]*)\}")
+
+
+def climbs(path):
+    return path.startswith("/") or ".." in path.replace("\\", "/").split("/")
+
+
+def saves_problems(kind, saves):
+    """What droidtop's save-rule parser would refuse, or what would make it write or search a place nobody cited."""
+    if not isinstance(saves, dict):
+        return ["saves must be an object"]
+    problems = []
+    if saves.get("v") != 1:
+        problems.append("saves.v must be 1")
+    if not isinstance(saves.get("source"), str) or not saves["source"].strip():
+        problems.append("saves needs a source: the engine's or emulator's own code, or a shipped game, that the rule was read from")
+    known = (
+        {"v", "beside", "data", "user", "hostUser", "facts", "source"}
+        if kind == "engine"
+        else {"v", "folders", "folderKey", "statesFolders", "statesFolderKey", "config", "patterns", "states", "cards", "systems", "source"}
+    )
+    problems.extend("saves has the unknown field " + key for key in saves if key not in known)
+    if kind == "engine":
+        facts = saves.get("facts", {})
+        if not isinstance(facts, dict) or any(v not in ENGINE_FACT_READERS for v in facts.values()):
+            problems.append("saves.facts must name only readers droidtop has " + str(sorted(ENGINE_FACT_READERS)))
+            facts = {}
+        for path in saves.get("beside", []):
+            if climbs(path):
+                problems.append("saves.beside " + path + " must stay inside the game folder")
+        for key, template in saves.get("data", {}).items():
+            if key not in ("windows", "linux", "mac"):
+                problems.append("saves.data has the unknown system " + key)
+            if not any(template == t or template.startswith(t + "/") for t in SAVE_TOKENS):
+                problems.append("saves.data " + template + " must start with a known token")
+        for field in ("user", "hostUser"):
+            for template in saves.get(field, []):
+                if climbs(template):
+                    problems.append("saves." + field + " " + template + " must stay inside the save root")
+                for placeholder in PLACEHOLDER.findall(template):
+                    for name in placeholder.split("|"):
+                        if name not in facts and name not in ENGINE_BUILTIN_FACTS:
+                            problems.append("saves." + field + " " + template + " uses {" + name + "}, which is not a fact")
+        if saves.get("user") and not saves.get("data"):
+            problems.append("saves.user needs saves.data")
+    else:
+        for field in ("folders", "statesFolders"):
+            for folder in saves.get(field, []):
+                if not folder.startswith("/"):
+                    problems.append("saves." + field + " " + folder + " must be an absolute path")
+        config = saves.get("config")
+        if config is not None and (not str(config.get("file", "")).startswith("/") or config.get("format") not in ("ini", "keyvalue")):
+            problems.append("saves.config needs an absolute file and a format of ini or keyvalue")
+        for field in ("patterns", "states", "cards"):
+            for template in saves.get(field, []):
+                token = next((t for t in EMULATOR_TOKENS + ["{rom_dir}"] if template.startswith(t + "/")), None)
+                if token is None:
+                    problems.append("saves." + field + " " + template + " must start with <emuSaves>/, <emuStates>/ or {rom_dir}/")
+                if ".." in template.split("/"):
+                    problems.append("saves." + field + " " + template + " must stay inside its folder")
+                for name in PLACEHOLDER.findall(template):
+                    if name not in EMULATOR_PLACEHOLDERS:
+                        problems.append("saves." + field + " " + template + " uses {" + name + "}, which droidtop cannot fill")
+        for system, rule in saves.get("systems", {}).items():
+            if not isinstance(rule, dict) or not isinstance(rule.get("patterns", []), list):
+                problems.append("saves.systems." + system + " must be an object with patterns")
+        if ("patterns" in saves or "cards" in saves) and not (saves.get("folders") or saves.get("folderKey")):
+            problems.append("saves.patterns and cards need folders or a folderKey")
+    return problems
+
+
 def validate(collections):
     """The rules a single file cannot check for itself.
 
@@ -200,6 +282,8 @@ def validate(collections):
             problems.append(path + ": detect must be a list of rules")
         if not isinstance(engine.get("strategies", []), list):
             problems.append(path + ": strategies must be a list")
+        if "saves" in engine:
+            problems.extend(path + ": " + p for p in saves_problems("engine", engine["saves"]))
     if not any(engine.get("detect") for _, _, _, engine in collections["engines"][1]):
         problems.append("engines: no row carries a detection rule at all")
     for _, path, _, player in collections["players"][1]:
@@ -207,6 +291,8 @@ def validate(collections):
             if not player.get(field):
                 problems.append(path + ": missing " + field)
         problems.extend(path + ": setup " + p for p in setup_problems(player.get("setup")))
+        if "saves" in player:
+            problems.extend(path + ": " + p for p in saves_problems("player", player["saves"]))
     for _, path, _, platform in collections["platforms"][1]:
         if not platform.get("name"):
             problems.append(path + ": missing name")

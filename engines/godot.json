@@ -27,5 +27,22 @@
   "family": "godot",
   "context": "standard"
  },
- "notes": "project.godot (an unexported project tree - enginehost's marker), or the builtin probe covering both the loose .pck shape and the embedded-pack GDPC trailer that JSON conditions cannot express."
+ "notes": "project.godot (an unexported project tree - enginehost's marker), or the builtin probe covering both the loose .pck shape and the embedded-pack GDPC trailer that JSON conditions cannot express.",
+ "saves": {
+  "v": 1,
+  "data": {
+   "windows": "<winAppData>",
+   "linux": "<xdgData>",
+   "mac": "<home>/Library/Application Support"
+  },
+  "user": [
+   "{godot_custom_dir}",
+   "Godot/app_userdata/{godot_name}"
+  ],
+  "facts": {
+   "godot_name": "godot.name",
+   "godot_custom_dir": "godot.custom_dir"
+  },
+  "source": "enginehost-godot-plugin core/os/os.cpp:322-338 (get_user_data_dir: app_userdata/<application/config/name>, or the custom user dir), drivers/unix/os_unix.cpp:1121 and platform/windows/os_windows.cpp:2445,2487 (the engine folder is Godot on Windows and godot elsewhere); under Enginehost platform/android/os_android.cpp:718-735 puts user:// at ENGINEHOST_SAVE_PATH/<that directory>"
+ }
 }
