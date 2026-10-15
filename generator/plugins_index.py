@@ -27,7 +27,7 @@ is Droidtop/enginehost docs/security/2026-09-25-third-party-catalog.md.
 
 Signature format v1 (Droidtop/tracker#550): a release envelope entry may
 carry `jws`, a JWS whose certificate chain ends at the Droidtop Core
-certificate Enginehost pins.  With ENGINEHOST_TOOLING pointing at a checkout
+public key Enginehost pins.  With ENGINEHOST_TOOLING pointing at a checkout
 of Droidtop/enginehost (its scripts/ and app/src/main/assets/trust/, pinned
 by the workflow), such an entry is verified to Core and needs no legacy
 signature, and a repository's enginehost-signing-certificate.pem is published
@@ -123,21 +123,21 @@ RETRY_PAUSE_SECONDS = 10
 
 
 def v1_tooling():
-    """(bundle_jws module, Core certificate DER) from ENGINEHOST_TOOLING, or (None, None)."""
+    """(bundle_jws module, Droidtop Core's public key as SubjectPublicKeyInfo DER) from ENGINEHOST_TOOLING."""
     tooling = os.environ.get("ENGINEHOST_TOOLING")
     if not tooling:
         return None, None
     tooling = pathlib.Path(tooling)
     sys.path.insert(0, str(tooling / "scripts"))
     import bundle_jws  # noqa: E402 -- Enginehost's own verifier, pinned by the workflow
-    core_path = tooling / "app/src/main/assets/trust/droidtop-core.pem"
+    core_path = tooling / "app/src/main/assets/trust/droidtop-core.pub"
     if not core_path.is_file():
-        warn("Enginehost pins no Droidtop Core certificate yet; format v1 signatures are not checked")
+        warn("Enginehost pins no Droidtop Core key yet; format v1 signatures are not checked")
         return bundle_jws, None
-    return bundle_jws, bundle_jws.pem_certificates(core_path.read_text(encoding="utf-8"))[0]
+    return bundle_jws, bundle_jws.pem_public_key(core_path.read_text(encoding="utf-8"))
 
 
-# Enginehost's v1 verifier and the Core certificate, read once by main().
+# Enginehost's v1 verifier and Droidtop Core's public key, read once by main().
 JWS, CORE = None, None
 
 
