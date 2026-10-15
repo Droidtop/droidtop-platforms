@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T06:00:58Z",
+ "generatedAt": "2026-10-15T06:02:22Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -4950,13 +4950,13 @@
      "tag": "nscripter-onsyuri-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-14T22:55:01Z",
+     "published_at": "2026-10-15T06:01:19Z",
      "assets": [
       {
        "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
-       "size": 6929076,
-       "sha256": "a6e8f17614350b46edc4ec1e2a751035cc3c7beb1f71670edcceb2dc0f25aaed"
+       "size": 6934848,
+       "sha256": "eb21e8b9fc1c03a19bfbd6971aa8540303d007ad82a6ec2d5dcc8a46abbce21e"
       },
       {
        "name": "enginehost-public-key.json",
@@ -4968,7 +4968,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-unstable/enginehost-release.json",
        "size": 8281,
-       "sha256": "97fd0380cb617290e38409c5eaddd1481510db55a7b7844a3c2a926e8c58a651"
+       "sha256": "cc91c6bed467300766a02926e7436d881a7397d260354acce214ea7e86962edf"
+      }
+     ]
+    },
+    {
+     "tag": "nscripter-onsyuri-v1-build.21",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:01:22Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.21/dev.enginehost.nscripter.onsyuri.v1.enginehost.tar.xz",
+       "size": 6934848,
+       "sha256": "eb21e8b9fc1c03a19bfbd6971aa8540303d007ad82a6ec2d5dcc8a46abbce21e"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.21/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "98f98397b75eafc01266cbaaf3d722532d9458207013d4e3e5b311731ebf6f08"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-nscripter-plugin/releases/download/nscripter-onsyuri-v1-build.21/enginehost-release.json",
+       "size": 8281,
+       "sha256": "cc91c6bed467300766a02926e7436d881a7397d260354acce214ea7e86962edf"
       }
      ]
     },
@@ -5328,13 +5354,13 @@
      "tag": "ags-3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-14T22:41:25Z",
+     "published_at": "2026-10-15T06:01:02Z",
      "assets": [
       {
        "name": "dev.enginehost.ags.3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-unstable/dev.enginehost.ags.3.v1.enginehost.tar.xz",
-       "size": 17264128,
-       "sha256": "f22ba17fa451ad0b4a1c9b314df053adbce57b7dd51943101bd7984c2c6f7ce0"
+       "size": 17273320,
+       "sha256": "8791a94b8c309681934912621651b686d13dd55e06bcdbaab36b1a7541264bd5"
       },
       {
        "name": "enginehost-public-key.json",
@@ -5346,7 +5372,33 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-unstable/enginehost-release.json",
        "size": 4049,
-       "sha256": "09f65df4e1cff73489887ab294a98128f6f8a88681a9be2684946b35e905d93a"
+       "sha256": "b3ea5f969b89e2835f90f4e202816a6c47baaf7e517f11a390f5195ba7ab1cda"
+      }
+     ]
+    },
+    {
+     "tag": "ags-3-v1-build.8",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T06:01:06Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.8/dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "size": 17273320,
+       "sha256": "8791a94b8c309681934912621651b686d13dd55e06bcdbaab36b1a7541264bd5"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.8/enginehost-public-key.json",
+       "size": 646,
+       "sha256": "490755ed0a896a1bc5df1624e422d93dfe18f4268f47ce97153a7a2b6a592680"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.8/enginehost-release.json",
+       "size": 4049,
+       "sha256": "b3ea5f969b89e2835f90f4e202816a6c47baaf7e517f11a390f5195ba7ab1cda"
       }
      ]
     },
