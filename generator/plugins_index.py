@@ -25,6 +25,17 @@ Enginehost root certified; listed third parties (plugins/third-party.json)
 with a registration signed by a key their list entry names.  The threat model
 is Droidtop/enginehost docs/security/2026-09-25-third-party-catalog.md.
 
+Signature format v1 (Droidtop/tracker#550): a release envelope entry may
+carry `jws`, a JWS whose certificate chain ends at the Droidtop Core
+certificate Enginehost pins.  With ENGINEHOST_TOOLING pointing at a checkout
+of Droidtop/enginehost (its scripts/ and app/src/main/assets/trust/, pinned
+by the workflow), such an entry is verified to Core and needs no legacy
+signature, and a repository's enginehost-signing-certificate.pem is published
+in its entry as `certificates` once it verifies to Core for that origin.  The
+legacy key document stays required: registration and the key history are
+keyed on it until the legacy format is retired.  Without the tooling, or
+while Enginehost pins no Core, only the legacy signature is checked.
+
 Run:
   plugins_index.py                 rebuild, write index.json/origins.json when changed
   plugins_index.py --event         the same, plus whatever the triggering GitHub
@@ -67,6 +78,8 @@ HISTORY_COMMENT = (
 SCHEMA_VERSION = 1
 RELEASE_ENVELOPE = "enginehost-release.json"
 KEY_DOCUMENT = "enginehost-public-key.json"
+SIGNING_CERTIFICATE = "enginehost-signing-certificate.pem"
+REVOCATIONS_PATH = PLUGINS_DIR / "revocations.jws"
 REGISTRATION = "enginehost-registration.json"
 REGISTRATION_STATEMENT = "enginehost-registration-v1"
 ALGORITHM = "SHA256withECDSA"
@@ -107,6 +120,25 @@ REFRESH_AFTER = timedelta(hours=20)
 # Server errors are retried this many times in all, with a growing pause.
 RETRIES = 4
 RETRY_PAUSE_SECONDS = 10
+
+
+def v1_tooling():
+    """(bundle_jws module, Core certificate DER) from ENGINEHOST_TOOLING, or (None, None)."""
+    tooling = os.environ.get("ENGINEHOST_TOOLING")
+    if not tooling:
+        return None, None
+    tooling = pathlib.Path(tooling)
+    sys.path.insert(0, str(tooling / "scripts"))
+    import bundle_jws  # noqa: E402 -- Enginehost's own verifier, pinned by the workflow
+    core_path = tooling / "app/src/main/assets/trust/droidtop-core.pem"
+    if not core_path.is_file():
+        warn("Enginehost pins no Droidtop Core certificate yet; format v1 signatures are not checked")
+        return bundle_jws, None
+    return bundle_jws, bundle_jws.pem_certificates(core_path.read_text(encoding="utf-8"))[0]
+
+
+# Enginehost's v1 verifier and the Core certificate, read once by main().
+JWS, CORE = None, None
 
 
 class Rejected(Exception):
@@ -455,21 +487,35 @@ def check_envelope(body, origin, key, assets, third_party, admitted_before):
     names = {asset["name"] for asset in assets}
     for bundle in envelope["bundles"]:
         manifest_bytes = b64(bundle.get("manifestBase64", ""), "manifestBase64")
-        signature = b64(bundle.get("signatureBase64", ""), "signatureBase64")
         try:
             manifest = json.loads(manifest_bytes)
         except (ValueError, UnicodeDecodeError):
             raise Rejected("a bundle manifest is not JSON")
         bundle_id = str(manifest.get("bundleId", "?"))
-        signing = manifest.get("signing") or {}
         if normalize_origin(str(manifest.get("origin", ""))) != origin:
             raise Rejected(bundle_id + " names another origin")
-        if signing.get("algorithm") != ALGORITHM or str(signing.get("keySha256", "")).upper() != key.sha256:
-            raise Rejected(bundle_id + " is not signed by the key pinned for " + origin)
-        if b64(signing.get("publicKeySpki", ""), "manifest publicKeySpki") != key.der:
-            raise Rejected(bundle_id + " embeds a different public key")
-        if not verifies(manifest_bytes, signature, key.der):
-            raise Rejected(bundle_id + ": the manifest signature does not verify")
+        # Format v1, when this run can check it: the chain ends at Core and
+        # its certificate names this origin. Only official repositories are
+        # anchored at Core; a third party's v1 signature is the app's to check
+        # against the key a person pinned, and here its legacy one is required.
+        v1_verified = False
+        if bundle.get("jws") and JWS is not None and CORE is not None and not third_party:
+            try:
+                named = JWS.verify(bundle["jws"], "plugin", CORE, manifest_bytes)
+            except JWS.Refused as reason:
+                raise Rejected(bundle_id + ": its v1 signature does not verify: " + str(reason))
+            if JWS.origin_id(origin) not in named["origins"]:
+                raise Rejected(bundle_id + ": its v1 signing certificate does not name " + origin)
+            v1_verified = True
+        if bundle.get("signatureBase64") or not v1_verified:
+            signature = b64(bundle.get("signatureBase64", ""), "signatureBase64")
+            signing = manifest.get("signing") or {}
+            if signing.get("algorithm") != ALGORITHM or str(signing.get("keySha256", "")).upper() != key.sha256:
+                raise Rejected(bundle_id + " is not signed by the key pinned for " + origin)
+            if b64(signing.get("publicKeySpki", ""), "manifest publicKeySpki") != key.der:
+                raise Rejected(bundle_id + " embeds a different public key")
+            if not verifies(manifest_bytes, signature, key.der):
+                raise Rejected(bundle_id + ": the manifest signature does not verify")
         if manifest.get("assetName") not in names:
             raise Rejected(bundle_id + ": the release is missing " + str(manifest.get("assetName")))
         if third_party and bundle_id.startswith(OFFICIAL_BUNDLE_PREFIX):
@@ -571,6 +617,9 @@ def index_for(repo, trust, pin, maintainer, previous):
         }
     else:
         entry["key"] = document
+        certificates = signing_certificates(repo, listed, origin)
+        if certificates:
+            entry["certificates"] = certificates
     entry["releases"] = []
     refused = []
     for release in listed:
@@ -612,6 +661,55 @@ def index_for(repo, trust, pin, maintainer, previous):
     if not third_party:
         record["keySerial"] = serial
     return entry, record, change, refused
+
+
+def signing_certificates(repo, listed, origin):
+    """
+    The repository's format-v1 signing certificate chain (x5c style: standard
+    base64 DER, leaf first), from its newest release carrying one or its tree,
+    when it verifies to Core for this origin; else []. Enginehost verifies it
+    again before it makes the origin official.
+    """
+    if JWS is None or CORE is None:
+        return []
+    text = None
+    for release in listed:
+        asset = next((a for a in release.get("assets") or [] if a["name"] == SIGNING_CERTIFICATE), None)
+        if asset is not None:
+            text = download(asset["browser_download_url"]).decode("utf-8", errors="replace")
+            break
+    if text is None:
+        tree_copy = repository_file(repo, SIGNING_CERTIFICATE)
+        text = tree_copy.decode("utf-8", errors="replace") if tree_copy is not None else None
+    if text is None:
+        return []
+    try:
+        chain = JWS.pem_certificates(text)
+        named = JWS.verify_chain(chain, "plugin", CORE)
+    except JWS.Refused as reason:
+        warn(repo + ": " + SIGNING_CERTIFICATE + " does not verify to Droidtop Core: " + str(reason))
+        return []
+    if JWS.origin_id(origin) not in named["origins"]:
+        warn(repo + ": " + SIGNING_CERTIFICATE + " does not name " + origin)
+        return []
+    return [base64.b64encode(der).decode("ascii") for der in chain]
+
+
+def check_revocations():
+    """plugins/revocations.jws, when committed: a revocation list for "enginehost" signed under Core."""
+    if not REVOCATIONS_PATH.is_file():
+        return
+    if JWS is None or CORE is None:
+        sys.exit("plugins/revocations.jws is committed but this run cannot verify it (no ENGINEHOST_TOOLING or no Core)")
+    try:
+        named = JWS.verify(REVOCATIONS_PATH.read_text(encoding="ascii"), "revocations", CORE, None)
+    except JWS.Refused as reason:
+        sys.exit("plugins/revocations.jws does not verify: " + str(reason))
+    payload = json.loads(named["payload"])
+    if "enginehost" not in named["catalogs"] or payload.get("catalog") != "enginehost" \
+            or payload.get("type") != "droidtop-revocations" or payload.get("version") != 1:
+        sys.exit("plugins/revocations.jws is not Enginehost's revocation list")
+    print("plugins/revocations.jws: sequence " + str(payload.get("sequence")) + ", verified to Droidtop Core")
 
 
 def previous_envelopes(existing_text):
@@ -905,6 +1003,7 @@ def check(existing):
         sys.exit("plugins/index.json is missing; run generator/plugins_index.py")
     global OFFICIAL_ROOT
     OFFICIAL_ROOT = official_root()
+    check_revocations()
     third_party, _ = load_third_party()
     check_history(json.loads(ORIGINS_PATH.read_text(encoding="utf-8"))["origins"])
     document = json.loads(existing)
@@ -942,7 +1041,8 @@ OFFICIAL_ROOT = None
 
 
 def main():
-    global OFFICIAL_ROOT
+    global OFFICIAL_ROOT, JWS, CORE
+    JWS, CORE = v1_tooling()
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--check", action="store_true", help="validate the committed files instead of writing")
     parser.add_argument("--event", action="store_true", help="also act on what the triggering GitHub event announces")
