@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T14:50:37Z",
+ "generatedAt": "2026-10-15T18:03:10Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -6785,18 +6785,21 @@
     "origin": "https://github.com/droidtop/enginehost-love2d-plugin",
     "publicKeySpki": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE//hEAaz7vWXhNM4pPoZuz0aWUcD5bG2d1xOY/mQk+zmJG6qwoSEgljG0vtuxu053RHW6S/iNLWrHRzclm3dW5g=="
    },
+   "certificates": [
+    "MIICFTCCAbygAwIBAgIUTiGfya1dFGe4nb3HJCojHUT7Z4swCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjAsMSowKAYDVQQDDCFkcm9pZHRvcC9lbmdpbmVob3N0LWxvdmUyZC1wbHVnaW4wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATHygkfIwZrqIJBoQpZWlHHcoDav/i4Tly0DuWY51up502VTnr8o+p/oUsH7GwG+liEXUJd0AtvkC1mwzsmDhDoo4HFMIHCMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgeAMCAGA1UdJQQZMBcGFWmC2rif2IDUorrXvtTi4OXihvRyATBABgNVHREEOTA3hjV1cm46ZHJvaWR0b3A6b3JpZ2luOmRyb2lkdG9wL2VuZ2luZWhvc3QtbG92ZTJkLXBsdWdpbjAdBgNVHQ4EFgQUrO+Vjyf4uU9g0q+az3lhishvY5IwHwYDVR0jBBgwFoAUjUXFHsYvy71K0af0U0+Zby/SpEcwCgYIKoZIzj0EAwIDRwAwRAIgM8wku2k3KqThs6pcjXdKJnPdjtAHSLqv+69u3i1vjHICIFuf/K2KLPnTZnZPT4aZlQXagKb4c37DdPCX/Zlp3SPl"
+   ],
    "releases": [
     {
      "tag": "love2d-11-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-15T14:18:43Z",
+     "published_at": "2026-10-15T18:00:45Z",
      "assets": [
       {
        "name": "dev.enginehost.love2d.11.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/dev.enginehost.love2d.11.v1.enginehost.tar.xz",
-       "size": 17378224,
-       "sha256": "37856c5a673eb7661b0b036a10979902e3f5335ce00b80d56fa07336c5fb11df"
+       "size": 17381516,
+       "sha256": "5994aa2d1b3f27eb979a86d8ce6b6ea93d9c8bb04e46618deeb6cac83df1756d"
       },
       {
        "name": "enginehost-public-key.json",
@@ -6807,8 +6810,46 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/enginehost-release.json",
-       "size": 4549,
-       "sha256": "a0d2442f1d85596ef902716169323734c7c71e181fd57586f341baad98e01452"
+       "size": 5681,
+       "sha256": "470d37e7f7b6f01d40f692e682ed9fd97f7f1f435ea4c18c75d5abf2055e5cf8"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "daca0a38f0f6d25eb555d18e5ec43c9b8f7bf6468da4c17207ceb18fe386097f"
+      }
+     ]
+    },
+    {
+     "tag": "love2d-11-v1-build.18",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T18:00:49Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.love2d.11.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-build.18/dev.enginehost.love2d.11.v1.enginehost.tar.xz",
+       "size": 17381516,
+       "sha256": "5994aa2d1b3f27eb979a86d8ce6b6ea93d9c8bb04e46618deeb6cac83df1756d"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-build.18/enginehost-public-key.json",
+       "size": 649,
+       "sha256": "abedb0516067188c9391c3ca90fce2e57840825bb713b049635170395ac4f23c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-build.18/enginehost-release.json",
+       "size": 5681,
+       "sha256": "470d37e7f7b6f01d40f692e682ed9fd97f7f1f435ea4c18c75d5abf2055e5cf8"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-love2d-plugin/releases/download/love2d-11-v1-build.18/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "daca0a38f0f6d25eb555d18e5ec43c9b8f7bf6468da4c17207ceb18fe386097f"
       }
      ]
     },
