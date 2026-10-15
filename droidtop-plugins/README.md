@@ -9,9 +9,12 @@ It is generated, never edited by hand. `generator/droidtop_plugins_index.py` loo
 public repository of the Droidtop organisation named `droidtop-plugin-*`, and lists a
 `*.droidplugin.tar.xz` release asset only when
 
-- its `origin.cert` is a certificate from droidtop's plugin master for that plugin id, valid now,
-- its `manifest.sig` verifies against the key that certificate certifies, and
+- its `manifest.jws` is a detached ES256 JWS over the exact `manifest.json` bytes, the repository's leaf
+  certificate in `x5c`, issued by the droidtop root (`droidtop-root.pub`, the key the app pins),
+- the leaf is a plugin leaf naming `urn:droidtop:origin:droidtop` and, if it names plugins, the manifest's id, and
 - its manifest is under the `droidtop` origin.
+
+Expiry dates are not checked, as the app does not check them.
 
 A prerelease is the `testing` stream; droidtop offers the `stable` stream only. The app checks every
 bundle again on the device (signature, every payload hash), so the index can make the catalog late,
@@ -38,4 +41,4 @@ from this `index.json` by [Droidtop/droidtop.github.io](https://github.com/Droid
 | --- | --- |
 | `index.json` | The catalog. Written by the workflow. |
 | `add-catalog-qr.svg` | The QR code of the add-catalog link above. |
-| `master-key.json` | The public half of droidtop's plugin master, the key the app pins as `MasterKey`. A reviewed change only. |
+| `droidtop-root.pub` | The public key of the droidtop root, the key the app pins. A reviewed change only. |

@@ -75,6 +75,9 @@ jobs:
             scripts
             app/src/main/assets/trust
 
+      - name: Signature tools
+        run: python3 -m pip install --user --break-system-packages 'cryptography>=42'
+
       # A push that only touched these files says nothing about the plugin
       # repositories, so it checks the committed index instead of rebuilding
       # it: no API calls on an ordinary commit.
@@ -96,7 +99,7 @@ jobs:
         run: python3 generator/plugins_index.py --event --report "$RUNNER_TEMP/registration.md"
 
       # droidtop's own plugin repositories (Droidtop/droidtop-plugin-*), verified against
-      # droidtop's plugin master. A registration issue concerns Enginehost's index only.
+      # the droidtop root (manifest.jws). A registration issue concerns Enginehost's index only.
       - name: Rebuild droidtop's plugin index
         if: ${{ github.event_name != 'push' && github.event_name != 'issues' }}
         env:

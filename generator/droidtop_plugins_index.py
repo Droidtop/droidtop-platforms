@@ -10,11 +10,13 @@ blocks (the official catalog has neither).
 What enters the index: every *.droidplugin.tar.xz asset of every release of every public,
 unarchived repository of the Droidtop organisation whose name starts with
 `droidtop-plugin-`, provided the bundle
-  * carries origin.cert, a plugin certificate issued by droidtop's plugin master
-    (droidtop-plugins/master-key.json, the key pinned in the app as MasterKey) that
-    covers the manifest's plugin id and is valid now, and
-  * its manifest.sig verifies against the key that certificate certifies, and
+  * carries manifest.jws, a detached ES256 JWS over the exact manifest.json bytes with the
+    repository's leaf certificate in x5c, issued by the droidtop root
+    (droidtop-plugins/droidtop-root.pub, the key pinned in the app), and
+  * the leaf is a plugin leaf (EKU .1, CA:FALSE, digitalSignature) naming
+    urn:droidtop:origin:droidtop and, if it names plugins, the manifest's id, and
   * its manifest names origin `droidtop` and an id under `droidtop.`.
+Expiry dates are not checked, as the app does not check them.
 A prerelease is the "testing" stream, anything else "stable". droidtop offers only the
 stable stream; the others are listed so a later build can opt in.
 
@@ -26,7 +28,7 @@ Enginehost index) and runs in the same workflow (.github/workflows/plugins-index
   droidtop_plugins_index.py --build   rebuild droidtop-plugins/index.json from the repositories
   droidtop_plugins_index.py --check   validate the committed files, no network
 
-Signatures are checked with the openssl command line, which every GitHub runner has.
+Signatures are checked with the cryptography package (verify_jws.py beside this file).
 GH_TOKEN, when set, raises the API allowance.
 """
 
@@ -38,27 +40,29 @@ import json
 import os
 import pathlib
 import re
-import subprocess
 import sys
 import tarfile
-import tempfile
 import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import verify_jws  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DIR = ROOT / "droidtop-plugins"
 INDEX = DIR / "index.json"
-MASTER_KEY = DIR / "master-key.json"
+ROOT_KEY = DIR / "droidtop-root.pub"
 
 SCHEMA_VERSION = 1
-ALGORITHM = "SHA256withECDSA"
+ALGORITHM = "droidtop-chain-v1"
 ORGANISATION = "Droidtop"
 REPO_PREFIX = "droidtop-plugin-"
 ORIGIN = "droidtop"
-CERT_FILE = "origin.cert"
-CERT_PREFIX = "droidtop-plugin-cert-v1"
+PLUGIN_TYP = "droidtop-plugin+jws"
+ORIGIN_URN = "urn:droidtop:origin:"
+PLUGIN_URN = "urn:droidtop:plugin:"
 BUNDLE_SUFFIX = ".droidplugin.tar.xz"
 MAX_BUNDLES_PER_RELEASE = 8
 MAX_BUNDLE_BYTES = 512 * 1024 * 1024
@@ -154,51 +158,16 @@ def repositories():
 # --- keys and signatures -------------------------------------------------------
 
 
-def openssl(*arguments):
-    return subprocess.run(["openssl", *arguments], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
-
-
 def sha256_hex(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def p256_der(spki_b64, what):
-    try:
-        der = base64.b64decode(spki_b64, validate=True)
-    except (ValueError, TypeError):
-        raise Rejected(what + ": the key is not base64")
-    with tempfile.NamedTemporaryFile(suffix=".der") as key:
-        key.write(der)
-        key.flush()
-        result = openssl("pkey", "-pubin", "-inform", "DER", "-in", key.name, "-noout", "-text")
-    text = result.stdout.decode(errors="replace")
-    if result.returncode != 0 or not ("prime256v1" in text or "P-256" in text):
-        raise Rejected(what + ": not an EC P-256 SubjectPublicKeyInfo")
-    return der
-
-
-def verifies(message, signature_b64, der):
-    try:
-        signature = base64.b64decode(signature_b64.strip(), validate=True)
-    except (ValueError, TypeError):
-        return False
-    with tempfile.TemporaryDirectory() as temporary:
-        folder = pathlib.Path(temporary)
-        (folder / "message").write_bytes(message)
-        (folder / "signature").write_bytes(signature)
-        (folder / "key.der").write_bytes(der)
-        result = openssl("dgst", "-sha256", "-verify", str(folder / "key.der"), "-keyform", "DER",
-                         "-signature", str(folder / "signature"), str(folder / "message"))
-    return result.returncode == 0
-
-
-def load_master():
-    """droidtop's plugin master (public): (der, key block). The same key the app pins as MasterKey."""
-    document = json.loads(MASTER_KEY.read_text(encoding="utf-8"))
-    der = p256_der(document.get("publicKeySpki", ""), "master-key.json")
-    if str(document.get("keySha256", "")).lower() != sha256_hex(der):
-        raise SystemExit("master-key.json: keySha256 is not the key's")
-    return der, {
+def load_root():
+    """droidtop's root (public): (PEM, key block). The same key the app pins."""
+    from cryptography.hazmat.primitives import serialization
+    pem = ROOT_KEY.read_bytes()
+    der = serialization.load_pem_public_key(pem).public_bytes(serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)
+    return pem, {
         "formatVersion": 1,
         "algorithm": ALGORITHM,
         "origin": ORIGIN,
@@ -211,8 +180,8 @@ def load_master():
 
 
 def manifest_of(bundle, what):
-    """manifest.json bytes, manifest.sig text and origin.cert text (or None) from a .droidplugin.tar.xz."""
-    wanted = ("manifest.json", "manifest.sig", CERT_FILE)
+    """manifest.json bytes and manifest.jws text from a .droidplugin.tar.xz."""
+    wanted = ("manifest.json", "manifest.jws")
     try:
         with tarfile.open(fileobj=io.BytesIO(bundle), mode="r:xz") as archive:
             found = {}
@@ -221,16 +190,9 @@ def manifest_of(bundle, what):
                     found[member.name] = archive.extractfile(member).read()
     except (tarfile.TarError, EOFError, OSError) as error:
         raise Rejected(what + ": not a readable tar.xz (" + str(error) + ")")
-    if "manifest.json" not in found or "manifest.sig" not in found:
-        raise Rejected(what + ": no manifest.json and manifest.sig at the top of the bundle")
-    cert = found.get(CERT_FILE)
-    return found["manifest.json"], found["manifest.sig"].decode("ascii", "replace"), cert.decode("utf-8", "replace") if cert else None
-
-
-def cert_signed_bytes(cert_id, plugin_ids, spki_b64, not_before, not_after):
-    """What the plugin master signs (the app's PluginCertificates.signedBytes)."""
-    return (CERT_PREFIX + "\n" + "id:" + cert_id + "\n" + "plugins:" + ",".join(plugin_ids) + "\n"
-            + "key:" + spki_b64 + "\n" + "notBefore:" + str(not_before) + "\n" + "notAfter:" + str(not_after) + "\n").encode("utf-8")
+    if "manifest.json" not in found or "manifest.jws" not in found:
+        raise Rejected(what + ": no manifest.json and manifest.jws at the top of the bundle")
+    return found["manifest.json"], found["manifest.jws"].decode("ascii", "replace")
 
 
 def covers(plugin_ids, plugin_id):
@@ -244,41 +206,21 @@ def covers(plugin_ids, plugin_id):
     return False
 
 
-def certified_key(cert_text, master_der, plugin_id, what):
-    """The repository key origin.cert certifies for plugin_id under droidtop's master, checked as the app checks it."""
-    try:
-        cert = json.loads(cert_text)
-        cert_id, plugin_ids = cert["certId"], list(cert["pluginIds"])
-        spki, not_before, not_after = cert["publicKeySpki"].strip(), int(cert["notBefore"]), int(cert["notAfter"])
-        issuer = cert["issuer"]
-    except (ValueError, KeyError, TypeError):
-        raise Rejected(what + ": " + CERT_FILE + " is not a plugin certificate")
-    if cert.get("formatVersion") != 1 or str(issuer.get("keySha256", "")).lower() != sha256_hex(master_der):
-        raise Rejected(what + ": " + CERT_FILE + " was not issued by droidtop's master")
-    if not verifies(cert_signed_bytes(cert_id, plugin_ids, spki, not_before, not_after), str(issuer.get("signature", "")), master_der):
-        raise Rejected(what + ": the master's signature on " + CERT_FILE + " does not verify")
-    der = p256_der(spki, what + " certified key")
-    if str(cert.get("keySha256", "")).lower() != sha256_hex(der):
-        raise Rejected(what + ": the certificate's keySha256 is not its key's")
-    if not covers(plugin_ids, plugin_id):
-        raise Rejected(what + ": the certificate is for " + ", ".join(plugin_ids) + ", not " + plugin_id)
-    if not not_before <= int(time.time()) <= not_after:
-        raise Rejected(what + ": the certificate " + cert_id + " is not valid now")
-    return der
-
-
-def release_entry(release, asset, bundle, master_der):
+def release_entry(release, asset, bundle, root_pem):
     what = release["tag_name"] + "/" + asset["name"]
-    manifest_bytes, signature, cert = manifest_of(bundle, what)
+    manifest_bytes, jws = manifest_of(bundle, what)
     try:
         manifest = json.loads(manifest_bytes)
     except ValueError:
         raise Rejected(what + ": manifest.json is not JSON")
     plugin_id = str(manifest.get("id", ""))
-    if cert is None:
-        raise Rejected(what + ": no " + CERT_FILE + "; the official catalog lists certified bundles only")
-    if not verifies(manifest_bytes, signature, certified_key(cert, master_der, plugin_id, what)):
-        raise Rejected(what + ": manifest.sig does not verify against the certified key")
+    try:
+        san = verify_jws.verify(PLUGIN_TYP, manifest_bytes, jws, root_pem, [ORIGIN_URN + ORIGIN])
+    except Exception as error:
+        raise Rejected(what + ": manifest.jws does not verify to the droidtop root (" + str(error) + ")")
+    named = [u[len(PLUGIN_URN):] for u in san if u.startswith(PLUGIN_URN)]
+    if named and not covers(named, plugin_id):
+        raise Rejected(what + ": the leaf is for " + ", ".join(named) + ", not " + plugin_id)
     if manifest.get("origin") != ORIGIN or plugin_id != plugin_id.lower() or not plugin_id.startswith(ORIGIN + "."):
         raise Rejected(what + ": the manifest's origin and id are not under origin " + repr(ORIGIN))
     label = str(manifest.get("label") or "").strip()
@@ -315,7 +257,7 @@ def known_entries(previous):
 
 
 def build(previous):
-    master_der, key_block = load_master()
+    root_pem, key_block = load_root()
     master_sha = key_block["keySha256"]
     known = known_entries(previous)
     previous_master = ((previous or {}).get("origins") or [{}])[0].get("key", {}).get("keySha256")
@@ -334,7 +276,7 @@ def build(previous):
                     if asset["size"] > MAX_BUNDLE_BYTES:
                         raise Rejected(what + ": larger than " + str(MAX_BUNDLE_BYTES) + " bytes")
                     cached = known.get((asset["browser_download_url"], asset["size"], release.get("published_at")))
-                    # A bundle verified against the same master is not downloaded again; the app re-verifies
+                    # A bundle verified against the same root is not downloaded again; the app re-verifies
                     # every bundle on the device, so a stale entry can make the catalog late, never lie.
                     if cached and previous_master == master_sha:
                         plugin, listed = cached
@@ -343,7 +285,7 @@ def build(previous):
                     else:
                         log("downloading " + what)
                         bundle = download(asset["browser_download_url"], MAX_BUNDLE_BYTES)
-                        plugin_id, label, description, release_json = release_entry(release, asset, bundle, master_der)
+                        plugin_id, label, description, release_json = release_entry(release, asset, bundle, root_pem)
                     owner = plugin_owner.setdefault(plugin_id, name)
                     if owner != name:
                         raise Rejected(what + ": plugin " + plugin_id + " is already listed from " + owner)
@@ -379,20 +321,20 @@ def dump(document):
 
 
 def check_document(document):
-    """What the app's parser requires, and that the key block is droidtop's master. Returns a list of problems."""
+    """What the app's parser requires, and that the key block is droidtop's root. Returns a list of problems."""
     problems = []
     if document.get("schemaVersion") != SCHEMA_VERSION:
         problems.append("schemaVersion is not " + str(SCHEMA_VERSION))
     if "catalog" in document or "disclaimer" in document:
         problems.append("the official catalog has no catalog or disclaimer block")
-    master = load_master()[1]["keySha256"]
+    master = load_root()[1]["keySha256"]
     seen = set()
     for origin in document.get("origins", []):
         if origin.get("origin") != ORIGIN or origin.get("trust") != "official":
             problems.append("origin " + repr(origin.get("origin")) + " is not the official origin")
         key = origin.get("key", {})
         if key.get("origin") != ORIGIN or key.get("algorithm") != ALGORITHM or key.get("keySha256") != master:
-            problems.append("the key block is not droidtop's master")
+            problems.append("the key block is not droidtop's root")
         for plugin in origin.get("plugins", []):
             plugin_id = plugin.get("id", "")
             if not plugin_id.startswith(ORIGIN + ".") or plugin_id != plugin_id.lower() or plugin_id in seen:
@@ -439,7 +381,7 @@ def main():
             print("::error::" + problem, flush=True)
         if problems:
             sys.exit(1)
-        log("droidtop-plugins/index.json agrees with master-key.json")
+        log("droidtop-plugins/index.json agrees with droidtop-root.pub")
         return
     document, refused = build(previous)
     for reason in refused:
