@@ -68,7 +68,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: Droidtop/enginehost
-          ref: 1a06d578f5f59d26f93fdce547e42d65d91fa53b
+          ref: 8b7b9b5230273642249b113934defc640121c70d
           path: enginehost-tooling
           persist-credentials: false
           sparse-checkout: |
