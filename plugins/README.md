@@ -158,7 +158,29 @@ scheduled run, which is why the step is written to succeed without it. What
 its holder could do, and why that is bounded, is in Enginehost's
 `docs/security/2026-09-25-third-party-catalog.md` (T1, T2).
 
-## Third-party repositories
+## Plugin lines: an upstream commit plus plugin-core
+
+The owner's rule (Droidtop/tracker#324): "The highest priority task, always,
+in plugin creation for enginehost, is making sure the plugin wrapper is
+authoritative. If we were to magically lose a plugin branch, we need to be
+able to plop that wrapper code into a new branch from the same commit and
+have it working." So a line branch `plugin/<id>` is exactly
+compose(upstream commit, plugin-core commit, line id), both pinned in its
+`enginehost/line.json`. `tools/plugin_line.py` is the one implementation
+(what compose does is in its docstring). Each plugin repository's
+`plugin-core` calls `.github/workflows/plugin-line-check.yml` pinned by commit,
+with the same commit as `tool-ref`, and `plugin-lines.yml` reports every line
+each day.
+
+- **Compose writes the same tree on every platform** (2026-10-16). The finding
+  relayed by the coordinator for the owner: "on Windows, `text=True` turns the
+  `update-index` input into CRLF, so plugin-core's files are silently not
+  written and the composed tree is wrong. Linux CI isn't affected. Pass that
+  subprocess input as bytes with LF and add a test." `plugin_line.py` passes
+  git its input as UTF-8 bytes (c06bcd2). `tools/test_plugin_line.py` composes
+  a line with Windows' text-mode newlines forced, and `plugin-lines.yml` runs
+  it as a gate. The plugin repositories pin c06bcd2 or later.
+
 
 Anyone can publish an Enginehost plugin repository, and anyone can add one to
 their own Enginehost by URL. `third-party.json` exists so a person does not
