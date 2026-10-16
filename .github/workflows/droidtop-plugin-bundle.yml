@@ -22,6 +22,7 @@ name: Droidtop plugin bundle
 #       secrets:
 #         PLUGIN_SIGNING_KEY: ${{ secrets.PLUGIN_SIGNING_KEY }}
 #         PLUGIN_SIGNING_CERT: ${{ secrets.PLUGIN_SIGNING_CERT }}
+#         PLATFORMS_DISPATCH_TOKEN: ${{ secrets.PLATFORMS_DISPATCH_TOKEN }}
 #
 # Three jobs. `build` compiles the payload (manifest.json and classes.jar) with
 # the plugin's build.sh against Droidtop/droidtop's :plugin-host and uploads it
@@ -80,6 +81,9 @@ on:
         required: false
       PLUGIN_SIGNING_CERT:
         description: The certificate of that key from droidtop's plugin master key, packaged as origin.cert.
+        required: false
+      PLATFORMS_DISPATCH_TOKEN:
+        description: Lets a release ask droidtop-platforms to reindex at once (plugins/README.md). Without it the index's schedule picks the release up.
         required: false
 
 permissions:
@@ -340,6 +344,25 @@ jobs:
           set -eu
           gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
           gh release upload "$GITHUB_REF_NAME" bundle/*.droidplugin.tar.xz --clobber
+      - name: Ask droidtop-platforms to reindex
+        env:
+          # The plugins index is what offers a release, so a new one waits for
+          # the index's next scheduled run unless it asks for one now. A
+          # cross-repository dispatch needs a token of its own; this job's
+          # GITHUB_TOKEN cannot reach another repository. Without the secret
+          # this is a no-op (plugins/README.md, "The step each Droidtop plugin
+          # repository runs").
+          GH_TOKEN: ${{ secrets.PLATFORMS_DISPATCH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "No PLATFORMS_DISPATCH_TOKEN; the plugins index picks this release up on its schedule."
+            exit 0
+          fi
+          gh api repos/Droidtop/droidtop-platforms/dispatches \
+            -f event_type=plugin-published \
+            -f "client_payload[repo]=$GH_REPO"
 
   unstable:
     # One release per working build (the owner's rule, Droidtop/tracker#122):
@@ -387,3 +410,22 @@ jobs:
           gh release create "$tag" "$bundle" --target "$SHA" --prerelease \
             --title "$id (build $RUN_NUMBER)" \
             --notes "Signed build $RUN_NUMBER of \`$id\`, from \`$REF_NAME\` at \`$SHA\`. Permanent build history, never overwritten. A pre-release: not offered as an update."
+      - name: Ask droidtop-platforms to reindex
+        env:
+          # The plugins index is what offers a release, so a new one waits for
+          # the index's next scheduled run unless it asks for one now. A
+          # cross-repository dispatch needs a token of its own; this job's
+          # GITHUB_TOKEN cannot reach another repository. Without the secret
+          # this is a no-op (plugins/README.md, "The step each Droidtop plugin
+          # repository runs").
+          GH_TOKEN: ${{ secrets.PLATFORMS_DISPATCH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "No PLATFORMS_DISPATCH_TOKEN; the plugins index picks this release up on its schedule."
+            exit 0
+          fi
+          gh api repos/Droidtop/droidtop-platforms/dispatches \
+            -f event_type=plugin-published \
+            -f "client_payload[repo]=$GH_REPO"

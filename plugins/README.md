@@ -123,9 +123,16 @@ key ask the person before re-pinning (Enginehost's "Review the new key").
 
 ## The step each Droidtop plugin repository runs
 
-Every Droidtop plugin repository ends **both** its `publish` and `unstable`
-jobs with this step, on every branch that builds (`plugin-core` carries it as
-the template the lines merge from):
+Every plugin repository ends **both** of the jobs that publish a release
+with this step, on every branch that builds. A Droidtop plugin built with the
+reusable `.github/workflows/droidtop-plugin-bundle.yml` gets it from that
+workflow, at the end of its `release` and `unstable` jobs: its caller only
+passes `PLATFORMS_DISPATCH_TOKEN: ${{ secrets.PLATFORMS_DISPATCH_TOKEN }}`
+under `secrets:` and pins a commit that has it. Until then a droidtop
+plugin's release waited for the scheduled run (Shizuku 1.5.0 did). The
+Enginehost plugin repositories carry the step in their own `publish` and
+`unstable` jobs (`plugin-core` carries it as the template the lines merge
+from):
 
 ```yaml
       - name: Ask droidtop-platforms to reindex
@@ -158,7 +165,22 @@ scheduled run, which is why the step is written to succeed without it. What
 its holder could do, and why that is bounded, is in Enginehost's
 `docs/security/2026-09-25-third-party-catalog.md` (T1, T2).
 
-## Third-party repositories
+## gamegrab plugins are not in these indexes
+
+Neither index in this repository lists gamegrab plugins. `plugins/index.json`
+is Enginehost's: its third-party maintainers are listed in
+`plugins/third-party.json`, and gamegrab is not one of them.
+`droidtop-plugins/index.json` is droidtop's official catalog: it lists only
+`droidtop-plugin-*` repositories of the Droidtop organisation, signed under
+origin `droidtop` by the droidtop root (`generator/droidtop_plugins_index.py`).
+The gamegrab-sources plugins are published in that organisation's own catalog,
+`gamegrab-sources/catalog`. That catalog is built by its own workflow, under
+origin `gamegrab` and the organisation's own master key, never droidtop's.
+droidtop offers it as a separate catalog that the person switches on
+(Droidtop/droidtop docs/SPEC.md 12a, "The first one"). A gamegrab plugin
+release therefore does not need this repository's dispatch: it reaches people
+through gamegrab's catalog.
+
 
 Anyone can publish an Enginehost plugin repository, and anyone can add one to
 their own Enginehost by URL. `third-party.json` exists so a person does not
