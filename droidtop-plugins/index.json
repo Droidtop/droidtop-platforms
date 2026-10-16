@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T14:17:22Z",
+ "generatedAt": "2026-10-16T16:57:01Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -184,6 +184,30 @@
      "description": "Gets RetroArch cores for your systems, opens RetroArch, and adds save, load and shader controls for the running game.",
      "releases": [
       {
+       "version": "1.7.0",
+       "stream": "testing",
+       "publishedAt": "2026-10-16T16:56:14Z",
+       "manifestSha256": "359d315b537f572e576d04a12c74f7cd50adcb79193ab9fcbb242dfb6cdd7dd9",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.42/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38140,
+        "sha256": "e74c3eaf7bead1dd0797c99d6ac0cc3f8c4e0a38dec7ba48347a96cd4d176997"
+       }
+      },
+      {
+       "version": "1.7.0",
+       "stream": "testing",
+       "publishedAt": "2026-10-16T16:56:11Z",
+       "manifestSha256": "359d315b537f572e576d04a12c74f7cd50adcb79193ab9fcbb242dfb6cdd7dd9",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38140,
+        "sha256": "e74c3eaf7bead1dd0797c99d6ac0cc3f8c4e0a38dec7ba48347a96cd4d176997"
+       }
+      },
+      {
        "version": "1.6.0",
        "stream": "stable",
        "publishedAt": "2026-10-16T13:08:58Z",
@@ -205,30 +229,6 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.40/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38076,
         "sha256": "11019e3a5b175597849b9041d7e307c75763ea5a60dae6e8566a6cc75bef1a6d"
-       }
-      },
-      {
-       "version": "1.6.0",
-       "stream": "testing",
-       "publishedAt": "2026-10-16T13:06:19Z",
-       "manifestSha256": "4bf9c93f53983d598305f94ac4c86f9118754c0e296a65fd2c9a90204ee3501c",
-       "bundle": {
-        "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
-        "size": 38076,
-        "sha256": "11019e3a5b175597849b9041d7e307c75763ea5a60dae6e8566a6cc75bef1a6d"
-       }
-      },
-      {
-       "version": "1.5.1",
-       "stream": "testing",
-       "publishedAt": "2026-10-15T15:37:55Z",
-       "manifestSha256": "cf2c0a483a3076b56c0e7ca2ed257cb3604c9e51ddfb48a6491e8ef802336dcb",
-       "bundle": {
-        "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.36/droidtop.retroarch.droidplugin.tar.xz",
-        "size": 36056,
-        "sha256": "c0a46769ba693d82c88481770e860cbeb6fcb252351ff69a9bcc93673a3901e8"
        }
       },
       {

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T16:54:20Z",
+ "generatedAt": "2026-10-16T16:56:48Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -4685,6 +4685,38 @@
     "MIICGzCCAcCgAwIBAgIUGrVfnCjDbKB7NmgFvM/pAWZfeJEwCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjAuMSwwKgYDVQQDDCNkcm9pZHRvcC9lbmdpbmVob3N0LWtpcmlraXJpLXBsdWdpbjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHczPjTmv5ulBPbkEvNLIRSOkczJwhWjHNMIEAmkSXB7xDAzg6GRjttrOR9897Y8nQBvi9jBil2AeUfI9G98Xm6jgccwgcQwDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8EBAMCB4AwIAYDVR0lBBkwFwYVaYLauJ/YgNSiute+1OLg5eKG9HIBMEIGA1UdEQQ7MDmGN3Vybjpkcm9pZHRvcDpvcmlnaW46ZHJvaWR0b3AvZW5naW5laG9zdC1raXJpa2lyaS1wbHVnaW4wHQYDVR0OBBYEFKRT+xAFaBij2UtZ1mrQhJhGDpZBMB8GA1UdIwQYMBaAFI1FxR7GL8u9StGn9FNPmW8v0qRHMAoGCCqGSM49BAMCA0kAMEYCIQDr5l0Q/BvlxvKwKN/7q9J75w/sAS40hPZtIF+jsRbmQAIhANB7bThrjrb6xo51afhko0/GnYsAwNPYPMUSajw3l02R"
    ],
    "releases": [
+    {
+     "tag": "kirikiri-v1-resigned",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-10-16T16:55:07Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-resigned/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "size": 110816628,
+       "sha256": "64d2a7f14411de0a8d916d86fd0445e4da5e355daa7554ac344b11df75a82104"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-resigned/enginehost-public-key.json",
+       "size": 651,
+       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-resigned/enginehost-release.json",
+       "size": 6536,
+       "sha256": "43f072af6b5ef3469d66f1662ab2e1681f76ef77ba94ba3c6976c0c6114e0510"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-resigned/enginehost-signing-certificate.pem",
+       "size": 790,
+       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
+      }
+     ]
+    },
     {
      "tag": "kirikiri-v1-unstable",
      "stream": "unstable",
