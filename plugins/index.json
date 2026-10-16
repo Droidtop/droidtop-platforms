@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T16:43:32Z",
+ "generatedAt": "2026-10-16T16:50:18Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -3667,6 +3667,38 @@
    ],
    "releases": [
     {
+     "tag": "rpgmaker-rgss-v1-resigned",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-10-16T16:47:26Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "size": 91806504,
+       "sha256": "bc0133dd9dafed6ac1d71cc61bdfb2b2b627cf5bc0ef25d53322e17c63525231"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned/enginehost-public-key.json",
+       "size": 658,
+       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned/enginehost-release.json",
+       "size": 452653,
+       "sha256": "b1bd4c13670f1742d385433ab678fc33bda87bdb29367fa6f4c1dcb035fa4edf"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned/enginehost-signing-certificate.pem",
+       "size": 806,
+       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
+      }
+     ]
+    },
+    {
      "tag": "rpgmaker-rgss-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -3935,6 +3967,38 @@
     "MIICKjCCAdCgAwIBAgIUTEh2hBxy+86Ms5RtfkrTeHBFmicwCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjA2MTQwMgYDVQQDDCtkcm9pZHRvcC9lbmdpbmVob3N0LXJwZ21ha2VyLWVhc3lycGctcGx1Z2luMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwZxOiEQMzBpNmy3ELfHVox0HhRSDOUITvQczIRx2MALfEJ4CtWNl5Vv7NhuT1/ZkkasmGbhNsfzADwDObG4ZP6OBzzCBzDAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDAgBgNVHSUEGTAXBhVpgtq4n9iA1KK6177U4uDl4ob0cgEwSgYDVR0RBEMwQYY/dXJuOmRyb2lkdG9wOm9yaWdpbjpkcm9pZHRvcC9lbmdpbmVob3N0LXJwZ21ha2VyLWVhc3lycGctcGx1Z2luMB0GA1UdDgQWBBRZ0mFctv8bXEJIlkdo/TT4giVoRTAfBgNVHSMEGDAWgBSNRcUexi/LvUrRp/RTT5lvL9KkRzAKBggqhkjOPQQDAgNIADBFAiEA1R59nccsOV0ul0yvddKAXT5xyP+yJxgWqOEIxQhs4ZoCIBmeLV2X6MNR2Vg5UEVX+vqLkunKM2n7fbUQhLNva/5Q"
    ],
    "releases": [
+    {
+     "tag": "rpgmaker-easyrpg-v1-resigned",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-10-16T16:49:05Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-resigned/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "size": 37924624,
+       "sha256": "92f5861a4c564216a104291d07556cee6d6c0107daf7f99645ab5c67555699ea"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-resigned/enginehost-public-key.json",
+       "size": 659,
+       "sha256": "6819e8eaa30888452a6364f38e82a5cd9f5359ef33fa00675f1093e40794978d"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-resigned/enginehost-release.json",
+       "size": 15282,
+       "sha256": "fe4e8745eb6762876c5d92b33f8242cc0c3621c4cbec837aac447f4bc24e6c30"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-resigned/enginehost-signing-certificate.pem",
+       "size": 810,
+       "sha256": "0a574503b1da5e7b8377e873f42311320b9257e3e0b292f146102f7681534365"
+      }
+     ]
+    },
     {
      "tag": "rpgmaker-easyrpg-v1-unstable",
      "stream": "unstable",
