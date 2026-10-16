@@ -36,10 +36,15 @@ SERIES = "enginehost/patches/series"
 
 
 def git(*args, env=None, input=None, check=True):
-    p = subprocess.run(["git", *args], capture_output=True, text=True, env=env, input=input)
+    # Bytes in and out: in text mode Python on Windows writes "\n" as "\r\n",
+    # which update-index --index-info reads as part of each path and
+    # hash-object --stdin as content, so the composed tree was wrong there.
+    if isinstance(input, str):
+        input = input.encode()
+    p = subprocess.run(["git", *args], capture_output=True, env=env, input=input)
     if check and p.returncode:
-        sys.exit(f"git {' '.join(args)} failed:\n{p.stderr.strip()}")
-    return p.stdout
+        sys.exit(f"git {' '.join(args)} failed:\n{p.stderr.decode(errors='replace').strip()}")
+    return p.stdout.decode()
 
 
 def rev(r):

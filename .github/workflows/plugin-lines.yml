@@ -12,6 +12,7 @@ on:
   push:
     paths:
       - "tools/plugin_line.py"
+      - "tools/test_plugin_line.py"
       - ".github/workflows/plugin-lines.yml"
 
 permissions:
@@ -24,6 +25,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+      - name: The tool's own tests
+        # The gate here, unlike the report below: compose must write the
+        # same tree whatever newline text mode uses (Windows writes CRLF).
+        run: python3 -m unittest discover -s tools -p 'test_*.py' -v
       - name: Every line of every engine plugin repository
         run: |
           # Report only: a failing line is a row in the table, not a stop.
