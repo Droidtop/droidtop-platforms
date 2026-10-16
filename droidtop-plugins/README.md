@@ -16,9 +16,23 @@ public repository of the Droidtop organisation named `droidtop-plugin-*`, and li
 
 Expiry dates are not checked, as the app does not check them.
 
-A prerelease is the `testing` stream; droidtop offers the `stable` stream only. The app checks every
-bundle again on the device (signature, every payload hash), so the index can make the catalog late,
-never wrong.
+Plugins have channels and categories. The owner, 2026-10-16 (Droidtop/tracker#179): "Yeah, plugins
+are channeled, too. They should also have categories" (Droidtop/droidtop `docs/SPEC.md` 12a
+"Channels", `docs/plugin-api.md` 1.2 "Categories"). So each release is listed with its channel as
+`stream`:
+
+- `stable`: a release that is not a pre-release;
+- `unstable`: a pre-release that is one of `droidtop-plugin-bundle.yml`'s per-push builds (tags
+  `plugin-unstable*` and `plugin-build*`);
+- `testing`: any other pre-release.
+
+The index keeps the newest 5 stable, 3 testing and 3 unstable releases of each plugin. droidtop
+offers a channel's own line and every steadier one, stable by default. Each plugin carries the
+`category` of its newest release's manifest when droidtop knows it (`sources`, `emulators`, `system`,
+`sync`, `integrations`, `appearance`, `other`, or the earlier `tools`, `themes`, `social` and `games`,
+which droidtop reads as their successors). Without one, droidtop shows it under `other`. The app checks
+every bundle again on the device (signature, every payload hash), so the index can make the catalog
+late, never wrong.
 
 The `Plugins index` workflow runs the generator with the Enginehost one (every six hours, on
 `workflow_dispatch`, and on a `plugin-published` repository dispatch, which `plugins/README.md` describes).

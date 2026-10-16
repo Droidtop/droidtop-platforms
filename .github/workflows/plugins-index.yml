@@ -33,6 +33,7 @@ on:
       - ".github/workflows/plugins-index.yml"
       - "generator/plugins_index.py"
       - "generator/droidtop_plugins_index.py"
+      - "generator/test_droidtop_plugins_index.py"
 
 # Read-only by default; the index job pushes plugins/index.json and
 # plugins/origins.json and answers registration issues, so it alone gets
@@ -86,6 +87,7 @@ jobs:
         run: |
           python3 generator/plugins_index.py --check
           python3 generator/droidtop_plugins_index.py --check
+          python3 -m unittest discover -s generator -p 'test_*.py' -v
 
       - name: Rebuild the index from the plugin repositories
         if: github.event_name != 'push'
