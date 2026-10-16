@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T14:00:04Z",
+ "generatedAt": "2026-10-16T14:17:22Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -317,6 +317,18 @@
      "label": "Syncthing",
      "description": "A full Syncthing that syncs folders with the computers and handhelds you paired with droidtop, with no pairing of its own, and with any other Syncthing you add: trusted, or untrusted for an encrypted backup.",
      "releases": [
+      {
+       "version": "1.0.0",
+       "stream": "stable",
+       "publishedAt": "2026-10-16T14:04:52Z",
+       "manifestSha256": "0841f1718ebe51f9d471e1bd3434f570eabd66bfc8a06e46a83c3b6a8bf96c10",
+       "bundle": {
+        "name": "droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-v1.0.0/droidtop.syncthing.droidplugin.tar.xz",
+        "size": 13611844,
+        "sha256": "7ec22481df1a068e5c2b6671113f6a0e330eb40f83a90279829784979badc104"
+       }
+      },
       {
        "version": "1.0.0",
        "stream": "testing",
