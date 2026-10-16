@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T21:08:01Z",
+ "generatedAt": "2026-10-16T21:26:21Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -20,7 +20,7 @@
      "releases": [
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:46:06Z",
        "manifestSha256": "0f95d7edc0e2c85b35d7086eaa8cdd647057e7bff2f91c3b6056eceaffc33d1f",
        "bundle": {
@@ -32,7 +32,7 @@
       },
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:46:02Z",
        "manifestSha256": "0f95d7edc0e2c85b35d7086eaa8cdd647057e7bff2f91c3b6056eceaffc33d1f",
        "bundle": {
@@ -44,7 +44,7 @@
       },
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:55Z",
        "manifestSha256": "a64f5f0909f685f8a3c602b582167b248869e392101cbee47f78bdb2df2fcf84",
        "bundle": {
@@ -75,7 +75,7 @@
      "releases": [
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:45:37Z",
        "manifestSha256": "e8aa6309dbe06da5b11b13c5022cb2c20df033e78c48077ff6e8e55b3171fd6c",
        "bundle": {
@@ -87,7 +87,7 @@
       },
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:45:34Z",
        "manifestSha256": "e8aa6309dbe06da5b11b13c5022cb2c20df033e78c48077ff6e8e55b3171fd6c",
        "bundle": {
@@ -99,7 +99,7 @@
       },
       {
        "version": "0.1.3",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:08Z",
        "manifestSha256": "9d1d670bde08f2e6ba6edea99e2a9c27d6cc2679e00cb1512cc03c91af569099",
        "bundle": {
@@ -130,7 +130,7 @@
      "releases": [
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:33Z",
        "manifestSha256": "c07a589399a8cbc1b25b25d086542f328d8708a24c7228c9dc9fd4c0c07248ba",
        "bundle": {
@@ -142,7 +142,7 @@
       },
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:30Z",
        "manifestSha256": "c07a589399a8cbc1b25b25d086542f328d8708a24c7228c9dc9fd4c0c07248ba",
        "bundle": {
@@ -154,7 +154,7 @@
       },
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-15T15:34:23Z",
        "manifestSha256": "9989ff0c2e91bc70d6f4d17b141daba621d84300a2542c5027d6a66cc3599385",
        "bundle": {
@@ -185,7 +185,7 @@
      "releases": [
       {
        "version": "1.7.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:45:21Z",
        "manifestSha256": "84a477789b473eb925c566d9ce130fbb15cfbfe4ff3f8f6c6df4160363e47e1c",
        "bundle": {
@@ -197,7 +197,7 @@
       },
       {
        "version": "1.7.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:45:18Z",
        "manifestSha256": "84a477789b473eb925c566d9ce130fbb15cfbfe4ff3f8f6c6df4160363e47e1c",
        "bundle": {
@@ -209,7 +209,7 @@
       },
       {
        "version": "1.7.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:43:39Z",
        "manifestSha256": "369073a9360546955ece34fd6182c08954f63f9a96faeb47489c62f450246301",
        "bundle": {
@@ -264,7 +264,7 @@
      "releases": [
       {
        "version": "1.5.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:22Z",
        "manifestSha256": "91cf6adb8913029df5766d9fee041afe68d838777844ae7343f014ce6af0437c",
        "bundle": {
@@ -276,7 +276,7 @@
       },
       {
        "version": "1.5.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T20:44:19Z",
        "manifestSha256": "91cf6adb8913029df5766d9fee041afe68d838777844ae7343f014ce6af0437c",
        "bundle": {
@@ -300,7 +300,7 @@
       },
       {
        "version": "1.5.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T18:04:48Z",
        "manifestSha256": "461ee539fbbf473f1970e3cda5041d707035eb8f5455394efe70f7785463315a",
        "bundle": {
@@ -355,7 +355,7 @@
       },
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T13:59:05Z",
        "manifestSha256": "b2337b8e52b2d9e4533b1f0c4f8c5a79946b75a0b7796a9eaaf7fb793c85b711",
        "bundle": {
@@ -367,7 +367,7 @@
       },
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T13:59:02Z",
        "manifestSha256": "b2337b8e52b2d9e4533b1f0c4f8c5a79946b75a0b7796a9eaaf7fb793c85b711",
        "bundle": {
@@ -379,7 +379,7 @@
       },
       {
        "version": "1.0.0",
-       "stream": "testing",
+       "stream": "unstable",
        "publishedAt": "2026-10-16T13:51:39Z",
        "manifestSha256": "0b9d15dfbdc98fd2539066f62b03e1a85c508dad986e74f42d0edfbcafa1852a",
        "bundle": {
