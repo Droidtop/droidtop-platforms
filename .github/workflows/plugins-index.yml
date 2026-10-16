@@ -89,7 +89,12 @@ jobs:
           python3 generator/droidtop_plugins_index.py --check
           python3 -m unittest discover -s generator -p 'test_*.py' -v
 
-      - name: Rebuild the index from the plugin repositories
+      # Rebuild both indexes and push them. The rebuild reads the committed
+      # index, origins and key history, so when main moved during the run the
+      # push is refused and the rebuild runs again on the new main instead of
+      # rebasing a commit made from stale files. A refused push once lost a
+      # reindex until the next scheduled run (Droidtop/tracker#550).
+      - name: Rebuild the indexes and push them
         if: github.event_name != 'push'
         env:
           # The default token reads public repositories. Set the
@@ -98,29 +103,32 @@ jobs:
           GH_TOKEN: ${{ secrets.PLUGINS_INDEX_TOKEN || github.token }}
         # --event reads the dispatch or issue from GITHUB_EVENT_PATH itself;
         # nothing a sender wrote is interpolated into this script.
-        run: python3 generator/plugins_index.py --event --report "$RUNNER_TEMP/registration.md"
-
-      # droidtop's own plugin repositories (Droidtop/droidtop-plugin-*), verified against
-      # the droidtop root (manifest.jws). A registration issue concerns Enginehost's index only.
-      - name: Rebuild droidtop's plugin index
-        if: ${{ github.event_name != 'push' && github.event_name != 'issues' }}
-        env:
-          GH_TOKEN: ${{ secrets.PLUGINS_INDEX_TOKEN || github.token }}
-        run: python3 generator/droidtop_plugins_index.py --build
-
-      - name: Commit it when it changed
-        if: github.event_name != 'push'
         run: |
           set -euo pipefail
-          if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json droidtop-plugins/index.json)" ]; then
-            echo "Nothing to commit."
-            exit 0
-          fi
           git config user.name "droidtop-platforms"
           git config user.email "platforms@droidtop.invalid"
-          git add plugins/index.json plugins/origins.json plugins/key-history.json droidtop-plugins/index.json
-          git commit -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push origin HEAD:main
+          for attempt in 1 2 3 4 5; do
+            python3 generator/plugins_index.py --event --report "$RUNNER_TEMP/registration.md"
+            # droidtop's own plugin repositories (Droidtop/droidtop-plugin-*), verified against
+            # the droidtop root (manifest.jws). A registration issue concerns Enginehost's index only.
+            if [ "$GITHUB_EVENT_NAME" != issues ]; then
+              python3 generator/droidtop_plugins_index.py --build
+            fi
+            if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json droidtop-plugins/index.json)" ]; then
+              echo "Nothing to commit."
+              exit 0
+            fi
+            git add plugins/index.json plugins/origins.json plugins/key-history.json droidtop-plugins/index.json
+            git commit -q -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "main moved during the run (attempt $attempt); rebuilding on the new main."
+            git fetch origin main
+            git reset -q --hard origin/main
+          done
+          echo "::error::main kept moving; the index was not pushed" >&2
+          exit 1
 
       - name: Answer the registration issue
         if: ${{ always() && github.event_name == 'issues' }}
