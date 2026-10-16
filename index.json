@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T02:14:55Z",
+ "generatedAt": "2026-10-16T00:59:07Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -1726,22 +1726,22 @@
   {
    "path": "players/ps2-xyz-aethersx2-android-aethersx2.json",
    "collection": "players",
-   "sha256": "f992ed75e2104d3ded6c2a99de6126e47f893ae5eb606a5918b47e37d8a9e14b"
+   "sha256": "3d389a3ddd1d5bb2156e5f5135cb79ddcd86b81d4091fdbe556473e4a6117c3c"
   },
   {
    "path": "players/ps2-xyz-aethersx2-custom-aethersx2-turnip.json",
    "collection": "players",
-   "sha256": "4a31582ea54cd9c881cf17dd54fa7fa5a354a63c84272ce4c02a80441121e61a"
+   "sha256": "397cec33ee9ad56b49c017a25de74e61a61315956a8ba6c7069a2a3ae354e2bb"
   },
   {
    "path": "players/ps2-xyz-aethersx2-tturnip-nethersx2-turnip.json",
    "collection": "players",
-   "sha256": "33078bd45cb9f261d1ddeb2bb7b32ceb5e866abfd64adb25114cd55f150aed98"
+   "sha256": "f1d13430234c91f0e5a7ef25e0815cbf8021c772f66db9ebb0da906f2bb1893f"
   },
   {
    "path": "players/ps2-xyz-aethersx2-cturnip-nethersx2-turnip-classic.json",
    "collection": "players",
-   "sha256": "b418cdec69cebea21fc238005a8f3da92a935683e3a6eb40277a0a3374a7a2c3"
+   "sha256": "982528285c6728d1252913b2f22d022f50f9a273fd6735cc75ad5e9856bfdda3"
   },
   {
    "path": "players/ps2-come-nanodata-armsx2-armsx2.json",
@@ -2546,22 +2546,22 @@
   {
    "path": "players/esde-ps2-nethersx2.json",
    "collection": "players",
-   "sha256": "a3b3bdbbb3c3fc26bd026f7f0366a6782ad52813f6ff470a69952900b50477e5"
+   "sha256": "9d4ce7dd64869e570002fcc059f03022cb86331bab048cfef89acc73924ffe5d"
   },
   {
    "path": "players/esde-ps2-nethersx2-turnip.json",
    "collection": "players",
-   "sha256": "484377ba63e0d563d21ca2662c7268714ed8046a26075df1b5cfc588df07a69a"
+   "sha256": "6537a8f80bfb12ffdc5cc8a9351eb14324c75a7daac7791b0a3386ed1b435c9a"
   },
   {
    "path": "players/esde-ps2-nethersx2-turnip-classic.json",
    "collection": "players",
-   "sha256": "36c5597688f5a7516ffe49dca30b93ba63fb314a5ebea170972949fb6387063a"
+   "sha256": "db6890cb7e18d015965f88f3fe11d2a80401c44db93298dcfe364590be8c474e"
   },
   {
    "path": "players/esde-ps2-nethersx2-2.json",
    "collection": "players",
-   "sha256": "657baa16c531a1e88e5963e9289ba4dd8bc05e1effd7e3b2c1d75edf5330780a"
+   "sha256": "d1a982af014e23b6782544c774cbfdbbb3a078861a1427b4d8650bc450f547d6"
   },
   {
    "path": "players/esde-ps2-armsx2.json",

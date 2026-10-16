@@ -5,5 +5,11 @@
  "pkg": "xyz.aethersx2.tturnip",
  "argumentsTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.uri}",
  "storagePathTemplate": "-n xyz.aethersx2.tturnip/xyz.aethersx2.android.EmulationActivity --activity-clear-task --activity-clear-top -a android.intent.action.MAIN -e bootPath {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+  "biosFlat": true,
+  "biosManual": "the BIOS screen in its settings",
+  "source": "Seen on a device: NetherSX2 (xyz.aethersx2.tturnip) on the RP5 console reads Android/data/xyz.aethersx2.tturnip/files/bios and booted nothing while it was empty (Droidtop/tracker#270, rig on droidtop 0.2.0-dev.1923). Flat: AetherSX2 and its builds are PCSX2 forks, whose BIOS search lists the bios folder's top only, any name (https://github.com/PCSX2/pcsx2/blob/v1.7.5000/pcsx2/ps2/BiosTools.cpp#L246, FindFiles without FILESYSTEM_FIND_RECURSIVE)."
+ }
 }

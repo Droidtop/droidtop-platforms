@@ -32,6 +32,8 @@ emulator never reads.
   "biosFolder": "absolute folder the emulator reads firmware from, or omit and use biosFolderKey",
   "biosFolderKey": "a key of the config file below whose value is that folder",
   "biosManual": "where the emulator's own menus show that folder, e.g. Settings > Directory > System/BIOS",
+  "biosFlat": "optional, true when the emulator reads BIOS files from the top of its folder under any name (the PCSX2 family); droidtop then copies a file under its base name, not the bios-database subfolder",
+  "source": "where the folder was read from: the emulator's code (file and line), its documentation, or the device it was seen on. Required with biosFolder or biosFolderKey",
   "config": {
     "file": "absolute path of the emulator's config file",
     "format": "ini | keyvalue",
@@ -50,6 +52,13 @@ emulator never reads.
   }
 }
 ```
+
+A row with only `biosManual` and `source` is the honest fallback for an emulator whose BIOS is picked in its own
+screens or kept where no other app can write: droidtop then says where the emulator takes it, with the emulator
+one press away, and copies nothing.
+
+droidtop keeps its own BIOS files in a games folder's `bios` folder and copies them into the emulator's folder
+named here, before a launch and from the BIOS row (droidtop docs/SPEC.md 7e4 "One source of BIOS files").
 
 Ids are unique within a collection — the file name IS the id. (The split into
 one-file-per-row surfaced 20 player ids that had been issued twice by the

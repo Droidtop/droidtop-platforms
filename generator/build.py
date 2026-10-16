@@ -162,9 +162,13 @@ def setup_problems(setup):
     if not isinstance(setup, dict):
         return ["must be an object"]
     problems = []
-    for key in ("biosFolder", "biosFolderKey", "biosManual"):
+    for key in ("biosFolder", "biosFolderKey", "biosManual", "source"):
         if key in setup and not isinstance(setup[key], str):
             problems.append(key + " must be a string")
+    if "biosFlat" in setup and not isinstance(setup["biosFlat"], bool):
+        problems.append("biosFlat must be true or false")
+    if ("biosFolder" in setup or "biosFolderKey" in setup) and not str(setup.get("source", "")).strip():
+        problems.append("a BIOS folder needs a source: the emulator's code, its documentation, or a device it was seen on")
     if "biosFolder" in setup and not str(setup["biosFolder"]).startswith("/"):
         problems.append("biosFolder must be an absolute path")
     config = setup.get("config")
