@@ -4,5 +4,9 @@
  "label": "EmuCoreC (Standalone)",
  "pkg": "com.sbro.emucorec",
  "argumentsTemplate": "-n com.sbro.emucorec/com.sbro.emucorec.core.ps3.Emulator -e gamePath {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its setup screen: install the PS3 system software (PS3UPDAT.PUP)",
+  "source": "EmuCoreC 713ce0a: a firmware package installed, not a folder (https://github.com/sashkinbro/EmuCoreC/blob/713ce0a0f4fd3bdb8ff3a0c161bd0ec50f7315f7/app/src/main/java/com/sbro/emucorec/core/FirmwareSource.kt#L21-L32)."
+ }
 }

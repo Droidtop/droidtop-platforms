@@ -4,5 +4,9 @@
  "label": "ARMSX1 (Standalone)",
  "pkg": "com.nanodata.armsx",
  "argumentsTemplate": "-n com.nanodata.armsx/com.armsx2.Main -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Settings > BIOS > BIOS Folder",
+  "source": "ARMSX1 99b3081: a folder the person picks (https://github.com/ARMSX2/ARMSX1/blob/99b308168be9c0222abe8c3c575b81853163f908/frontend/main.cpp#L5507-L5528)."
+ }
 }

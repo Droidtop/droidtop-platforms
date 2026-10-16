@@ -4,5 +4,9 @@
  "label": "Mupen64Plus AE (Standalone)",
  "pkg": "org.mupen64plusae.v3.alpha",
  "argumentsTemplate": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Settings > Data > 64DD IPL (J)",
+  "source": "mupen64plus-ae 33bf702: a file the person picks (https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/app/src/main/res/xml/preferences_data.xml#L76-L78)."
+ }
 }

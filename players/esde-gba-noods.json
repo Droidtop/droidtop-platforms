@@ -4,5 +4,11 @@
  "label": "NooDS (Standalone)",
  "pkg": "com.hydra.noods",
  "argumentsTemplate": "-n com.hydra.noods/com.hydra.noods.FileBrowser --activity-clear-task --activity-clear-top -e LaunchPath {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files",
+  "biosFlat": true,
+  "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
+  "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+ }
 }

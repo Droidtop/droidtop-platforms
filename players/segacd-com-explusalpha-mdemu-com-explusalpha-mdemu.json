@@ -5,5 +5,9 @@
  "pkg": "com.explusalpha.MdEmu",
  "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
  "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+  "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+ }
 }

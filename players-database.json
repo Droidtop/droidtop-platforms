@@ -39,7 +39,11 @@
    "label": "com.reicast.emulator",
    "pkg": "com.reicast.emulator",
    "argumentsTemplate": "-n com.reicast.emulator/.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > General > Home Directory (BIOS files go in its data folder)",
+    "source": "reicast 2e32999: a folder the person picks (https://github.com/skmp/reicast-emulator/blob/2e32999c422f997a791c64cbe3720c8e9333bec0/libswirl/gui/gui_settings_general.cpp#L147-L162)."
+   }
   },
   {
    "id": "atomiswave-com-flycast-emulator-com-flycast-emulator",
@@ -48,7 +52,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "atomiswave-com-flycast-emulator-com-flycast-emulator-dev-build",
@@ -56,7 +66,13 @@
    "label": "com.flycast.emulator (dev build)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "c64-com-explusalpha-c64emu-com-explusalpha-c64emu",
@@ -104,7 +120,11 @@
    "label": "com.reicast.emulator",
    "pkg": "com.reicast.emulator",
    "argumentsTemplate": "-n com.reicast.emulator/.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > General > Home Directory (BIOS files go in its data folder)",
+    "source": "reicast 2e32999: a folder the person picks (https://github.com/skmp/reicast-emulator/blob/2e32999c422f997a791c64cbe3720c8e9333bec0/libswirl/gui/gui_settings_general.cpp#L147-L162)."
+   }
   },
   {
    "id": "dreamcast-com-flycast-emulator-com-flycast-emulator",
@@ -113,7 +133,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "dreamcast-com-flycast-emulator-com-flycast-emulator-dev-build",
@@ -121,7 +147,13 @@
    "label": "com.flycast.emulator (dev build)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "fds-com-explusalpha-nesemu-com-explusalpha-nesemu",
@@ -130,7 +162,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "fds-com-androidemu-nes-com-androidemu-nes",
@@ -236,7 +272,11 @@
    "pkg": "com.explusalpha.GbaEmu",
    "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/GBA.emu/src/main/EmuMenuViews.cc#L485-L505)."
+   }
   },
   {
    "id": "gba-com-fastemulator-gbafree-com-fastemulator-gbafree",
@@ -328,7 +368,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "gc-org-dolphinemu-mmjr3-dolphin-mmjr3",
@@ -354,7 +398,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "genesis-com-androidemu-gens-com-androidemu-gens",
@@ -386,7 +434,11 @@
    "label": "com.seleuco.mame4droid",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/.MAME4droid -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "mame-com-seleuco-mame4d2024-com-seleuco-mame4droid-2024",
@@ -394,7 +446,11 @@
    "label": "com.seleuco.mame4droid 2024",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "msx-com-explusalpha-msxemu-com-explusalpha-msxemu",
@@ -402,7 +458,11 @@
    "label": "com.explusalpha.MsxEmu",
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "n64-org-mupen64plusae-v3-fzurita-org-mupen64plusae-v3-fzurita",
@@ -418,7 +478,11 @@
    "label": "org.mupen64plusae.v3.alpha",
    "pkg": "org.mupen64plusae.v3.alpha",
    "argumentsTemplate": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Data > 64DD IPL (J)",
+    "source": "mupen64plus-ae 33bf702: a file the person picks (https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/app/src/main/res/xml/preferences_data.xml#L76-L78)."
+   }
   },
   {
    "id": "n64-org-mupen64plusae-v3-fzurita-pro-org-mupen64plusae-v3-fzurita-pro",
@@ -443,7 +507,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "naomi-com-flycast-emulator-com-flycast-emulator-dev-build",
@@ -451,7 +521,13 @@
    "label": "com.flycast.emulator (dev build)",
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "nds-com-dsemu-drastic-drastic",
@@ -467,7 +543,11 @@
    "label": "MelonDS",
    "pkg": "me.magnum.melonds",
    "argumentsTemplate": "-a me.magnum.melonds.LAUNCH_ROM -n me.magnum.melonds/.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "nds-me-magnum-melonds-nightly-melonds-nightly",
@@ -475,7 +555,11 @@
    "label": "MelonDS Nightly",
    "pkg": "me.magnum.melonds.nightly",
    "argumentsTemplate": "-a me.magnum.melonds.nightly.LAUNCH_ROM -n me.magnum.melonds.nightly/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "nds-me-magnum-melonds-dev-melonds-dev-dual-screen-fork",
@@ -483,7 +567,11 @@
    "label": "MelonDS Dev (Dual Screen Fork)",
    "pkg": "me.magnum.melonds.dev",
    "argumentsTemplate": "-a me.magnum.melonds.dev.LAUNCH_ROM -n me.magnum.melonds.dev/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "nds-com-hydra-noods-noods",
@@ -491,7 +579,13 @@
    "label": "NooDS",
    "pkg": "com.hydra.noods",
    "argumentsTemplate": "-n com.hydra.noods/.FileBrowser -e LaunchPath {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files",
+    "biosFlat": true,
+    "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
+    "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   }
   },
   {
    "id": "neogeo-com-explusalpha-neoemu-neo-emu",
@@ -499,7 +593,11 @@
    "label": "NEO.EMU",
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "neogeo.zip in the same folder as the games; Options > System > BIOS Type",
+    "source": "EmuEx 1c12fac: read from the loaded game's folder (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NEO.emu/src/main/Main.cc#L465-L471)."
+   }
   },
   {
    "id": "nes-com-explusalpha-nesemu-com-explusalpha-nesemu",
@@ -508,7 +606,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "nes-com-androidemu-nes-com-androidemu-nes",
@@ -616,7 +718,13 @@
    "label": "ARMSX2",
    "pkg": "come.nanodata.armsx2",
    "argumentsTemplate": "-n come.nanodata.armsx2/kr.co.iefriends.pcsx2.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+    "biosFlat": true,
+    "biosManual": "Menu > BIOS",
+    "source": "ARMSX2 e58489d: the Play Store package built from the com.armsx2 code (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/tools/build-play-aab.sh#L2-L30), same folder (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L354-L363)."
+   }
   },
   {
    "id": "ps2-come-nanodata-armsx2-debug-armsx2-nightly",
@@ -624,7 +732,13 @@
    "label": "ARMSX2 (Nightly)",
    "pkg": "come.nanodata.armsx2.debug",
    "argumentsTemplate": "-n come.nanodata.armsx2.debug/kr.co.iefriends.pcsx2.activities.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+    "biosFlat": true,
+    "biosManual": "Settings > BIOS",
+    "source": "ARMSX2 legacy 02170ec: <data root>/bios, the data root defaulting to getExternalFilesDir(null) (https://github.com/ARMSX2/ARMSX2/blob/02170ecd45c9c7a7808b4913e93b1aef88857da9/app/src/main/java/kr/co/iefriends/pcsx2/utils/DataDirectoryManager.java#L53-L103), any *.bin at its top (https://github.com/ARMSX2/ARMSX2/blob/02170ecd45c9c7a7808b4913e93b1aef88857da9/app/src/main/java/kr/co/iefriends/pcsx2/activities/MainActivity.java#L2014-L2019)."
+   }
   },
   {
    "id": "ps2-com-sbro-emucorex-emucorex",
@@ -632,7 +746,11 @@
    "label": "EmuCoreX",
    "pkg": "com.sbro.emucorex",
    "argumentsTemplate": "-n com.sbro.emucorex/.MainActivity -a com.sbro.emucorex.action.LAUNCH_GAME --es com.sbro.emucorex.extra.GAME_PATH {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosManual": "Settings > Choose BIOS Folder",
+    "source": "EmuCoreX 94fe0ea: a folder the person picks (https://github.com/sashkinbro/EmuCoreX/blob/94fe0eaf5957c05f0d2ef4a180a73dbf4362e344/app/src/main/java/com/sbro/emucorex/ui/settings/SettingsScreen.kt#L374)."
+   }
   },
   {
    "id": "psp-org-ppsspp-ppsspp-ppsspp",
@@ -922,7 +1040,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "saturn-org-devmiyax-yabasanshioro2-pro-yabasanshiro-2-pro",
@@ -931,7 +1053,11 @@
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.uri} --activity-clear-task --activity-clear-top --activity-no-history",
    "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS",
+    "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+   }
   },
   {
    "id": "saturn-org-devmiyax-yabasanshioro2-yabasanshiro-2",
@@ -940,7 +1066,11 @@
    "pkg": "org.devmiyax.yabasanshioro2",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.uri} --activity-clear-task --activity-clear-top --activity-no-history",
    "storagePathTemplate": "-n org.devmiyax.yabasanshioro2/org.uoyabause.android.Yabause -a android.intent.action.MAIN -e org.uoyabause.android.FileNameUri {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS",
+    "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+   }
   },
   {
    "id": "saturn-org-uoyabause-android-pro-yabasanshiro-pro",
@@ -964,7 +1094,11 @@
    "label": "Saturn.EMU",
    "pkg": "com.explusalpha.SaturnEmu",
    "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > NA/EU BIOS and JP BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Saturn.emu/src/main/EmuMenuViews.cc#L34-L141)."
+   }
   },
   {
    "id": "segacd-com-explusalpha-mdemu-com-explusalpha-mdemu",
@@ -973,7 +1107,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "snes-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus",
@@ -982,7 +1120,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "supergrafx-com-pceemu-com-pceemu",
@@ -991,7 +1133,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "switch-dev-eden-eden-emulator-eden",
@@ -1056,7 +1202,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "triforce-org-dolphinemu-dolphinemu-dolphin",
@@ -1065,7 +1215,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "virtualboy-com-simongellis-vvb-vvs",
@@ -1107,7 +1261,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "wii-org-dolphinemu-mmjr3-dolphin-mmjr3",
@@ -1180,7 +1338,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-arcade-neo-emu",
@@ -1189,7 +1351,11 @@
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "neogeo.zip in the same folder as the games; Options > System > BIOS Type",
+    "source": "EmuEx 1c12fac: read from the loaded game's folder (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NEO.emu/src/main/Main.cc#L465-L471)."
+   }
   },
   {
    "id": "esde-arcade-flycast",
@@ -1198,7 +1364,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "esde-atari2600-2600-emu",
@@ -1224,7 +1396,11 @@
    "pkg": "com.explusalpha.LynxEmu",
    "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Lynx.emu/src/main/EmuMenuViews.cc#L27-L64)."
+   }
   },
   {
    "id": "esde-c64-c64-emu",
@@ -1242,7 +1418,11 @@
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "esde-colecovision-colem",
@@ -1259,7 +1439,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "esde-consolearcade-aps3e",
@@ -1267,7 +1453,11 @@
    "label": "aPS3e Directory (Standalone)",
    "pkg": "aenu.aps3e.premium",
    "argumentsTemplate": "-n aenu.aps3e.premium/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e game_dir {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
+    "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+   }
   },
   {
    "id": "esde-consolearcade-aps3e-2",
@@ -1275,7 +1465,11 @@
    "label": "aPS3e ISO (Standalone)",
    "pkg": "aenu.aps3e.premium",
    "argumentsTemplate": "-n aenu.aps3e.premium/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e iso_uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
+    "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+   }
   },
   {
    "id": "esde-cps-mame4droid",
@@ -1283,7 +1477,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-cps1-mame4droid",
@@ -1291,7 +1489,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-cps2-mame4droid",
@@ -1299,7 +1501,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-cps3-mame4droid",
@@ -1307,7 +1513,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-dreamcast-redream",
@@ -1324,7 +1534,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "esde-famicom-ines",
@@ -1349,7 +1563,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "esde-fds-ines",
@@ -1389,7 +1607,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-gamegear-pizza-boy-sc",
@@ -1456,7 +1678,13 @@
    "label": "NooDS (Standalone)",
    "pkg": "com.hydra.noods",
    "argumentsTemplate": "-n com.hydra.noods/com.hydra.noods.FileBrowser --activity-clear-task --activity-clear-top -e LaunchPath {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files",
+    "biosFlat": true,
+    "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
+    "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   }
   },
   {
    "id": "esde-gba-skyemu",
@@ -1473,7 +1701,11 @@
    "pkg": "com.explusalpha.GbaEmu",
    "argumentsTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.GbaEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/GBA.emu/src/main/EmuMenuViews.cc#L485-L505)."
+   }
   },
   {
    "id": "esde-gba-my-boy",
@@ -1558,7 +1790,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-genesis-pizza-boy-sc",
@@ -1591,7 +1827,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-mame-mame4droid",
@@ -1599,7 +1839,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-mame-neo-emu",
@@ -1608,7 +1852,11 @@
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "neogeo.zip in the same folder as the games; Options > System > BIOS Type",
+    "source": "EmuEx 1c12fac: read from the loaded game's folder (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NEO.emu/src/main/Main.cc#L465-L471)."
+   }
   },
   {
    "id": "esde-mame-flycast",
@@ -1617,7 +1865,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "esde-mark3-md-emu",
@@ -1626,7 +1880,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-mark3-pizza-boy-sc",
@@ -1652,7 +1910,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-mastersystem-pizza-boy-sc",
@@ -1678,7 +1940,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-megacd-pizza-boy-sc",
@@ -1696,7 +1962,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-megacdjp-pizza-boy-sc",
@@ -1714,7 +1984,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-megadrive-pizza-boy-sc",
@@ -1732,7 +2006,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-megadrivejp-pizza-boy-sc",
@@ -1766,7 +2044,11 @@
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "esde-msx1-fmsx",
@@ -1783,7 +2065,11 @@
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "esde-msx2-fmsx",
@@ -1800,7 +2086,11 @@
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "esde-msxturbor-msx-emu",
@@ -1809,7 +2099,11 @@
    "pkg": "com.explusalpha.MsxEmu",
    "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+    "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+   }
   },
   {
    "id": "esde-multivision-mastergear",
@@ -1905,7 +2199,11 @@
    "label": "Mupen64Plus AE (Standalone)",
    "pkg": "org.mupen64plusae.v3.alpha",
    "argumentsTemplate": "-n org.mupen64plusae.v3.alpha/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Data > 64DD IPL (J)",
+    "source": "mupen64plus-ae 33bf702: a file the person picks (https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/app/src/main/res/xml/preferences_data.xml#L76-L78)."
+   }
   },
   {
    "id": "esde-naomi2-flycast",
@@ -1914,7 +2212,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "esde-naomigd-flycast",
@@ -1923,7 +2227,13 @@
    "pkg": "com.flycast.emulator",
    "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
    "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+    "biosFlat": true,
+    "biosManual": "Settings > General > Home Folder",
+    "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+   }
   },
   {
    "id": "esde-nds-melonds",
@@ -1931,7 +2241,11 @@
    "label": "melonDS (Standalone)",
    "pkg": "me.magnum.melonds",
    "argumentsTemplate": "-n me.magnum.melonds/me.magnum.melonds.ui.emulator.EmulatorActivity -a me.magnum.melonds.LAUNCH_ROM -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "esde-nds-melonds-nightly",
@@ -1939,7 +2253,11 @@
    "label": "melonDS Nightly (Standalone)",
    "pkg": "me.magnum.melonds.nightly",
    "argumentsTemplate": "-n me.magnum.melonds.nightly/me.magnum.melonds.ui.emulator.EmulatorActivity -a me.magnum.melonds.nightly.LAUNCH_ROM -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "esde-nds-watermelonds",
@@ -1947,7 +2265,11 @@
    "label": "WatermelonDS (Standalone)",
    "pkg": "me.magnum.melondualds",
    "argumentsTemplate": "-n me.magnum.melondualds/me.magnum.melonds.ui.emulator.EmulatorActivity -a me.magnum.melonds.LAUNCH_ROM -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "esde-nds-seedlessds",
@@ -1963,7 +2285,13 @@
    "label": "NooDS (Standalone)",
    "pkg": "com.hydra.noods",
    "argumentsTemplate": "-n com.hydra.noods/com.hydra.noods.FileBrowser --activity-clear-task --activity-clear-top -e LaunchPath {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files",
+    "biosFlat": true,
+    "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
+    "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   }
   },
   {
    "id": "esde-nds-drastic",
@@ -1988,7 +2316,11 @@
    "pkg": "com.explusalpha.NeoEmu",
    "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "neogeo.zip in the same folder as the games; Options > System > BIOS Type",
+    "source": "EmuEx 1c12fac: read from the loaded game's folder (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NEO.emu/src/main/Main.cc#L465-L471)."
+   }
   },
   {
    "id": "esde-neogeo-mame4droid",
@@ -1996,7 +2328,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-nes-nes-emu",
@@ -2005,7 +2341,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "esde-nes-ines",
@@ -2088,7 +2428,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "esde-pcenginecd-pce-emu",
@@ -2097,7 +2441,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "esde-pico8-pico-8",
@@ -2181,7 +2529,13 @@
    "label": "ARMSX2 (Standalone)",
    "pkg": "com.armsx2",
    "argumentsTemplate": "-n com.armsx2/com.armsx2.MainActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+    "biosFlat": true,
+    "biosManual": "Menu > BIOS",
+    "source": "ARMSX2 e58489d: the BIOS folder is getExternalFilesDir(null)/bios (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L354-L363) and, with no BIOS chosen, its top level is scanned for any valid PS2 BIOS (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L2274-L2292)."
+   }
   },
   {
    "id": "esde-ps2-emucorex",
@@ -2189,7 +2543,11 @@
    "label": "EmuCoreX (Standalone)",
    "pkg": "com.sbro.emucorex",
    "argumentsTemplate": "-n com.sbro.emucorex/com.sbro.emucorex.MainActivity --activity-clear-task -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Choose BIOS Folder",
+    "source": "EmuCoreX 94fe0ea: a folder the person picks (https://github.com/sashkinbro/EmuCoreX/blob/94fe0eaf5957c05f0d2ef4a180a73dbf4362e344/app/src/main/java/com/sbro/emucorex/ui/settings/SettingsScreen.kt#L374)."
+   }
   },
   {
    "id": "esde-ps3-aps3e",
@@ -2197,7 +2555,11 @@
    "label": "aPS3e Directory (Standalone)",
    "pkg": "aenu.aps3e.premium",
    "argumentsTemplate": "-n aenu.aps3e.premium/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e game_dir {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
+    "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+   }
   },
   {
    "id": "esde-ps3-aps3e-2",
@@ -2205,7 +2567,11 @@
    "label": "aPS3e ISO (Standalone)",
    "pkg": "aenu.aps3e.premium",
    "argumentsTemplate": "-n aenu.aps3e.premium/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e iso_uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
+    "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+   }
   },
   {
    "id": "esde-ps3-armsx3",
@@ -2213,7 +2579,11 @@
    "label": "ARMSX3 (Standalone)",
    "pkg": "com.armsx3",
    "argumentsTemplate": "-n com.armsx3/com.armsx2.Main -e path {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its BIOS screen: select or reinstall PS3UPDAT.PUP",
+    "source": "ARMSX3 413906f: a firmware package installed, not a folder (https://github.com/ARMSX2/ARMSX3/blob/413906f9b43ba228c65547b20d6404e62b72160c/android/armsx3-ui/app/src/main/java/com/armsx2/ui/bios/BiosManagerScreen.kt#L40-L53)."
+   }
   },
   {
    "id": "esde-ps3-emucorec",
@@ -2221,7 +2591,11 @@
    "label": "EmuCoreC (Standalone)",
    "pkg": "com.sbro.emucorec",
    "argumentsTemplate": "-n com.sbro.emucorec/com.sbro.emucorec.core.ps3.Emulator -e gamePath {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its setup screen: install the PS3 system software (PS3UPDAT.PUP)",
+    "source": "EmuCoreC 713ce0a: a firmware package installed, not a folder (https://github.com/sashkinbro/EmuCoreC/blob/713ce0a0f4fd3bdb8ff3a0c161bd0ec50f7315f7/app/src/main/java/com/sbro/emucorec/core/FirmwareSource.kt#L21-L32)."
+   }
   },
   {
    "id": "esde-psx-armsx1",
@@ -2229,7 +2603,11 @@
    "label": "ARMSX1 (Standalone)",
    "pkg": "com.nanodata.armsx",
    "argumentsTemplate": "-n com.nanodata.armsx/com.armsx2.Main -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS > BIOS Folder",
+    "source": "ARMSX1 99b3081: a folder the person picks (https://github.com/ARMSX2/ARMSX1/blob/99b308168be9c0222abe8c3c575b81853163f908/frontend/main.cpp#L5507-L5528)."
+   }
   },
   {
    "id": "esde-psx-epsxe",
@@ -2272,7 +2650,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "esde-saturn-yabasanshiro-2",
@@ -2281,7 +2663,11 @@
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
    "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS",
+    "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+   }
   },
   {
    "id": "esde-saturn-saturn-emu",
@@ -2290,7 +2676,11 @@
    "pkg": "com.explusalpha.SaturnEmu",
    "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > NA/EU BIOS and JP BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Saturn.emu/src/main/EmuMenuViews.cc#L34-L141)."
+   }
   },
   {
    "id": "esde-saturnjp-yabasanshiro-2",
@@ -2299,7 +2689,11 @@
    "pkg": "org.devmiyax.yabasanshioro2.pro",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
    "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS",
+    "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+   }
   },
   {
    "id": "esde-saturnjp-saturn-emu",
@@ -2308,7 +2702,11 @@
    "pkg": "com.explusalpha.SaturnEmu",
    "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > NA/EU BIOS and JP BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Saturn.emu/src/main/EmuMenuViews.cc#L34-L141)."
+   }
   },
   {
    "id": "esde-segacd-md-emu",
@@ -2317,7 +2715,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "esde-segacd-pizza-boy-sc",
@@ -2335,7 +2737,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "esde-sg-1000-mastergear",
@@ -2352,7 +2758,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "esde-snesna-snes9x-explus",
@@ -2361,7 +2771,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "esde-stv-mame4droid",
@@ -2369,7 +2783,11 @@
    "label": "MAME4droid (Standalone)",
    "pkg": "com.seleuco.mame4droid",
    "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+    "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+   }
   },
   {
    "id": "esde-sufami-snes9x-explus",
@@ -2378,7 +2796,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "esde-supergrafx-pce-emu",
@@ -2387,7 +2809,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "esde-switch-eden-nightly",
@@ -2420,7 +2846,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "esde-tg-cd-pce-emu",
@@ -2429,7 +2859,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.uri}",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -d {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "esde-type-x-winlator-cmod",
@@ -2477,7 +2911,11 @@
    "label": "D.Smile (Standalone)",
    "pkg": "com.dsmile.emulator",
    "argumentsTemplate": "-n com.dsmile.emulator/com.dsmile.emulator.ui.EmuActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "the BIOS button on its main screen",
+    "source": "D.Smile cd24d30: a file the person picks (https://github.com/1timewire1/D.Smile_nx/blob/cd24d304eadcb9beada86a78162a782ff4a4ff89/app/src/main/java/com/dsmile/emulator/ui/MainActivity.kt#L263-L292)."
+   }
   },
   {
    "id": "esde-wii-dolphin-mmjr",
@@ -2544,7 +2982,11 @@
    "label": "X1 BOX (Standalone)",
    "pkg": "com.izzy2lost.x1box",
    "argumentsTemplate": "-n com.izzy2lost.x1box/com.izzy2lost.x1box.LauncherActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its setup wizard: MCPX and Flash",
+    "source": "x1box dadced0: files the person picks (https://github.com/izzy2lost/xemu/blob/dadced00cea8bcbada5a5650541cc5bac3cc93f4/android/app/src/main/java/com/izzy2lost/x1box/SetupWizardActivity.kt#L70-L92)."
+   }
   },
   {
    "id": "esde-xbox-hakux",
@@ -2552,7 +2994,11 @@
    "label": "hakuX (Standalone)",
    "pkg": "com.rfandango.haku_x",
    "argumentsTemplate": "-n com.rfandango.haku_x/com.rfandango.haku_x.LauncherActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its setup wizard: MCPX and Flash",
+    "source": "haku_x e64e336: files the person picks (https://github.com/rfandango/xemu-android/blob/e64e336d27dc8a56b67f441ec36bfddc1379cb6e/android/app/src/main/java/com/rfandango/haku_x/SetupWizardActivity.kt#L54-L70)."
+   }
   },
   {
    "id": "esde-xbox-xenra",
@@ -2649,7 +3095,11 @@
    "pkg": "com.explusalpha.LynxEmu",
    "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Lynx.emu/src/main/EmuMenuViews.cc#L27-L64)."
+   }
   },
   {
    "id": "daijishou-ebook-com-foobnix-pdf-reader",
@@ -2706,7 +3156,11 @@
    "pkg": "com.PceEmu",
    "argumentsTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.PceEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > System Card (CD games only)",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+   }
   },
   {
    "id": "daijishou-3ds-io-github-lime3ds-android",
@@ -2802,7 +3256,11 @@
    "label": "ndsi - MelonDS",
    "pkg": "me.magnum.melonds",
    "argumentsTemplate": "-a me.magnum.melonds.LAUNCH_ROM -n me.magnum.melonds/.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "daijishou-ndsi-com-dsemu-drastic",
@@ -2818,7 +3276,11 @@
    "label": "ndsi - MelonDS Nightly",
    "pkg": "me.magnum.melonds.nightly",
    "argumentsTemplate": "-a me.magnum.melonds.nightly.LAUNCH_ROM -n me.magnum.melonds.nightly/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "daijishou-ndsi-me-magnum-melonds-dev",
@@ -2826,7 +3288,11 @@
    "label": "ndsi - MelonDS Dev (Dual Screen Fork)",
    "pkg": "me.magnum.melonds.dev",
    "argumentsTemplate": "-a me.magnum.melonds.dev.LAUNCH_ROM -n me.magnum.melonds.dev/me.magnum.melonds.ui.emulator.EmulatorActivity -e uri {file.uri}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+    "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+   }
   },
   {
    "id": "daijishou-ndsi-com-hydra-noods",
@@ -2834,7 +3300,13 @@
    "label": "ndsi - NooDS",
    "pkg": "com.hydra.noods",
    "argumentsTemplate": "-n com.hydra.noods/.FileBrowser -e LaunchPath {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files",
+    "biosFlat": true,
+    "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
+    "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   }
   },
   {
    "id": "daijishou-famicom-com-explusalpha-nesemu",
@@ -2843,7 +3315,11 @@
    "pkg": "com.explusalpha.NesEmu",
    "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > Disk System BIOS",
+    "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+   }
   },
   {
    "id": "daijishou-famicom-com-androidemu-nes",
@@ -2926,7 +3402,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "daijishou-snesmsu1-com-explusalpha-snes9xplus",
@@ -2935,7 +3415,11 @@
    "pkg": "com.explusalpha.Snes9xPlus",
    "argumentsTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.Snes9xPlus/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > BS-X BIOS and Sufami Turbo BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Snes9x/src/main/EmuMenuViews.cc#L345-L397)."
+   }
   },
   {
    "id": "daijishou-switch-org-sudachi-sudachi-emu",
@@ -2994,7 +3478,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "daijishou-wiiware-org-dolphinemu-dolphinemu-debug",
@@ -3079,7 +3567,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "daijishou-master-it-dbtecno-pizzaboyscpro",
@@ -3096,7 +3588,11 @@
    "pkg": "com.explusalpha.MdEmu",
    "argumentsTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
    "storagePathTemplate": "-n com.explusalpha.MdEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > File Paths > USA, Japan and Europe CD BIOS",
+    "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MD.emu/src/main/EmuMenuViews.cc#L289-L356)."
+   }
   },
   {
    "id": "daijishou-megadrive-com-androidemu-gens",
@@ -3120,7 +3616,11 @@
    "label": "saturn - YabaSanshiro 2",
    "pkg": "org.devmiyax.yabasanshioro2",
    "argumentsTemplate": "-n org.devmiyax.yabasanshioro2/org.uoyabause.android.Yabause -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path} --activity-clear-task --activity-clear-top --activity-no-history",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Settings > BIOS",
+    "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+   }
   },
   {
    "id": "daijishou-ps3-aenu-aps3e",
@@ -3128,7 +3628,11 @@
    "label": "ps3 - aPS3e",
    "pkg": "aenu.aps3e",
    "argumentsTemplate": "-n aenu.aps3e/aenu.aps3e.EmulatorActivity -a aenu.intent.action.APS3E -e iso_uri {file.uri}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "setup": {
+    "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
+    "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+   }
   },
   {
    "id": "daijishou-pspminis-org-ppsspp-ppsspp",
@@ -3218,7 +3722,11 @@
    "label": "MAME4droid Current [Diskette] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d adam",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-adam-mame4droid-current-2",
@@ -3226,7 +3734,11 @@
    "label": "MAME4droid Current [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cass1 '{file.path}'\" -d adam",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-adam-mame4droid-current-3",
@@ -3234,7 +3746,11 @@
    "label": "MAME4droid Current [Cartridge] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart1 '{file.path}'\" -d adam",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-adam-mame4droid-current-4",
@@ -3242,7 +3758,11 @@
    "label": "MAME4droid Current [Software list] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' {file.basename}\" -d adam",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-amstradcpc-mame4droid-current",
@@ -3250,7 +3770,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d cpc6128",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-apple2-mame4droid-current",
@@ -3258,7 +3782,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -gameio joy -flop1 '{file.path}'\" -d apple2e",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-apple2gs-mame4droid-current",
@@ -3266,7 +3794,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -gameio joy -flop3 '{file.path}'\" -d apple2gs",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-apple2gs-mame4droid-current-2",
@@ -3274,7 +3806,11 @@
    "label": "MAME4droid Current [Software list] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -gameio joy {file.basename}\" -d apple2gs",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-arcade-mame4droid-current",
@@ -3282,7 +3818,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-arcadia-mame4droid-current",
@@ -3290,7 +3830,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d arcadia",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-archimedes-mame4droid-current",
@@ -3298,7 +3842,11 @@
    "label": "MAME4droid Current [Model A440/1] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d aa4401",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-archimedes-mame4droid-current-2",
@@ -3306,7 +3854,11 @@
    "label": "MAME4droid Current [Model A3000] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d aa3000",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-archimedes-mame4droid-current-3",
@@ -3314,7 +3866,11 @@
    "label": "MAME4droid Current [Model A310] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d aa310",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-archimedes-mame4droid-current-4",
@@ -3322,7 +3878,11 @@
    "label": "MAME4droid Current [Model A540] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d aa540",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-astrocde-mame4droid-current",
@@ -3330,7 +3890,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d astrocde",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-atari7800-mame4droid-current",
@@ -3338,7 +3902,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d a7800",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-atarijaguar-mame4droid-current",
@@ -3346,7 +3914,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d jaguar",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-bbcmicro-mame4droid-current",
@@ -3354,7 +3926,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '2' -autoboot_command '*cat\\n\\n*exec !boot\\n' -analogue acornjoy -flop1 '{file.path}'\" -d bbcb",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-cdimono1-mame4droid-current",
@@ -3362,7 +3938,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cdrom '{file.path}'\" -d cdimono1",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-channelf-mame4droid-current",
@@ -3370,7 +3950,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d channelf",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-coco-mame4droid-current",
@@ -3378,7 +3962,11 @@
    "label": "MAME4droid Current [Cartridge] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d coco",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-coco-mame4droid-current-2",
@@ -3386,7 +3974,11 @@
    "label": "MAME4droid Current [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '2' -autoboot_command 'cloadm:exec\\n' -cass '{file.path}'\" -d coco",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-consolearcade-mame4droid-current",
@@ -3394,7 +3986,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-consolearcade-dolphin",
@@ -3403,7 +3999,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "esde-cps-mame4droid-current",
@@ -3411,7 +4011,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-cps1-mame4droid-current",
@@ -3419,7 +4023,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-cps2-mame4droid-current",
@@ -3427,7 +4035,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-cps3-mame4droid-current",
@@ -3435,7 +4047,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-crvision-mame4droid-current",
@@ -3443,7 +4059,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d crvision",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-daphne-mame4droid-current",
@@ -3451,7 +4071,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-dragon32-mame4droid-current",
@@ -3459,7 +4083,11 @@
    "label": "MAME4droid Current Dragon 32 [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '4' -autoboot_command 'cloadm\\\"\\\"\\n' -cass '{file.path}'\" -d dragon32",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-dragon32-mame4droid-current-2",
@@ -3467,7 +4095,11 @@
    "label": "MAME4droid Current Dragon 32 [Cartridge] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d dragon32",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-dragon32-mame4droid-current-3",
@@ -3475,7 +4107,11 @@
    "label": "MAME4droid Current Dragon 64 [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '4' -autoboot_command 'cloadm\\\"\\\"\\n' -cass '{file.path}'\" -d dragon64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-dragon32-mame4droid-current-4",
@@ -3483,7 +4119,11 @@
    "label": "MAME4droid Current Dragon 64 [Cartridge] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d dragon64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-electron-mame4droid-current",
@@ -3491,7 +4131,11 @@
    "label": "MAME4droid Current [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '2' -autoboot_command '*T.\\nCH.\\\"\\\"\\n' -cass1 '{file.path}'\" -d electron64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-electron-mame4droid-current-2",
@@ -3499,7 +4143,11 @@
    "label": "MAME4droid Current [Diskette DFS] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -exp plus1 -cart1 seds -autoboot_delay '2' -autoboot_command '*CAT\\n\\n\\n\\n\\n\\n*EXEC !BOOT\\n' -flop1 '{file.path}'\" -d electron64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-electron-mame4droid-current-3",
@@ -3507,7 +4155,11 @@
    "label": "MAME4droid Current [Diskette ADFS] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -exp plus3 -exp:plus3:fdc:1 35dd -autoboot_delay '2' -autoboot_command '*CAT\\n\\n\\n\\n\\n\\n*RUN !BOOT\\n' -flop1 '{file.path}'\" -d electron64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-epic-winnative",
@@ -3523,7 +4175,11 @@
    "label": "MAME4droid Current [FM-7 Diskette] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d fm7",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fm7-mame4droid-current-2",
@@ -3531,7 +4187,11 @@
    "label": "MAME4droid Current [FM-7 Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '5' -autoboot_command 'load\\n\\n\\nrun\\n' -cass1 '{file.path}'\" -d fm7",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fm7-mame4droid-current-3",
@@ -3539,7 +4199,11 @@
    "label": "MAME4droid Current [FM-7 Software list] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' {file.basename}\" -d fm7",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fm7-mame4droid-current-4",
@@ -3547,7 +4211,11 @@
    "label": "MAME4droid Current [FM77AV Diskette] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d fm77av",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fm7-mame4droid-current-5",
@@ -3555,7 +4223,11 @@
    "label": "MAME4droid Current [FM77AV Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '5' -autoboot_command 'load\\n\\n\\nrun\\n' -cass1 '{file.path}'\" -d fm77av",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fm7-mame4droid-current-6",
@@ -3563,7 +4235,11 @@
    "label": "MAME4droid Current [FM77AV Software list] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' {file.basename}\" -d fm77av",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-fmtowns-mame4droid-current",
@@ -3571,7 +4247,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cdrom '{file.path}'\" -d fmtownshr",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-gamate-mame4droid-current",
@@ -3579,7 +4259,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d gamate",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-gamecom-mame4droid-current",
@@ -3587,7 +4271,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cartridge1 '{file.path}'\" -d gamecom",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-gc-dolphin",
@@ -3596,7 +4284,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "esde-gmaster-mame4droid-current",
@@ -3604,7 +4296,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d gmaster",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-gx4000-mame4droid-current",
@@ -3612,7 +4308,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d gx4000",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-intellivision-mame4droid-current",
@@ -3620,7 +4320,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d intv",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-laserdisc-mame4droid-current",
@@ -3628,7 +4332,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-macintosh-mame4droid-current",
@@ -3636,7 +4344,11 @@
    "label": "MAME4droid Current Mac SE Bootable (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d macse",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-macintosh-mame4droid-current-2",
@@ -3644,7 +4356,11 @@
    "label": "MAME4droid Current Mac SE Boot Disk (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 {file.dir}/boot.dsk -flop2 '{file.path}'\" -d macse",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-macintosh-mame4droid-current-3",
@@ -3652,7 +4368,11 @@
    "label": "MAME4droid Current Mac Plus Bootable (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d macplus",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-macintosh-mame4droid-current-4",
@@ -3660,7 +4380,11 @@
    "label": "MAME4droid Current Mac Plus Boot Disk (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 {file.dir}/boot.dsk -flop2 '{file.path}'\" -d macplus",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-mame-mame4droid-current",
@@ -3668,7 +4392,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-megaduck-mame4droid-current",
@@ -3676,7 +4404,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d megaduck",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-model2-mame4droid-current",
@@ -3684,7 +4416,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-model3-mame4droid-current",
@@ -3692,7 +4428,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-neogeo-mame4droid-current",
@@ -3700,7 +4440,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-neogeocd-mame4droid-current",
@@ -3708,7 +4452,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cdrm '{file.path}'\" -d neocdz",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-neogeocdjp-mame4droid-current",
@@ -3716,7 +4464,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cdrm '{file.path}'\" -d neocdz",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-odyssey2-mame4droid-current",
@@ -3724,7 +4476,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d odyssey2",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-oric-mame4droid-current",
@@ -3732,7 +4488,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '4' -autoboot_command 'cload\\\"\\\"\\n' -cass '{file.path}'\" -d oric1",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-pcarcade-winnative",
@@ -3765,7 +4525,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d pv1000",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-scv-mame4droid-current",
@@ -3773,7 +4537,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d scv",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-steam-winnative",
@@ -3789,7 +4557,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}'\" -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-supervision-mame4droid-current",
@@ -3797,7 +4569,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d svision",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-supracan-mame4droid-current",
@@ -3805,7 +4581,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d supracan",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-tanodragon-mame4droid-current",
@@ -3813,7 +4593,11 @@
    "label": "MAME4droid Current [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -autoboot_delay '4' -autoboot_command 'cloadm\\\"\\\"\\n' -cass '{file.path}'\" -d tanodr64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-tanodragon-mame4droid-current-2",
@@ -3821,7 +4605,11 @@
    "label": "MAME4droid Current [Cartridge] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d tanodr64",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-ti99-mame4droid-current",
@@ -3829,7 +4617,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -ioport peb -ioport:peb:slot3 speechadapter -cart '{file.path}'\" -d ti99_4a",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-triforce-dolphin",
@@ -3838,7 +4630,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "esde-type-x-winnative",
@@ -3854,7 +4650,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d vectrex",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-videopac-mame4droid-current",
@@ -3862,7 +4662,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d videopac",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-vsmile-mame4droid-current",
@@ -3870,7 +4674,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cart '{file.path}'\" -d vsmile",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-wii-dolphin",
@@ -3879,7 +4687,11 @@
    "pkg": "org.dolphinemu.dolphinemu",
    "argumentsTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.uri}",
    "storagePathTemplate": "-n org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.TvMainActivity -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -e AutoStartFile {file.path}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+   }
   },
   {
    "id": "esde-windows-winnative",
@@ -3895,7 +4707,11 @@
    "label": "MAME4droid Current [Diskette] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d x1",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-x1-mame4droid-current-2",
@@ -3903,7 +4719,11 @@
    "label": "MAME4droid Current [Tape] (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -cass1 '{file.path}'\" -d x1",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-x68000-mame4droid-current",
@@ -3911,7 +4731,11 @@
    "label": "MAME4droid Current (Standalone)",
    "pkg": "com.seleuco.mame4d2024",
    "argumentsTemplate": "-n com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -e cli_params \"-rompath '{file.dir};{system.folder}' -flop1 '{file.path}'\" -d x68000",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
+    "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+   }
   },
   {
    "id": "esde-epic-gamenative",
@@ -3935,7 +4759,11 @@
    "label": "Vita3K (Standalone)",
    "pkg": "org.vita3k.emulator",
    "argumentsTemplate": "-n org.vita3k.emulator/org.vita3k.emulator.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "Initial setup > Install Firmware",
+    "source": "Vita3K cf12e2b: firmware packages installed, not a folder (https://github.com/Vita3K/Vita3K/blob/cf12e2b038123ce5fab269a9044a5b0a3ff6e866/android/app/src/main/java/org/vita3k/emulator/ui/navigation/AppNavigation.kt#L106-L107)."
+   }
   },
   {
    "id": "esde-psvita-emucorev",
@@ -3943,7 +4771,11 @@
    "label": "EmuCoreV (Standalone)",
    "pkg": "com.sbro.emucorev",
    "argumentsTemplate": "-n com.sbro.emucorev/com.sbro.emucorev.core.vita.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "setup": {
+    "biosManual": "its setup screen: Base firmware and Firmware update package",
+    "source": "EmuCoreV 2570561: firmware packages installed, not a folder (https://github.com/sashkinbro/EmuCoreV/blob/25705611c78939476d7e4de415296e8cff2652e5/app/src/main/java/com/sbro/emucorev/core/FirmwareSource.kt#L22-L30)."
+   }
   },
   {
    "id": "esde-scummvm-scummvm",

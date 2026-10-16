@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T00:59:07Z",
+ "generatedAt": "2026-10-16T01:22:05Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -1411,17 +1411,17 @@
   {
    "path": "players/atomiswave-com-reicast-emulator-com-reicast-emulator.json",
    "collection": "players",
-   "sha256": "3dffa989d21ce28d17bd0715c6b2ea50263af1006ca4924f1a8557c7db84d2a3"
+   "sha256": "3d2d8482f26f02ff1259daf579a2bd095dba908487152417f778669d31e2806a"
   },
   {
    "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "8ec83f1afdd7e6347c1d4bfdd834e0611b670f92891fdcdb6921e2c860435696"
+   "sha256": "24a3c48e2e8a43dcc1db926f4becebf1419cda6d25d4d671b9d62bff65a18e78"
   },
   {
    "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "eb0c3e4ccb84bbd675457d60507d11ef1ff008557c10b87fbb448ec8ce0e7200"
+   "sha256": "fef03fcef6527d4048137a2b7fa6d9f10c8ab06745b356dc4e475c0ee7412805"
   },
   {
    "path": "players/c64-com-explusalpha-c64emu-com-explusalpha-c64emu.json",
@@ -1451,22 +1451,22 @@
   {
    "path": "players/dreamcast-com-reicast-emulator-com-reicast-emulator.json",
    "collection": "players",
-   "sha256": "8fd4bc184148c8e6fdc9abf0ddbc0a9966255403500959b16825c254156eb63f"
+   "sha256": "899b401455fe6c878b78fe015475239441f85ced41ee9a6f41e4227b390fd6f5"
   },
   {
    "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "9e4f6955ef081f4263eed2367baee396cf78ed1e39ca8868317486169684802a"
+   "sha256": "d7f0d5b1736172596a7bbe80c6e5d948fd846d1c072f5cf9d461c367feec53f4"
   },
   {
    "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "e6ed8ca6eb3f6fe2f35d6035ef2d55a59264a9d5c36fc498c1226c30f9ffae1a"
+   "sha256": "c13a4df5364c2595efaf1b614ccc508027fed84b53cc11bd3c55f634fa67ebf2"
   },
   {
    "path": "players/fds-com-explusalpha-nesemu-com-explusalpha-nesemu.json",
    "collection": "players",
-   "sha256": "7a71b03da20ed746fe3642aa67bc0ad4be615d58b457b6298aa30a8eef42a716"
+   "sha256": "fb1fd75a9991dbe6a6b2472e4b36387658c9ebf808129e72be7dd554b2b6a2e4"
   },
   {
    "path": "players/fds-com-androidemu-nes-com-androidemu-nes.json",
@@ -1531,7 +1531,7 @@
   {
    "path": "players/gba-com-explusalpha-gbaemu-com-explusalpha-gbaemu.json",
    "collection": "players",
-   "sha256": "0ce90acc143c5c30bf59fadb325ed346d87bb67acfd56e705bd54d0e43fced19"
+   "sha256": "7a9d1cf78577cb433938ec48580f243f326b7f79476ed13072b9434e6c9c38a2"
   },
   {
    "path": "players/gba-com-fastemulator-gbafree-com-fastemulator-gbafree.json",
@@ -1586,7 +1586,7 @@
   {
    "path": "players/gc-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "b8eeba1d2a8bc8f916a535e978727cad49962dbf14dedd8e117dfcb97ebd1592"
+   "sha256": "16a913a7b2c208cbcc57ed1010cec429bd222f5a0e251227a4c98af47fed3aa7"
   },
   {
    "path": "players/gc-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
@@ -1601,7 +1601,7 @@
   {
    "path": "players/genesis-com-explusalpha-mdemu-com-explusalpha-mdemu.json",
    "collection": "players",
-   "sha256": "ce3d740afe3624f45b83578d81a467b82e52ef833ce7dd35050606649dbf7c42"
+   "sha256": "3eb59a9daa6a7172639cccd125aea98662c2d1defe346efd589d92e6ad82b056"
   },
   {
    "path": "players/genesis-com-androidemu-gens-com-androidemu-gens.json",
@@ -1621,17 +1621,17 @@
   {
    "path": "players/mame-com-seleuco-mame4droid-com-seleuco-mame4droid.json",
    "collection": "players",
-   "sha256": "e20b1316c002da0559cd06a827edcf41cf6834dcdd9400e412d57710375372b5"
+   "sha256": "1130499ee443b294fd060b6cc628721209df96d85796e1ad2fda521fdb049d49"
   },
   {
    "path": "players/mame-com-seleuco-mame4d2024-com-seleuco-mame4droid-2024.json",
    "collection": "players",
-   "sha256": "c44c60ff0623de3f7115dc7725e163aad434322130ab149e9c9030c608b8c137"
+   "sha256": "aaa57ddad5fe1b396a93a25735c098dc68e60b091036fa9c1ca9fe32675982d3"
   },
   {
    "path": "players/msx-com-explusalpha-msxemu-com-explusalpha-msxemu.json",
    "collection": "players",
-   "sha256": "ef64c2ca4e7a2e4a3e605463c223e869d8de9ba497ee685d06318cd45f132155"
+   "sha256": "532b9647a025f67b48e6b2505d0b8cec7088c3f7c5b06cf9f47a85fc3c8da36a"
   },
   {
    "path": "players/n64-org-mupen64plusae-v3-fzurita-org-mupen64plusae-v3-fzurita.json",
@@ -1641,7 +1641,7 @@
   {
    "path": "players/n64-org-mupen64plusae-v3-alpha-org-mupen64plusae-v3-alpha.json",
    "collection": "players",
-   "sha256": "fafbfe08db97a4da27f74d7a3943dc246021aa3ee9c4eb9d4ad0d470690acf58"
+   "sha256": "9d4a9d0aa2a1b667bc557ebec9821f1676f9ac1ca13b34c82e2fac04fed2b20b"
   },
   {
    "path": "players/n64-org-mupen64plusae-v3-fzurita-pro-org-mupen64plusae-v3-fzurita-pro.json",
@@ -1656,12 +1656,12 @@
   {
    "path": "players/naomi-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "5a2fff79be630141bfa2221ae4867251b50b9e150389b314250f186ec335636e"
+   "sha256": "0d76c62c8b9bd54f0847ce4f05375e052916816531999cd124a616d21c95cf8a"
   },
   {
    "path": "players/naomi-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "69e9b817347f031aa40cee8e8e7e927597548ec60ad82c47b5f4a4894c5bef3d"
+   "sha256": "916b654343b04c157487a2c09f45421dd653383d2f35778cbc8731f092bc9ee3"
   },
   {
    "path": "players/nds-com-dsemu-drastic-drastic.json",
@@ -1671,32 +1671,32 @@
   {
    "path": "players/nds-me-magnum-melonds-melonds.json",
    "collection": "players",
-   "sha256": "a9e625f2f585da4235bb57f460b1d81a3778163b0a6c16a9d0c78e8a6c51dd2f"
+   "sha256": "662cefafc8ca5e0c7be04d7cbd7075bc36e74bc7b346bd786219cdc130812f87"
   },
   {
    "path": "players/nds-me-magnum-melonds-nightly-melonds-nightly.json",
    "collection": "players",
-   "sha256": "5cbc5707e93e0873c98d91499d8fdf364471bd18f3976ef84c12d1ba94310685"
+   "sha256": "7a044c56ccce014db54089eadfd51b8cb1875b3819041415e5fcf75523115c85"
   },
   {
    "path": "players/nds-me-magnum-melonds-dev-melonds-dev-dual-screen-fork.json",
    "collection": "players",
-   "sha256": "0ff15547bebb2ce0351efea423e18f8bd3d33a349700fd6c4f45b9040d8eb8c5"
+   "sha256": "9c2863ba11d5921e3c5ed6f3a2f151cb2060052a39f1586b0bb789f71c43324c"
   },
   {
    "path": "players/nds-com-hydra-noods-noods.json",
    "collection": "players",
-   "sha256": "14d7b455cbd57562983bfed1ae82a4b056b32c4693e44024811cd331a61a84f9"
+   "sha256": "2cc0cffad3ad15c1a95c4cb141beaf8d6709dfe3cbd6872e6e8dc1fc4b9f4503"
   },
   {
    "path": "players/neogeo-com-explusalpha-neoemu-neo-emu.json",
    "collection": "players",
-   "sha256": "d8b18674ed56a0abdd060e119bf082b97f755883c0c550b404bd0e7d8c21176f"
+   "sha256": "3cbf8482d18ddefa0b9b806933d100c49e68e80a7058e9eba8f6f4bad3133342"
   },
   {
    "path": "players/nes-com-explusalpha-nesemu-com-explusalpha-nesemu.json",
    "collection": "players",
-   "sha256": "2b81f4ecf4bb8e4471918bfd0fb4c99622167599c7a146a4125ca5e3a4890d87"
+   "sha256": "b100f6572b58cf6d910e46cf3ed35b1e6e5b9df9b9c5cda43a263e93226e2e91"
   },
   {
    "path": "players/nes-com-androidemu-nes-com-androidemu-nes.json",
@@ -1746,17 +1746,17 @@
   {
    "path": "players/ps2-come-nanodata-armsx2-armsx2.json",
    "collection": "players",
-   "sha256": "8602e9f918f3441a5981c8428eb58bdb82294e53417db704dfa09068e2a094ea"
+   "sha256": "515e4036fd3295b0553537e9cd37660df53c00024b837a49a077824709236af7"
   },
   {
    "path": "players/ps2-come-nanodata-armsx2-debug-armsx2-nightly.json",
    "collection": "players",
-   "sha256": "d834a2bac4fb188ae65f8b20f0f551753e4846d6e608136a6297502e1e9251f1"
+   "sha256": "86e4bef6c6e00517aa5787a34a3970d2aa60ad3a6c8b977ae293f5e73f94e85d"
   },
   {
    "path": "players/ps2-com-sbro-emucorex-emucorex.json",
    "collection": "players",
-   "sha256": "6e023cf421be1fcf2e738545848a3a197c426617e83d42205b4950e9c615332d"
+   "sha256": "3985aaed673e6ce745e2741cb0094091def381e393905797bc02889782d74e9c"
   },
   {
    "path": "players/psp-org-ppsspp-ppsspp-ppsspp.json",
@@ -1831,17 +1831,17 @@
   {
    "path": "players/satellaview-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",
    "collection": "players",
-   "sha256": "5680696f991e20b6f322bab1e6e5375408b0c89a434911133d30b17af66120bb"
+   "sha256": "3c9e97d6ba1fbb622a52de2b73b97f0d99dc641c32e49fe54ed007856411c1c2"
   },
   {
    "path": "players/saturn-org-devmiyax-yabasanshioro2-pro-yabasanshiro-2-pro.json",
    "collection": "players",
-   "sha256": "c1d29b9d79b85cba1a7b2bdd95a6f39b657b9a3d17297aa974bdd1098a69999c"
+   "sha256": "8b638d1e2b2185fd3d8e778f92470bbb60d3a962ca9735d8a3756d6a2eb52ae8"
   },
   {
    "path": "players/saturn-org-devmiyax-yabasanshioro2-yabasanshiro-2.json",
    "collection": "players",
-   "sha256": "8ce17904828eda30d301111d149e8c982f0fe2b789a6b9bf335e61d2aa199251"
+   "sha256": "580f058d0589f5138e0d83fbaba2f8a3f8804f1c334e3e5170acd771818c78ce"
   },
   {
    "path": "players/saturn-org-uoyabause-android-pro-yabasanshiro-pro.json",
@@ -1856,22 +1856,22 @@
   {
    "path": "players/saturn-com-explusalpha-saturnemu-saturn-emu.json",
    "collection": "players",
-   "sha256": "224740fc8bcdd05b7839c233e91a440d14093a1307cddc82943acaff58f49a6b"
+   "sha256": "e8f5f4f67f452ea1c85888434547df32ac511d9598b7632e0846f27b11ad7e5c"
   },
   {
    "path": "players/segacd-com-explusalpha-mdemu-com-explusalpha-mdemu.json",
    "collection": "players",
-   "sha256": "60b94fd1225a5fd0f5181aacf262beacf284e0b2c10d745f73ae11191b14dcc0"
+   "sha256": "08e13f4d744ab319c50ca0af955f31e0d70f10efcddc6276ab0b1bd10e217c3c"
   },
   {
    "path": "players/snes-com-explusalpha-snes9xplus-com-explusalpha-snes9xplus.json",
    "collection": "players",
-   "sha256": "021d8a1afa9b2c4ca1f78004e9a16042b5d98b4e6404a8695a1928c397b93326"
+   "sha256": "8461d7cc18544ee6a3faa2199ab7ac35c00fdffc5568fe5bf70e7ecb5495eec7"
   },
   {
    "path": "players/supergrafx-com-pceemu-com-pceemu.json",
    "collection": "players",
-   "sha256": "6da0b8afc79188f026fa88a4397e29da9e18bb55e9919d74964db0929bcd6edc"
+   "sha256": "98773deedc29f7e7f01d59ef8e895e4d23c30689948245e28179ceb9931f301d"
   },
   {
    "path": "players/switch-dev-eden-eden-emulator-eden.json",
@@ -1911,12 +1911,12 @@
   {
    "path": "players/tg16-com-pceemu-com-pceemu.json",
    "collection": "players",
-   "sha256": "cd40039c949b268ba2bbfa7bdb7175f67358c9369757c2a9bbdbc29e901e97cd"
+   "sha256": "9aba08f4266b7e5d405f1147219a99f44d9f366718fbd4cd991d0426ec348f83"
   },
   {
    "path": "players/triforce-org-dolphinemu-dolphinemu-dolphin.json",
    "collection": "players",
-   "sha256": "47eb9cacccb02dc9eb0839bcf50220ef6f9455b9099c519544d38a039b959a38"
+   "sha256": "6a001079bcc453005735c9b64459b8fa1ad562ea1ecfbab4cbe64d68f4a3a7e4"
   },
   {
    "path": "players/virtualboy-com-simongellis-vvb-vvs.json",
@@ -1941,7 +1941,7 @@
   {
    "path": "players/wii-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "6403451267bc057139a9f36d30068e4be6d128de1302a4e9ba4e28a78e6ef897"
+   "sha256": "b0acf50b160f9e4534ea0adb6b2149412f211e6456aebe263ac6e6ad28868962"
   },
   {
    "path": "players/wii-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
@@ -1986,17 +1986,17 @@
   {
    "path": "players/esde-arcade-mame4droid.json",
    "collection": "players",
-   "sha256": "d76fc1699e4b3f9699ae50887e8b5752008acdfda2d6252a4c9854fe7c500ef8"
+   "sha256": "34c25352845e81546da96e1ddea2a21faeaec09d2f599967ef8326b9ca5e6354"
   },
   {
    "path": "players/esde-arcade-neo-emu.json",
    "collection": "players",
-   "sha256": "ddeb41ce022c1d04435ad69047cc04ac3f63ed63a076505ec6de4b1607f426e8"
+   "sha256": "dd8b1b2dae1a4915d6cacfcf376fc3dfa720a48f70ca0a689d07c0298fa85ea4"
   },
   {
    "path": "players/esde-arcade-flycast.json",
    "collection": "players",
-   "sha256": "8ed41cbcc796839c3217aea28ad16742c6b97bbd8699f376a9cd2004648b8249"
+   "sha256": "54ed99be0dc680b47e95cd057a5ffdf9e932924a1d9c36af798e958d5350a4d9"
   },
   {
    "path": "players/esde-atari2600-2600-emu.json",
@@ -2011,7 +2011,7 @@
   {
    "path": "players/esde-atarilynx-lynx-emu.json",
    "collection": "players",
-   "sha256": "8ead8536f2523a0d4aeb3880f008c3ca1f5197cea510816a21ea7c79c0e17bee"
+   "sha256": "c0e79aad8e83456bc59a5631681b66343a39b69bae8f72e47c80a208558f91af"
   },
   {
    "path": "players/esde-c64-c64-emu.json",
@@ -2021,7 +2021,7 @@
   {
    "path": "players/esde-colecovision-msx-emu.json",
    "collection": "players",
-   "sha256": "91567f377b6b20f5b2b849e33740d1bc9ba834ebece67bb7f578eff37ce3cd34"
+   "sha256": "6c2fe122a45924deba7d0a53756029b745eadc95566aac71fbbbbaa3eb5c1114"
   },
   {
    "path": "players/esde-colecovision-colem.json",
@@ -2031,37 +2031,37 @@
   {
    "path": "players/esde-consolearcade-flycast.json",
    "collection": "players",
-   "sha256": "0bb8c5b52484bed0cac9c0480f18ab6111bcc41448daf6e15526bea87a71ebb0"
+   "sha256": "79efdf3952d5adf7edef6f9ff382058f3e6665dc87994fddca832a3eb5d3b2cc"
   },
   {
    "path": "players/esde-consolearcade-aps3e.json",
    "collection": "players",
-   "sha256": "5a0c2562daa68c2f5f794d1b82db6f78e02b0321f09f69a667de6d3aafcfa94e"
+   "sha256": "256f61ed6d1b0c570e4932a591635e691a57eeca8613ce11108fd1143e4e1a13"
   },
   {
    "path": "players/esde-consolearcade-aps3e-2.json",
    "collection": "players",
-   "sha256": "17f0f43da96aec66a0e2a58259f139c722d9e3652759e48458b30a9c17292a45"
+   "sha256": "1c39b524d3cf479b107c591986bb861db3ab8614d80466e746a76aecd76ef14a"
   },
   {
    "path": "players/esde-cps-mame4droid.json",
    "collection": "players",
-   "sha256": "2747612099c2fcd71479dbc6574925d2e81289e17cfe0c732de0e65f580bc31a"
+   "sha256": "edc296aaa3e3d92585c2871ecd7604f630d1c281871c5a6fe283a0b94753c041"
   },
   {
    "path": "players/esde-cps1-mame4droid.json",
    "collection": "players",
-   "sha256": "b15767ba3af9770625795272191a9d79bad509cc4326996706cdd213ebd11d15"
+   "sha256": "a9b5b5a8253344ca17e0c01f14b7bb27b058e773cc4a6459a6c28f859cb8104e"
   },
   {
    "path": "players/esde-cps2-mame4droid.json",
    "collection": "players",
-   "sha256": "ad63ac76d1d6cb002183bf9f9ff47ff2f509b2c352daf581344f7a0715af8554"
+   "sha256": "4fa604d6c86998b0b79e01bfb98ba1a91bc7d36644e15e4a308cda18adbaeeb0"
   },
   {
    "path": "players/esde-cps3-mame4droid.json",
    "collection": "players",
-   "sha256": "adff162aa706ea196bdc29239afc115e35a5e09cb4390e62c7a7e45aa43f8d8a"
+   "sha256": "ecb5a502e8233d0e11b38f23312737f43d57a99ad5bbd07423b622f2eaff078d"
   },
   {
    "path": "players/esde-dreamcast-redream.json",
@@ -2071,7 +2071,7 @@
   {
    "path": "players/esde-famicom-nes-emu.json",
    "collection": "players",
-   "sha256": "b0299068c68cded5af736d5ac6121eacbc73c5506eed6f3a44a8020b3b0fdc6c"
+   "sha256": "8a50f4a03d9aa2589ded0b120522fcaa5859b1a9888b1aaa98cdcab18a88cbae"
   },
   {
    "path": "players/esde-famicom-ines.json",
@@ -2086,7 +2086,7 @@
   {
    "path": "players/esde-fds-nes-emu.json",
    "collection": "players",
-   "sha256": "e06dc4e06254acd3eceaf2592f339cde34fe89b60c6b7db939069d3e55b33dda"
+   "sha256": "9c2f8c4f41fec67e98f4512e1fb98574803566aacde5498ba00b204898e5b1ab"
   },
   {
    "path": "players/esde-fds-ines.json",
@@ -2111,7 +2111,7 @@
   {
    "path": "players/esde-gameandwatch-mame4droid-current.json",
    "collection": "players",
-   "sha256": "2af5c1e532c29d0b926b550992def984649a785965665e7af33b21e18b8b03c1"
+   "sha256": "c9d7f48e461ebce071bf06affefb17a8ccddcb477798461bec574562083263f0"
   },
   {
    "path": "players/esde-gamegear-pizza-boy-sc.json",
@@ -2151,7 +2151,7 @@
   {
    "path": "players/esde-gba-noods.json",
    "collection": "players",
-   "sha256": "b41fa84b04ec56cfe452a2280ba8837e856910f0329a7bc12acdd0baddcc02d5"
+   "sha256": "1efe020b347f71cde47bdcaa3b571989d4fbc9cc04dfc57fed6397b6bdfdb1f2"
   },
   {
    "path": "players/esde-gba-skyemu.json",
@@ -2161,7 +2161,7 @@
   {
    "path": "players/esde-gba-gba-emu.json",
    "collection": "players",
-   "sha256": "9912ef574715cfcc92f4a7cd003e4d15f92da9e460389b9198fdbef78073d318"
+   "sha256": "3203a7c2b614c138b52e29e074bbbac728d3c374d6946699902b8e0f9d84c99a"
   },
   {
    "path": "players/esde-gba-my-boy.json",
@@ -2211,7 +2211,7 @@
   {
    "path": "players/esde-genesis-md-emu.json",
    "collection": "players",
-   "sha256": "eed8ed5f4c6b4b36434ec7a3510096059eb3fece401e189df45c8a0cee60bf57"
+   "sha256": "4235cbeb8cfcb8f3f2fbca030c60c91575e09e5efeb3f3cb457be3b73243b440"
   },
   {
    "path": "players/esde-genesis-pizza-boy-sc.json",
@@ -2231,27 +2231,27 @@
   {
    "path": "players/esde-lcdgames-mame4droid-current.json",
    "collection": "players",
-   "sha256": "d37cb229ae6c02ef15b40831be33475cd5538515be392fd34e5254178e21217f"
+   "sha256": "306093d28013bcd6a3f5e1c7eae99433d984307b03cf42c6429c361e74015526"
   },
   {
    "path": "players/esde-mame-mame4droid.json",
    "collection": "players",
-   "sha256": "2f2c0ae282302d89e3a59ac295fd021d2180ca49c01d5df491550c10cd9b193b"
+   "sha256": "aaa23bfebf04cd6fbe3f367ef70af3d98c183038a3caa9b65808eb9351728e41"
   },
   {
    "path": "players/esde-mame-neo-emu.json",
    "collection": "players",
-   "sha256": "616772a612ea3cf9062a78ff5cc9d1bca945316fb44912334f7eb40b88b75ba5"
+   "sha256": "eeffe8700f4b8e5740137d2137ea16e9a60d058114ffdde669c2dc11195c7418"
   },
   {
    "path": "players/esde-mame-flycast.json",
    "collection": "players",
-   "sha256": "9821651bd37318209fe0da8e8ebb385aa716c5480119e5b1950ca7b8c760be7b"
+   "sha256": "a3de1e3d3822b024d6a37db23641b096b5d0a578b866251251e4ce7f0bccd949"
   },
   {
    "path": "players/esde-mark3-md-emu.json",
    "collection": "players",
-   "sha256": "9a0fc5f8c9e6b6cc0160fd2cae9a4398d37ff3623ae825d423c04aa689f20696"
+   "sha256": "0b3fa18f45bf3b08cf9961ee3b95bee98a444284b923f0bc641134534a25eb57"
   },
   {
    "path": "players/esde-mark3-pizza-boy-sc.json",
@@ -2266,7 +2266,7 @@
   {
    "path": "players/esde-mastersystem-md-emu.json",
    "collection": "players",
-   "sha256": "48ff266869e1673d83f958a5fefe1f739ab9b0f6d51f66c8d2fc010853221188"
+   "sha256": "cbbffa08bb3f2224f086845232872f06b286dd2f706b27e5e12c8be0d73b028e"
   },
   {
    "path": "players/esde-mastersystem-pizza-boy-sc.json",
@@ -2281,7 +2281,7 @@
   {
    "path": "players/esde-megacd-md-emu.json",
    "collection": "players",
-   "sha256": "aff8b5988bba438ec653e6bdbd7e8267dc4a8a943c3676b72f7134de6a44d2b0"
+   "sha256": "5158bb73f1bb53e66fa9bffcf1fb35af677238b48b5629221bc938037e4766d0"
   },
   {
    "path": "players/esde-megacd-pizza-boy-sc.json",
@@ -2291,7 +2291,7 @@
   {
    "path": "players/esde-megacdjp-md-emu.json",
    "collection": "players",
-   "sha256": "8d09e0e5b0dc2de9ff30b8cc183c7a855aab30191187aefcd5a1b5f79ececf72"
+   "sha256": "a676e1aef158bb5feb75f985b76b788e7c7a526c5973ab568afa3c9bff745cda"
   },
   {
    "path": "players/esde-megacdjp-pizza-boy-sc.json",
@@ -2301,7 +2301,7 @@
   {
    "path": "players/esde-megadrive-md-emu.json",
    "collection": "players",
-   "sha256": "061630ce0cfdff9d3e71f9f5863710ee32840e82ffeb07a80f56c0018e8248ed"
+   "sha256": "929def9143870637a8eb2de93304a8cbc54060be42e9f9574462f1510bc87028"
   },
   {
    "path": "players/esde-megadrive-pizza-boy-sc.json",
@@ -2311,7 +2311,7 @@
   {
    "path": "players/esde-megadrivejp-md-emu.json",
    "collection": "players",
-   "sha256": "24f7991b31cd440bb648a3d8905876d90e92e23125f118c32e6701ca4f7e9b4e"
+   "sha256": "a70a16f80639ff1af264a8b9a15aef0e7a61507e106e57a29534a41d88fe08ab"
   },
   {
    "path": "players/esde-megadrivejp-pizza-boy-sc.json",
@@ -2331,7 +2331,7 @@
   {
    "path": "players/esde-msx-msx-emu.json",
    "collection": "players",
-   "sha256": "4882f893f2e61ca3d4227a7fe427ae7beac8039b689cbab099dfa2e64191348d"
+   "sha256": "adc3e426c22f896836cb8ebffaa28ec7991196b33ebd6f317de4a0876823688d"
   },
   {
    "path": "players/esde-msx1-fmsx.json",
@@ -2341,7 +2341,7 @@
   {
    "path": "players/esde-msx1-msx-emu.json",
    "collection": "players",
-   "sha256": "6e451feeff7f5bace3ff8efe62fa468781e8696689ce2a1d215fd3ddff2fa7da"
+   "sha256": "f15d53a6f20b056bcedb336122e3949b80314d5d9cd3c8a77db01d2d883f3479"
   },
   {
    "path": "players/esde-msx2-fmsx.json",
@@ -2351,12 +2351,12 @@
   {
    "path": "players/esde-msx2-msx-emu.json",
    "collection": "players",
-   "sha256": "c6cb96200b16a3051cbbdadeb76db071fd125c4d5229330800a876e5d9257cce"
+   "sha256": "d82bf7d77f3dcbd1ae9d36493e04b29cead45bac4915f570632bbfb631416502"
   },
   {
    "path": "players/esde-msxturbor-msx-emu.json",
    "collection": "players",
-   "sha256": "baf68fbb2be63d5b3931da81e6bad24bbeef3869114bc43f3e0b17b6af5d1870"
+   "sha256": "2a61c5740b395209daffbc1aeb871d907f4eda097b8901b0694b043d9e0eb4f4"
   },
   {
    "path": "players/esde-multivision-mastergear.json",
@@ -2416,32 +2416,32 @@
   {
    "path": "players/esde-n64dd-mupen64plus-ae.json",
    "collection": "players",
-   "sha256": "bb7b1f9eef7a2228fb832da360b952ea1b14f02f2398a88dada767cbce493ab7"
+   "sha256": "1263e67c01db1456739816da9c68be962939c23fb7a42c7cd8a24a915a1c6442"
   },
   {
    "path": "players/esde-naomi2-flycast.json",
    "collection": "players",
-   "sha256": "1e6790f2b2ad08cf1e460053fc5ef7e31300d0a3fc08d08d88ceba397e046be2"
+   "sha256": "408842e76b16209cf89882a43d33c46925ad2b8f9bdfbf8d975449cc181c880c"
   },
   {
    "path": "players/esde-naomigd-flycast.json",
    "collection": "players",
-   "sha256": "34757c3b10b5e5883d03e8c3606719d2332fcaf415c97706378877c0c823f0b1"
+   "sha256": "1a0807f247003d65f638d8ac4e1f0e2a1a01c5191133d57f720b5ea9a2cbf5d3"
   },
   {
    "path": "players/esde-nds-melonds.json",
    "collection": "players",
-   "sha256": "d9e3b033337374e4a1890fbfa2a82805f100c7451d136bd1795c9989e8b3bde1"
+   "sha256": "e2cf3d5849c703458eedd2bbd1b3d6a6c3bb139f0e6d529a79c561020c66321b"
   },
   {
    "path": "players/esde-nds-melonds-nightly.json",
    "collection": "players",
-   "sha256": "11d2a11ffb5d8435339cb83df66be726b443edd2dc9480c935b691b218b42e00"
+   "sha256": "fb7f6ab822ba5b917bcd64fa5e9aff96d1635caa1a5d20affba15dde6bd48530"
   },
   {
    "path": "players/esde-nds-watermelonds.json",
    "collection": "players",
-   "sha256": "2a319a8fda1f6d3774c778f67ae4e6210d6ee9026c5637f5ff16bd79ecab11d2"
+   "sha256": "39b5e1d965cab717a5c6972c850be56dd0ec4a5a8c5ef91801dc14d2d2a107b5"
   },
   {
    "path": "players/esde-nds-seedlessds.json",
@@ -2451,7 +2451,7 @@
   {
    "path": "players/esde-nds-noods.json",
    "collection": "players",
-   "sha256": "bc1437cfa28c19af4e6f7c2ef55c02b986693145511cc7d6824e53c0eb9590fa"
+   "sha256": "5e029ac2c4830181ab25ef5b4200367794fca664631b3e180033b95a298d28dc"
   },
   {
    "path": "players/esde-nds-drastic.json",
@@ -2466,17 +2466,17 @@
   {
    "path": "players/esde-neogeo-neo-emu.json",
    "collection": "players",
-   "sha256": "8c6821491369f0d940c6cbdd76d320e45ce691e30f9c59216d0323d0f910c9e6"
+   "sha256": "9a45debebbf5cd177263bcf31653c583383063cfe489a680948257c3b19d2081"
   },
   {
    "path": "players/esde-neogeo-mame4droid.json",
    "collection": "players",
-   "sha256": "a07e888a8fc4b289fa7178b3ccb71d50815153e5f96dbc0130d36e24881f3945"
+   "sha256": "e3944cbf60a92dab4b6c6545d6e83ed90674984389c85f4a0cc11621f4b543e9"
   },
   {
    "path": "players/esde-nes-nes-emu.json",
    "collection": "players",
-   "sha256": "d6330ceee208634c5461655ab1730ca99abbca014fc7f7122929e22fc6223eb7"
+   "sha256": "f4244bb06d76c8dce8333b6545e38b95b147e43824dcdd4a2b92e5d20502aa8e"
   },
   {
    "path": "players/esde-nes-ines.json",
@@ -2526,12 +2526,12 @@
   {
    "path": "players/esde-pcengine-pce-emu.json",
    "collection": "players",
-   "sha256": "9194d760a51ad5e3554c2a01b4a7059a9eb17d29e07f413e7c12f1fbb3d8210f"
+   "sha256": "27eec1bdb3d1e37a0d35bf27d1f684098bcd56ca37e2e7530929bc8f4fca6ecc"
   },
   {
    "path": "players/esde-pcenginecd-pce-emu.json",
    "collection": "players",
-   "sha256": "7505dcae93536c53af7d1924898fd25d2c0a80e02f30c0ada87f1161591066fd"
+   "sha256": "1f8c0ce14f9b22f382bc6f6e5c45132915d7a811933c39c89527a236636d8a89"
   },
   {
    "path": "players/esde-pico8-pico-8.json",
@@ -2566,37 +2566,37 @@
   {
    "path": "players/esde-ps2-armsx2.json",
    "collection": "players",
-   "sha256": "978669b7c45ce8cc0297514cca73ad6f6ba78911267080baa74dd65073ff4111"
+   "sha256": "e3063416a2c7630fc0fc17fd36ed1403bb3651d119ad9fb4361a652ac8866e30"
   },
   {
    "path": "players/esde-ps2-emucorex.json",
    "collection": "players",
-   "sha256": "6274f4f967991e23bc0572eda35e57d87be54f21d98442970c00b723d9b5c4b1"
+   "sha256": "4dc07d7f6ab65586dc34c5d79b3c0e2d84494e329b4bd5ec0531fa678b580a7a"
   },
   {
    "path": "players/esde-ps3-aps3e.json",
    "collection": "players",
-   "sha256": "1d6a2b0b4403eb0d0fbacb22c1b41f3ce662e9221443db6071d9497eaf4a68b9"
+   "sha256": "5a74e965c122130aa122da69a27081af3d7bbbe5e7e4c36e6a355071efb2492a"
   },
   {
    "path": "players/esde-ps3-aps3e-2.json",
    "collection": "players",
-   "sha256": "501ecc021441b4bb38e2936be8ed49332d94aca54dc01b10d4277e9e16c73904"
+   "sha256": "0cdf0058df4478582284a22cbad45ca294180f62c3564f5cb29df7e8e582ec3a"
   },
   {
    "path": "players/esde-ps3-armsx3.json",
    "collection": "players",
-   "sha256": "ae61f42013a8482409cf32b95c07aef5ddc5d9774953761e9e6de578ddcaade4"
+   "sha256": "f0eec679f04d82f62063a333e010a769e974fc4d195dc47be46f23658919d978"
   },
   {
    "path": "players/esde-ps3-emucorec.json",
    "collection": "players",
-   "sha256": "72c55543efbaa2c59632b29a99be4d740f2fa4a120e47a8d7ff34d9d2f01532d"
+   "sha256": "7ca0f0a54a80dda56a8f433f4d0fac3cdd227e70703a3becb5971a1c15ae46a3"
   },
   {
    "path": "players/esde-psx-armsx1.json",
    "collection": "players",
-   "sha256": "2663a6d40c766f4cfd5b4673c0d47bebfe3d164b742b8e8802156cbe1c018a42"
+   "sha256": "43a2847e752bdfbbad546b70a5b91389a024ca9adef6486813bc20c9b3a541dc"
   },
   {
    "path": "players/esde-psx-epsxe.json",
@@ -2621,32 +2621,32 @@
   {
    "path": "players/esde-satellaview-snes9x-explus.json",
    "collection": "players",
-   "sha256": "570beea5f6b6e1f0b78d09c41c32a1834d127cb14e15cb9f42f209a86e7f4ef9"
+   "sha256": "a89e51504e394de6626f15b82912d9d21e2c6884dced342807d15418741d98ae"
   },
   {
    "path": "players/esde-saturn-yabasanshiro-2.json",
    "collection": "players",
-   "sha256": "7e8b2804396d93da588e29c06a71fc410810186414f110c0568594066593d5df"
+   "sha256": "228b961c1d6ec0dd22723cecff19a7bc159df15d89efb6170e99790370046ea2"
   },
   {
    "path": "players/esde-saturn-saturn-emu.json",
    "collection": "players",
-   "sha256": "31cb82f8e7da82c4d66ed93aa43c4144a3b62c41361a05dec473ce812ed891c3"
+   "sha256": "8a9aacbf36809bdb6074f683145ed321f18454414c5748889965802c843b2055"
   },
   {
    "path": "players/esde-saturnjp-yabasanshiro-2.json",
    "collection": "players",
-   "sha256": "480f522c6d90eed56b9a39155b2cec99694aa53523320d4dce3f4774b8cb1c4f"
+   "sha256": "03d002955bb8db4c8e8dee2de1c54dbeaa5ea7f7d72e7b409940a70e3fe36094"
   },
   {
    "path": "players/esde-saturnjp-saturn-emu.json",
    "collection": "players",
-   "sha256": "5d23f536bc4268960d208f5818cba5aee9eb2a90f583c44abe7ff1f52c524adf"
+   "sha256": "1e2aafd4a17f30641a5f1b5dd1ed2d1e3e1642fdd9e153643c2cd9aeb20c0bb2"
   },
   {
    "path": "players/esde-segacd-md-emu.json",
    "collection": "players",
-   "sha256": "9eaa7b2dcc567b823682ae0441869612d9b26926a909a52229b6ca0ae0fb4cf3"
+   "sha256": "0e5fb94323d2f0a074406a5c741faa806285c56f6f4a38d2997bd1860b73d70b"
   },
   {
    "path": "players/esde-segacd-pizza-boy-sc.json",
@@ -2656,7 +2656,7 @@
   {
    "path": "players/esde-sfc-snes9x-explus.json",
    "collection": "players",
-   "sha256": "9700c7dcbbd5b0e70487c9b9fb2bc96c50a12de040dc913949358db710524d4b"
+   "sha256": "2b62be58727b222e27e2d151bf6cdfe21d13ebdfc292212c1c0ba6009a3c88de"
   },
   {
    "path": "players/esde-sg-1000-mastergear.json",
@@ -2666,27 +2666,27 @@
   {
    "path": "players/esde-snes-snes9x-explus.json",
    "collection": "players",
-   "sha256": "361710dba1bae3e71e5d51b9ee0cbb4e7db0fc2c99ddc07d45334f868629faea"
+   "sha256": "fa778f90f2457e6a58d553ba5c99339abd6a106580ea5b8cbd26d96fb2100f0f"
   },
   {
    "path": "players/esde-snesna-snes9x-explus.json",
    "collection": "players",
-   "sha256": "9bb565456dfd56c1259693d41180a885686a157bba5670ca2253cd59c7257232"
+   "sha256": "54f7e7efdd946d2c58c405ebc01cc73847fa2c697d32ca0f4fcb06d1acf59178"
   },
   {
    "path": "players/esde-stv-mame4droid.json",
    "collection": "players",
-   "sha256": "f907cab1de3bc460a35c19fca5de529775817828c5662bed48261ec098fae038"
+   "sha256": "01ea7d0fd8e037c4b51b89f50d0ce6868675ce64cb9c0dde6ba70d6f1115b6a8"
   },
   {
    "path": "players/esde-sufami-snes9x-explus.json",
    "collection": "players",
-   "sha256": "892cba7c0cd006d2109ecb70b4d8a16c969af651c3b8eca4d1e0aa6957677fb3"
+   "sha256": "6d4ebdd6615b0696a2fd876d84df8241b01b16ee7022fcd0c23a619121e04485"
   },
   {
    "path": "players/esde-supergrafx-pce-emu.json",
    "collection": "players",
-   "sha256": "2c81abb715d914c0a740a104695a1f2c2320636051de01512391416b2b028411"
+   "sha256": "1046d70997262bbf4ea6df76b9cc151204a44f0e8268ddd4d4d9822f6a0bdcdb"
   },
   {
    "path": "players/esde-switch-eden-nightly.json",
@@ -2706,12 +2706,12 @@
   {
    "path": "players/esde-tg16-pce-emu.json",
    "collection": "players",
-   "sha256": "15691f7dba59a64589b55710a75c9d698e828657484b3a2c4977a400204120b5"
+   "sha256": "ba2682d54a4692e87411121dd113cf80d80b000b16d97636603a26583a02ee63"
   },
   {
    "path": "players/esde-tg-cd-pce-emu.json",
    "collection": "players",
-   "sha256": "24d9946e4b05debe46befd7bfdb43534fddb05b29d7afe1a0533528c6cfbab52"
+   "sha256": "9f02091326a3722ba9ce4722d57498111283af81650395f579f631606ea6ed00"
   },
   {
    "path": "players/esde-type-x-winlator-cmod.json",
@@ -2741,7 +2741,7 @@
   {
    "path": "players/esde-vsmile-dsmile.json",
    "collection": "players",
-   "sha256": "0f28fd9f12418ad742ddca2a3f8d69ce7f1dd0e56b2f2031f9fe85c31a937a86"
+   "sha256": "d7b497853fa389b187e1f0423bfe4077d40918c381d0025232391092d85db0cc"
   },
   {
    "path": "players/esde-wii-dolphin-mmjr.json",
@@ -2781,12 +2781,12 @@
   {
    "path": "players/esde-xbox-x1-box.json",
    "collection": "players",
-   "sha256": "b35be413c68c458360daa72c2e967a28188f8aab6c9bf96b8c5f460f90a93a0a"
+   "sha256": "0c18cfe4c1afcc502250653493cf4e3df8dd8b8056d1984752bb8e1c3ba69ad1"
   },
   {
    "path": "players/esde-xbox-hakux.json",
    "collection": "players",
-   "sha256": "3067a799048f676fc5ea4ff0b2e1179d32c4f935c19a16f054e4aabe8ccff2dd"
+   "sha256": "456a3a07330bbe27febdcb7b2a293595cf5b75092050dbe114a7b29ee455de1e"
   },
   {
    "path": "players/esde-xbox-xenra.json",
@@ -2846,7 +2846,7 @@
   {
    "path": "players/daijishou-lynx-com-explusalpha-lynxemu.json",
    "collection": "players",
-   "sha256": "90f3e246fc19b69bacb0ef1a7d0e12bfc4f445481fee68835d5884a9dc603645"
+   "sha256": "2590972adaf83deee3fa9b5eab8c2dff2a3bd4f2825f91926c83eac189d3c5d4"
   },
   {
    "path": "players/daijishou-ebook-com-foobnix-pdf-reader.json",
@@ -2881,7 +2881,7 @@
   {
    "path": "players/daijishou-tgcd-com-pceemu.json",
    "collection": "players",
-   "sha256": "5e8a27fccdfce303410c5f55a2c372a1e6c462f0036b7a4e7936d63a5fb44e16"
+   "sha256": "ef4610855235f8c248f89293fd8466c467463339a30b2de166343eaddc0fe82d"
   },
   {
    "path": "players/daijishou-3ds-io-github-lime3ds-android.json",
@@ -2941,7 +2941,7 @@
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds.json",
    "collection": "players",
-   "sha256": "aeab5d5658f2a71e64b128022b7a09cb7d95e94617a45a54ca2b26f437a3e3d3"
+   "sha256": "a577ba159fe909f7d6d305ffde72fceebe4cb46cf097c3112ff435b4029243ff"
   },
   {
    "path": "players/daijishou-ndsi-com-dsemu-drastic.json",
@@ -2951,22 +2951,22 @@
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds-nightly.json",
    "collection": "players",
-   "sha256": "fae43dd1d165b7f7d38fedeb28d7ef95c63bb2b80af1b67dcd9f99d73a0c2ebe"
+   "sha256": "04baadfc22b7f4541d3944028ebc2b9c44712658db490de6d9c71fde90995efd"
   },
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds-dev.json",
    "collection": "players",
-   "sha256": "d5c03f30a16f5a6785dc987650a10a4d45b591e8bf142cc21fa335d2b6903581"
+   "sha256": "397f30a1449700347e2dfa2f65ab88ffa5764792213c069b72eb6944257dbc82"
   },
   {
    "path": "players/daijishou-ndsi-com-hydra-noods.json",
    "collection": "players",
-   "sha256": "f7a9de9846b90e3b3348044a5a3257ded08e74e490051ef81bbf3bfa3b0f30a4"
+   "sha256": "e949e1237d4d5cce7f4683be599224b85723817561df3d362924231623805290"
   },
   {
    "path": "players/daijishou-famicom-com-explusalpha-nesemu.json",
    "collection": "players",
-   "sha256": "5320a72523cecf5e0a15d55a85043a740636bdfe12ffe6e1832cb06f449bbf5a"
+   "sha256": "866d6664d8f5e21d57390c739f0b6c68b9f41917670da3486c898ef6cbfb989e"
   },
   {
    "path": "players/daijishou-famicom-com-androidemu-nes.json",
@@ -3016,12 +3016,12 @@
   {
    "path": "players/daijishou-sfc-com-explusalpha-snes9xplus.json",
    "collection": "players",
-   "sha256": "169b8fb12ae0fc94939a295784456d63ef4c57ebf98f1eeb60277d3f211701b1"
+   "sha256": "bf1631bc6599022500fb6f4dbcd1b44859980f9ce01547b56a1ba4956bbfa845"
   },
   {
    "path": "players/daijishou-snesmsu1-com-explusalpha-snes9xplus.json",
    "collection": "players",
-   "sha256": "9b01eafd5085e8c46255325489b8038136146d9f60afe034f2cc46bb0831726c"
+   "sha256": "1740c54f9d70de1130db159305034ab43da48ba2f55687a325217ea67950dbcd"
   },
   {
    "path": "players/daijishou-switch-org-sudachi-sudachi-emu.json",
@@ -3056,7 +3056,7 @@
   {
    "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "da53bfb129a4308c6bff84bef440be4ff52da8153c30b1b2b4d781951812a326"
+   "sha256": "c6caed37ceb2177f2a2f4070401c0e1d0cbd646a70e4a7be045059a91ea1cb6a"
   },
   {
    "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu-debug.json",
@@ -3106,7 +3106,7 @@
   {
    "path": "players/daijishou-master-com-explusalpha-mdemu.json",
    "collection": "players",
-   "sha256": "681c7e26bd6083ce73a72606eb68f5e78b749380639012401bfbad8cee023117"
+   "sha256": "ba1ff48cee1afdeeca8f251296b9f32b35f157b4954c3c0e3befb9dfdb6ba591"
   },
   {
    "path": "players/daijishou-master-it-dbtecno-pizzaboyscpro.json",
@@ -3116,7 +3116,7 @@
   {
    "path": "players/daijishou-megadrive-com-explusalpha-mdemu.json",
    "collection": "players",
-   "sha256": "da941b6159dbcd9ad2a8c9dcaca6811cb17175dc9511b8ba392484eaafb3fd1a"
+   "sha256": "a5ad378e9531b9218ed517a9a0a2e10360daf3634ae7b116d94e96f3e8f6b9c5"
   },
   {
    "path": "players/daijishou-megadrive-com-androidemu-gens.json",
@@ -3131,12 +3131,12 @@
   {
    "path": "players/daijishou-saturn-org-devmiyax-yabasanshioro2.json",
    "collection": "players",
-   "sha256": "f3236403267ff6b1ccfed5149bee8260eeeac33edcf9f50c8f1b68968a0ed0e4"
+   "sha256": "63648680f2d055c50de0b0f5d48629ff825d0a51a94cb80b6c724c94d8c6fcae"
   },
   {
    "path": "players/daijishou-ps3-aenu-aps3e.json",
    "collection": "players",
-   "sha256": "5bd22bd4729b6e3062c21016c72464640011af0498d50e8ed9433519ebb7ff9f"
+   "sha256": "f914ef335277d887657356f5215d33dc0c1dd6a5c349467aa12a8336f977d788"
   },
   {
    "path": "players/daijishou-pspminis-org-ppsspp-ppsspp.json",
@@ -3191,187 +3191,187 @@
   {
    "path": "players/esde-adam-mame4droid-current.json",
    "collection": "players",
-   "sha256": "f1d700496c9a721656982515facc0de8452b63a078b90e94315113182b4973f9"
+   "sha256": "4b448ace78555f8c1aaea3cd246a7d1be67875412bf6d404d52bf14b415801b4"
   },
   {
    "path": "players/esde-adam-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "08c41f024a411ee029d1e9b4a51ffd31438a3edbf68fad2bd9c2153df920a87d"
+   "sha256": "b3ce4d471de97c8d0a9ba26313ecc404eca1d966d78f478677a9857c13df5943"
   },
   {
    "path": "players/esde-adam-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "4f43f922a1e8ad40bc80aefb8e27443af108291fb8879dad84780a968ff433ef"
+   "sha256": "45b3b96fb35498da7b9cdd5a79cdf0457a417e9b9c2bd2724882a3ad373fda64"
   },
   {
    "path": "players/esde-adam-mame4droid-current-4.json",
    "collection": "players",
-   "sha256": "f0b92a2c07d77dc627532323a46a7478d216d6b98b4d09aefe21b6108e64bf72"
+   "sha256": "4e3e82cb5fe4e5018d940f3e124bfedaabd7c2bf9f95fdda72fbdd5463793338"
   },
   {
    "path": "players/esde-amstradcpc-mame4droid-current.json",
    "collection": "players",
-   "sha256": "6f9b139d73529cb97b65ddd3d524a40a3938932add381f54763d105458e23c2e"
+   "sha256": "25756ae8c1177265d794d9455281c30304e73988d0ac8674801d49e47faea7bc"
   },
   {
    "path": "players/esde-apple2-mame4droid-current.json",
    "collection": "players",
-   "sha256": "5b6156663515d325233055cea0633fd78a0dcfd953ceab3245c01108bf614f4d"
+   "sha256": "b4f461ad86ba66e0fb2182e37e38969c46161e54a6ee13f98084a8af6d6ce25a"
   },
   {
    "path": "players/esde-apple2gs-mame4droid-current.json",
    "collection": "players",
-   "sha256": "f667fc2b5d20b8bcda61c794aeeb44c27ba82427d3ca6bc61339f18799115644"
+   "sha256": "bf6eee6fdef14f4c856ba4ab49f84d7d353e75e82728b6291802949ba62f860e"
   },
   {
    "path": "players/esde-apple2gs-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "3d4c17f9d20726dd7ea391bc6541199c5c669a04d975da205655fbc76c501f0e"
+   "sha256": "07828cad32b35b3d5cb34136a880021d572209211ba75809bbb641964d75b45b"
   },
   {
    "path": "players/esde-arcade-mame4droid-current.json",
    "collection": "players",
-   "sha256": "400a6e9883622d07a3823c8e255282ec261804afded8658e4733588fa9b55039"
+   "sha256": "8997071390b32733f0bdea2b920831059d8266d5e995bb5b82b9d730fbc6fd23"
   },
   {
    "path": "players/esde-arcadia-mame4droid-current.json",
    "collection": "players",
-   "sha256": "14024d977480325db18e42d6714823caf1e10c8d11f615e7015ef9d992140b74"
+   "sha256": "8d561e974949f0b1630b5bc7fb28104b8e43b53606573ec231c359ca081f64f3"
   },
   {
    "path": "players/esde-archimedes-mame4droid-current.json",
    "collection": "players",
-   "sha256": "0f8c34b9124d47b37ee72abf9e8bbbbe122b9575f649bef57653e2c8bd9c9eb0"
+   "sha256": "cf976c824041f7cbd6a53b5e8133060a92961c752d5868c29969e3007246c1d6"
   },
   {
    "path": "players/esde-archimedes-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "32e4e8e5422560fd9fc7c02298fbd9cfcca48abe766f57259995473d35ef107d"
+   "sha256": "45671bc3634a81a1ee805db55445b9e80fe59d957b8e303f0fbd30c1ca6dd948"
   },
   {
    "path": "players/esde-archimedes-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "38264c90141d7e3ff9e395dc6052c0090bbdc8b80480c46257364107ddafefad"
+   "sha256": "8d7d9605b819bb836fde425d98c320b51ebe0281c66bee58a171a9ba83616bba"
   },
   {
    "path": "players/esde-archimedes-mame4droid-current-4.json",
    "collection": "players",
-   "sha256": "cf20f7c6a9726b20bc2b851760ec48ce3a3f298c5773b4eb46d439ddbcc676b1"
+   "sha256": "e594fbd5c5f468629f91ef5ff78e96248f5d06a1de4c0ab4be72f3040fad2b2f"
   },
   {
    "path": "players/esde-astrocde-mame4droid-current.json",
    "collection": "players",
-   "sha256": "f2e8348ec90d0684fed8c1ca73966081592eecad377cc16f220257cb01bbdb84"
+   "sha256": "0803407784fc3bd5e198a3abecabfb68d6e4941ef3f15a9c2f8f438ee010cd04"
   },
   {
    "path": "players/esde-atari7800-mame4droid-current.json",
    "collection": "players",
-   "sha256": "457c8b49563fe70c520d78a352ef3544331d20acd20a77778041c1659e4c1264"
+   "sha256": "fa47967480474597ece71d56bd99c80beafde596f1f6eeadb959282778880010"
   },
   {
    "path": "players/esde-atarijaguar-mame4droid-current.json",
    "collection": "players",
-   "sha256": "91492d3e4349f46a4d24b2749992ea9b9fa2580fd7f645cf320be84ee74b0ea9"
+   "sha256": "d3a0f859ac5b74908e6d5fb29a5eb82147a5d64fba1a6750d22c65c164f8027d"
   },
   {
    "path": "players/esde-bbcmicro-mame4droid-current.json",
    "collection": "players",
-   "sha256": "1eb09154dff054eeaa5b706c79447b78b5e034ac509c687c5dc6c6e18b79631c"
+   "sha256": "785e1f96e99abbdf2df54f06983e0abe7d3e08d3f3da3cdb7350974b17708487"
   },
   {
    "path": "players/esde-cdimono1-mame4droid-current.json",
    "collection": "players",
-   "sha256": "c000a256ed94924ba79c9239fc001356cafd74e0ba7e00e8e4ea134bbf498b3c"
+   "sha256": "cca84293e97a464114987ce5b8cc139e6fa31f8c3b350c222ba172a9e2c24898"
   },
   {
    "path": "players/esde-channelf-mame4droid-current.json",
    "collection": "players",
-   "sha256": "557116e0a8e9b43b67ea8ba28125696dfc944c9906d3819c34e0cc7774ba06ba"
+   "sha256": "0c2a76eb33aece58fb3920499224f2a0f758fe7f2430d854c8924bf483d1161e"
   },
   {
    "path": "players/esde-coco-mame4droid-current.json",
    "collection": "players",
-   "sha256": "783f36ac7aef0ecb2e1494f95fa54828f660632b2524c1048cf29bffa2a0b774"
+   "sha256": "b3cde7beed3bf6339db323c68a1ac56370ac31a48f6f9d5b4906f5c762449dd7"
   },
   {
    "path": "players/esde-coco-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "2ba77b4f67538f740f0f0bcc0c934d900fdd7a91faf52fe6196fd6863e542f9e"
+   "sha256": "b197dfa8b6075d85fb661e276f9be159c92f9842f676310ca48ded7c44feb846"
   },
   {
    "path": "players/esde-consolearcade-mame4droid-current.json",
    "collection": "players",
-   "sha256": "2f0c59670f8d40455be12d9a988590bf0d055a1c30da2847849026a64520ed37"
+   "sha256": "1fca66489132aadbcb63bba049deedb04915aa4f7a7f66838d67399618547a5e"
   },
   {
    "path": "players/esde-consolearcade-dolphin.json",
    "collection": "players",
-   "sha256": "f9d1abb0ce4bd7f5627f0ebc7c25047d639f7cc8c4d1ba380e0188316b2eac64"
+   "sha256": "cc64087a3ead8c4a6008739899d2e2eb42dd932d12cd770d0ca1cd378edc562f"
   },
   {
    "path": "players/esde-cps-mame4droid-current.json",
    "collection": "players",
-   "sha256": "2cc6571a3c9b617c1959164bc08d5a6176a76b68d46090f72cdf1e1e58cdd5f9"
+   "sha256": "8b5bab6c29afc193ec56807f0aeb46175216fdbc8c9aabb143689e006b535a1a"
   },
   {
    "path": "players/esde-cps1-mame4droid-current.json",
    "collection": "players",
-   "sha256": "cdd7665e3a6616c1893341549a2797985acdf4e99c735f1a1e525a2ab9ff7693"
+   "sha256": "b3563c4664a0611f694d2126959cd45fe2395d5a8bd755b8e9349cda2ec8268d"
   },
   {
    "path": "players/esde-cps2-mame4droid-current.json",
    "collection": "players",
-   "sha256": "8a70822d9b2431e2eb71f02c1601c7adfc0407572ae754db2e88da09bd9d5d1b"
+   "sha256": "138d06adc11b63580412eca5695875104210efaec26e7146416a35e82f8c400e"
   },
   {
    "path": "players/esde-cps3-mame4droid-current.json",
    "collection": "players",
-   "sha256": "93cea4090e5057ea59d94a9a41f06661df5a22f5122c1e42f88c1aeff2e69486"
+   "sha256": "94402ffeac287660e6ee9308668232d8ef9730aa7971208d6d5f37d6689132af"
   },
   {
    "path": "players/esde-crvision-mame4droid-current.json",
    "collection": "players",
-   "sha256": "efdd484f13f88037fb40178ca4ae2d2be05ec719d198ac0372332b0793af3127"
+   "sha256": "bf25d9bcbec23e912b034167040ff6acb0eeeee7294c5ab03f1d0f40a213d0e8"
   },
   {
    "path": "players/esde-daphne-mame4droid-current.json",
    "collection": "players",
-   "sha256": "3dcbe88ffacb4004b7aff1ed73ee29d463d18674a08a6356136dbeafe64395ec"
+   "sha256": "d11d2d44be75742fec8c76a38c9607e7327760aecae68b93139d84163444f3eb"
   },
   {
    "path": "players/esde-dragon32-mame4droid-current.json",
    "collection": "players",
-   "sha256": "e635bf512360489db8c034607e450a2c52d22825771c9ba4bd3a7806b783c9e7"
+   "sha256": "772b7119d503fcef91616d86480f2c2d15706fb4a50ae794edd3d841feeef576"
   },
   {
    "path": "players/esde-dragon32-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "373595aef22caa116b5d18b1335374b80977ef1e5e48ce42a60c68d26736219b"
+   "sha256": "159ca2b95ed3c171e72f7f4359c5df6516b613ac8341a9f6fd0c1d1215b1218d"
   },
   {
    "path": "players/esde-dragon32-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "c5f30329a468764231381d3ada1d528ba80c129d89a8d0a1352f964f82c4f8db"
+   "sha256": "50e54d8df8856fa41d20ec3751a7dcecedcd8b88a878f824ec419e0321f2224b"
   },
   {
    "path": "players/esde-dragon32-mame4droid-current-4.json",
    "collection": "players",
-   "sha256": "c34a5e65a4aee59239ebc45ad7d238c7d92f0dfaa0009bc741bf5d2c7dfa235e"
+   "sha256": "6d82033fada11060859e9011d79f8d13c24637734886ac7f9dc961b2e8424f88"
   },
   {
    "path": "players/esde-electron-mame4droid-current.json",
    "collection": "players",
-   "sha256": "c584d767cf27038e91b716040c0f8ca6633d0957ffad5090e84edf379f795c12"
+   "sha256": "2cfc6651d8d1952e19f957cdd4aa627461951fc36f7bbd58746a28d1923b6255"
   },
   {
    "path": "players/esde-electron-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "76363cf034cbf00c348c113efe80f42f6e53f628b85761ad3d5d212b1127a81f"
+   "sha256": "2d9dc847c3b30c5f93f57f38a8d14cfd344e511951f690f76a51260ae319947c"
   },
   {
    "path": "players/esde-electron-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "475a6042c557886114256a87a35c44846973f9a804b2c9c125c423dc794ee127"
+   "sha256": "9665e5a920b398f00f8a7682f7c205c83351cb4714b72bd8ed5b4345c9c6b788"
   },
   {
    "path": "players/esde-epic-winnative.json",
@@ -3381,137 +3381,137 @@
   {
    "path": "players/esde-fm7-mame4droid-current.json",
    "collection": "players",
-   "sha256": "ca53e77fd0ce1b4c085313e62f7cb129716e9afcb137d9893818d3552b2a6b7b"
+   "sha256": "6252d7f15f4c1804f1a24c017f7892fa5852fc5e6ce7b97bd0668fdefd149963"
   },
   {
    "path": "players/esde-fm7-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "401a0a675ac4785c6f306b7b8c5a83b8b23f3cd697a73ec0a046f10ce738c3e1"
+   "sha256": "3dfdbd4ded43a1121e51911d396470a5096c5ce77d131f3f21b0e29a273f4bc3"
   },
   {
    "path": "players/esde-fm7-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "7c4e26af41ab10f7b5af9628508ecfae5ef3c8cf2bf4df5cc74ea940651eaa34"
+   "sha256": "c8ac21e3747e6b57d3fb93f8d87fefabde2f14acb010b479213ec9da823e6b8f"
   },
   {
    "path": "players/esde-fm7-mame4droid-current-4.json",
    "collection": "players",
-   "sha256": "b75a506286369b10bdc1476913f2e6ca1d1cf90d60927fb762a739d2ea277a55"
+   "sha256": "e3aa6b0663f7ed70f5979814c5ae64ccb3f64981577fb79eb95ff35c5d1d182e"
   },
   {
    "path": "players/esde-fm7-mame4droid-current-5.json",
    "collection": "players",
-   "sha256": "08aed5d110dad168021f77db059b57ccd9759166f159a58bcb73dd67f7fbd47f"
+   "sha256": "3f60994d7865076f8a5f50e5dbdb4fff1019519592d1d19490642410f63e4654"
   },
   {
    "path": "players/esde-fm7-mame4droid-current-6.json",
    "collection": "players",
-   "sha256": "67493db467f8e0f756294650b50a58e7b2c102f6aef13fd0b60afa0eaabdda18"
+   "sha256": "b8efba1cc194e8ec63d8f99188da62ad7c9af0be66a988a8a4c0c2020f32aacd"
   },
   {
    "path": "players/esde-fmtowns-mame4droid-current.json",
    "collection": "players",
-   "sha256": "4513fecaf4ab47cad1da21e48e7a539116d4253dd04ce35d00fc4d273b8cdfd1"
+   "sha256": "89dbc541a5a9479bc3a6ab8062bda382c442b7a08db1cdc20c00a4d52f6339c7"
   },
   {
    "path": "players/esde-gamate-mame4droid-current.json",
    "collection": "players",
-   "sha256": "3a8d54c55e1be074cdda1bdfed711563f8617d8b60cc4e643460f341a8d58a15"
+   "sha256": "de7429f8d715f377e9c279f6a29854fafc437e7984191a57efe8f84e21abaa9b"
   },
   {
    "path": "players/esde-gamecom-mame4droid-current.json",
    "collection": "players",
-   "sha256": "50c02a1c4c188c04fcdef52f86f5b4db0c05d2490c815d3748cc836663d3e63c"
+   "sha256": "b3444174d5549764cd2eff23ec9700ba0ae39b6b0afe383135c82c2344b179f6"
   },
   {
    "path": "players/esde-gc-dolphin.json",
    "collection": "players",
-   "sha256": "f879b118161c0720e0dc5083b4df6c33eae59087f2ddac71ae6b092a0afececd"
+   "sha256": "f3f0306c5e6d0f8b1a1a48f01e9b0d07e001538bba8d6220e45514124756013d"
   },
   {
    "path": "players/esde-gmaster-mame4droid-current.json",
    "collection": "players",
-   "sha256": "d11599986f5bc13e2f34b7cad86a441a62281ae985e436c4aab0ad725f477e97"
+   "sha256": "98efbbce5733a55cab80c5a1d17d7596e1cb389654ba8639306807d5106d8e06"
   },
   {
    "path": "players/esde-gx4000-mame4droid-current.json",
    "collection": "players",
-   "sha256": "869009692fd1bc65abd7b48d60cf591d78048c7296747a1d6fd8fd8d34b0cdcb"
+   "sha256": "4e6bca40355f9a958c174bb433bcdee059ab95fce1c32a18b8070dc0626a59c0"
   },
   {
    "path": "players/esde-intellivision-mame4droid-current.json",
    "collection": "players",
-   "sha256": "1d50ec0a8a8049ee8b8d28b2507c9985a571797f43a10d1d19d9bf937b9fd78d"
+   "sha256": "a9b570816f480ea5200fa6779fdf311cf1d902a1325e1728269372948bd3e3ac"
   },
   {
    "path": "players/esde-laserdisc-mame4droid-current.json",
    "collection": "players",
-   "sha256": "82668e30adba06fe130b7e29620ad5ab0b5b845e8a41eb7a1067e2106d1a4629"
+   "sha256": "0e161bfb8861a67afcd660918df2ce5fa1b079aad502428153ecb94a1481f66f"
   },
   {
    "path": "players/esde-macintosh-mame4droid-current.json",
    "collection": "players",
-   "sha256": "4fb7edd332d33c6a056acd89c808c6e41ac4ff4bd9022cdf79144e4e9b102e3b"
+   "sha256": "f4e997bfcbc6bf341f303eaf16dca96b3fc5db8f4f87623f1979dc2f4b42a038"
   },
   {
    "path": "players/esde-macintosh-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "edd02e51e1718f0dc09e680bb2ba0a1953c15b2821840ab0bb85c6cc8463abd1"
+   "sha256": "3f7b80e12cf997b8048e9400566b42a9c889fd10c9db33b2dbaa7d54f825807b"
   },
   {
    "path": "players/esde-macintosh-mame4droid-current-3.json",
    "collection": "players",
-   "sha256": "1a383ef4e482ddef0f22e15ab5e58b8c0a1f2c4725498e7d963676b76d4bc6ba"
+   "sha256": "590686de4d0f75b39cf38fcbfe993677a8bd8c457b84a044276fad4fd922e393"
   },
   {
    "path": "players/esde-macintosh-mame4droid-current-4.json",
    "collection": "players",
-   "sha256": "79a6aabbe4ed2e76055b96840fb300ca6359fd831a240b6d912e7bc3ba71737d"
+   "sha256": "4dc760bda1fab32132fc38586d5c74432c3c831d70a17df18a7f4fffd2f129c1"
   },
   {
    "path": "players/esde-mame-mame4droid-current.json",
    "collection": "players",
-   "sha256": "75956804813168b1052a03e5bfa3b2e15d8f6882b9b56661b3938e3ebdf180b8"
+   "sha256": "57424dc1976019cc91390dc004d1e7fbdbf2d170573867f0bbb8d73e9219a62e"
   },
   {
    "path": "players/esde-megaduck-mame4droid-current.json",
    "collection": "players",
-   "sha256": "89e6ed0f073663ffeca915b300ad173bef6a68d4116f24e92c1d9186abcfa795"
+   "sha256": "ae26fe6026521a9f1bfd3331764fbb53e772a2579b9903c27c89e48032cf1ea7"
   },
   {
    "path": "players/esde-model2-mame4droid-current.json",
    "collection": "players",
-   "sha256": "04fdf4954ba1c7e2301b8f9f514f6ffbcce2228f355200739c1d24f34ce15a54"
+   "sha256": "0a737fd6c83c4ae4ed2e465af2cca914739a903f6a5b213a06e4385e019e8790"
   },
   {
    "path": "players/esde-model3-mame4droid-current.json",
    "collection": "players",
-   "sha256": "4e7436726c0ed070f6e70d33e830f91483056e002e3fbfdbe249b525e44e676b"
+   "sha256": "25d1a4abdaf5b1a7eaa4c4cc41f46428131295aaca5131b0c6b7a1a3ba825149"
   },
   {
    "path": "players/esde-neogeo-mame4droid-current.json",
    "collection": "players",
-   "sha256": "94f619ca307182ebf092024d0773a75e4d36de72bd501fa054c32f0549aa7e5f"
+   "sha256": "3f162c3315b359f0e4c63069ba06c27aa7bf8d6c769f43112ea88aaae6e16e93"
   },
   {
    "path": "players/esde-neogeocd-mame4droid-current.json",
    "collection": "players",
-   "sha256": "9416c38ee09dd69742b6fc53fcd23a31a53751c3538fd09775a1632ac7a84fcb"
+   "sha256": "945a4daceed986766f7a7b25e1c98a89878d05d8076d4f2deb69a7386fd05e69"
   },
   {
    "path": "players/esde-neogeocdjp-mame4droid-current.json",
    "collection": "players",
-   "sha256": "2824a5fc3bbaf39cb68f93150757111fbdd6c35286208c8085f20e8c4bea442c"
+   "sha256": "c26193c1dcc45ed87f8d55f9543e9e7fd49b78621060322370025513eb7afd56"
   },
   {
    "path": "players/esde-odyssey2-mame4droid-current.json",
    "collection": "players",
-   "sha256": "244147818197d574043d78a0de96612303e74554bc2bde018376bfd6313bfa77"
+   "sha256": "bfcf5bf770a24425c0d91392b188be95c0e406576a1435443ff2c30bbeb40ba6"
   },
   {
    "path": "players/esde-oric-mame4droid-current.json",
    "collection": "players",
-   "sha256": "d4a4c57f6c2930a20849fbbfc93b6858b41c4e040abf532e0db36ef24509a778"
+   "sha256": "04d4252f04b20e2206bdd51f7fb92810201619368bfdfdc648d69da928f36112"
   },
   {
    "path": "players/esde-pcarcade-winnative.json",
@@ -3531,12 +3531,12 @@
   {
    "path": "players/esde-pv1000-mame4droid-current.json",
    "collection": "players",
-   "sha256": "927d4da4b96faccfa5b84bc18257d1c6f9e1f77b8d1aaa61f6db83a1e1733f5e"
+   "sha256": "4b75a66aae2d4190061c82d933a6f6931cfd39a27fff468d5a86fbef95630076"
   },
   {
    "path": "players/esde-scv-mame4droid-current.json",
    "collection": "players",
-   "sha256": "aa4a7167580a54a6903f7b4a0abad13b3aebaa5f96c111ae0cd9acee1027c1f3"
+   "sha256": "ccfe2c5beecbe0a259e55c617d2d4b8bcdf70c9b3692077aca0b9097554d97e8"
   },
   {
    "path": "players/esde-steam-winnative.json",
@@ -3546,37 +3546,37 @@
   {
    "path": "players/esde-stv-mame4droid-current.json",
    "collection": "players",
-   "sha256": "0dcb011b57f6acd1239a6e587674af7727645cb0a7739e6b8471c1b0315b0736"
+   "sha256": "898c656c338df5f32693cc210330fe9f0b9fec83ca630db07609b961d06d430f"
   },
   {
    "path": "players/esde-supervision-mame4droid-current.json",
    "collection": "players",
-   "sha256": "1d5abd8becd5def5f2cab8ee2b68efe60c10d679bec14bac6df22d47de88053a"
+   "sha256": "470bf13bc65299ae45a568910a1cb801cd2e3759c876d1269bfa4db7e8b74a08"
   },
   {
    "path": "players/esde-supracan-mame4droid-current.json",
    "collection": "players",
-   "sha256": "c3fce71a8abefcf5fa65a5001d393d2886e797df851358afba4b11f22f9208f8"
+   "sha256": "841d40acdba2a6e06c4e4a1bffe7cb81a8c1b3a051f8564d79bd72e19d3a8f8a"
   },
   {
    "path": "players/esde-tanodragon-mame4droid-current.json",
    "collection": "players",
-   "sha256": "0becd419c1800590920e72844ff7c64da544d105c5ed9d171f223ed7a5f9cc54"
+   "sha256": "a7fe1d2fda6a9e589c0fea9b0a888780811a601e3fc6931487c41045449f60dc"
   },
   {
    "path": "players/esde-tanodragon-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "6d2ee5f2eccab129b023858839efa11055ee0d7a8cd9762441c1c65b021bef21"
+   "sha256": "e441e5cfb27dd1633bd0414f2dc3027eb8638ce639377392c38c63bcdea8dc7a"
   },
   {
    "path": "players/esde-ti99-mame4droid-current.json",
    "collection": "players",
-   "sha256": "cdd3138ffabe39795b7cf150ea2738adae3de857f6fea0dcb380c27c0a0c2669"
+   "sha256": "03e6c9258b997555268db1069d70cdbf2312a98f7e765912e9031629042df1a7"
   },
   {
    "path": "players/esde-triforce-dolphin.json",
    "collection": "players",
-   "sha256": "fb4ee2c73bbf8ef8bf4f928a759b042aaca7f258d6f0e6f33513ac0dca66a969"
+   "sha256": "2a183a47fe5aca33c842142fff2406620498662c16e1a458919552ea9fff2d5d"
   },
   {
    "path": "players/esde-type-x-winnative.json",
@@ -3586,22 +3586,22 @@
   {
    "path": "players/esde-vectrex-mame4droid-current.json",
    "collection": "players",
-   "sha256": "f4f34a5b1a39ce95d6c04dde4ac793a7124b894a3383e11ca13a7416c670cf1e"
+   "sha256": "fce5c96d717b187062b2cf8be876d4e54b49e73b0d55280663717974bcecb680"
   },
   {
    "path": "players/esde-videopac-mame4droid-current.json",
    "collection": "players",
-   "sha256": "e71bf44fb31a9db5612b7231ce419cd8de3c8ae574c6f6adcca56b0f239c2da5"
+   "sha256": "17831b21107f4c3dc4f45b065e52f3893bddc0ba60a548c8db61c8ed5c44ffd6"
   },
   {
    "path": "players/esde-vsmile-mame4droid-current.json",
    "collection": "players",
-   "sha256": "077a92dc0cbd32902d34a9eed4469b233ea9b425f455f7083e2949bde0a7a0ce"
+   "sha256": "1e0b9cc0123ea71a9c0c9a730992149fb738b3ae2e6a0e4b48dcb9568d0792d4"
   },
   {
    "path": "players/esde-wii-dolphin.json",
    "collection": "players",
-   "sha256": "5c86542ab2852da6a5072a0507857b9b9c1ef3df557c79f0fab7ea5c96ba69eb"
+   "sha256": "505c2988806a52453eaddfbe98c908df5f2b8b2295c7842a3e6c0e00d9fec8b6"
   },
   {
    "path": "players/esde-windows-winnative.json",
@@ -3611,17 +3611,17 @@
   {
    "path": "players/esde-x1-mame4droid-current.json",
    "collection": "players",
-   "sha256": "1d92242d45be2fb2a2b24b97acaedbb6f206e1968dc3637b9d61a610fc363e63"
+   "sha256": "c09e74d7ca971ae32b96c9ebd649322652da62afc0a0c841d89cc8f583d1a1ab"
   },
   {
    "path": "players/esde-x1-mame4droid-current-2.json",
    "collection": "players",
-   "sha256": "b85114ce71f5ae8626241713fc7f199d1e2a8c0186f83ca122c76cfc2efcec20"
+   "sha256": "18a0b6657365bd6352c8eec0a7bc109ee3ba17dfbc31f4422a96b8e51fc4ae87"
   },
   {
    "path": "players/esde-x68000-mame4droid-current.json",
    "collection": "players",
-   "sha256": "36de09e8868dad88d2ac82b1b276469269211d46dc63b275695386d810cde690"
+   "sha256": "719f950bc4d8ca5a9b24606f493c4300cd65275998962dee3ab437a06126cc4e"
   },
   {
    "path": "players/esde-epic-gamenative.json",
@@ -3636,12 +3636,12 @@
   {
    "path": "players/esde-psvita-vita3k.json",
    "collection": "players",
-   "sha256": "aa0dd1dd5f4cd675e5ee14b77e26d076e1820e9e1803d66a03421a83b3ddd17f"
+   "sha256": "6aca8dd26ac6b9e7959acb1e3c95457c3e723d12223e951a09d45d6ea056a3fc"
   },
   {
    "path": "players/esde-psvita-emucorev.json",
    "collection": "players",
-   "sha256": "ccaf3e2381ba5c44104ea4860c278d00eed5295cc0239a814d181f4e8365f2b2"
+   "sha256": "2db6242f615952629e71b160adaa1aaee9ff433a96b212fc641849f3ca7542de"
   },
   {
    "path": "players/esde-scummvm-scummvm.json",

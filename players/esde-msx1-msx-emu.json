@@ -5,5 +5,9 @@
  "pkg": "com.explusalpha.MsxEmu",
  "argumentsTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.uri}",
  "storagePathTemplate": "-n com.explusalpha.MsxEmu/com.imagine.BaseActivity -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Options > File Paths > BIOS (a folder with a Machines folder)",
+  "source": "EmuEx 1c12fac: a folder the person picks, blueMSX Machines layout (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/MSX.emu/src/main/EmuMenuViews.cc#L32-L80)."
+ }
 }

@@ -4,5 +4,9 @@
  "label": "EmuCoreX (Standalone)",
  "pkg": "com.sbro.emucorex",
  "argumentsTemplate": "-n com.sbro.emucorex/com.sbro.emucorex.MainActivity --activity-clear-task -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Settings > Choose BIOS Folder",
+  "source": "EmuCoreX 94fe0ea: a folder the person picks (https://github.com/sashkinbro/EmuCoreX/blob/94fe0eaf5957c05f0d2ef4a180a73dbf4362e344/app/src/main/java/com/sbro/emucorex/ui/settings/SettingsScreen.kt#L374)."
+ }
 }

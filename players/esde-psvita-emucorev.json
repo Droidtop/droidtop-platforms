@@ -4,5 +4,9 @@
  "label": "EmuCoreV (Standalone)",
  "pkg": "com.sbro.emucorev",
  "argumentsTemplate": "-n com.sbro.emucorev/com.sbro.emucorev.core.vita.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its setup screen: Base firmware and Firmware update package",
+  "source": "EmuCoreV 2570561: firmware packages installed, not a folder (https://github.com/sashkinbro/EmuCoreV/blob/25705611c78939476d7e4de415296e8cff2652e5/app/src/main/java/com/sbro/emucorev/core/FirmwareSource.kt#L22-L30)."
+ }
 }

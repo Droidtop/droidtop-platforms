@@ -5,5 +5,9 @@
  "pkg": "com.explusalpha.NeoEmu",
  "argumentsTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.uri}",
  "storagePathTemplate": "-n com.explusalpha.NeoEmu/com.imagine.BaseActivity -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "neogeo.zip in the same folder as the games; Options > System > BIOS Type",
+  "source": "EmuEx 1c12fac: read from the loaded game's folder (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NEO.emu/src/main/Main.cc#L465-L471)."
+ }
 }

@@ -4,5 +4,11 @@
  "label": "ARMSX2 (Nightly)",
  "pkg": "come.nanodata.armsx2.debug",
  "argumentsTemplate": "-n come.nanodata.armsx2.debug/kr.co.iefriends.pcsx2.activities.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+  "biosFlat": true,
+  "biosManual": "Settings > BIOS",
+  "source": "ARMSX2 legacy 02170ec: <data root>/bios, the data root defaulting to getExternalFilesDir(null) (https://github.com/ARMSX2/ARMSX2/blob/02170ecd45c9c7a7808b4913e93b1aef88857da9/app/src/main/java/kr/co/iefriends/pcsx2/utils/DataDirectoryManager.java#L53-L103), any *.bin at its top (https://github.com/ARMSX2/ARMSX2/blob/02170ecd45c9c7a7808b4913e93b1aef88857da9/app/src/main/java/kr/co/iefriends/pcsx2/activities/MainActivity.java#L2014-L2019)."
+ }
 }

@@ -4,5 +4,9 @@
  "label": "D.Smile (Standalone)",
  "pkg": "com.dsmile.emulator",
  "argumentsTemplate": "-n com.dsmile.emulator/com.dsmile.emulator.ui.EmuActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "the BIOS button on its main screen",
+  "source": "D.Smile cd24d30: a file the person picks (https://github.com/1timewire1/D.Smile_nx/blob/cd24d304eadcb9beada86a78162a782ff4a4ff89/app/src/main/java/com/dsmile/emulator/ui/MainActivity.kt#L263-L292)."
+ }
 }

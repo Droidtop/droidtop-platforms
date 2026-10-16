@@ -4,5 +4,9 @@
  "label": "Saturn.EMU",
  "pkg": "com.explusalpha.SaturnEmu",
  "argumentsTemplate": "-n com.explusalpha.SaturnEmu/com.imagine.BaseActivity -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Options > File Paths > NA/EU BIOS and JP BIOS",
+  "source": "EmuEx 1c12fac: files the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Saturn.emu/src/main/EmuMenuViews.cc#L34-L141)."
+ }
 }

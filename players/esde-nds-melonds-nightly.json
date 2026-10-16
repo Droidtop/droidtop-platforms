@@ -4,5 +4,9 @@
  "label": "melonDS Nightly (Standalone)",
  "pkg": "me.magnum.melonds.nightly",
  "argumentsTemplate": "-n me.magnum.melonds.nightly/me.magnum.melonds.ui.emulator.EmulatorActivity -a me.magnum.melonds.nightly.LAUNCH_ROM -e uri {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
+  "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+ }
 }

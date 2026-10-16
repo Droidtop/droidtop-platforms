@@ -5,5 +5,9 @@
  "pkg": "org.dolphinemu.dolphinemu",
  "argumentsTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.uri}",
  "storagePathTemplate": "-n org.dolphinemu.dolphinemu/.ui.main.MainActivity -a android.intent.action.MAIN -e AutoStartFile {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
+  "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+ }
 }

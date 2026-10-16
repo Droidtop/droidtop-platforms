@@ -4,5 +4,9 @@
  "label": "MAME4droid (Standalone)",
  "pkg": "com.seleuco.mame4droid",
  "argumentsTemplate": "-n com.seleuco.mame4droid/com.seleuco.mame4droid.MAME4droid -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its ROM folder, chosen on first run (neogeo.zip goes there)",
+  "source": "MAME4droid 0.139 5b5795d: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-0.139u1-/blob/5b5795d7934bdba13d27c30b0c00fdcfc3773cb8/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L162-L200)."
+ }
 }

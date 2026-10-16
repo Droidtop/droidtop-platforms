@@ -5,5 +5,9 @@
  "pkg": "org.devmiyax.yabasanshioro2.pro",
  "argumentsTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.uri}",
  "storagePathTemplate": "-n org.devmiyax.yabasanshioro2.pro/org.uoyabause.android.Yabause --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -e org.uoyabause.android.FileNameUri {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Settings > BIOS",
+  "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+ }
 }

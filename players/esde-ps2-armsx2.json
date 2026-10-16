@@ -4,5 +4,11 @@
  "label": "ARMSX2 (Standalone)",
  "pkg": "com.armsx2",
  "argumentsTemplate": "-n com.armsx2/com.armsx2.MainActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+  "biosFlat": true,
+  "biosManual": "Menu > BIOS",
+  "source": "ARMSX2 e58489d: the BIOS folder is getExternalFilesDir(null)/bios (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L354-L363) and, with no BIOS chosen, its top level is scanned for any valid PS2 BIOS (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L2274-L2292)."
+ }
 }

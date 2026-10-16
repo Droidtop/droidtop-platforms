@@ -4,5 +4,9 @@
  "label": "hakuX (Standalone)",
  "pkg": "com.rfandango.haku_x",
  "argumentsTemplate": "-n com.rfandango.haku_x/com.rfandango.haku_x.LauncherActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its setup wizard: MCPX and Flash",
+  "source": "haku_x e64e336: files the person picks (https://github.com/rfandango/xemu-android/blob/e64e336d27dc8a56b67f441ec36bfddc1379cb6e/android/app/src/main/java/com/rfandango/haku_x/SetupWizardActivity.kt#L54-L70)."
+ }
 }

@@ -5,5 +5,11 @@
  "pkg": "com.flycast.emulator",
  "argumentsTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.uri}",
  "storagePathTemplate": "-n com.flycast.emulator/com.flycast.emulator.MainActivity -a android.intent.action.VIEW -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/data",
+  "biosFlat": true,
+  "biosManual": "Settings > General > Home Folder",
+  "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+ }
 }

@@ -4,5 +4,9 @@
  "label": "ARMSX3 (Standalone)",
  "pkg": "com.armsx3",
  "argumentsTemplate": "-n com.armsx3/com.armsx2.Main -e path {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its BIOS screen: select or reinstall PS3UPDAT.PUP",
+  "source": "ARMSX3 413906f: a firmware package installed, not a folder (https://github.com/ARMSX2/ARMSX3/blob/413906f9b43ba228c65547b20d6404e62b72160c/android/armsx3-ui/app/src/main/java/com/armsx2/ui/bios/BiosManagerScreen.kt#L40-L53)."
+ }
 }

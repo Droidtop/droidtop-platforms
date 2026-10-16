@@ -4,5 +4,11 @@
  "label": "ARMSX2",
  "pkg": "come.nanodata.armsx2",
  "argumentsTemplate": "-n come.nanodata.armsx2/kr.co.iefriends.pcsx2.MainActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "setup": {
+  "biosFolder": "/storage/emulated/0/Android/data/{pkg}/files/bios",
+  "biosFlat": true,
+  "biosManual": "Menu > BIOS",
+  "source": "ARMSX2 e58489d: the Play Store package built from the com.armsx2 code (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/tools/build-play-aab.sh#L2-L30), same folder (https://github.com/ARMSX2/ARMSX2/blob/e58489d349cdcd635fc6264546087e347c84bf8c/platforms/android/app/src/main/java/com/armsx2/runtime/MainActivityRuntime.kt#L354-L363)."
+ }
 }

@@ -4,5 +4,9 @@
  "label": "Vita3K (Standalone)",
  "pkg": "org.vita3k.emulator",
  "argumentsTemplate": "-n org.vita3k.emulator/org.vita3k.emulator.Emulator --esa AppStartParameters -r,{file.inject:{file.basename}.psvita}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Initial setup > Install Firmware",
+  "source": "Vita3K cf12e2b: firmware packages installed, not a folder (https://github.com/Vita3K/Vita3K/blob/cf12e2b038123ce5fab269a9044a5b0a3ff6e866/android/app/src/main/java/org/vita3k/emulator/ui/navigation/AppNavigation.kt#L106-L107)."
+ }
 }

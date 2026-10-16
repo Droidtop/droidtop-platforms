@@ -5,5 +5,9 @@
  "pkg": "com.explusalpha.LynxEmu",
  "argumentsTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.uri} -t application/zip",
  "storagePathTemplate": "-n com.explusalpha.LynxEmu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Options > File Paths > BIOS",
+  "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/Lynx.emu/src/main/EmuMenuViews.cc#L27-L64)."
+ }
 }

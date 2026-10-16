@@ -5,5 +5,9 @@
  "pkg": "com.explusalpha.NesEmu",
  "argumentsTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.uri}",
  "storagePathTemplate": "-n com.explusalpha.NesEmu/com.imagine.BaseActivity -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "Options > File Paths > Disk System BIOS",
+  "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/NES.emu/src/main/EmuMenuViews.cc#L609-L629)."
+ }
 }

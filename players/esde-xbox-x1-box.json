@@ -4,5 +4,9 @@
  "label": "X1 BOX (Standalone)",
  "pkg": "com.izzy2lost.x1box",
  "argumentsTemplate": "-n com.izzy2lost.x1box/com.izzy2lost.x1box.LauncherActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "setup": {
+  "biosManual": "its setup wizard: MCPX and Flash",
+  "source": "x1box dadced0: files the person picks (https://github.com/izzy2lost/xemu/blob/dadced00cea8bcbada5a5650541cc5bac3cc93f4/android/app/src/main/java/com/izzy2lost/x1box/SetupWizardActivity.kt#L70-L92)."
+ }
 }
