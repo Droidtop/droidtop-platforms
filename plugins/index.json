@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:21:53Z",
+ "generatedAt": "2026-10-22T21:31:30Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -23,6 +23,70 @@
     "MIICFTCCAbqgAwIBAgIUL5v6OAgICEz7S8XrSt6kRyo0XMEwCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjArMSkwJwYDVQQDDCBkcm9pZHRvcC9lbmdpbmVob3N0LXJlbnB5LXBsdWdpbjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABA/aX3pVeN522R4ZjMnX2o11zERVB/Q2UFauWjoo53ay9O3NNe1gTO4/4larQv6KinF9kc/u8LIYcBo/bjW9GnWjgcQwgcEwDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8EBAMCB4AwIAYDVR0lBBkwFwYVaYLauJ/YgNSiute+1OLg5eKG9HIBMD8GA1UdEQQ4MDaGNHVybjpkcm9pZHRvcDpvcmlnaW46ZHJvaWR0b3AvZW5naW5laG9zdC1yZW5weS1wbHVnaW4wHQYDVR0OBBYEFA5G+PDELFPH3sj8zKyksfDhGaR/MB8GA1UdIwQYMBaAFI1FxR7GL8u9StGn9FNPmW8v0qRHMAoGCCqGSM49BAMCA0kAMEYCIQD1RYN94/16IndGhOEJuRehaPcY1/LuiT7MCvXcoacEjgIhAJXijJ+0m6SF68Vbf8kD0azNb+30pUsYfIYcdpLSJ6hu"
    ],
    "releases": [
+    {
+     "tag": "renpy-7_3-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-22T21:29:12Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "size": 32800640,
+       "sha256": "3ba155e176c761a182b3921c57ac2f4199eea221dcd9b828d1b902b46f722ad4"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-release.json",
+       "size": 8329,
+       "sha256": "9fe2eca765c37a1dae7ad4311019fb77715c7edca025a6f483b331ddaf1836b7"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_3-v1-build.482",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-22T21:29:16Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.482/dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "size": 32800640,
+       "sha256": "3ba155e176c761a182b3921c57ac2f4199eea221dcd9b828d1b902b46f722ad4"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.482/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.482/enginehost-release.json",
+       "size": 8329,
+       "sha256": "9fe2eca765c37a1dae7ad4311019fb77715c7edca025a6f483b331ddaf1836b7"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.482/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
     {
      "tag": "renpy-8_5-v1-unstable",
      "stream": "unstable",
@@ -1074,38 +1138,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-build.453/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
-     "tag": "renpy-7_3-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-16T13:58:09Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
-       "size": 32802056,
-       "sha256": "d691374ea799c9cca358df220aa48531b981e89269946d00bf1c545e630ebbd6"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-release.json",
-       "size": 8329,
-       "sha256": "31bf00e98f7a44530a99cbef84462305bebef08ff5e95816ee9ca8545f0b2f04"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
       }
@@ -6464,7 +6496,286 @@
    "certificates": [
     "MIICHDCCAcKgAwIBAgIUbjJCCpu9bxBAoXfgiVYOIM/xHT0wCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjAvMS0wKwYDVQQDDCRkcm9pZHRvcC9lbmdpbmVob3N0LWZsYXNoLWFpci1wbHVnaW4wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQT8n2S5Su3IvLSi2BUMtGwS9v2eyXH1jX7rxgyqn4pfJmKpM9Mpqz83vBwpHGlg5XREnoCCHsi2u1HRfoO2iL7o4HIMIHFMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgeAMCAGA1UdJQQZMBcGFWmC2rif2IDUorrXvtTi4OXihvRyATBDBgNVHREEPDA6hjh1cm46ZHJvaWR0b3A6b3JpZ2luOmRyb2lkdG9wL2VuZ2luZWhvc3QtZmxhc2gtYWlyLXBsdWdpbjAdBgNVHQ4EFgQUMIGP18Fv0iTUOrfveN2d6kKUUpkwHwYDVR0jBBgwFoAUjUXFHsYvy71K0af0U0+Zby/SpEcwCgYIKoZIzj0EAwIDSAAwRQIgSLTZb7P6AUR+sLd0CxnSyM1gbrWC536gErY2lFvocM8CIQCHrs+/YoYM91qk43cUgY5f/tXHuXK0o+fZo5F5R+VY5g=="
    ],
-   "releases": []
+   "releases": [
+    {
+     "tag": "flashair-ruffle041-v1-resigned",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-10-16T16:51:48Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-resigned/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3339764,
+       "sha256": "8e14b5cba0edb2dc3082270ca708280ff79e39b789699233fad4f9570a059812"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-resigned/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-resigned/enginehost-release.json",
+       "size": 5389,
+       "sha256": "19cf31817dc9897a8e7608db0ecc45fbb4a8bf6e04c2efeb78b2141ff8532b40"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-resigned/enginehost-signing-certificate.pem",
+       "size": 794,
+       "sha256": "879a0e6e6bb0924fb3cb0faf0344c7ae3c4eba25533fbbb89cf3c3ddcef08e01"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T18:34:00Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3337040,
+       "sha256": "ed7ff584fde63e28931990458435fe522e0c0a2294301369b9af3cf817248b3d"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/enginehost-release.json",
+       "size": 5705,
+       "sha256": "01417034264a1bc0d27f2c6ed6734bd51c07ae4713d52909d339ab0420525161"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 794,
+       "sha256": "879a0e6e6bb0924fb3cb0faf0344c7ae3c4eba25533fbbb89cf3c3ddcef08e01"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.42",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T18:34:05Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.42/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3337040,
+       "sha256": "ed7ff584fde63e28931990458435fe522e0c0a2294301369b9af3cf817248b3d"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.42/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.42/enginehost-release.json",
+       "size": 5705,
+       "sha256": "01417034264a1bc0d27f2c6ed6734bd51c07ae4713d52909d339ab0420525161"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.42/enginehost-signing-certificate.pem",
+       "size": 794,
+       "sha256": "879a0e6e6bb0924fb3cb0faf0344c7ae3c4eba25533fbbb89cf3c3ddcef08e01"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.41",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T14:12:11Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.41/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3344064,
+       "sha256": "eb1233622a7140b733fd7b22b48e7eca2cedee7855300f96f801bfcd1b5f021f"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.41/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.41/enginehost-release.json",
+       "size": 4557,
+       "sha256": "2197ec63dd7bda74bf1eb890c11a10e0162bfff98b7b655729e8655c0b7c3968"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.40",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-15T05:57:32Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.40/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3343752,
+       "sha256": "717783c1aac56e31b55142b8a1eb668ec253d9fcfbfdcc33ad4b9c352f32e9e4"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.40/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.40/enginehost-release.json",
+       "size": 4557,
+       "sha256": "bf3a608d260cd767b7c2e1b1d8db5193e7fe4bd78a1a4cbb404740dc4f2140a8"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.39",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T22:45:33Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.39/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3343436,
+       "sha256": "8646fd0416f960ca079643babd4f3344d7a48aa41aa73459ad8d481290ce5c55"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.39/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.39/enginehost-release.json",
+       "size": 4557,
+       "sha256": "b958a4df71b1ee8fbf5c8e0ab5942c7992cc704930b3207009166ac94a94227c"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.37",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-14T19:34:02Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.37/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3326252,
+       "sha256": "19e2b5616ca02893f9faab7a384c28e231ba2e3d87d42f3d738d15e859f8724b"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.37/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.37/enginehost-release.json",
+       "size": 4293,
+       "sha256": "d282f571c817408349d37a89aa87db9a08c14ac4673bbfd27b8620b43256f84a"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-build.36",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-09T03:57:33Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.36/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3334220,
+       "sha256": "3b2bc779728ce7abfefefe473a3b95b915eacc7feec263d7eb934b7a59007424"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.36/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-build.36/enginehost-release.json",
+       "size": 4293,
+       "sha256": "2916cfa4002f3fe8a3e9822d877136273365742b5c8ba91593f22d707103607d"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-09-29T00:17:10Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3339404,
+       "sha256": "635fd4ba82a2af969eea52e21a56e0059f8e150c4d87c8ed2d52846e5941846d"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1/enginehost-release.json",
+       "size": 4291,
+       "sha256": "55296f1805eaeb344337fb25e207add9c0f2b5f2bebfcb91ef784e7b8a6960e9"
+      }
+     ]
+    },
+    {
+     "tag": "flashair-ruffle041-v1-testing",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-09-04T23:03:31Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-testing/dev.enginehost.flashair.ruffle041.v1.enginehost.tar.xz",
+       "size": 3339848,
+       "sha256": "0410b42e0ab9b381c0e1e2e983ca32a6e1c38c2f2fbf48be2b9b765eb13da1f1"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-testing/enginehost-public-key.json",
+       "size": 652,
+       "sha256": "5f71700f57ffe1d194e2018b349b7cfaa643cec034adf1d648a27bd7c78f2650"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-flash-air-plugin/releases/download/flashair-ruffle041-v1-testing/enginehost-release.json",
+       "size": 4292,
+       "sha256": "59b36cad107726e162b8fbf068028e3cb1bdfeccd019270fad8bafaf331fec04"
+      }
+     ]
+    }
+   ]
   },
   {
    "repo": "Droidtop/enginehost-html-plugin",

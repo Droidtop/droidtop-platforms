@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:22:06Z",
+ "generatedAt": "2026-10-22T21:31:52Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -174,6 +174,86 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-v1.0.0/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 15964,
         "sha256": "c3e3c0b58afa4ef867d610b34e75b123411ecfe61fb39d813560d5ec4f308911"
+       }
+      }
+     ]
+    },
+    {
+     "id": "droidtop.retroarch",
+     "label": "RetroArch manager",
+     "description": "Gets RetroArch cores for your systems, opens RetroArch, and adds save, load and shader controls for the running game.",
+     "category": "emulators",
+     "releases": [
+      {
+       "version": "1.7.0",
+       "stream": "unstable",
+       "publishedAt": "2026-10-16T20:45:21Z",
+       "manifestSha256": "84a477789b473eb925c566d9ce130fbb15cfbfe4ff3f8f6c6df4160363e47e1c",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.45/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38164,
+        "sha256": "a348f1d5d8b6aadb91ed63b6a550e006111043df27d5d4ed8c0c908bb7160555"
+       }
+      },
+      {
+       "version": "1.7.0",
+       "stream": "unstable",
+       "publishedAt": "2026-10-16T20:45:18Z",
+       "manifestSha256": "84a477789b473eb925c566d9ce130fbb15cfbfe4ff3f8f6c6df4160363e47e1c",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38164,
+        "sha256": "a348f1d5d8b6aadb91ed63b6a550e006111043df27d5d4ed8c0c908bb7160555"
+       }
+      },
+      {
+       "version": "1.7.0",
+       "stream": "unstable",
+       "publishedAt": "2026-10-16T20:43:39Z",
+       "manifestSha256": "369073a9360546955ece34fd6182c08954f63f9a96faeb47489c62f450246301",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.44/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38160,
+        "sha256": "5dc88bf7b58d400d96bb3b08c668e5f7e23477223b875829d166016becb9f475"
+       }
+      },
+      {
+       "version": "1.7.0",
+       "stream": "stable",
+       "publishedAt": "2026-10-16T17:08:42Z",
+       "manifestSha256": "59cfbd3f0d8c1a15397f567bd76dbad21dc59633b61621d848bc42a067f69c56",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.7.0/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38132,
+        "sha256": "f4cbc042be7bd2b2b028c624f9098bc08470646b5db53d603dcde839d2e78ce3"
+       }
+      },
+      {
+       "version": "1.6.0",
+       "stream": "stable",
+       "publishedAt": "2026-10-16T13:08:58Z",
+       "manifestSha256": "af42933d074d74f93fda152cecb14dd3e0da37137e0a3335e614cc2dab8b3a57",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.6.0/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38076,
+        "sha256": "b7a9978df8e2c34e164331517c9ff5ee72d3be1f0b44754306edd25ab59ea99c"
+       }
+      },
+      {
+       "version": "1.5.2",
+       "stream": "stable",
+       "publishedAt": "2026-10-15T15:32:38Z",
+       "manifestSha256": "88229135475db9b144d52200d369edefa8f4325e9fa6922c671dc576f1af4da5",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.2/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 36056,
+        "sha256": "f5fb016b871853570600977f626aecac2313bace311f766428528c48fd4b20a5"
        }
       }
      ]
