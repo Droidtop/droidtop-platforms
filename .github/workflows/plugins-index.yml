@@ -34,6 +34,7 @@ on:
       - "generator/plugins_index.py"
       - "generator/droidtop_plugins_index.py"
       - "generator/test_droidtop_plugins_index.py"
+      - "generator/test_plugins_index.py"
 
 # Read-only by default; the index job pushes plugins/index.json and
 # plugins/origins.json and answers registration issues, so it alone gets

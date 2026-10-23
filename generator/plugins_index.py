@@ -79,6 +79,11 @@ HISTORY_COMMENT = (
 )
 SCHEMA_VERSION = 1
 RELEASE_ENVELOPE = "enginehost-release.json"
+# A runtime component's release (Droidtop/enginehost docs/engine-bundle-format.md,
+# "Component bundles") names its envelope differently, so an Enginehost from
+# before components skips it; Enginehost reads both, and so does this index.
+COMPONENT_ENVELOPE = "enginehost-component.json"
+RELEASE_ENVELOPES = (RELEASE_ENVELOPE, COMPONENT_ENVELOPE)
 KEY_DOCUMENT = "enginehost-public-key.json"
 SIGNING_CERTIFICATE = "enginehost-signing-certificate.pem"
 REVOCATIONS_PATH = PLUGINS_DIR / "revocations.jws"
@@ -100,7 +105,10 @@ RESERVED_WORDS = ("droidtop", "enginehost")
 # A bundle that carries native libraries carries at least these
 # (Droidtop/enginehost docs/engine-bundle-format.md).
 REQUIRED_ABIS = ("arm64-v8a", "x86_64")
-NATIVE_LIBRARY = re.compile(r"(?:^|/)lib/([^/]+)/[^/]+\.so$")
+# Directly in any lib/<abi>/, or anywhere under the payload's top-level
+# lib/<abi>/ (a component keeps one build per engine series in
+# lib/<abi>/<series>/), which is the rule Enginehost's installer applies.
+NATIVE_LIBRARY = re.compile(r"(?:^|/)lib/([^/]+)/[^/]+\.so$|^lib/([^/]+)/.+\.so$")
 # Where a repository keeps its key document and registration.  These are
 # forks of the engines they wrap, so the default branch is usually upstream's
 # own; the plugin branch is looked at first, as enginehost does.
@@ -476,7 +484,8 @@ def stream_of(release, envelope):
 
 
 def abis_of(manifest):
-    return {m.group(1) for f in manifest.get("files") or [] for m in [NATIVE_LIBRARY.search(f.get("path", ""))] if m}
+    return {m.group(1) or m.group(2) for f in manifest.get("files") or []
+            for m in [NATIVE_LIBRARY.search(f.get("path", ""))] if m}
 
 
 def check_envelope(body, origin, key, assets, third_party, admitted_before):
@@ -627,7 +636,7 @@ def index_for(repo, trust, pin, maintainer, previous):
     refused = []
     for release in listed:
         assets = release.get("assets") or []
-        envelope_asset = next((a for a in assets if a["name"] == RELEASE_ENVELOPE), None)
+        envelope_asset = next((a for a in assets if a["name"] in RELEASE_ENVELOPES), None)
         if envelope_asset is None:
             # A release with no envelope is not a plugin release; enginehost
             # skips it too.
@@ -726,7 +735,7 @@ def previous_envelopes(existing_text):
         tags = {}
         for release in entry.get("releases") or []:
             for asset in release.get("assets") or []:
-                if asset.get("name") == RELEASE_ENVELOPE and asset.get("sha256"):
+                if asset.get("name") in RELEASE_ENVELOPES and asset.get("sha256"):
                     tags[release["tag"]] = asset["sha256"].lower()
         found[entry.get("repo", "").lower()] = tags
     return found
