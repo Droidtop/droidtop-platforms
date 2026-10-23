@@ -84,6 +84,26 @@ class ComposeOnWindowsNewlines(unittest.TestCase):
         self.assertNotIn("\r", pin)
         self.assertEqual(json.loads(pin)["pluginCore"], pc)
 
+    def test_a_line_that_opts_out_of_shared_patches_gets_only_its_own(self):
+        upstream = commit({"src/lib.c": "int lib;\n"}, "another project")
+        engine_patch = ("--- a/engine/main.c\n+++ b/engine/main.c\n@@ -1 +1 @@\n"
+                        "-int main(void) { return 0; }\n+int main(void) { return 1; }\n")
+        own_patch = "--- a/src/lib.c\n+++ b/src/lib.c\n@@ -1 +1 @@\n-int lib;\n+int lib = 1;\n"
+        files = {
+            "enginehost/patches/series": "* 0001-engine.patch\n",
+            "enginehost/patches/0001-engine.patch": engine_patch,
+            "enginehost/lines/part/patches/0001-own.patch": own_patch,
+        }
+        opted_out = commit(dict(files, **{"enginehost/lines/part/line.json":
+                                          '{"version": "1.0", "sharedPatches": false}\n'}), "pc")
+        tree, applied = plugin_line.compose_tree(opted_out, upstream, "1.0", "part")
+        self.assertEqual(applied, ["part/patches/0001-own.patch"])
+        self.assertEqual(run("show", f"{tree}:src/lib.c"), "int lib = 1;\n")
+
+        default = commit(dict(files, **{"enginehost/lines/part/line.json": '{"version": "1.0"}\n'}), "pc")
+        with self.assertRaises(SystemExit):
+            plugin_line.compose_tree(default, upstream, "1.0", "part")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -24,7 +24,10 @@ Any command takes --fetch REMOTE: missing commits are fetched shallow and blob-l
 
 Line declaration in plugin-core, enginehost/lines/<id>/line.json:
   {"upstream": {"repo": "owner/name", "ref": "<tag or branch>", "commit": "<sha>"},
-   "version": "<dotted upstream version, used for patch ranges>"}
+   "version": "<dotted upstream version, used for patch ranges>",
+   "sharedPatches": false}       optional; false when the upstream is not the engine the series
+                                 patches (a component built from another project), so only the
+                                 line's own patches apply
 Patch series, enginehost/patches/series: one patch per line, "<range> <file>" where range is
 "*" or space-free comparisons joined by ",": ">=8.0,<8.6". Lines starting with # are comments.
 """
@@ -102,7 +105,8 @@ def compose_tree(pc, upstream, version, line_id):
         git("update-index", "--index-info", env=env, input="\n".join(info) + "\n")
         applied = []
         todo = []  # (label, path in plugin-core)
-        series = show(pc, SERIES)
+        decl = declaration(pc, line_id)
+        series = show(pc, SERIES) if (decl or {}).get("sharedPatches", True) else None
         if series:
             for raw in series.decode().splitlines():
                 raw = raw.strip()
