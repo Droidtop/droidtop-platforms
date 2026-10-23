@@ -759,10 +759,14 @@
     }
    ],
    "strategies": [
+    "ENGINEHOST",
     "WINE_PREFIX"
    ],
-   "enginehost": null,
-   "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). No enginehost plugin yet.",
+   "enginehost": {
+    "family": "ags",
+    "context": "standard"
+   },
+   "notes": "Adventure Game Studio: \"For historical reasons configuration file should be called 'acsetup.cfg'\", and the game data file is <name>.ags (https://github.com/adventuregamestudio/ags/blob/master/OPTIONS.md). Enginehost plugin: dev.enginehost.ags.3.v1 (AGS 2.50 to 3.6.3.15, context standard).",
    "saves": {
     "v": 1,
     "data": {
