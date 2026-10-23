@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:49:06Z",
+ "generatedAt": "2026-10-23T02:21:58Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -6006,13 +6006,13 @@
      "tag": "buriko-openbgi-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-23T01:47:04Z",
+     "published_at": "2026-10-23T02:19:20Z",
      "assets": [
       {
        "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
-       "size": 1159956,
-       "sha256": "3ab523efc48cb8166eaa772b888f91e86f006067f62a7bd034698247dd97fb9e"
+       "size": 1160844,
+       "sha256": "c81feb95bdf3ff9b8c1fa2d2dd39c13d1345832215c54f27d534c44045c9c07f"
       },
       {
        "name": "enginehost-public-key.json",
@@ -6024,11 +6024,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-release.json",
        "size": 3994,
-       "sha256": "eea3c1abd6d7c8ac847b0b7908017487bf1d7c24aa0d9529d54566803ab8d7b6"
+       "sha256": "bb0cab4a0b69056971f3c6c7eabf18030f31e00778f8d351be5ecb47c6794540"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 786,
+       "sha256": "57a483ce912aa076bf5cfd08f995d6d0b5f6b5dcbf374479d6822c65661b6ac2"
+      }
+     ]
+    },
+    {
+     "tag": "buriko-openbgi-v1-build.133",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-23T02:19:24Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.133/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "size": 1160844,
+       "sha256": "c81feb95bdf3ff9b8c1fa2d2dd39c13d1345832215c54f27d534c44045c9c07f"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.133/enginehost-public-key.json",
+       "size": 649,
+       "sha256": "26167bdbbd03757e501b240921620ee728ab0b2e138ab91d6706837d9bea49b0"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.133/enginehost-release.json",
+       "size": 3994,
+       "sha256": "bb0cab4a0b69056971f3c6c7eabf18030f31e00778f8d351be5ecb47c6794540"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.133/enginehost-signing-certificate.pem",
        "size": 786,
        "sha256": "57a483ce912aa076bf5cfd08f995d6d0b5f6b5dcbf374479d6822c65661b6ac2"
       }
