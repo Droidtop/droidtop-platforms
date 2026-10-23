@@ -104,6 +104,28 @@ class ComposeOnWindowsNewlines(unittest.TestCase):
         with self.assertRaises(SystemExit):
             plugin_line.compose_tree(default, upstream, "1.0", "part")
 
+    def test_a_line_with_no_upstream_is_plugin_core_alone(self):
+        pc = commit({
+            "enginehost/wrapper.txt": "wrapper\n",
+            "enginehost/lines/solo/line.json": '{"upstream": null, "version": "1.0", "sharedPatches": false}\n',
+            "enginehost/lines/solo/root/build.yml": "build\n",
+        }, "plugin-core")
+        upstream, version = plugin_line.resolve("solo", pc)
+        self.assertIsNone(upstream)
+        tree, applied = plugin_line.compose_tree(pc, upstream, version, "solo")
+        self.assertEqual(applied, [])
+        paths = run("ls-tree", "-r", "--name-only", tree).splitlines()
+        self.assertEqual(sorted(paths), sorted([
+            "enginehost/wrapper.txt", "enginehost/lines/solo/line.json",
+            "enginehost/lines/solo/root/build.yml", "build.yml", plugin_line.LINE_FILE]))
+        self.assertIsNone(json.loads(run("show", f"{tree}:{plugin_line.LINE_FILE}"))["upstream"])
+
+        line = plugin_line.make_commit(tree, [None, upstream, pc], "solo", upstream, pc, applied)
+        self.assertEqual(run("rev-list", "--parents", "-n", "1", line).split(), [line, pc])
+        run("update-ref", "refs/heads/plugin/solo", line)
+        run("update-ref", "refs/heads/plugin-core", pc)
+        plugin_line.cmd_check(mock.Mock(line="plugin/solo", core="plugin-core"))  # exits on failure
+
 
 if __name__ == "__main__":
     unittest.main()
