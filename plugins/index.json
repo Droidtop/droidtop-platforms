@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T05:03:57Z",
+ "generatedAt": "2026-10-23T05:09:38Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -9060,6 +9060,38 @@
      ]
     },
     {
+     "tag": "godot-v44-v1-build.300",
+     "stream": "stable",
+     "prerelease": true,
+     "published_at": "2026-10-23T05:06:14Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.300/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
+       "size": 182830820,
+       "sha256": "25023d5a11196977a64e459ccfe4b6a5199e5f3d2921e89e5975e801513d0a16"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.300/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.300/enginehost-release.json",
+       "size": 5863,
+       "sha256": "57d6bbc01992e8d458950662acde705ab7dbea4e315a20e55743ff6c5e1558bd"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1-build.300/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
+      }
+     ]
+    },
+    {
      "tag": "godot-v44-v1-build.298",
      "stream": "unstable",
      "prerelease": true,
@@ -10990,8 +11022,8 @@
       {
        "name": "dev.enginehost.godot.v44.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1/dev.enginehost.godot.v44.v1.enginehost.tar.xz",
-       "size": 182839788,
-       "sha256": "2f23b4ad798ba1ec3a1a1ccc034c7c04ec022538307488c01a44b733986bf23d"
+       "size": 182830820,
+       "sha256": "25023d5a11196977a64e459ccfe4b6a5199e5f3d2921e89e5975e801513d0a16"
       },
       {
        "name": "enginehost-public-key.json",
@@ -11002,8 +11034,14 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1/enginehost-release.json",
-       "size": 4627,
-       "sha256": "cb7082f373ff9a1d8a84e132330162ef74b23efbfe34ce3fa9a6e1bd7142fd8c"
+       "size": 5863,
+       "sha256": "57d6bbc01992e8d458950662acde705ab7dbea4e315a20e55743ff6c5e1558bd"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v44-v1/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
       }
      ]
     },
@@ -11813,6 +11851,38 @@
    ],
    "releases": [
     {
+     "tag": "ags-3-v1",
+     "stream": "stable",
+     "prerelease": false,
+     "published_at": "2026-10-23T05:07:30Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1/dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "size": 17271804,
+       "sha256": "0f381dd60b4fbc40a3a06f2df42a2bde110db56febe62d49581d22fddc0ab2e7"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1/enginehost-public-key.json",
+       "size": 646,
+       "sha256": "490755ed0a896a1bc5df1624e422d93dfe18f4268f47ce97153a7a2b6a592680"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1/enginehost-release.json",
+       "size": 5168,
+       "sha256": "2f7240269e20bc1a9ed4db12cc829a4b4e058e30cebd2fd8e012739b4a9e9bc2"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1/enginehost-signing-certificate.pem",
+       "size": 774,
+       "sha256": "f9d0a7eb555f9fc0f076fd211e2136e0ca9f0cee6986b7160fa2e65192b646eb"
+      }
+     ]
+    },
+    {
      "tag": "ags-3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -11839,6 +11909,38 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 774,
+       "sha256": "f9d0a7eb555f9fc0f076fd211e2136e0ca9f0cee6986b7160fa2e65192b646eb"
+      }
+     ]
+    },
+    {
+     "tag": "ags-3-v1-build.12",
+     "stream": "stable",
+     "prerelease": true,
+     "published_at": "2026-10-23T05:07:34Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.12/dev.enginehost.ags.3.v1.enginehost.tar.xz",
+       "size": 17271804,
+       "sha256": "0f381dd60b4fbc40a3a06f2df42a2bde110db56febe62d49581d22fddc0ab2e7"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.12/enginehost-public-key.json",
+       "size": 646,
+       "sha256": "490755ed0a896a1bc5df1624e422d93dfe18f4268f47ce97153a7a2b6a592680"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.12/enginehost-release.json",
+       "size": 5168,
+       "sha256": "2f7240269e20bc1a9ed4db12cc829a4b4e058e30cebd2fd8e012739b4a9e9bc2"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-ags-plugin/releases/download/ags-3-v1-build.12/enginehost-signing-certificate.pem",
        "size": 774,
        "sha256": "f9d0a7eb555f9fc0f076fd211e2136e0ca9f0cee6986b7160fa2e65192b646eb"
       }
