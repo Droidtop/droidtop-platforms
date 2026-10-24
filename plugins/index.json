@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T14:01:23Z",
+ "generatedAt": "2026-10-24T14:25:18Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -6957,7 +6957,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-renpy-plugin.json",
+    "sha256": "7db1f72f879fad8172d50e330f75d98a5446ade46872b4e86effc8dc1bd6dc36",
+    "size": 785895
+   }
   },
   {
    "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin",
@@ -7322,7 +7327,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-rpgmaker-mkxp-z-plugin.json",
+    "sha256": "d8debbebac4ece991f5773edf92aa8dac27324c666e691ad71cd0f868f90f306",
+    "size": 4933949
+   }
   },
   {
    "repo": "Droidtop/enginehost-rpgmaker-easyrpg-plugin",
@@ -7687,7 +7697,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-rpgmaker-easyrpg-plugin.json",
+    "sha256": "9adcb2133cc4e32690b1257ecc59a2650ccb1c32798cd065a5a8f52b3fa581b2",
+    "size": 122117
+   }
   },
   {
    "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin",
@@ -8180,7 +8195,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-rpgmaker-mv-mz-plugin.json",
+    "sha256": "10e33204445afc9fa122bc70492c74300e30cb88a5001514307ae4e5b29b9de1",
+    "size": 52409
+   }
   },
   {
    "repo": "Droidtop/enginehost-kirikiri-plugin",
@@ -8473,7 +8493,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-kirikiri-plugin.json",
+    "sha256": "9697a499ef217d01e38f52f251142d714daac8ab95341b3cef3243af8f4d0e30",
+    "size": 44475
+   }
   },
   {
    "repo": "Droidtop/enginehost-buriko-plugin",
@@ -8870,7 +8895,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-buriko-plugin.json",
+    "sha256": "40bd216e24d19356dbc56084490ac39629bd97766e2057fca29072266d0775ed",
+    "size": 39801
+   }
   },
   {
    "repo": "Droidtop/enginehost-catsystem2-plugin",
@@ -9293,7 +9323,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-catsystem2-plugin.json",
+    "sha256": "2d0e074b67f5145833b7ba9547884ed995d0c82c722df841b73f189a5ae86530",
+    "size": 35079
+   }
   },
   {
    "repo": "Droidtop/enginehost-cmvs-plugin",
@@ -9780,7 +9815,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-cmvs-plugin.json",
+    "sha256": "70019a2a048f7bbe0e93102597e3dcebbafb24a7879c9456f5807d33ef3c2d58",
+    "size": 42985
+   }
   },
   {
    "repo": "Droidtop/enginehost-flash-air-plugin",
@@ -10145,7 +10185,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-flash-air-plugin.json",
+    "sha256": "0a053317854f0a27e853d93a67c080aba1149c2c79352b1ddef0aee7e5436230",
+    "size": 54520
+   }
   },
   {
    "repo": "Droidtop/enginehost-html-plugin",
@@ -10732,7 +10777,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-html-plugin.json",
+    "sha256": "158ab41ee16efa54f3ef432ebdb2a6048ea83624137e1e557fcde94fd41d70cd",
+    "size": 51912
+   }
   },
   {
    "repo": "Droidtop/enginehost-godot-plugin",
@@ -14169,7 +14219,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-godot-plugin.json",
+    "sha256": "cb77c3affc3bd01ab2bbf3da08aef1b5ba403c2467262b117a34ee75da650c30",
+    "size": 550407
+   }
   },
   {
    "repo": "Droidtop/enginehost-nscripter-plugin",
@@ -14476,7 +14531,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-nscripter-plugin.json",
+    "sha256": "10d71838095ba474353da0baafab655aaff8259b8c4f52864ed5f30ee980746a",
+    "size": 72046
+   }
   },
   {
    "repo": "Droidtop/enginehost-love2d-plugin",
@@ -14905,7 +14965,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-love2d-plugin.json",
+    "sha256": "bbbd37a810b1e5afc4342ec5a0130b03523f4eb68f126765fd34c54fbf5a4e1a",
+    "size": 61316
+   }
   },
   {
    "repo": "Droidtop/enginehost-ags-plugin",
@@ -15308,7 +15373,12 @@
       }
      ]
     }
-   ]
+   ],
+   "envelopePack": {
+    "path": "envelopes/droidtop__enginehost-ags-plugin.json",
+    "sha256": "23d09b6edad77ef68c93bf66043fede0026a25b5a70a8ddaac8c2cf6917e704e",
+    "size": 51182
+   }
   }
  ]
 }
