@@ -71,6 +71,9 @@ ORIGINS_PATH = PLUGINS_DIR / "origins.json"
 THIRD_PARTY_PATH = PLUGINS_DIR / "third-party.json"
 ROOT_KEY_PATH = PLUGINS_DIR / "official-root-key.json"
 HISTORY_PATH = PLUGINS_DIR / "key-history.json"
+# One file per repository holding every release envelope the index lists for
+# it, keyed by the envelope's sha256 (see write_envelope_packs).
+PACKS_DIR = PLUGINS_DIR / "envelopes"
 HISTORY_COMMENT = (
     "Every signing key the index has accepted for a repository, in order: its first registration and each "
     "rotation, with the key document (for an official repository, with the root's certificate and serial). "
@@ -633,6 +636,9 @@ def index_for(repo, trust, pin, maintainer, previous):
         if certificates:
             entry["certificates"] = certificates
     entry["releases"] = []
+    # The admitted envelopes' text, for the repository's pack; popped before
+    # the entry is written.
+    entry["_pack"] = {}
     refused = []
     for release in listed:
         assets = release.get("assets") or []
@@ -650,6 +656,7 @@ def index_for(repo, trust, pin, maintainer, previous):
         except Rejected as reason:
             refused.append(release["tag_name"] + ": " + str(reason))
             continue
+        entry["_pack"][body_sha] = body.decode("utf-8")
         listed_assets = []
         for asset in assets:
             listed_assets.append(
@@ -980,6 +987,65 @@ def check_history(registered):
             sys.exit("plugins/origins.json: " + entry["repo"] + " is pinned to a key the history does not end with")
 
 
+def pack_name(repo):
+    return repo.lower().replace("/", "__") + ".json"
+
+
+def write_envelope_packs(index):
+    """
+    One pack per repository: every envelope its index entry lists, keyed by
+    sha256, so a device with none cached (a fresh install, cleared data)
+    fetches one file per repository instead of one per release (Droidtop/
+    tracker#550, 2026-10-24: 509 envelopes, one request each, on a reset
+    console). Each envelope is the exact text the release published, so a
+    device verifies it as it would one fetched alone. The entry names its
+    pack by path and sha256; only a changed pack is rewritten, and a pack
+    no entry names any more is removed.
+    """
+    PACKS_DIR.mkdir(parents=True, exist_ok=True)
+    named = set()
+    for entry in index["origins"]:
+        pack = entry.pop("_pack", {})
+        if not pack:
+            continue
+        name = pack_name(entry["repo"])
+        text = json.dumps(
+            {"schemaVersion": 1, "origin": entry["origin"], "envelopes": dict(sorted(pack.items()))},
+            ensure_ascii=False,
+            separators=(",", ":"),
+        ) + "\n"
+        data = text.encode("utf-8")
+        path = PACKS_DIR / name
+        if not path.is_file() or path.read_bytes() != data:
+            path.write_bytes(data)
+            log("plugins/envelopes/" + name + " written: " + str(len(pack)) + " envelopes, " + str(len(data)) + " bytes")
+        entry["envelopePack"] = {"path": "envelopes/" + name, "sha256": hashlib.sha256(data).hexdigest(), "size": len(data)}
+        named.add(name)
+    for stale in PACKS_DIR.glob("*.json"):
+        if stale.name not in named:
+            stale.unlink()
+            log("plugins/envelopes/" + stale.name + " removed: no repository in the index names it")
+
+
+def check_envelope_packs(index):
+    """Each entry's pack exists, matches its hash, and holds every envelope the entry lists."""
+    for entry in index["origins"]:
+        pack = entry.get("envelopePack")
+        if pack is None:
+            continue
+        path = PLUGINS_DIR / pack["path"]
+        if not path.is_file():
+            sys.exit("plugins/index.json: " + entry["repo"] + " names " + pack["path"] + ", which is missing")
+        data = path.read_bytes()
+        if hashlib.sha256(data).hexdigest() != pack["sha256"]:
+            sys.exit("plugins/" + pack["path"] + " does not match the sha256 the index names")
+        envelopes = json.loads(data)["envelopes"]
+        for release in entry["releases"]:
+            for asset in release["assets"]:
+                if asset["name"] in RELEASE_ENVELOPES and asset["sha256"].lower() not in envelopes:
+                    sys.exit("plugins/" + pack["path"] + " lacks the envelope of " + release["tag"])
+
+
 def dump(document):
     """The repository's one JSON style: indent 1, real UTF-8, trailing newline."""
     return json.dumps(document, indent=1, ensure_ascii=False) + "\n"
@@ -1045,7 +1111,8 @@ def check(existing):
             sys.exit("plugins/index.json: " + entry["repo"] + " has no trust level")
         if (entry["trust"] == "third-party") != (owner_of(entry["repo"]) != OFFICIAL_OWNER):
             sys.exit("plugins/index.json: " + entry["repo"] + " has the wrong trust level")
-    print("plugins/index.json, origins.json and third-party.json are consistent")
+    check_envelope_packs(json.loads(existing))
+    print("plugins/index.json, origins.json, third-party.json and the envelope packs are consistent")
 
 
 # The official root key, read once by main().
@@ -1093,6 +1160,7 @@ def main():
     if registrations_text != ORIGINS_PATH.read_text(encoding="utf-8"):
         ORIGINS_PATH.write_text(registrations_text, encoding="utf-8")
         log("plugins/origins.json written: " + str(len(registrations["origins"])) + " registered repositories")
+    write_envelope_packs(index)
     if not body_changed(index, existing):
         log("plugins/index.json is already current")
         return

@@ -115,11 +115,11 @@ jobs:
             if [ "$GITHUB_EVENT_NAME" != issues ]; then
               python3 generator/droidtop_plugins_index.py --build
             fi
-            if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json droidtop-plugins/index.json)" ]; then
+            if git diff --quiet -- plugins/index.json plugins/origins.json && [ -z "$(git status --porcelain -- plugins/key-history.json plugins/envelopes droidtop-plugins/index.json)" ]; then
               echo "Nothing to commit."
               exit 0
             fi
-            git add plugins/index.json plugins/origins.json plugins/key-history.json droidtop-plugins/index.json
+            git add plugins/index.json plugins/origins.json plugins/key-history.json plugins/envelopes droidtop-plugins/index.json
             git commit -q -m "Plugins index: $(date -u +%Y-%m-%dT%H:%MZ)"
             if git push origin HEAD:main; then
               exit 0
