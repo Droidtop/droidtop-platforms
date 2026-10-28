@@ -168,6 +168,12 @@ jobs:
           cache-cleanup: on-success
           validate-wrappers: false
 
+      # droidtop's :net-core depends on the aria2 download engine, which is not in any public Maven
+      # repository: droidtop's own CI puts it in net-core/aria2-engine/repo with this script, checked
+      # against net-core/aria2-engine.pin, and so must this build (Droidtop/tracker#72).
+      - name: Fetch droidtop's aria2 download engine
+        run: bash build-scripts/fetch-aria2-engine.sh
+
       - name: Build droidtop's :plugin-host
         env:
           ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
