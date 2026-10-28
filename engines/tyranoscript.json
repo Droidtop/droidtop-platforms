@@ -27,8 +27,12 @@
   }
  ],
  "strategies": [
+  "ENGINEHOST",
   "WINE_PREFIX"
  ],
- "enginehost": null,
- "notes": "TyranoScript/TyranoBuilder: a game is index.html + the tyrano/ engine folder + data/ holding system/Config.tjs and scenario/*.ks (https://tyranoscript.com/usage/tutorial/ready_v5, https://github.com/ShikemokuMK/tyranoscript). Both conditions required so a KiriKiri Config.tjs cannot match. Ordered before the generic NW.js/Electron and html rows."
+ "enginehost": {
+  "family": "html",
+  "context": "compiled-html"
+ },
+ "notes": "TyranoScript/TyranoBuilder: a game is index.html + the tyrano/ engine folder + data/ holding system/Config.tjs and scenario/*.ks (https://tyranoscript.com/usage/tutorial/ready_v5, https://github.com/ShikemokuMK/tyranoscript). Both conditions required so a KiriKiri Config.tjs cannot match. Ordered before the generic NW.js/Electron and html rows. Enginehost runs it on the HTML core (dev.enginehost.html.v1, context compiled-html): the game's own index.html in a WebView, where Tyrano takes its browser path (no Node, so $.isNWJS() is false) and saves to localStorage for configSave webstorage and webstorage_compress (tyrano/libs.js $.setStorage). configSave file writes .sav files through the PC build's window.studio_api.fs, which a WebView lacks, so such a game cannot save there."
 }
