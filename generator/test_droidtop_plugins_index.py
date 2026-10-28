@@ -52,5 +52,19 @@ class Check(unittest.TestCase):
         self.assertTrue(any("category" in p for p in problems), problems)
 
 
+class DescriptionFlags(unittest.TestCase):
+    def test_a_plain_description_passes(self):
+        self.assertEqual(index.description_flags("Gets RetroArch cores for your systems and opens RetroArch."), [])
+        self.assertEqual(index.description_flags(None), [])
+
+    def test_addresses_disclaimers_and_implementation_words_are_flagged(self):
+        self.assertEqual(index.description_flags("romgi (github.com/x/romgi) as a droidtop flutter_embed plugin"), ["an address", "an implementation word"])
+        self.assertEqual(index.description_flags("Unofficial, not affiliated with Nyaa."), ["a disclaimer"])
+        self.assertEqual(index.description_flags("See https://example.org"), ["an address"])
+
+    def test_ordinary_words_that_contain_a_flag_are_not_flagged(self):
+        self.assertEqual(index.description_flags("Installs apps from F-Droid, with its apkmirror-free repos."), [])
+
+
 if __name__ == "__main__":
     unittest.main()

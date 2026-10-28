@@ -327,15 +327,40 @@ def check_document(document):
     return problems
 
 
+# What a person never needs in a store card (Droidtop/tracker#514): addresses, the app's own trust and legal words (droidtop
+# says those itself, from the catalog), and how the plugin is built.
+DESCRIPTION_FLAGS = [
+    ("an address", re.compile(r"https?://|www\.|\b[a-z0-9-]+\.(?:com|org|net|io)/", re.I)),
+    ("a disclaimer", re.compile(r"\b(?:not affiliated|unofficial|personal use|disclaimer|at your own risk)\b", re.I)),
+    ("an implementation word", re.compile(
+        r"\b(?:flutter_embed|native_bundle|contract ?\d|manifest|plugin api|broker|binder|kotlin|flutter|apk|jws)\b", re.I)),
+]
+
+
+def description_flags(text):
+    """What in a plugin's description reads as a developer's note rather than a store card, by kind. Pure."""
+    if not isinstance(text, str):
+        return []
+    return [kind for kind, pattern in DESCRIPTION_FLAGS if pattern.search(text)]
+
+
 def summary(document, refused):
     lines = ["## droidtop plugin index", ""]
+    to_rewrite = []
     for origin in document["origins"]:
         for plugin in origin["plugins"]:
             lines.append("- " + plugin["id"] + ": " + ", ".join(r["version"] + " (" + r["stream"] + ")" for r in plugin["releases"]))
+            flags = description_flags(plugin.get("description"))
+            if flags:
+                to_rewrite.append("- " + plugin["id"] + ": " + ", ".join(flags))
+                warn(plugin["id"] + "'s description has " + ", ".join(flags) + " (Droidtop/tracker#514); its next release should say what it does for the person")
     if not document["origins"]:
         lines.append("- nothing is published yet")
     if refused:
         lines += ["", "### Left out", ""] + ["- " + r for r in refused]
+    # Flagged, never refused: the text is the plugin's, fixed in its next release, and the index still lists it.
+    if to_rewrite:
+        lines += ["", "### Descriptions to rewrite", ""] + to_rewrite
     path = os.environ.get("GITHUB_STEP_SUMMARY")
     if path:
         with open(path, "a", encoding="utf-8") as handle:
