@@ -8,7 +8,6 @@ registry does not own.
 """
 
 import json
-import pathlib
 
 import build
 

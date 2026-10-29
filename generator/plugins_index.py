@@ -55,89 +55,18 @@ import json
 import os
 import pathlib
 import re
-import subprocess
 import sys
-import tempfile
 import urllib.error
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import github  # noqa: E402
 import jws  # noqa: E402
 from common import Rejected, log, sha256_hex, warn  # noqa: E402
-
-ROOT = pathlib.Path(__file__).resolve().parent.parent
-PLUGINS_DIR = ROOT / "plugins"
-INDEX_PATH = PLUGINS_DIR / "index.json"
-ORIGINS_PATH = PLUGINS_DIR / "origins.json"
-THIRD_PARTY_PATH = PLUGINS_DIR / "third-party.json"
-ROOT_KEY_PATH = PLUGINS_DIR / "official-root-key.json"
-HISTORY_PATH = PLUGINS_DIR / "key-history.json"
-# One file per repository holding every release envelope the index lists for
-# it, keyed by the envelope's sha256 (see write_envelope_packs).
-PACKS_DIR = PLUGINS_DIR / "envelopes"
-HISTORY_COMMENT = (
-    "Every signing key the index has accepted for a repository, in order: its first registration and each "
-    "rotation, with the key document (for an official repository, with the root's certificate and serial). "
-    "Written by generator/plugins_index.py and never edited by hand; --check re-verifies every certificate "
-    "and that serials only rise."
-)
-SCHEMA_VERSION = 1
-RELEASE_ENVELOPE = "enginehost-release.json"
-# A runtime component's release (Droidtop/enginehost docs/engine-bundle-format.md,
-# "Component bundles") names its envelope differently, so an Enginehost from
-# before components skips it; Enginehost reads both, and so does this index.
-COMPONENT_ENVELOPE = "enginehost-component.json"
-RELEASE_ENVELOPES = (RELEASE_ENVELOPE, COMPONENT_ENVELOPE)
-KEY_DOCUMENT = "enginehost-public-key.json"
-SIGNING_CERTIFICATE = "enginehost-signing-certificate.pem"
-REVOCATIONS_PATH = PLUGINS_DIR / "revocations.jws"
-REGISTRATION = "enginehost-registration.json"
-REGISTRATION_STATEMENT = "enginehost-registration-v1"
-ALGORITHM = "SHA256withECDSA"
-# What a replacement key's certificate signs before its identity (enginehost
-# scripts/certify-repository-key.py; a first key's certificate has no prefix).
-CERTIFICATE_V2 = "enginehost-origin-key-v2"
-
-# The organisation whose repositories are official.  Official is never a
-# claim: it is a key the Enginehost root certified for that exact origin.
-OFFICIAL_OWNER = "droidtop"
-# Official bundles' ID namespace.  A third-party build in it could present
-# itself as, or sit beside, an update to an official bundle.
-OFFICIAL_BUNDLE_PREFIX = "dev.enginehost."
-# Words a third-party maintainer's id or name may not contain.
-RESERVED_WORDS = ("droidtop", "enginehost")
-# A bundle that carries native libraries carries at least these
-# (Droidtop/enginehost docs/engine-bundle-format.md).
-REQUIRED_ABIS = ("arm64-v8a", "x86_64")
-# Directly in any lib/<abi>/, or anywhere under the payload's top-level
-# lib/<abi>/ (a component keeps one build per engine series in
-# lib/<abi>/<series>/), which is the rule Enginehost's installer applies.
-NATIVE_LIBRARY = re.compile(r"(?:^|/)lib/([^/]+)/[^/]+\.so$|^lib/([^/]+)/.+\.so$")
-# Where a repository keeps its key document and registration.  These are
-# forks of the engines they wrap, so the default branch is usually upstream's
-# own; the plugin branch is looked at first, as enginehost does.
-REPOSITORY_FILE_BRANCHES = ("plugin-core", "main", "master", "HEAD")
-REPO_NAME = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
-MAINTAINER_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,38}$")
-
-# An asset with no digest of GitHub's own is hashed here, but only when it is
-# small enough that downloading it to hash it is not absurd.  The one asset
-# that always matters -- the release envelope -- is a few kilobytes, and it is
-# the one enginehost verifies before believing anything in it.
-HASH_IF_SMALLER_THAN = 2 * 1024 * 1024
-
-# How old the committed index may be before it is rewritten even though
-# nothing changed.  Keeps `generatedAt` honest (enginehost stops trusting a
-# stale index) without a commit per scheduled run.
-REFRESH_AFTER = timedelta(hours=20)
-
-# What a download of this index is allowed to be: the release envelopes, key documents, certificates and the small assets
-# hashed here are kilobytes; anything past this is not one of them.
-MAX_DOWNLOAD_BYTES = 8 * 1024 * 1024
-
-# Server errors are retried four times in all, with a growing pause (github.py).
-GITHUB = github.Client("droidtop-platforms-plugins-index", retries=4)
+from envelopes import check_envelope, check_envelope_packs, digest_of, previous_envelopes, stream_of, write_envelope_packs  # noqa: E402
+from fetch import download, releases, repository_file  # noqa: E402
+from keys import certificate_serial, key_document, official_root, origin_of, owner_of  # noqa: E402
+from layout import ALGORITHM, HISTORY_PATH, INDEX_PATH, KEY_DOCUMENT, OFFICIAL_OWNER, ORIGINS_PATH, PLUGINS_DIR, REFRESH_AFTER, RELEASE_ENVELOPES, REPO_NAME, REVOCATIONS_PATH, SCHEMA_VERSION, SIGNING_CERTIFICATE  # noqa: E402
+from registry import check_history, load_history, load_third_party, recorded_key, registration_of  # noqa: E402
 
 
 def v1_tooling():
@@ -153,333 +82,11 @@ def v1_tooling():
     return bundle_jws, bundle_jws.pem_public_key(root_path.read_text(encoding="utf-8"))
 
 
-# Enginehost's v1 verifier and its signing root's public key, read once by main().
-# The root is derived from Droidtop Core, which nothing here pins (Droidtop/tracker#550).
-JWS, ROOT = None, None
-
-
 class KeptRegistration(Rejected):
     """Not indexed this run, but the registration and its pin stand."""
 
 
-def api(url):
-    return GITHUB.api(url)
-
-
-def releases(repo):
-    url = "https://api.github.com/repos/" + repo + "/releases?per_page=100"
-    while url:
-        page, link = api(url)
-        for release in page:
-            if not release.get("draft"):
-                yield release
-        url = github.next_link(link)
-
-
-def download(url):
-    return GITHUB.download(url, MAX_DOWNLOAD_BYTES)
-
-
-def repository_file(repo, name):
-    """A file from the repository's tree, from raw.githubusercontent.com (no API allowance)."""
-    for branch in REPOSITORY_FILE_BRANCHES:
-        try:
-            return download("https://raw.githubusercontent.com/" + repo + "/" + branch + "/" + name)
-        except urllib.error.HTTPError as error:
-            if error.code != 404:
-                raise
-    return None
-
-
-def fingerprint(data):
-    """A key's fingerprint as the registry writes it: the SHA-256 of its DER, upper-case."""
-    return sha256_hex(data).upper()
-
-
-def origin_of(repo):
-    return "https://github.com/" + repo.lower()
-
-
-def normalize_origin(value):
-    candidate = value.strip().rstrip("/")
-    if candidate.endswith(".git"):
-        candidate = candidate[:-4]
-    match = re.fullmatch(r"https://github\.com/([^/]+)/([^/]+)", candidate, re.IGNORECASE)
-    if not match:
-        raise Rejected("not a GitHub repository origin: " + value)
-    return "https://github.com/" + match.group(1).lower() + "/" + match.group(2).lower()
-
-
-def owner_of(repo):
-    return repo.split("/", 1)[0].lower()
-
-
-# --- signatures ---------------------------------------------------------------
-
-
-def openssl(*arguments, data=None):
-    return subprocess.run(
-        ["openssl", *arguments], input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False
-    )
-
-
-def is_p256(spki_der):
-    with tempfile.NamedTemporaryFile(suffix=".der") as key:
-        key.write(spki_der)
-        key.flush()
-        result = openssl("pkey", "-pubin", "-inform", "DER", "-in", key.name, "-noout", "-text")
-    text = result.stdout.decode(errors="replace")
-    return result.returncode == 0 and ("prime256v1" in text or "P-256" in text)
-
-
-def verifies(message, signature_der, spki_der):
-    """SHA256withECDSA, the way enginehost's java.security.Signature checks it."""
-    with tempfile.TemporaryDirectory() as temporary:
-        folder = pathlib.Path(temporary)
-        (folder / "message").write_bytes(message)
-        (folder / "signature").write_bytes(signature_der)
-        (folder / "key.der").write_bytes(spki_der)
-        result = openssl(
-            "dgst", "-sha256", "-verify", str(folder / "key.der"), "-keyform", "DER",
-            "-signature", str(folder / "signature"), str(folder / "message"),
-        )
-    return result.returncode == 0
-
-
-def b64(value, what):
-    try:
-        return base64.b64decode(value, validate=True)
-    except (ValueError, TypeError):
-        raise Rejected(what + " is not valid base64")
-
-
-class Key:
-    """One ECDSA P-256 public key: its DER SubjectPublicKeyInfo and fingerprint."""
-
-    def __init__(self, spki_b64, declared_sha256, what):
-        if not isinstance(spki_b64, str) or not isinstance(declared_sha256, str):
-            raise Rejected(what + ": publicKeySpki and keySha256 are required")
-        self.spki_b64 = spki_b64
-        self.der = b64(spki_b64, what + " publicKeySpki")
-        self.sha256 = fingerprint(self.der)
-        if declared_sha256.upper() != self.sha256:
-            raise Rejected(what + ": keySha256 does not match the key")
-        if not is_p256(self.der):
-            raise Rejected(what + ": not an ECDSA P-256 key")
-
-
-def key_document(raw, expected_origin, what):
-    """A repository's enginehost-public-key.json, checked the way enginehost checks it."""
-    try:
-        document = json.loads(raw)
-    except (ValueError, UnicodeDecodeError):
-        raise Rejected(what + " is not JSON")
-    if document.get("formatVersion", 1) != 1 or document.get("algorithm") != ALGORITHM:
-        raise Rejected(what + ": unsupported format or algorithm")
-    if normalize_origin(document.get("origin", "")) != expected_origin:
-        raise Rejected(what + " declares another origin")
-    return document, Key(document.get("publicKeySpki"), document.get("keySha256"), what)
-
-
-def official_root():
-    document = json.loads(ROOT_KEY_PATH.read_text(encoding="utf-8"))
-    if document.get("formatVersion") != 1 or document.get("algorithm") != ALGORITHM:
-        raise Rejected("plugins/official-root-key.json: unsupported format")
-    return document, Key(document.get("publicKeySpki"), document.get("keySha256"), "official root key")
-
-
-def certificate_serial(document, root):
-    """The serial the Enginehost root certified this key for this origin with, or None.
-
-    The same check as enginehost's OriginKeyDocuments.parseCertified: serial 0
-    is the original certificate format; a replacement key's certificate signs
-    its serial too (`enginehost-origin-key-v2`), so only the root can raise it.
-    """
-    root_document, root_key = root
-    issuer = document.get("issuer")
-    if not isinstance(issuer, dict):
-        return None
-    if issuer.get("id") != root_document.get("id") or issuer.get("algorithm") != ALGORITHM:
-        return None
-    if str(issuer.get("keySha256", "")).upper() != root_key.sha256:
-        return None
-    serial = issuer.get("serial", 0)
-    if not isinstance(serial, int) or isinstance(serial, bool) or serial < 0:
-        return None
-    identity = (
-        normalize_origin(document["origin"]) + "\n"
-        + document["algorithm"] + "\n"
-        + document["publicKeySpki"] + "\n"
-        + document["keySha256"].upper() + "\n"
-    )
-    if serial:
-        identity = CERTIFICATE_V2 + "\n" + identity + str(serial) + "\n"
-    try:
-        signature = b64(issuer.get("signature", ""), "issuer signature")
-    except Rejected:
-        return None
-    return serial if verifies(identity.encode("utf-8"), signature, root_key.der) else None
-
-
-# --- the third-party list ------------------------------------------------------
-
-
-def load_third_party():
-    """plugins/third-party.json, validated: {repo (lowercase): (maintainer, {fingerprint: Key}, repo as written)}."""
-    if not THIRD_PARTY_PATH.is_file():
-        return {}, []
-    document = json.loads(THIRD_PARTY_PATH.read_text(encoding="utf-8"))
-    maintainers = document.get("maintainers")
-    if not isinstance(maintainers, list):
-        raise Rejected("plugins/third-party.json: `maintainers` must be a list")
-    by_repo = {}
-    seen_ids = set()
-    for entry in maintainers:
-        ident = entry.get("id", "")
-        what = "plugins/third-party.json maintainer " + repr(ident)
-        if not MAINTAINER_ID.match(ident) or ident in seen_ids:
-            raise Rejected(what + ": id must be unique, lowercase letters, digits and dashes")
-        seen_ids.add(ident)
-        name = entry.get("name")
-        github = entry.get("github")
-        if not isinstance(name, str) or not name.strip():
-            raise Rejected(what + ": `name` is required")
-        if not isinstance(github, str) or not re.fullmatch(r"[A-Za-z0-9-]+", github):
-            raise Rejected(what + ": `github` must be the maintainer's GitHub login")
-        for word in RESERVED_WORDS:
-            if word in ident or word in name.lower():
-                raise Rejected(what + ": may not name itself " + word)
-        keys = {}
-        for raw in entry.get("keys") or []:
-            if raw.get("algorithm") != ALGORITHM:
-                raise Rejected(what + ": keys must be " + ALGORITHM)
-            key = Key(raw.get("publicKeySpki"), raw.get("keySha256"), what + " key")
-            keys[key.sha256] = key
-        if not keys:
-            raise Rejected(what + ": lists no key")
-        repos = entry.get("repos")
-        if not isinstance(repos, list) or not repos:
-            raise Rejected(what + ": lists no repository")
-        for repo in repos:
-            if not isinstance(repo, str) or not REPO_NAME.match(repo):
-                raise Rejected(what + ": " + repr(repo) + " is not owner/name")
-            if owner_of(repo) == OFFICIAL_OWNER:
-                raise Rejected(what + ": " + repo + " belongs to Droidtop and is official, not third party")
-            if repo.lower() in by_repo:
-                raise Rejected(what + ": " + repo + " is listed twice")
-            by_repo[repo.lower()] = ({"id": ident, "name": name.strip(), "github": github}, keys, repo)
-    return by_repo, maintainers
-
-
-def registration_of(repo, maintainer, keys):
-    """The key a third-party repository registered itself with, from its signed enginehost-registration.json."""
-    raw = repository_file(repo, REGISTRATION)
-    if raw is None:
-        raise Rejected(repo + " publishes no " + REGISTRATION)
-    try:
-        document = json.loads(raw)
-    except (ValueError, UnicodeDecodeError):
-        raise Rejected(repo + ": " + REGISTRATION + " is not JSON")
-    origin = origin_of(repo)
-    if document.get("formatVersion") != 1:
-        raise Rejected(repo + ": unsupported " + REGISTRATION)
-    if normalize_origin(document.get("origin", "")) != origin:
-        raise Rejected(repo + ": " + REGISTRATION + " names another repository")
-    if document.get("maintainer") != maintainer["id"]:
-        raise Rejected(repo + ": " + REGISTRATION + " names another maintainer")
-    fingerprint = str(document.get("keySha256", "")).upper()
-    key = keys.get(fingerprint)
-    if key is None:
-        raise Rejected(repo + ": registered with a key the list does not name for " + maintainer["id"])
-    statement = registration_statement(origin, maintainer["id"], fingerprint)
-    if not verifies(statement, b64(document.get("signatureBase64", ""), "registration signature"), key.der):
-        raise Rejected(repo + ": the registration's signature does not verify")
-    return key
-
-
-def registration_statement(origin, maintainer, fingerprint):
-    return (REGISTRATION_STATEMENT + "\n" + origin + "\n" + maintainer + "\n" + fingerprint + "\n").encode("utf-8")
-
-
-# --- one repository ------------------------------------------------------------
-
-
-def digest_of(asset, body=None):
-    """GitHub's own digest where it has one; otherwise our own, for small assets."""
-    declared = asset.get("digest") or ""
-    if declared.startswith("sha256:"):
-        return declared.split(":", 1)[1].lower()
-    if body is None:
-        if asset.get("size", 0) > HASH_IF_SMALLER_THAN:
-            # Nothing is lost: the bundle carries its own signature inside and
-            # is verified file by file at install time regardless.
-            return None
-        body = download(asset["browser_download_url"])
-    return sha256_hex(body)
-
-
-def stream_of(release, envelope):
-    """The stream is the release envelope's own channel; the flag is the fallback."""
-    channel = envelope.get("channel")
-    if channel in ("stable", "testing", "unstable"):
-        return channel
-    return "testing" if release.get("prerelease") else "stable"
-
-
-def abis_of(manifest):
-    return {m.group(1) or m.group(2) for f in manifest.get("files") or []
-            for m in [NATIVE_LIBRARY.search(f.get("path", ""))] if m}
-
-
-def check_envelope(body, origin, key, assets, third_party, admitted_before):
-    """Every bundle in one release envelope, verified; raises Rejected with the reason."""
-    try:
-        envelope = json.loads(body)
-    except (ValueError, UnicodeDecodeError):
-        raise Rejected("the release envelope is not JSON")
-    if envelope.get("formatVersion") != 1 or not isinstance(envelope.get("bundles"), list) or not envelope["bundles"]:
-        raise Rejected("the release envelope has no bundles")
-    names = {asset["name"] for asset in assets}
-    for bundle in envelope["bundles"]:
-        manifest_bytes = b64(bundle.get("manifestBase64", ""), "manifestBase64")
-        try:
-            manifest = json.loads(manifest_bytes)
-        except (ValueError, UnicodeDecodeError):
-            raise Rejected("a bundle manifest is not JSON")
-        bundle_id = str(manifest.get("bundleId", "?"))
-        if normalize_origin(str(manifest.get("origin", ""))) != origin:
-            raise Rejected(bundle_id + " names another origin")
-        # Format v1, when this run can check it: the chain ends at the signing
-        # root and its certificate names this origin. Only official repositories
-        # are anchored at the root; a third party's v1 signature is the app's to check
-        # against the key a person pinned, and here its legacy one is required.
-        v1_verified = False
-        if bundle.get("jws") and JWS is not None and ROOT is not None and not third_party:
-            try:
-                named = JWS.verify(bundle["jws"], "plugin", ROOT, manifest_bytes)
-            except JWS.Refused as reason:
-                raise Rejected(bundle_id + ": its v1 signature does not verify: " + str(reason))
-            if JWS.origin_id(origin) not in named["origins"]:
-                raise Rejected(bundle_id + ": its v1 signing certificate does not name " + origin)
-            v1_verified = True
-        if bundle.get("signatureBase64") or not v1_verified:
-            signature = b64(bundle.get("signatureBase64", ""), "signatureBase64")
-            signing = manifest.get("signing") or {}
-            if signing.get("algorithm") != ALGORITHM or str(signing.get("keySha256", "")).upper() != key.sha256:
-                raise Rejected(bundle_id + " is not signed by the key pinned for " + origin)
-            if b64(signing.get("publicKeySpki", ""), "manifest publicKeySpki") != key.der:
-                raise Rejected(bundle_id + " embeds a different public key")
-            if not verifies(manifest_bytes, signature, key.der):
-                raise Rejected(bundle_id + ": the manifest signature does not verify")
-        if manifest.get("assetName") not in names:
-            raise Rejected(bundle_id + ": the release is missing " + str(manifest.get("assetName")))
-        if third_party and bundle_id.startswith(OFFICIAL_BUNDLE_PREFIX):
-            raise Rejected(bundle_id + " is in the official " + OFFICIAL_BUNDLE_PREFIX + "* namespace")
-        abis = abis_of(manifest)
-        missing = [abi for abi in REQUIRED_ABIS if abi not in abis]
-        if abis and missing and not admitted_before:
-            raise Rejected(bundle_id + " carries native code without " + ", ".join(missing))
-    return envelope
+# --- official keys ------------------------------------------------------------
 
 
 def official_key(repo, document, key, pin):
@@ -591,7 +198,7 @@ def index_for(repo, trust, pin, maintainer, previous):
         body_sha = sha256_hex(body)
         try:
             envelope = check_envelope(
-                body, origin, key, assets, third_party, previous.get(release["tag_name"]) == body_sha
+                body, origin, key, assets, third_party, previous.get(release["tag_name"]) == body_sha, (JWS, SIGNING_ROOT)
             )
         except Rejected as reason:
             refused.append(release["tag_name"] + ": " + str(reason))
@@ -629,7 +236,7 @@ def signing_certificates(repo, listed, origin):
     when it verifies to the signing root for this origin; else []. Enginehost
     verifies it again before it makes the origin official.
     """
-    if JWS is None or ROOT is None:
+    if JWS is None or SIGNING_ROOT is None:
         return []
     text = None
     for release in listed:
@@ -644,7 +251,7 @@ def signing_certificates(repo, listed, origin):
         return []
     try:
         chain = JWS.pem_certificates(text)
-        named = JWS.verify_chain(chain, "plugin", ROOT)
+        named = JWS.verify_chain(chain, "plugin", SIGNING_ROOT)
     except JWS.Refused as reason:
         warn(repo + ": " + SIGNING_CERTIFICATE + " does not verify to the Enginehost signing root: " + str(reason))
         return []
@@ -658,10 +265,10 @@ def check_revocations():
     """plugins/revocations.jws, when committed: a revocation list for "enginehost" signed under the signing root."""
     if not REVOCATIONS_PATH.is_file():
         return
-    if JWS is None or ROOT is None:
+    if JWS is None or SIGNING_ROOT is None:
         sys.exit("plugins/revocations.jws is committed but this run cannot verify it (no ENGINEHOST_TOOLING or no signing root)")
     try:
-        named = JWS.verify(REVOCATIONS_PATH.read_text(encoding="ascii"), "revocations", ROOT, None)
+        named = JWS.verify(REVOCATIONS_PATH.read_text(encoding="ascii"), "revocations", SIGNING_ROOT, None)
     except JWS.Refused as reason:
         sys.exit("plugins/revocations.jws does not verify: " + str(reason))
     payload = json.loads(named["payload"])
@@ -669,23 +276,6 @@ def check_revocations():
             or payload.get("type") != "droidtop-revocations" or payload.get("version") != 1:
         sys.exit("plugins/revocations.jws is not Enginehost's revocation list")
     print("plugins/revocations.jws: sequence " + str(payload.get("sequence")) + ", verified to the Enginehost signing root")
-
-
-def previous_envelopes(existing_text):
-    """{repo (lowercase): {tag: envelope sha256}} from the committed index."""
-    try:
-        document = json.loads(existing_text) if existing_text else {}
-    except ValueError:
-        return {}
-    found = {}
-    for entry in document.get("origins") or []:
-        tags = {}
-        for release in entry.get("releases") or []:
-            for asset in release.get("assets") or []:
-                if asset.get("name") in RELEASE_ENVELOPES and asset.get("sha256"):
-                    tags[release["tag"]] = asset["sha256"].lower()
-        found[entry.get("repo", "").lower()] = tags
-    return found
 
 
 # --- announcements -------------------------------------------------------------
@@ -871,121 +461,6 @@ def generate(existing_text, announced=None):
     return index, registrations_document, report, history_document
 
 
-def load_history():
-    if not HISTORY_PATH.is_file():
-        return {"comment": HISTORY_COMMENT, "keys": []}
-    document = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
-    if not isinstance(document.get("keys"), list):
-        raise Rejected("plugins/key-history.json: `keys` must be a list")
-    return document
-
-
-def recorded_key(history, repo, fingerprint):
-    """The key document key-history.json holds for this repository's [fingerprint], or None."""
-    for line in reversed(history):
-        if line.get("repo", "").lower() == repo.lower() and str(line.get("keySha256", "")).upper() == fingerprint.upper():
-            return line.get("key")
-    return None
-
-
-def check_history(registered):
-    """What makes the key history an audit trail rather than a note.
-
-    Checked offline on every push: each official line's certificate verifies
-    with the serial it records, serials only rise per repository, each line
-    names the key it replaced, and every registration is pinned to the last
-    key the history holds for it.
-    """
-    history = load_history()["keys"]
-    last = {}
-    for number, line in enumerate(history, 1):
-        repo = line.get("repo", "")
-        what = "plugins/key-history.json line " + str(number) + " (" + repo + ")"
-        document = line.get("key")
-        if not isinstance(document, dict):
-            sys.exit(what + ": no key document")
-        try:
-            _, key = key_document(json.dumps(document).encode(), origin_of(repo), what)
-        except Rejected as reason:
-            sys.exit(str(reason))
-        if key.sha256 != str(line.get("keySha256", "")).upper():
-            sys.exit(what + ": keySha256 is not the document's key")
-        previous = last.get(repo.lower())
-        if line.get("trust") == "official":
-            serial = certificate_serial(document, OFFICIAL_ROOT)
-            if serial is None or serial != line.get("serial"):
-                sys.exit(what + ": the root's certificate does not verify with serial " + str(line.get("serial")))
-            if previous is not None and serial <= previous.get("serial", 0):
-                sys.exit(what + ": serial " + str(serial) + " does not rise above " + str(previous.get("serial")))
-        expected = previous.get("keySha256") if previous is not None else None
-        if line.get("replaces") != expected:
-            sys.exit(what + ": replaces " + str(line.get("replaces")) + ", not the key before it (" + str(expected) + ")")
-        last[repo.lower()] = line
-    for entry in registered:
-        line = last.get(entry["repo"].lower())
-        if line is not None and line["keySha256"].upper() != entry["keySha256"].upper():
-            sys.exit("plugins/origins.json: " + entry["repo"] + " is pinned to a key the history does not end with")
-
-
-def pack_name(repo):
-    return repo.lower().replace("/", "__") + ".json"
-
-
-def write_envelope_packs(index):
-    """
-    One pack per repository: every envelope its index entry lists, keyed by
-    sha256, so a device with none cached (a fresh install, cleared data)
-    fetches one file per repository instead of one per release (Droidtop/
-    tracker#550, 2026-10-24: 509 envelopes, one request each, on a reset
-    console). Each envelope is the exact text the release published, so a
-    device verifies it as it would one fetched alone. The entry names its
-    pack by path and sha256; only a changed pack is rewritten, and a pack
-    no entry names any more is removed.
-    """
-    PACKS_DIR.mkdir(parents=True, exist_ok=True)
-    named = set()
-    for entry in index["origins"]:
-        pack = entry.pop("_pack", {})
-        if not pack:
-            continue
-        name = pack_name(entry["repo"])
-        text = json.dumps(
-            {"schemaVersion": 1, "origin": entry["origin"], "envelopes": dict(sorted(pack.items()))},
-            ensure_ascii=False,
-            separators=(",", ":"),
-        ) + "\n"
-        data = text.encode("utf-8")
-        path = PACKS_DIR / name
-        if not path.is_file() or path.read_bytes() != data:
-            path.write_bytes(data)
-            log("plugins/envelopes/" + name + " written: " + str(len(pack)) + " envelopes, " + str(len(data)) + " bytes")
-        entry["envelopePack"] = {"path": "envelopes/" + name, "sha256": sha256_hex(data), "size": len(data)}
-        named.add(name)
-    for stale in PACKS_DIR.glob("*.json"):
-        if stale.name not in named:
-            stale.unlink()
-            log("plugins/envelopes/" + stale.name + " removed: no repository in the index names it")
-
-
-def check_envelope_packs(index):
-    """Each entry's pack exists, matches its hash, and holds every envelope the entry lists."""
-    for entry in index["origins"]:
-        pack = entry.get("envelopePack")
-        if pack is None:
-            continue
-        path = PLUGINS_DIR / pack["path"]
-        if not path.is_file():
-            sys.exit("plugins/index.json: " + entry["repo"] + " names " + pack["path"] + ", which is missing")
-        data = path.read_bytes()
-        if sha256_hex(data) != pack["sha256"]:
-            sys.exit("plugins/" + pack["path"] + " does not match the sha256 the index names")
-        envelopes = json.loads(data)["envelopes"]
-        for release in entry["releases"]:
-            for asset in release["assets"]:
-                if asset["name"] in RELEASE_ENVELOPES and asset["sha256"].lower() not in envelopes:
-                    sys.exit("plugins/" + pack["path"] + " lacks the envelope of " + release["tag"])
-
-
 def dump(document):
     """The repository's one JSON style: indent 1, real UTF-8, trailing newline."""
     return json.dumps(document, indent=1, ensure_ascii=False) + "\n"
@@ -1023,7 +498,7 @@ def check(existing):
     OFFICIAL_ROOT = official_root()
     check_revocations()
     third_party, _ = load_third_party()
-    check_history(json.loads(ORIGINS_PATH.read_text(encoding="utf-8"))["origins"])
+    check_history(json.loads(ORIGINS_PATH.read_text(encoding="utf-8"))["origins"], OFFICIAL_ROOT)
     document = json.loads(existing)
     if document.get("schemaVersion") != SCHEMA_VERSION:
         sys.exit("plugins/index.json: unexpected schemaVersion")
@@ -1060,8 +535,8 @@ OFFICIAL_ROOT = None
 
 
 def main():
-    global OFFICIAL_ROOT, JWS, ROOT
-    JWS, ROOT = v1_tooling()
+    global OFFICIAL_ROOT, JWS, SIGNING_ROOT
+    JWS, SIGNING_ROOT = v1_tooling()
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--check", action="store_true", help="validate the committed files instead of writing")
     parser.add_argument("--event", action="store_true", help="also act on what the triggering GitHub event announces")

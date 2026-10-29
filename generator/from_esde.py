@@ -18,7 +18,6 @@ MAME4droid commands: a multi-word cli_params string extra) pass through
 verbatim -- droidtop's converter tokenizes quote-aware since 2026-08-31,
 which is what made un-skipping them correct rather than hopeful.
 """
-import json
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -219,4 +218,3 @@ print(f"esde commands converted: {len(players)}, new after merge: {len(added)}, 
 print(f"skipped (unsupported/no rule): {len(skipped)}", file=sys.stderr)
 for s in skipped[:15]:
     print("  skip:", *s, file=sys.stderr)
-print(out)

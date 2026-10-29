@@ -8,7 +8,7 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import plugins_index as index  # noqa: E402
+import envelopes as index  # noqa: E402
 
 
 def manifest(*paths):

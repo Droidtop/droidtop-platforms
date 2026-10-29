@@ -3,7 +3,6 @@
 Needs ENGINEHOST_TOOLING (a checkout of Droidtop/enginehost with scripts/) and the openssl command line; skipped without them.
 Run: python3 -m unittest discover -s generator -p 'test_*.py'
 """
-import base64
 import os
 import pathlib
 import subprocess
