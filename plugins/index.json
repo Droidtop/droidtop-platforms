@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T19:55:07Z",
+ "generatedAt": "2026-10-29T20:04:16Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -12342,6 +12342,70 @@
      ]
     },
     {
+     "tag": "godot-component-spine-godot-v42-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T19:59:07Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
+       "size": 3135876,
+       "sha256": "d4a8cd94c0be326e9df7e9e1a2c5d82c5e30a342d9b4613c745fc7cef7242dad"
+      },
+      {
+       "name": "enginehost-component.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-component.json",
+       "size": 6589,
+       "sha256": "71745721c9ab9def97e38592775ffe1ebe3795009aceb5ff4c148a13c97fe551"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
+      }
+     ]
+    },
+    {
+     "tag": "godot-component-spine-godot-v42-build.365",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T19:59:10Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-build.365/dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
+       "size": 3135876,
+       "sha256": "d4a8cd94c0be326e9df7e9e1a2c5d82c5e30a342d9b4613c745fc7cef7242dad"
+      },
+      {
+       "name": "enginehost-component.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-build.365/enginehost-component.json",
+       "size": 6589,
+       "sha256": "71745721c9ab9def97e38592775ffe1ebe3795009aceb5ff4c148a13c97fe551"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-build.365/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-build.365/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
+      }
+     ]
+    },
+    {
      "tag": "godot-v47-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -13040,38 +13104,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-v40-v1-build.346/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
-      }
-     ]
-    },
-    {
-     "tag": "godot-component-spine-godot-v42-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-28T23:05:38Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/dev.enginehost.godot.component.spine-godot.v42.enginehost.tar.xz",
-       "size": 3138160,
-       "sha256": "ad908db939945bc2a3dd84c1f5e4aa385816b1759da22568b675843110194a6d"
-      },
-      {
-       "name": "enginehost-component.json",
-       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-component.json",
-       "size": 6589,
-       "sha256": "fbcdc9ef42f59a1fec28384479500987126947bcd27ffa168ff86f3eaaa2e914"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "f03097cd4e990a3184517565580124d64774b442cc1c28cd314fbaa3bfcadf20"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-godot-plugin/releases/download/godot-component-spine-godot-v42-unstable/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "5ada4a335455c889194098e5e04899d0ac01d10ea9a0fbec426e1b0c6274c075"
       }
@@ -16206,8 +16238,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-godot-plugin.json",
-    "sha256": "319f683dca3391707272f678cf5cf1a86930f04501e0fc2af8936128b9f29336",
-    "size": 646849
+    "sha256": "444c221ec42c0a39b36b6e551532346b2471ce50ad8b8012e33882f22b0a618e",
+    "size": 653538
    }
   },
   {
