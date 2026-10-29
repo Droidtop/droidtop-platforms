@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T06:06:33Z",
+ "generatedAt": "2026-10-29T13:23:44Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -343,7 +343,32 @@
      "id": "droidtop.syncthing",
      "label": "Syncthing",
      "description": "A full Syncthing that syncs folders with the computers and handhelds you paired with droidtop, with no pairing of its own, and with any other Syncthing you add: trusted, or untrusted for an encrypted backup.",
+     "category": "tools",
      "releases": [
+      {
+       "version": "1.1.0",
+       "stream": "unstable",
+       "publishedAt": "2026-10-29T09:01:22Z",
+       "manifestSha256": "e93b170ea52d8a4c032b7aed8395be7bbc57cbe856de9e9f0631945972034319",
+       "bundle": {
+        "name": "droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-build.12/droidtop.syncthing.droidplugin.tar.xz",
+        "size": 16520268,
+        "sha256": "9f1a68d3ab076ae528f74163b09e486414be01617e8ac7d21f5283f2bfae68e6"
+       }
+      },
+      {
+       "version": "1.1.0",
+       "stream": "unstable",
+       "publishedAt": "2026-10-29T09:01:18Z",
+       "manifestSha256": "e93b170ea52d8a4c032b7aed8395be7bbc57cbe856de9e9f0631945972034319",
+       "bundle": {
+        "name": "droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-unstable/droidtop.syncthing.droidplugin.tar.xz",
+        "size": 16520268,
+        "sha256": "9f1a68d3ab076ae528f74163b09e486414be01617e8ac7d21f5283f2bfae68e6"
+       }
+      },
       {
        "version": "1.0.0",
        "stream": "stable",
@@ -366,30 +391,6 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-build.6/droidtop.syncthing.droidplugin.tar.xz",
         "size": 13609388,
         "sha256": "9ed99d8bedeaf810c369db5ce01ce7d89a8dee5c9126b47f9d0140eb67907312"
-       }
-      },
-      {
-       "version": "1.0.0",
-       "stream": "unstable",
-       "publishedAt": "2026-10-16T13:59:02Z",
-       "manifestSha256": "b2337b8e52b2d9e4533b1f0c4f8c5a79946b75a0b7796a9eaaf7fb793c85b711",
-       "bundle": {
-        "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-unstable/droidtop.syncthing.droidplugin.tar.xz",
-        "size": 13609388,
-        "sha256": "9ed99d8bedeaf810c369db5ce01ce7d89a8dee5c9126b47f9d0140eb67907312"
-       }
-      },
-      {
-       "version": "1.0.0",
-       "stream": "unstable",
-       "publishedAt": "2026-10-16T13:51:39Z",
-       "manifestSha256": "0b9d15dfbdc98fd2539066f62b03e1a85c508dad986e74f42d0edfbcafa1852a",
-       "bundle": {
-        "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-build.5/droidtop.syncthing.droidplugin.tar.xz",
-        "size": 13621316,
-        "sha256": "fca5e312da234dcf81c8841d3fa9f0599df73e34e5dad417b1dcac09284d846d"
        }
       }
      ]
