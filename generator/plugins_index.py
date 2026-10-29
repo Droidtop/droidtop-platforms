@@ -45,8 +45,9 @@ Run:
   plugins_index.py --check         validate the committed files offline (CI on a push)
 
 GH_TOKEN, when set, raises the API allowance; public repositories are
-readable without it.  Signatures are checked with the openssl command line,
-which every GitHub runner has, so the job installs nothing.
+readable without it.  Key and manifest signatures are checked with the
+cryptography package (crypto.py); format v1 chains by Enginehost's bundle_jws.py
+(jws.py), which uses the openssl command line every GitHub runner has.
 """
 
 import argparse
