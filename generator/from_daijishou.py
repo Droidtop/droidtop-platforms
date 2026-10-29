@@ -8,11 +8,11 @@ public sources:
      folder-name alias table): https://github.com/Jetup13/DaijishouExp -
      per-platform JSON files carrying player definitions.
 
-Usage: from_daijishou.py <workdir> [existing-db.json]
+Usage: from_daijishou.py <workdir>   (then generator/build.py)
 
 Fetches (or reuses a checkout in <workdir>), parses, and merges the same
-way from_esde.py does: existing entries win on id, new entries are
-additive and deduped by (systemId, pkg, argumentsTemplate). RetroArch
+way from_esde.py does: the rows already in players/ win on id, new ones are
+additive, deduped by (systemId, pkg, argumentsTemplate), and written as players/<id>.json. RetroArch
 core entries are excluded (droidtop's DefaultPlayers covers libretro).
 
 Platform-name mapping: only Daijishou shortnames that exactly match an
@@ -26,8 +26,10 @@ import sys
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tree  # noqa: E402
+
 workdir = Path(sys.argv[1])
-existing_path = Path(sys.argv[2]) if len(sys.argv) > 2 else None
 workdir.mkdir(parents=True, exist_ok=True)
 
 WIKI_URL = "https://raw.githubusercontent.com/wiki/TapiocaFox/Daijishou/Start-Arguments.md"
@@ -81,19 +83,15 @@ for platform_file in sorted(exp_dir.glob("platforms/*.json")):
             continue
         add(shortname, name, pkg_match.group(1), args, bool(player.get("killPackageProcesses")))
 
-existing = []
-if existing_path and existing_path.is_file():
-    existing = json.load(open(existing_path))["players"]
+existing = tree.rows("players")
 seen_ids = {p["id"] for p in existing}
 seen_shape = {(p["systemId"], p["pkg"], p["argumentsTemplate"]) for p in existing}
 added = [
     p for p in players
     if p["id"] not in seen_ids and (p["systemId"], p["pkg"], p["argumentsTemplate"]) not in seen_shape
 ]
-db = {"version": 2, "players": existing + added}
-out = Path(__file__).resolve().parent.parent / "players-database.json"
-json.dump(db, open(out, "w"), indent=1)
-print(f"daijishou parsed: {len(players)}, new after merge: {len(added)}, total: {len(db['players'])}", file=sys.stderr)
+for player in added:
+    tree.write("players", player)
+print(f"daijishou parsed: {len(players)}, new after merge: {len(added)}, total: {len(existing) + len(added)}; run generator/build.py", file=sys.stderr)
 for r in report[:10]:
     print("  note:", *r, file=sys.stderr)
-print(out)

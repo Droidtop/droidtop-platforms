@@ -55,7 +55,7 @@ The tree is the source. Everything else is generated, never hand-edited:
 
 - `index.json` is what apps fetch first.
 - `legacy/*.json` are the monolithic documents, composed back out of the tree in the schema the apps parse.
-- The same four files at the repository root are deprecated. Released app builds still fetch those URLs, so they stay until no supported build does. Do not add a new consumer.
+- The same files at the repository root are deprecated; do not add a new consumer. Who still reads them: on `main`, droidtop (`PlatformDatabaseSource`) and Enginehost (`EngineRegistryStore`) fetch `index.json` first and fall back to the root file only for a source that has no index (an older commit of this repository, a fork that publishes only the monolith). Builds from before the index (this repository became a tree on 2026-09-10, commit 8c93045) fetch the root files only. The root copies and `legacy/` go in one commit, once the oldest app build the owner still supports reads the index; that cut-off is the owner's to name, and it is not recorded anywhere yet.
 
 Run `generator/build.py` after any change to the tree, and `generator/build.py --check` to verify. CI runs `--check`, and so does the pre-commit hook that `generator/install-hooks.sh` links in.
 

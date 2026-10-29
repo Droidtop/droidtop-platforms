@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate players-database.json entries from ES-DE mobile's own
+"""Generate the players/ rows from ES-DE mobile's own
 maintained Android launch database (MIT):
 
   resources/systems/android/es_systems.xml   - per-system <command> lines
   resources/systems/android/es_find_rules.xml - %EMULATOR_X% -> package/activity
 
-Usage: from_esde.py <es-de-checkout> [existing-db.json]
+Usage: from_esde.py <es-de-checkout>   (then generator/build.py)
 
 Only standalone-emulator commands are converted (RetroArch entries are
 excluded: droidtop generates those from es_systems' own core mapping
@@ -24,8 +24,10 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tree  # noqa: E402
+
 es_root = Path(sys.argv[1])
-existing_path = Path(sys.argv[2]) if len(sys.argv) > 2 else None
 
 # emulator name -> (package, activity)
 find_rules = {}
@@ -202,23 +204,18 @@ for system in ET.parse(es_root / "resources/systems/android/es_systems.xml").get
             "killPackageProcesses": False,
         })
 
-# merge with the existing database: existing (Daijishou-derived) entries
-# win on exact id; ES-DE entries are additive, deduped against existing
-# by (systemId, pkg, argumentsTemplate)
-existing = []
-if existing_path and existing_path.is_file():
-    existing = json.load(open(existing_path))["players"]
+# the rows already in players/ win on exact id; ES-DE entries are additive, deduped against them
+# by (systemId, pkg, argumentsTemplate), and each new one is written as players/<id>.json
+existing = tree.rows("players")
 seen_ids = {p["id"] for p in existing}
 seen_shape = {(p["systemId"], p["pkg"], p["argumentsTemplate"]) for p in existing}
 added = [
     p for p in players
     if p["id"] not in seen_ids and (p["systemId"], p["pkg"], p["argumentsTemplate"]) not in seen_shape
 ]
-
-db = {"version": 2, "players": existing + added}
-out = Path(__file__).resolve().parent.parent / "players-database.json"
-json.dump(db, open(out, "w"), indent=1)
-print(f"esde commands converted: {len(players)}, new after merge: {len(added)}, total: {len(db['players'])}", file=sys.stderr)
+for player in added:
+    tree.write("players", player)
+print(f"esde commands converted: {len(players)}, new after merge: {len(added)}, total: {len(existing) + len(added)}; run generator/build.py", file=sys.stderr)
 print(f"skipped (unsupported/no rule): {len(skipped)}", file=sys.stderr)
 for s in skipped[:15]:
     print("  skip:", *s, file=sys.stderr)
