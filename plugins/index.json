@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T07:40:00Z",
+ "generatedAt": "2026-10-29T08:01:03Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -8159,13 +8159,13 @@
      "tag": "rpgmaker-easyrpg-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-28T21:16:22Z",
+     "published_at": "2026-10-29T07:56:49Z",
      "assets": [
       {
        "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-unstable/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
-       "size": 45555156,
-       "sha256": "729836607adbb216320cec9d5527019a8c3ec64a3a3e8f50c7e95b370d6f8bb7"
+       "size": 45558456,
+       "sha256": "d7ca4268096dd0978d9697b751e82ac06b7e080afed1ad9e44f62705c2d6af5b"
       },
       {
        "name": "enginehost-public-key.json",
@@ -8177,11 +8177,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-unstable/enginehost-release.json",
        "size": 11898,
-       "sha256": "532a088234139303c1e0d5175baf7e921a6f91a58f6d1e8522c867ab34904632"
+       "sha256": "968d4ce6d6a3a1597d83dda763e60574f31a47173b0f8332f738db405b141136"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 810,
+       "sha256": "0a574503b1da5e7b8377e873f42311320b9257e3e0b292f146102f7681534365"
+      }
+     ]
+    },
+    {
+     "tag": "rpgmaker-easyrpg-v1-build.79",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T07:56:54Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.79/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
+       "size": 45558456,
+       "sha256": "d7ca4268096dd0978d9697b751e82ac06b7e080afed1ad9e44f62705c2d6af5b"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.79/enginehost-public-key.json",
+       "size": 659,
+       "sha256": "6819e8eaa30888452a6364f38e82a5cd9f5359ef33fa00675f1093e40794978d"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.79/enginehost-release.json",
+       "size": 11898,
+       "sha256": "968d4ce6d6a3a1597d83dda763e60574f31a47173b0f8332f738db405b141136"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.79/enginehost-signing-certificate.pem",
        "size": 810,
        "sha256": "0a574503b1da5e7b8377e873f42311320b9257e3e0b292f146102f7681534365"
       }
@@ -8532,8 +8564,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-rpgmaker-easyrpg-plugin.json",
-    "sha256": "d7e7b53d90aa19d20c5c3ea1349a8838e93d9607636de6ed13a85533ca3ca672",
-    "size": 134115
+    "sha256": "8fe38353e6ef4b4530aed8b800006425245d3a36a47c0ae19b7a6b661b384603",
+    "size": 146113
    }
   },
   {
