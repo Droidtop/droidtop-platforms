@@ -4,5 +4,16 @@
  "label": "aX360e (Standalone)",
  "pkg": "aenu.ax360e",
  "argumentsTemplate": "-n aenu.ax360e/aenu.ax360e.EmulatorActivity -a aenu.intent.action.AX360E -e game_uri {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "aenu.ax360e",
+    "official": true
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=aenu.ax360e; https://github.com/aenu1/ax360e#readme. The listing loads for this exact package id (developer: aenu). The project README (aenu1/ax360e) has the Play badge for the Donation Version = this id."
+ }
 }

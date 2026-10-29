@@ -8,5 +8,15 @@
  "setup": {
   "biosManual": "Settings > BIOS",
   "source": "Yaba Sanshiro 2 (mirror c897c0d): a file the person picks, copied into private storage (https://github.com/code-and-design-inc/ios_saturn/blob/c897c0d948bccb9b9ef7a31c3af74b49ab258a8a/yabause/src/android/app/src/main/java/org/uoyabause/android/BiosManager.kt#L81)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.devmiyax.yabasanshioro2"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=org.devmiyax.yabasanshioro2. The listing loads for this exact package id (developer: devMiyax); the project's own statement of where it is distributed was not read, so `official` is not set."
  }
 }

@@ -4,5 +4,15 @@
  "label": "com.explusalpha.C64Emu",
  "pkg": "com.explusalpha.C64Emu",
  "argumentsTemplate": "-n com.explusalpha.C64Emu/com.imagine.BaseActivity -a android.intent.action.VIEW -d {file.path} -t application/zip",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.explusalpha.C64Emu"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.explusalpha.C64Emu. The listing loads for this exact package id (developer: Robert Broglia); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

@@ -11,5 +11,16 @@
   "biosFlat": true,
   "biosManual": "the BIOS screen in its settings",
   "source": "Seen on a device: NetherSX2 (xyz.aethersx2.tturnip) on the RP5 console reads Android/data/xyz.aethersx2.tturnip/files/bios and booted nothing while it was empty (Droidtop/tracker#270, rig on droidtop 0.2.0-dev.1923). Flat: AetherSX2 and its builds are PCSX2 forks, whose BIOS search lists the bios folder's top only, any name (https://github.com/PCSX2/pcsx2/blob/v1.7.5000/pcsx2/ps2/BiosTools.cpp#L246, FindFiles without FILESYSTEM_FIND_RECURSIVE)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "nckstwrt/NetherSX2-Turnip",
+    "asset": "^NetherSX2-v.*-Turnip-.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/nckstwrt/NetherSX2-Turnip#download; https://github.com/nckstwrt/NetherSX2-Turnip/releases. README: Download = Releases; package xyz.aethersx2.tturnip is named in the README (vulkan_shim.log path). Asset NetherSX2-v2.2n-4248-Turnip-v0.7.apk from release v0.7. It needs the person's own PS2 BIOS (not covered here). The Classic variant's asset NetherSX2-Classic-v2.2n-3668-Turnip-v0.7.apk exists but its package id is not printed."
  }
 }

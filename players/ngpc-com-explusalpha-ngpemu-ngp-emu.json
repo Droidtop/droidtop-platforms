@@ -4,5 +4,15 @@
  "label": "NGP.EMU",
  "pkg": "com.explusalpha.NgpEmu",
  "argumentsTemplate": "-n com.explusalpha.NgpEmu/com.imagine.BaseActivity -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.explusalpha.NgpEmu"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.explusalpha.NgpEmu. The listing loads for this exact package id (developer: Robert Broglia); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

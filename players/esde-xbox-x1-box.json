@@ -8,5 +8,15 @@
  "setup": {
   "biosManual": "its setup wizard: MCPX and Flash",
   "source": "x1box dadced0: files the person picks (https://github.com/izzy2lost/xemu/blob/dadced00cea8bcbada5a5650541cc5bac3cc93f4/android/app/src/main/java/com/izzy2lost/x1box/SetupWizardActivity.kt#L70-L92)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.izzy2lost.x1box"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.izzy2lost.x1box. The listing loads for this exact package id (developer: izzy2lost); the project's own statement of where it is distributed was not read, so `official` is not set."
  }
 }

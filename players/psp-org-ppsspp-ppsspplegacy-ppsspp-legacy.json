@@ -4,5 +4,17 @@
  "label": "PPSSPP Legacy",
  "pkg": "org.ppsspp.ppsspplegacy",
  "argumentsTemplate": "-n org.ppsspp.ppsspplegacy/org.ppsspp.ppsspp.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri} -t application/octet-stream --activity-clear-task --activity-clear-top --activity-no-history",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "page",
+    "url": "https://www.ppsspp.org/docs/reference/legacy-edition",
+    "official": true,
+    "channel": "nightly"
+   }
+  ],
+  "source": "https://www.ppsspp.org/docs/reference/legacy-edition; https://www.ppsspp.org/legacybuilds/. APK only, from the buildbot AndroidLegacy build (1.17.1-980+); cannot be on Play. The docs page does not print the package id."
+ }
 }

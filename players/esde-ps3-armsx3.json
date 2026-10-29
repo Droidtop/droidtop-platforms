@@ -8,5 +8,15 @@
  "setup": {
   "biosManual": "its BIOS screen: select or reinstall PS3UPDAT.PUP",
   "source": "ARMSX3 413906f: a firmware package installed, not a folder (https://github.com/ARMSX2/ARMSX3/blob/413906f9b43ba228c65547b20d6404e62b72160c/android/armsx3-ui/app/src/main/java/com/armsx2/ui/bios/BiosManagerScreen.kt#L40-L53)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "ARMSX2/ARMSX3"
+   }
+  ],
+  "source": "https://github.com/ARMSX2/ARMSX3/releases; https://github.com/ARMSX2/ARMSX3/blob/master/android/armsx3-app/app/build.gradle.kts. applicationId com.armsx3 read from build.gradle.kts. Releases carry per-Android-version APKs (a11/a13/a15/legacy), so there is no single asset pattern; the person picks."
  }
 }

@@ -4,5 +4,21 @@
  "label": "vvs",
  "pkg": "com.simongellis.vvb",
  "argumentsTemplate": "-n com.simongellis.vvb/com.simongellis.vvb.MainActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.simongellis.vvb",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "SupernaviX/vvb",
+    "asset": "^vvb-.*\\.apk$"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.simongellis.vvb; https://github.com/SupernaviX/vvb#readme; https://github.com/SupernaviX/vvb/releases; https://github.com/SupernaviX/vvb/blob/main/app/build.gradle. The project README has the Play badge for com.simongellis.vvb. GitHub release asset vvb-1.18.2.apk read from release v1.18.2."
+ }
 }

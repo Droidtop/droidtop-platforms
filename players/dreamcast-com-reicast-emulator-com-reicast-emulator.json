@@ -8,5 +8,16 @@
  "setup": {
   "biosManual": "Settings > General > Home Directory (BIOS files go in its data folder)",
   "source": "reicast 2e32999: a folder the person picks (https://github.com/skmp/reicast-emulator/blob/2e32999c422f997a791c64cbe3720c8e9333bec0/libswirl/gui/gui_settings_general.cpp#L147-L162)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "skmp/reicast-emulator",
+    "asset": "^Reicast\\.r.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/skmp/reicast-emulator/releases; https://github.com/skmp/reicast-emulator/blob/master/reicast/android-studio/reicast/build.gradle. The repository is archived (Reicast was discontinued); applicationId com.reicast.emulator in android-studio/reicast/build.gradle; asset Reicast.r20.04.apk. Last update 2025."
  }
 }

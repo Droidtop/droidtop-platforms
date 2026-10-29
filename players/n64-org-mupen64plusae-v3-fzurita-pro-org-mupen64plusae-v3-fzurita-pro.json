@@ -4,5 +4,15 @@
  "label": "org.mupen64plusae.v3.fzurita.pro",
  "pkg": "org.mupen64plusae.v3.fzurita.pro",
  "argumentsTemplate": "-n org.mupen64plusae.v3.fzurita.pro/paulscode.android.mupen64plusae.SplashActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.mupen64plusae.v3.fzurita.pro"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=org.mupen64plusae.v3.fzurita.pro. The listing loads for this exact package id (developer: Francisco Zurita); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

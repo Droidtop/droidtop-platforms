@@ -4,5 +4,16 @@
  "label": "SeedlessDS (Standalone)",
  "pkg": "com.seedlessds.app",
  "argumentsTemplate": "-n com.seedlessds.app/com.seedlessds.app.LaunchGame -e rom_path {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "SapphireRhodonite/SeedlessDS",
+    "asset": "^SeedlessDS-.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/SapphireRhodonite/SeedlessDS/releases; https://github.com/SapphireRhodonite/SeedlessDS/blob/main/app/build.gradle.kts. applicationId com.seedlessds.app read from app/build.gradle.kts; assets SeedlessDS-1.0.1-release.apk and SeedlessDS-1.0.0.apk. The README's download statement was not read, so `official` is not set."
+ }
 }

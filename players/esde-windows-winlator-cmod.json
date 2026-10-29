@@ -4,5 +4,16 @@
  "label": "Winlator Cmod (Standalone)",
  "pkg": "com.winlator.cmod",
  "argumentsTemplate": "-n com.winlator.cmod/com.winlator.cmod.XServerDisplayActivity --activity-clear-task --activity-clear-top -e shortcut_path {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "coffincolors/winlator",
+    "asset": "^Winlator-Cmod-v.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/coffincolors/winlator/releases; https://github.com/coffincolors/winlator/blob/main/app/build.gradle. applicationId com.winlator.cmod read from app/build.gradle; asset Winlator-Cmod-v13.1.1.apk read from release cmod_v13.1. The project's statement of official distribution was not read."
+ }
 }

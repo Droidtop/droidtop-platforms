@@ -4,5 +4,17 @@
  "label": "artemis",
  "pkg": "com.limelight.noir",
  "argumentsTemplate": "-n com.limelight.noir/com.limelight.ShortcutTrampoline -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "ClassicOldSong/moonlight-android",
+    "asset": "^artemis-nonRoot_game-release\\.apk$",
+    "official": true
+   }
+  ],
+  "source": "https://github.com/ClassicOldSong/moonlight-android#downloads; https://github.com/ClassicOldSong/moonlight-android/blob/master/app/build.gradle. README Downloads: 'Download APK directly' from Releases, or Obtainium. com.limelight.noir = the nonRoot applicationId com.limelight plus the release suffix .noir. Asset name read from stable v20.2.6; pre-releases use app-nonRoot_game-<abi>-pre-release.apk."
+ }
 }

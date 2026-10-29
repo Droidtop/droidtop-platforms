@@ -8,5 +8,15 @@
  "setup": {
   "biosManual": "its setup screen: Base firmware and Firmware update package",
   "source": "EmuCoreV 2570561: firmware packages installed, not a folder (https://github.com/sashkinbro/EmuCoreV/blob/25705611c78939476d7e4de415296e8cff2652e5/app/src/main/java/com/sbro/emucorev/core/FirmwareSource.kt#L22-L30)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.sbro.emucorev"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.sbro.emucorev. The listing loads for this exact package id (developer: Sashkin Apps); the project's own statement of where it is distributed was not read, so `official` is not set."
  }
 }

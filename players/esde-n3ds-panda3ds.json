@@ -4,5 +4,16 @@
  "label": "Panda3DS (Standalone)",
  "pkg": "com.panda3ds.pandroid",
  "argumentsTemplate": "-n com.panda3ds.pandroid/com.panda3ds.pandroid.app.MainActivity -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "wheremyfoodat/Panda3DS",
+    "official": true
+   }
+  ],
+  "source": "https://github.com/wheremyfoodat/Panda3DS#download; https://github.com/wheremyfoodat/Panda3DS/blob/master/src/pandroid/app/build.gradle.kts. README Download: stable builds from the Releases tab. The release asset is android-arm64.zip (a zip, not opened), so there is no asset pattern."
+ }
 }

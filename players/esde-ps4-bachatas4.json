@@ -4,5 +4,15 @@
  "label": "BachataS4 (Standalone)",
  "pkg": "com.bachatas4.android",
  "argumentsTemplate": "-n com.bachatas4.android/com.bachatas4.android.DirectLaunchActivity -e game_id {file.inject:{file.basename}.ps4}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.bachatas4.android"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.bachatas4.android. The listing loads for this exact package id (developer: Zenith Blue); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

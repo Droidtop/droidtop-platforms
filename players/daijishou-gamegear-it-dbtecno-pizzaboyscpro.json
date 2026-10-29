@@ -4,5 +4,15 @@
  "label": "gamegear - Pizza Boy SC Pro",
  "pkg": "it.dbtecno.pizzaboyscpro",
  "argumentsTemplate": "-n it.dbtecno.pizzaboyscpro/.MainActivity -e rom_uri {file.path} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "it.dbtecno.pizzaboyscpro"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboyscpro. The listing loads for this exact package id (developer: Pizza Emulators); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

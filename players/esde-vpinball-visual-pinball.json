@@ -4,5 +4,21 @@
  "label": "Visual Pinball (Standalone)",
  "pkg": "org.vpinball.vpinball_bgfx",
  "argumentsTemplate": "-n org.vpinball.vpinball_bgfx/org.vpinball.app.VPinballActivity --activity-clear-task --activity-clear-top -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.vpinball.vpinball_bgfx"
+   },
+   {
+    "kind": "github",
+    "repo": "vpinball/vpinball",
+    "asset": "^VPinballX_BGFX-.*-android-mobile-Release\\.apk$",
+    "channel": "nightly"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=org.vpinball.vpinball_bgfx; https://github.com/vpinball/vpinball#download; https://github.com/vpinball/vpinball/blob/master/apps/android/app/build.gradle.kts. The Play listing loads for this exact package id (developer: Jason Millard); the project's own statement of where it is distributed was not read, so the Play source is not marked official. README Download: the releases page. applicationId read from apps/android/app/build.gradle.kts; asset VPinballX_BGFX-10.8.1-5436-af26b2d93-android-mobile-Release.apk (a pre-release)."
+ }
 }

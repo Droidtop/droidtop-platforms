@@ -4,5 +4,21 @@
  "label": "SUPER3 (Standalone)",
  "pkg": "com.izzy2lost.super3",
  "argumentsTemplate": "-n com.izzy2lost.super3/com.izzy2lost.super3.MainActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.izzy2lost.super3",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "izzy2lost/Super3",
+    "asset": "^app-release\\.apk$"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.izzy2lost.super3; https://github.com/izzy2lost/Super3/releases; https://github.com/izzy2lost/Super3/blob/master/android/app/build.gradle.kts; https://github.com/izzy2lost/Super3#readme. The README has a Play badge for this id; GitHub release asset app-release.apk; applicationId read from build.gradle.kts."
+ }
 }

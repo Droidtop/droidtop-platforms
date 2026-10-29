@@ -4,5 +4,21 @@
  "label": "eka2l1",
  "pkg": "com.github.eka2l1",
  "argumentsTemplate": "-n com.github.eka2l1/.emu.EmulatorActivity -a android.intent.action.VIEW --activity-clear-task --activity-clear-top -d {file.uri}",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "EKA2L1/EKA2L1",
+    "asset": "^EKA2L1-Android\\.apk$",
+    "official": true
+   },
+   {
+    "kind": "play",
+    "id": "com.github.eka2l1"
+   }
+  ],
+  "source": "https://github.com/EKA2L1/EKA2L1#download-buildsartifacts; https://github.com/EKA2L1/EKA2L1/releases/tag/continous; https://play.google.com/store/apps/details?id=com.github.eka2l1. README: Android builds are provided via GitHub Releases ('continous' tag, asset EKA2L1-Android.apk; stable 0.0.8.1 has eka2l1-android-github-release-0.0.8.1.apk). applicationId read from src/emu/android/app/build.gradle."
+ }
 }

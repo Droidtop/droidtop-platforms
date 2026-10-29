@@ -8,5 +8,15 @@
  "setup": {
   "biosManual": "Settings > Choose BIOS Folder",
   "source": "EmuCoreX 94fe0ea: a folder the person picks (https://github.com/sashkinbro/EmuCoreX/blob/94fe0eaf5957c05f0d2ef4a180a73dbf4362e344/app/src/main/java/com/sbro/emucorex/ui/settings/SettingsScreen.kt#L374)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.sbro.emucorex"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.sbro.emucorex. The listing loads for this exact package id (developer: Sashkin Apps); the project's own statement of where it is distributed was not read, so `official` is not set."
  }
 }

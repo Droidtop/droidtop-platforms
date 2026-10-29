@@ -8,5 +8,20 @@
  "setup": {
   "biosManual": "Options > Settings > General > Change ROMs Path (BIOS set zips go in that folder)",
   "source": "MAME4droid-current 9df33ca: the ROM folder is chosen on first run (https://github.com/seleuco/MAME4droid-current/blob/9df33ca197df96d8e206740b94fc54be4e379550/android-MAME4droid/app/src/main/java/com/seleuco/mame4droid/helpers/DialogHelper.java#L134-L164)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.seleuco.mame4d2024"
+   },
+   {
+    "kind": "github",
+    "repo": "seleuco/MAME4droid-Current",
+    "asset": "^MAME4droid\\..*-release\\.apk$"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.seleuco.mame4d2024; https://github.com/seleuco/MAME4droid-Current/releases; https://github.com/seleuco/MAME4droid-Current/blob/master/android-MAME4droid/app/build.gradle. The Play listing loads for this exact package id (developer: Seleuco); the project's own statement of where it is distributed was not read, so `official` is not set. GitHub: applicationId com.seleuco.mame4d2024 in app/build.gradle; asset MAME4droid.2026-1.41.2-release.apk read from release v1.41.2."
  }
 }

@@ -4,5 +4,16 @@
  "label": "Citra MMJ (Standalone)",
  "pkg": "org.citra.emu",
  "argumentsTemplate": "-n org.citra.emu/org.citra.emu.ui.EmulationActivity -e GamePath {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "weihuoya/citra",
+    "asset": "^Citra_MMJ_[0-9]+\\.apk$"
+   }
+  ],
+  "source": "https://github.com/weihuoya/citra/releases; https://github.com/weihuoya/citra/blob/master/src/android/app/build.gradle. applicationId org.citra.emu read from src/android/app/build.gradle; release 20251112 assets Citra_MMJ_20251112.apk plus _Antutu/_StorageAccess variants. No README download statement was found, so `official` is not set."
+ }
 }

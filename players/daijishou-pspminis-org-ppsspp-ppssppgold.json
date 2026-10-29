@@ -4,5 +4,16 @@
  "label": "pspminis - PPSSPP Gold",
  "pkg": "org.ppsspp.ppssppgold",
  "argumentsTemplate": "-n org.ppsspp.ppssppgold/org.ppsspp.ppsspp.PpssppActivity -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d {file.uri} -t application/octet-stream --activity-clear-task --activity-clear-top --activity-no-history",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.ppsspp.ppssppgold",
+    "official": true
+   }
+  ],
+  "source": "https://www.ppsspp.org/download/; https://play.google.com/store/apps/details?id=org.ppsspp.ppssppgold. ppsspp.org/download lists the Play id as the paid version; no APK or F-Droid for Gold."
+ }
 }

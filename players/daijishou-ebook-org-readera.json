@@ -4,5 +4,15 @@
  "label": "ebook - ReadEra",
  "pkg": "org.readera",
  "argumentsTemplate": "-n org.readera/org.readera.read.ReadActivity -d {file.uri}",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.readera"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=org.readera. The listing loads for this exact package id (developer: READERA LLC); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

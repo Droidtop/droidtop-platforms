@@ -51,5 +51,19 @@
     }
    ]
   }
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "org.dolphinemu.dolphinemu"
+   },
+   {
+    "kind": "fdroid",
+    "id": "org.dolphinemu.dolphinemu"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu; https://f-droid.org/en/packages/org.dolphinemu.dolphinemu/; https://github.com/dolphin-emu/dolphin. The Play listing links dolphin-emu.org; the F-Droid listing's source is github.com/dolphin-emu/dolphin (versionName 2603a). dolphin-emu.org/download is behind a browser check, so which source the project calls official is NOT confirmed; `official` is not set. No GitHub releases."
  }
 }

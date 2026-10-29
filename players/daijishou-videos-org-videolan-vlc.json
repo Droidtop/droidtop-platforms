@@ -4,5 +4,26 @@
  "label": "videos - VLC for Android",
  "pkg": "org.videolan.vlc",
  "argumentsTemplate": "-n org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity -a android.intent.action.VIEW -d {file.path} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "page",
+    "url": "https://www.videolan.org/vlc/download-android.html",
+    "official": true
+   },
+   {
+    "kind": "fdroid",
+    "id": "org.videolan.vlc",
+    "official": true
+   },
+   {
+    "kind": "play",
+    "id": "org.videolan.vlc",
+    "official": true
+   }
+  ],
+  "source": "https://www.videolan.org/vlc/download-android.html; https://f-droid.org/en/packages/org.videolan.vlc/; https://play.google.com/store/apps/details?id=org.videolan.vlc. The VideoLAN page 'Official Download of VLC media player for Android' links both the Play listing and the F-Droid listing (and the get.videolan.org/vlc-android/ APK directory, not a GitHub release). Not on IzzyOnDroid (404)."
+ }
 }

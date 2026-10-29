@@ -8,5 +8,16 @@
  "setup": {
   "biosManual": "Main menu > Install Firmware (PS3UPDAT.PUP)",
   "source": "aPS3e b5ae1af: a firmware package the person picks and installs (https://github.com/aenu1/aps3e/blob/b5ae1af50d5e2f3b705506e7380a4504e086840b/app/src/main/java/aenu/aps3e/MainActivity.java#L289-L295)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "aenu.aps3e",
+    "official": true
+   }
+  ],
+  "source": "https://github.com/aenu1/aps3e#readme; https://play.google.com/store/apps/details?id=aenu.aps3e. The project README has a 'Get it on Google Play' badge for the Free Version (aenu.aps3e). GitHub releases only contain files named 2.43.apk (the package id of that file was not confirmed), so there is no github source."
  }
 }

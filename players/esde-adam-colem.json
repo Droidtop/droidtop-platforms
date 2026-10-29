@@ -4,5 +4,15 @@
  "label": "ColEm (Standalone)",
  "pkg": "com.fms.colem.deluxe",
  "argumentsTemplate": "-n com.fms.colem.deluxe/com.fms.emulib.TVActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.fms.colem.deluxe"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.fms.colem.deluxe. The listing loads for this exact package id (developer: Garage Research Emulators); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

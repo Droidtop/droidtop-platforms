@@ -32,5 +32,26 @@
    "{rom_dir}/{rom_stem}.state*"
   ],
   "source": "RetroArch 1.22.2: frontend/drivers/platform_unix.c:1670-1694 (Android default save and state folders: <internal storage>/RetroArch/saves and states, else Android/data/<pkg>/files), configuration.c:4418-4424 (savefile_directory; \"default\" means that folder), runloop.c:8205-8265 (with the folder unset the file sits in the content's folder; sort_savefiles_enable, on by default per config.def.h:917, adds a folder named for the core's library), runloop.c:4211 and :8148 (.srm)"
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "page",
+    "url": "https://www.retroarch.com/platforms.html",
+    "official": true
+   },
+   {
+    "kind": "fdroid",
+    "id": "com.retroarch",
+    "official": true
+   },
+   {
+    "kind": "play",
+    "id": "com.retroarch",
+    "official": true
+   }
+  ],
+  "source": "https://docs.libretro.com/guides/install-android/; https://f-droid.org/en/packages/com.retroarch/; https://play.google.com/store/apps/details?id=com.retroarch. The docs list the direct APK (retroarch.com Downloads), F-Droid (stable) and Play (marked NOT RECOMMENDED, not updated for years). Buildbot: buildbot.libretro.com/stable/ and /nightly/android/ (no GitHub releases)."
  }
 }

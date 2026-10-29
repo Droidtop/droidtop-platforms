@@ -4,5 +4,15 @@
  "label": "gbc - com.fastemulator.gbcfree",
  "pkg": "com.fastemulator.gbcfree",
  "argumentsTemplate": "-n com.fastemulator.gbcfree/.EmulatorActivity -a android.intent.action.VIEW -d {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.fastemulator.gbcfree"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.fastemulator.gbcfree. The listing loads for this exact package id (developer: Pixel Respawn LLC); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

@@ -9,5 +9,15 @@
  "setup": {
   "biosManual": "Options > File Paths > System Card (CD games only)",
   "source": "EmuEx 1c12fac: a file the person picks (https://github.com/Rakashazi/emu-ex-plus-alpha/blob/1c12fac5ce49badaadff2e2f210dcc30b89f4943/PCE.emu/src/main/EmuMenuViews.cc#L176-L202)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.PceEmu"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.PceEmu. The listing loads for this exact package id (developer: Robert Broglia); the project's own statement of where it is distributed was not read, so `official` is not set."
  }
 }

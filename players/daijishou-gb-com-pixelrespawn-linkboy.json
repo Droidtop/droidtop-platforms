@@ -4,5 +4,15 @@
  "label": "gb - Linkboy",
  "pkg": "com.pixelrespawn.linkboy",
  "argumentsTemplate": "-n com.pixelrespawn.linkboy/.EmulatorActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.pixelrespawn.linkboy"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=com.pixelrespawn.linkboy. The listing loads for this exact package id (developer: Pixel Respawn LLC); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

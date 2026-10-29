@@ -8,5 +8,16 @@
  "setup": {
   "biosManual": "Settings > BIOS > BIOS Folder",
   "source": "ARMSX1 99b3081: a folder the person picks (https://github.com/ARMSX2/ARMSX1/blob/99b308168be9c0222abe8c3c575b81853163f908/frontend/main.cpp#L5507-L5528)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "ARMSX2/ARMSX1",
+    "asset": "^ARMSX1-.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/ARMSX2/ARMSX1/releases; https://github.com/ARMSX2/ARMSX1/blob/master/android/app/build.gradle. applicationId com.nanodata.armsx read from android/app/build.gradle; assets ARMSX1-release-20260925-arm64-v8a.apk, ARMSX1-0.3.6.apk."
  }
 }

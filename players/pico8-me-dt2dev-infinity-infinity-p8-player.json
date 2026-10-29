@@ -4,5 +4,15 @@
  "label": "Infinity P8 Player",
  "pkg": "me.dt2dev.infinity",
  "argumentsTemplate": "-n me.dt2dev.infinity/me.dt2dev.infinity.SchemeActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "me.dt2dev.infinity"
+   }
+  ],
+  "source": "https://play.google.com/store/apps/details?id=me.dt2dev.infinity. The listing loads for this exact package id (developer: GuoPing He); the project's own statement of where it is distributed was not read, so `official` is not set."
+ }
 }

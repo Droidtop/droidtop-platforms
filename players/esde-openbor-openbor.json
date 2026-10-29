@@ -4,5 +4,16 @@
  "label": "OpenBOR (Standalone)",
  "pkg": "org.openbor.engine",
  "argumentsTemplate": "-n org.openbor.engine/org.openbor.engine.GameActivity -a android.intent.action.MAIN",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "DCurrent/openbor",
+    "asset": "^OpenBOR-Android\\.v.*\\.apk$"
+   }
+  ],
+  "source": "https://github.com/DCurrent/openbor/releases; https://github.com/DCurrent/openbor/blob/master/engine/android/app/build.gradle. applicationId org.openbor.engine read from engine/android/app/build.gradle; asset OpenBOR-Android.v4.0.Build.7533.apk from release v7533. The README does not state a download location, so `official` is not set."
+ }
 }

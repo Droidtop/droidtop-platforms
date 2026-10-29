@@ -4,5 +4,16 @@
  "label": "3ds - Borked 3DS",
  "pkg": "io.github.borked3ds.android",
  "argumentsTemplate": "-n io.github.borked3ds.android/.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "Borked3DS/Borked3DS",
+    "asset": "^borked3ds-v.*-android-universal\\.apk$"
+   }
+  ],
+  "source": "https://github.com/Borked3DS/Borked3DS/releases; https://github.com/Borked3DS/Borked3DS#installation; https://github.com/Borked3DS/Borked3DS/blob/master/src/android/app/build.gradle.kts. README Installation: 'Download the latest release from Releases'. Asset name read from v2025.03.11; applicationId read from build.gradle.kts. The README says the apk installs on 64-bit ARM or x86, so abis is not set."
+ }
 }
