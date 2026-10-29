@@ -188,3 +188,22 @@ An engine row's `runners` says which apps run its games and what they need:
 row says which core Enginehost needs for the engine; Enginehost itself decides the version and installs it. Other apps
 that run an engine's games (EasyRPG Player, Ruffle, J2ME-Loader, Winlator, ...) stay player rows whose `systemId` is the
 engine, with their own `install`. JoiPlay is deliberately absent: it offers no launch surface droidtop can drive.
+
+### Emulators that get no `setup.config`, and why (read 2026-10-29, Droidtop/tracker#754)
+
+A config row needs one absolute file droidtop can name. These emulators' config file is in a folder the person
+chooses, so no path would be cited rather than guessed, and they carry no `setup.config` until droidtop can be told
+the folder:
+
+- **PPSSPP** (hrydgard/ppsspp cf17b0a): `ppsspp.ini` is `<memstick>/PSP/SYSTEM/` (`Core/Util/PathUtil.cpp#L115-L116`,
+  `Core/Config.cpp#L1677`), and on Android the memstick folder is the one the person picked (`memstick_dir.txt`,
+  `UI/NativeApp.cpp#L644-L703`; with scoped storage there is no default, `#L654-L660`).
+- **Flycast** (flyinghead/flycast 1b63c8a): `emu.cfg` is in the config folder chosen on first start
+  (`core/cfg/cfg.cpp#L36`, which refuses to open until the Android onboarding has set one).
+- **Azahar / Lime3DS** (azahar-emu/azahar 01623d2): the user folder holding `config/config.ini` is the one the person
+  picked (`DirectoryInitialization.kt#L91-L94`).
+- **Vita3K** (Vita3K/Vita3K 62727b5): `config.yml` (`vita3k/config/src/config.cpp#L250-L252`) is YAML, which
+  `setup.config` does not support (`ini` or `keyvalue`).
+
+Dolphin is the exception only because its default folder is fixed; a person who chose its legacy folder is not served
+(see its row's `source`).
