@@ -459,7 +459,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -1439,7 +1481,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -1485,7 +1569,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -3999,7 +4125,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -4532,7 +4700,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -4817,7 +5027,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -5174,7 +5426,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {
@@ -5231,7 +5525,49 @@
    "killPackageProcesses": false,
    "setup": {
     "biosManual": "its user folder (Android/data/org.dolphinemu.dolphinemu/files): GC/<region>/IPL.bin and Triforce/segaboot.gcm",
-    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505)."
+    "source": "Dolphin 8d2ad1a: fixed subfolders under getExternalFilesDir(null) that droidtop's flat copy does not fill (https://github.com/dolphin-emu/dolphin/blob/8d2ad1a662472955497e5bb79d7b9ec6999e1f0d/Source/Core/Core/HW/DVD/AMMediaboard.cpp#L477-L505). Config, read at the same commit: Dolphin.ini is Config/Dolphin.ini in the user directory (Common/CommonPaths.h#L51, #L104; Common/FileUtil.cpp#L847, #L887), which on Android is getExternalFilesDir(null) unless the person chose the legacy dolphin-emu folder (Android/.../utils/DirectoryInitialization.kt#L94-L112, where this file is NOT the one Dolphin reads); [Core] GFXBackend (Core/Core/Config/MainSettings.cpp#L250-L251) takes the backends' config names Vulkan and OGL (Core/VideoBackends/Vulkan/VideoBackend.h#L22, OGL/VideoBackend.h#L24; Android arrays.xml#L197-L208); [Core] SkipIPL (MainSettings.cpp#L42) is a bool Dolphin reads case-insensitively and writes as True/False (Common/StringUtil.cpp#L269-L275, #L320); menu places from Android SettingsFragmentPresenter.kt#L349-L350, #L365, #L793-L803, #L1571-L1580 and strings.xml#L70-L71, #L83-L85, #L219.",
+    "config": {
+     "file": "/storage/emulated/0/Android/data/{pkg}/files/Config/Dolphin.ini",
+     "format": "ini",
+     "settings": [
+      {
+       "id": "gfx-backend",
+       "label": "Video backend",
+       "about": "Which graphics API Dolphin draws with.",
+       "section": "Core",
+       "key": "GFXBackend",
+       "options": [
+        {
+         "value": "Vulkan",
+         "label": "Vulkan"
+        },
+        {
+         "value": "OGL",
+         "label": "OpenGL"
+        }
+       ],
+       "manual": "Settings > Graphics Settings > General > Video Backend"
+      },
+      {
+       "id": "skip-ipl",
+       "label": "Skip the GameCube menu",
+       "about": "Start a GameCube game without the GameCube boot screen.",
+       "section": "Core",
+       "key": "SkipIPL",
+       "options": [
+        {
+         "value": "True",
+         "label": "Skip it"
+        },
+        {
+         "value": "False",
+         "label": "Show it"
+        }
+       ],
+       "manual": "Settings > Config > GameCube > IPL Settings > Skip Main Menu"
+      }
+     ]
+    }
    }
   },
   {

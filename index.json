@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T16:31:28Z",
+ "generatedAt": "2026-10-29T16:34:51Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -1586,7 +1586,7 @@
   {
    "path": "players/gc-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "16a913a7b2c208cbcc57ed1010cec429bd222f5a0e251227a4c98af47fed3aa7"
+   "sha256": "cf3c800132c14797720fdc5154f71ccaa183e88f697b9c79392c59e5e195a1f0"
   },
   {
    "path": "players/gc-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
@@ -1916,7 +1916,7 @@
   {
    "path": "players/triforce-org-dolphinemu-dolphinemu-dolphin.json",
    "collection": "players",
-   "sha256": "6a001079bcc453005735c9b64459b8fa1ad562ea1ecfbab4cbe64d68f4a3a7e4"
+   "sha256": "d8f75214b5f5c6b0795c3ff7b0d19daa48313f725135212742cc3f877395ff15"
   },
   {
    "path": "players/virtualboy-com-simongellis-vvb-vvs.json",
@@ -1941,7 +1941,7 @@
   {
    "path": "players/wii-org-dolphinemu-dolphinemu-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "b0acf50b160f9e4534ea0adb6b2149412f211e6456aebe263ac6e6ad28868962"
+   "sha256": "e51a82507384daeec9f11ca5721e3891dc9a0c9b30a8d4d915b7f0919511c9a6"
   },
   {
    "path": "players/wii-org-dolphinemu-mmjr3-dolphin-mmjr3.json",
@@ -3056,7 +3056,7 @@
   {
    "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu.json",
    "collection": "players",
-   "sha256": "c6caed37ceb2177f2a2f4070401c0e1d0cbd646a70e4a7be045059a91ea1cb6a"
+   "sha256": "fa91ee17b63b951030011251f676624ac3a7cdac4e32325b48174d5a67f7fc91"
   },
   {
    "path": "players/daijishou-wiiware-org-dolphinemu-dolphinemu-debug.json",
@@ -3306,7 +3306,7 @@
   {
    "path": "players/esde-consolearcade-dolphin.json",
    "collection": "players",
-   "sha256": "cc64087a3ead8c4a6008739899d2e2eb42dd932d12cd770d0ca1cd378edc562f"
+   "sha256": "de9a70e5631152e4a87d7e3584303cf326039f61438398921ddcb25d25eea4b4"
   },
   {
    "path": "players/esde-cps-mame4droid-current.json",
@@ -3426,7 +3426,7 @@
   {
    "path": "players/esde-gc-dolphin.json",
    "collection": "players",
-   "sha256": "f3f0306c5e6d0f8b1a1a48f01e9b0d07e001538bba8d6220e45514124756013d"
+   "sha256": "c7f23a81db912c81768de0b3accc47ce2ed7681132323d65ec199a8b72ae201a"
   },
   {
    "path": "players/esde-gmaster-mame4droid-current.json",
@@ -3576,7 +3576,7 @@
   {
    "path": "players/esde-triforce-dolphin.json",
    "collection": "players",
-   "sha256": "2a183a47fe5aca33c842142fff2406620498662c16e1a458919552ea9fff2d5d"
+   "sha256": "55650cab7abdae775c80eddb6b5957278225a8c8d7f07ce6653fdaba86a1d271"
   },
   {
    "path": "players/esde-type-x-winnative.json",
@@ -3601,7 +3601,7 @@
   {
    "path": "players/esde-wii-dolphin.json",
    "collection": "players",
-   "sha256": "505c2988806a52453eaddfbe98c908df5f2b8b2295c7842a3e6c0e00d9fec8b6"
+   "sha256": "cda41bcf20a8096cded68a8f9006de873c79f97b3cc68633934b71d22fc07f14"
   },
   {
    "path": "players/esde-windows-winnative.json",
