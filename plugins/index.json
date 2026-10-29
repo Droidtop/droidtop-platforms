@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T18:54:21Z",
+ "generatedAt": "2026-10-29T19:26:25Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -9517,13 +9517,13 @@
      "tag": "buriko-openbgi-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-28T21:14:08Z",
+     "published_at": "2026-10-29T19:24:11Z",
      "assets": [
       {
        "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
-       "size": 1160540,
-       "sha256": "385fb13acc437c8c244ef6488440884d6d9bed6ae3316b705b9177e770b18365"
+       "size": 1161084,
+       "sha256": "93f2e4871948df97c2080b91945c70b881d8e75bcf936d64265f0cede9e5cf11"
       },
       {
        "name": "enginehost-public-key.json",
@@ -9535,11 +9535,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-release.json",
        "size": 3994,
-       "sha256": "83d89085cb67fc615fe3a470b51bcd3742fc5dc44808e096c57be3c1121b6b2c"
+       "sha256": "c8946552de42c828c6a3a23236edc72a445ccf9807580a76188df181ba5cc918"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 786,
+       "sha256": "57a483ce912aa076bf5cfd08f995d6d0b5f6b5dcbf374479d6822c65661b6ac2"
+      }
+     ]
+    },
+    {
+     "tag": "buriko-openbgi-v1-build.136",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T19:24:14Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.136/dev.enginehost.buriko.openbgi.v1.enginehost.tar.xz",
+       "size": 1161084,
+       "sha256": "93f2e4871948df97c2080b91945c70b881d8e75bcf936d64265f0cede9e5cf11"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.136/enginehost-public-key.json",
+       "size": 649,
+       "sha256": "26167bdbbd03757e501b240921620ee728ab0b2e138ab91d6706837d9bea49b0"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.136/enginehost-release.json",
+       "size": 3994,
+       "sha256": "c8946552de42c828c6a3a23236edc72a445ccf9807580a76188df181ba5cc918"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-buriko-plugin/releases/download/buriko-openbgi-v1-build.136/enginehost-signing-certificate.pem",
        "size": 786,
        "sha256": "57a483ce912aa076bf5cfd08f995d6d0b5f6b5dcbf374479d6822c65661b6ac2"
       }
@@ -9954,8 +9986,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-buriko-plugin.json",
-    "sha256": "cbebd00a72b69acfdf326541e254d31b9860b961f77eb7ccb28f27ee61174cbe",
-    "size": 47989
+    "sha256": "373212e18ed31ba17112ec68749f69b24b5ad21becb5008ecb95e0ad1f87bc3e",
+    "size": 52083
    }
   },
   {
@@ -9983,13 +10015,13 @@
      "tag": "catsystem2-cst-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-28T22:37:19Z",
+     "published_at": "2026-10-29T19:22:21Z",
      "assets": [
       {
        "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
-       "size": 257580,
-       "sha256": "00f08404a2cfe40e324d67f03c55f97fc0fd949cb81fc8c5f4faf303c05b604a"
+       "size": 258084,
+       "sha256": "79ea36674e974ea7cbf1c1947e8dea6b79a137e5c7c68b6867524ef971760607"
       },
       {
        "name": "enginehost-public-key.json",
@@ -10001,11 +10033,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/enginehost-release.json",
        "size": 3593,
-       "sha256": "7f5d196e0eb511315eb3638f57ff448d82a7905a3029631f59d62ba3eec8ec95"
+       "sha256": "584abce88e4564907d0e6c96bc3817ce1e0eaee6bb7bb3ed3e8e8363ca1255c3"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 794,
+       "sha256": "f70e362c2010ba1a1e21ef77076142c85bde504ee214e1fd229af6ea849b718d"
+      }
+     ]
+    },
+    {
+     "tag": "catsystem2-cst-v1-build.84",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T19:22:24Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.84/dev.enginehost.catsystem2.cst.v1.enginehost.tar.xz",
+       "size": 258084,
+       "sha256": "79ea36674e974ea7cbf1c1947e8dea6b79a137e5c7c68b6867524ef971760607"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.84/enginehost-public-key.json",
+       "size": 653,
+       "sha256": "174d7a7af852440d1874ad658c68350b4f06f4e2652452a38a7a04ddc4a13fff"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.84/enginehost-release.json",
+       "size": 3593,
+       "sha256": "584abce88e4564907d0e6c96bc3817ce1e0eaee6bb7bb3ed3e8e8363ca1255c3"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-catsystem2-plugin/releases/download/catsystem2-cst-v1-build.84/enginehost-signing-certificate.pem",
        "size": 794,
        "sha256": "f70e362c2010ba1a1e21ef77076142c85bde504ee214e1fd229af6ea849b718d"
       }
@@ -10446,8 +10510,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-catsystem2-plugin.json",
-    "sha256": "ed30772b0513656428596b25f3cdd556488a57a7879ef7c51f0f639a50d3da9a",
-    "size": 42465
+    "sha256": "7cf4c253481f1b8fe6d9babe8df99c78f36b1713cd2df608fe978b38d4bdf894",
+    "size": 46158
    }
   },
   {
@@ -10475,13 +10539,13 @@
      "tag": "cmvs-ps2-ps3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-28T21:14:27Z",
+     "published_at": "2026-10-29T19:23:45Z",
      "assets": [
       {
        "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "size": 256732,
-       "sha256": "d929a04241c7617275c63716257e1ddf5abd2174250eee142e307881140cecf0"
+       "sha256": "7b15fe8377ebb4f7a8ec1a09c4f3af2c2471a1548cd922b7ad5d0ac69a1671f7"
       },
       {
        "name": "enginehost-public-key.json",
@@ -10493,11 +10557,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-release.json",
        "size": 3941,
-       "sha256": "5025fbdce1c1c428176082ac0c9409502486f287c42c5572e628562ac184f8f8"
+       "sha256": "92bcc2f196d8ba16e0d421b047de82e04aa35da37134072c279525976004b396"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "a58f551c75422b86eef35a20ba43797e3aed8e6d8cf0d17c8d04060a1cd7ed64"
+      }
+     ]
+    },
+    {
+     "tag": "cmvs-ps2-ps3-v1-build.94",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-29T19:23:48Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.94/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "size": 256732,
+       "sha256": "7b15fe8377ebb4f7a8ec1a09c4f3af2c2471a1548cd922b7ad5d0ac69a1671f7"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.94/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "fb1bc2a903abda920995edafa71657b24e2b68fbcce780339cde824acc41f60c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.94/enginehost-release.json",
+       "size": 3941,
+       "sha256": "92bcc2f196d8ba16e0d421b047de82e04aa35da37134072c279525976004b396"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.94/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "a58f551c75422b86eef35a20ba43797e3aed8e6d8cf0d17c8d04060a1cd7ed64"
       }
@@ -10970,8 +11066,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-cmvs-plugin.json",
-    "sha256": "ac92a55a6caab77167b4beab52b891b012e7bf70f7df3c718974b23fa16187c8",
-    "size": 47026
+    "sha256": "da18f5b61880eeba223d6fb75d505e327e8e89bec63dcd4285e6d4ef2978006d",
+    "size": 51067
    }
   },
   {
