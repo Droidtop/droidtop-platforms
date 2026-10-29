@@ -4,5 +4,26 @@
  "label": "videos - mpv-android",
  "pkg": "is.xyz.mpv",
  "argumentsTemplate": "-n is.xyz.mpv/is.xyz.mpv.MPVActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "is.xyz.mpv",
+    "official": true
+   },
+   {
+    "kind": "fdroid",
+    "id": "is.xyz.mpv",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "mpv-android/mpv-android",
+    "official": true
+   }
+  ],
+  "source": "mpv-android README.md, Downloads: the Releases section, the Google Play badge and the F-Droid badge"
+ }
 }

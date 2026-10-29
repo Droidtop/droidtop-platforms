@@ -4,5 +4,16 @@
  "label": "jl-mod",
  "pkg": "ru.woesss.j2meloader",
  "argumentsTemplate": "-n ru.woesss.j2meloader/ru.playsoftware.j2meloader.MainActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "woesss/JL-Mod",
+    "official": true
+   }
+  ],
+  "source": "woesss/JL-Mod README.md: 'Download APK' links to releases/latest"
+ }
 }

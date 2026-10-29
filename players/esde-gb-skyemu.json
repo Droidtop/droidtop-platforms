@@ -4,5 +4,16 @@
  "label": "SkyEmu (Standalone)",
  "pkg": "com.sky.SkyEmu",
  "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "skylersaleh/SkyEmu",
+    "official": true
+   }
+  ],
+  "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+ }
 }

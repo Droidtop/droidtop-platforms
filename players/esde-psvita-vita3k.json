@@ -8,5 +8,17 @@
  "setup": {
   "biosManual": "Initial setup > Install Firmware",
   "source": "Vita3K cf12e2b: firmware packages installed, not a folder (https://github.com/Vita3K/Vita3K/blob/cf12e2b038123ce5fab269a9044a5b0a3ff6e866/android/app/src/main/java/org/vita3k/emulator/ui/navigation/AppNavigation.kt#L106-L107)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "Vita3K/Vita3K",
+    "channel": "nightly",
+    "official": true
+   }
+  ],
+  "source": "Vita3K README.md, Downloads: 'the latest builds' at github.com/Vita3K/Vita3K/releases/tag/continuous (Android is listed as a platform)"
  }
 }

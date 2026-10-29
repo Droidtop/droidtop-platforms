@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T16:34:51Z",
+ "generatedAt": "2026-10-29T17:51:53Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -1496,7 +1496,7 @@
   {
    "path": "players/gb-com-sky-skyemu-skyemu.json",
    "collection": "players",
-   "sha256": "fe8dd4247c8c6ff1802faabb2428efefd34040000f42c42fd28c3eed6105561e"
+   "sha256": "fc1ba3c1ac89eff4845bd734c185b03c826a7402e39aa327c4f562fec23c8402"
   },
   {
    "path": "players/gb-com-explusalpha-gbcemu-com-explusalpha-gbcemu.json",
@@ -1526,7 +1526,7 @@
   {
    "path": "players/gba-com-sky-skyemu-skyemu.json",
    "collection": "players",
-   "sha256": "752686f5ac368e2ce408e8a6153168b7a4a7f8f9d7e645c931bc6bed120c28a5"
+   "sha256": "ebea421350b944aae47532101279b856d1c74b21073f607df8b90f80411e3335"
   },
   {
    "path": "players/gba-com-explusalpha-gbaemu-com-explusalpha-gbaemu.json",
@@ -1556,7 +1556,7 @@
   {
    "path": "players/gbc-com-sky-skyemu-skyemu.json",
    "collection": "players",
-   "sha256": "252ece86f4bdb7a34303efd9d1d49703dd7ab5276c152c29893ca9cd3c268469"
+   "sha256": "3966cf11316a0e31de782cd62c6bd6c3a14f34df6c640105078bb112d8942b85"
   },
   {
    "path": "players/gbc-com-explusalpha-gbcemu-com-explusalpha-gbcemu.json",
@@ -1616,7 +1616,7 @@
   {
    "path": "players/j2me-ru-woesss-j2meloader-jl-mod.json",
    "collection": "players",
-   "sha256": "656937ba6068c3169bb06347eb545bacbad88e780276a305f2492c0d945bb1b7"
+   "sha256": "2df6227c98e09f16d6156211caf161f54acbf2d6afb1ed022195ad4555bdcf57"
   },
   {
    "path": "players/mame-com-seleuco-mame4droid-com-seleuco-mame4droid.json",
@@ -1641,7 +1641,7 @@
   {
    "path": "players/n64-org-mupen64plusae-v3-alpha-org-mupen64plusae-v3-alpha.json",
    "collection": "players",
-   "sha256": "9d4a9d0aa2a1b667bc557ebec9821f1676f9ac1ca13b34c82e2fac04fed2b20b"
+   "sha256": "2b3db95bc0417aa555f7893f808972280981788f49ec1ea937cfe3f3ef56f8fe"
   },
   {
    "path": "players/n64-org-mupen64plusae-v3-fzurita-pro-org-mupen64plusae-v3-fzurita-pro.json",
@@ -1686,7 +1686,7 @@
   {
    "path": "players/nds-com-hydra-noods-noods.json",
    "collection": "players",
-   "sha256": "2cc0cffad3ad15c1a95c4cb141beaf8d6709dfe3cbd6872e6e8dc1fc4b9f4503"
+   "sha256": "c231edc825b3f6e214acf9007c3d59be5f3782b7e633974d43682f3814846a2c"
   },
   {
    "path": "players/neogeo-com-explusalpha-neoemu-neo-emu.json",
@@ -2101,7 +2101,7 @@
   {
    "path": "players/esde-flash-ruffle.json",
    "collection": "players",
-   "sha256": "6472e6473769d2356a08c82d4f92470002199cb00d1989a81cbbe795ddc3b05a"
+   "sha256": "106d27f68aeec78f33351500733395f0d139494e32e75582179949b846ddd347"
   },
   {
    "path": "players/esde-flash-swf-player.json",
@@ -2126,7 +2126,7 @@
   {
    "path": "players/esde-gb-skyemu.json",
    "collection": "players",
-   "sha256": "f40d0352f694bf7f2f03866c756d09f11443e1b28958c00c0066b0770e0d6f68"
+   "sha256": "c3af14a6e55e49df3ac2ad0022460e51e85ead8e34e2269988c9921a00a04186"
   },
   {
    "path": "players/esde-gb-gbc-emu.json",
@@ -2151,12 +2151,12 @@
   {
    "path": "players/esde-gba-noods.json",
    "collection": "players",
-   "sha256": "1efe020b347f71cde47bdcaa3b571989d4fbc9cc04dfc57fed6397b6bdfdb1f2"
+   "sha256": "f43652cafabd97c9c41d24c8fc2509e3eb89a74f59f4ef352835b276f974a1d6"
   },
   {
    "path": "players/esde-gba-skyemu.json",
    "collection": "players",
-   "sha256": "afcaafbd71dda80f3c8273c975fe94de204466ac2eb974addc0e6991083eb63f"
+   "sha256": "dd26c3eec0a82cf1581692c23e119bca0c4bb9b1ce2923f8027abc8e4cee2060"
   },
   {
    "path": "players/esde-gba-gba-emu.json",
@@ -2181,7 +2181,7 @@
   {
    "path": "players/esde-gbc-skyemu.json",
    "collection": "players",
-   "sha256": "8bd59207cdb0b52b6b429e33b599f99cf4814f725cb0bef1dadd1e761d4650ef"
+   "sha256": "95bc600ce68d77a46febfbf91e1f09ac1fc4776c13d8c7e282f86692d74e60a0"
   },
   {
    "path": "players/esde-gbc-gbc-emu.json",
@@ -2226,7 +2226,7 @@
   {
    "path": "players/esde-j2me-jl-mod.json",
    "collection": "players",
-   "sha256": "17d053b9f4479f3098e36a5a12db02abfbd2009588f6e98966dad7418e6fd737"
+   "sha256": "2162b7de7481ad229b9370a755e9a8f7b9d3922a7b77bd76a6938552459c820f"
   },
   {
    "path": "players/esde-lcdgames-mame4droid-current.json",
@@ -2416,7 +2416,7 @@
   {
    "path": "players/esde-n64dd-mupen64plus-ae.json",
    "collection": "players",
-   "sha256": "1263e67c01db1456739816da9c68be962939c23fb7a42c7cd8a24a915a1c6442"
+   "sha256": "ef8185c99f30ce1d32407bc89869de97352de985a34b468ac449eff68fd848f9"
   },
   {
    "path": "players/esde-naomi2-flycast.json",
@@ -2451,7 +2451,7 @@
   {
    "path": "players/esde-nds-noods.json",
    "collection": "players",
-   "sha256": "5e029ac2c4830181ab25ef5b4200367794fca664631b3e180033b95a298d28dc"
+   "sha256": "0443139ff372af9eb65a33591e9ae201672ab34f306a91b352397f26de03f713"
   },
   {
    "path": "players/esde-nds-drastic.json",
@@ -2461,7 +2461,7 @@
   {
    "path": "players/esde-nds-skyemu.json",
    "collection": "players",
-   "sha256": "aedda1e1a4b88a161186282ad09e9f5269772d45b1ff354eee39c7952fea5a0f"
+   "sha256": "499955aaacde0f45e629fbec2a91bf17655683ebb716369fa4917f96e75348b3"
   },
   {
    "path": "players/esde-neogeo-neo-emu.json",
@@ -2826,7 +2826,7 @@
   {
    "path": "players/flash-rs-ruffle.json",
    "collection": "players",
-   "sha256": "a9ed740122524990854b489f1f93cbb1cf7f87aebbf5d661e1d247b73c5ebe85"
+   "sha256": "fe4ebd96439d170049afd47df0a2eaef2b17b2be843d6611b65e8735676d882a"
   },
   {
    "path": "players/esde-arcadia-droidarcadia.json",
@@ -2851,12 +2851,12 @@
   {
    "path": "players/daijishou-ebook-com-foobnix-pdf-reader.json",
    "collection": "players",
-   "sha256": "a21a80a0b68da4ac764531b4b4dfb46e0471606e690b97e2669c43da3cafd54e"
+   "sha256": "d24fbffaee21907dce8e7f9286cf26104e37aebecf4aff820e0c1a9dcf8f0a22"
   },
   {
    "path": "players/daijishou-ebook-com-foobnix-pro-pdf-reader.json",
    "collection": "players",
-   "sha256": "c2e87f959b886d66f4a760e5e1ed10fb43ef1855fb11ab9119f3230e70d6195e"
+   "sha256": "d84479c5897fcfec59c204e97a38ba3a5a745912d664b5e7bcb9d90b8dd3e493"
   },
   {
    "path": "players/daijishou-ebook-org-readera.json",
@@ -2961,7 +2961,7 @@
   {
    "path": "players/daijishou-ndsi-com-hydra-noods.json",
    "collection": "players",
-   "sha256": "e949e1237d4d5cce7f4683be599224b85723817561df3d362924231623805290"
+   "sha256": "e622f5e578276e60f2839eb82ac17c521f17b5fbd9ef7e234de668a46e7a588c"
   },
   {
    "path": "players/daijishou-famicom-com-explusalpha-nesemu.json",
@@ -3161,7 +3161,7 @@
   {
    "path": "players/daijishou-videos-is-xyz-mpv.json",
    "collection": "players",
-   "sha256": "2bec7130fa813c4dd6d2590b3f9bade34cf26d0f44e4cee50087852b11f7fbff"
+   "sha256": "0cf0389e838bd0082b1278fef629f13c2412b6d93072cfeaed426db3e8bb09d1"
   },
   {
    "path": "players/daijishou-videos-com-mxtech-videoplayer-ad.json",
@@ -3636,7 +3636,7 @@
   {
    "path": "players/esde-psvita-vita3k.json",
    "collection": "players",
-   "sha256": "6aca8dd26ac6b9e7959acb1e3c95457c3e723d12223e951a09d45d6ea056a3fc"
+   "sha256": "de352f63318f2484e269e8f88e8acf30b51b0f2300541a1bc3e1262a571555b0"
   },
   {
    "path": "players/esde-psvita-emucorev.json",

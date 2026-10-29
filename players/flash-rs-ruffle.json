@@ -4,5 +4,21 @@
  "label": "Ruffle",
  "pkg": "rs.ruffle",
  "argumentsTemplate": "-n rs.ruffle/.PlayerActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "fdroid",
+    "id": "rs.ruffle",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "ruffle-rs/ruffle-android",
+    "official": true
+   }
+  ],
+  "source": "ruffle-rs/ruffle-android README.md, Prebuilt APKs: the F-Droid badge for rs.ruffle and the latest release's .apk assets"
+ }
 }

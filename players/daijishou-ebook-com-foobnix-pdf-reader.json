@@ -4,5 +4,21 @@
  "label": "ebook - Librera Reader",
  "pkg": "com.foobnix.pdf.reader",
  "argumentsTemplate": "-n com.foobnix.pdf.reader/com.foobnix.OpenerActivity -d {file.path}",
- "killPackageProcesses": true
+ "killPackageProcesses": true,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.foobnix.pdf.reader",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "foobnix/LibreraReader",
+    "official": true
+   }
+  ],
+  "source": "foobnix/LibreraReader README.md: 'Librera on Google Play' (com.foobnix.pdf.reader) and the release notes link to GitHub releases"
+ }
 }

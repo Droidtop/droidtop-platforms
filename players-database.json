@@ -302,7 +302,18 @@
    "label": "SkyEmu",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/.EnhancedNativeActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "gb-com-explusalpha-gbcemu-com-explusalpha-gbcemu",
@@ -351,7 +362,18 @@
    "label": "SkyEmu",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/.EnhancedNativeActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "gba-com-explusalpha-gbaemu-com-explusalpha-gbaemu",
@@ -404,7 +426,18 @@
    "label": "SkyEmu",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/.EnhancedNativeActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "gbc-com-explusalpha-gbcemu-com-explusalpha-gbcemu",
@@ -583,7 +616,18 @@
    "label": "jl-mod",
    "pkg": "ru.woesss.j2meloader",
    "argumentsTemplate": "-n ru.woesss.j2meloader/ru.playsoftware.j2meloader.MainActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "woesss/JL-Mod",
+      "official": true
+     }
+    ],
+    "source": "woesss/JL-Mod README.md: 'Download APK' links to releases/latest"
+   }
   },
   {
    "id": "mame-com-seleuco-mame4droid-com-seleuco-mame4droid",
@@ -639,6 +683,17 @@
    "setup": {
     "biosManual": "Settings > Data > 64DD IPL (J)",
     "source": "mupen64plus-ae 33bf702: a file the person picks (https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/app/src/main/res/xml/preferences_data.xml#L76-L78)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "fdroid",
+      "id": "org.mupen64plusae.v3.alpha",
+      "official": true
+     }
+    ],
+    "source": "mupen64plus-ae README.md: the F-Droid badge for org.mupen64plusae.v3.alpha"
    }
   },
   {
@@ -814,6 +869,17 @@
     "biosFlat": true,
     "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
     "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Hydr8gon/NooDS",
+      "official": true
+     }
+    ],
+    "source": "Hydr8gon/NooDS README.md, Downloads: Android is one of the platforms, builds on the releases page"
    }
   },
   {
@@ -1993,7 +2059,23 @@
    "label": "Ruffle (Standalone)",
    "pkg": "rs.ruffle",
    "argumentsTemplate": "-n rs.ruffle/rs.ruffle.PlayerActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "fdroid",
+      "id": "rs.ruffle",
+      "official": true
+     },
+     {
+      "kind": "github",
+      "repo": "ruffle-rs/ruffle-android",
+      "official": true
+     }
+    ],
+    "source": "ruffle-rs/ruffle-android README.md, Prebuilt APKs: the F-Droid badge for rs.ruffle and the latest release's .apk assets"
+   }
   },
   {
    "id": "esde-flash-swf-player",
@@ -2038,7 +2120,18 @@
    "label": "SkyEmu (Standalone)",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "esde-gb-gbc-emu",
@@ -2086,6 +2179,17 @@
     "biosFlat": true,
     "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
     "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Hydr8gon/NooDS",
+      "official": true
+     }
+    ],
+    "source": "Hydr8gon/NooDS README.md, Downloads: Android is one of the platforms, builds on the releases page"
    }
   },
   {
@@ -2094,7 +2198,18 @@
    "label": "SkyEmu (Standalone)",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "esde-gba-gba-emu",
@@ -2140,7 +2255,18 @@
    "label": "SkyEmu (Standalone)",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "esde-gbc-gbc-emu",
@@ -2248,7 +2374,18 @@
    "label": "JL-Mod (Standalone)",
    "pkg": "ru.woesss.j2meloader",
    "argumentsTemplate": "-n ru.woesss.j2meloader/ru.playsoftware.j2meloader.MainActivity --activity-clear-task --activity-clear-top -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "woesss/JL-Mod",
+      "official": true
+     }
+    ],
+    "source": "woesss/JL-Mod README.md: 'Download APK' links to releases/latest"
+   }
   },
   {
    "id": "esde-lcdgames-mame4droid-current",
@@ -2676,6 +2813,17 @@
    "setup": {
     "biosManual": "Settings > Data > 64DD IPL (J)",
     "source": "mupen64plus-ae 33bf702: a file the person picks (https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/app/src/main/res/xml/preferences_data.xml#L76-L78)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "fdroid",
+      "id": "org.mupen64plusae.v3.alpha",
+      "official": true
+     }
+    ],
+    "source": "mupen64plus-ae README.md: the F-Droid badge for org.mupen64plusae.v3.alpha"
    }
   },
   {
@@ -2836,6 +2984,17 @@
     "biosFlat": true,
     "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
     "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Hydr8gon/NooDS",
+      "official": true
+     }
+    ],
+    "source": "Hydr8gon/NooDS README.md, Downloads: Android is one of the platforms, builds on the releases page"
    }
   },
   {
@@ -2852,7 +3011,18 @@
    "label": "SkyEmu (Standalone)",
    "pkg": "com.sky.SkyEmu",
    "argumentsTemplate": "-n com.sky.SkyEmu/com.sky.SkyEmu.EnhancedNativeActivity --activity-clear-task --activity-clear-top -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "skylersaleh/SkyEmu",
+      "official": true
+     }
+    ],
+    "source": "skylersaleh/SkyEmu README.md: 'Stable builds for all platforms can be downloaded ... github.com/skylersaleh/SkyEmu/releases' (Android is listed as a platform)"
+   }
   },
   {
    "id": "esde-neogeo-neo-emu",
@@ -3656,7 +3826,23 @@
    "label": "Ruffle",
    "pkg": "rs.ruffle",
    "argumentsTemplate": "-n rs.ruffle/.PlayerActivity -a android.intent.action.VIEW -d {file.uri}",
-   "killPackageProcesses": false
+   "killPackageProcesses": false,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "fdroid",
+      "id": "rs.ruffle",
+      "official": true
+     },
+     {
+      "kind": "github",
+      "repo": "ruffle-rs/ruffle-android",
+      "official": true
+     }
+    ],
+    "source": "ruffle-rs/ruffle-android README.md, Prebuilt APKs: the F-Droid badge for rs.ruffle and the latest release's .apk assets"
+   }
   },
   {
    "id": "esde-arcadia-droidarcadia",
@@ -3701,7 +3887,23 @@
    "label": "ebook - Librera Reader",
    "pkg": "com.foobnix.pdf.reader",
    "argumentsTemplate": "-n com.foobnix.pdf.reader/com.foobnix.OpenerActivity -d {file.path}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "play",
+      "id": "com.foobnix.pdf.reader",
+      "official": true
+     },
+     {
+      "kind": "github",
+      "repo": "foobnix/LibreraReader",
+      "official": true
+     }
+    ],
+    "source": "foobnix/LibreraReader README.md: 'Librera on Google Play' (com.foobnix.pdf.reader) and the release notes link to GitHub releases"
+   }
   },
   {
    "id": "daijishou-ebook-com-foobnix-pro-pdf-reader",
@@ -3709,7 +3911,28 @@
    "label": "ebook - Librera Reader Pro",
    "pkg": "com.foobnix.pro.pdf.reader",
    "argumentsTemplate": "-n com.foobnix.pro.pdf.reader/com.foobnix.OpenerActivity -d {file.path}",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "play",
+      "id": "com.foobnix.pro.pdf.reader",
+      "official": true
+     },
+     {
+      "kind": "fdroid",
+      "id": "com.foobnix.pro.pdf.reader",
+      "official": true
+     },
+     {
+      "kind": "github",
+      "repo": "foobnix/LibreraReader",
+      "official": true
+     }
+    ],
+    "source": "foobnix/LibreraReader README.md: 'Librera PRO on Google Play', 'Librera F-Droid' (packages/com.foobnix.pro.pdf.reader) and the GitHub releases link"
+   }
   },
   {
    "id": "daijishou-ebook-org-readera",
@@ -3950,6 +4173,17 @@
     "biosFlat": true,
     "biosManual": "the paths in noods.ini in its files folder (no BIOS screen on Android)",
     "source": "NooDS 4cb1439: the base folder is getExternalFilesDir(null) (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/ui/android/java/com/hydra/noods/FileBrowser.java#L99) and the default BIOS paths there are bios7.bin, bios9.bin, firmware.bin and gba_bios.bin (https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/src/core/settings.cpp#L84-L104)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Hydr8gon/NooDS",
+      "official": true
+     }
+    ],
+    "source": "Hydr8gon/NooDS README.md, Downloads: Android is one of the platforms, builds on the releases page"
    }
   },
   {
@@ -4370,7 +4604,28 @@
    "label": "videos - mpv-android",
    "pkg": "is.xyz.mpv",
    "argumentsTemplate": "-n is.xyz.mpv/is.xyz.mpv.MPVActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
-   "killPackageProcesses": true
+   "killPackageProcesses": true,
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "play",
+      "id": "is.xyz.mpv",
+      "official": true
+     },
+     {
+      "kind": "fdroid",
+      "id": "is.xyz.mpv",
+      "official": true
+     },
+     {
+      "kind": "github",
+      "repo": "mpv-android/mpv-android",
+      "official": true
+     }
+    ],
+    "source": "mpv-android README.md, Downloads: the Releases section, the Google Play badge and the F-Droid badge"
+   }
   },
   {
    "id": "daijishou-videos-com-mxtech-videoplayer-ad",
@@ -5651,6 +5906,18 @@
    "setup": {
     "biosManual": "Initial setup > Install Firmware",
     "source": "Vita3K cf12e2b: firmware packages installed, not a folder (https://github.com/Vita3K/Vita3K/blob/cf12e2b038123ce5fab269a9044a5b0a3ff6e866/android/app/src/main/java/org/vita3k/emulator/ui/navigation/AppNavigation.kt#L106-L107)."
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Vita3K/Vita3K",
+      "channel": "nightly",
+      "official": true
+     }
+    ],
+    "source": "Vita3K README.md, Downloads: 'the latest builds' at github.com/Vita3K/Vita3K/releases/tag/continuous (Android is listed as a platform)"
    }
   },
   {
