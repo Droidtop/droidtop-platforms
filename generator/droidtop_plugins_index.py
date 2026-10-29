@@ -32,7 +32,8 @@ Enginehost index) and runs in the same workflow (.github/workflows/plugins-index
   droidtop_plugins_index.py --build   rebuild droidtop-plugins/index.json from the repositories
   droidtop_plugins_index.py --check   validate the committed files, no network
 
-Signatures are checked with the cryptography package (verify_jws.py beside this file).
+Signatures are checked by Enginehost's scripts/bundle_jws.py (generator/jws.py, from the checkout ENGINEHOST_TOOLING names): the one
+Python verifier of droidtop's chain signatures, which mirrors the app's.
 GH_TOKEN, when set, raises the API allowance.
 """
 
@@ -49,7 +50,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import github  # noqa: E402
-import verify_jws  # noqa: E402
+import jws as jws_tooling  # noqa: E402
 from common import Rejected, log, sha256_hex, warn  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -62,7 +63,6 @@ ALGORITHM = "droidtop-chain-v1"
 ORGANISATION = "Droidtop"
 REPO_PREFIX = "droidtop-plugin-"
 ORIGIN = "droidtop"
-PLUGIN_TYP = "droidtop-plugin+jws"
 ORIGIN_URN = "urn:droidtop:origin:"
 PLUGIN_URN = "urn:droidtop:plugin:"
 BUNDLE_SUFFIX = ".droidplugin.tar.xz"
@@ -103,11 +103,11 @@ def repositories():
 
 
 def load_root():
-    """droidtop's root (public): (PEM, key block). The same key the app pins."""
+    """droidtop's root (public): (SubjectPublicKeyInfo DER, key block). The same key the app pins."""
     from cryptography.hazmat.primitives import serialization
     pem = ROOT_KEY.read_bytes()
     der = serialization.load_pem_public_key(pem).public_bytes(serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)
-    return pem, {
+    return der, {
         "formatVersion": 1,
         "algorithm": ALGORITHM,
         "origin": ORIGIN,
@@ -159,7 +159,21 @@ def category_of(manifest):
     return category if isinstance(category, str) and category in CATEGORIES else None
 
 
-def release_entry(release, asset, bundle, root_pem):
+def signed_plugin_ids(what, manifest_bytes, jws, root_spki):
+    """The plugin ids the manifest's signing certificate names (none: all of droidtop's), once manifest.jws verifies to the droidtop root for origin droidtop."""
+    verifier = jws_tooling.bundle_jws(required=True)
+    try:
+        signed = verifier.verify(jws, "plugin", root_spki, manifest_bytes)
+        if ORIGIN not in signed["origins"]:
+            raise verifier.Refused("the signing certificate is not for origin " + ORIGIN)
+        leaf = base64.b64decode(json.loads(verifier.b64url_decode(jws.split(".")[0]))["x5c"][0])
+        names = verifier.uris(leaf)
+    except (verifier.Refused, ValueError, KeyError, IndexError) as error:
+        raise Rejected(what + ": manifest.jws does not verify to the droidtop root (" + str(error) + ")")
+    return [u[len(PLUGIN_URN):] for u in names if u.startswith(PLUGIN_URN)]
+
+
+def release_entry(release, asset, bundle, root_spki):
     what = release["tag_name"] + "/" + asset["name"]
     manifest_bytes, jws = manifest_of(bundle, what)
     try:
@@ -167,11 +181,7 @@ def release_entry(release, asset, bundle, root_pem):
     except ValueError:
         raise Rejected(what + ": manifest.json is not JSON")
     plugin_id = str(manifest.get("id", ""))
-    try:
-        san = verify_jws.verify(PLUGIN_TYP, manifest_bytes, jws, root_pem, [ORIGIN_URN + ORIGIN])
-    except Exception as error:
-        raise Rejected(what + ": manifest.jws does not verify to the droidtop root (" + str(error) + ")")
-    named = [u[len(PLUGIN_URN):] for u in san if u.startswith(PLUGIN_URN)]
+    named = signed_plugin_ids(what, manifest_bytes, jws, root_spki)
     if named and not covers(named, plugin_id):
         raise Rejected(what + ": the leaf is for " + ", ".join(named) + ", not " + plugin_id)
     if manifest.get("origin") != ORIGIN or plugin_id != plugin_id.lower() or not plugin_id.startswith(ORIGIN + "."):
@@ -214,7 +224,7 @@ def known_entries(previous):
 
 
 def build(previous):
-    root_pem, key_block = load_root()
+    root_spki, key_block = load_root()
     master_sha = key_block["keySha256"]
     known = known_entries(previous)
     previous_master = ((previous or {}).get("origins") or [{}])[0].get("key", {}).get("keySha256")
@@ -243,7 +253,7 @@ def build(previous):
                     else:
                         log("downloading " + what)
                         bundle = download(asset["browser_download_url"], MAX_BUNDLE_BYTES)
-                        plugin_id, meta, release_json = release_entry(release, asset, bundle, root_pem)
+                        plugin_id, meta, release_json = release_entry(release, asset, bundle, root_spki)
                     owner = plugin_owner.setdefault(plugin_id, name)
                     if owner != name:
                         raise Rejected(what + ": plugin " + plugin_id + " is already listed from " + owner)

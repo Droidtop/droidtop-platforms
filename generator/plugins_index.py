@@ -63,6 +63,7 @@ from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import github  # noqa: E402
+import jws  # noqa: E402
 from common import Rejected, log, sha256_hex, warn  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -141,12 +142,10 @@ GITHUB = github.Client("droidtop-platforms-plugins-index", retries=4)
 
 def v1_tooling():
     """(bundle_jws module, the Enginehost signing root's public key as SubjectPublicKeyInfo DER) from ENGINEHOST_TOOLING."""
-    tooling = os.environ.get("ENGINEHOST_TOOLING")
-    if not tooling:
+    bundle_jws = jws.bundle_jws(required=False)
+    if bundle_jws is None:
         return None, None
-    tooling = pathlib.Path(tooling)
-    sys.path.insert(0, str(tooling / "scripts"))
-    import bundle_jws  # noqa: E402 -- Enginehost's own verifier, pinned by the workflow
+    tooling = pathlib.Path(os.environ["ENGINEHOST_TOOLING"])
     root_path = tooling / "app/src/main/assets/trust/enginehost-root.pub"
     if not root_path.is_file():
         warn("Enginehost pins no signing root key yet; format v1 signatures are not checked")
