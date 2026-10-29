@@ -22,3 +22,5 @@ jobs:
       # do not match the tree, an app updates to something nobody reviewed.
       - name: generator/build.py --check
         run: python3 generator/build.py --check
+      - name: generator unit tests
+        run: python3 -m unittest discover -s generator -p 'test_install.py' -v

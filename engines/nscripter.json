@@ -57,5 +57,26 @@
    "kidoku.dat"
   ],
   "source": "enginehost-nscripter-plugin src/onsyuri/ONScripter_file.cpp:62 (save%d.dat in save_dir or the archive path) and :285 (sav/save%d.dat), ONScripter.cpp:1458 (envdata), ONScripter_command.cpp:3119 (gloval.sav), ScriptHandler.cpp:623 (kidoku.dat)"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-nscripter-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

@@ -4,5 +4,16 @@
  "label": "Lime3DS (Standalone)",
  "pkg": "io.github.lime3ds.android",
  "argumentsTemplate": "-n io.github.lime3ds.android/io.github.lime3ds.android.activities.EmulationActivity --activity-clear-task --activity-clear-top -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "io.github.lime3ds.android",
+    "official": true
+   }
+  ],
+  "source": "azahar-emu/azahar README.md, Installation > Android: the Google Play build, id=io.github.lime3ds.android"
+ }
 }

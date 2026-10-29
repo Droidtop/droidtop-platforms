@@ -18,5 +18,26 @@
   "family": "html",
   "context": "compiled-html"
  },
- "notes": "An HTML game: a page at the folder's root, Twine stories included. Last in the file on purpose: Godot and Unity web exports also ship an index.html and must be classified first. The builtin probe accepts any root .html file."
+ "notes": "An HTML game: a page at the folder's root, Twine stories included. Last in the file on purpose: Godot and Unity web exports also ship an index.html and must be classified first. The builtin probe accepts any root .html file.",
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-html-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+ }
 }

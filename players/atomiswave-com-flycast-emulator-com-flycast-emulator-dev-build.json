@@ -10,5 +10,27 @@
   "biosFlat": true,
   "biosManual": "Settings > General > Home Folder",
   "source": "Flycast 80471d5: the home folder is getExternalFilesDir(null) (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/shell/android-studio/flycast/src/main/java/com/flycast/emulator/BaseGLActivity.java#L92-L97) and BIOS files are read from its data folder by name: dc_boot.bin (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/flashrom/nvmem.cpp#L33-L48), naomi.zip, naomi2.zip, awbios.zip (https://github.com/flyinghead/flycast/blob/80471d57b02606f53828daa916de6ecc94ca1877/core/hw/naomi/naomi_cart.cpp#L76-L78)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.flycast.emulator",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "flyinghead/flycast",
+    "official": true
+   },
+   {
+    "kind": "page",
+    "url": "https://flyinghead.github.io/flycast-builds/",
+    "official": true,
+    "channel": "nightly"
+   }
+  ],
+  "source": "flyinghead/flycast README.md, Downloads and Install > Android (Google Play link, GitHub Releases, builds page)"
  }
 }

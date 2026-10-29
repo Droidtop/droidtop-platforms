@@ -36,5 +36,26 @@
    "{game_folder}/localStorage.json"
   ],
   "source": "A shipped MZ game's js/rmmz_managers.js StorageManager.fileDirectoryPath and filePath (lines 762-770: save/<name>.rmmzsave); under Enginehost the web runtime keeps localStorage.json in a folder named for the game (enginehost-rpgmaker-mv-mz-plugin README.md:12-15)"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

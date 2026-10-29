@@ -4,5 +4,21 @@
  "label": "EasyRPG Player",
  "pkg": "org.easyrpg.player",
  "argumentsTemplate": "-n org.easyrpg.player/.player.EasyRpgPlayerActivity -a android.intent.action.VIEW -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "page",
+    "url": "https://easyrpg.org/downloads/player/",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "EasyRPG/Player",
+    "official": true
+   }
+  ],
+  "source": "EasyRPG/Player README.md, Source code: the Download Archive page and the git repository (no store listing is named there)"
+ }
 }

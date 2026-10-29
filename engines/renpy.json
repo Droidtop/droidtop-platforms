@@ -44,5 +44,26 @@
    "save_directory": "renpy.save_directory"
   },
   "source": "renpy.py path_to_saves (no config.save_directory: <game>/saves; else %APPDATA%/RenPy/<dir>, ~/.renpy/<dir>, ~/Library/RenPy/<dir>) and renpy/savelocation.py init (adds <game>/saves); under Enginehost the 8.3 line's renpy.py path_to_saves (ENGINEHOST_SAVE_PATH/<save_directory>, else the game folder's name); all in the enginehost-renpy-plugin repo"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-renpy-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

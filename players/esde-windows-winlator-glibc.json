@@ -4,5 +4,16 @@
  "label": "Winlator Cmod Glibc (Standalone)",
  "pkg": "com.winlator",
  "argumentsTemplate": "-n com.winlator/com.winlator.XServerDisplayActivity --activity-clear-task --activity-clear-top -e shortcut_path {file.path}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "brunodev85/winlator",
+    "official": true
+   }
+  ],
+  "source": "brunodev85/winlator README.md, Installation: 'Download and install the APK (Winlator_11.2.apk) from GitHub Releases'"
+ }
 }

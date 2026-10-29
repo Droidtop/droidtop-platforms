@@ -44,5 +44,26 @@
    "BGI.gdb"
   ],
   "source": "enginehost-buriko-plugin src/core/savefile.c:36-39 (SaveFileName: BGI%.4d.cad) and src/sysobj/database.c:34 (BGI.gdb); Enginehost keeps Buriko saves beside the game (SaveFolders.BESIDE_THE_GAME)"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-buriko-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

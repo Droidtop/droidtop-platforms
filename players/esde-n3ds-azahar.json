@@ -4,5 +4,16 @@
  "label": "Azahar (Standalone)",
  "pkg": "org.azahar_emu.azahar",
  "argumentsTemplate": "-n org.azahar_emu.azahar/org.citra.citra_emu.activities.EmulationActivity --activity-clear-task --activity-clear-top -d {file.uri}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "azahar-emu/azahar",
+    "official": true
+   }
+  ],
+  "source": "azahar-emu/azahar README.md, Installation > Android: the Vanilla variant from the Releases page, or Obtainium on https://github.com/azahar-emu/azahar"
+ }
 }

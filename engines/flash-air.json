@@ -22,5 +22,26 @@
   "family": "flash_air",
   "context": "air"
  },
- "notes": "Detection is specifically the AIR package shape, so the air context is the real answer, not a coin flip. Plain .swf: droidtop routes it through the flash player entries in players-database.json (Ruffle etc.), enginehost detects it via the flash-swf row at the end of this file."
+ "notes": "Detection is specifically the AIR package shape, so the air context is the real answer, not a coin flip. Plain .swf: droidtop routes it through the flash player entries in players-database.json (Ruffle etc.), enginehost detects it via the flash-swf row at the end of this file.",
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-flash-air-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+ }
 }

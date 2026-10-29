@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:05:18Z",
+ "generatedAt": "2026-10-29T16:31:28Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -61,102 +61,102 @@
   {
    "path": "engines/renpy.json",
    "collection": "engines",
-   "sha256": "6c60c8142580bef2dc28e73a508de85e9de1d97887691f2ccccebd2c13fbb2f7"
+   "sha256": "08f2ab2ed6ee0d6cabb6dc9b05b7e5339e9052dea7bdceafd137705c6746dd13"
   },
   {
    "path": "engines/rpgmaker-mv.json",
    "collection": "engines",
-   "sha256": "e3e7444f0af6d2e5741b61e37b6afd1673725c0b042243fd514e08cc79eab94e"
+   "sha256": "d260f31e7cc30e03a5f395b52cff74a3d21f77024f08f448c2418b6414980b4b"
   },
   {
    "path": "engines/rpgmaker-mz.json",
    "collection": "engines",
-   "sha256": "8679f6f5092c8f1f69af068bf51f0a11a5435a219b8e014068c664899b47fdb9"
+   "sha256": "c202c7491a2b9f9eeb4fec65f579055dba1a8564083720e20d4b324f28de5423"
   },
   {
    "path": "engines/rpgmaker-mvmz.json",
    "collection": "engines",
-   "sha256": "cb3d170dd0359a6a96e75bb2645b66bae3db18ed5c1fb8c497fb85263bcbd6b2"
+   "sha256": "59f01ad6116e40932321c196eae52c6a6697bd73a1ebb2842fbb5760ebf60db7"
   },
   {
    "path": "engines/rpgmaker-vxace.json",
    "collection": "engines",
-   "sha256": "5994d83161981d5febac92d95a779317112de72a60deddac8d4820a444a226ea"
+   "sha256": "0d6fbeb8b39e071687d3f29090978cf4ed2b138b6f268f7921f05947f892f2e1"
   },
   {
    "path": "engines/rpgmaker-vx.json",
    "collection": "engines",
-   "sha256": "ea854fc86745610721367fc92aaaf322ea9908b372eb2f5ca797160f62cb5b26"
+   "sha256": "8c0a506fddb8e01180166c143bd5a270967b319c2adb5bed171695cb563c275c"
   },
   {
    "path": "engines/rpgmaker-xp.json",
    "collection": "engines",
-   "sha256": "81ca2bf1a306bda21f84af590f14dc26b53ad734fc0e8712d92266918664cc6f"
+   "sha256": "2daa878cf29a9647196a92392e061f47b07863fd61a2b50a5d43dabde53c5533"
   },
   {
    "path": "engines/rpgmaker-2000-2003.json",
    "collection": "engines",
-   "sha256": "36f4fdfd6dbe9dd9b3057bb7b756e54fedbef741edc1e919fe768270e8428bcd"
+   "sha256": "8179b515716b6013e824bd7b941849ee3bd106e1ecc2ccbbc239e0a265da63ff"
   },
   {
    "path": "engines/kirikiri.json",
    "collection": "engines",
-   "sha256": "a237418b9b2ac010b0f56116bb22e9d7400b40acb0eaa0d415cb98a23dbe68d1"
+   "sha256": "c9b6e32f5d1b2f5b7123af14f7fe08d06040dca1471690385d2077f43ea10d99"
   },
   {
    "path": "engines/august.json",
    "collection": "engines",
-   "sha256": "26b6850c531b3f8b99b1d1a5a33f2c0a88dac9ef685bf023a0db9f77626fde7b"
+   "sha256": "9ed113d3b929f735e2d98ba6def16ab278bca8936f14e6fa6854f5e7559b26de"
   },
   {
    "path": "engines/buriko.json",
    "collection": "engines",
-   "sha256": "acc69fffbadb42f00ecc1152de478a8d47c9d2467c921ae3cb3d7d05f21c64ce"
+   "sha256": "901b9b0a9f40b4b2dd68fd3b60de034762bd8e5ccebff512c12e05731b46454a"
   },
   {
    "path": "engines/catsystem2.json",
    "collection": "engines",
-   "sha256": "a514b78b2487bf761882c7deb6e2ff7c0a4ecd2e9dae2d30bbe22f6591a9ebb7"
+   "sha256": "6ce53f7c6433d0e749a57fbf9121c2b88727bfe6c3c1fb09c37181e13bfc5a7b"
   },
   {
    "path": "engines/cmvs.json",
    "collection": "engines",
-   "sha256": "30f23c9c8c2104963ea6e4e6386bdd78809bf11cf7c8c482ee0b1e5f90aade90"
+   "sha256": "3bdb1bdd710ca33e3d45889b1535e09973c98aa7babd897d65b766142866a484"
   },
   {
    "path": "engines/cmvs-ps3.json",
    "collection": "engines",
-   "sha256": "656381e3df0ded6ef78de8c8b745d173d9de335ed2b086842a1c8a4b62a9e9b8"
+   "sha256": "bf1577574f40e46ffce7784b98991d88208a7f63bc6e01c9836cfba02061eb55"
   },
   {
    "path": "engines/cmvs-ps2.json",
    "collection": "engines",
-   "sha256": "ca3f05917cc77028ddea672d215a4312f76bda8f8785013c1a6c3f9644a6e084"
+   "sha256": "8f2e7cf193df84d519770461d07d2111092be04045f0897c4e8520a2136744d4"
   },
   {
    "path": "engines/flash-air.json",
    "collection": "engines",
-   "sha256": "568398f4d3aeacc7cb2cb1ceeb8a6503dc695ab3d4b9990b796032f60c0cafd8"
+   "sha256": "28b569907b82c2f1d700572ca40cec31d4111f86b7541f95ebaa6fb9bf6a478f"
   },
   {
    "path": "engines/godot.json",
    "collection": "engines",
-   "sha256": "6ed07a73e512e81c02b45f71ba8639b6b8e35fb748afc1ca5c69f6ac67cd60d6"
+   "sha256": "a25792cbc254df7ac0de0ead3cd97b4067e7d6d9cf231cf060e4e6debff0e34e"
   },
   {
    "path": "engines/nscripter.json",
    "collection": "engines",
-   "sha256": "b831450f4f74f195f74e7aded351dd0d6058fa89c34effca9e5d8f2cefc85268"
+   "sha256": "d2afad1115c30b52a7e848758e604d58976f4a10bbe4637c3ae59630fac7569e"
   },
   {
    "path": "engines/ags.json",
    "collection": "engines",
-   "sha256": "38e608059342a96f1a64dfd24ef47e6ca4983881aa6049dabc06c0050a57884d"
+   "sha256": "4b0c8f12951f7fdd0c204d843fa2a2fdcc75a70418f3563e7247bc17d4e56a04"
   },
   {
    "path": "engines/love2d.json",
    "collection": "engines",
-   "sha256": "079c59d26a6c561c2d50ad82705f505f8b184686a63e838518cb9437ecdde8d5"
+   "sha256": "65b25586b58c1b54a0d8b45f5ba6db7632904981670f38736c710e8b3b1a94fd"
   },
   {
    "path": "engines/alicesoft-system4.json",
@@ -386,7 +386,7 @@
   {
    "path": "engines/renpy-fallback.json",
    "collection": "engines",
-   "sha256": "7e43b93f2002ae5b9283d5bc9a9e84d39795455e0be96ca736336a782263937f"
+   "sha256": "12094a99df26e5dcb48761fa7030f733b40518031de79c1b828ddea867fc2312"
   },
   {
    "path": "engines/unreal.json",
@@ -406,12 +406,12 @@
   {
    "path": "engines/flash-swf.json",
    "collection": "engines",
-   "sha256": "1f26054f08d1c81f0d228e9dfa39a94e5e6cd584261329004979df89c1675ad0"
+   "sha256": "61447d1af03b586b9b77438954a60fa286b02ffd3f6dc35b92e36bd9813cba7a"
   },
   {
    "path": "engines/html.json",
    "collection": "engines",
-   "sha256": "52e0b7c05441609d82a357ff30250ecb3cb672b76ab969f8a364328f1af46b2d"
+   "sha256": "526667e19cb27911bfd6d66cc50e9f2fdf239b48efb475421f392c1fadf782a2"
   },
   {
    "path": "platforms/3do.json",
@@ -1416,12 +1416,12 @@
   {
    "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "24a3c48e2e8a43dcc1db926f4becebf1419cda6d25d4d671b9d62bff65a18e78"
+   "sha256": "d5d5cb2887cac345816f3ecc442924b53d323eb1662277a43b768d5ba506681b"
   },
   {
    "path": "players/atomiswave-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "fef03fcef6527d4048137a2b7fa6d9f10c8ab06745b356dc4e475c0ee7412805"
+   "sha256": "a28a67bb12312d746f002d7d0584dde43bd1193f4fe6669f7a64d498d3a43cad"
   },
   {
    "path": "players/c64-com-explusalpha-c64emu-com-explusalpha-c64emu.json",
@@ -1456,12 +1456,12 @@
   {
    "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "d7f0d5b1736172596a7bbe80c6e5d948fd846d1c072f5cf9d461c367feec53f4"
+   "sha256": "a60b2e246bf4a09155f5da4c911afcf206f401cb5452ca6c07fc5fd6e0353ccd"
   },
   {
    "path": "players/dreamcast-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "c13a4df5364c2595efaf1b614ccc508027fed84b53cc11bd3c55f634fa67ebf2"
+   "sha256": "76b130f53fc2b8866b780aec5cca745860e351bbcbc58cb191f41fe1db9c2032"
   },
   {
    "path": "players/fds-com-explusalpha-nesemu-com-explusalpha-nesemu.json",
@@ -1611,7 +1611,7 @@
   {
    "path": "players/j2me-ru-playsoftware-j2meloader-ru-playsoftware-j2meloader.json",
    "collection": "players",
-   "sha256": "10ea10732de07352ef783a0b6340d9c5040c08e62cb4371bdf46a4e9abc1c801"
+   "sha256": "90a3534c1663262c5dff9619cc34a0dabad9ec756c3c106106f363d6d92174c9"
   },
   {
    "path": "players/j2me-ru-woesss-j2meloader-jl-mod.json",
@@ -1656,12 +1656,12 @@
   {
    "path": "players/naomi-com-flycast-emulator-com-flycast-emulator.json",
    "collection": "players",
-   "sha256": "0d76c62c8b9bd54f0847ce4f05375e052916816531999cd124a616d21c95cf8a"
+   "sha256": "b9ed8ed8f335db92ea587c3231b6f43aebeee049ae112ee48d9b44111712b236"
   },
   {
    "path": "players/naomi-com-flycast-emulator-com-flycast-emulator-dev-build.json",
    "collection": "players",
-   "sha256": "916b654343b04c157487a2c09f45421dd653383d2f35778cbc8731f092bc9ee3"
+   "sha256": "fa33834c36087c89088e8dfc686ddf244a8b35590c7b5acfbb502adfe0d3bdec"
   },
   {
    "path": "players/nds-com-dsemu-drastic-drastic.json",
@@ -1671,12 +1671,12 @@
   {
    "path": "players/nds-me-magnum-melonds-melonds.json",
    "collection": "players",
-   "sha256": "662cefafc8ca5e0c7be04d7cbd7075bc36e74bc7b346bd786219cdc130812f87"
+   "sha256": "0b3332940b5de493dd4acfae92f08f3b7cf0dffec627d067965bc5e502d838da"
   },
   {
    "path": "players/nds-me-magnum-melonds-nightly-melonds-nightly.json",
    "collection": "players",
-   "sha256": "7a044c56ccce014db54089eadfd51b8cb1875b3819041415e5fcf75523115c85"
+   "sha256": "c28e84e8c11063aa8c6c274fd3eacccfff8454d851338848a6314607d47ac1f6"
   },
   {
    "path": "players/nds-me-magnum-melonds-dev-melonds-dev-dual-screen-fork.json",
@@ -1761,7 +1761,7 @@
   {
    "path": "players/psp-org-ppsspp-ppsspp-ppsspp.json",
    "collection": "players",
-   "sha256": "53c6f8ffbe8e4dcceeb0c22d865d0bbefc3ea224725dd6eb59965f769412ee99"
+   "sha256": "aa58d15b7fef44d9e99094cd67faebbc9a61a9b3c9a2d32cb06697f0d8a45bf5"
   },
   {
    "path": "players/psp-org-ppsspp-ppssppgold-ppsspp-gold.json",
@@ -1776,12 +1776,12 @@
   {
    "path": "players/psx-com-github-stenzek-duckstation-duckstation.json",
    "collection": "players",
-   "sha256": "6e5ce6f23219efb2a440fad7cc85575fd5d73a3344cf89d978b188668b046d21"
+   "sha256": "b8ac0a6e903c0af3d04440effa43ffde1c16351775ff84bca6bd678d5edceb4e"
   },
   {
    "path": "players/psx-com-github-stenzek-duckstation-duckstation-legacy.json",
    "collection": "players",
-   "sha256": "43a80bb3d97b6aef5a1ecc1dc47c0be2433e7ca3414e60665b97a57a49d8f39f"
+   "sha256": "d77cd492d8e8e2f32b303bb7a7626cfcc8fc7ea787086835f2f7140b0aa66830"
   },
   {
    "path": "players/psx-com-emulator-fpse-fpse.json",
@@ -1961,7 +1961,7 @@
   {
    "path": "players/windows-com-winlator-winlator-cmod.json",
    "collection": "players",
-   "sha256": "fa3859683c62a1e36bfb1282094ff9b556670a754e41955784a60fdb4c692f56"
+   "sha256": "b3187e699a56f09650cb03c37425ad9ff8719a3d7513b896f3cabfe4670039e8"
   },
   {
    "path": "players/windows-com-cmodded-winlator-winlator-cmod-proot.json",
@@ -1996,7 +1996,7 @@
   {
    "path": "players/esde-arcade-flycast.json",
    "collection": "players",
-   "sha256": "54ed99be0dc680b47e95cd057a5ffdf9e932924a1d9c36af798e958d5350a4d9"
+   "sha256": "840d51ef5a28f8f016a596e6992612ba2e7db704c00f1437b840c7791323b968"
   },
   {
    "path": "players/esde-atari2600-2600-emu.json",
@@ -2031,7 +2031,7 @@
   {
    "path": "players/esde-consolearcade-flycast.json",
    "collection": "players",
-   "sha256": "79efdf3952d5adf7edef6f9ff382058f3e6665dc87994fddca832a3eb5d3b2cc"
+   "sha256": "5de84d39c63b5439ee9b4b330d59ec52648d2142ccdc30f9a3d79497d1e169b2"
   },
   {
    "path": "players/esde-consolearcade-aps3e.json",
@@ -2221,7 +2221,7 @@
   {
    "path": "players/esde-j2me-j2me-loader.json",
    "collection": "players",
-   "sha256": "7708130ba111c51efb72e02422435dccf839427a6579931472e7e63979326c72"
+   "sha256": "5c660cbf7b2d328014c462549202c44af89553b5b7b499eb32bdbec9364131cd"
   },
   {
    "path": "players/esde-j2me-jl-mod.json",
@@ -2246,7 +2246,7 @@
   {
    "path": "players/esde-mame-flycast.json",
    "collection": "players",
-   "sha256": "a3de1e3d3822b024d6a37db23641b096b5d0a578b866251251e4ce7f0bccd949"
+   "sha256": "984dca6e888f76ce737a414bad71b7ee93661195a604ff95c2dfca52f1525177"
   },
   {
    "path": "players/esde-mark3-md-emu.json",
@@ -2366,7 +2366,7 @@
   {
    "path": "players/esde-n3ds-azahar.json",
    "collection": "players",
-   "sha256": "54057efb87e36d97b300a416abb49e2f7e9c95f223df93751aca45b3a243d6c4"
+   "sha256": "384412f43268513616c545d5e868f8f65d93ff172b267029149f04425f0ad931"
   },
   {
    "path": "players/esde-n3ds-azaharplus.json",
@@ -2396,7 +2396,7 @@
   {
    "path": "players/esde-n3ds-lime3ds.json",
    "collection": "players",
-   "sha256": "6ef601c3f06d8df3e7ad2b3f5011b54aeb8ced10ea8a2e5ea087bcde6a2eeb94"
+   "sha256": "eb955649c526830ce0b137492504b645aea392c63e5742058376b4a825f5ec31"
   },
   {
    "path": "players/esde-n3ds-panda3ds.json",
@@ -2421,22 +2421,22 @@
   {
    "path": "players/esde-naomi2-flycast.json",
    "collection": "players",
-   "sha256": "408842e76b16209cf89882a43d33c46925ad2b8f9bdfbf8d975449cc181c880c"
+   "sha256": "786cdd0571ff19b2dec0e30dd624c34648f74bec5542470f9939e47ad88d4b74"
   },
   {
    "path": "players/esde-naomigd-flycast.json",
    "collection": "players",
-   "sha256": "1a0807f247003d65f638d8ac4e1f0e2a1a01c5191133d57f720b5ea9a2cbf5d3"
+   "sha256": "a6a416dfd02896184db93fef1504116290d34ff73d5f8ea631c8b3cbfe38ab45"
   },
   {
    "path": "players/esde-nds-melonds.json",
    "collection": "players",
-   "sha256": "e2cf3d5849c703458eedd2bbd1b3d6a6c3bb139f0e6d529a79c561020c66321b"
+   "sha256": "797c4e19909c9c9f702564792078e91648a560015ae41b89cfec8a45ce816aeb"
   },
   {
    "path": "players/esde-nds-melonds-nightly.json",
    "collection": "players",
-   "sha256": "fb7f6ab822ba5b917bcd64fa5e9aff96d1635caa1a5d20affba15dde6bd48530"
+   "sha256": "e9648bd9d3b25421e6d0a03266682866200d9d4c9df0f66ca81b92f19ddb0f94"
   },
   {
    "path": "players/esde-nds-watermelonds.json",
@@ -2516,7 +2516,7 @@
   {
    "path": "players/esde-pcarcade-winlator-glibc.json",
    "collection": "players",
-   "sha256": "0e8b37a22a2847c2314d98de470462a5b0d55b04c7c50799fbaabd5c09782c9e"
+   "sha256": "c84b514a958a3c348bb9f6a914743ea212eaf92f57eaefe1929037885216043c"
   },
   {
    "path": "players/esde-pcarcade-winlator-proot.json",
@@ -2721,7 +2721,7 @@
   {
    "path": "players/esde-type-x-winlator-glibc.json",
    "collection": "players",
-   "sha256": "83ab254a078c4ad5fd0362e93a187f717d90831918d90f5e8bae1c72f4273b50"
+   "sha256": "c781d63a3009a06e58adcb4a330423b2f8e13baab5aec0432303bd976f1ea82d"
   },
   {
    "path": "players/esde-type-x-winlator-proot.json",
@@ -2761,7 +2761,7 @@
   {
    "path": "players/esde-windows-winlator-glibc.json",
    "collection": "players",
-   "sha256": "372fc7c3a93546c06171f83d93b2f724cbbc89ed797932e51be49cf63c36784e"
+   "sha256": "05801838225a8d0f40cd453701df4b52a9a5b042d41b55ef8fbb33454069dbb2"
   },
   {
    "path": "players/esde-windows-winlator-proot.json",
@@ -2816,7 +2816,7 @@
   {
    "path": "players/easyrpg-org-easyrpg-player.json",
    "collection": "players",
-   "sha256": "75c59ef00f1abf8b6ddacb3348db345df4ac7538e3bf7c84594ad0924b3b7b89"
+   "sha256": "90356cbde47bfd464e854a498cead44f9baf7614b3e12a25f0a57d13cb23d55e"
   },
   {
    "path": "players/kirikiri-org-github-krkr2.json",
@@ -2886,7 +2886,7 @@
   {
    "path": "players/daijishou-3ds-io-github-lime3ds-android.json",
    "collection": "players",
-   "sha256": "75ac65715ed863de3a57fc93f75974d088020a54f15de250bb5cd2ed662b1ad4"
+   "sha256": "04e07c7783a03fd144ae283617b9eb3b205c75b5509d67f21b0e744f0c6c015b"
   },
   {
    "path": "players/daijishou-3ds-io-github-borked3ds-android.json",
@@ -2911,7 +2911,7 @@
   {
    "path": "players/daijishou-3ds-io-github-lime3ds-android-2.json",
    "collection": "players",
-   "sha256": "3adb79f2e631308ebad01ecc4cce201cd2dd2781e70ccace1df979648f9310a5"
+   "sha256": "5beb1f051543fa86705c1e88ff1ac1ebf9ed4849fa2e31a6c1851340dce57697"
   },
   {
    "path": "players/daijishou-3ds-io-github-mandarine3ds-mandarine.json",
@@ -2941,7 +2941,7 @@
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds.json",
    "collection": "players",
-   "sha256": "a577ba159fe909f7d6d305ffde72fceebe4cb46cf097c3112ff435b4029243ff"
+   "sha256": "64e3877c7b4ddff56b81df0ff53fed80441f358517a65fb36c491795bbe98b86"
   },
   {
    "path": "players/daijishou-ndsi-com-dsemu-drastic.json",
@@ -2951,7 +2951,7 @@
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds-nightly.json",
    "collection": "players",
-   "sha256": "04baadfc22b7f4541d3944028ebc2b9c44712658db490de6d9c71fde90995efd"
+   "sha256": "3327968a8db14542bd4ff3dac96f1f8664f7fa0f360c5ad87bdc46f3c0180c8e"
   },
   {
    "path": "players/daijishou-ndsi-me-magnum-melonds-dev.json",
@@ -3141,7 +3141,7 @@
   {
    "path": "players/daijishou-pspminis-org-ppsspp-ppsspp.json",
    "collection": "players",
-   "sha256": "55126bf7109bf5a20591753f3c1fc716b86bbdcc7da961708c093f575e4e74c1"
+   "sha256": "a264ed4f405df40502f3c214d2e5a864d459c320c7d803228df8fe1e63dae690"
   },
   {
    "path": "players/daijishou-pspminis-org-ppsspp-ppssppgold.json",
@@ -3526,7 +3526,7 @@
   {
    "path": "players/esde-psx-duckstation.json",
    "collection": "players",
-   "sha256": "bb6f93266226f2c62c79773072ae29fc5fb683d8d6f979b10f4ab840beda9c40"
+   "sha256": "47a3cfeeef6737bb3a5070b18d2094d6d2581550b662d4cfba8166a39c2a7c08"
   },
   {
    "path": "players/esde-pv1000-mame4droid-current.json",
@@ -3626,7 +3626,7 @@
   {
    "path": "players/esde-epic-gamenative.json",
    "collection": "players",
-   "sha256": "898f92efcc7cbbe1d38106b9de3acd6921f689eec0444e668bdfbf207e2b7c4c"
+   "sha256": "1bb8c2f905b0373bba24a85fd71cf6558fcbc6239ec1c830ebd0e519033597b5"
   },
   {
    "path": "players/esde-ps4-bachatas4.json",
@@ -3651,7 +3651,7 @@
   {
    "path": "players/esde-steam-gamenative.json",
    "collection": "players",
-   "sha256": "e370fb02f882bb6894a5a7eb3bac24a60bbf2cabc9c2208449cc16425cc4fa40"
+   "sha256": "7f506d4ba418174b0411630453cf2715623158c6188e05e069752f02e1c96049"
   },
   {
    "path": "players/esde-steam-gamehub-lite.json",
@@ -3666,27 +3666,27 @@
   {
    "path": "players/esde-windows-gamenative.json",
    "collection": "players",
-   "sha256": "47dbb5ccd099f2f61e81ad3f69cf9d3cdfc10d17b81f741cb3eff5d87431c0ec"
+   "sha256": "e5bbc5f6dbd5103634d3a1477b1a343f22a75860b8e9a23b094ec6a47c8d8f35"
   },
   {
    "path": "players/esde-windows-gamenative-2.json",
    "collection": "players",
-   "sha256": "292145e924a7268f759ea4e91bff0f06ec669fb7327750f672889ec320eb4193"
+   "sha256": "73ed6296ef57cf845c4b70789e3517d7225e4dd5125cbc1bb40a28e13ed7c037"
   },
   {
    "path": "players/esde-windows-gamenative-3.json",
    "collection": "players",
-   "sha256": "7c013c223d51bff15a2d8b9d6a064ad472693d2876509bd509c785eb819fbea9"
+   "sha256": "fbd4a47ea2cc21c0c7201a4e697b1a65376926161ca69451446425f83d43b000"
   },
   {
    "path": "players/esde-windows-gamenative-4.json",
    "collection": "players",
-   "sha256": "db3388bf0b8985724ceccfadbb92c19744eba2a6e7fcafaabcc0f8bff19799be"
+   "sha256": "6c1f3bdabf6f334f426da0e55c937ccf7081b01c542c77dcd3ac919a1e3fc33a"
   },
   {
    "path": "players/esde-windows-gamenative-5.json",
    "collection": "players",
-   "sha256": "061e9d8dd7e703257ed0c6d36f96cb4b8f6ae3b7e7aa1aa20487817fa803930a"
+   "sha256": "0d178da804b288d1419e4edbab8463a2e64a6e156787a35fc92f60a822276bae"
   },
   {
    "path": "players/esde-windows-gamehub-lite.json",

@@ -33,5 +33,26 @@
    "{game_folder}/save*.dat"
   ],
   "source": "enginehost-catsystem2-plugin src/save.h:19-24 (save%04d.dat in the folder the host hands the engine) and src/main.c:382; the folder is named for the game by Enginehost (SaveFolders.NAMED_BY_THE_HOST). The Windows original is not covered"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-catsystem2-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

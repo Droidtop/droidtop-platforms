@@ -48,6 +48,27 @@
      "save_directory": "renpy.save_directory"
     },
     "source": "renpy.py path_to_saves (no config.save_directory: <game>/saves; else %APPDATA%/RenPy/<dir>, ~/.renpy/<dir>, ~/Library/RenPy/<dir>) and renpy/savelocation.py init (adds <game>/saves); under Enginehost the 8.3 line's renpy.py path_to_saves (ENGINEHOST_SAVE_PATH/<save_directory>, else the game folder's name); all in the enginehost-renpy-plugin repo"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-renpy-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -90,6 +111,27 @@
      "{game_folder}/localStorage.json"
     ],
     "source": "A shipped MV game's js/rpg_managers.js StorageManager.localFileDirectoryPath and localFilePath (lines 755-771: save/ beside the page that is the main module; file%1.rpgsave, global.rpgsave, config.rpgsave); under Enginehost the web runtime keeps localStorage.json in a folder named for the game (enginehost-rpgmaker-mv-mz-plugin README.md:12-15, enginehost SaveFolders.NAMED_BY_THE_HOST)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -130,6 +172,27 @@
      "{game_folder}/localStorage.json"
     ],
     "source": "A shipped MZ game's js/rmmz_managers.js StorageManager.fileDirectoryPath and filePath (lines 762-770: save/<name>.rmmzsave); under Enginehost the web runtime keeps localStorage.json in a folder named for the game (enginehost-rpgmaker-mv-mz-plugin README.md:12-15)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -181,6 +244,27 @@
      "{game_folder}/localStorage.json"
     ],
     "source": "As rpgmaker-mv and rpgmaker-mz: save/*.rpgsave (MV, js/rpg_managers.js:755-771), save/*.rmmzsave (MZ, js/rmmz_managers.js:762-770), localStorage.json under Enginehost"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mv-mz-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -223,6 +307,27 @@
      "Save/*.rvdata2"
     ],
     "source": "Checked in a shipped RGSS3 game's Data/Scripts.rvdata2: DataManager.make_filename is sprintf(\"Save%02d.rvdata2\") (stock), and the same game's own script moves them to Save/Save%02d.rvdata2; mkxp-z src/config.cpp:456-459 names the .rvdata2 extension"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -270,6 +375,27 @@
      "Save/*.rvdata"
     ],
     "source": "The stock RGSS2 save scripts write Save<n>.rvdata beside Game.exe; mkxp-z src/config.cpp:456-459 names the .rvdata extension; games may move them into a Save folder (seen in a shipped RGSS3 game)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -317,6 +443,27 @@
      "Save/*.rxdata"
     ],
     "source": "The stock RGSS1 save scripts write Save<n>.rxdata beside Game.exe; mkxp-z runs a game's own scripts unchanged (binding/binding-mri.cpp:964), so a game may move them, e.g. into a Save folder (seen in a shipped RGSS3 game)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -362,6 +509,27 @@
      "Save??.lsd"
     ],
     "source": "EasyRPG Player src/filefinder.cpp:458 (SaveNN.lsd) and src/scene_save.cpp:69; saves go to the game folder unless --save-path is given (src/player.cpp:588); Enginehost keeps them in the game folder (enginehost docs/contract.md, SaveFolders.placeOf)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-rpgmaker-easyrpg-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -401,6 +569,27 @@
      "savedata/"
     ],
     "source": "enginehost-kirikiri-plugin src/core/environ/win32/ApplicationSpecialPath.h:58 (GetDataPathDirectory: <application path>/savedata/); Enginehost keeps KiriKiri saves beside the game (SaveFolders.BESIDE_THE_GAME)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-kirikiri-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -424,7 +613,28 @@
     "family": "buriko",
     "context": "august-compiled-script-v1"
    },
-   "notes": "August is not a separate enginehost family: buriko with the August context, per the contract."
+   "notes": "August is not a separate enginehost family: buriko with the August context, per the contract.",
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-buriko-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+   }
   },
   {
    "id": "buriko",
@@ -472,6 +682,27 @@
      "BGI.gdb"
     ],
     "source": "enginehost-buriko-plugin src/core/savefile.c:36-39 (SaveFileName: BGI%.4d.cad) and src/sysobj/database.c:34 (BGI.gdb); Enginehost keeps Buriko saves beside the game (SaveFolders.BESIDE_THE_GAME)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-buriko-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -509,6 +740,27 @@
      "{game_folder}/save*.dat"
     ],
     "source": "enginehost-catsystem2-plugin src/save.h:19-24 (save%04d.dat in the folder the host hands the engine) and src/main.c:382; the folder is named for the game by Enginehost (SaveFolders.NAMED_BY_THE_HOST). The Windows original is not covered"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-catsystem2-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -542,6 +794,27 @@
      "save/"
     ],
     "source": "enginehost-cmvs-plugin, branch engine/2.0-3.0, src/interp.c:3034-3040 (command 0x016: the game's script names the save folder, \"save\\\" in the ps3 script of the game that code was written against); Enginehost keeps CMVS saves beside the game (SaveFolders.BESIDE_THE_GAME). A game whose script names another folder is not found"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-cmvs-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -571,6 +844,27 @@
      "save/"
     ],
     "source": "enginehost-cmvs-plugin, branch engine/2.0-3.0, src/interp.c:3034-3040 (command 0x016: the game's script names the save folder, \"save\\\" in the ps3 script of the game that code was written against); Enginehost keeps CMVS saves beside the game (SaveFolders.BESIDE_THE_GAME). A game whose script names another folder is not found"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-cmvs-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -599,6 +893,27 @@
      "save/"
     ],
     "source": "enginehost-cmvs-plugin, branch engine/2.0-3.0, src/interp.c:3034-3040 (command 0x016: the game's script names the save folder, \"save\\\" in the ps3 script of the game that code was written against); Enginehost keeps CMVS saves beside the game (SaveFolders.BESIDE_THE_GAME). A game whose script names another folder is not found"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-cmvs-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -625,7 +940,28 @@
     "family": "flash_air",
     "context": "air"
    },
-   "notes": "Detection is specifically the AIR package shape, so the air context is the real answer, not a coin flip. Plain .swf: droidtop routes it through the flash player entries in players-database.json (Ruffle etc.), enginehost detects it via the flash-swf row at the end of this file."
+   "notes": "Detection is specifically the AIR package shape, so the air context is the real answer, not a coin flip. Plain .swf: droidtop routes it through the flash player entries in players-database.json (Ruffle etc.), enginehost detects it via the flash-swf row at the end of this file.",
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-flash-air-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+   }
   },
   {
    "id": "godot",
@@ -673,6 +1009,27 @@
      "godot_custom_dir": "godot.custom_dir"
     },
     "source": "enginehost-godot-plugin core/os/os.cpp:322-338 (get_user_data_dir: app_userdata/<application/config/name>, or the custom user dir), drivers/unix/os_unix.cpp:1121 and platform/windows/os_windows.cpp:2445,2487 (the engine folder is Godot on Windows and godot elsewhere); under Enginehost platform/android/os_android.cpp:718-735 puts user:// at ENGINEHOST_SAVE_PATH/<that directory>"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-godot-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -734,6 +1091,27 @@
      "kidoku.dat"
     ],
     "source": "enginehost-nscripter-plugin src/onsyuri/ONScripter_file.cpp:62 (save%d.dat in save_dir or the archive path) and :285 (sav/save%d.dat), ONScripter.cpp:1458 (envdata), ONScripter_command.cpp:3119 (gloval.sav), ScriptHandler.cpp:623 (kidoku.dat)"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-nscripter-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -774,6 +1152,27 @@
      "linux": "<xdgData>/ags"
     },
     "source": "enginehost-ags-plugin Engine/platform/android/acpland.cpp:435-450 (ENGINEHOST_AGS_SAVE_ROOT is the save root; the game names its own subfolder, saveGameFolderName, in it) and ENGINEHOST.md:27-33. That name lives in the game's data file, which droidtop cannot read yet, so no per-game folder is named"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-ags-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -836,6 +1235,27 @@
      "love_identity": "love.identity"
     },
     "source": "enginehost-love2d-plugin patch enginehost/patches/love/0001-enginehost-save-parent.patch (Filesystem::setIdentity: ENGINEHOST_LOVE_SAVE_PARENT/<identity>) and love/src/main/java/org/love2d/android/EngineHostGameActivity.java:151-154 (<save>/LOVE for a game, <save> for a fused one); the desktop's %APPDATA%/LOVE/<identity> and $XDG_DATA_HOME/love/<identity> are the patch's own comment"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-love2d-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -2140,6 +2560,27 @@
      "save_directory": "renpy.save_directory"
     },
     "source": "renpy.py path_to_saves (no config.save_directory: <game>/saves; else %APPDATA%/RenPy/<dir>, ~/.renpy/<dir>, ~/Library/RenPy/<dir>) and renpy/savelocation.py init (adds <game>/saves); under Enginehost the 8.3 line's renpy.py path_to_saves (ENGINEHOST_SAVE_PATH/<save_directory>, else the game folder's name); all in the enginehost-renpy-plugin repo"
+   },
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-renpy-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
    }
   },
   {
@@ -2237,7 +2678,28 @@
     "family": "flash_air",
     "context": "swf"
    },
-   "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it - plain .swf is deliberately droidtop's players-database path). The builtin probe checks root .swf files for a real FWS/CWS/ZWS header. Last on purpose: a stray .swf asset inside any richer game tree must never outrank the real engine."
+   "notes": "ENGINEHOST-ONLY row (droidtop maps no engine id to it, so droidtop skips it - plain .swf is deliberately droidtop's players-database path). The builtin probe checks root .swf files for a real FWS/CWS/ZWS header. Last on purpose: a stray .swf asset inside any richer game tree must never outrank the real engine.",
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-flash-air-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+   }
   },
   {
    "id": "html",
@@ -2259,7 +2721,28 @@
     "family": "html",
     "context": "compiled-html"
    },
-   "notes": "An HTML game: a page at the folder's root, Twine stories included. Last in the file on purpose: Godot and Unity web exports also ship an index.html and must be classified first. The builtin probe accepts any root .html file."
+   "notes": "An HTML game: a page at the folder's root, Twine stories included. Last in the file on purpose: Godot and Unity web exports also ship an index.html and must be classified first. The builtin probe accepts any root .html file.",
+   "runners": {
+    "v": 1,
+    "enginehost": {
+     "core": {
+      "repo": "Droidtop/enginehost-html-plugin"
+     },
+     "install": {
+      "v": 1,
+      "sources": [
+       {
+        "kind": "github",
+        "repo": "Droidtop/enginehost",
+        "asset": "^enginehost-latest\\.apk$",
+        "official": true
+       }
+      ],
+      "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+     }
+    },
+    "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
+   }
   }
  ]
 }

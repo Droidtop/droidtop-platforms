@@ -44,5 +44,26 @@
    "godot_custom_dir": "godot.custom_dir"
   },
   "source": "enginehost-godot-plugin core/os/os.cpp:322-338 (get_user_data_dir: app_userdata/<application/config/name>, or the custom user dir), drivers/unix/os_unix.cpp:1121 and platform/windows/os_windows.cpp:2445,2487 (the engine folder is Godot on Windows and godot elsewhere); under Enginehost platform/android/os_android.cpp:718-735 puts user:// at ENGINEHOST_SAVE_PATH/<that directory>"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-godot-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

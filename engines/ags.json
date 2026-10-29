@@ -36,5 +36,26 @@
    "linux": "<xdgData>/ags"
   },
   "source": "enginehost-ags-plugin Engine/platform/android/acpland.cpp:435-450 (ENGINEHOST_AGS_SAVE_ROOT is the save root; the game names its own subfolder, saveGameFolderName, in it) and ENGINEHOST.md:27-33. That name lives in the game's data file, which droidtop cannot read yet, so no per-game folder is named"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-ags-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

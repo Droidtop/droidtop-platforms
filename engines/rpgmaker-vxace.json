@@ -38,5 +38,26 @@
    "Save/*.rvdata2"
   ],
   "source": "Checked in a shipped RGSS3 game's Data/Scripts.rvdata2: DataManager.make_filename is sprintf(\"Save%02d.rvdata2\") (stock), and the same game's own script moves them to Save/Save%02d.rvdata2; mkxp-z src/config.cpp:456-459 names the .rvdata2 extension"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }

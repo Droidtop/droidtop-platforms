@@ -8,5 +8,21 @@
  "setup": {
   "biosManual": "Settings > Custom BIOS/Firmware > BIOS directory",
   "source": "melonDS-android c42995c: a folder the person picks (https://github.com/rafaelvcaetano/melonDS-android/blob/c42995caff0144f37ad9791dc9bc96d82e8a6f65/app/src/main/res/xml/pref_custom_firmware.xml#L29-L39)."
+ },
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "me.magnum.melonds",
+    "official": true
+   },
+   {
+    "kind": "github",
+    "repo": "rafaelvcaetano/melonDS-android",
+    "official": true
+   }
+  ],
+  "source": "melonDS-android README.md: the Google Play and GitHub releases/latest badges"
  }
 }

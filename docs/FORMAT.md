@@ -135,3 +135,56 @@ A player row:
   game's `patterns`.
 - `systems`: `{"<systemId>": {"patterns": [...], "states": [...], "cards": [...]}}`, replacing the emulator-wide
   lists for that system, for an emulator that saves by a different rule per system.
+
+## Install sources: the optional `install` object, and `runners` on engine rows
+
+droidtop offers to install, or points at where to get, an app a game needs. This is where it reads that from. Nothing
+here changes how a game launches.
+
+A player row's `install`, stored once per package like `setup` (put the same object on every row of that package):
+
+```json
+"install": {
+  "v": 1,
+  "sources": [
+    {"kind": "play", "id": "me.magnum.melonds", "official": true},
+    {"kind": "fdroid", "id": "ru.playsoftware.j2meloader", "official": true},
+    {"kind": "github", "repo": "rafaelvcaetano/melonDS-android", "channel": "nightly", "official": true},
+    {"kind": "github", "repo": "Droidtop/enginehost", "asset": "^enginehost-latest\\.apk$", "abis": ["arm64-v8a"]},
+    {"kind": "page", "url": "https://easyrpg.org/downloads/player/", "official": true}
+  ],
+  "needs": ["optional names of what else it needs"],
+  "source": "where every line above was read from"
+}
+```
+
+- `kind` is `play`, `fdroid`, `izzyondroid` (a package id, which must be the row's own `pkg`: a different build of an
+  app is a different row), `github` or `gitlab` (`repo`; GitHub is `owner/name`, a GitLab group path may be deeper),
+  or `page` (an https URL, the project's own download page).
+- `asset` (github/gitlab) is a regular expression over a release's file names, there only where file names were read
+  from a release or the project's instructions. Without one droidtop opens the releases page and the person picks.
+  `abis` (some of `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86`) is allowed only with an `asset`, and only where the
+  project says which ABIs the file serves.
+- `official` is true only where the project's own page says that is where it is distributed. `channel` is `stable`
+  (the default) or `nightly`.
+- `source` is required and names the README, store text or release the sources were read from. **A source nobody
+  could confirm stays out, and so does an `install` with no confirmed source.** The generator refuses an object with
+  no sources, no citation, an unknown kind or field, or a pattern that is not a regular expression.
+
+An engine row's `runners` says which apps run its games and what they need:
+
+```json
+"runners": {
+  "v": 1,
+  "enginehost": {
+    "core": {"repo": "Droidtop/enginehost-renpy-plugin"},
+    "install": { "...": "Enginehost's own install object, as above" }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories'"
+}
+```
+
+`core.repo` must be a repository `plugins/origins.json` registers, so a core that does not exist cannot be named. The
+row says which core Enginehost needs for the engine; Enginehost itself decides the version and installs it. Other apps
+that run an engine's games (EasyRPG Player, Ruffle, J2ME-Loader, Winlator, ...) stay player rows whose `systemId` is the
+engine, with their own `install`. JoiPlay is deliberately absent: it offers no launch surface droidtop can drive.

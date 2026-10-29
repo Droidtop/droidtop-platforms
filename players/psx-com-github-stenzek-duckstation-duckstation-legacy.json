@@ -4,5 +4,16 @@
  "label": "Duckstation (Legacy)",
  "pkg": "com.github.stenzek.duckstation",
  "argumentsTemplate": "-n com.github.stenzek.duckstation/.EmulationActivity -e bootPath {file.path} --ez resumeState 0 --activity-clear-task --activity-clear-top",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "com.github.stenzek.duckstation",
+    "official": true
+   }
+  ],
+  "source": "stenzek/duckstation README.md, Android: 'Download from Google Play'"
+ }
 }

@@ -4,5 +4,16 @@
  "label": "GameNative GOG (Standalone)",
  "pkg": "app.gamenative",
  "argumentsTemplate": "-n app.gamenative/app.gamenative.MainActivity -a app.gamenative.LAUNCH_GAME -e game_source GOG --ei app_id {file.inject:{file.path}}",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "github",
+    "repo": "utkarshdalal/GameNative",
+    "official": true
+   }
+  ],
+  "source": "utkarshdalal/GameNative README.md: Download link to releases/download/v1.3.0/gamenative-v1.3.0.apk"
+ }
 }

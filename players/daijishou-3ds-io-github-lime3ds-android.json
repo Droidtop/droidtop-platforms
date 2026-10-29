@@ -4,5 +4,16 @@
  "label": "3ds - azahar",
  "pkg": "io.github.lime3ds.android",
  "argumentsTemplate": "-n io.github.lime3ds.android/org.citra.citra_emu.activities.EmulationActivity -a android.intent.action.VIEW -d {file.uri} --activity-clear-task --activity-clear-top",
- "killPackageProcesses": false
+ "killPackageProcesses": false,
+ "install": {
+  "v": 1,
+  "sources": [
+   {
+    "kind": "play",
+    "id": "io.github.lime3ds.android",
+    "official": true
+   }
+  ],
+  "source": "azahar-emu/azahar README.md, Installation > Android: the Google Play build, id=io.github.lime3ds.android"
+ }
 }

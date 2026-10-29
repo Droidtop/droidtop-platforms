@@ -43,5 +43,26 @@
    "Save/*.rvdata"
   ],
   "source": "The stock RGSS2 save scripts write Save<n>.rvdata beside Game.exe; mkxp-z src/config.cpp:456-459 names the .rvdata extension; games may move them into a Save folder (seen in a shipped RGSS3 game)"
+ },
+ "runners": {
+  "v": 1,
+  "enginehost": {
+   "core": {
+    "repo": "Droidtop/enginehost-rpgmaker-mkxp-z-plugin"
+   },
+   "install": {
+    "v": 1,
+    "sources": [
+     {
+      "kind": "github",
+      "repo": "Droidtop/enginehost",
+      "asset": "^enginehost-latest\\.apk$",
+      "official": true
+     }
+    ],
+    "source": "Droidtop/enginehost README.md, Install: download enginehost-latest.apk from the latest build release at github.com/Droidtop/enginehost/releases"
+   }
+  },
+  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories' and README.md Install; the core is registered in plugins/origins.json"
  }
 }
