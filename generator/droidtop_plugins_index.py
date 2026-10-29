@@ -38,7 +38,6 @@ GH_TOKEN, when set, raises the API allowance.
 
 import argparse
 import base64
-import hashlib
 import io
 import json
 import os
@@ -46,13 +45,12 @@ import pathlib
 import re
 import sys
 import tarfile
-import time
-import urllib.error
-import urllib.request
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import github  # noqa: E402
 import verify_jws  # noqa: E402
+from common import Rejected, log, sha256_hex, warn  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DIR = ROOT / "droidtop-plugins"
@@ -80,84 +78,19 @@ UNSTABLE_TAG = re.compile(r"plugin-(unstable|build)([.-]|$)")
 # their successors; anything else is left out, which droidtop shows as "other".
 CATEGORIES = {"sources", "emulators", "system", "sync", "integrations", "appearance", "other",
               "tools", "themes", "social", "games"}
-RETRIES = 3
-RETRY_PAUSE_SECONDS = 10
-USER_AGENT = "droidtop-platforms-droidtop-plugins-index"
+GITHUB = github.Client("droidtop-platforms-droidtop-plugins-index")
 HEX_64 = re.compile(r"[0-9a-f]{64}")
-
-
-class Rejected(Exception):
-    """A repository, release or bundle the index leaves out, with the reason."""
-
-
-def log(message):
-    print(message, flush=True)
-
-
-def warn(message):
-    print("::warning::" + message, flush=True)
 
 
 # --- GitHub --------------------------------------------------------------------
 
 
-def with_retries(fetch):
-    for attempt in range(RETRIES):
-        try:
-            return fetch()
-        except urllib.error.HTTPError as error:
-            if error.code < 500 or attempt == RETRIES - 1:
-                raise
-        except urllib.error.URLError:
-            if attempt == RETRIES - 1:
-                raise
-        time.sleep(RETRY_PAUSE_SECONDS * (attempt + 1))
-
-
-def request(url, api):
-    req = urllib.request.Request(url)
-    req.add_header("User-Agent", USER_AGENT)
-    if api:
-        req.add_header("Accept", "application/vnd.github+json")
-        req.add_header("X-GitHub-Api-Version", "2022-11-28")
-    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    if token and url.startswith("https://api.github.com/"):
-        req.add_header("Authorization", "Bearer " + token)
-    return req
-
-
-def api(url):
-    def once():
-        with urllib.request.urlopen(request(url, True), timeout=60) as response:
-            return json.loads(response.read().decode("utf-8")), response.headers.get("Link")
-    return with_retries(once)
+def paged(url):
+    return GITHUB.paged(url)
 
 
 def download(url, limit):
-    def once():
-        with urllib.request.urlopen(request(url, False), timeout=300) as response:
-            data = response.read(limit + 1)
-            if len(data) > limit:
-                raise Rejected(url + " is larger than " + str(limit) + " bytes")
-            return data
-    return with_retries(once)
-
-
-def next_link(link):
-    if not link:
-        return None
-    for part in link.split(","):
-        segments = part.split(";")
-        if any(s.strip() == 'rel="next"' for s in segments[1:]):
-            return segments[0].strip().strip("<>")
-    return None
-
-
-def paged(url):
-    while url:
-        page, link = api(url)
-        yield from page
-        url = next_link(link)
+    return GITHUB.download(url, limit, timeout=300)
 
 
 def repositories():
@@ -167,10 +100,6 @@ def repositories():
 
 
 # --- keys and signatures -------------------------------------------------------
-
-
-def sha256_hex(data):
-    return hashlib.sha256(data).hexdigest()
 
 
 def load_root():

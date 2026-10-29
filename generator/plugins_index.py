@@ -51,7 +51,6 @@ which every GitHub runner has, so the job installs nothing.
 
 import argparse
 import base64
-import hashlib
 import json
 import os
 import pathlib
@@ -59,10 +58,12 @@ import re
 import subprocess
 import sys
 import tempfile
-import time
 import urllib.error
-import urllib.request
 from datetime import datetime, timedelta, timezone
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import github  # noqa: E402
+from common import Rejected, log, sha256_hex, warn  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PLUGINS_DIR = ROOT / "plugins"
@@ -130,9 +131,12 @@ HASH_IF_SMALLER_THAN = 2 * 1024 * 1024
 # stale index) without a commit per scheduled run.
 REFRESH_AFTER = timedelta(hours=20)
 
-# Server errors are retried this many times in all, with a growing pause.
-RETRIES = 4
-RETRY_PAUSE_SECONDS = 10
+# What a download of this index is allowed to be: the release envelopes, key documents, certificates and the small assets
+# hashed here are kilobytes; anything past this is not one of them.
+MAX_DOWNLOAD_BYTES = 8 * 1024 * 1024
+
+# Server errors are retried four times in all, with a growing pause (github.py).
+GITHUB = github.Client("droidtop-platforms-plugins-index", retries=4)
 
 
 def v1_tooling():
@@ -155,66 +159,12 @@ def v1_tooling():
 JWS, ROOT = None, None
 
 
-class Rejected(Exception):
-    """A repository or release that does not validate; the message says why."""
-
-
 class KeptRegistration(Rejected):
     """Not indexed this run, but the registration and its pin stand."""
 
 
-def log(message):
-    print(message, flush=True)
-
-
-def warn(message):
-    # A GitHub annotation, so a refused official release is visible on the run.
-    print("::warning::" + message, flush=True)
-
-
-def with_retries(fetch):
-    """Runs fetch(), again after a pause when GitHub answers with a server error.
-
-    A single HTTP 500 while listing one repository failed the whole scheduled
-    run of 2026-09-25 05:06, so the index stayed six hours behind the builds
-    published that morning and Enginehost's catalog did not offer them.
-    """
-    for attempt in range(RETRIES):
-        try:
-            return fetch()
-        except urllib.error.HTTPError as error:
-            if error.code < 500 or attempt == RETRIES - 1:
-                raise
-        except urllib.error.URLError:
-            if attempt == RETRIES - 1:
-                raise
-        time.sleep(RETRY_PAUSE_SECONDS * (attempt + 1))
-
-
 def api(url):
-    return with_retries(lambda: api_once(url))
-
-
-def api_once(url):
-    request = urllib.request.Request(url)
-    request.add_header("Accept", "application/vnd.github+json")
-    request.add_header("X-GitHub-Api-Version", "2022-11-28")
-    request.add_header("User-Agent", "droidtop-platforms-plugins-index")
-    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    if token:
-        request.add_header("Authorization", "Bearer " + token)
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read().decode("utf-8")), response.headers.get("Link")
-
-
-def next_link(link):
-    if not link:
-        return None
-    for part in link.split(","):
-        segments = part.split(";")
-        if any(s.strip() == 'rel="next"' for s in segments[1:]):
-            return segments[0].strip().strip("<>")
-    return None
+    return GITHUB.api(url)
 
 
 def releases(repo):
@@ -224,21 +174,11 @@ def releases(repo):
         for release in page:
             if not release.get("draft"):
                 yield release
-        url = next_link(link)
+        url = github.next_link(link)
 
 
 def download(url):
-    return with_retries(lambda: download_once(url))
-
-
-def download_once(url):
-    request = urllib.request.Request(url)
-    request.add_header("User-Agent", "droidtop-platforms-plugins-index")
-    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    if token and not url.startswith("https://raw.githubusercontent.com/"):
-        request.add_header("Authorization", "Bearer " + token)
-    with urllib.request.urlopen(request, timeout=120) as response:
-        return response.read()
+    return GITHUB.download(url, MAX_DOWNLOAD_BYTES)
 
 
 def repository_file(repo, name):
@@ -252,8 +192,9 @@ def repository_file(repo, name):
     return None
 
 
-def sha256_hex(data):
-    return hashlib.sha256(data).hexdigest().upper()
+def fingerprint(data):
+    """A key's fingerprint as the registry writes it: the SHA-256 of its DER, upper-case."""
+    return sha256_hex(data).upper()
 
 
 def origin_of(repo):
@@ -321,7 +262,7 @@ class Key:
             raise Rejected(what + ": publicKeySpki and keySha256 are required")
         self.spki_b64 = spki_b64
         self.der = b64(spki_b64, what + " publicKeySpki")
-        self.sha256 = sha256_hex(self.der)
+        self.sha256 = fingerprint(self.der)
         if declared_sha256.upper() != self.sha256:
             raise Rejected(what + ": keySha256 does not match the key")
         if not is_p256(self.der):
@@ -475,7 +416,7 @@ def digest_of(asset, body=None):
             # is verified file by file at install time regardless.
             return None
         body = download(asset["browser_download_url"])
-    return hashlib.sha256(body).hexdigest()
+    return sha256_hex(body)
 
 
 def stream_of(release, envelope):
@@ -648,7 +589,7 @@ def index_for(repo, trust, pin, maintainer, previous):
             # skips it too.
             continue
         body = download(envelope_asset["browser_download_url"])
-        body_sha = hashlib.sha256(body).hexdigest()
+        body_sha = sha256_hex(body)
         try:
             envelope = check_envelope(
                 body, origin, key, assets, third_party, previous.get(release["tag_name"]) == body_sha
@@ -1019,7 +960,7 @@ def write_envelope_packs(index):
         if not path.is_file() or path.read_bytes() != data:
             path.write_bytes(data)
             log("plugins/envelopes/" + name + " written: " + str(len(pack)) + " envelopes, " + str(len(data)) + " bytes")
-        entry["envelopePack"] = {"path": "envelopes/" + name, "sha256": hashlib.sha256(data).hexdigest(), "size": len(data)}
+        entry["envelopePack"] = {"path": "envelopes/" + name, "sha256": sha256_hex(data), "size": len(data)}
         named.add(name)
     for stale in PACKS_DIR.glob("*.json"):
         if stale.name not in named:
@@ -1037,7 +978,7 @@ def check_envelope_packs(index):
         if not path.is_file():
             sys.exit("plugins/index.json: " + entry["repo"] + " names " + pack["path"] + ", which is missing")
         data = path.read_bytes()
-        if hashlib.sha256(data).hexdigest() != pack["sha256"]:
+        if sha256_hex(data) != pack["sha256"]:
             sys.exit("plugins/" + pack["path"] + " does not match the sha256 the index names")
         envelopes = json.loads(data)["envelopes"]
         for release in entry["releases"]:
