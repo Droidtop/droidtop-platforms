@@ -174,6 +174,13 @@ jobs:
       - name: Fetch droidtop's aria2 download engine
         run: bash build-scripts/fetch-aria2-engine.sh
 
+      # droidtop's :plugin-host builds the SQLite amalgamation into its native library (a plugin's SQLite
+      # is droidtop's own, Droidtop/tracker#741), which droidtop's own CI fetches with this script, checked
+      # against plugin-host/sqlite.pin. Without it CMake stops with "The bundled SQLite is missing".
+      - name: Fetch the SQLite droidtop builds in
+        run: |
+          if [ -f build-scripts/fetch-sqlite.sh ]; then bash build-scripts/fetch-sqlite.sh; fi
+
       - name: Build droidtop's :plugin-host
         env:
           ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
