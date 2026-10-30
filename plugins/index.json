@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T14:35:02Z",
+ "generatedAt": "2026-10-30T14:41:06Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -24,6 +24,646 @@
    ],
    "releases": [
     {
+     "tag": "renpy-8_5-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:35:06Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
+       "size": 61776000,
+       "sha256": "3fdfe814827309a44f421584fc6cb39045893249ea8a7f5194bb70216d449c44"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-release.json",
+       "size": 4113,
+       "sha256": "acccffb8651a1dda35af6f76090860b8e4e3fdf99bb01c7f266030464f703f08"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_5-v1-build.650",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:35:12Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-build.650/dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
+       "size": 61776000,
+       "sha256": "3fdfe814827309a44f421584fc6cb39045893249ea8a7f5194bb70216d449c44"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-build.650/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-build.650/enginehost-release.json",
+       "size": 4113,
+       "sha256": "acccffb8651a1dda35af6f76090860b8e4e3fdf99bb01c7f266030464f703f08"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-build.650/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_4-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:32:56Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
+       "size": 61783032,
+       "sha256": "5fd2544fb7da98687e22a22214c756038ab49b06e1414f061a1dd976257213b1"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "c1269100c613057822bdc4c8a0a957f09dc5e0826e9af62d2ef74dd2c06ad2ec"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_4-v1-build.645",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:02Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-build.645/dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
+       "size": 61783032,
+       "sha256": "5fd2544fb7da98687e22a22214c756038ab49b06e1414f061a1dd976257213b1"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-build.645/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-build.645/enginehost-release.json",
+       "size": 3933,
+       "sha256": "c1269100c613057822bdc4c8a0a957f09dc5e0826e9af62d2ef74dd2c06ad2ec"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-build.645/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_3-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:03Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-unstable/dev.enginehost.renpy.8_3.v1.enginehost.tar.xz",
+       "size": 50459128,
+       "sha256": "a6c06c955fbe4fb641a8c23eee1e417bee3a736521faac8f0e88e24d5976e907"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "4db3744978b26b083d798d0dba4f45e6bdd27e231c734ebdf03dec3c7a5f125f"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_3-v1-build.649",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:09Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-build.649/dev.enginehost.renpy.8_3.v1.enginehost.tar.xz",
+       "size": 50459128,
+       "sha256": "a6c06c955fbe4fb641a8c23eee1e417bee3a736521faac8f0e88e24d5976e907"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-build.649/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-build.649/enginehost-release.json",
+       "size": 3933,
+       "sha256": "4db3744978b26b083d798d0dba4f45e6bdd27e231c734ebdf03dec3c7a5f125f"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_3-v1-build.649/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_2-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:31:52Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "size": 50193348,
+       "sha256": "5c625e94804305c2be7f16d587bd194dc6dea9b9165bfbf5f60d68c4e61ec377"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "d86bdd93ff5d3466d097fd6cab6fa68670d6c78b111e90a3ec78f5f27baf7865"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_2-v1-build.644",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:31:58Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.644/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
+       "size": 50193348,
+       "sha256": "5c625e94804305c2be7f16d587bd194dc6dea9b9165bfbf5f60d68c4e61ec377"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.644/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.644/enginehost-release.json",
+       "size": 3933,
+       "sha256": "d86bdd93ff5d3466d097fd6cab6fa68670d6c78b111e90a3ec78f5f27baf7865"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-build.644/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_1-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:44Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
+       "size": 44990736,
+       "sha256": "f0ab352d1de4a7f23d9a2cfe39f3690acef2cee16d7717ebc322993555d6e3d4"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "8a03a0afd1ca3e9cd4aa111b413883c2cf4029dfb828981538c6bd8ad0ee11e3"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_1-v1-build.643",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:49Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.643/dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
+       "size": 44990736,
+       "sha256": "f0ab352d1de4a7f23d9a2cfe39f3690acef2cee16d7717ebc322993555d6e3d4"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.643/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.643/enginehost-release.json",
+       "size": 3933,
+       "sha256": "8a03a0afd1ca3e9cd4aa111b413883c2cf4029dfb828981538c6bd8ad0ee11e3"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.643/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_0-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:10Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "size": 39016940,
+       "sha256": "a4da1d15965de93a93aa4e3ccad2c0196afb9bc9e7a197ef97a6337e4b3cb6fd"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "fa399a8ace0ce9f621833c353e6eb4c8776b7a78669559e34bbea21b3f8d0591"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-8_0-v1-build.652",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:14Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-build.652/dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
+       "size": 39016940,
+       "sha256": "a4da1d15965de93a93aa4e3ccad2c0196afb9bc9e7a197ef97a6337e4b3cb6fd"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-build.652/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-build.652/enginehost-release.json",
+       "size": 3933,
+       "sha256": "fa399a8ace0ce9f621833c353e6eb4c8776b7a78669559e34bbea21b3f8d0591"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-build.652/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_8-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:32:41Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_8.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-unstable/dev.enginehost.renpy.7_8.v1.enginehost.tar.xz",
+       "size": 44753632,
+       "sha256": "d1efb8fa9cff732778932051b97e16b1ec7a42b34f4a743cb08c90f06639816e"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "bc426141ca7b880b751b7810e8b9bc0ab9c5cae6f8b198caf633eb00975e29c5"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_8-v1-build.651",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:00Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_8.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-build.651/dev.enginehost.renpy.7_8.v1.enginehost.tar.xz",
+       "size": 44753632,
+       "sha256": "d1efb8fa9cff732778932051b97e16b1ec7a42b34f4a743cb08c90f06639816e"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-build.651/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-build.651/enginehost-release.json",
+       "size": 3933,
+       "sha256": "bc426141ca7b880b751b7810e8b9bc0ab9c5cae6f8b198caf633eb00975e29c5"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_8-v1-build.651/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_7-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:32:34Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "size": 43348504,
+       "sha256": "6cffaad08cf79332e736611d2b2e006112af8353fc78077153b7427f5d8394cd"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "b1d8782ff53b57616b65f24d550013533f92a698ae254a05eb55130913fa5e49"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_7-v1-build.648",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:32:42Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.648/dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
+       "size": 43348504,
+       "sha256": "6cffaad08cf79332e736611d2b2e006112af8353fc78077153b7427f5d8394cd"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.648/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.648/enginehost-release.json",
+       "size": 3933,
+       "sha256": "b1d8782ff53b57616b65f24d550013533f92a698ae254a05eb55130913fa5e49"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-build.648/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_6-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:30Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
+       "size": 38417648,
+       "sha256": "f1ffc474474078d9ebc0ec282cb5b9fe54b6f35f76f59b94eeede8f77c9cfbe5"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "fe8e0fac9fd0b9273de7b9407693713b8ddbf86b87a4c1a4672e887ff6a9e666"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_6-v1-build.647",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:33:35Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-build.647/dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
+       "size": 38417648,
+       "sha256": "f1ffc474474078d9ebc0ec282cb5b9fe54b6f35f76f59b94eeede8f77c9cfbe5"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-build.647/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-build.647/enginehost-release.json",
+       "size": 3933,
+       "sha256": "fe8e0fac9fd0b9273de7b9407693713b8ddbf86b87a4c1a4672e887ff6a9e666"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-build.647/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_5-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:34:08Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
+       "size": 34186564,
+       "sha256": "d1e0c02c8c7f1365c5916b3cad039ed2c462c742cee5ca895af094b7e7981657"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-release.json",
+       "size": 3933,
+       "sha256": "48e65bb3cf8c6a0a3460a6dedbbdfeec9cabdba10a515213ea6cf7f18103d581"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_5-v1-build.642",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:34:13Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-build.642/dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
+       "size": 34186564,
+       "sha256": "d1e0c02c8c7f1365c5916b3cad039ed2c462c742cee5ca895af094b7e7981657"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-build.642/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-build.642/enginehost-release.json",
+       "size": 3933,
+       "sha256": "48e65bb3cf8c6a0a3460a6dedbbdfeec9cabdba10a515213ea6cf7f18103d581"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-build.642/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
      "tag": "renpy-7_4-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
@@ -45,7 +685,7 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_4-v1-unstable/enginehost-release.json",
        "size": 3933,
-       "sha256": "a1f6980aa619617a8aa196d52e10bf185b4eb7917bb2102f3cf9ecff1967755f"
+       "sha256": "c1d53974df95d856e0435de2b5ffb35d4fd47a50b10fd794ba1897abe9239694"
       },
       {
        "name": "enginehost-signing-certificate.pem",
@@ -88,32 +728,64 @@
      ]
     },
     {
-     "tag": "renpy-8_5-v1-unstable",
+     "tag": "renpy-7_3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-29T00:18:52Z",
+     "published_at": "2026-10-30T14:31:56Z",
      "assets": [
       {
-       "name": "dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/dev.enginehost.renpy.8_5.v1.enginehost.tar.xz",
-       "size": 61769408,
-       "sha256": "baa042631b7ad66d19c4c4c04468ef03773516fee22bcee7cb4c4f6243aba23d"
+       "name": "dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "size": 19751044,
+       "sha256": "37dcf4d7cd8fe2cb4c785be381de2ff4a1c20b67fefeed653e78eb88d9f5aaf0"
       },
       {
        "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-public-key.json",
        "size": 648,
        "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
       },
       {
        "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-release.json",
-       "size": 4113,
-       "sha256": "9cd478dc6de672a48b1fe632aa5a50424c85d4bde6b01e3d8492f42792105ea7"
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-release.json",
+       "size": 6889,
+       "sha256": "6a6fe99fe335ff41b580ed60103ae29bf917f9d9a0b2704fdd8d6d917aac3b5f"
       },
       {
        "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-unstable/enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
+      }
+     ]
+    },
+    {
+     "tag": "renpy-7_3-v1-build.646",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T14:32:00Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.646/dev.enginehost.renpy.7_3.v1.enginehost.tar.xz",
+       "size": 19751044,
+       "sha256": "37dcf4d7cd8fe2cb4c785be381de2ff4a1c20b67fefeed653e78eb88d9f5aaf0"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.646/enginehost-public-key.json",
+       "size": 648,
+       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.646/enginehost-release.json",
+       "size": 6889,
+       "sha256": "6a6fe99fe335ff41b580ed60103ae29bf917f9d9a0b2704fdd8d6d917aac3b5f"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_3-v1-build.646/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
       }
@@ -178,38 +850,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_5-v1-build.605/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
-     "tag": "renpy-8_4-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:19:06Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/dev.enginehost.renpy.8_4.v1.enginehost.tar.xz",
-       "size": 61785988,
-       "sha256": "5f71f665e6bab430cbd6892c03280968246b007dddaad713ce40463ac9c35214"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "54084bd2c27a7ce9e9500ae261a28d02b04dbb21d7a985ed41023b869b57046e"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_4-v1-unstable/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
       }
@@ -344,38 +984,6 @@
      ]
     },
     {
-     "tag": "renpy-8_2-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:18:27Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/dev.enginehost.renpy.8_2.v1.enginehost.tar.xz",
-       "size": 50188252,
-       "sha256": "394c2a36928f5507573f792aa558a7eaf023e3622ad3f919ab577175a0e7269f"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "7086ef39f5fa5434df7c9f82aa240b7685d053fe2a63cef028d80a1778079832"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_2-v1-unstable/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
      "tag": "renpy-8_2-v1-build.625",
      "stream": "unstable",
      "prerelease": true,
@@ -440,38 +1048,6 @@
      ]
     },
     {
-     "tag": "renpy-8_1-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:18:45Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/dev.enginehost.renpy.8_1.v1.enginehost.tar.xz",
-       "size": 44987992,
-       "sha256": "dc6a485984e95d3023998882d716ba8d20af9aee676dbfb801081f71ae7d839a"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "18442b6925434c2184cc547a205b06d6b57d8505da20f13721ab5a38bbf3c99b"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-unstable/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
      "tag": "renpy-8_1-v1-build.624",
      "stream": "unstable",
      "prerelease": true,
@@ -530,38 +1106,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_1-v1-build.613/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
-     "tag": "renpy-8_0-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:16:28Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/dev.enginehost.renpy.8_0.v1.enginehost.tar.xz",
-       "size": 39011712,
-       "sha256": "27316e986a8b2df7e01188161f99af96ca2d139025561e121e52f9bef18beaf0"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "e6467771846abea8f0e5fa119b92123c8b010293c372d52efa7bd66ff6f9ec06"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-8_0-v1-unstable/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
       }
@@ -696,38 +1240,6 @@
      ]
     },
     {
-     "tag": "renpy-7_7-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:18:10Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/dev.enginehost.renpy.7_7.v1.enginehost.tar.xz",
-       "size": 43346368,
-       "sha256": "0447a173a3b2663b1510cfd9957135ead63da8f58a7fc344eb6aa412c5515c48"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "dcf409bf67c6fd5b6405dff6026f573df9213c17f9e20d3f04ae3b1c38c1f56b"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_7-v1-unstable/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
      "tag": "renpy-7_7-v1-build.621",
      "stream": "unstable",
      "prerelease": true,
@@ -792,38 +1304,6 @@
      ]
     },
     {
-     "tag": "renpy-7_6-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:18:58Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/dev.enginehost.renpy.7_6.v1.enginehost.tar.xz",
-       "size": 38419064,
-       "sha256": "87648a7af00efe6962e33eba10643abbff76f80e2f6de989014d7d881f67f54d"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "00360e68c85b7f5f5f0c074ee7f84fb65b9eea9ad6c813e8c3f537eaa1ea85e2"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-unstable/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
      "tag": "renpy-7_6-v1-build.620",
      "stream": "unstable",
      "prerelease": true,
@@ -882,38 +1362,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_6-v1-build.609/enginehost-signing-certificate.pem",
-       "size": 782,
-       "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
-      }
-     ]
-    },
-    {
-     "tag": "renpy-7_5-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-29T00:18:33Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/dev.enginehost.renpy.7_5.v1.enginehost.tar.xz",
-       "size": 34184508,
-       "sha256": "3e66a9681d00abaaa62cc719605ce4865306222fe102f9f0b97036fb327d46d2"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-public-key.json",
-       "size": 648,
-       "sha256": "22e719d5de8edf26f85e8c5d5e9042bbf761277b0512877b88eb40df7a95cc30"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-release.json",
-       "size": 3933,
-       "sha256": "067e9b28984bbe5cc1979f8d39ef4c778776f5c2182c1983e628cab5581c1c50"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-renpy-plugin/releases/download/renpy-7_5-v1-unstable/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "8b6204846e77bf83ca4a83f319b8bb9b085854710cac1465d30d0bb2340910e6"
       }
@@ -7664,8 +8112,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-renpy-plugin.json",
-    "sha256": "7f731953bd4b914837d4fbd290bc122585320be82cebb0d737ce994ae1d68a7a",
-    "size": 892992
+    "sha256": "5a9f4d02f6fe72c6382094e5f8584df996110a6676843a3f1837e6748e3080e5",
+    "size": 940491
    }
   },
   {
