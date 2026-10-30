@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T21:58:22Z",
+ "generatedAt": "2026-10-30T22:24:51Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -12841,13 +12841,13 @@
      "tag": "html-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-29T20:35:22Z",
+     "published_at": "2026-10-30T22:20:59Z",
      "assets": [
       {
        "name": "dev.enginehost.html.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/dev.enginehost.html.v1.enginehost.tar.xz",
-       "size": 24308,
-       "sha256": "19dbd882a7f3056a8de9a41f577d991638ca81a9cc17562587a3eef5f0a107e5"
+       "size": 24312,
+       "sha256": "6edd80368984b3e69d464d2ad79cff092d3ef5472c17881a68790d2a73b3585a"
       },
       {
        "name": "enginehost-public-key.json",
@@ -12858,12 +12858,44 @@
       {
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/enginehost-release.json",
-       "size": 4373,
-       "sha256": "9c03a4197eb3451ae293292604bdb979510c7a41b74b18516624226bf1bac892"
+       "size": 4397,
+       "sha256": "39fad09e0ff6c03b9c609d4e77efd153a738dd94114cbe003a360ff31ceb74cf"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "2e9f3afad490f6c80369928f6c65296cc465a9933d89b33d4ec3dbd30c40aea7"
+      }
+     ]
+    },
+    {
+     "tag": "html-v1-build.72",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-30T22:21:02Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.html.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-build.72/dev.enginehost.html.v1.enginehost.tar.xz",
+       "size": 24312,
+       "sha256": "6edd80368984b3e69d464d2ad79cff092d3ef5472c17881a68790d2a73b3585a"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-build.72/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "a93bd20caf2388953fae2e25e0d76493b809a69c2958bd59982d149eb2cb009c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-build.72/enginehost-release.json",
+       "size": 4397,
+       "sha256": "39fad09e0ff6c03b9c609d4e77efd153a738dd94114cbe003a360ff31ceb74cf"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-html-plugin/releases/download/html-v1-build.72/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "2e9f3afad490f6c80369928f6c65296cc465a9933d89b33d4ec3dbd30c40aea7"
       }
@@ -13532,8 +13564,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-html-plugin.json",
-    "sha256": "ef4dba28e115b71e0e7cfee48822c2415cb111350471819302599c1a9abe036f",
-    "size": 69804
+    "sha256": "84b1e148986075cb1409dbb4a7f533f881cf928cdd5339168f9bf435c9bf1ab5",
+    "size": 74301
    }
   },
   {
