@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T22:24:51Z",
+ "generatedAt": "2026-10-31T02:58:17Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -10368,6 +10368,70 @@
    ],
    "releases": [
     {
+     "tag": "kirikiri-v1-unstable",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-31T02:54:17Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "size": 79235872,
+       "sha256": "f38b5ae0c7b3c012a1de5692b897ffdbaf5bdb28269e6440439f609ee34f474c"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-public-key.json",
+       "size": 651,
+       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-release.json",
+       "size": 6824,
+       "sha256": "6da014c42066f08e177a3d7809d485c3c50ca79965b1d3b10d794bb445084fca"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 790,
+       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
+      }
+     ]
+    },
+    {
+     "tag": "kirikiri-v1-build.144",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-31T02:54:22Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.144/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
+       "size": 79235872,
+       "sha256": "f38b5ae0c7b3c012a1de5692b897ffdbaf5bdb28269e6440439f609ee34f474c"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.144/enginehost-public-key.json",
+       "size": 651,
+       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.144/enginehost-release.json",
+       "size": 6824,
+       "sha256": "6da014c42066f08e177a3d7809d485c3c50ca79965b1d3b10d794bb445084fca"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.144/enginehost-signing-certificate.pem",
+       "size": 790,
+       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
+      }
+     ]
+    },
+    {
      "tag": "kirikiri-v1-64-bit",
      "stream": "stable",
      "prerelease": false,
@@ -10394,38 +10458,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-64-bit/enginehost-signing-certificate.pem",
-       "size": 790,
-       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
-      }
-     ]
-    },
-    {
-     "tag": "kirikiri-v1-unstable",
-     "stream": "unstable",
-     "prerelease": true,
-     "published_at": "2026-10-30T21:13:11Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 79248912,
-       "sha256": "1f5a4c076cc64c8818ac7738cb987db4f6e4694da2a8a932bfe196e28620331a"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-public-key.json",
-       "size": 651,
-       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-release.json",
-       "size": 6824,
-       "sha256": "c0e7d960485114dd134c7991d487e3b74eeec93a2d3f203a44654a21d19adf9a"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-unstable/enginehost-signing-certificate.pem",
        "size": 790,
        "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
       }
@@ -10800,8 +10832,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-kirikiri-plugin.json",
-    "sha256": "7d0c76f9c4452f32479b6706b0e444e950b9f76cdbe8174099698fcda6dc19ea",
-    "size": 78808
+    "sha256": "0fe0e70eec76f6eab7c7b48c2fe080d339069b71a919715a67102dbfbdaf4897",
+    "size": 85732
    }
   },
   {
@@ -11851,13 +11883,13 @@
      "tag": "cmvs-ps2-ps3-v1-unstable",
      "stream": "unstable",
      "prerelease": true,
-     "published_at": "2026-10-29T19:23:45Z",
+     "published_at": "2026-10-31T02:49:58Z",
      "assets": [
       {
        "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
-       "size": 256732,
-       "sha256": "7b15fe8377ebb4f7a8ec1a09c4f3af2c2471a1548cd922b7ad5d0ac69a1671f7"
+       "size": 257116,
+       "sha256": "badf881f630e3900f82aeb08db873ba20fe35ff6654a1519d84bef3e3a951152"
       },
       {
        "name": "enginehost-public-key.json",
@@ -11869,11 +11901,43 @@
        "name": "enginehost-release.json",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-release.json",
        "size": 3941,
-       "sha256": "92bcc2f196d8ba16e0d421b047de82e04aa35da37134072c279525976004b396"
+       "sha256": "ddae308f5e45f06c82f112bac43037243ae6f108fe0b9a260ccafe21a882b211"
       },
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-unstable/enginehost-signing-certificate.pem",
+       "size": 782,
+       "sha256": "a58f551c75422b86eef35a20ba43797e3aed8e6d8cf0d17c8d04060a1cd7ed64"
+      }
+     ]
+    },
+    {
+     "tag": "cmvs-ps2-ps3-v1-build.96",
+     "stream": "unstable",
+     "prerelease": true,
+     "published_at": "2026-10-31T02:50:02Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.96/dev.enginehost.cmvs.ps2-ps3.v1.enginehost.tar.xz",
+       "size": 257116,
+       "sha256": "badf881f630e3900f82aeb08db873ba20fe35ff6654a1519d84bef3e3a951152"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.96/enginehost-public-key.json",
+       "size": 647,
+       "sha256": "fb1bc2a903abda920995edafa71657b24e2b68fbcce780339cde824acc41f60c"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.96/enginehost-release.json",
+       "size": 3941,
+       "sha256": "ddae308f5e45f06c82f112bac43037243ae6f108fe0b9a260ccafe21a882b211"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-cmvs-plugin/releases/download/cmvs-ps2-ps3-v1-build.96/enginehost-signing-certificate.pem",
        "size": 782,
        "sha256": "a58f551c75422b86eef35a20ba43797e3aed8e6d8cf0d17c8d04060a1cd7ed64"
       }
@@ -12378,8 +12442,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-cmvs-plugin.json",
-    "sha256": "da18f5b61880eeba223d6fb75d505e327e8e89bec63dcd4285e6d4ef2978006d",
-    "size": 51067
+    "sha256": "25466429217d17cce259e3005624a3ad3678d6877fab1315da78d6c6e8c1f3a1",
+    "size": 55108
    }
   },
   {
