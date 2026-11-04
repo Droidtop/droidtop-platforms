@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T21:24:17Z",
+ "generatedAt": "2026-11-04T21:31:35Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -9678,6 +9678,70 @@
    ],
    "releases": [
     {
+     "tag": "rpgmaker-rgss-v1-testing",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-11-04T21:26:47Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "size": 66022648,
+       "sha256": "196bb09386c8ee478bed49ecc310e0b4e26c3df93bfbadcfded481092a489a46"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-public-key.json",
+       "size": 658,
+       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-release.json",
+       "size": 413255,
+       "sha256": "8506345eb327df54c58b12bf67b44e6d5a17d88e50cf13f10c2f44fe43477853"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-signing-certificate.pem",
+       "size": 806,
+       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
+      }
+     ]
+    },
+    {
+     "tag": "rpgmaker-rgss-v1-build.182",
+     "stream": "testing",
+     "prerelease": true,
+     "published_at": "2026-11-04T21:26:52Z",
+     "assets": [
+      {
+       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
+       "size": 66022648,
+       "sha256": "196bb09386c8ee478bed49ecc310e0b4e26c3df93bfbadcfded481092a489a46"
+      },
+      {
+       "name": "enginehost-public-key.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-public-key.json",
+       "size": 658,
+       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
+      },
+      {
+       "name": "enginehost-release.json",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-release.json",
+       "size": 413255,
+       "sha256": "8506345eb327df54c58b12bf67b44e6d5a17d88e50cf13f10c2f44fe43477853"
+      },
+      {
+       "name": "enginehost-signing-certificate.pem",
+       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-signing-certificate.pem",
+       "size": 806,
+       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
+      }
+     ]
+    },
+    {
      "tag": "rpgmaker-rgss-v1-resigned-64-bit",
      "stream": "stable",
      "prerelease": false,
@@ -10088,38 +10152,12 @@
        "sha256": "80593d4c0b5c75586f0a8cd51aecc49be4371538c793458f752a955e6e9d4ce3"
       }
      ]
-    },
-    {
-     "tag": "rpgmaker-rgss-v1-testing",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-09-27T23:12:35Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 91816176,
-       "sha256": "e3c99d913a5540dc52aff4e654c2798f928b593722b60565a120159904177f76"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-public-key.json",
-       "size": 658,
-       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-release.json",
-       "size": 451479,
-       "sha256": "135d6ad4a0f979be29330196c564647fe9b804161546cf5d4b30f9c0f6d2af14"
-      }
-     ]
     }
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-rpgmaker-mkxp-z-plugin.json",
-    "sha256": "14ecc077ab47337266901abad1f28e7039aa42775a6f6fa3568126fd7629b858",
-    "size": 6211961
+    "sha256": "987f67ba83c58de13ddf9a2d8edf811007200622e04a5ca6532f4f06721db3c3",
+    "size": 6173749
    }
   },
   {
