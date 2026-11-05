@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T00:57:13Z",
+ "generatedAt": "2026-11-05T01:08:14Z",
  "origins": [
   {
    "repo": "Droidtop/enginehost-renpy-plugin",
@@ -9673,106 +9673,7 @@
     "origin": "https://github.com/droidtop/enginehost-rpgmaker-mkxp-z-plugin",
     "publicKeySpki": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEA3Ynu6a81qGSQPqTO8Nx4b3JyoKQD1JOqGdofsfUHhEp52AMgijr2L2ffDFhz1gbHoPwBnODmS4rF9z75gYpew=="
    },
-   "certificates": [
-    "MIICJzCCAc6gAwIBAgIUGhDdLRTSjac3OTHA2WRbCEK8e4wwCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjA1MTMwMQYDVQQDDCpkcm9pZHRvcC9lbmdpbmVob3N0LXJwZ21ha2VyLW1reHAtei1wbHVnaW4wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASyfFkReuCfTSX65O3GwrYE2dvs/Ncivi/oHtWy9mzAkIRbjBWSlwvbubS17cQd/YSI+Qj0JDEg2CrW2FdX1icno4HOMIHLMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgeAMCAGA1UdJQQZMBcGFWmC2rif2IDUorrXvtTi4OXihvRyATBJBgNVHREEQjBAhj51cm46ZHJvaWR0b3A6b3JpZ2luOmRyb2lkdG9wL2VuZ2luZWhvc3QtcnBnbWFrZXItbWt4cC16LXBsdWdpbjAdBgNVHQ4EFgQUDAr7L29pPVqMlbN+eoRAW29F0oowHwYDVR0jBBgwFoAUjUXFHsYvy71K0af0U0+Zby/SpEcwCgYIKoZIzj0EAwIDRwAwRAIgZ3r2I2EaY8/tBWn6kZpXefjLpHkRuKdCBtKU+D3CNroCIH76xEaNk+dp2f2O58H0+IDUWIyzjVF3Wn/D4nt716fR"
-   ],
    "releases": [
-    {
-     "tag": "rpgmaker-rgss-v1-testing",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T21:26:47Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 66022648,
-       "sha256": "196bb09386c8ee478bed49ecc310e0b4e26c3df93bfbadcfded481092a489a46"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-public-key.json",
-       "size": 658,
-       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-release.json",
-       "size": 413255,
-       "sha256": "8506345eb327df54c58b12bf67b44e6d5a17d88e50cf13f10c2f44fe43477853"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-testing/enginehost-signing-certificate.pem",
-       "size": 806,
-       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
-      }
-     ]
-    },
-    {
-     "tag": "rpgmaker-rgss-v1-build.182",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T21:26:52Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 66022648,
-       "sha256": "196bb09386c8ee478bed49ecc310e0b4e26c3df93bfbadcfded481092a489a46"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-public-key.json",
-       "size": 658,
-       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-release.json",
-       "size": 413255,
-       "sha256": "8506345eb327df54c58b12bf67b44e6d5a17d88e50cf13f10c2f44fe43477853"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-build.182/enginehost-signing-certificate.pem",
-       "size": 806,
-       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
-      }
-     ]
-    },
-    {
-     "tag": "rpgmaker-rgss-v1-resigned-64-bit",
-     "stream": "stable",
-     "prerelease": false,
-     "published_at": "2026-10-30T21:09:10Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned-64-bit/dev.enginehost.rpgmaker.rgss.v1.enginehost.tar.xz",
-       "size": 66383552,
-       "sha256": "b34e1320fa9ea4970349317f2ab5675aec16bbfa6b8c141e50c963a8de0754b3"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned-64-bit/enginehost-public-key.json",
-       "size": 658,
-       "sha256": "0de450319f879ab4d615065274cf64641aa7b00d1284695b1eb81101e4cb976f"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned-64-bit/enginehost-release.json",
-       "size": 450260,
-       "sha256": "c9841a79d2e41e242a9960548091e9ab64fee6276e0ae7ef4458606c93c1cf9e"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-mkxp-z-plugin/releases/download/rpgmaker-rgss-v1-resigned-64-bit/enginehost-signing-certificate.pem",
-       "size": 806,
-       "sha256": "3d693bdbf9c2f9a0f855f25a7a4211bee23b12eb3547d04135bea852b154d289"
-      }
-     ]
-    },
     {
      "tag": "rpgmaker-rgss-v1-unstable",
      "stream": "unstable",
@@ -10156,8 +10057,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-rpgmaker-mkxp-z-plugin.json",
-    "sha256": "987f67ba83c58de13ddf9a2d8edf811007200622e04a5ca6532f4f06721db3c3",
-    "size": 6173749
+    "sha256": "26f38f1ea9180f8c77954766421cd37ee49c5734608d5dd4017c44a6b3b21eaf",
+    "size": 5310053
    }
   },
   {
@@ -10177,74 +10078,7 @@
     "origin": "https://github.com/droidtop/enginehost-rpgmaker-easyrpg-plugin",
     "publicKeySpki": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGjkp7YFL0kFfPmGtKoRZnyFmsKhkIaNzg1W/k08T4UxSwt3HDZWXAfx1x2BNPzyZeqLzPhQAGFg20eYDM2mUzg=="
    },
-   "certificates": [
-    "MIICKjCCAdCgAwIBAgIUTEh2hBxy+86Ms5RtfkrTeHBFmicwCgYIKoZIzj0EAwIwIjEgMB4GA1UEAwwXRW5naW5laG9zdCBTaWduaW5nIFJvb3QwHhcNMjYxMDE0MTUwNjM4WhcNMjkxMDE0MTUwNjM4WjA2MTQwMgYDVQQDDCtkcm9pZHRvcC9lbmdpbmVob3N0LXJwZ21ha2VyLWVhc3lycGctcGx1Z2luMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwZxOiEQMzBpNmy3ELfHVox0HhRSDOUITvQczIRx2MALfEJ4CtWNl5Vv7NhuT1/ZkkasmGbhNsfzADwDObG4ZP6OBzzCBzDAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDAgBgNVHSUEGTAXBhVpgtq4n9iA1KK6177U4uDl4ob0cgEwSgYDVR0RBEMwQYY/dXJuOmRyb2lkdG9wOm9yaWdpbjpkcm9pZHRvcC9lbmdpbmVob3N0LXJwZ21ha2VyLWVhc3lycGctcGx1Z2luMB0GA1UdDgQWBBRZ0mFctv8bXEJIlkdo/TT4giVoRTAfBgNVHSMEGDAWgBSNRcUexi/LvUrRp/RTT5lvL9KkRzAKBggqhkjOPQQDAgNIADBFAiEA1R59nccsOV0ul0yvddKAXT5xyP+yJxgWqOEIxQhs4ZoCIBmeLV2X6MNR2Vg5UEVX+vqLkunKM2n7fbUQhLNva/5Q"
-   ],
    "releases": [
-    {
-     "tag": "rpgmaker-easyrpg-v1-testing",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T21:17:53Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-testing/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
-       "size": 45536092,
-       "sha256": "ba6453bb9c8e7c9a6a0c14712c47be7fa55e2e38b3939bcc600892bddff5930b"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-testing/enginehost-public-key.json",
-       "size": 659,
-       "sha256": "6819e8eaa30888452a6364f38e82a5cd9f5359ef33fa00675f1093e40794978d"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-testing/enginehost-release.json",
-       "size": 11420,
-       "sha256": "a3341c61d79245c2c306a437ce993ffb26033b10856ab513d0a6a7bc2ab39446"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-testing/enginehost-signing-certificate.pem",
-       "size": 810,
-       "sha256": "0a574503b1da5e7b8377e873f42311320b9257e3e0b292f146102f7681534365"
-      }
-     ]
-    },
-    {
-     "tag": "rpgmaker-easyrpg-v1-build.82",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T21:17:57Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.82/dev.enginehost.rpgmaker.easyrpg.v1.enginehost.tar.xz",
-       "size": 45536092,
-       "sha256": "ba6453bb9c8e7c9a6a0c14712c47be7fa55e2e38b3939bcc600892bddff5930b"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.82/enginehost-public-key.json",
-       "size": 659,
-       "sha256": "6819e8eaa30888452a6364f38e82a5cd9f5359ef33fa00675f1093e40794978d"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.82/enginehost-release.json",
-       "size": 11420,
-       "sha256": "a3341c61d79245c2c306a437ce993ffb26033b10856ab513d0a6a7bc2ab39446"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-rpgmaker-easyrpg-plugin/releases/download/rpgmaker-easyrpg-v1-build.82/enginehost-signing-certificate.pem",
-       "size": 810,
-       "sha256": "0a574503b1da5e7b8377e873f42311320b9257e3e0b292f146102f7681534365"
-      }
-     ]
-    },
     {
      "tag": "rpgmaker-easyrpg-v1-unstable",
      "stream": "unstable",
@@ -10654,8 +10488,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-rpgmaker-easyrpg-plugin.json",
-    "sha256": "0039ae7e1095e61ef6866c3d4fda46f112cd99e1bfc0957ae55594a99121faea",
-    "size": 169626
+    "sha256": "6465f3e22bd40875c6c78fbd9da59dc64e1f4fae4bc228310b1f5ef718df9685",
+    "size": 158111
    }
   },
   {
@@ -11239,102 +11073,6 @@
      ]
     },
     {
-     "tag": "kirikiri-v1-testing",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T22:40:14Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-testing/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 79220352,
-       "sha256": "ac120800918224e41a8a1ad9eb2b5cc75464ee6baea341ef30a8a096dcce188a"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-testing/enginehost-public-key.json",
-       "size": 651,
-       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-testing/enginehost-release.json",
-       "size": 6346,
-       "sha256": "219d260c25f67e1ec50304579848ffe5376473c1a78624722abbad46427328c7"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-testing/enginehost-signing-certificate.pem",
-       "size": 790,
-       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
-      }
-     ]
-    },
-    {
-     "tag": "kirikiri-v1-build.150",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T22:40:22Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.150/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 79220352,
-       "sha256": "ac120800918224e41a8a1ad9eb2b5cc75464ee6baea341ef30a8a096dcce188a"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.150/enginehost-public-key.json",
-       "size": 651,
-       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.150/enginehost-release.json",
-       "size": 6346,
-       "sha256": "219d260c25f67e1ec50304579848ffe5376473c1a78624722abbad46427328c7"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.150/enginehost-signing-certificate.pem",
-       "size": 790,
-       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
-      }
-     ]
-    },
-    {
-     "tag": "kirikiri-v1-build.148",
-     "stream": "testing",
-     "prerelease": true,
-     "published_at": "2026-11-04T21:15:25Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.148/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 79235716,
-       "sha256": "7fad5f367fa190c3d448f7ade80fe2838ef2f0ed3d00a9d12ec09ce00831017a"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.148/enginehost-public-key.json",
-       "size": 651,
-       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.148/enginehost-release.json",
-       "size": 6346,
-       "sha256": "2ac6e65c6de71a9cdce54e13486066af3964eb02f9aba5c14f873f101b029ccc"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.148/enginehost-signing-certificate.pem",
-       "size": 790,
-       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
-      }
-     ]
-    },
-    {
      "tag": "kirikiri-v1-build.146",
      "stream": "unstable",
      "prerelease": true,
@@ -11393,38 +11131,6 @@
       {
        "name": "enginehost-signing-certificate.pem",
        "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-build.144/enginehost-signing-certificate.pem",
-       "size": 790,
-       "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
-      }
-     ]
-    },
-    {
-     "tag": "kirikiri-v1-64-bit",
-     "stream": "stable",
-     "prerelease": false,
-     "published_at": "2026-10-30T21:08:08Z",
-     "assets": [
-      {
-       "name": "dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-64-bit/dev.enginehost.kirikiri.v1.enginehost.tar.xz",
-       "size": 75654560,
-       "sha256": "ec655420f8cfc7829eefce1fedef3346bfcba653341949f3f154ecf95b02a9bd"
-      },
-      {
-       "name": "enginehost-public-key.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-64-bit/enginehost-public-key.json",
-       "size": 651,
-       "sha256": "53b744540f566b0b827482a30d57ea0f210cf394f2636fa4fef5042e7bd1b9f7"
-      },
-      {
-       "name": "enginehost-release.json",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-64-bit/enginehost-release.json",
-       "size": 6239,
-       "sha256": "15e7e095c1a7e91263651c0b2e094c22e952f6f7a69fddc83445822d1bfc50c4"
-      },
-      {
-       "name": "enginehost-signing-certificate.pem",
-       "url": "https://github.com/Droidtop/enginehost-kirikiri-plugin/releases/download/kirikiri-v1-64-bit/enginehost-signing-certificate.pem",
        "size": 790,
        "sha256": "27bff3eea31fe90349ac154ce6666d9dd6fcd7f083afae0d382da931908d9e68"
       }
@@ -11773,8 +11479,8 @@
    ],
    "envelopePack": {
     "path": "envelopes/droidtop__enginehost-kirikiri-plugin.json",
-    "sha256": "521baae631a8c047e25f7dfc92b1bda3159cdaaa2f1f3109ba0920dd2876f4c9",
-    "size": 99999
+    "sha256": "426773ec83c2fd515b0cf3dad54410a8eb5025e20e67378e1d89bbad8e7d210f",
+    "size": 80792
    }
   },
   {
