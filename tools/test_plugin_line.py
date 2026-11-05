@@ -104,6 +104,32 @@ class ComposeOnWindowsNewlines(unittest.TestCase):
         with self.assertRaises(SystemExit):
             plugin_line.compose_tree(default, upstream, "1.0", "part")
 
+    def test_a_droidtop_plugin_keeps_its_line_under_plugin_line(self):
+        # The owner, 2026-11-05: "ALL plugins should keep the recipe on plugin-core, overlaid onto the release branch
+        # when needed". A droidtop plugin fork: the upstream app, and plugin-core's own files written over it.
+        upstream = commit({"README.md": "upstream readme\n", "app/Main.kt": "fun main() {}\n"}, "upstream app")
+        pc = commit({
+            "README.md": "droidtop's readme\n",
+            "droidtop-plugin/manifest.template.json": "{}\n",
+            "plugin-line/lines/stable/line.json": json.dumps({"upstream": {"repo": "o/app", "ref": "main", "commit": upstream},
+                                                              "version": "1.0"}) + "\n",
+        }, "plugin-core")
+        self.assertEqual(plugin_line.root_of(pc), "plugin-line")
+        upstream_rev, version = plugin_line.resolve("stable", pc)
+        self.assertEqual((upstream_rev, version), (upstream, "1.0"))
+        tree, applied = plugin_line.compose_tree(pc, upstream_rev, version, "stable")
+        self.assertEqual(applied, [])
+        paths = run("ls-tree", "-r", "--name-only", tree).splitlines()
+        for path in ("app/Main.kt", "droidtop-plugin/manifest.template.json", "plugin-line/line.json"):
+            self.assertIn(path, paths)
+        self.assertNotIn(plugin_line.LINE_FILE, paths)
+        self.assertEqual(run("show", f"{tree}:README.md"), "droidtop's readme\n")
+        self.assertEqual(json.loads(plugin_line.pin_of(run("commit-tree", tree, "-m", "line").strip()))["pluginCore"], pc)
+
+    def test_an_engine_plugin_keeps_enginehost(self):
+        pc = commit({"enginehost/lines/demo/line.json": json.dumps({"upstream": None, "version": "1"}) + "\n"}, "plugin-core")
+        self.assertEqual(plugin_line.root_of(pc), "enginehost")
+
     def test_a_line_with_no_upstream_is_plugin_core_alone(self):
         pc = commit({
             "enginehost/wrapper.txt": "wrapper\n",
