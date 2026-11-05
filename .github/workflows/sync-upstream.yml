@@ -19,10 +19,20 @@ name: Sync upstream
 #       with:
 #         upstream-url: https://github.com/<owner>/<project>.git
 #         upstream-branch: main
+#         mirror-branch: upstream-sync
+#         line: stable
 #
-# The upstream's branch is fast-forwarded into the repository's mirror branch,
-# then merged into the working branch. A conflict is never forced: the merge is
-# aborted and an issue asks for a manual merge.
+# The upstream's branch is fast-forwarded into the repository's mirror branch.
+#
+# A plugin repository keeps its recipe on plugin-core (the owner, 2026-11-05: "ALL plugins should keep the recipe on
+# plugin-core, overlaid onto the release branch when needed" and "main, master, or etc, shouldn't exist. we rename it to
+# "upstream-sync""). With [line] set, nothing is merged: the mirror is upstream-sync, and a ci/upstream-<line>-<sha>
+# branch off plugin-core moves that line's pin (plugin-line/lines/<line>/line.json) to the new upstream commit, for
+# the coordinator to land on plugin-core and recompose plugin/<line> (tools/plugin_line.py). A pin already there is
+# left alone.
+#
+# Without [line] (the older layout), the mirror is merged into [target-branch]. A conflict is never forced: the merge
+# is aborted and an issue asks for a manual merge.
 on:
   workflow_call:
     inputs:
@@ -39,9 +49,17 @@ on:
         type: string
         default: upstream-main
       target-branch:
-        description: This repository's branch the mirror branch is merged into.
+        description: This repository's branch the mirror branch is merged into, when no line is given.
         type: string
         default: main
+      line:
+        description: The plugin line whose upstream pin a ci/ branch off plugin-core moves; empty for the merge layout.
+        type: string
+        default: ''
+      line-root:
+        description: The folder of plugin-core that holds the line declarations.
+        type: string
+        default: plugin-line
       git-user-name:
         type: string
         default: bi0shacker001
@@ -90,7 +108,35 @@ jobs:
           git merge --ff-only "upstream/$UPSTREAM_BRANCH"
           git push origin "$MIRROR_BRANCH"
 
+      - name: Move the line's upstream pin on a ci/ branch off plugin-core
+        if: inputs.line != ''
+        env:
+          MIRROR_BRANCH: ${{ inputs.mirror-branch }}
+          LINE: ${{ inputs.line }}
+          ROOT: ${{ inputs.line-root }}
+        run: |
+          set -euo pipefail
+          tip=$(git rev-parse "$MIRROR_BRANCH")
+          git fetch -q origin plugin-core
+          git checkout -q -B pin FETCH_HEAD
+          decl="$ROOT/lines/$LINE/line.json"
+          [ -f "$decl" ] || { echo "plugin-core has no $decl"; exit 1; }
+          now=$(python3 -c 'import json,sys; print((json.load(open(sys.argv[1])).get("upstream") or {}).get("commit",""))' "$decl")
+          if [ "$now" = "$tip" ]; then echo "$LINE already pins $tip"; exit 0; fi
+          python3 - "$decl" "$tip" <<'PY'
+          import json, sys
+          path, tip = sys.argv[1], sys.argv[2]
+          decl = json.load(open(path))
+          decl["upstream"]["commit"] = tip
+          open(path, "w").write(json.dumps(decl, indent=2) + "\n")
+          PY
+          git add "$decl"
+          git commit -q -m "Upstream: $LINE pins ${tip:0:10}" -m "The upstream sync moved $MIRROR_BRANCH to $tip. Land on plugin-core, then recompose plugin/$LINE with tools/plugin_line.py compose $LINE --commit."
+          git push -q origin "HEAD:refs/heads/ci/upstream-$LINE-${tip:0:10}"
+          echo "pushed ci/upstream-$LINE-${tip:0:10}"
+
       - name: Try merging into the target branch
+        if: inputs.line == ''
         id: merge
         env:
           MIRROR_BRANCH: ${{ inputs.mirror-branch }}

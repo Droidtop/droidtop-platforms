@@ -9,6 +9,7 @@ under Unreleased.
 
 ### Added
 
+- Every plugin repository keeps its recipe on `plugin-core`: the line tool reads a droidtop plugin's lines from `plugin-line/` as it reads an Enginehost plugin's from `enginehost/`, and the upstream sync can fast-forward `upstream-sync` and offer a `ci/` branch that moves a line's upstream pin, instead of merging upstream into a working branch.
 - `storagePathTemplate` on the eight AetherSX2/NetherSX2 PS2 rows (plain `bootPath` launch), so a PS2 game boots without a content URI when the emulator holds all-files access.
 - The catalog: 195 platforms with their RetroArch cores, 463 standalone-emulator presets and 109 BIOS sets, generated from other frontends' own maintained databases (ES-DE, Batocera, Daijishō) rather than hand-written.
 - A 71-row engine registry that drives detection and launch routing for both apps, so covering another engine ships as a database update instead of an app rebuild, and droidtop and Enginehost can never classify one folder differently.

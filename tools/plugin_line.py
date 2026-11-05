@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""plugin-line: an Enginehost plugin line is compose(upstream commit, plugin-core commit, line id).
+"""plugin-line: a plugin line is compose(upstream commit, plugin-core commit, line id).
+
+Every plugin repository keeps its recipe on plugin-core (the owner, 2026-11-05: "ALL plugins should keep the
+recipe on plugin-core, overlaid onto the release branch when needed"). The line metadata lives under one folder of
+plugin-core, ROOT below: plugin-line/ for droidtop's plugins, enginehost/ for Enginehost's engine plugins, which had
+it first. Whichever plugin-core carries (plugin-line/ when both) is the one used, and the paths below are under it.
 
 The owner's rule: plugin-core is authoritative. A line branch (plugin/<id>) is a cache of a
 composition and nothing is authored on it. compose is deterministic and runs on git objects
@@ -35,9 +40,27 @@ Patch series, enginehost/patches/series: one patch per line, "<range> <file>" wh
 """
 import argparse, json, os, re, subprocess, sys, tempfile
 
+ROOTS = ("plugin-line", "enginehost")
 LINE_FILE = "enginehost/line.json"
 LINES_DIR = "enginehost/lines"
 SERIES = "enginehost/patches/series"
+
+
+def root_of(pc):
+    """The metadata folder plugin-core commit pc uses: the first of ROOTS that holds a lines/ folder."""
+    for root in ROOTS:
+        if git("ls-tree", "--name-only", pc, "--", f"{root}/lines", check=False).strip():
+            return root
+    return ROOTS[-1]
+
+
+def pin_of(line):
+    """The pin a composed line carries, as text, under either root; None when it has none."""
+    for root in ROOTS:
+        raw = show(line, f"{root}/line.json")
+        if raw is not None:
+            return raw
+    return None
 
 
 def git(*args, env=None, input=None, check=True):
@@ -86,7 +109,7 @@ def in_range(version, spec):
 
 
 def declaration(pc, line_id):
-    raw = show(pc, f"{LINES_DIR}/{line_id}/line.json")
+    raw = show(pc, f"{root_of(pc)}/lines/{line_id}/line.json")
     return json.loads(raw) if raw else None
 
 
@@ -96,6 +119,8 @@ def compose_tree(pc, upstream, version, line_id):
     os.close(fd)
     os.unlink(index)
     env = dict(os.environ, GIT_INDEX_FILE=index)
+    meta = root_of(pc)
+    lines_dir = f"{meta}/lines"
     try:
         if upstream:
             git("read-tree", upstream, env=env)
@@ -103,7 +128,7 @@ def compose_tree(pc, upstream, version, line_id):
             git("read-tree", "--empty", env=env)
         entries = git("ls-tree", "-r", "--full-tree", pc).splitlines()
         info = [e for e in entries]  # "<mode> <type> <sha>\t<path>"
-        root = f"{LINES_DIR}/{line_id}/root/"
+        root = f"{lines_dir}/{line_id}/root/"
         info += [e.split("\t", 1)[0] + "\t" + e.split("\t", 1)[1][len(root):]
                  for e in entries if e.split("\t", 1)[1].startswith(root)]
         # update-index --index-info wants "<mode> <sha>\t<path>" (type is accepted too).
@@ -111,7 +136,7 @@ def compose_tree(pc, upstream, version, line_id):
         applied = []
         todo = []  # (label, path in plugin-core)
         decl = declaration(pc, line_id)
-        series = show(pc, SERIES) if (decl or {}).get("sharedPatches", True) else None
+        series = show(pc, f"{meta}/patches/series") if (decl or {}).get("sharedPatches", True) else None
         if series:
             for raw in series.decode().splitlines():
                 raw = raw.strip()
@@ -119,11 +144,11 @@ def compose_tree(pc, upstream, version, line_id):
                     continue
                 spec, name = raw.split(None, 1)
                 if in_range(version, spec):
-                    todo.append((f"{name} ({spec})", f"enginehost/patches/{name}"))
-        own = f"{LINES_DIR}/{line_id}/patches/"
+                    todo.append((f"{name} ({spec})", f"{meta}/patches/{name}"))
+        own = f"{lines_dir}/{line_id}/patches/"
         for path in sorted(git("ls-tree", "-r", "--name-only", "--full-tree", pc, "--", own).split()):
             if path.endswith(".patch"):
-                todo.append((path[len(LINES_DIR) + 1:], path))
+                todo.append((path[len(lines_dir) + 1:], path))
         for label, path in todo:
             body = show(pc, path, required=True)
             with tempfile.NamedTemporaryFile(suffix=".patch", delete=False) as f:
@@ -138,7 +163,7 @@ def compose_tree(pc, upstream, version, line_id):
         pin = json.dumps({"line": line_id, "upstream": upstream, "upstreamVersion": version,
                           "pluginCore": pc}, indent=2) + "\n"
         blob = git("hash-object", "-w", "--stdin", input=pin).strip()
-        git("update-index", "--add", "--cacheinfo", f"100644,{blob},{LINE_FILE}", env=env)
+        git("update-index", "--add", "--cacheinfo", f"100644,{blob},{meta}/line.json", env=env)
         return git("write-tree", env=env).strip(), applied
     finally:
         if os.path.exists(index):
@@ -167,7 +192,7 @@ def resolve(line_id, pc, upstream=None, version=None):
         version = version or decl["version"]
     if not version or not (upstream or (decl and decl.get("upstream") is None)):
         sys.exit(f"plugin-core {pc[:10]} declares no line {line_id!r} "
-                 f"({LINES_DIR}/{line_id}/line.json); pass --upstream and --version")
+                 f"({root_of(pc)}/lines/{line_id}/line.json); pass --upstream and --version")
     if not upstream:
         return None, version
     return rev(upstream) or sys.exit(f"upstream commit {upstream} is not in this clone"), version
@@ -211,12 +236,12 @@ def cmd_compose(a):
 
 def cmd_check(a):
     line = rev(a.line) or sys.exit(f"no line at {a.line}")
-    raw = show(line, LINE_FILE)
+    raw = pin_of(line)
     if raw is None and show(line, "ARCHIVED.md") is not None:
         print(f"ARCHIVED {a.line}: not a supported line (ARCHIVED.md), not checked")
         return
     if raw is None:
-        sys.exit(f"FAIL: {LINE_FILE} is missing, so nobody can rebuild this line from upstream + "
+        sys.exit(f"FAIL: plugin-line/line.json (enginehost/line.json for an engine plugin) is missing, so nobody can rebuild this line from upstream + "
                  f"plugin-core. Compose it with plugin-line (droidtop-platforms tools/plugin-line).")
     pin = json.loads(raw)
     pc, upstream, version, line_id = pin["pluginCore"], pin["upstream"], pin["upstreamVersion"], pin["line"]
@@ -252,7 +277,7 @@ def cmd_check(a):
 def cmd_status(a):
     """Every line plugin-core declares must compose at its tip; report each line branch's pin."""
     core = rev(a.core) or sys.exit(f"no {a.core}")
-    ids = [p.rsplit("/", 1)[1] for p in git("ls-tree", "--name-only", core, f"{LINES_DIR}/").split()]
+    ids = [p.rsplit("/", 1)[1] for p in git("ls-tree", "--name-only", core, f"{root_of(core)}/lines/").split()]
     branches = {r.rsplit("/plugin/", 1)[1]: r for r in
                 git("for-each-ref", "--format=%(refname)", f"refs/remotes/{a.remote}/plugin/").split()}
     failed = []
@@ -273,7 +298,7 @@ def cmd_status(a):
             failed.append(i)
         pin = "no branch"
         if i in branches:
-            raw = show(branches[i], LINE_FILE)
+            raw = pin_of(branches[i])
             if raw is None:
                 pin = "not composed (no line.json)"
             else:
@@ -342,7 +367,7 @@ def cmd_walk(a):
 
 def cmd_diff(a):
     line = rev(a.line or f"plugin/{a.id}")
-    raw = show(line, LINE_FILE)
+    raw = pin_of(line)
     pin = json.loads(raw) if raw else {}
     pc = rev(a.pc or pin.get("pluginCore") or "plugin-core")
     upstream, version = resolve(a.id, pc, a.upstream or pin.get("upstream"), a.version or pin.get("upstreamVersion"))
