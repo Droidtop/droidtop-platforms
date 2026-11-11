@@ -7,6 +7,10 @@ under Unreleased.
 
 ## [Unreleased]
 
+### Fixed
+- The droidtop plugin index leaves out a release whose manifest declares a contract below droidtop's minimum (2), and
+  records each release's `contractVersion`: Install all no longer ends on a refusal (Droidtop/tracker#932, Root modules 1.0.0).
+
 ### Added
 
 - Every plugin repository keeps its recipe on `plugin-core`: the line tool reads a droidtop plugin's lines from `plugin-line/` as it reads an Enginehost plugin's from `enginehost/`, and the upstream sync can fast-forward `upstream-sync` and offer a `ci/` branch that moves a line's upstream pin, instead of merging upstream into a working branch.

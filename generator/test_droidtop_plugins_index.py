@@ -10,6 +10,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import droidtop_plugins_index as index  # noqa: E402
 
 
+class Contracts(unittest.TestCase):
+    def test_a_release_below_droidtops_contract_is_left_out(self):
+        # Droidtop/tracker#932: Root modules 1.0.0 declared contract 1, which droidtop refuses at install.
+        for manifest in ({"contractVersion": 1}, {}, {"contractVersion": "3"}, {"contractVersion": True}):
+            with self.assertRaises(index.Rejected):
+                index.contract_of("droidtop-plugin-mmrl plugin-v1.0.0/x", manifest)
+
+    def test_contract_2_and_later_pass(self):
+        self.assertEqual(index.contract_of("x", {"contractVersion": 2}), 2)
+        self.assertEqual(index.contract_of("x", {"contractVersion": 3}), 3)
+
+
 class Channels(unittest.TestCase):
     def test_a_release_is_stable(self):
         self.assertEqual(index.stream_of({"tag_name": "plugin-v1.5.0", "prerelease": False}), "stable")

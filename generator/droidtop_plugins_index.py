@@ -68,6 +68,10 @@ PLUGIN_URN = "urn:droidtop:plugin:"
 BUNDLE_SUFFIX = ".droidplugin.tar.xz"
 MAX_BUNDLES_PER_RELEASE = 8
 MAX_BUNDLE_BYTES = 512 * 1024 * 1024
+# droidtop refuses a manifest below this contract (droidtop PLUGIN_MANIFEST_MIN_CONTRACT_VERSION, 50e35161: "contract 1 is
+# no longer installed or run"), so the index leaves such a release out instead of offering what Install all then fails on
+# (Droidtop/tracker#932: Root modules 1.0.0, contract 1).
+MIN_CONTRACT = 2
 # Per plugin and stream: a plugin's newest stable release must never fall off the list
 # because a busy branch published many pre-releases after it.
 KEEP_RELEASES = {"stable": 5, "testing": 3, "unstable": 3}
@@ -173,6 +177,14 @@ def signed_plugin_ids(what, manifest_bytes, jws, root_spki):
     return [u[len(PLUGIN_URN):] for u in names if u.startswith(PLUGIN_URN)]
 
 
+def contract_of(what, manifest):
+    """The manifest's contract version; a release below droidtop's minimum is refused, as droidtop refuses it."""
+    contract = manifest.get("contractVersion")
+    if not isinstance(contract, int) or isinstance(contract, bool) or contract < MIN_CONTRACT:
+        raise Rejected(what + ": contractVersion " + str(contract) + " is older than droidtop runs (" + str(MIN_CONTRACT) + ")")
+    return contract
+
+
 def release_entry(release, asset, bundle, root_spki):
     what = release["tag_name"] + "/" + asset["name"]
     manifest_bytes, jws = manifest_of(bundle, what)
@@ -190,6 +202,7 @@ def release_entry(release, asset, bundle, root_spki):
     version = str(manifest.get("version") or "").strip()
     if not label or not version:
         raise Rejected(what + ": the manifest has no label or version")
+    contract = contract_of(what, manifest)
     description = manifest.get("description")
     if manifest.get("category") is not None and category_of(manifest) is None:
         warn(what + ": unknown category " + repr(manifest.get("category")) + "; listed without one")
@@ -197,6 +210,7 @@ def release_entry(release, asset, bundle, root_spki):
             category_of(manifest))
     return plugin_id, meta, {
         "version": version,
+        "contractVersion": contract,
         "stream": stream_of(release),
         "publishedAt": release.get("published_at"),
         "manifestSha256": sha256_hex(manifest_bytes),
@@ -245,7 +259,8 @@ def build(previous):
                     cached = known.get((asset["browser_download_url"], asset["size"], release.get("published_at")))
                     # A bundle verified against the same root is not downloaded again; the app re-verifies
                     # every bundle on the device, so a stale entry can make the catalog late, never lie.
-                    if cached and previous_master == master_sha:
+                    # An entry listed before the contract was recorded is read again, so a contract 1 release drops out.
+                    if cached and previous_master == master_sha and cached[1].get("contractVersion", 0) >= MIN_CONTRACT:
                         plugin, listed = cached
                         plugin_id = plugin["id"]
                         meta = (plugin["label"], plugin.get("description"), plugin.get("category"))
