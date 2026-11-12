@@ -68,10 +68,10 @@ PLUGIN_URN = "urn:droidtop:plugin:"
 BUNDLE_SUFFIX = ".droidplugin.tar.xz"
 MAX_BUNDLES_PER_RELEASE = 8
 MAX_BUNDLE_BYTES = 512 * 1024 * 1024
-# droidtop refuses a manifest below this contract (droidtop PLUGIN_MANIFEST_MIN_CONTRACT_VERSION, 50e35161: "contract 1 is
-# no longer installed or run"), so the index leaves such a release out instead of offering what Install all then fails on
-# (Droidtop/tracker#932: Root modules 1.0.0, contract 1).
-MIN_CONTRACT = 2
+# A release's plugin contract (its manifest's contractVersion; a manifest without one is contract 1). Every release is
+# listed with it, an old one included, and droidtop says on the row when it cannot run it ("Incompatible with your
+# version: ..."), rather than the index hiding it (owner, 2026-11-12, Droidtop/tracker#932).
+LEGACY_CONTRACT = 1
 # Per plugin and stream: a plugin's newest stable release must never fall off the list
 # because a busy branch published many pre-releases after it.
 KEEP_RELEASES = {"stable": 5, "testing": 3, "unstable": 3}
@@ -178,10 +178,10 @@ def signed_plugin_ids(what, manifest_bytes, jws, root_spki):
 
 
 def contract_of(what, manifest):
-    """The manifest's contract version; a release below droidtop's minimum is refused, as droidtop refuses it."""
+    """The manifest's contract version, listed with the release; a missing or malformed one is the legacy contract."""
     contract = manifest.get("contractVersion")
-    if not isinstance(contract, int) or isinstance(contract, bool) or contract < MIN_CONTRACT:
-        raise Rejected(what + ": contractVersion " + str(contract) + " is older than droidtop runs (" + str(MIN_CONTRACT) + ")")
+    if not isinstance(contract, int) or isinstance(contract, bool) or contract < 1:
+        return LEGACY_CONTRACT
     return contract
 
 
@@ -259,8 +259,8 @@ def build(previous):
                     cached = known.get((asset["browser_download_url"], asset["size"], release.get("published_at")))
                     # A bundle verified against the same root is not downloaded again; the app re-verifies
                     # every bundle on the device, so a stale entry can make the catalog late, never lie.
-                    # An entry listed before the contract was recorded is read again, so a contract 1 release drops out.
-                    if cached and previous_master == master_sha and cached[1].get("contractVersion", 0) >= MIN_CONTRACT:
+                    # An entry listed before the contract was recorded is read again, so every release carries its contract.
+                    if cached and previous_master == master_sha and "contractVersion" in cached[1]:
                         plugin, listed = cached
                         plugin_id = plugin["id"]
                         meta = (plugin["label"], plugin.get("description"), plugin.get("category"))

@@ -11,15 +11,14 @@ import droidtop_plugins_index as index  # noqa: E402
 
 
 class Contracts(unittest.TestCase):
-    def test_a_release_below_droidtops_contract_is_left_out(self):
-        # Droidtop/tracker#932: Root modules 1.0.0 declared contract 1, which droidtop refuses at install.
-        for manifest in ({"contractVersion": 1}, {}, {"contractVersion": "3"}, {"contractVersion": True}):
-            with self.assertRaises(index.Rejected):
-                index.contract_of("droidtop-plugin-mmrl plugin-v1.0.0/x", manifest)
-
-    def test_contract_2_and_later_pass(self):
-        self.assertEqual(index.contract_of("x", {"contractVersion": 2}), 2)
+    def test_every_release_is_listed_with_its_contract(self):
+        # Droidtop/tracker#932: droidtop says on the row when it cannot run a release; the index hides none.
+        self.assertEqual(index.contract_of("x", {"contractVersion": 1}), 1)
         self.assertEqual(index.contract_of("x", {"contractVersion": 3}), 3)
+
+    def test_a_missing_or_malformed_contract_is_the_legacy_one(self):
+        for manifest in ({}, {"contractVersion": "3"}, {"contractVersion": True}, {"contractVersion": 0}):
+            self.assertEqual(index.contract_of("x", manifest), index.LEGACY_CONTRACT)
 
 
 class Channels(unittest.TestCase):

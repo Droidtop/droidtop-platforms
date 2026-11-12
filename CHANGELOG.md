@@ -8,8 +8,8 @@ under Unreleased.
 ## [Unreleased]
 
 ### Fixed
-- The droidtop plugin index leaves out a release whose manifest declares a contract below droidtop's minimum (2), and
-  records each release's `contractVersion`: Install all no longer ends on a refusal (Droidtop/tracker#932, Root modules 1.0.0).
+- The droidtop plugin index lists every release with its manifest's `contractVersion` (1 when it declares none), an
+  old one included: droidtop says on the row when it cannot run it (Droidtop/tracker#932, owner 2026-11-12).
 
 ### Added
 
