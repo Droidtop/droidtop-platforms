@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T08:35:07Z",
+ "generatedAt": "2026-11-12T20:11:35Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -267,6 +267,19 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-build.23/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 20768,
         "sha256": "9b275663cdd0ea5903715e97b7086d0aad5f0002becda6868d3ac6093117487e"
+       }
+      },
+      {
+       "version": "1.0.0",
+       "contractVersion": 1,
+       "stream": "stable",
+       "publishedAt": "2026-10-15T15:32:37Z",
+       "manifestSha256": "ca52a2397c730378343b9a0b89dd4f99257cd610a8253b2e8dc5f3603a222ee9",
+       "bundle": {
+        "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-v1.0.0/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "size": 15964,
+        "sha256": "931cb8f4f9ea5b17683ac2a61996bd0aa5089abdbae2643876a8cec6909dcf5c"
        }
       }
      ]
