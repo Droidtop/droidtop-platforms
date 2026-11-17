@@ -1,0 +1,70 @@
+name: Plugin template drift
+
+# Every plugin repository carries copies of files whose one source is Droidtop/droidtop-plugin-template (its tools/):
+# sign_jws.py today, byte-identical in every repository that signs a bundle. A fix made in the template has to reach
+# them, and a copy edited in one repository has to be noticed (Droidtop/tracker#946, step 2; owner's yes 2026-11-17).
+# This check fetches the template at the tag the caller pins and fails when any copy differs from its source.
+#
+# A caller lists its copies as lines of "<path in this repository> <path in the template>", for example
+#   files: |
+#     sign_jws.py tools/sign_jws.py
+# and pins template-ref to a tag of the template (tools-v1, ...). A template fix is then one new tag and one pin move
+# in each repository, and this check says which repositories still carry the old copy.
+on:
+  workflow_call:
+    inputs:
+      template-ref:
+        description: "The droidtop-plugin-template tag (or commit) the caller's copies come from"
+        type: string
+        required: true
+      files:
+        description: "One copy per line: <path in this repository> <path in the template>"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          path: plugin
+      - name: Fetch the template at its pinned ref
+        env:
+          TEMPLATE_REF: ${{ inputs.template-ref }}
+        run: |
+          set -euo pipefail
+          git init -q template
+          git -C template fetch -q --depth=1 https://github.com/Droidtop/droidtop-plugin-template "$TEMPLATE_REF"
+          git -C template checkout -q FETCH_HEAD
+      - name: Every copy is its template's file
+        env:
+          FILES: ${{ inputs.files }}
+          TEMPLATE_REF: ${{ inputs.template-ref }}
+        run: |
+          set -euo pipefail
+          failed=0
+          checked=0
+          while read -r own source; do
+            [ -z "${own:-}" ] && continue
+            checked=$((checked + 1))
+            if [ ! -f "plugin/$own" ]; then
+              echo "::error file=$own::$own is listed as a copy of the template's $source but this repository has no such file"
+              failed=1
+            elif [ ! -f "template/$source" ]; then
+              echo "::error::the template at $TEMPLATE_REF has no $source (listed for $own)"
+              failed=1
+            elif ! cmp -s "plugin/$own" "template/$source"; then
+              echo "::error file=$own::$own differs from the template's $source at $TEMPLATE_REF: make the fix in the template, tag it, and move this repository's pin"
+              diff -u "template/$source" "plugin/$own" || true
+              failed=1
+            else
+              echo "$own: the template's $source at $TEMPLATE_REF"
+            fi
+          done <<< "$FILES"
+          [ "$checked" -gt 0 ] || { echo "::error::no copies listed"; exit 1; }
+          exit "$failed"
