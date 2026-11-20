@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-20T18:28:47Z",
+ "generatedAt": "2026-11-20T18:36:16Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -319,6 +319,19 @@
       {
        "version": "1.7.1",
        "contractVersion": 2,
+       "stream": "stable",
+       "publishedAt": "2026-11-20T18:30:55Z",
+       "manifestSha256": "71e5489fc2301d054e5069fd297fbe17d2534604dfa0b90e62d79d2980f9a859",
+       "bundle": {
+        "name": "droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.7.1/droidtop.retroarch.droidplugin.tar.xz",
+        "size": 38156,
+        "sha256": "4e5fbfd698202b712afe144f8f597883706d86b0cbf3a374fb72d12124aa68ce"
+       }
+      },
+      {
+       "version": "1.7.1",
+       "contractVersion": 2,
        "stream": "unstable",
        "publishedAt": "2026-11-20T18:23:24Z",
        "manifestSha256": "6b76013380841bda4c3e9f6397e69f23e31604cb33bc7c065648ee975989dc6e",
@@ -405,19 +418,6 @@
         "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.1/droidtop.retroarch.droidplugin.tar.xz",
         "size": 36040,
         "sha256": "fb3e29b57ada0655d0b4693e87bc8992c3e25de9f8b1ad710cdbd57295bf8963"
-       }
-      },
-      {
-       "version": "1.5.0",
-       "contractVersion": 2,
-       "stream": "stable",
-       "publishedAt": "2026-10-14T22:22:14Z",
-       "manifestSha256": "d3195c28d85561964bc92ed8d1566822398af6725f88885119dd56f0c30fe562",
-       "bundle": {
-        "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.0/droidtop.retroarch.droidplugin.tar.xz",
-        "size": 36076,
-        "sha256": "e4398f511852661ecf53c562f624f684a26b4e2f1c8a57c978d421ed56b73e3d"
        }
       }
      ]
@@ -540,6 +540,19 @@
      "description": "A full Syncthing that syncs folders with the computers and handhelds you paired with droidtop, with no pairing of its own, and with any other Syncthing you add: trusted, or untrusted for an encrypted backup.",
      "category": "tools",
      "releases": [
+      {
+       "version": "1.2.0",
+       "contractVersion": 3,
+       "stream": "stable",
+       "publishedAt": "2026-11-20T18:34:06Z",
+       "manifestSha256": "bda1ffffe126203df617581c158d3f6af50e6a61fb101861b20a1f56b768ea98",
+       "bundle": {
+        "name": "droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-v1.2.0/droidtop.syncthing.droidplugin.tar.xz",
+        "size": 16527100,
+        "sha256": "edd989b2bd72153e7b9348a765b97c23ba0b345b6dc41bc58726cd0b953952c0"
+       }
+      },
       {
        "version": "1.2.0",
        "contractVersion": 3,
