@@ -8,7 +8,7 @@ same format gamegrab-sources/catalog publishes minus its `catalog` and `disclaim
 blocks (the official catalog has neither).
 
 What enters the index: every *.droidplugin.tar.xz asset of every release of every public,
-unarchived repository of the Droidtop organisation whose name starts with
+unarchived repository of the mytop-project organisation (Droidtop until 2026-11-23) whose name starts with
 `droidtop-plugin-`, provided the bundle
   * carries manifest.jws, a detached ES256 JWS over the exact manifest.json bytes with the
     repository's leaf certificate in x5c, issued by the droidtop root
@@ -60,7 +60,7 @@ ROOT_KEY = DIR / "droidtop-root.pub"
 
 SCHEMA_VERSION = 1
 ALGORITHM = "droidtop-chain-v1"
-ORGANISATION = "Droidtop"
+ORGANISATION = "mytop-project"
 REPO_PREFIX = "droidtop-plugin-"
 ORIGIN = "droidtop"
 ORIGIN_URN = "urn:droidtop:origin:"
