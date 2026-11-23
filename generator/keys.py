@@ -16,6 +16,25 @@ def fingerprint(data):
     return sha256_hex(data).upper()
 
 
+# The org was renamed Droidtop -> mytop-project on 2026-11-23. Inside the index an official repository keeps the
+# name it was registered under, "Droidtop/<name>": that is its signed identity, which every published manifest, key
+# document and v1 signing certificate names (https://github.com/droidtop/<name>), so nothing is re-signed and no
+# installed plugin looks new. identity_repo() turns a name in the new org into that identity where a name comes in
+# (a dispatch, an issue); location_of() is where the repository is fetched from now.
+IDENTITY_OWNERS = {"mytop-project": "Droidtop"}
+LOCATION_OWNERS = {"droidtop": "mytop-project"}
+
+
+def identity_repo(repo):
+    owner, _, name = repo.partition("/")
+    return IDENTITY_OWNERS.get(owner.lower(), owner) + "/" + name if name else repo
+
+
+def location_of(repo):
+    owner, _, name = repo.partition("/")
+    return LOCATION_OWNERS.get(owner.lower(), owner) + "/" + name if name else repo
+
+
 def origin_of(repo):
     return "https://github.com/" + repo.lower()
 

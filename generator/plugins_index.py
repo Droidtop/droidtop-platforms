@@ -65,7 +65,7 @@ import jws  # noqa: E402
 from common import Rejected, log, sha256_hex, warn  # noqa: E402
 from envelopes import check_envelope, check_envelope_packs, digest_of, previous_envelopes, stream_of, write_envelope_packs  # noqa: E402
 from fetch import download, releases, repository_file  # noqa: E402
-from keys import certificate_serial, key_document, official_root, origin_of, owner_of  # noqa: E402
+from keys import certificate_serial, identity_repo, key_document, official_root, origin_of, owner_of  # noqa: E402
 from layout import ALGORITHM, HISTORY_PATH, INDEX_PATH, KEY_DOCUMENT, OFFICIAL_OWNER, ORIGINS_PATH, PLUGINS_DIR, REFRESH_AFTER, RELEASE_ENVELOPES, REPO_NAME, REVOCATIONS_PATH, SCHEMA_VERSION, SIGNING_CERTIFICATE  # noqa: E402
 from registry import check_history, load_history, load_third_party, recorded_key, registration_of  # noqa: E402
 
@@ -312,12 +312,15 @@ def announcement(third_party):
         if not REPO_NAME.match(repo):
             log("The dispatch names no repository; rebuilding everything.")
             return None, None, True
+        repo = identity_repo(repo)
         log("Announced by dispatch: " + repo)
         return repo, None, True
     if name == "issues":
         issue = event.get("issue") or {}
         author = str((issue.get("user") or {}).get("login", ""))
         repo = repository_from_issue(issue.get("body"))
+        if repo is not None:
+            repo = identity_repo(repo)
         if repo is None:
             return None, "The form's Repository field must be `owner/name`; nothing was done.", False
         listed = third_party.get(repo.lower())

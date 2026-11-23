@@ -3,6 +3,8 @@
 import github
 import urllib.error
 
+from keys import location_of
+
 from layout import MAX_DOWNLOAD_BYTES, REPOSITORY_FILE_BRANCHES
 
 
@@ -16,7 +18,7 @@ def api(url):
 
 
 def releases(repo):
-    url = "https://api.github.com/repos/" + repo + "/releases?per_page=100"
+    url = "https://api.github.com/repos/" + location_of(repo) + "/releases?per_page=100"
     while url:
         page, link = api(url)
         for release in page:
@@ -33,7 +35,7 @@ def repository_file(repo, name):
     """A file from the repository's tree, from raw.githubusercontent.com (no API allowance)."""
     for branch in REPOSITORY_FILE_BRANCHES:
         try:
-            return download("https://raw.githubusercontent.com/" + repo + "/" + branch + "/" + name)
+            return download("https://raw.githubusercontent.com/" + location_of(repo) + "/" + branch + "/" + name)
         except urllib.error.HTTPError as error:
             if error.code != 404:
                 raise
