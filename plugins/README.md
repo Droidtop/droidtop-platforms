@@ -33,7 +33,7 @@ This is a snapshot, and enginehost treats it as one:
 | --- | --- | --- |
 | `index.json` | the workflow | What every registered repository has published, verified. Never hand-edit. |
 | `origins.json` | the workflow | The registered repositories and the key each is pinned to (fingerprint, and for official ones the certificate serial). A repository gets in by validating (below), not by an edit. Removing a line by hand deregisters it. |
-| `envelopes/<owner>__<repo>.json` | the workflow | One pack per indexed repository: every release envelope its `index.json` entry lists, as published, keyed by sha256. The entry names it as `envelopePack` (path, sha256, size). A device with nothing cached (a fresh install, cleared data) reads one pack per repository instead of one envelope per release: 14 files, not 509 (Droidtop/tracker#550, 2026-10-24). Each envelope is verified on the device as if fetched alone. Never hand-edit. |
+| `envelopes/<owner>__<repo>.json` | the workflow | One pack per indexed repository: every release envelope its `index.json` entry lists, as published, keyed by sha256. The entry names it as `envelopePack` (path, sha256, size). A device with nothing cached (a fresh install, cleared data) reads one pack per repository instead of one envelope per release: 14 files, not 509 (mytop-project/tracker#550, 2026-10-24). Each envelope is verified on the device as if fetched alone. Never hand-edit. |
 | `key-history.json` | the workflow | The audit trail: every key the index accepted for a repository, in order (first registration, then each rotation), with its full key document and the key it replaced. Never hand-edit. |
 | `third-party.json` | a reviewed pull request | The third-party maintainers allowed to register repositories, their GitHub accounts, their keys and their repositories. |
 | `official-root-key.json` | a reviewed pull request | The public half of the offline Enginehost root key, the same file Enginehost compiles in (`app/src/main/res/raw/official_plugin_root_key.json`). |
@@ -153,13 +153,13 @@ from):
             echo "No PLATFORMS_DISPATCH_TOKEN; the plugins index picks this release up on its schedule."
             exit 0
           fi
-          gh api repos/Droidtop/droidtop-platforms/dispatches \
+          gh api repos/mytop-project/droidtop-platforms/dispatches \
             -f event_type=plugin-published \
             -f "client_payload[repo]=$GH_REPO"
 ```
 
 `PLATFORMS_DISPATCH_TOKEN` is one organisation secret — a fine-grained token
-with `contents: write` on `Droidtop/droidtop-platforms` and nothing else (a
+with `contents: write` on `mytop-project/droidtop-platforms` and nothing else (a
 repository dispatch needs write on its target) — made available to the
 plugin repositories. Until it exists every repository falls through to the
 scheduled run, which is why the step is written to succeed without it. What
@@ -178,13 +178,13 @@ The gamegrab-sources plugins are published in that organisation's own catalog,
 `gamegrab-sources/catalog`. That catalog is built by its own workflow, under
 origin `gamegrab` and the organisation's own master key, never droidtop's.
 droidtop offers it as a separate catalog that the person switches on
-(Droidtop/droidtop docs/SPEC.md 12a, "The first one"). A gamegrab plugin
+(mytop-project/droidtop docs/SPEC.md 12a, "The first one"). A gamegrab plugin
 release therefore does not need this repository's dispatch: it reaches people
 through gamegrab's catalog.
 
 ## Plugin lines: an upstream commit plus plugin-core
 
-The owner's rule (Droidtop/tracker#324): "The highest priority task, always,
+The owner's rule (mytop-project/tracker#324): "The highest priority task, always,
 in plugin creation for enginehost, is making sure the plugin wrapper is
 authoritative. If we were to magically lose a plugin branch, we need to be
 able to plop that wrapper code into a new branch from the same commit and

@@ -1,6 +1,6 @@
 name: Droidtop plugin bundle
 
-# Builds, signs and releases a droidtop plugin (Droidtop/tracker#198). A plugin
+# Builds, signs and releases a droidtop plugin (mytop-project/tracker#198). A plugin
 # repository's own workflow is a short caller, pinned by commit:
 #
 #   on:
@@ -15,7 +15,7 @@ name: Droidtop plugin bundle
 #     bundle:
 #       permissions:
 #         contents: write      # the release job attaches the bundle to a plugin-v* tag
-#       uses: Droidtop/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@<sha>
+#       uses: mytop-project/droidtop-platforms/.github/workflows/droidtop-plugin-bundle.yml@<sha>
 #       with:
 #         plugin-dir: droidtop-plugin    # where build.sh, sign.sh and the sources are ("." by default)
 #         artifact-name: droidtop-plugin-example
@@ -25,11 +25,11 @@ name: Droidtop plugin bundle
 #         PLATFORMS_DISPATCH_TOKEN: ${{ secrets.PLATFORMS_DISPATCH_TOKEN }}
 #
 # Three jobs. `build` compiles the payload (manifest.json and classes.jar) with
-# the plugin's build.sh against Droidtop/droidtop's :plugin-host and uploads it
+# the plugin's build.sh against mytop-project/droidtop's :plugin-host and uploads it
 # unsigned; it runs Gradle, kotlinc and the plugin's own scripts and never sees
 # the signing key. `sign` runs only first-party actions pinned by commit and the
 # plugin repository's own sign.sh, with the key; the payload is data it signs,
-# never code it runs (the same split Droidtop/enginehost's
+# never code it runs (the same split mytop-project/enginehost's
 # sign-engine-bundle.yml makes for engine bundles). It signs with the origin key
 # in PLUGIN_SIGNING_KEY and, when present, packages PLUGIN_SIGNING_CERT as
 # origin.cert; on a pull request or without the secret (a fork) it signs
@@ -109,7 +109,7 @@ jobs:
       - name: Check out droidtop (for :plugin-host's own compiled API)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          repository: Droidtop/droidtop
+          repository: mytop-project/droidtop
           submodules: recursive
           fetch-depth: 1
           persist-credentials: false
@@ -170,12 +170,12 @@ jobs:
 
       # droidtop's :net-core depends on the aria2 download engine, which is not in any public Maven
       # repository: droidtop's own CI puts it in net-core/aria2-engine/repo with this script, checked
-      # against net-core/aria2-engine.pin, and so must this build (Droidtop/tracker#72).
+      # against net-core/aria2-engine.pin, and so must this build (mytop-project/tracker#72).
       - name: Fetch droidtop's aria2 download engine
         run: bash build-scripts/fetch-aria2-engine.sh
 
       # droidtop's :plugin-host builds the SQLite amalgamation into its native library (a plugin's SQLite
-      # is droidtop's own, Droidtop/tracker#741), which droidtop's own CI fetches with this script, checked
+      # is droidtop's own, mytop-project/tracker#741), which droidtop's own CI fetches with this script, checked
       # against plugin-host/sqlite.pin. Without it CMake stops with "The bundled SQLite is missing".
       - name: Fetch the SQLite droidtop builds in
         run: |
@@ -220,7 +220,7 @@ jobs:
           ./build.sh
 
       - name: Check op names (warning only)
-        # The naming rule of droidtop docs/plugin-api.md 3 "Naming" (Droidtop/tracker#459), the same rule as droidtop's
+        # The naming rule of droidtop docs/plugin-api.md 3 "Naming" (mytop-project/tracker#459), the same rule as droidtop's
         # HostOpNames.check: an op is lower-case words joined by _, starting with a verb; no bare nouns, no past tenses.
         # droidtop cannot hold a plugin to it, so this only warns; the build never fails on a name.
         working-directory: plugin-repo/${{ inputs.plugin-dir }}
@@ -373,12 +373,12 @@ jobs:
             echo "No PLATFORMS_DISPATCH_TOKEN; the plugins index picks this release up on its schedule."
             exit 0
           fi
-          gh api repos/Droidtop/droidtop-platforms/dispatches \
+          gh api repos/mytop-project/droidtop-platforms/dispatches \
             -f event_type=plugin-published \
             -f "client_payload[repo]=$GH_REPO"
 
   unstable:
-    # One release per working build (the owner's rule, Droidtop/tracker#122):
+    # One release per working build (the owner's rule, mytop-project/tracker#122):
     # every signed push to a branch is published as a pre-release, a rolling
     # `plugin-unstable` pointer (the newest build) and a permanent
     # `plugin-build.<run>` record that is never replaced. They are marked
@@ -439,6 +439,6 @@ jobs:
             echo "No PLATFORMS_DISPATCH_TOKEN; the plugins index picks this release up on its schedule."
             exit 0
           fi
-          gh api repos/Droidtop/droidtop-platforms/dispatches \
+          gh api repos/mytop-project/droidtop-platforms/dispatches \
             -f event_type=plugin-published \
             -f "client_payload[repo]=$GH_REPO"

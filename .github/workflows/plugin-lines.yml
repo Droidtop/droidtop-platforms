@@ -3,7 +3,7 @@ name: Plugin lines
 # One table of every Enginehost engine plugin line: is it exactly its
 # upstream commit + plugin-core (enginehost/line.json), how far its pin is
 # below plugin-core's tip, and which lines are not composed yet
-# (Droidtop/tracker#324). Report only: the gate is plugin-line-check.yml,
+# (mytop-project/tracker#324). Report only: the gate is plugin-line-check.yml,
 # which each line runs on its own pushes.
 on:
   schedule:

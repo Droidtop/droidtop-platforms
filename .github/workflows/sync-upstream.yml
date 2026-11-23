@@ -1,6 +1,6 @@
 name: Sync upstream
 
-# Keeps a fork repository current with its upstream project (Droidtop/tracker#198).
+# Keeps a fork repository current with its upstream project (mytop-project/tracker#198).
 # The repository's own .github/workflows/sync-upstream.yml is a caller pinned by
 # commit that carries the schedule, because a schedule cannot live in a reusable
 # workflow:
@@ -15,7 +15,7 @@ name: Sync upstream
 #     issues: write
 #   jobs:
 #     sync:
-#       uses: Droidtop/droidtop-platforms/.github/workflows/sync-upstream.yml@<sha>
+#       uses: mytop-project/droidtop-platforms/.github/workflows/sync-upstream.yml@<sha>
 #       with:
 #         upstream-url: https://github.com/<owner>/<project>.git
 #         upstream-branch: main

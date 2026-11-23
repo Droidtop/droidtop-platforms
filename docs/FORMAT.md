@@ -150,7 +150,7 @@ A player row's `install`, stored once per package like `setup` (put the same obj
     {"kind": "play", "id": "me.magnum.melonds", "official": true},
     {"kind": "fdroid", "id": "ru.playsoftware.j2meloader", "official": true},
     {"kind": "github", "repo": "rafaelvcaetano/melonDS-android", "channel": "nightly", "official": true},
-    {"kind": "github", "repo": "Droidtop/enginehost", "asset": "^enginehost-latest\\.apk$", "abis": ["arm64-v8a"]},
+    {"kind": "github", "repo": "mytop-project/enginehost", "asset": "^enginehost-latest\\.apk$", "abis": ["arm64-v8a"]},
     {"kind": "page", "url": "https://easyrpg.org/downloads/player/", "official": true}
   ],
   "needs": ["optional names of what else it needs"],
@@ -177,10 +177,10 @@ An engine row's `runners` says which apps run its games and what they need:
 "runners": {
   "v": 1,
   "enginehost": {
-    "core": {"repo": "Droidtop/enginehost-renpy-plugin"},
+    "core": {"repo": "mytop-project/enginehost-renpy-plugin"},
     "install": { "...": "Enginehost's own install object, as above" }
   },
-  "source": "Droidtop/enginehost docs/contract.md 'Current core repositories'"
+  "source": "mytop-project/enginehost docs/contract.md 'Current core repositories'"
 }
 ```
 
@@ -189,7 +189,7 @@ row says which core Enginehost needs for the engine; Enginehost itself decides t
 that run an engine's games (EasyRPG Player, Ruffle, J2ME-Loader, Winlator, ...) stay player rows whose `systemId` is the
 engine, with their own `install`. JoiPlay is deliberately absent: it offers no launch surface droidtop can drive.
 
-### Emulators that get no `setup.config`, and why (read 2026-10-29, Droidtop/tracker#754)
+### Emulators that get no `setup.config`, and why (read 2026-10-29, mytop-project/tracker#754)
 
 A config row needs one absolute file droidtop can name. These emulators' config file is in a folder the person
 chooses, so no path would be cited rather than guessed, and they carry no `setup.config` until droidtop can be told

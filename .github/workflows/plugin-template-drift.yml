@@ -1,8 +1,8 @@
 name: Plugin template drift
 
-# Every plugin repository carries copies of files whose one source is Droidtop/droidtop-plugin-template (its tools/):
+# Every plugin repository carries copies of files whose one source is mytop-project/droidtop-plugin-template (its tools/):
 # sign_jws.py today, byte-identical in every repository that signs a bundle. A fix made in the template has to reach
-# them, and a copy edited in one repository has to be noticed (Droidtop/tracker#946, step 2; owner's yes 2026-11-17).
+# them, and a copy edited in one repository has to be noticed (mytop-project/tracker#946, step 2; owner's yes 2026-11-17).
 # This check fetches the template at the tag the caller pins and fails when any copy differs from its source.
 #
 # A caller lists its copies as lines of "<path in this repository> <path in the template>", for example
@@ -39,7 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           git init -q template
-          git -C template fetch -q --depth=1 https://github.com/Droidtop/droidtop-plugin-template "$TEMPLATE_REF"
+          git -C template fetch -q --depth=1 https://github.com/mytop-project/droidtop-plugin-template "$TEMPLATE_REF"
           git -C template checkout -q FETCH_HEAD
       - name: Every copy is its template's file
         env:

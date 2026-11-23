@@ -10,7 +10,7 @@ name: Commit hygiene
 #     contents: read
 #   jobs:
 #     hygiene:
-#       uses: Droidtop/droidtop-platforms/.github/workflows/commit-hygiene.yml@<sha>
+#       uses: mytop-project/droidtop-platforms/.github/workflows/commit-hygiene.yml@<sha>
 #
 # This repository's history carries no references to AI models or AI coding
 # tools: none in commit messages (co-author trailers, "Generated with" lines,

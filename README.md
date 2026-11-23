@@ -6,9 +6,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Droidtop/droidtop-platforms/actions/workflows/generated-files.yml"><img alt="Generated files check" src="https://img.shields.io/github/actions/workflow/status/Droidtop/droidtop-platforms/generated-files.yml?branch=main&label=generated%20files&style=flat-square"></a>
+  <a href="https://github.com/mytop-project/droidtop-platforms/actions/workflows/generated-files.yml"><img alt="Generated files check" src="https://img.shields.io/github/actions/workflow/status/mytop-project/droidtop-platforms/generated-files.yml?branch=main&label=generated%20files&style=flat-square"></a>
   <img alt="Data, not code" src="https://img.shields.io/badge/data-JSON-555555?style=flat-square">
-  <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/github/license/Droidtop/droidtop-platforms?style=flat-square"></a>
+  <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/github/license/mytop-project/droidtop-platforms?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
   <a href="#licence">Licence</a>
 </p>
 
-This repository is the separately updatable database that [droidtop](https://github.com/Droidtop/droidtop) and [Enginehost](https://github.com/Droidtop/enginehost) read. It is mostly JSON, one small file per entry.
+This repository is the separately updatable database that [droidtop](https://github.com/mytop-project/droidtop) and [Enginehost](https://github.com/mytop-project/enginehost) read. It is mostly JSON, one small file per entry.
 
 ## What is in it
 

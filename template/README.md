@@ -14,7 +14,7 @@ workflow's `prepare-script` input to install one.
 
 The skeleton is developer scaffolding. It is never built, signed or shipped as a
 plugin from this repository, and no plugin id in it is real. The plugin API
-itself is documented in Droidtop/droidtop `docs/plugin-api.md`; what a new
+itself is documented in mytop-project/droidtop `docs/plugin-api.md`; what a new
 plugin provides and asks for is declared in its `manifest.template.json`.
 
 Each skeleton holds `build.sh` (compiles or hashes the payload, never sees a

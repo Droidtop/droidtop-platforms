@@ -4,7 +4,7 @@ name: Plugin line check
 # priority task, always, in plugin creation for enginehost, is making sure the
 # plugin wrapper is authoritative. If we were to magically lose a plugin
 # branch, we need to be able to plop that wrapper code into a new branch from
-# the same commit and have it working." (Droidtop/tracker#324)
+# the same commit and have it working." (mytop-project/tracker#324)
 #
 # So a line branch plugin/<id> is exactly compose(upstream commit, plugin-core
 # commit), both recorded in its enginehost/line.json, and this check rebuilds
@@ -37,7 +37,7 @@ jobs:
         run: |
           set -euo pipefail
           git init -q tool
-          git -C tool fetch -q --depth=1 https://github.com/Droidtop/droidtop-platforms "$TOOL_REF"
+          git -C tool fetch -q --depth=1 https://github.com/mytop-project/droidtop-platforms "$TOOL_REF"
           git -C tool show FETCH_HEAD:tools/plugin_line.py > plugin_line.py
       - name: Fetch only the commits the composition needs
         # Blob-less and shallow: Godot's and Ren'Py's full histories are not

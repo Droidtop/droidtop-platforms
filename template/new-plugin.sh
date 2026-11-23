@@ -50,7 +50,7 @@ What this plugin does, in one paragraph.
 
 ## Building
 
-CI builds and signs it with the shared workflow in Droidtop/droidtop-platforms
+CI builds and signs it with the shared workflow in mytop-project/droidtop-platforms
 (see .github/workflows/plugin-bundle.yml). Locally, droidtop-plugin/build.sh
 lists what it needs.
 
