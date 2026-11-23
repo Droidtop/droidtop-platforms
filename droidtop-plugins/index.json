@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-23T03:20:54Z",
+ "generatedAt": "2026-11-23T18:26:02Z",
  "origins": [
   {
    "origin": "droidtop",
@@ -27,7 +27,7 @@
        "manifestSha256": "b3b4694f6c7e6937d4fefa3883e73c4c4fca8bece0f54bff400e77a7b5b1eddb",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.5/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-v0.1.5/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101560,
         "sha256": "ffb21deda119633eb0d81e3b53bf66668060448b201eb88f0c5e4d16e1590adc"
        }
@@ -40,7 +40,7 @@
        "manifestSha256": "f174878d4bd618e33e3876068671bc9be9e2e779f8a08ce96f79aa4251432410",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-build.25/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-build.25/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101556,
         "sha256": "edaa1e48f9b933209f429aff97268a43cec0e6c5e0508d05368ed7bad255852d"
        }
@@ -53,7 +53,7 @@
        "manifestSha256": "f174878d4bd618e33e3876068671bc9be9e2e779f8a08ce96f79aa4251432410",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-unstable/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-unstable/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101556,
         "sha256": "edaa1e48f9b933209f429aff97268a43cec0e6c5e0508d05368ed7bad255852d"
        }
@@ -66,7 +66,7 @@
        "manifestSha256": "a6a729935ec7b03130f48e6ba64c8f36cd85e08ab9c48b475a5fc712c167aeed",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.4/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-v0.1.4/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101556,
         "sha256": "17ac717d54c7cca352d109ada43c6d0e427e4c6c1d35c484c13b8ccd779a0b66"
        }
@@ -79,7 +79,7 @@
        "manifestSha256": "19a23760cbe19e28cf0ac4d09742a69cb5cd254db543a0d22ddb52c4fd1dcf9f",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-build.23/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-build.23/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101556,
         "sha256": "586a43a8b69e433e80f8f5b23827fe456c1e458ee6e63c0da9240bffb682c5a2"
        }
@@ -92,7 +92,7 @@
        "manifestSha256": "9e8b35e55a600d459b9ab212b9e7ac5dc0a5611a9ab8a8823e4bf0772123c638",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.3/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-v0.1.3/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101424,
         "sha256": "f66efe1d8f826057ebf7990c3e162ec846c9cfc4fbc41d6cf7b6ff6a35166bed"
        }
@@ -105,7 +105,7 @@
        "manifestSha256": "ab4c9645f45825d63ef4ad591ed57398edee70b3c9fd0121bee3eabcbcc1090c",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.2/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-v0.1.2/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101412,
         "sha256": "afe4061b7f24a6643daca6d2b0855b5cb15d70dcdf76b2f615991c7cb0ee1ff4"
        }
@@ -118,7 +118,7 @@
        "manifestSha256": "31217af6f3b4712e9fa9ef9e15b507566600e26ad78ee48357ce195114f83d9b",
        "bundle": {
         "name": "droidtop.fdroid.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-fdroid/releases/download/plugin-v0.1.1/droidtop.fdroid.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-fdroid/releases/download/plugin-v0.1.1/droidtop.fdroid.droidplugin.tar.xz",
         "size": 101692,
         "sha256": "4efa589d976b2def0ff1a1bc279b924787ae52caa75c81b5a0d6f7e2d59bb0a4"
        }
@@ -139,7 +139,7 @@
        "manifestSha256": "7941612fe8885de223a2fccb35b94e44a646eaae8322ffdc1a0b3637f16143e6",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.4/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-v0.1.4/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46876,
         "sha256": "8014c0146ed9af56cb3709668c64f3194ed335929f94fbb608decef6fb95827a"
        }
@@ -152,7 +152,7 @@
        "manifestSha256": "7d96e2943131bd7d39b78434d58df9f8b6e26fb2c5993c2fc764e15807755a4a",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-build.24/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-build.24/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46876,
         "sha256": "822680b98083208958904b25b447b86f86c78d315fd1f8b392fa9e23f3960f8d"
        }
@@ -165,7 +165,7 @@
        "manifestSha256": "7d96e2943131bd7d39b78434d58df9f8b6e26fb2c5993c2fc764e15807755a4a",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-unstable/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-unstable/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46876,
         "sha256": "822680b98083208958904b25b447b86f86c78d315fd1f8b392fa9e23f3960f8d"
        }
@@ -178,7 +178,7 @@
        "manifestSha256": "2ffcc86b69804ff93309e04f9be9e11301c012972255c4a94bf1c26931b00ec5",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-build.23/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-build.23/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46884,
         "sha256": "61e6e02f1477fe904fb6ef58dde4001477618f103fed1e779e368a355106b559"
        }
@@ -191,7 +191,7 @@
        "manifestSha256": "05e8f1495f9d7e0e04a26b812e880349278ff07688cc49ac620badd19c13a41e",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.3/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-v0.1.3/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46816,
         "sha256": "9495e1911e64565665636f44a255dec6c1d8c49f4ca28719a65c798a1d304a9c"
        }
@@ -204,7 +204,7 @@
        "manifestSha256": "878c685de85efc3cc6bc9e8bd8ba3ba4065a75a8fb6b9d1ac7cdb3fe7b20e308",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.2/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-v0.1.2/droidtop.github-apps.droidplugin.tar.xz",
         "size": 46808,
         "sha256": "6ecab46e6270f4cb512df026e7072c869cf61ae03a17d6c19c83235005454d4d"
        }
@@ -217,7 +217,7 @@
        "manifestSha256": "e63d7d1d3808560cfd31a9695e6fac3e7ba3b5c882458e4dac9c2e6ca8570329",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.1/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-v0.1.1/droidtop.github-apps.droidplugin.tar.xz",
         "size": 47140,
         "sha256": "ff9f745c7c053dceb7f125c421137df77e88dd52a5536255a350b618ed9b6a88"
        }
@@ -230,7 +230,7 @@
        "manifestSha256": "0fc7fe5eab5847abe792abf1d49bcf9d1da3a960680c6bbdcdb260e2691b0431",
        "bundle": {
         "name": "droidtop.github-apps.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-github-apps/releases/download/plugin-v0.1.0/droidtop.github-apps.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-github-apps/releases/download/plugin-v0.1.0/droidtop.github-apps.droidplugin.tar.xz",
         "size": 47096,
         "sha256": "677c59e8d216883269606f91d1284b7abcbcc49b616c8179e0293940c8a77fff"
        }
@@ -251,7 +251,7 @@
        "manifestSha256": "cb3db4787e7f9fc9a53dbaab52b899d71699f1a5b97424f194ae4ac02df9ae1c",
        "bundle": {
         "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-build.30/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-mmrl/releases/download/plugin-build.30/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 22952,
         "sha256": "414549a424bfb4cde35716daf13b4c97e5b9ddfbcec55ad36ab97b602c1d1143"
        }
@@ -264,7 +264,7 @@
        "manifestSha256": "cb3db4787e7f9fc9a53dbaab52b899d71699f1a5b97424f194ae4ac02df9ae1c",
        "bundle": {
         "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-unstable/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-mmrl/releases/download/plugin-unstable/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 22952,
         "sha256": "414549a424bfb4cde35716daf13b4c97e5b9ddfbcec55ad36ab97b602c1d1143"
        }
@@ -277,7 +277,7 @@
        "manifestSha256": "96c93c422d2407994c534e8ca5eaf309eca18f29dc6eae3cb1598686a199cb0d",
        "bundle": {
         "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-v1.2.0/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-mmrl/releases/download/plugin-v1.2.0/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 22952,
         "sha256": "fc4e9e438a76a5849738d0a2420eb5b5572eb0f58d7aff39d2c3c326297bf1d3"
        }
@@ -290,7 +290,7 @@
        "manifestSha256": "1a8c1d1088c30548bb39fc2da2db550c1af3181955544eab887c430c6d9d485e",
        "bundle": {
         "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-build.26/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-mmrl/releases/download/plugin-build.26/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 22960,
         "sha256": "5b2024e643ae671447df5901767695bec4082560f87d4c8be364443785148aa2"
        }
@@ -303,7 +303,7 @@
        "manifestSha256": "ca52a2397c730378343b9a0b89dd4f99257cd610a8253b2e8dc5f3603a222ee9",
        "bundle": {
         "name": "droidtop.mmrl-modules.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-mmrl/releases/download/plugin-v1.0.0/droidtop.mmrl-modules.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-mmrl/releases/download/plugin-v1.0.0/droidtop.mmrl-modules.droidplugin.tar.xz",
         "size": 15964,
         "sha256": "931cb8f4f9ea5b17683ac2a61996bd0aa5089abdbae2643876a8cec6909dcf5c"
        }
@@ -324,7 +324,7 @@
        "manifestSha256": "71e5489fc2301d054e5069fd297fbe17d2534604dfa0b90e62d79d2980f9a859",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.7.1/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-v1.7.1/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38156,
         "sha256": "4e5fbfd698202b712afe144f8f597883706d86b0cbf3a374fb72d12124aa68ce"
        }
@@ -337,7 +337,7 @@
        "manifestSha256": "6b76013380841bda4c3e9f6397e69f23e31604cb33bc7c065648ee975989dc6e",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.57/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-build.57/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38156,
         "sha256": "34a874eb2331de422ba945647d4ef81d00d38a7f0656406af0d3d6fede709bc1"
        }
@@ -350,7 +350,7 @@
        "manifestSha256": "6b76013380841bda4c3e9f6397e69f23e31604cb33bc7c065648ee975989dc6e",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-unstable/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38156,
         "sha256": "34a874eb2331de422ba945647d4ef81d00d38a7f0656406af0d3d6fede709bc1"
        }
@@ -363,7 +363,7 @@
        "manifestSha256": "d7524adb4213881cbba44a2f8f50954c710fdb9a331c138301afd3d7e991dfce",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-build.56/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-build.56/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38152,
         "sha256": "b032cfd519ebc9e1285d731d4cf98700a2193062921ce7547786e40db09f95d1"
        }
@@ -376,7 +376,7 @@
        "manifestSha256": "59cfbd3f0d8c1a15397f567bd76dbad21dc59633b61621d848bc42a067f69c56",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.7.0/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-v1.7.0/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38140,
         "sha256": "28760bbcc82e11f763c1205ff6ac82c7ba2ec1cf0a7858340eb2c01e6b3d01cc"
        }
@@ -389,7 +389,7 @@
        "manifestSha256": "af42933d074d74f93fda152cecb14dd3e0da37137e0a3335e614cc2dab8b3a57",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.6.0/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-v1.6.0/droidtop.retroarch.droidplugin.tar.xz",
         "size": 38076,
         "sha256": "de40da1e37a9fe838fd76b333beb348448555a635727ce1b30842ffe8c9411e0"
        }
@@ -402,7 +402,7 @@
        "manifestSha256": "88229135475db9b144d52200d369edefa8f4325e9fa6922c671dc576f1af4da5",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.2/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-v1.5.2/droidtop.retroarch.droidplugin.tar.xz",
         "size": 36056,
         "sha256": "66edb496fd98a20de687f9ebef75959bf4b55d36205cf17985c56ec057c34e6a"
        }
@@ -415,7 +415,7 @@
        "manifestSha256": "2b01fc1341139f0ac5843d541560fa03625dd07954121dc9f911526a51636205",
        "bundle": {
         "name": "droidtop.retroarch.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-retroarch/releases/download/plugin-v1.5.1/droidtop.retroarch.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-retroarch/releases/download/plugin-v1.5.1/droidtop.retroarch.droidplugin.tar.xz",
         "size": 36040,
         "sha256": "fb3e29b57ada0655d0b4693e87bc8992c3e25de9f8b1ad710cdbd57295bf8963"
        }
@@ -436,7 +436,7 @@
        "manifestSha256": "63aa1302c42cbb64db7ea16ca44433327dcb2375bd8cc49dcde91ba2e570a5e5",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.6.0/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-v1.6.0/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 44352,
         "sha256": "b3de9f3f8b1fbaf6d2ad764806f7181ff4530c8ca01ca1cd7a21aef7a311b3eb"
        }
@@ -449,7 +449,7 @@
        "manifestSha256": "ad9b48d0d19fae2ff8b9d74e1d32ddefc8c96e2171e9e692af0024d18823aa60",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-build.48/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-build.48/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 44344,
         "sha256": "5dd9ffafc2253db0a462497d2b6996e68ec04ce5043d2da7a30568a915b7aa40"
        }
@@ -462,7 +462,7 @@
        "manifestSha256": "ad9b48d0d19fae2ff8b9d74e1d32ddefc8c96e2171e9e692af0024d18823aa60",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-unstable/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-unstable/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 44344,
         "sha256": "5dd9ffafc2253db0a462497d2b6996e68ec04ce5043d2da7a30568a915b7aa40"
        }
@@ -475,7 +475,7 @@
        "manifestSha256": "f909736cb19af4d8b35171378727857653030d2be85306eb66d4ba05cff36e6c",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-build.46/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-build.46/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 44340,
         "sha256": "8e8ae024b37a0228fbf0c42d7413a97d02893f52c80eb1b925c71c74d39b906d"
        }
@@ -488,7 +488,7 @@
        "manifestSha256": "04337e1899c8719a20d2e2d567eba316ed4b0df97e3dcf95f59536e683b34515",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.5.0/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-v1.5.0/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 37852,
         "sha256": "fe65b95082312441f45b3bf713ef8965212475e1eed51ee85444b31200c5c825"
        }
@@ -501,7 +501,7 @@
        "manifestSha256": "f0cf51a44a1a4a9b9b684a7f54606a5e904f7f362096fc8e5de82a692bb1bb80",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.4.4/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-v1.4.4/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 24956,
         "sha256": "a2133fae03449ce3acbb1c0c891182929389257f1a7c6b1b5600cbb48c688188"
        }
@@ -514,7 +514,7 @@
        "manifestSha256": "3160f73aba4ac2c09cd837af853a0f2f3f7341ac9bfc5f0f911769477425cd66",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.4.3/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-v1.4.3/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 23812,
         "sha256": "7e045cbe14891a2ab452557e30a1240f55b06e545c5d753bb5a04dc80d95de5d"
        }
@@ -527,7 +527,7 @@
        "manifestSha256": "e42526550263941ba04f4166e9de48b44a614043d76f251691df390f3a4abb74",
        "bundle": {
         "name": "droidtop.shizuku-bridge.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-shizuku/releases/download/plugin-v1.4.2/droidtop.shizuku-bridge.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-shizuku/releases/download/plugin-v1.4.2/droidtop.shizuku-bridge.droidplugin.tar.xz",
         "size": 23816,
         "sha256": "812323bd4693388f73e5aa4170a2fa7dc87b9c616f2fc9481d1a5afdd1e99b60"
        }
@@ -548,7 +548,7 @@
        "manifestSha256": "bda1ffffe126203df617581c158d3f6af50e6a61fb101861b20a1f56b768ea98",
        "bundle": {
         "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-v1.2.0/droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-syncthing/releases/download/plugin-v1.2.0/droidtop.syncthing.droidplugin.tar.xz",
         "size": 16527100,
         "sha256": "edd989b2bd72153e7b9348a765b97c23ba0b345b6dc41bc58726cd0b953952c0"
        }
@@ -561,7 +561,7 @@
        "manifestSha256": "e4229f8328936ed499c035a979c740e8e14ae5dd6d8fe1b5b4ea7e1e83d3f79e",
        "bundle": {
         "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-build.18/droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-syncthing/releases/download/plugin-build.18/droidtop.syncthing.droidplugin.tar.xz",
         "size": 16532988,
         "sha256": "8ebded028116efdfcd32ffc1d176481ff4666b402e24f65f31e3c71d227dd6fa"
        }
@@ -574,7 +574,7 @@
        "manifestSha256": "e4229f8328936ed499c035a979c740e8e14ae5dd6d8fe1b5b4ea7e1e83d3f79e",
        "bundle": {
         "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-unstable/droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-syncthing/releases/download/plugin-unstable/droidtop.syncthing.droidplugin.tar.xz",
         "size": 16532988,
         "sha256": "8ebded028116efdfcd32ffc1d176481ff4666b402e24f65f31e3c71d227dd6fa"
        }
@@ -587,7 +587,7 @@
        "manifestSha256": "e10e5f245787f5f792b95bdf63267acd9b872f4be1000a11acaa26078558c606",
        "bundle": {
         "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-build.17/droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-syncthing/releases/download/plugin-build.17/droidtop.syncthing.droidplugin.tar.xz",
         "size": 16522796,
         "sha256": "242a96390d5c65b1481135c92dfc4c738ffdaa2595af760858099a6cac824834"
        }
@@ -600,7 +600,7 @@
        "manifestSha256": "0841f1718ebe51f9d471e1bd3434f570eabd66bfc8a06e46a83c3b6a8bf96c10",
        "bundle": {
         "name": "droidtop.syncthing.droidplugin.tar.xz",
-        "url": "https://github.com/Droidtop/droidtop-plugin-syncthing/releases/download/plugin-v1.0.0/droidtop.syncthing.droidplugin.tar.xz",
+        "url": "https://github.com/mytop-project/droidtop-plugin-syncthing/releases/download/plugin-v1.0.0/droidtop.syncthing.droidplugin.tar.xz",
         "size": 13605448,
         "sha256": "76dbda55f505b37a92603f6ab22c731fbafabb0eae055f49ed7ebdeb5f277238"
        }
