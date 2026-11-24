@@ -213,6 +213,9 @@
   {
    "id": "apple2",
    "name": "Apple II",
+   "aliases": [
+    "Apple IIe"
+   ],
    "extensions": [
     "7z",
     "do",
@@ -374,6 +377,9 @@
   {
    "id": "atari800",
    "name": "Atari 800",
+   "aliases": [
+    "Atari 8bit computers"
+   ],
    "extensions": [
     "7z",
     "a52",
@@ -758,6 +764,9 @@
   {
    "id": "dos",
    "name": "DOS (PC)",
+   "aliases": [
+    "MS-DOS"
+   ],
    "extensions": [
     "7z",
     "bat",
@@ -1123,6 +1132,9 @@
   {
    "id": "genesis",
    "name": "Sega Genesis",
+   "aliases": [
+    "Sega Genesis/Mega Drive"
+   ],
    "extensions": [
     "32x",
     "68k",
@@ -1524,6 +1536,10 @@
   {
    "id": "msx",
    "name": "MSX",
+   "aliases": [
+    "Microsoft MSX",
+    "MSX, MSX2, MSX2+, MSX turboR"
+   ],
    "extensions": [
     "7z",
     "cas",
@@ -1806,6 +1822,9 @@
   {
    "id": "nes",
    "name": "Nintendo Entertainment System",
+   "aliases": [
+    "Nintendo NES"
+   ],
    "extensions": [
     "3dsen",
     "7z",
@@ -1859,6 +1878,9 @@
   {
    "id": "odyssey2",
    "name": "Magnavox Odyssey 2",
+   "aliases": [
+    "Magnavox Odyssey²"
+   ],
    "extensions": [
     "7z",
     "bin",
@@ -1904,6 +1926,9 @@
   {
    "id": "pc",
    "name": "PC",
+   "aliases": [
+    "Linux"
+   ],
    "extensions": [
     "7z",
     "bat",
@@ -1977,6 +2002,9 @@
   {
    "id": "pcengine",
    "name": "NEC PC Engine",
+   "aliases": [
+    "NEC PC Engine TurboGrafx-16"
+   ],
    "extensions": [
     "7z",
     "ccd",
@@ -2471,6 +2499,10 @@
   {
    "id": "snes",
    "name": "Nintendo SNES (Super Nintendo)",
+   "aliases": [
+    "Nintendo SNES",
+    "Super Nintendo Entertainment System"
+   ],
    "extensions": [
     "7z",
     "bin",
@@ -2850,6 +2882,11 @@
   {
    "id": "videopac",
    "name": "Philips Videopac G7000",
+   "aliases": [
+    "Phillips Videopac+",
+    "Phillips C52",
+    "Brandt Jopac"
+   ],
    "extensions": [
     "7z",
     "bin",

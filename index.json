@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-23T15:36:19Z",
+ "generatedAt": "2026-11-24T09:36:47Z",
  "collections": {
   "engines": {
    "key": "engines",
@@ -471,7 +471,7 @@
   {
    "path": "platforms/apple2.json",
    "collection": "platforms",
-   "sha256": "8a1a77886a4e13dd653c5f1061f9d8977493a1eee6fd5ac98e77fd4dbd7211fc"
+   "sha256": "3066f5a741ee01b2f5e4ecd121021553c15fcff3b96a72b5183e2f1d38ad7822"
   },
   {
    "path": "platforms/apple2gs.json",
@@ -521,7 +521,7 @@
   {
    "path": "platforms/atari800.json",
    "collection": "platforms",
-   "sha256": "584dff6dc955e779708e09177dc4ae793b3dfc0f5b740df523432a10ed37feeb"
+   "sha256": "8a943a5167da85279fb08775f8dc0b092e35a4564095fc51becbb4d66af4af56"
   },
   {
    "path": "platforms/atarijaguar.json",
@@ -641,7 +641,7 @@
   {
    "path": "platforms/dos.json",
    "collection": "platforms",
-   "sha256": "1a7ff9542d3e80dbdad38c7eba26b1db90d79b468692dc3b1762876dc0b156ae"
+   "sha256": "abf7144bcd3760b3ee75c6c99715329f74f47ad20bfdeb25145ffe29e083490c"
   },
   {
    "path": "platforms/dragon32.json",
@@ -756,7 +756,7 @@
   {
    "path": "platforms/genesis.json",
    "collection": "platforms",
-   "sha256": "c72e0c99e9d6d1fe9035657b20e89f657625c2d956da9bf69007608326d022d8"
+   "sha256": "0314ad6987b145bda1efe2b78cdceec1b74d025ba190124c5e83fca6370c5c60"
   },
   {
    "path": "platforms/gmaster.json",
@@ -881,7 +881,7 @@
   {
    "path": "platforms/msx.json",
    "collection": "platforms",
-   "sha256": "d35a3e0449e0d1d1516d7c73c4d54eb823f12a61509e01da1209a356657c2d1b"
+   "sha256": "43dd4a1a349f43e80e62ff8302650af16480f0cbd4f90c2352ec6bca8acb568c"
   },
   {
    "path": "platforms/msx1.json",
@@ -961,7 +961,7 @@
   {
    "path": "platforms/nes.json",
    "collection": "platforms",
-   "sha256": "e1d1635e62de23185d43bb2f5cacc98800ab7e95442504efd5e367eb3a3b25ed"
+   "sha256": "5557771558b81eed2470a5cb3047d9203f09665aca51dabfb807e14136515729"
   },
   {
    "path": "platforms/ngage.json",
@@ -981,7 +981,7 @@
   {
    "path": "platforms/odyssey2.json",
    "collection": "platforms",
-   "sha256": "9f53f0a27fefb9d5d0de866f701d4f4a86d372dc1b72be48576bf9b71817c042"
+   "sha256": "8f3ce7162e12db9fe914ce1c14f5de965be8c1cdb12b2cd1636e0da1a9cc39ce"
   },
   {
    "path": "platforms/openbor.json",
@@ -1001,7 +1001,7 @@
   {
    "path": "platforms/pc.json",
    "collection": "platforms",
-   "sha256": "8c8345db8f1d3b02317c865c38710c4a7d315a282c7c143de0090c2aaacc8d77"
+   "sha256": "c5332fc111f8fd25e362cf2226c08278b17356f2d039f7dacdbd10d662431779"
   },
   {
    "path": "platforms/pc88.json",
@@ -1021,7 +1021,7 @@
   {
    "path": "platforms/pcengine.json",
    "collection": "platforms",
-   "sha256": "2db8124bead03a9b4b2cb38f8a5fafe1aa6838f230d5422918b73c9c5c505bf6"
+   "sha256": "13810c514e657e5ab3bc0df527144d17edc1cf093e3045dbaf3f7b7202b9df09"
   },
   {
    "path": "platforms/pcenginecd.json",
@@ -1161,7 +1161,7 @@
   {
    "path": "platforms/snes.json",
    "collection": "platforms",
-   "sha256": "4c6f844020b49ef19a7cb21464bbcb0b936a0b6f32d9c9f8945371710ed72fb4"
+   "sha256": "7961b7a2ffbff5119dac68ad39ff94e362b3873311418b47f5d143faf8b60788"
   },
   {
    "path": "platforms/snesna.json",
@@ -1281,7 +1281,7 @@
   {
    "path": "platforms/videopac.json",
    "collection": "platforms",
-   "sha256": "10c06a8c887e920f71e910a804fe76058a6c20f5bcc8ba3a6af043d256f742cd"
+   "sha256": "6f34376414675ce2c498be0609c26b285f6f942d11006cc45a1ce5b4009f53d8"
   },
   {
    "path": "platforms/vircon32.json",
