@@ -1,6 +1,11 @@
 {
  "id": "videopac",
  "name": "Philips Videopac G7000",
+ "aliases": [
+  "Phillips Videopac+",
+  "Phillips C52",
+  "Brandt Jopac"
+ ],
  "extensions": [
   "7z",
   "bin",

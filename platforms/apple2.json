@@ -1,6 +1,9 @@
 {
  "id": "apple2",
  "name": "Apple II",
+ "aliases": [
+  "Apple IIe"
+ ],
  "extensions": [
   "7z",
   "do",

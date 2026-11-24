@@ -1,6 +1,9 @@
 {
  "id": "genesis",
  "name": "Sega Genesis",
+ "aliases": [
+  "Sega Genesis/Mega Drive"
+ ],
  "extensions": [
   "32x",
   "68k",

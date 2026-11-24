@@ -381,6 +381,36 @@ def registered_cores():
     return {o["repo"] for o in json.loads(path.read_text(encoding="utf-8")).get("origins", [])} if path.is_file() else set()
 
 
+def name_key(name):
+    """A name as the apps compare it: letters and digits only, case ignored."""
+    return re.sub(r"[^0-9a-z]+", "", name.casefold())
+
+
+def alias_problems(platforms):
+    """``aliases`` are other names a launcher or an emulator frontend writes for the same system (Lutris's "Super
+    Nintendo Entertainment System" for ES-DE's snes). Each is a non-empty text, and none may be another system's id,
+    name or alias once normalised (name_key), or the apps could not tell which system a name means."""
+    problems = []
+    owners = {}
+    for _, path, _, platform in platforms:
+        for name in (platform.get("id"), platform.get("name")):
+            if name:
+                owners.setdefault(name_key(name), set()).add(platform.get("id"))
+    for _, path, _, platform in platforms:
+        aliases = platform.get("aliases")
+        if aliases is None:
+            continue
+        if not isinstance(aliases, list) or not all(isinstance(a, str) and name_key(a) for a in aliases):
+            problems.append(path + ": aliases must be a list of non-empty names")
+            continue
+        for alias in aliases:
+            others = owners.get(name_key(alias), set()) - {platform.get("id")}
+            if others:
+                problems.append(path + ": the alias " + repr(alias) + " is also a name of " + ", ".join(sorted(others)))
+            owners.setdefault(name_key(alias), set()).add(platform.get("id"))
+    return problems
+
+
 def validate(collections):
     """The rules a single file cannot check for itself.
 
@@ -416,6 +446,7 @@ def validate(collections):
     for _, path, _, platform in collections["platforms"][1]:
         if not platform.get("name"):
             problems.append(path + ": missing name")
+    problems.extend(alias_problems(collections["platforms"][1]))
     for _, path, _, system in collections["bios"][1]:
         if not isinstance(system.get("files"), list):
             problems.append(path + ": files must be a list")

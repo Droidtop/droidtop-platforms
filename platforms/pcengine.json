@@ -1,6 +1,9 @@
 {
  "id": "pcengine",
  "name": "NEC PC Engine",
+ "aliases": [
+  "NEC PC Engine TurboGrafx-16"
+ ],
  "extensions": [
   "7z",
   "ccd",

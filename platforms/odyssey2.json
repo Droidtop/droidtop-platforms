@@ -1,6 +1,9 @@
 {
  "id": "odyssey2",
  "name": "Magnavox Odyssey 2",
+ "aliases": [
+  "Magnavox Odyssey²"
+ ],
  "extensions": [
   "7z",
   "bin",

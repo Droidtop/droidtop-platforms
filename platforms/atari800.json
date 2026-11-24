@@ -1,6 +1,9 @@
 {
  "id": "atari800",
  "name": "Atari 800",
+ "aliases": [
+  "Atari 8bit computers"
+ ],
  "extensions": [
   "7z",
   "a52",

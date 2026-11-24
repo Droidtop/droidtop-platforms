@@ -1,6 +1,10 @@
 {
  "id": "msx",
  "name": "MSX",
+ "aliases": [
+  "Microsoft MSX",
+  "MSX, MSX2, MSX2+, MSX turboR"
+ ],
  "extensions": [
   "7z",
   "cas",

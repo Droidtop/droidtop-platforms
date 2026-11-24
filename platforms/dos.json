@@ -1,6 +1,9 @@
 {
  "id": "dos",
  "name": "DOS (PC)",
+ "aliases": [
+  "MS-DOS"
+ ],
  "extensions": [
   "7z",
   "bat",

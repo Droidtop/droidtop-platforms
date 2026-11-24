@@ -1,6 +1,9 @@
 {
  "id": "pc",
  "name": "PC",
+ "aliases": [
+  "Linux"
+ ],
  "extensions": [
   "7z",
   "bat",

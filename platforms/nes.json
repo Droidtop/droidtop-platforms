@@ -1,6 +1,9 @@
 {
  "id": "nes",
  "name": "Nintendo Entertainment System",
+ "aliases": [
+  "Nintendo NES"
+ ],
  "extensions": [
   "3dsen",
   "7z",

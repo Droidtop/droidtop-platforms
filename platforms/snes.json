@@ -1,6 +1,10 @@
 {
  "id": "snes",
  "name": "Nintendo SNES (Super Nintendo)",
+ "aliases": [
+  "Nintendo SNES",
+  "Super Nintendo Entertainment System"
+ ],
  "extensions": [
   "7z",
   "bin",

@@ -26,7 +26,7 @@ This repository is the separately updatable database that [droidtop](https://git
 
 | Folder | One file is | Used for |
 |---|---|---|
-| `platforms/` | A platform | Name, file extensions, RetroArch core and theme |
+| `platforms/` | A platform | Name, other names it goes by (`aliases`), file extensions, RetroArch core and theme |
 | `players/` | A standalone-emulator launch preset | How to start a game in an installed emulator |
 | `engines/` | A game-engine detection row | Telling Ren'Py, RPG Maker, KiriKiri and others apart from a folder |
 | `bios/` | One system's firmware needs | Which files, with MD5 sums |
