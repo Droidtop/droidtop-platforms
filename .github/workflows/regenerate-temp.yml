@@ -1,0 +1,31 @@
+name: Regenerate the composed files (temporary)
+
+# Runs generator/build.py on this branch and commits what it writes. Removed again before the branch lands.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: generator/build.py
+        run: python3 generator/build.py
+      - name: alias rules
+        run: python3 -m unittest discover -s generator -p 'test_aliases.py' -v
+      - name: generator/build.py --check
+        run: python3 generator/build.py --check
+      - name: Commit what was generated
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "Regenerated: index.json, legacy and the composed databases carry the platform aliases" -m "Changelog: none"
+          git push origin HEAD:${GITHUB_REF_NAME}
