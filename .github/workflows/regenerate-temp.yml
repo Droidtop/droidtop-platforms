@@ -2,7 +2,8 @@ name: Regenerate the composed files (temporary)
 
 # Runs generator/build.py on this branch and commits what it writes. Removed again before the branch lands.
 on:
-  workflow_dispatch:
+  push:
+    branches: [ci/platform-aliases]
 
 permissions:
   contents: write
